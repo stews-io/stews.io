@@ -1,1 +1,1 @@
-# [clumsycomputer.com](https://clumsycomputer.com)
+# [curations.clumsycomputer.com](https://curations.clumsycomputer.com)

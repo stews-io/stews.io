@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import { NavigationFooter } from "../../../common/NavigationFooter/NavigationFooter";
 import { Page } from "../../../common/Page/Page";
 import { getUpdatedPageRoute } from "./common/getUpdatedPageRoute";
 import { MusicItem } from "./common/models";
@@ -105,15 +104,6 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
         {musicListItems}
       </div>
       {musicItemsListNavigation}
-      <NavigationFooter
-        routeLinks={[
-          { routeName: "home", routeHref: "/" },
-          { routeName: "packages", routeHref: "/software/packages" },
-          { routeName: "resume", routeHref: "/software/resume" },
-          { routeName: "graphics", routeHref: "/art/graphics" },
-        ]}
-        pdfLink={null}
-      />
     </Page>
   );
 };

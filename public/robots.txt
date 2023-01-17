@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.clumsycomputer.com
+Host: https://www.curations.clumsycomputer.com
 
 # Sitemaps
-Sitemap: https://www.clumsycomputer.com/sitemap.xml
+Sitemap: https://www.curations.clumsycomputer.com/sitemap.xml
