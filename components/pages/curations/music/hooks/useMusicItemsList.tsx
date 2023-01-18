@@ -12,17 +12,12 @@ import { usePageState } from "./usePageState";
 
 export interface UseMusicItemsListApi
   extends Pick<MusicCurationsPageProps, "musicItemDataset"> {
-  pageRouter: NextRouter;
   pageState: ReturnType<typeof usePageState>;
 }
 
 export function useMusicItemsList(api: UseMusicItemsListApi) {
-  const { musicItemDataset, pageRouter, pageState } = api;
+  const { musicItemDataset, pageState } = api;
   return useMemo(() => {
-    const searchQuery =
-      typeof pageRouter.query.searchQuery === "string"
-        ? pageRouter.query.searchQuery
-        : "";
     const filteredMusicItems = musicItemDataset
       .filter((someMusicItem) =>
         `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
@@ -35,7 +30,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
             : someMusicItem.sourceType
         }${someMusicItem.musicType === "clip" ? " clip" : ""}`}`
           .toLowerCase()
-          .includes(searchQuery.toLowerCase())
+          .includes(pageState.searchQuery.toLowerCase())
       )
       .sort((itemA, itemB) => {
         switch (pageState.sortOrder) {
@@ -96,8 +91,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
               <ActiveMusicItemsListPageLink
                 linkLabel={"prev"}
                 dataPageHref={getUpdatedPageRoute({
-                  pageRouter,
-                  currentState: pageState,
+                  pageState,
                   stateUpdates: {
                     pageIndex: _pageIndex - 1,
                   },
@@ -112,8 +106,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
               <ActiveMusicItemsListPageLink
                 linkLabel={"next"}
                 dataPageHref={getUpdatedPageRoute({
-                  pageRouter,
-                  currentState: pageState,
+                  pageState,
                   stateUpdates: {
                     pageIndex: _pageIndex + 1,
                   },
@@ -126,5 +119,5 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
         />
       ),
     };
-  }, [pageRouter, pageState, musicItemDataset]);
+  }, [pageState, musicItemDataset]);
 }

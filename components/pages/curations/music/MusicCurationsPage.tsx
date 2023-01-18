@@ -26,13 +26,16 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   props: MusicCurationsPageProps
 ) => {
   const { musicItemDataset } = props;
+  console.log("a");
   const pageRouter = useRouter();
   const pageState = usePageState({
-    pageRouter,
+    pageRoute: pageRouter.route,
+    routerQueryPageIndex: pageRouter.query["pageIndex"],
+    routerQuerySearchQuery: pageRouter.query["searchQuery"],
+    routerQuerySortOrder: pageRouter.query["sortOrder"],
   });
   const { musicListItems, musicItemsListNavigation } = useMusicItemsList({
     musicItemDataset,
-    pageRouter,
     pageState,
   });
   return (
@@ -49,8 +52,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
             onChange={(nextSortOrder) => {
               pageRouter.replace(
                 getUpdatedPageRoute({
-                  pageRouter,
-                  currentState: pageState,
+                  pageState,
                   stateUpdates: {
                     sortOrder: nextSortOrder,
                     pageIndex: 1,
@@ -69,8 +71,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
           onChange={(someChangeEvent) => {
             pageRouter.replace(
               getUpdatedPageRoute({
-                pageRouter,
-                currentState: pageState,
+                pageState,
                 stateUpdates: {
                   searchQuery: someChangeEvent.currentTarget.value,
                   pageIndex: 1,
@@ -85,8 +86,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
           clearSearchQuery={() => {
             pageRouter.replace(
               getUpdatedPageRoute({
-                pageRouter,
-                currentState: pageState,
+                pageState,
                 stateUpdates: {
                   searchQuery: "",
                   pageIndex: 1,

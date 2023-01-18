@@ -3,25 +3,34 @@ import { useMemo } from "react";
 import { MusicCurationsPageState } from "../common/models";
 
 export interface UsePageStateApi {
-  pageRouter: NextRouter;
+  pageRoute: NextRouter["route"];
+  routerQueryPageIndex: unknown;
+  routerQuerySearchQuery: unknown;
+  routerQuerySortOrder: unknown;
 }
 
 export function usePageState(api: UsePageStateApi) {
-  const { pageRouter } = api;
+  const {
+    pageRoute,
+    routerQueryPageIndex,
+    routerQuerySearchQuery,
+    routerQuerySortOrder,
+  } = api;
   return useMemo<MusicCurationsPageState>(() => {
     return {
+      pageRoute,
       pageIndex:
         parseInt(
-          typeof pageRouter.query["pageIndex"] === "string"
-            ? pageRouter.query["pageIndex"]
+          typeof routerQueryPageIndex === "string"
+            ? routerQueryPageIndex
             : "wtf?"
         ) || 1,
       searchQuery:
-        typeof pageRouter.query["searchQuery"] === "string"
-          ? pageRouter.query["searchQuery"]
+        typeof routerQuerySearchQuery === "string"
+          ? routerQuerySearchQuery
           : "",
       sortOrder:
-        typeof pageRouter.query["sortOrder"] === "string" &&
+        typeof routerQuerySortOrder === "string" &&
         [
           "titleAscending",
           "titleDescending",
@@ -32,12 +41,15 @@ export function usePageState(api: UsePageStateApi) {
         ].reduce((sortOrderValid, someValidSortOrder) => {
           return sortOrderValid
             ? sortOrderValid
-            : someValidSortOrder === pageRouter.query["sortOrder"];
+            : someValidSortOrder === routerQuerySortOrder;
         }, false)
-          ? (pageRouter.query[
-              "sortOrder"
-            ] as MusicCurationsPageState["sortOrder"])
+          ? (routerQuerySortOrder as MusicCurationsPageState["sortOrder"])
           : "titleAscending",
     };
-  }, [pageRouter]);
+  }, [
+    pageRoute,
+    routerQueryPageIndex,
+    routerQuerySearchQuery,
+    routerQuerySortOrder,
+  ]);
 }

@@ -1,4 +1,5 @@
 export interface MusicCurationsPageState {
+  pageRoute: string;
   pageIndex: number;
   sortOrder:
     | "titleAscending"

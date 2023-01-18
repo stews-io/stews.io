@@ -1,28 +1,27 @@
-import { NextRouter } from "next/router";
+import { usePageState } from "../hooks/usePageState";
 import { MusicCurationsPageState } from "./models";
 
 export interface GetUpdatedPageRouteApi {
-  pageRouter: NextRouter;
-  currentState: MusicCurationsPageState;
+  pageState: ReturnType<typeof usePageState>;
   stateUpdates: Partial<MusicCurationsPageState>;
 }
 
 export function getUpdatedPageRoute(api: GetUpdatedPageRouteApi) {
-  const { pageRouter, stateUpdates, currentState } = api;
+  const { stateUpdates, pageState } = api;
   return encodeURI(
-    `${pageRouter.route}?pageIndex=${
-      stateUpdates.pageIndex || currentState.pageIndex
+    `${pageState.pageRoute}?pageIndex=${
+      stateUpdates.pageIndex || pageState.pageIndex
     }&sortOrder=${
       stateUpdates.sortOrder !== undefined
         ? stateUpdates.sortOrder
-        : currentState.sortOrder
+        : pageState.sortOrder
     }${
       stateUpdates.searchQuery !== undefined && stateUpdates.searchQuery !== ""
         ? `&searchQuery=${stateUpdates.searchQuery}`
         : stateUpdates.searchQuery === undefined &&
-          currentState.searchQuery &&
-          currentState.searchQuery !== ""
-        ? `&searchQuery=${currentState.searchQuery}`
+          pageState.searchQuery &&
+          pageState.searchQuery !== ""
+        ? `&searchQuery=${pageState.searchQuery}`
         : ""
     }`
   );
