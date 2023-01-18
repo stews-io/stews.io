@@ -3,19 +3,15 @@ import { useMemo } from "react";
 import { MusicCurationsPageState } from "../common/models";
 
 export interface UsePageStateApi {
-  pageRoute: NextRouter["route"];
-  routerQueryPageIndex: unknown;
-  routerQuerySearchQuery: unknown;
-  routerQuerySortOrder: unknown;
+  pageRouter: NextRouter;
 }
 
 export function usePageState(api: UsePageStateApi) {
-  const {
-    pageRoute,
-    routerQueryPageIndex,
-    routerQuerySearchQuery,
-    routerQuerySortOrder,
-  } = api;
+  const { pageRouter } = api;
+  const pageRoute = pageRouter.route;
+  const routerQueryPageIndex = pageRouter.query["pageIndex"];
+  const routerQuerySearchQuery = pageRouter.query["searchQuery"];
+  const routerQuerySortOrder = pageRouter.query["sortOrder"];
   return useMemo<MusicCurationsPageState>(() => {
     return {
       pageRoute,

@@ -26,13 +26,9 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   props: MusicCurationsPageProps
 ) => {
   const { musicItemDataset } = props;
-  console.log("a");
   const pageRouter = useRouter();
   const pageState = usePageState({
-    pageRoute: pageRouter.route,
-    routerQueryPageIndex: pageRouter.query["pageIndex"],
-    routerQuerySearchQuery: pageRouter.query["searchQuery"],
-    routerQuerySortOrder: pageRouter.query["sortOrder"],
+    pageRouter,
   });
   const { musicListItems, musicItemsListNavigation } = useMusicItemsList({
     musicItemDataset,
