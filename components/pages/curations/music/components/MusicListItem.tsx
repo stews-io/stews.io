@@ -26,7 +26,7 @@ export function MusicListItem(props: MusicListItemProps) {
   return (
     <div className={styles.itemContainer} role={"listitem"}>
       <div className={styles.topRowContainer} role={"presentation"}>
-        <Link href={externalLinks[0].linkHref}>
+        <Link legacyBehavior href={externalLinks[0].linkHref}>
           <a
             className={styles.thumbnailLink}
             rel={"noreferrer"}
@@ -67,6 +67,7 @@ export function MusicListItem(props: MusicListItemProps) {
                 role={"listitem"}
               >
                 <Link
+                  legacyBehavior
                   key={someExternalLink.linkLabel}
                   href={someExternalLink.linkHref}
                 >
