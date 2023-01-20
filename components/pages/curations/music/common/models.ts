@@ -1,6 +1,7 @@
 export interface MusicCurationsPageState {
   pageRoute: string;
   pageIndex: number;
+  dataView: "all";
   sortOrder:
     | "titleAscending"
     | "titleDescending"

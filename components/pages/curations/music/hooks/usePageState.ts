@@ -41,6 +41,15 @@ export function usePageState(api: UsePageStateApi) {
         }, false)
           ? (routerQuerySortOrder as MusicCurationsPageState["sortOrder"])
           : "titleAscending",
+      dataView:
+        typeof routerQuerySortOrder === "string" &&
+        ["all"].reduce((sortOrderValid, someValidSortOrder) => {
+          return sortOrderValid
+            ? sortOrderValid
+            : someValidSortOrder === routerQuerySortOrder;
+        }, false)
+          ? (routerQuerySortOrder as MusicCurationsPageState["dataView"])
+          : "all",
     };
   }, [
     pageRoute,

@@ -11,6 +11,16 @@
   padding: $spacer * 3 / 2;
 }
 
+.dataViewSelectContainer {
+  display: flex;
+}
+
+.buttonArrow {
+  padding-inline-start: $spacer;
+  width: 16px;
+  height: 16px;
+}
+
 .sortOrderSelectContainer {
   display: flex;
   flex-direction: row-reverse;

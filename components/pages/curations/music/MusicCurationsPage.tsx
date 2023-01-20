@@ -5,6 +5,7 @@ import { getUpdatedPageRoute } from "./common/getUpdatedPageRoute";
 import { MusicItem } from "./common/models";
 import { SearchQueryInput } from "./components/SearchQueryInput";
 import { SortOrderSelect } from "./components/SortOrderSelect";
+import { DataViewSelect } from "./components/DataViewSelect";
 import { useMusicItemsList } from "./hooks/useMusicItemsList";
 import { usePageState } from "./hooks/usePageState";
 import styles from "./MusicCurationsPage.module.scss";
@@ -42,6 +43,26 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
       pageDescription={"a catalog of awesome music"}
     >
       <div className={styles.itemsFilterContainer}>
+        <div className={styles.dataViewSelectContainer}>
+          <DataViewSelect
+            value={pageState.dataView}
+            onChange={(nextDataView) => {
+              pageRouter.replace(
+                getUpdatedPageRoute({
+                  pageState,
+                  stateUpdates: {
+                    dataView: nextDataView,
+                    pageIndex: 1,
+                  },
+                }),
+                undefined,
+                {
+                  shallow: true,
+                }
+              );
+            }}
+          />
+        </div>
         <div className={styles.sortOrderSelectContainer}>
           <SortOrderSelect
             value={pageState.sortOrder}
