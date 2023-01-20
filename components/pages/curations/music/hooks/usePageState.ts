@@ -12,6 +12,7 @@ export function usePageState(api: UsePageStateApi) {
   const routerQueryPageIndex = pageRouter.query["pageIndex"];
   const routerQuerySearchQuery = pageRouter.query["searchQuery"];
   const routerQuerySortOrder = pageRouter.query["sortOrder"];
+  const routerQueryDataView = pageRouter.query["dataView"];
   return useMemo<MusicCurationsPageState>(() => {
     return {
       pageRoute,
@@ -42,13 +43,8 @@ export function usePageState(api: UsePageStateApi) {
           ? (routerQuerySortOrder as MusicCurationsPageState["sortOrder"])
           : "titleAscending",
       dataView:
-        typeof routerQuerySortOrder === "string" &&
-        ["all"].reduce((sortOrderValid, someValidSortOrder) => {
-          return sortOrderValid
-            ? sortOrderValid
-            : someValidSortOrder === routerQuerySortOrder;
-        }, false)
-          ? (routerQuerySortOrder as MusicCurationsPageState["dataView"])
+        typeof routerQueryDataView === "string"
+          ? (routerQueryDataView as MusicCurationsPageState["dataView"])
           : "all",
     };
   }, [
@@ -56,5 +52,6 @@ export function usePageState(api: UsePageStateApi) {
     routerQueryPageIndex,
     routerQuerySearchQuery,
     routerQuerySortOrder,
+    routerQueryDataView,
   ]);
 }

@@ -9,15 +9,17 @@ import {
 import ClickAwayListener from "react-click-away-listener";
 import { usePopper } from "react-popper";
 import { MusicCurationsPageState, StringPermutation } from "../common/models";
+import { MusicCurationsPageProps } from "../MusicCurationsPage";
 import styles from "./DataViewSelect.module.scss";
 
 export interface DataViewSelectProps {
+  options: MusicCurationsPageProps["musicViews"];
   value: MusicCurationsPageState["dataView"];
   onChange: (nextSortOrder: MusicCurationsPageState["dataView"]) => void;
 }
 
 export function DataViewSelect(props: DataViewSelectProps) {
-  const { value, onChange } = props;
+  const { options, value, onChange } = props;
   const [selectButtonElement, setSelectButtonElement] =
     useState<HTMLDivElement | null>(null);
   const [selectMenu, setSelectMenu] = useState<ReactNode>(null);
@@ -30,6 +32,7 @@ export function DataViewSelect(props: DataViewSelectProps) {
         onClick={() => {
           setSelectMenu(
             <DataViewSelectMenu
+              options={options}
               value={value}
               onChange={onChange}
               selectButtonElement={selectButtonElement}
@@ -59,13 +62,14 @@ export function DataViewSelect(props: DataViewSelectProps) {
 }
 
 interface DataViewSelectMenuProps
-  extends Pick<DataViewSelectProps, "value" | "onChange"> {
+  extends Pick<DataViewSelectProps, "options" | "value" | "onChange"> {
   selectButtonElement: HTMLDivElement | null;
   setSelectMenu: Dispatch<SetStateAction<ReactNode>>;
 }
 
 function DataViewSelectMenu(props: DataViewSelectMenuProps) {
-  const { selectButtonElement, setSelectMenu, value, onChange } = props;
+  const { selectButtonElement, options, setSelectMenu, value, onChange } =
+    props;
   const [selectMenuElement, setSelectMenuElement] =
     useState<HTMLDivElement | null>(null);
   const selectMenuPopper = usePopper(selectButtonElement, selectMenuElement, {
@@ -79,9 +83,10 @@ function DataViewSelectMenu(props: DataViewSelectMenuProps) {
       },
     ],
   });
-  const dataViewList = useMemo<
-    StringPermutation<MusicCurationsPageState["dataView"]>
-  >(() => ["all"], []);
+  const dataViewList = useMemo<Array<string>>(
+    () => options.map((someOption) => someOption.viewName),
+    []
+  );
   return (
     <ClickAwayListener
       onClickAway={() => {
@@ -125,10 +130,11 @@ interface GetDataViewLabelApi {
 
 function getDataViewLabel(api: GetDataViewLabelApi) {
   const { someDataView } = api;
-  switch (someDataView) {
-    case "all":
-      return "all";
-    default:
-      throw new Error(`getDataViewLabel: ${someDataView} not handled`);
-  }
+  return someDataView;
+  // switch (someDataView) {
+  //   case "all":
+  //     return "all";
+  //   default:
+  //     throw new Error(`getDataViewLabel: ${someDataView} not handled`);
+  // }
 }

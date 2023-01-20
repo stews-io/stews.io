@@ -13,12 +13,7 @@
 
 .dataViewSelectContainer {
   display: flex;
-}
-
-.buttonArrow {
-  padding-inline-start: $spacer;
-  width: 16px;
-  height: 16px;
+  padding-block-end: $spacer + $spacer / 4;
 }
 
 .sortOrderSelectContainer {
