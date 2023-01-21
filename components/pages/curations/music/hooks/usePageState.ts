@@ -1,13 +1,15 @@
 import { NextRouter } from "next/router";
 import { useMemo } from "react";
 import { MusicCurationsPageState } from "../common/models";
+import { MusicCurationsPageProps } from "../MusicCurationsPage";
 
-export interface UsePageStateApi {
+export interface UsePageStateApi
+  extends Pick<MusicCurationsPageProps, "musicViews"> {
   pageRouter: NextRouter;
 }
 
 export function usePageState(api: UsePageStateApi) {
-  const { pageRouter } = api;
+  const { pageRouter, musicViews } = api;
   const pageRoute = pageRouter.route;
   const routerQueryPageIndex = pageRouter.query["pageIndex"];
   const routerQuerySearchQuery = pageRouter.query["searchQuery"];
@@ -43,7 +45,10 @@ export function usePageState(api: UsePageStateApi) {
           ? (routerQuerySortOrder as MusicCurationsPageState["sortOrder"])
           : "titleAscending",
       dataView:
-        typeof routerQueryDataView === "string"
+        typeof routerQueryDataView === "string" &&
+        musicViews.findIndex(
+          (someMusicView) => someMusicView.viewName === routerQueryDataView
+        ) >= 0
           ? (routerQueryDataView as MusicCurationsPageState["dataView"])
           : "all",
     };

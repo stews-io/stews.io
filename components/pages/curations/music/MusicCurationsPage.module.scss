@@ -13,7 +13,8 @@
 
 .dataViewSelectContainer {
   display: flex;
-  padding-block-end: $spacer + $spacer / 4;
+  flex-direction: row;
+  padding-block-end: $spacer + $spacer / 2;  
 }
 
 .sortOrderSelectContainer {

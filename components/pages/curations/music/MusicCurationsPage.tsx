@@ -41,6 +41,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   const { musicItems, musicViews } = props;
   const pageRouter = useRouter();
   const pageState = usePageState({
+    musicViews,
     pageRouter,
   });
   const { musicListItems, musicItemsListNavigation } = useMusicItemsList({

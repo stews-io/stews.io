@@ -8,7 +8,7 @@ import {
 } from "react";
 import ClickAwayListener from "react-click-away-listener";
 import { usePopper } from "react-popper";
-import { MusicCurationsPageState, StringPermutation } from "../common/models";
+import { MusicCurationsPageState } from "../common/models";
 import { MusicCurationsPageProps } from "../MusicCurationsPage";
 import styles from "./DataViewSelect.module.scss";
 
@@ -46,15 +46,17 @@ export function DataViewSelect(props: DataViewSelectProps) {
             someDataView: value,
           })}
         </div>
-        <svg className={styles.buttonArrow} viewBox={"0 0 1 1"}>
-          <polygon
-            points={"0.2,0.375 0.8,0.375 0.5,0.775"}
-            stroke={"black"}
-            strokeWidth={0.085}
-            strokeLinejoin={"round"}
-            fill={"white"}
-          />
-        </svg>
+        <div className={styles.iconContainer}>
+          <svg className={styles.buttonArrow} viewBox={"0 0 1 1"}>
+            <polygon
+              points={"0.2,0.375 0.8,0.375 0.5,0.775"}
+              stroke={"black"}
+              strokeWidth={0.085}
+              strokeLinejoin={"round"}
+              fill={"white"}
+            />
+          </svg>
+        </div>
       </div>
       {selectMenu}
     </Fragment>
@@ -114,9 +116,11 @@ function DataViewSelectMenu(props: DataViewSelectMenuProps) {
             }}
           >
             <div className={styles.itemCheck}>✓</div>
-            {getDataViewLabel({
-              someDataView,
-            })}
+            <div className={styles.itemText}>
+              {getDataViewLabel({
+                someDataView,
+              })}
+            </div>
           </div>
         ))}
       </div>
@@ -131,10 +135,4 @@ interface GetDataViewLabelApi {
 function getDataViewLabel(api: GetDataViewLabelApi) {
   const { someDataView } = api;
   return someDataView;
-  // switch (someDataView) {
-  //   case "all":
-  //     return "all";
-  //   default:
-  //     throw new Error(`getDataViewLabel: ${someDataView} not handled`);
-  // }
 }

@@ -10,7 +10,11 @@ export const musicViews: Array<MusicView> = [
     viewFilter: "musicStyles:hip-hop",
   },
   {
-    viewName: "performance",
+    viewName: "jazz",
+    viewFilter: "musicStyles:jazz",
+  },
+  {
+    viewName: "in the now",
     viewFilter: "recordingContext:live OR recordingContext:concert",
   },
 ];

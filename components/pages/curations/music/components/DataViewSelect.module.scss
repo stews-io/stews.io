@@ -1,12 +1,16 @@
 @import 'styles/websiteTheme.scss';
 
 .selectButton {
+  max-width: 240px;
+  border-bottom-style: solid;
+  border-bottom-width: 1.5px;
+  border-bottom-color: black;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-inline: $spacer / 2;
   padding-block: $spacer / 4;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .buttonLabel {
@@ -14,24 +18,32 @@
   font-style: italic;
   font-weight: 600;
   font-size: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-right: $spacer + $spacer / 4;
 }
 
-.buttonArrow {
-  padding-inline-start: $spacer;
+.iconContainer {
+  display: flex;
+}
+
+.buttonArrow {  
   width: 16px;
-  height: 16px;
+  height: 16px;  
 }
 
 .selectMenuContainer {
+  max-width: 240px;
   z-index: 1;
   border-style: solid;
   border-color: black;
   border-width: 1.5px;
-  border-radius: $borderRadius;;
+  border-radius: $borderRadius;
   background-color: white;
   display: flex;
   flex-direction: column;  
-  padding-bottom: $spacer;
+  padding-bottom: $spacer;  
 }
 
 .selectMenuItem {
@@ -56,11 +68,22 @@
   font-size: 30px;  
 }
 
+.itemText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  padding-right: 1px 
+}
+
 .itemSelected {
   font-style: italic;
 
   .itemCheck {
     font-style: normal;
     visibility: visible;
+  }
+
+  .itemText {
+    padding-right: 3px
   }
 }
