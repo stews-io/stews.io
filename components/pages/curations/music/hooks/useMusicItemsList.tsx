@@ -54,7 +54,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
             return itemB.musicYear - itemA.musicYear;
         }
       });
-    const pageSize = 10;
+    const pageSize = 8;
     const pageCount = Math.ceil(filteredMusicItems.length / pageSize) || 1;
     const _pageIndex =
       pageState.pageIndex > 0 && pageState.pageIndex <= pageCount

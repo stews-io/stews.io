@@ -35,6 +35,7 @@
 
 .selectMenuContainer {
   max-width: 240px;
+  max-height: 232px;
   z-index: 1;
   border-style: solid;
   border-color: black;
@@ -44,6 +45,7 @@
   display: flex;
   flex-direction: column;  
   padding-bottom: $spacer;  
+  overflow-y: scroll;
 }
 
 .selectMenuItem {
@@ -52,7 +54,7 @@
   flex-direction: row;
   align-items: center;
   padding-inline-start: $spacer;
-  padding-inline-end: $spacer + $spacer / 2;  
+  padding-inline-end: 3 * $spacer;  
   font-weight: 600;
   font-size: 24px;
   cursor: pointer;
