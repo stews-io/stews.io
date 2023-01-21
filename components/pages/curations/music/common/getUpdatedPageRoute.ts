@@ -11,6 +11,10 @@ export function getUpdatedPageRoute(api: GetUpdatedPageRouteApi) {
   return encodeURI(
     `${pageState.pageRoute}?pageIndex=${
       stateUpdates.pageIndex || pageState.pageIndex
+    }&dataView=${
+      stateUpdates.dataView !== undefined
+        ? stateUpdates.dataView
+        : pageState.dataView
     }&sortOrder=${
       stateUpdates.sortOrder !== undefined
         ? stateUpdates.sortOrder

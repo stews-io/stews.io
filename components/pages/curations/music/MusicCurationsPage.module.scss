@@ -11,6 +11,12 @@
   padding: $spacer * 3 / 2;
 }
 
+.dataViewSelectContainer {
+  display: flex;
+  flex-direction: row;
+  padding-block-end: $spacer + $spacer;  
+}
+
 .sortOrderSelectContainer {
   display: flex;
   flex-direction: row-reverse;
