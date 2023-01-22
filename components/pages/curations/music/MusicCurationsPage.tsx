@@ -57,26 +57,56 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
       pageDescription={"a catalog of awesome music"}
     >
       <div className={styles.itemsFilterContainer}>
-        <div className={styles.dataViewSelectContainer}>
-          <DataViewSelect
-            options={musicViews}
-            value={pageState.dataView}
-            onChange={(nextDataView) => {
-              pageRouter.replace(
-                getUpdatedPageRoute({
-                  pageState,
-                  stateUpdates: {
-                    dataView: nextDataView,
-                    pageIndex: 1,
-                  },
-                }),
-                undefined,
-                {
-                  shallow: true,
-                }
-              );
-            }}
-          />
+        <div className={styles.headerContainer}>
+          <div className={styles.viewSelectContainer}>
+            <DataViewSelect
+              options={musicViews}
+              value={pageState.dataView}
+              onChange={(nextDataView) => {
+                pageRouter.replace(
+                  getUpdatedPageRoute({
+                    pageState,
+                    stateUpdates: {
+                      dataView: nextDataView,
+                      pageIndex: 1,
+                    },
+                  }),
+                  undefined,
+                  {
+                    shallow: true,
+                  }
+                );
+              }}
+            />
+          </div>
+          <div className={styles.infoButtonContainer}>
+            <div tabIndex={0} className={styles.infoButton}>
+              <svg viewBox="0 0 100 100" width={32} height={32}>
+                <circle
+                  cx={50}
+                  cy={50}
+                  r={40}
+                  stroke={"black"}
+                  strokeWidth={6}
+                  fill={"transparent"}
+                />
+                <defs>
+                  <path id={"textBaselinePath"} d={"M32.5,69 L67.5,69"} />
+                </defs>
+                <text>
+                  <textPath
+                    href={"#textBaselinePath"}
+                    style={{
+                      fontSize: 60,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    i
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </div>
         </div>
         <div className={styles.sortOrderSelectContainer}>
           <SortOrderSelect
