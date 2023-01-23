@@ -18,8 +18,8 @@
   flex-direction: column;  
   padding-inline-start: $spacer * 1.125;
   padding-inline-end: $spacer * 0.5;
-  padding-block-start: $spacer / 1.75;
-  padding-block-end: $spacer / 2;
+  padding-block-start: $spacer / 2;
+  padding-block-end: $spacer * 0.75;
 }
 
 .socialIconContainer {
