@@ -8,7 +8,7 @@
 
 .infoDisplayContainer {
   z-index: 1;
-  width: 224px;
+  width: 240px;
   border-style: solid;
   border-color: black;
   border-width: 1.5px;
@@ -19,5 +19,10 @@
   padding-inline-start: $spacer * 1.125;
   padding-inline-end: $spacer * 0.5;
   padding-block-start: $spacer / 1.75;
-  padding-block-end: $spacer;  
+  padding-block-end: $spacer / 2;
 }
+
+.socialIconContainer {
+  padding-inline-end: $spacer * 1.5;
+  cursor: pointer;
+} 
