@@ -1,5 +1,23 @@
+@import 'styles/websiteTheme.scss';
+
 .infoButton {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.infoDisplayContainer {
+  z-index: 1;
+  width: 224px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1.5px;
+  border-radius: $borderRadius;
+  background-color: white;
+  display: flex;
+  flex-direction: column;  
+  padding-inline-start: $spacer * 1.125;
+  padding-inline-end: $spacer;
+  padding-block-start: $spacer / 1.75;
+  padding-block-end: $spacer;  
 }
