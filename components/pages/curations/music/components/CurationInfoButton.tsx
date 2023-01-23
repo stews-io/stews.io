@@ -108,8 +108,8 @@ function CurationInfoDisplay(props: CurationInfoDisplayProps) {
             <div
               style={{
                 flexShrink: 0,
-                height: 22,
-                width: 22,
+                height: 24,
+                width: 24,
                 cursor: "pointer",
               }}
               onClick={() => {
