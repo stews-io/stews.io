@@ -92,12 +92,52 @@ function CurationInfoDisplay(props: CurationInfoDisplayProps) {
           <div
             style={{
               display: "flex",
-              flexDirection: "column",
-              fontWeight: "bold",
-              fontSize: 20,
+              flexDirection: "row",
+              alignItems: "center",
             }}
           >
-            music
+            <div
+              style={{
+                flexGrow: 1,
+                fontWeight: "bold",
+                fontSize: 20,
+              }}
+            >
+              music
+            </div>
+            <div
+              style={{
+                flexShrink: 0,
+                height: 22,
+                width: 22,
+                cursor: "pointer",
+              }}
+              onClick={() => {
+                setInfoDisplay(null);
+              }}
+            >
+              <svg className={styles.clearSearchIcon} viewBox={"0 0 1 1"}>
+                <circle
+                  cx={0.5}
+                  cy={0.5}
+                  r={0.35}
+                  stroke={"black"}
+                  strokeWidth={0.07}
+                  strokeLinejoin={"round"}
+                  strokeLinecap={"round"}
+                  fill={"white"}
+                />
+                <polygon
+                  points={
+                    "0.5,0.5 0.625,0.375, 0.5,0.5 0.625,0.625 0.5,0.5, 0.375,0.625 0.5,0.5, 0.375,0.375 0.5,0.5"
+                  }
+                  stroke={"black"}
+                  strokeWidth={0.07}
+                  strokeLinejoin={"round"}
+                  fill={"white"}
+                />
+              </svg>
+            </div>
           </div>
           <div
             style={
@@ -126,7 +166,7 @@ function CurationInfoDisplay(props: CurationInfoDisplayProps) {
             fontSize: 14,
           }}
         >
-          some of my favorite music that i live my life too
+          some of my favorite music
         </div>
       </div>
     </ClickAwayListener>
