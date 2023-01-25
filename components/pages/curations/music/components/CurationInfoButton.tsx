@@ -133,7 +133,10 @@ function CurationInfoDisplay(props: CurationInfoDisplayProps) {
         <div className={styles.socialIconList}>
           {musicCurator.curatorLinks.map((someCuratorLink) => {
             return (
-              <div className={styles.socialIconContainer}>
+              <div
+                key={someCuratorLink.linkType}
+                className={styles.socialIconContainer}
+              >
                 <a
                   href={someCuratorLink.linkHref}
                   rel={"noreferrer"}
