@@ -22,7 +22,44 @@
   padding-block-end: $spacer * 0.75;
 }
 
+.infoDisplayHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.closeDisplayButton {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.curatorNameText {
+  flex-grow: 1;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.curatorLocationText {
+  padding-top: $spacer / 4;
+  font-size: 14px;
+}
+
+.curatorStatusText {
+  padding-top: $spacer;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14px;  
+}
+
 .socialIconContainer {
   padding-inline-end: $spacer * 1.5;
   cursor: pointer;
 } 
+
+.socialIconList {
+  display: flex;
+  flex-direction: row;
+  padding-top: $spacer * 2;
+}
