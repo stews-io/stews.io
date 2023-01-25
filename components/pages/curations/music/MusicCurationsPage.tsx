@@ -11,6 +11,8 @@ import { usePageState } from "./hooks/usePageState";
 import styles from "./MusicCurationsPage.module.scss";
 import { musicItemDataset } from "./musicItemDataset";
 import { musicViews } from "./musicViews";
+import { CurationInfoButton } from "./components/CurationInfoButton";
+import { ReactNode } from "react";
 
 export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> {
   return {
@@ -26,6 +28,25 @@ export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> 
         },
         ...musicViews,
       ],
+      musicCurator: {
+        curatorName: "clumsycomputer",
+        curatorLocation: "guadalaraja, jalisco",
+        curatorStatus: "just trying to listen and groove",
+        curatorLinks: [
+          {
+            linkType: "website",
+            linkHref: "https://clumsycomputer.com",
+          },
+          {
+            linkType: "github",
+            linkHref: "https://github.com/clumsycomputer",
+          },
+          {
+            linkType: "twitter",
+            linkHref: "https://twitter.com/c1umsyc0mputer",
+          },
+        ],
+      },
     },
   };
 }
@@ -33,12 +54,21 @@ export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> 
 export interface MusicCurationsPageProps {
   musicItems: Array<MusicItem<number>>;
   musicViews: Array<MusicView>;
+  musicCurator: {
+    curatorName: string;
+    curatorLocation: string;
+    curatorStatus: string;
+    curatorLinks: Array<{
+      linkType: "website" | "github" | "twitter";
+      linkHref: string;
+    }>;
+  };
 }
 
 export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   props: MusicCurationsPageProps
 ) => {
-  const { musicItems, musicViews } = props;
+  const { musicItems, musicViews, musicCurator } = props;
   const pageRouter = useRouter();
   const pageState = usePageState({
     musicViews,
@@ -57,26 +87,31 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
       pageDescription={"a catalog of awesome music"}
     >
       <div className={styles.itemsFilterContainer}>
-        <div className={styles.dataViewSelectContainer}>
-          <DataViewSelect
-            options={musicViews}
-            value={pageState.dataView}
-            onChange={(nextDataView) => {
-              pageRouter.replace(
-                getUpdatedPageRoute({
-                  pageState,
-                  stateUpdates: {
-                    dataView: nextDataView,
-                    pageIndex: 1,
-                  },
-                }),
-                undefined,
-                {
-                  shallow: true,
-                }
-              );
-            }}
-          />
+        <div className={styles.headerContainer}>
+          <div className={styles.viewSelectContainer}>
+            <DataViewSelect
+              options={musicViews}
+              value={pageState.dataView}
+              onChange={(nextDataView) => {
+                pageRouter.replace(
+                  getUpdatedPageRoute({
+                    pageState,
+                    stateUpdates: {
+                      dataView: nextDataView,
+                      pageIndex: 1,
+                    },
+                  }),
+                  undefined,
+                  {
+                    shallow: true,
+                  }
+                );
+              }}
+            />
+          </div>
+          <div className={styles.infoButtonContainer}>
+            <CurationInfoButton musicCurator={musicCurator} />
+          </div>
         </div>
         <div className={styles.sortOrderSelectContainer}>
           <SortOrderSelect
