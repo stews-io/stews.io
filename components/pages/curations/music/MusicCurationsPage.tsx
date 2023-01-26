@@ -12,7 +12,6 @@ import styles from "./MusicCurationsPage.module.scss";
 import { musicItemDataset } from "./musicItemDataset";
 import { musicViews } from "./musicViews";
 import { CurationInfoButton } from "./components/CurationInfoButton";
-import { ReactNode } from "react";
 
 export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> {
   return {
@@ -171,6 +170,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
         {musicListItems}
       </div>
       {musicItemsListNavigation}
+      <div className={styles.pageFooterPadding} />
     </Page>
   );
 };
