@@ -32,7 +32,7 @@ export function CurationInfoButton(props: CurationInfoButtonProps) {
           <circle
             cx={12}
             cy={12}
-            r={17}
+            r={18}
             stroke={"black"}
             strokeWidth={2}
             fill={"transparent"}
