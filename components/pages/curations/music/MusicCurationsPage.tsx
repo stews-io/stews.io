@@ -29,7 +29,7 @@ export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> 
       ],
       musicCurator: {
         curatorName: "clumsycomputer",
-        curatorLocation: "guadalaraja, jalisco",
+        curatorLocation: "guadalajara, jalisco",
         curatorStatus: "just trying to listen and groove",
         curatorLinks: [
           {
