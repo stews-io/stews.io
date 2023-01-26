@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://www.clumsycomputer.com",
+  siteUrl: "https://www.curations.clumsycomputer.com",
   generateRobotsTxt: true,
 };

@@ -1,27 +1,35 @@
 import { NextRouter } from "next/router";
 import { useMemo } from "react";
 import { MusicCurationsPageState } from "../common/models";
+import { MusicCurationsPageProps } from "../MusicCurationsPage";
 
-export interface UsePageStateApi {
+export interface UsePageStateApi
+  extends Pick<MusicCurationsPageProps, "musicViews"> {
   pageRouter: NextRouter;
 }
 
 export function usePageState(api: UsePageStateApi) {
-  const { pageRouter } = api;
+  const { pageRouter, musicViews } = api;
+  const pageRoute = pageRouter.route;
+  const routerQueryPageIndex = pageRouter.query["pageIndex"];
+  const routerQuerySearchQuery = pageRouter.query["searchQuery"];
+  const routerQuerySortOrder = pageRouter.query["sortOrder"];
+  const routerQueryDataView = pageRouter.query["dataView"];
   return useMemo<MusicCurationsPageState>(() => {
     return {
+      pageRoute,
       pageIndex:
         parseInt(
-          typeof pageRouter.query["pageIndex"] === "string"
-            ? pageRouter.query["pageIndex"]
+          typeof routerQueryPageIndex === "string"
+            ? routerQueryPageIndex
             : "wtf?"
         ) || 1,
       searchQuery:
-        typeof pageRouter.query["searchQuery"] === "string"
-          ? pageRouter.query["searchQuery"]
+        typeof routerQuerySearchQuery === "string"
+          ? routerQuerySearchQuery
           : "",
       sortOrder:
-        typeof pageRouter.query["sortOrder"] === "string" &&
+        typeof routerQuerySortOrder === "string" &&
         [
           "titleAscending",
           "titleDescending",
@@ -32,12 +40,23 @@ export function usePageState(api: UsePageStateApi) {
         ].reduce((sortOrderValid, someValidSortOrder) => {
           return sortOrderValid
             ? sortOrderValid
-            : someValidSortOrder === pageRouter.query["sortOrder"];
+            : someValidSortOrder === routerQuerySortOrder;
         }, false)
-          ? (pageRouter.query[
-              "sortOrder"
-            ] as MusicCurationsPageState["sortOrder"])
+          ? (routerQuerySortOrder as MusicCurationsPageState["sortOrder"])
           : "titleAscending",
+      dataView:
+        typeof routerQueryDataView === "string" &&
+        musicViews.findIndex(
+          (someMusicView) => someMusicView.viewName === routerQueryDataView
+        ) >= 0
+          ? (routerQueryDataView as MusicCurationsPageState["dataView"])
+          : "all",
     };
-  }, [pageRouter]);
+  }, [
+    pageRoute,
+    routerQueryPageIndex,
+    routerQuerySearchQuery,
+    routerQuerySortOrder,
+    routerQueryDataView,
+  ]);
 }

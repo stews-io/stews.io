@@ -1,39 +1,81 @@
-import { NextPage } from "next";
+import { GetStaticPropsResult, NextPage } from "next";
 import { useRouter } from "next/router";
-import { NavigationFooter } from "../../../common/NavigationFooter/NavigationFooter";
 import { Page } from "../../../common/Page/Page";
 import { getUpdatedPageRoute } from "./common/getUpdatedPageRoute";
-import { MusicItem } from "./common/models";
+import { MusicItem, MusicView } from "./common/models";
 import { SearchQueryInput } from "./components/SearchQueryInput";
 import { SortOrderSelect } from "./components/SortOrderSelect";
+import { DataViewSelect } from "./components/DataViewSelect";
 import { useMusicItemsList } from "./hooks/useMusicItemsList";
 import { usePageState } from "./hooks/usePageState";
 import styles from "./MusicCurationsPage.module.scss";
 import { musicItemDataset } from "./musicItemDataset";
+import { musicViews } from "./musicViews";
+import { CurationInfoButton } from "./components/CurationInfoButton";
 
-export function getStaticProps() {
+export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> {
   return {
     props: {
-      musicItemDataset,
+      musicItems: musicItemDataset.map((someMusicItem) => ({
+        ...someMusicItem,
+        musicYear: parseInt(someMusicItem.musicYear),
+      })),
+      musicViews: [
+        {
+          viewName: "all",
+          viewFilter: "*",
+        },
+        ...musicViews,
+      ],
+      musicCurator: {
+        curatorName: "clumsycomputer",
+        curatorLocation: "guadalajara, jalisco",
+        curatorStatus: "just trying to listen and groove",
+        curatorLinks: [
+          {
+            linkType: "website",
+            linkHref: "https://clumsycomputer.com",
+          },
+          {
+            linkType: "github",
+            linkHref: "https://github.com/clumsycomputer",
+          },
+          {
+            linkType: "twitter",
+            linkHref: "https://twitter.com/c1umsyc0mputer",
+          },
+        ],
+      },
     },
   };
 }
 
 export interface MusicCurationsPageProps {
-  musicItemDataset: Array<MusicItem>;
+  musicItems: Array<MusicItem<number>>;
+  musicViews: Array<MusicView>;
+  musicCurator: {
+    curatorName: string;
+    curatorLocation: string;
+    curatorStatus: string;
+    curatorLinks: Array<{
+      linkType: "website" | "github" | "twitter";
+      linkHref: string;
+    }>;
+  };
 }
 
 export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   props: MusicCurationsPageProps
 ) => {
-  const { musicItemDataset } = props;
+  const { musicItems, musicViews, musicCurator } = props;
   const pageRouter = useRouter();
   const pageState = usePageState({
+    musicViews,
     pageRouter,
   });
   const { musicListItems, musicItemsListNavigation } = useMusicItemsList({
-    musicItemDataset,
-    pageRouter,
+    musicItems,
+    musicViews,
     pageState,
   });
   return (
@@ -43,6 +85,32 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
       pageTabTitle={"+ music - clumsycomputer"}
       pageDescription={"a catalog of awesome music"}
     >
+      <div className={styles.headerContainer}>
+        <div className={styles.viewSelectContainer}>
+          <DataViewSelect
+            options={musicViews}
+            value={pageState.dataView}
+            onChange={(nextDataView) => {
+              pageRouter.replace(
+                getUpdatedPageRoute({
+                  pageState,
+                  stateUpdates: {
+                    dataView: nextDataView,
+                    pageIndex: 1,
+                  },
+                }),
+                undefined,
+                {
+                  shallow: true,
+                }
+              );
+            }}
+          />
+        </div>
+        <div className={styles.infoButtonContainer}>
+          <CurationInfoButton musicCurator={musicCurator} />
+        </div>
+      </div>
       <div className={styles.itemsFilterContainer}>
         <div className={styles.sortOrderSelectContainer}>
           <SortOrderSelect
@@ -50,8 +118,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
             onChange={(nextSortOrder) => {
               pageRouter.replace(
                 getUpdatedPageRoute({
-                  pageRouter,
-                  currentState: pageState,
+                  pageState,
                   stateUpdates: {
                     sortOrder: nextSortOrder,
                     pageIndex: 1,
@@ -70,8 +137,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
           onChange={(someChangeEvent) => {
             pageRouter.replace(
               getUpdatedPageRoute({
-                pageRouter,
-                currentState: pageState,
+                pageState,
                 stateUpdates: {
                   searchQuery: someChangeEvent.currentTarget.value,
                   pageIndex: 1,
@@ -86,8 +152,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
           clearSearchQuery={() => {
             pageRouter.replace(
               getUpdatedPageRoute({
-                pageRouter,
-                currentState: pageState,
+                pageState,
                 stateUpdates: {
                   searchQuery: "",
                   pageIndex: 1,
@@ -105,15 +170,7 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
         {musicListItems}
       </div>
       {musicItemsListNavigation}
-      <NavigationFooter
-        routeLinks={[
-          { routeName: "home", routeHref: "/" },
-          { routeName: "packages", routeHref: "/software/packages" },
-          { routeName: "resume", routeHref: "/software/resume" },
-          { routeName: "graphics", routeHref: "/art/graphics" },
-        ]}
-        pdfLink={null}
-      />
+      <div className={styles.pageFooterPadding} />
     </Page>
   );
 };

@@ -52,7 +52,7 @@ export function ActiveMusicItemsListPageLink(
 ) {
   const { dataPageHref, linkLabel } = props;
   return (
-    <Link href={dataPageHref}>
+    <Link legacyBehavior href={dataPageHref}>
       <a className={styles.activeNavigationLink}>{linkLabel}</a>
     </Link>
   );

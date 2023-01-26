@@ -1,4 +1,4 @@
-import { NextRouter } from "next/router";
+import * as Liqe from "liqe";
 import { useMemo } from "react";
 import { getUpdatedPageRoute } from "../common/getUpdatedPageRoute";
 import {
@@ -11,19 +11,20 @@ import { MusicCurationsPageProps } from "../MusicCurationsPage";
 import { usePageState } from "./usePageState";
 
 export interface UseMusicItemsListApi
-  extends Pick<MusicCurationsPageProps, "musicItemDataset"> {
-  pageRouter: NextRouter;
+  extends Pick<MusicCurationsPageProps, "musicItems" | "musicViews"> {
   pageState: ReturnType<typeof usePageState>;
 }
 
 export function useMusicItemsList(api: UseMusicItemsListApi) {
-  const { musicItemDataset, pageRouter, pageState } = api;
+  const { musicViews, pageState, musicItems } = api;
   return useMemo(() => {
-    const searchQuery =
-      typeof pageRouter.query.searchQuery === "string"
-        ? pageRouter.query.searchQuery
-        : "";
-    const filteredMusicItems = musicItemDataset
+    const selectedMusicView = musicViews.find(
+      (someMusicView) => someMusicView.viewName === pageState.dataView
+    )!;
+    const filteredMusicItems = Liqe.filter(
+      Liqe.parse(selectedMusicView.viewFilter),
+      musicItems
+    )
       .filter((someMusicItem) =>
         `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
           ","
@@ -35,7 +36,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
             : someMusicItem.sourceType
         }${someMusicItem.musicType === "clip" ? " clip" : ""}`}`
           .toLowerCase()
-          .includes(searchQuery.toLowerCase())
+          .includes(pageState.searchQuery.toLowerCase())
       )
       .sort((itemA, itemB) => {
         switch (pageState.sortOrder) {
@@ -48,12 +49,12 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
           case "artistDescending":
             return itemB.musicArtist[0].localeCompare(itemA.musicArtist[0]);
           case "yearAscending":
-            return itemA.musicYear.localeCompare(itemB.musicYear);
+            return itemA.musicYear - itemB.musicYear;
           case "yearDescending":
-            return itemB.musicYear.localeCompare(itemA.musicYear);
+            return itemB.musicYear - itemA.musicYear;
         }
       });
-    const pageSize = 10;
+    const pageSize = 8;
     const pageCount = Math.ceil(filteredMusicItems.length / pageSize) || 1;
     const _pageIndex =
       pageState.pageIndex > 0 && pageState.pageIndex <= pageCount
@@ -96,8 +97,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
               <ActiveMusicItemsListPageLink
                 linkLabel={"prev"}
                 dataPageHref={getUpdatedPageRoute({
-                  pageRouter,
-                  currentState: pageState,
+                  pageState,
                   stateUpdates: {
                     pageIndex: _pageIndex - 1,
                   },
@@ -112,8 +112,7 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
               <ActiveMusicItemsListPageLink
                 linkLabel={"next"}
                 dataPageHref={getUpdatedPageRoute({
-                  pageRouter,
-                  currentState: pageState,
+                  pageState,
                   stateUpdates: {
                     pageIndex: _pageIndex + 1,
                   },
@@ -126,5 +125,5 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
         />
       ),
     };
-  }, [pageRouter, pageState, musicItemDataset]);
+  }, [pageState, musicItems]);
 }
