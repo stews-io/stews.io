@@ -86,33 +86,33 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
       pageTabTitle={"+ music - clumsycomputer"}
       pageDescription={"a catalog of awesome music"}
     >
-      <div className={styles.itemsFilterContainer}>
-        <div className={styles.headerContainer}>
-          <div className={styles.viewSelectContainer}>
-            <DataViewSelect
-              options={musicViews}
-              value={pageState.dataView}
-              onChange={(nextDataView) => {
-                pageRouter.replace(
-                  getUpdatedPageRoute({
-                    pageState,
-                    stateUpdates: {
-                      dataView: nextDataView,
-                      pageIndex: 1,
-                    },
-                  }),
-                  undefined,
-                  {
-                    shallow: true,
-                  }
-                );
-              }}
-            />
-          </div>
-          <div className={styles.infoButtonContainer}>
-            <CurationInfoButton musicCurator={musicCurator} />
-          </div>
+      <div className={styles.headerContainer}>
+        <div className={styles.viewSelectContainer}>
+          <DataViewSelect
+            options={musicViews}
+            value={pageState.dataView}
+            onChange={(nextDataView) => {
+              pageRouter.replace(
+                getUpdatedPageRoute({
+                  pageState,
+                  stateUpdates: {
+                    dataView: nextDataView,
+                    pageIndex: 1,
+                  },
+                }),
+                undefined,
+                {
+                  shallow: true,
+                }
+              );
+            }}
+          />
         </div>
+        <div className={styles.infoButtonContainer}>
+          <CurationInfoButton musicCurator={musicCurator} />
+        </div>
+      </div>
+      <div className={styles.itemsFilterContainer}>
         <div className={styles.sortOrderSelectContainer}>
           <SortOrderSelect
             value={pageState.sortOrder}
