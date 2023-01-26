@@ -5,16 +5,21 @@
   max-width: 512px;
 }
 
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  padding: $spacer * 3 / 2;
+  padding-block-end: $spacer + $spacer;  
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
 .itemsFilterContainer {
   display: flex;
   flex-direction: column;
   padding: $spacer * 3 / 2;
-}
-
-.headerContainer {
-  display: flex;
-  flex-direction: row;
-  padding-block-end: $spacer + $spacer;  
 }
 
 .viewSelectContainer {
