@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;  
   padding-inline-start: $spacer * 1.125;
-  padding-inline-end: $spacer * 0.5625;
+  padding-inline-end: $spacer * 0.625;
   padding-block-start: $spacer * 0.5625;
   padding-block-end: $spacer * 0.75;
 }
@@ -37,7 +37,7 @@
 
 .curatorNameText {
   flex-grow: 1;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 22px;
 }
 
@@ -48,7 +48,7 @@
 
 .curatorStatusText {
   padding-top: $spacer;
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
   font-size: 14px;  
 }
