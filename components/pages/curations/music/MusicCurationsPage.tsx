@@ -12,6 +12,7 @@ import styles from "./MusicCurationsPage.module.scss";
 import { musicItemDataset } from "./musicItemDataset";
 import { musicViews } from "./musicViews";
 import { CurationInfoButton } from "./components/CurationInfoButton";
+import { useEffect } from "react";
 
 export function getStaticProps(): GetStaticPropsResult<MusicCurationsPageProps> {
   return {
@@ -78,6 +79,12 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
     musicViews,
     pageState,
   });
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
+  }, [musicListItems]);
   return (
     <Page
       pageContentContainerClassname={styles.pageContentContainer}

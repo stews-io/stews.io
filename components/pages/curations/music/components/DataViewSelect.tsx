@@ -53,7 +53,7 @@ export function DataViewSelect(props: DataViewSelectProps) {
               stroke={"black"}
               strokeWidth={0.085}
               strokeLinejoin={"round"}
-              fill={"white"}
+              fill={"transparent"}
             />
           </svg>
         </div>
