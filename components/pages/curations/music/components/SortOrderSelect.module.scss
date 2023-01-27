@@ -12,6 +12,8 @@
   padding-inline: $spacer / 2;
   padding-block: $spacer / 4;
   cursor: pointer;
+  // hack for working around safari input shadow padding
+  height: 21px;
 }
 
 .buttonLabel {
