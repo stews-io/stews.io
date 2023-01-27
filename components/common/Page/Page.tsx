@@ -21,7 +21,7 @@ export function Page(props: PageProps) {
     <Fragment>
       <Head>
         <title>{pageTabTitle}</title>
-        <meta name="description" content={pageDescription} />
+        <meta name={"description"} content={pageDescription} />
       </Head>
       <div role={"presentation"} className={pageStyles.pageContainer}>
         <div

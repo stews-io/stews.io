@@ -8,9 +8,9 @@ import { DataViewSelect } from "./components/DataViewSelect";
 import { SearchQueryInput } from "./components/SearchQueryInput";
 import { SortOrderSelect } from "./components/SortOrderSelect";
 import { useMusicItemsList } from "./hooks/useMusicItemsList";
-import styles from "./MusicCurationsPage.module.scss";
 import { musicItemDataset } from "./musicItemDataset";
 import { musicViews } from "./musicViews";
+import styles from "./MusicCurationsPage.module.scss";
 
 export const getServerSideProps: GetServerSideProps<
   MusicCurationsPageProps,
@@ -21,15 +21,16 @@ export const getServerSideProps: GetServerSideProps<
     pageIndex: string;
   }
 > = async (pageServerContext) => {
+  const pageMusicViews = [
+    {
+      viewName: "all",
+      viewFilter: "*",
+    },
+    ...musicViews,
+  ];
   return {
     props: {
-      musicViews: [
-        {
-          viewName: "all",
-          viewFilter: "*",
-        },
-        ...musicViews,
-      ],
+      musicViews: pageMusicViews,
       musicItems: musicItemDataset.map((someMusicItem) => ({
         ...someMusicItem,
         musicYear: parseInt(someMusicItem.musicYear),
@@ -55,7 +56,12 @@ export const getServerSideProps: GetServerSideProps<
       },
       initialPageState: {
         dataView:
-          typeof pageServerContext.query?.dataView === "string"
+          typeof pageServerContext.query?.dataView === "string" &&
+          pageMusicViews.findIndex(
+            (someMusicView) =>
+              someMusicView ===
+              (pageServerContext.query?.dataView as unknown as MusicView)
+          ) >= 0
             ? pageServerContext.query?.dataView
             : "all",
         searchQuery:
@@ -132,9 +138,9 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   return (
     <Page
       pageContentContainerClassname={styles.pageContentContainer}
-      accessibilityLabel={"music curations"}
-      pageTabTitle={"+ music - clumsycomputer"}
-      pageDescription={"a catalog of awesome music"}
+      accessibilityLabel={`musical curations by ${musicCurator.curatorName}`}
+      pageTabTitle={`${musicCurator.curatorName}/music`}
+      pageDescription={`a catalog of awesome music curated by ${musicCurator.curatorName}`}
     >
       <div className={styles.headerContainer}>
         <div className={styles.viewSelectContainer}>
