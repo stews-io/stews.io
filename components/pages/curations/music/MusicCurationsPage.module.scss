@@ -12,8 +12,7 @@
   padding-block-end: $spacer + $spacer;  
   position: sticky;
   top: 0;
-  background-color: rgba($color: #FFFFFF, $alpha: 0.85);
-  backdrop-filter: blur(8px);
+  background-color: white;
   z-index: 1;
 }
 
