@@ -1,5 +1,5 @@
 export interface MusicCurationsPageState {
-  pageRoute: string;
+  // pageRoute: string;
   pageIndex: number;
   dataView: string;
   sortOrder:

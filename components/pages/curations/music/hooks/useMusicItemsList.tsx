@@ -1,6 +1,7 @@
 import * as Liqe from "liqe";
-import { useMemo } from "react";
-import { getUpdatedPageRoute } from "../common/getUpdatedPageRoute";
+import { Dispatch, SetStateAction, useMemo } from "react";
+import { MusicCurationsPageState } from "../common/models";
+// import { getUpdatedPageRoute } from "../common/getUpdatedPageRoute";
 import {
   ActiveMusicItemsListPageLink,
   DisabledMusicItemsListPageLink,
@@ -13,10 +14,11 @@ import { usePageState } from "./usePageState";
 export interface UseMusicItemsListApi
   extends Pick<MusicCurationsPageProps, "musicItems" | "musicViews"> {
   pageState: ReturnType<typeof usePageState>;
+  setPageState: Dispatch<SetStateAction<MusicCurationsPageState>>;
 }
 
 export function useMusicItemsList(api: UseMusicItemsListApi) {
-  const { musicViews, pageState, musicItems } = api;
+  const { musicViews, pageState, musicItems, setPageState } = api;
   return useMemo(() => {
     const selectedMusicView = musicViews.find(
       (someMusicView) => someMusicView.viewName === pageState.dataView
@@ -54,13 +56,13 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
             return itemB.musicYear - itemA.musicYear;
         }
       });
-    const pageSize = 8;
+    const pageSize = 7;
     const pageCount = Math.ceil(filteredMusicItems.length / pageSize) || 1;
-    const _pageIndex =
-      pageState.pageIndex > 0 && pageState.pageIndex <= pageCount
-        ? pageState.pageIndex
-        : 1;
-    const pageIndexStart = pageSize * (_pageIndex - 1);
+    // const _pageIndex =
+    //   pageState.pageIndex > 0 && pageState.pageIndex <= pageCount
+    //     ? pageState.pageIndex
+    //     : 1;
+    const pageIndexStart = pageSize * (pageState.pageIndex - 1);
     const musicItemsListPage = filteredMusicItems.slice(
       pageIndexStart,
       pageIndexStart + pageSize
@@ -90,33 +92,33 @@ export function useMusicItemsList(api: UseMusicItemsListApi) {
         ),
       musicItemsListNavigation: (
         <MusicItemsListNavigation
-          _pageIndex={_pageIndex}
+          pageIndex={pageState.pageIndex}
           pageCount={pageCount}
           previousPageLink={
-            _pageIndex > 1 ? (
+            pageState.pageIndex > 1 ? (
               <ActiveMusicItemsListPageLink
                 linkLabel={"prev"}
-                dataPageHref={getUpdatedPageRoute({
-                  pageState,
-                  stateUpdates: {
-                    pageIndex: _pageIndex - 1,
-                  },
-                })}
+                onClick={() => {
+                  setPageState({
+                    ...pageState,
+                    pageIndex: pageState.pageIndex - 1,
+                  });
+                }}
               />
             ) : (
               <DisabledMusicItemsListPageLink linkLabel={"prev"} />
             )
           }
           nextPageLink={
-            _pageIndex < pageCount ? (
+            pageState.pageIndex < pageCount ? (
               <ActiveMusicItemsListPageLink
                 linkLabel={"next"}
-                dataPageHref={getUpdatedPageRoute({
-                  pageState,
-                  stateUpdates: {
-                    pageIndex: _pageIndex + 1,
-                  },
-                })}
+                onClick={() => {
+                  setPageState({
+                    ...pageState,
+                    pageIndex: pageState.pageIndex + 1,
+                  });
+                }}
               />
             ) : (
               <DisabledMusicItemsListPageLink linkLabel={"next"} />
