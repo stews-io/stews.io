@@ -99,17 +99,24 @@ export const MusicCurationsPage: NextPage<MusicCurationsPageProps> = (
   const [pageState, setPageState] =
     useState<MusicCurationsPageState>(initialPageState);
   useEffect(() => {
-    const nextPageUrl = new URL(
-      `${window.location.origin}${window.location.pathname}`
-    );
-    nextPageUrl.searchParams.append("dataView", pageState.dataView);
-    nextPageUrl.searchParams.append("searchQuery", pageState.searchQuery);
-    nextPageUrl.searchParams.append("sortOrder", pageState.sortOrder);
-    nextPageUrl.searchParams.append("pageIndex", `${pageState.pageIndex}`);
-    pageRouter.replace(nextPageUrl, undefined, {
-      shallow: true,
-    });
-  }, [pageState]);
+    if (
+      pageRouter.query["dataView"] !== pageState.dataView ||
+      pageRouter.query["searchQuery"] !== pageState.searchQuery ||
+      pageRouter.query["sortOrder"] !== pageState.sortOrder ||
+      pageRouter.query["pageIndex"] !== `${pageState.pageIndex}`
+    ) {
+      const nextPageUrl = new URL(
+        `${window.location.origin}${window.location.pathname}`
+      );
+      nextPageUrl.searchParams.append("dataView", pageState.dataView);
+      nextPageUrl.searchParams.append("searchQuery", pageState.searchQuery);
+      nextPageUrl.searchParams.append("sortOrder", pageState.sortOrder);
+      nextPageUrl.searchParams.append("pageIndex", `${pageState.pageIndex}`);
+      pageRouter.replace(nextPageUrl, undefined, {
+        shallow: true,
+      });
+    }
+  }, [pageRouter, pageState]);
   const { musicListItems, musicItemsListNavigation } = useMusicItemsList({
     musicViews,
     musicItems,

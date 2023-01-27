@@ -1,7 +1,6 @@
 import * as Liqe from "liqe";
 import { Dispatch, SetStateAction, useMemo } from "react";
 import { MusicCurationsPageState } from "../common/models";
-// import { getUpdatedPageRoute } from "../common/getUpdatedPageRoute";
 import {
   ActiveMusicItemsListPageLink,
   DisabledMusicItemsListPageLink,
@@ -9,11 +8,10 @@ import {
 } from "../components/MusicItemsListNavigation";
 import { EmptyListItem, MusicListItem } from "../components/MusicListItem";
 import { MusicCurationsPageProps } from "../MusicCurationsPage";
-import { usePageState } from "./usePageState";
 
 export interface UseMusicItemsListApi
   extends Pick<MusicCurationsPageProps, "musicItems" | "musicViews"> {
-  pageState: ReturnType<typeof usePageState>;
+  pageState: MusicCurationsPageState;
   setPageState: Dispatch<SetStateAction<MusicCurationsPageState>>;
 }
 
