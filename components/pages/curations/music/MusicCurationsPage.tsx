@@ -59,8 +59,8 @@ export const getServerSideProps: GetServerSideProps<
           typeof pageServerContext.query?.dataView === "string" &&
           pageMusicViews.findIndex(
             (someMusicView) =>
-              someMusicView ===
-              (pageServerContext.query?.dataView as unknown as MusicView)
+              someMusicView.viewName ===
+              (pageServerContext.query?.dataView as string)
           ) >= 0
             ? pageServerContext.query?.dataView
             : "all",
