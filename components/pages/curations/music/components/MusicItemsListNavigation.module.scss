@@ -21,6 +21,8 @@
 
 .activeNavigationLink {
   @extend .navigationLink;  
+  cursor: pointer;
+  color: $linkPurple;
 }
 
 .disabledNavigationLink {
@@ -31,6 +33,9 @@
 
 .navigationLink {
   @extend .navigationText;
+  background-color: white;
+  border: none;
+  padding: 0;
 }
 
 .navigationText {

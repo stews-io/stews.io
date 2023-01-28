@@ -1,16 +1,17 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { MusicCurationsPageState } from "../common/models";
 import styles from "./MusicItemsListNavigation.module.scss";
 
-export interface MusicItemsListNavigationProps {
-  _pageIndex: number;
+export interface MusicItemsListNavigationProps
+  extends Pick<MusicCurationsPageState, "pageIndex"> {
   pageCount: number;
   previousPageLink: ReactNode;
   nextPageLink: ReactNode;
 }
 
 export function MusicItemsListNavigation(props: MusicItemsListNavigationProps) {
-  const { previousPageLink, _pageIndex, pageCount, nextPageLink } = props;
+  const { previousPageLink, pageIndex, pageCount, nextPageLink } = props;
 
   return (
     <div
@@ -31,10 +32,10 @@ export function MusicItemsListNavigation(props: MusicItemsListNavigationProps) {
           role={"meter"}
           aria-valuemin={1}
           aria-valuemax={pageCount}
-          aria-valuenow={_pageIndex}
+          aria-valuenow={pageIndex}
           aria-labelledby={"musicItemsListPageLabel"}
         >
-          {`${_pageIndex} / ${pageCount}`}
+          {`${pageIndex} / ${pageCount}`}
         </div>
       </div>
       {nextPageLink}
@@ -43,18 +44,21 @@ export function MusicItemsListNavigation(props: MusicItemsListNavigationProps) {
 }
 
 export interface ActiveMusicItemsListPageLinkProps
-  extends MusicItemsListPageLinkPropsBase {
-  dataPageHref: string;
-}
+  extends MusicItemsListPageLinkPropsBase,
+    Required<Pick<JSX.IntrinsicElements["button"], "onClick">> {}
 
 export function ActiveMusicItemsListPageLink(
   props: ActiveMusicItemsListPageLinkProps
 ) {
-  const { dataPageHref, linkLabel } = props;
+  const { linkLabel, onClick } = props;
   return (
-    <Link legacyBehavior href={dataPageHref}>
-      <a className={styles.activeNavigationLink}>{linkLabel}</a>
-    </Link>
+    <button
+      className={styles.activeNavigationLink}
+      tabIndex={0}
+      onClick={onClick}
+    >
+      {linkLabel}
+    </button>
   );
 }
 
