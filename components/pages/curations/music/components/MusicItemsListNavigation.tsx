@@ -45,16 +45,20 @@ export function MusicItemsListNavigation(props: MusicItemsListNavigationProps) {
 
 export interface ActiveMusicItemsListPageLinkProps
   extends MusicItemsListPageLinkPropsBase,
-    Required<Pick<JSX.IntrinsicElements["div"], "onClick">> {}
+    Required<Pick<JSX.IntrinsicElements["button"], "onClick">> {}
 
 export function ActiveMusicItemsListPageLink(
   props: ActiveMusicItemsListPageLinkProps
 ) {
   const { linkLabel, onClick } = props;
   return (
-    <div className={styles.activeNavigationLink} tabIndex={0} onClick={onClick}>
+    <button
+      className={styles.activeNavigationLink}
+      tabIndex={0}
+      onClick={onClick}
+    >
       {linkLabel}
-    </div>
+    </button>
   );
 }
 
