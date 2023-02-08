@@ -1,0 +1,32 @@
+$spacer: 8px;
+
+$backgroundColor: #FFFFFF;
+$textBackgroundGrey: #EEEEEE;
+$disabledGrey: #AAAAAA;
+$buttonPurple: #5E35B1;
+$outlineColor: #2196f3;
+
+$fontFamily: 'Red Hat Mono', monospace;
+$lineHeight:  1.3;
+
+$defaultOutline: solid 3px $outlineColor;
+$defaultOutlineOffset: 2.5px;
+
+.bordered {
+  border-style: solid;
+  border-color: black;
+  border-width: 1.5px;
+  border-radius: 4px;
+}
+
+.textEllipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.outlinable {  
+  outline: $defaultOutline;
+  outline-offset: $defaultOutlineOffset;
+}
+

@@ -1,0 +1,45 @@
+/* bring in normalize.css styles */
+@import-normalize;
+@import "@stews/styles/theme";
+
+body {
+  margin: 0;
+  font-family: $fontFamily;
+  line-height: $lineHeight;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;  
+  font-family: $fontFamily;  
+  line-height: $lineHeight;
+  color: black;
+  cursor: pointer;
+}
+
+a {
+  color: $buttonPurple;
+
+  &:visited {
+    color: $buttonPurple,
+  }
+}
+
+*:focus {
+  outline: $defaultOutline;
+  outline-offset: $defaultOutlineOffset;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button {
+  &:focus-visible {
+    @extend .outlinable;
+  }
+}
