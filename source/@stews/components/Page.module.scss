@@ -1,0 +1,11 @@
+@import "@stews/styles/layout";
+
+.pageContainer {
+  @extend .itemContainer;
+}
+
+.pageContent {
+  @extend .columnContainer;
+  max-width: 512px;
+  flex-basis: 100%;
+}

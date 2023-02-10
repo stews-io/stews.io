@@ -1,13 +1,29 @@
-.columnContainer {
-  display: flex;
-  flex-direction: column;
-}
-
-.rowContainer {
+.flexContainer {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.flexChild {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
 }
 
 .itemContainer {
-  display: flex;
+  @extend .flexContainer;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowContainer {
+  @extend .flexContainer;
+  flex-direction: row;
+}
+
+.columnContainer {
+  @extend .flexContainer;
+  flex-direction: column;
 }

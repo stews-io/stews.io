@@ -1,0 +1,8 @@
+@import "@stews/styles/layout";
+
+.pageHeader {
+  @extend .rowContainer;
+  z-index: 1;
+  position: sticky;
+  top: 0;
+}
