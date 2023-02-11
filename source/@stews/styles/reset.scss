@@ -5,3 +5,19 @@ body {
   @extend .defaultBoxModel;
   @extend .defaultFont;
 }
+
+div {
+  @extend .defaultBoxModel;
+  @extend .defaultLayout;
+  @extend .defaultFont;
+}
+
+button {
+  @extend .defaultBoxModel;  
+  @extend .defaultLayout;
+  @extend .defaultFont;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;  
+}

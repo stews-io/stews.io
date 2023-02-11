@@ -1,0 +1,7 @@
+@import "@stews/styles/theme";
+
+.popoverContainer {
+  @extend .themeBorder;
+  background-color: $themeBackgroundColor;
+  touch-action: none;
+}
