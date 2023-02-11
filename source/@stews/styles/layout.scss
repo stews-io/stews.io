@@ -27,3 +27,10 @@
   @extend .flexContainer;
   flex-direction: column;
 }
+
+.textEllipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

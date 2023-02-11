@@ -1,22 +1,18 @@
 @import "@stews/styles/layout";
 
-$spacer: 8px;
+$themeSpacer: 8px;
 
-$backgroundColor: #FFFFFF;
-$textBackgroundGrey: #EEEEEE;
-$disabledGrey: #AAAAAA;
-$buttonPurple: #5E35B1;
-$outlineColor: #2196f3;
+$themeBackgroundColor: #FFFFFF;
+$themeTextBackgroundColor: #EEEEEE;
+$themeDisabledColor: #AAAAAA;
+$themeButtonTextColor: #5E35B1;
+$themeOutlineColor: #2196f3;
 
-$fontFamily: 'Red Hat Mono', monospace;
-$lineHeight:  1.3;
+$themeBorder: 1.5px solid black;
+$themeBorderRadius: 4px;
 
-$border: 1.5px solid black;
-$borderRadius: 4px;
-
-$outline: solid 3px $outlineColor;
-$outlineOffset: 2.5px;
-
+$themeOutline: solid 3px $themeOutlineColor;
+$themeOutlineOffset: 2.5px;
 
 .defaultBoxModel {
   box-sizing: border-box;
@@ -31,27 +27,21 @@ $outlineOffset: 2.5px;
 }
 
 .defaultFont {
-  font-family: $fontFamily;
-  line-height: $lineHeight;
+  font-family: 'Red Hat Mono', monospace;
+  line-height: 1.3;
   color: black;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;  
 }
 
-.border {
-  border: $border;
-  border-radius: $borderRadius;
+.themeBorder {
+  border: $themeBorder;
+  border-radius: $themeBorderRadius;
 }
 
-.outline {  
-  outline: $outline;
-  outline-offset: $outlineOffset;
+.themeOutline {  
+  outline: $themeOutline;
+  outline-offset: $themeOutlineOffset;
 }
 
-.textEllipsis {
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}

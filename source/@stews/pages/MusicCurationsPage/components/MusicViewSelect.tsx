@@ -12,11 +12,8 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
         <Div className={cssModule.buttonIconContainer}>
           <svg className={cssModule.buttonIcon} viewBox={'0 0 1 1'}>
             <polygon
+              className={cssModule.dropdownPolygon}
               points={'0.2,0.375 0.8,0.375 0.5,0.775'}
-              stroke={'black'}
-              strokeWidth={0.085}
-              strokeLinejoin={'round'}
-              fill={'transparent'}
             />
           </svg>
         </Div>
