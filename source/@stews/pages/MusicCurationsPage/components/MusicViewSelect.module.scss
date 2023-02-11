@@ -1,0 +1,35 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.buttonContainer {
+  @extend .columnContainer;
+  width: 0;
+  flex-grow: 1;
+  max-width: fit-content;
+  align-items: stretch;
+  border-bottom: $border;
+}
+
+.selectButton {
+  @extend .rowContainer;
+  align-items: center;
+  padding-inline: $spacer / 2;
+}
+
+.buttonLabel {
+  @extend .textEllipsis;
+  max-width: 232px;
+  padding-inline-end: calc(5 / 4) * $spacer;
+  font-weight: 700;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.buttonIconContainer {
+  @extend .itemContainer;
+}
+
+.buttonIcon {
+  width: 16px;
+  height: 16px;
+}

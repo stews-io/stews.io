@@ -1,9 +1,18 @@
 @import "@stews/styles/layout";
+@import "@stews/styles/theme";
 
 .divBase {
-  @extend .flexContainer;
-  @extend .flexChild;
-  padding: 0;
-  margin: 0;
-  border: none;
+  @extend .defaultBoxModel;
+  @extend .defaultLayout;
+  @extend .defaultFont;
+}
+
+.buttonBase {  
+  @extend .defaultBoxModel;  
+  @extend .defaultLayout;
+  @extend .defaultFont;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;  
 }
