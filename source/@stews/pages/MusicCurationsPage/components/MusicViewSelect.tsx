@@ -37,10 +37,12 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
       >
         <div
           style={{
-            width: 64,
+            width: 512,
             height: 1028,
           }}
-        ></div>
+        >
+          howdy, popover
+        </div>
       </Popover>
     </Fragment>
   )

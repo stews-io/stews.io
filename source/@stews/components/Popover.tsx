@@ -6,6 +6,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useState,
 } from 'preact/hooks'
 import { PageContext } from './Page'
 import cssModule from './Popover.module.scss'
@@ -18,6 +19,7 @@ export interface PopoverProps extends Pick<ComponentProps<'div'>, 'children'> {
 
 export function Popover(props: PopoverProps) {
   const { setPopoverOpen, anchorRef, children, popoverOpen } = props
+  const [resizeToggle, setResizeToggle] = useState(false)
   const popoverRef = useRef<HTMLDivElement>(null)
   const closePopover = useMemo(() => () => setPopoverOpen(false), [])
   const pointerStateRef = useRef({
@@ -56,7 +58,7 @@ export function Popover(props: PopoverProps) {
         }
       }
       const windowResizeHandler = () => {
-        closePopover()
+        setResizeToggle((currentResizeToggle) => !currentResizeToggle)
       }
       popoverElement.addEventListener(
         'pointerenter',
@@ -91,7 +93,6 @@ export function Popover(props: PopoverProps) {
     const maxPopoverPadding = 16
     const pageContentBoundingClientRect =
       pageContentRef.current?.getBoundingClientRect()
-    console.log(pageContentRef.current)
     return {
       visibility: popoverOpen ? 'visible' : 'hidden',
       position: 'absolute',
@@ -105,7 +106,7 @@ export function Popover(props: PopoverProps) {
           maxPopoverPadding
         : undefined,
     }
-  }, [popoverOpen])
+  }, [popoverOpen, resizeToggle])
   return (
     <div
       ref={popoverRef}
