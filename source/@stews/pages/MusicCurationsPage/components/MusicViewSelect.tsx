@@ -33,9 +33,7 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
       <Popover
         anchorRef={buttonRef}
         popoverOpen={popoverOpen}
-        closePopover={() => {
-          setPopoverOpen(false)
-        }}
+        setPopoverOpen={setPopoverOpen}
       >
         <div
           style={{

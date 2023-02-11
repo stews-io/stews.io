@@ -1,11 +1,11 @@
 import { ComponentProps } from 'preact'
 import {
   Ref,
+  StateUpdater,
   useContext,
   useEffect,
   useMemo,
   useRef,
-  useState,
 } from 'preact/hooks'
 import { PageContext } from './Page'
 import cssModule from './Popover.module.scss'
@@ -13,19 +13,18 @@ import cssModule from './Popover.module.scss'
 export interface PopoverProps extends Pick<ComponentProps<'div'>, 'children'> {
   anchorRef: Ref<HTMLButtonElement>
   popoverOpen: boolean
-  closePopover: () => void
+  setPopoverOpen: StateUpdater<boolean>
 }
 
 export function Popover(props: PopoverProps) {
-  const { anchorRef, children, popoverOpen, closePopover } = props
-  const pageContentRef = useContext(PageContext)
-  const [resizeToggle, setResizeToggle] = useState(false)
-  const popperRef = useRef<HTMLDivElement>(null)
+  const { setPopoverOpen, anchorRef, children, popoverOpen } = props
+  const popoverRef = useRef<HTMLDivElement>(null)
+  const closePopover = useMemo(() => () => setPopoverOpen(false), [])
   const pointerStateRef = useRef({
     pointerWithin: true,
   })
   useEffect(() => {
-    const popoverElement = popperRef.current
+    const popoverElement = popoverRef.current
     if (popoverElement) {
       const popoverPointerEnterHandler = (somePointerEvent: PointerEvent) => {
         if (somePointerEvent.pointerType === 'mouse') {
@@ -57,7 +56,7 @@ export function Popover(props: PopoverProps) {
         }
       }
       const windowResizeHandler = () => {
-        setResizeToggle((currentResizeToggle) => !currentResizeToggle)
+        closePopover()
       }
       popoverElement.addEventListener(
         'pointerenter',
@@ -87,10 +86,12 @@ export function Popover(props: PopoverProps) {
       throw new Error('invalid path reached: "popoverRef.current" is null')
     }
   }, [])
+  const pageContentRef = useContext(PageContext)
   const popoverLayoutStyle = useMemo(() => {
     const maxPopoverPadding = 16
     const pageContentBoundingClientRect =
       pageContentRef.current?.getBoundingClientRect()
+    console.log(pageContentRef.current)
     return {
       visibility: popoverOpen ? 'visible' : 'hidden',
       position: 'absolute',
@@ -104,10 +105,10 @@ export function Popover(props: PopoverProps) {
           maxPopoverPadding
         : undefined,
     }
-  }, [popoverOpen, resizeToggle])
+  }, [popoverOpen])
   return (
     <div
-      ref={popperRef}
+      ref={popoverRef}
       className={cssModule.popoverContainer}
       style={popoverLayoutStyle}
     >
