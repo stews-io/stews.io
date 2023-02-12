@@ -1,4 +1,5 @@
 import { Popover } from '@stews/components/Popover'
+import { ComponentProps } from 'preact'
 import { Ref, StateUpdater, useEffect, useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { MusicView } from '../data'
@@ -69,82 +70,126 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
   const {
     anchorRef,
     popoverOpen,
-    musicViews,
-    selectMusicView,
     setPopoverOpen,
+    selectMusicView,
+    musicViews,
   } = props
-  const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
-  const listItemsRef = useRef<Array<HTMLDivElement>>([])
-  useEffect(() => {
-    setFocusedViewIndex(popoverOpen ? 0 : null)
-  }, [popoverOpen])
-  useEffect(() => {
-    if (focusedViewIndex === null) {
-      setPopoverOpen(false)
-    } else {
-      listItemsRef.current[focusedViewIndex]!.focus()
-    }
-  }, [focusedViewIndex])
+  const { getMenuProps, getListItemProps } = useSelectManager({
+    anchorRef,
+    popoverOpen,
+    setPopoverOpen,
+    selectMusicView,
+  })
   return (
-    <div
-      className={cssModule.selectMenu}
-      onKeyDown={(someKeyDownEvent) => {
-        const listLength = listItemsRef.current.length
-        if (focusedViewIndex === null) {
-          throw new Error('invalid path reached: ViewSelectMenu.onKeyDown')
-        } else if (someKeyDownEvent.key === 'ArrowDown') {
-          setFocusedViewIndex((focusedViewIndex + 1) % listLength)
-        } else if (someKeyDownEvent.key === 'ArrowUp') {
-          setFocusedViewIndex(
-            (((focusedViewIndex - 1) % listLength) + listLength) % listLength
-          )
-        } else if (someKeyDownEvent.key === 'Escape') {
-          anchorRef.current?.focus()
-          setFocusedViewIndex(null)
-        }
-      }}
-      onfocusout={(someFocusEvent) => {
-        const siblingIndex = listItemsRef.current.find(
-          (someListItem) => someListItem === someFocusEvent.relatedTarget
-        )
-        if (siblingIndex === undefined) {
-          if (someFocusEvent.relatedTarget) {
-            // not click away
-            anchorRef.current?.focus()
-          }
-          setFocusedViewIndex(null)
-        }
-      }}
-    >
+    <div className={cssModule.selectMenu} {...getMenuProps()}>
       {musicViews.map((someMusicView, musicViewIndex) => (
         <div
-          tabIndex={-1}
-          className={cssModule.menuItem}
           key={someMusicView.viewId}
-          ref={(listItemElement) => {
-            listItemsRef.current[musicViewIndex] = listItemElement!
-          }}
-          onClick={() => {
-            setFocusedViewIndex(null)
-            selectMusicView(someMusicView)
-            setPopoverOpen(false)
-          }}
-          onKeyDown={(someKeyDownEvent) => {
-            if (someKeyDownEvent.key === 'Enter') {
-              anchorRef.current?.focus()
-              selectMusicView(someMusicView)
-              setPopoverOpen(false)
-            }
-          }}
-          onMouseOver={() => {
-            if (focusedViewIndex !== musicViewIndex) {
-              setFocusedViewIndex(musicViewIndex)
-            }
-          }}
+          className={cssModule.menuItem}
+          {...getListItemProps(someMusicView, musicViewIndex)}
         >
           <div className={cssModule.itemLabel}>{someMusicView.viewLabel}</div>
         </div>
       ))}
     </div>
   )
+}
+
+interface UseSelectManagerApi
+  extends Pick<
+    ViewSelectMenuProps,
+    'popoverOpen' | 'setPopoverOpen' | 'anchorRef' | 'selectMusicView'
+  > {}
+
+interface UseSelectManagerResult {
+  getMenuProps: () => Pick<ComponentProps<'div'>, 'onKeyDown' | 'onfocusout'>
+  getListItemProps: (
+    someMusicView: MusicView,
+    musicViewIndex: number
+  ) => Pick<ComponentProps<'div'>, 'onClick' | 'onKeyDown' | 'onMouseOver'>
+}
+
+function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
+  const { popoverOpen, setPopoverOpen, anchorRef, selectMusicView } = api
+  const listItemsRef = useRef<Array<HTMLDivElement>>([])
+  const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
+  useEffect(() => {
+    if (popoverOpen) {
+      setFocusedViewIndex(0)
+    }
+  }, [popoverOpen])
+  useEffect(() => {
+    if (typeof focusedViewIndex === 'number') {
+      listItemsRef.current[focusedViewIndex]!.focus()
+    } else if (focusedViewIndex === null) {
+      setPopoverOpen(false)
+    }
+  }, [focusedViewIndex])
+  return {
+    getMenuProps: () => {
+      return {
+        onKeyDown: (someKeyDownEvent) => {
+          const listLength = listItemsRef.current.length
+          if (focusedViewIndex === null) {
+            throw new Error('invalid path reached: ViewSelectMenu.onKeyDown')
+          } else if (someKeyDownEvent.key === 'ArrowDown') {
+            const nextFocusedViewIndex = (focusedViewIndex + 1) % listLength
+            setFocusedViewIndex(nextFocusedViewIndex)
+          } else if (someKeyDownEvent.key === 'ArrowUp') {
+            const nextFocusedViewIndex =
+              (((focusedViewIndex - 1) % listLength) + listLength) % listLength
+            setFocusedViewIndex(nextFocusedViewIndex)
+          } else if (someKeyDownEvent.key === 'Escape') {
+            anchorRef.current?.focus()
+            /// onfocusout key exit handler will set
+            /// setFocusedViewIndex(null)
+          }
+        },
+        onfocusout: (someFocusEvent) => {
+          const siblingIndex = listItemsRef.current.find(
+            (someListItem) => someListItem === someFocusEvent.relatedTarget
+          )
+          if (siblingIndex === undefined && someFocusEvent.relatedTarget) {
+            // key escape (tab & esc)
+            anchorRef.current?.focus()
+            setFocusedViewIndex(null)
+          } else if (siblingIndex === undefined) {
+            // click escape
+            setFocusedViewIndex(null)
+          } else {
+            // focused view index change (arrow down, arrow up, mouse over)
+          }
+        },
+      }
+    },
+    getListItemProps: (someMusicView: MusicView, musicViewIndex: number) => {
+      return {
+        tabIndex: -1,
+        ref: (listItemElement: HTMLDivElement) => {
+          listItemsRef.current[musicViewIndex] = listItemElement!
+        },
+        onMouseOver: () => {
+          if (focusedViewIndex !== musicViewIndex) {
+            setFocusedViewIndex(musicViewIndex)
+          }
+        },
+        onClick: () => {
+          /// prevents "focusedViewIndex === null" in onKeyDown case
+          /// when user tabs after click select
+          anchorRef.current?.focus()
+          anchorRef.current?.blur()
+          ///
+          selectMusicView(someMusicView)
+          setFocusedViewIndex(null)
+        },
+        onKeyDown: (someKeyDownEvent) => {
+          if (someKeyDownEvent.key === 'Enter') {
+            anchorRef.current?.focus()
+            selectMusicView(someMusicView)
+            setFocusedViewIndex(null)
+          }
+        },
+      }
+    },
+  }
 }
