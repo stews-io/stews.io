@@ -91,7 +91,7 @@ export function Popover(props: PopoverProps) {
     const pageContentClientRect =
       pageContentRef.current?.getBoundingClientRect()
     const anchorClientRect = anchorRef.current?.getBoundingClientRect()
-    if (pageContentClientRect && anchorClientRect) {
+    if (pageContentClientRect && anchorClientRect && popoverOpen) {
       const maxPopoverPadding = 24
       const pageMiddleX =
         pageContentClientRect.x + pageContentClientRect.width / 2
@@ -99,7 +99,6 @@ export function Popover(props: PopoverProps) {
       const popoverDirection: 'left' | 'right' =
         anchorMiddleX > pageMiddleX ? 'left' : 'right'
       return {
-        visibility: popoverOpen ? 'visible' : 'hidden',
         position: 'absolute',
         top: anchorClientRect.y,
         maxHeight: window.innerHeight - maxPopoverPadding,
@@ -120,8 +119,9 @@ export function Popover(props: PopoverProps) {
       }
     } else {
       return {
-        visibility: 'hidden',
-        position: 'absolute',
+        display: 'none',
+        width: 0,
+        height: 0,
       }
     }
   }, [popoverOpen])

@@ -108,7 +108,10 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
           (someListItem) => someListItem === someFocusEvent.relatedTarget
         )
         if (siblingIndex === undefined) {
-          anchorRef.current?.focus()
+          if (someFocusEvent.relatedTarget) {
+            // not click away
+            anchorRef.current?.focus()
+          }
           setFocusedViewIndex(null)
         }
       }}
@@ -122,6 +125,7 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
             listItemsRef.current[musicViewIndex] = listItemElement!
           }}
           onClick={() => {
+            setFocusedViewIndex(null)
             selectMusicView(someMusicView)
             setPopoverOpen(false)
           }}
