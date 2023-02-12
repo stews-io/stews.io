@@ -40,3 +40,22 @@
   stroke-linejoin: round;
   fill: transparent;
 }
+
+.selectMenu {
+  @extend .columnContainer;
+}
+
+.menuItem {
+  @extend .rowContainer;
+  cursor: pointer;
+  
+  &:focus-within {
+    background-color: $themeTextBackgroundColor;
+  }
+}
+
+.itemLabel {
+  @extend .textEllipsis;
+  font-size: 24px;
+  font-weight: 700;
+}

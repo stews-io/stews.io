@@ -15,7 +15,7 @@ export function Page(props: PageProps) {
   const pageContentRef = useRef<HTMLDivElement>(null)
   return (
     <div className={cssModule.pageContainer}>
-      <div ref={pageContentRef} role={'main'} className={cssModule.pageContent}>
+      <div role={'main'} className={cssModule.pageContent} ref={pageContentRef}>
         <PageContext.Provider value={pageContentRef}>
           {children}
         </PageContext.Provider>

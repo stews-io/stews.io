@@ -2,6 +2,7 @@
 
 .popoverContainer {
   @extend .themeBorder;
-  background-color: $themeBackgroundColor;
+  overflow: hidden;
   touch-action: none;
+  background-color: $themeBackgroundColor;
 }

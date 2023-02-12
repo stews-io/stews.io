@@ -88,7 +88,7 @@ export function Popover(props: PopoverProps) {
   }, [])
   const pageContentRef = useContext(PageContext)
   const popoverLayoutStyle = useMemo(() => {
-    const maxPopoverPadding = 16
+    const maxPopoverPadding = 24
     const pageContentBoundingClientRect =
       pageContentRef.current?.getBoundingClientRect()
     return {
@@ -96,12 +96,9 @@ export function Popover(props: PopoverProps) {
       position: 'absolute',
       left: 0,
       top: 0,
+      maxHeight: window.innerHeight - maxPopoverPadding,
       maxWidth: pageContentBoundingClientRect
         ? pageContentBoundingClientRect.width - maxPopoverPadding
-        : undefined,
-      maxHeight: pageContentBoundingClientRect
-        ? Math.min(pageContentBoundingClientRect.height, window.innerHeight) -
-          maxPopoverPadding
         : undefined,
     }
   }, [popoverOpen])

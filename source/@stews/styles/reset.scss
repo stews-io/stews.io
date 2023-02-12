@@ -10,6 +10,7 @@ div {
   @extend .defaultBoxModel;
   @extend .defaultLayout;
   @extend .defaultFont;
+  outline: none;
 }
 
 button {
@@ -19,5 +20,18 @@ button {
   background: none;
   outline: none;
   cursor: pointer;
-  user-select: none;  
+  user-select: none;
+  
+  &:focus {
+    outline: $themeOutline;
+    outline-offset: $themeOutlineOffset;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    @extend .themeOutline;
+  }
 }
