@@ -12,13 +12,13 @@ export interface MusicViewSelectProps {
 
 export function MusicViewSelect(props: MusicViewSelectProps) {
   const { selectedMusicView, musicViews, selectMusicView } = props
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const anchorRef = useRef<HTMLButtonElement>(null)
   const [popoverOpen, setPopoverOpen] = useState(false)
   return (
     <Fragment>
       <div className={cssModule.buttonContainer}>
         <button
-          ref={buttonRef}
+          ref={anchorRef}
           className={cssModule.selectButton}
           onClick={() => {
             setPopoverOpen(!popoverOpen)
@@ -38,7 +38,7 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
         </button>
       </div>
       <Popover
-        anchorRef={buttonRef}
+        anchorRef={anchorRef}
         popoverOpen={popoverOpen}
         setPopoverOpen={setPopoverOpen}
       >
@@ -48,6 +48,7 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
           selectMusicView={selectMusicView}
           popoverOpen={popoverOpen}
           setPopoverOpen={setPopoverOpen}
+          anchorRef={anchorRef}
         />
       </Popover>
     </Fragment>
@@ -59,12 +60,19 @@ interface ViewSelectMenuProps
     MusicViewSelectProps,
     'musicViews' | 'selectedMusicView' | 'selectMusicView'
   > {
+  anchorRef: Ref<HTMLButtonElement>
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
 }
 
 function ViewSelectMenu(props: ViewSelectMenuProps) {
-  const { popoverOpen, musicViews, selectMusicView, setPopoverOpen } = props
+  const {
+    anchorRef,
+    popoverOpen,
+    musicViews,
+    selectMusicView,
+    setPopoverOpen,
+  } = props
   const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
   const listItemsRef = useRef<Array<HTMLDivElement>>([])
   useEffect(() => {
@@ -72,6 +80,7 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
   }, [popoverOpen])
   useEffect(() => {
     if (focusedViewIndex === null) {
+      anchorRef.current?.focus()
       setPopoverOpen(false)
     } else {
       listItemsRef.current[focusedViewIndex]!.focus()

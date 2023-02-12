@@ -28,6 +28,13 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
       customType: 'filter',
       viewFilter: '',
     },
+    {
+      viewId: 3,
+      viewLabel: 'asldfkajsdlfkjasdflskajdflskjfslkdfjslkjf',
+      viewType: 'custom',
+      customType: 'filter',
+      viewFilter: '',
+    },
   ]
   const [selectedMusicView, setSelectedMusicView] = useState<MusicView>(
     musicViews[0]!
@@ -35,6 +42,14 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
   return (
     <Page>
       <div className={cssModule.pageHeader}>
+        <MusicViewSelect
+          musicViews={musicViews}
+          selectedMusicView={selectedMusicView}
+          selectMusicView={(nextSelectedMusicView) => {
+            setSelectedMusicView(nextSelectedMusicView)
+          }}
+        />
+        <div style={{ flexGrow: 1 }} />
         <MusicViewSelect
           musicViews={musicViews}
           selectedMusicView={selectedMusicView}

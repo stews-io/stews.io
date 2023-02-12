@@ -88,18 +88,41 @@ export function Popover(props: PopoverProps) {
   }, [])
   const pageContentRef = useContext(PageContext)
   const popoverLayoutStyle = useMemo(() => {
-    const maxPopoverPadding = 24
-    const pageContentBoundingClientRect =
+    const pageContentClientRect =
       pageContentRef.current?.getBoundingClientRect()
-    return {
-      visibility: popoverOpen ? 'visible' : 'hidden',
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      maxHeight: window.innerHeight - maxPopoverPadding,
-      maxWidth: pageContentBoundingClientRect
-        ? pageContentBoundingClientRect.width - maxPopoverPadding
-        : undefined,
+    const anchorClientRect = anchorRef.current?.getBoundingClientRect()
+    if (pageContentClientRect && anchorClientRect) {
+      const maxPopoverPadding = 24
+      const pageMiddleX =
+        pageContentClientRect.x + pageContentClientRect.width / 2
+      const anchorMiddleX = anchorClientRect.x + anchorClientRect.width / 2
+      const popoverDirection: 'left' | 'right' =
+        anchorMiddleX > pageMiddleX ? 'left' : 'right'
+      return {
+        visibility: popoverOpen ? 'visible' : 'hidden',
+        position: 'absolute',
+        top: anchorClientRect.y,
+        maxHeight: window.innerHeight - maxPopoverPadding,
+        maxWidth: pageContentClientRect.width - maxPopoverPadding,
+        ...(popoverDirection === 'right'
+          ? {
+              left: pageContentClientRect.x - anchorClientRect.x,
+              right: undefined,
+            }
+          : {
+              left: undefined,
+              right:
+                pageContentClientRect.width -
+                (anchorClientRect.x -
+                  pageContentClientRect.x +
+                  anchorClientRect.width),
+            }),
+      }
+    } else {
+      return {
+        visibility: 'hidden',
+        position: 'absolute',
+      }
     }
   }, [popoverOpen])
   return (
