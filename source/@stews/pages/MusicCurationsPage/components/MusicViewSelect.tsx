@@ -80,7 +80,6 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
   }, [popoverOpen])
   useEffect(() => {
     if (focusedViewIndex === null) {
-      anchorRef.current?.focus()
       setPopoverOpen(false)
     } else {
       listItemsRef.current[focusedViewIndex]!.focus()
@@ -89,11 +88,27 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
   return (
     <div
       className={cssModule.selectMenu}
+      onKeyDown={(someKeyDownEvent) => {
+        const listLength = listItemsRef.current.length
+        if (focusedViewIndex === null) {
+          throw new Error('invalid path reached: ViewSelectMenu.onKeyDown')
+        } else if (someKeyDownEvent.key === 'ArrowDown') {
+          setFocusedViewIndex((focusedViewIndex + 1) % listLength)
+        } else if (someKeyDownEvent.key === 'ArrowUp') {
+          setFocusedViewIndex(
+            (((focusedViewIndex - 1) % listLength) + listLength) % listLength
+          )
+        } else if (someKeyDownEvent.key === 'Escape') {
+          anchorRef.current?.focus()
+          setFocusedViewIndex(null)
+        }
+      }}
       onfocusout={(someFocusEvent) => {
         const siblingIndex = listItemsRef.current.find(
           (someListItem) => someListItem === someFocusEvent.relatedTarget
         )
         if (siblingIndex === undefined) {
+          anchorRef.current?.focus()
           setFocusedViewIndex(null)
         }
       }}
@@ -111,19 +126,15 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
             setPopoverOpen(false)
           }}
           onKeyDown={(someKeyDownEvent) => {
-            const listLength = listItemsRef.current.length
-            if (focusedViewIndex === null) {
-              throw new Error('invalid path reached: ViewSelectMenu.onKeyDown')
-            } else if (someKeyDownEvent.key === 'ArrowDown') {
-              setFocusedViewIndex((focusedViewIndex + 1) % listLength)
-            } else if (someKeyDownEvent.key === 'ArrowUp') {
-              setFocusedViewIndex(
-                (((focusedViewIndex - 1) % listLength) + listLength) %
-                  listLength
-              )
-            } else if (someKeyDownEvent.key === 'Enter') {
+            if (someKeyDownEvent.key === 'Enter') {
+              anchorRef.current?.focus()
               selectMusicView(someMusicView)
               setPopoverOpen(false)
+            }
+          }}
+          onMouseOver={() => {
+            if (focusedViewIndex !== musicViewIndex) {
+              setFocusedViewIndex(musicViewIndex)
             }
           }}
         >
