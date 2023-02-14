@@ -21,21 +21,4 @@ button {
   outline: none;
   cursor: pointer;
   user-select: none;
-
-  &:focus {
-    outline: $themeOutline;
-    outline-offset: $themeOutlineOffset;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  &:active:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    @extend .themeOutline;
-  }
 }

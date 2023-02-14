@@ -150,11 +150,11 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
             (someListItem) => someListItem === someFocusEvent.relatedTarget
           )
           if (siblingIndex === undefined && someFocusEvent.relatedTarget) {
-            // key escape (tab & esc)
+            // key exit (tab & esc) & key select (enter)
             anchorRef.current?.focus()
             setFocusedViewIndex(null)
           } else if (siblingIndex === undefined) {
-            // click escape
+            // click escape & click select
             setFocusedViewIndex(null)
           } else {
             // focused view index change (arrow down, arrow up, mouse over)
@@ -174,19 +174,17 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
           }
         },
         onClick: () => {
-          /// prevents "focusedViewIndex === null" in onKeyDown case
-          /// when user tabs after click select
           anchorRef.current?.focus()
-          anchorRef.current?.blur()
-          ///
           selectMusicView(someMusicView)
-          setFocusedViewIndex(null)
+          // onfocusout key exit handler will set
+          /// setFocusedViewIndex(null)
         },
         onKeyDown: (someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
             anchorRef.current?.focus()
             selectMusicView(someMusicView)
-            setFocusedViewIndex(null)
+            // onfocusout key exit handler will set
+            /// setFocusedViewIndex(null)
           }
         },
       }
