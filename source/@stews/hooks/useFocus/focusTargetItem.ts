@@ -1,6 +1,5 @@
 import { FocusItem } from './FocusItem'
-import { FocusContextValue } from './FocusContext'
-import { FocusState } from './FocusState'
+import { FocusState, FocusStateBase, InternalFocusState } from './FocusState'
 
 export type FocusTargetItemApi =
   | PointerSelectFocusTargetItemApi
@@ -9,19 +8,19 @@ export type FocusTargetItemApi =
   | ManualNavigateFocusTargetItemApi
 
 interface PointerSelectFocusTargetItemApi
-  extends PointerFocusTargetItemApi,
+  extends PointerFocusTargetItemApi<FocusState>,
     SelectFocusItemApi {}
 
 interface KeyboardSelectFocusTargetItemApi
-  extends KeyboardFocusTargetItemApi,
+  extends KeyboardFocusTargetItemApi<InternalFocusState>,
     SelectFocusItemApi {}
 
 interface KeyboardNavigateFocusTargetItemApi
-  extends KeyboardFocusTargetItemApi,
+  extends KeyboardFocusTargetItemApi<FocusState>,
     NavigateFocusItemApi {}
 
 interface ManualNavigateFocusTargetItemApi
-  extends ManualFocusTargetItemApi,
+  extends ManualFocusTargetItemApi<FocusState>,
     NavigateFocusItemApi {}
 
 interface NavigateFocusItemApi extends FocusTypeBase<'navigate'> {}
@@ -34,25 +33,38 @@ interface FocusTypeBase<FocusType extends string> {
   focusType: FocusType
 }
 
-interface PointerFocusTargetItemApi
-  extends UserFocusTargetItemApiBase<'pointer', MouseEvent> {}
+interface PointerFocusTargetItemApi<
+  GlobalFocusState extends FocusStateBase<string>
+> extends UserFocusTargetItemApiBase<'pointer', GlobalFocusState, MouseEvent> {}
 
-interface KeyboardFocusTargetItemApi
-  extends UserFocusTargetItemApiBase<'keyboard', KeyboardEvent> {}
+interface KeyboardFocusTargetItemApi<
+  GlobalFocusState extends FocusStateBase<string>
+> extends UserFocusTargetItemApiBase<
+    'keyboard',
+    GlobalFocusState,
+    KeyboardEvent
+  > {}
 
-interface ManualFocusTargetItemApi extends FocusTargetItemApiBase<'manual'> {}
+interface ManualFocusTargetItemApi<
+  GlobalFocusState extends FocusStateBase<string>
+> extends FocusTargetItemApiBase<'manual', GlobalFocusState> {}
 
 interface UserFocusTargetItemApiBase<
   TriggerType extends string,
+  GlobalFocusState extends FocusStateBase<string>,
   TriggerEvent extends Event
-> extends FocusTargetItemApiBase<TriggerType> {
+> extends FocusTargetItemApiBase<TriggerType, GlobalFocusState> {
   triggerEvent: TriggerEvent
 }
 
-interface FocusTargetItemApiBase<TriggerType extends string> {
+interface FocusTargetItemApiBase<
+  TriggerType extends string,
+  GlobalFocusState extends FocusStateBase<string>
+> {
   triggerType: TriggerType
-  focusContext: FocusContextValue
   targetFocusItem: FocusItem
+  staleGlobalFocusState: GlobalFocusState
+  setGlobalFocusState: (nextGlobalFocusState: GlobalFocusState) => void
 }
 
 export function focusTargetItem(api: FocusTargetItemApi) {
@@ -76,7 +88,8 @@ function pointerSelectFocusTargetItem(api: PointerSelectFocusTargetItemApi) {
     triggerType,
     focusType,
     targetFocusItem,
-    focusContext,
+    staleGlobalFocusState,
+    setGlobalFocusState,
     onSelect,
   } = api
   triggerEvent.preventDefault()
@@ -84,7 +97,8 @@ function pointerSelectFocusTargetItem(api: PointerSelectFocusTargetItemApi) {
     triggerType,
     focusType,
     targetFocusItem,
-    focusContext,
+    staleGlobalFocusState,
+    setGlobalFocusState,
   })
   onSelect()
 }
@@ -95,7 +109,8 @@ function keyboardSelectFocusTargetItem(api: KeyboardSelectFocusTargetItemApi) {
     triggerType,
     focusType,
     targetFocusItem,
-    focusContext,
+    staleGlobalFocusState,
+    setGlobalFocusState,
     onSelect,
   } = api
   triggerEvent.preventDefault()
@@ -103,7 +118,8 @@ function keyboardSelectFocusTargetItem(api: KeyboardSelectFocusTargetItemApi) {
     triggerType,
     focusType,
     targetFocusItem,
-    focusContext,
+    staleGlobalFocusState,
+    setGlobalFocusState,
   })
   onSelect()
 }
@@ -116,14 +132,16 @@ function keyboardNavigateFocusTargetItem(
     triggerType,
     focusType,
     targetFocusItem,
-    focusContext,
+    staleGlobalFocusState,
+    setGlobalFocusState,
   } = api
   triggerEvent.preventDefault()
   _focusTargetItem({
     triggerType,
     focusType,
     targetFocusItem,
-    focusContext,
+    staleGlobalFocusState,
+    setGlobalFocusState,
   })
 }
 
@@ -134,11 +152,21 @@ function manualNavigateFocusTargetItem(api: ManualNavigateFocusTargetItemApi) {
 interface _FocusTargetItemApi
   extends Pick<
     FocusTargetItemApi,
-    'triggerType' | 'focusType' | 'targetFocusItem' | 'focusContext'
+    | 'triggerType'
+    | 'focusType'
+    | 'targetFocusItem'
+    | 'staleGlobalFocusState'
+    | 'setGlobalFocusState'
   > {}
 
 function _focusTargetItem(api: _FocusTargetItemApi) {
-  const { triggerType, focusType, targetFocusItem, focusContext } = api
+  const {
+    triggerType,
+    focusType,
+    targetFocusItem,
+    staleGlobalFocusState,
+    setGlobalFocusState,
+  } = api
   const nextFocusState: FocusState = {
     stateType: 'internal',
     triggerType,
@@ -148,9 +176,11 @@ function _focusTargetItem(api: _FocusTargetItemApi) {
   }
   targetFocusItem.focusElementRef.current!.focus()
   targetFocusItem.setItemFocusState(nextFocusState)
-  const staleGlobalFocusState = focusContext.globalFocusState
-  focusContext.globalFocusState = nextFocusState
-  if (staleGlobalFocusState.stateType === 'internal') {
+  setGlobalFocusState(nextFocusState)
+  if (
+    staleGlobalFocusState.stateType === 'internal' &&
+    staleGlobalFocusState.focusKey !== targetFocusItem.focusKey
+  ) {
     staleGlobalFocusState.setItemFocusState({
       stateType: 'external',
     })

@@ -1,13 +1,7 @@
-import { FocusManager } from '@stews/hooks/useFocus/FocusContext'
-import {
-  FocusContext,
-  useFocus,
-  UseFocusApi,
-} from '@stews/hooks/useFocus/useFocus'
+import { FocusManager } from '@stews/hooks/useFocus/FocusManager'
+import { useFocus, UseFocusApi } from '@stews/hooks/useFocus/useFocus'
 import { ComponentProps, createContext } from 'preact'
-import { forwardRef, HTMLAttributes } from 'preact/compat'
-import { useContext, useEffect, useRef, Ref } from 'preact/hooks'
-import { JSXInternal } from 'preact/src/jsx'
+import { Ref, useEffect, useRef } from 'preact/hooks'
 import cssModule from './Page.module.scss'
 
 type PageContextValue = Ref<HTMLDivElement>
@@ -28,18 +22,26 @@ export function Page(props: PageProps) {
           {/* {children} */}
 
           <FocusManager>
-            <Foo
-              label={'a'}
-              focusKey={'a'}
-              tabNextKey={'b'}
-              tabPreviousKey={'b'}
-            />
-            <Foo
-              label={'b'}
-              focusKey={'b'}
-              tabNextKey={'a'}
-              tabPreviousKey={'a'}
-            />
+            <div
+              style={{
+                padding: 8,
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Foo
+                label={'a'}
+                focusKey={'a'}
+                tabNextKey={'b'}
+                tabPreviousKey={'b'}
+              />
+              <Foo
+                label={'b'}
+                focusKey={'b'}
+                tabNextKey={'a'}
+                tabPreviousKey={'a'}
+              />
+            </div>
           </FocusManager>
         </PageContext.Provider>
       </div>

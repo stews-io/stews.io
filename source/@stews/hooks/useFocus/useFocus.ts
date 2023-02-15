@@ -15,7 +15,7 @@ export interface UseFocusResult<SomeHtmlElement extends HTMLElement> {
   itemFocusState: FocusState | null
   getFocusItemProps: () => Pick<
     Required<JSXInternal.HTMLAttributes<SomeHtmlElement>>,
-    'ref' | 'tabIndex' | 'onClick' | 'onKeyDown'
+    'ref' | 'tabIndex' | 'onClick' | 'onKeyDown' | 'className'
   >
 }
 
@@ -28,13 +28,6 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
   const [itemFocusState, setItemFocusState] = useState<FocusState>({
     stateType: 'external',
   })
-  useEffect(() => {
-    if (itemFocusState.stateType === 'internal') {
-      focusElementRef.current!.style.backgroundColor = 'red'
-    } else if (itemFocusState.stateType === 'external') {
-      focusElementRef.current!.style.backgroundColor = 'white'
-    }
-  }, [itemFocusState])
   useEffect(() => {
     focusContext.focusItems[focusKey] = {
       focusKey,
@@ -50,15 +43,19 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
     getFocusItemProps: () => {
       return {
         tabIndex: -1,
+        className: 'todo',
         ref: focusElementRef,
         onClick: (someClickEvent) => {
           focusTargetItem({
             triggerType: 'pointer',
             focusType: 'select',
             onSelect,
-            focusContext,
             triggerEvent: someClickEvent,
             targetFocusItem: focusContext.focusItems[focusKey]!,
+            staleGlobalFocusState: focusContext.globalFocusState,
+            setGlobalFocusState: (nextGlobalFocusState) => {
+              focusContext.globalFocusState = nextGlobalFocusState
+            },
           })
         },
         onKeyDown: (someKeyDownEvent) => {
@@ -66,26 +63,38 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
             focusTargetItem({
               triggerType: 'keyboard',
               focusType: 'navigate',
-              focusContext,
               triggerEvent: someKeyDownEvent,
               targetFocusItem: focusContext.focusItems[tabPreviousKey]!,
+              staleGlobalFocusState: focusContext.globalFocusState,
+              setGlobalFocusState: (nextGlobalFocusState) => {
+                focusContext.globalFocusState = nextGlobalFocusState
+              },
             })
           } else if (someKeyDownEvent.key === 'Tab') {
             focusTargetItem({
               triggerType: 'keyboard',
               focusType: 'navigate',
-              focusContext,
               triggerEvent: someKeyDownEvent,
               targetFocusItem: focusContext.focusItems[tabNextKey]!,
+              staleGlobalFocusState: focusContext.globalFocusState,
+              setGlobalFocusState: (nextGlobalFocusState) => {
+                focusContext.globalFocusState = nextGlobalFocusState
+              },
             })
-          } else if (someKeyDownEvent.key === 'Enter') {
+          } else if (
+            someKeyDownEvent.key === 'Enter' &&
+            focusContext.globalFocusState.stateType === 'internal'
+          ) {
             focusTargetItem({
               triggerType: 'keyboard',
               focusType: 'select',
               onSelect,
-              focusContext,
               triggerEvent: someKeyDownEvent,
               targetFocusItem: focusContext.focusItems[focusKey]!,
+              staleGlobalFocusState: focusContext.globalFocusState,
+              setGlobalFocusState: (nextGlobalFocusState) => {
+                focusContext.globalFocusState = nextGlobalFocusState
+              },
             })
           }
         },
