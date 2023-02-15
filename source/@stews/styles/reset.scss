@@ -10,7 +10,6 @@ div {
   @extend .defaultBoxModel;
   @extend .defaultLayout;
   @extend .defaultFont;
-  outline: none;
 }
 
 button {
@@ -18,7 +17,10 @@ button {
   @extend .defaultLayout;
   @extend .defaultFont;
   background: none;
-  outline: none;
   cursor: pointer;
   user-select: none;
+}
+
+* {
+  outline: none;
 }

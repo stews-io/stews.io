@@ -1,4 +1,9 @@
-import { FocusContext, useFocus, UseFocusApi } from '@stews/hooks/useFocus'
+import { FocusManager } from '@stews/hooks/useFocus/FocusContext'
+import {
+  FocusContext,
+  useFocus,
+  UseFocusApi,
+} from '@stews/hooks/useFocus/useFocus'
 import { ComponentProps, createContext } from 'preact'
 import { forwardRef, HTMLAttributes } from 'preact/compat'
 import { useContext, useEffect, useRef, Ref } from 'preact/hooks'
@@ -21,12 +26,8 @@ export function Page(props: PageProps) {
       <div role={'main'} className={cssModule.pageContent} ref={pageContentRef}>
         <PageContext.Provider value={pageContentRef}>
           {/* {children} */}
-          <FocusContext.Provider
-            value={{
-              setSourceFocusState: null,
-              focusItems: {},
-            }}
-          >
+
+          <FocusManager>
             <Foo
               label={'a'}
               focusKey={'a'}
@@ -39,7 +40,7 @@ export function Page(props: PageProps) {
               tabNextKey={'a'}
               tabPreviousKey={'a'}
             />
-          </FocusContext.Provider>
+          </FocusManager>
         </PageContext.Provider>
       </div>
     </div>
@@ -47,23 +48,20 @@ export function Page(props: PageProps) {
 }
 
 interface FooProps
-  extends Pick<
-    UseFocusApi<'button'>,
-    'focusKey' | 'tabNextKey' | 'tabPreviousKey'
-  > {
+  extends Pick<UseFocusApi, 'focusKey' | 'tabNextKey' | 'tabPreviousKey'> {
   label: string
 }
 
 function Foo(props: FooProps) {
   const { focusKey, tabNextKey, tabPreviousKey, label } = props
-  const { focusState, getFocusItemProps } = useFocus<'button'>({
+  const { itemFocusState, getFocusItemProps } = useFocus<HTMLButtonElement>({
     focusKey,
     tabNextKey,
     tabPreviousKey,
-    onClick: () => {},
+    onSelect: () => {},
   })
   useEffect(() => {
-    console.log(`${focusKey}: ${focusState}`)
-  }, [focusState])
+    console.log(`${focusKey}: ${JSON.stringify(itemFocusState, null, 2)}`)
+  }, [itemFocusState])
   return <button {...getFocusItemProps()}>{label}</button>
 }

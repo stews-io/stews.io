@@ -1,102 +1,91 @@
 import { useContext, useEffect, useRef, useState } from 'preact/hooks'
 import { JSXInternal } from 'preact/src/jsx'
 import { FocusContext } from './FocusContext'
+import { FocusState } from './FocusState'
+import { focusTargetItem } from './focusTargetItem'
 
-export interface UseFocusApi<FocusElementKey extends HtmlElementKey>
-  extends Pick<
-    Required<JSXInternal.HTMLAttributes<ExtractHtmlElement<FocusElementKey>>>,
-    'onClick'
-  > {
+export interface UseFocusApi {
   focusKey: string
   tabNextKey: string
   tabPreviousKey: string
+  onSelect: () => void
 }
 
-export interface UseFocusResult<FocusElementKey extends HtmlElementKey> {
-  focusState: 'mouse' | 'keyboard' | 'manual' | null
+export interface UseFocusResult<SomeHtmlElement extends HTMLElement> {
+  itemFocusState: FocusState | null
   getFocusItemProps: () => Pick<
-    Required<JSXInternal.HTMLAttributes<ExtractHtmlElement<FocusElementKey>>>,
+    Required<JSXInternal.HTMLAttributes<SomeHtmlElement>>,
     'ref' | 'tabIndex' | 'onClick' | 'onKeyDown'
   >
 }
 
-export function useFocus<
-  FocusElementKey extends HtmlElementKey,
-  FocusElement extends ExtractHtmlElement<FocusElementKey> = ExtractHtmlElement<FocusElementKey>
->(api: UseFocusApi<FocusElementKey>): UseFocusResult<FocusElementKey> {
-  const { focusKey, tabPreviousKey, tabNextKey, onClick } = api
+export function useFocus<SomeHtmlElement extends HTMLElement>(
+  api: UseFocusApi
+): UseFocusResult<SomeHtmlElement> {
+  const { focusKey, tabPreviousKey, tabNextKey, onSelect } = api
   const focusContext = useContext(FocusContext)
-  const focusItemRef = useRef<FocusElement>(null)
-  const [focusState, setFocusState] = useState<
-    'mouse' | 'keyboard' | 'manual' | null
-  >(null)
+  const focusElementRef = useRef<SomeHtmlElement>(null)
+  const [itemFocusState, setItemFocusState] = useState<FocusState>({
+    stateType: 'external',
+  })
+  useEffect(() => {
+    if (itemFocusState.stateType === 'internal') {
+      focusElementRef.current!.style.backgroundColor = 'red'
+    } else if (itemFocusState.stateType === 'external') {
+      focusElementRef.current!.style.backgroundColor = 'white'
+    }
+  }, [itemFocusState])
   useEffect(() => {
     focusContext.focusItems[focusKey] = {
-      focusItem: (api) => {
-        const { triggerType, focusType } = api
-        if (triggerType === 'pointer' && focusType === 'select') {
-        } else if (triggerType === 'keyboard' && focusType === 'select') {
-        } else if (triggerType === 'keyboard' && focusType === 'navigate') {
-        } else if (triggerType === 'manual' && focusType === 'navigate') {
-        } else {
-          throw new Error('invalid path: focusItem')
-        }
-        // focusContext.setSourceFocusState
-        //   ? focusContext.setSourceFocusState(null)
-        //   : null
-        // setFocusState(sourceType)
-        // ;(focusItemRef.current as any).focus()
-        // focusContext.setSourceFocusState = setFocusState
-      },
+      focusKey,
+      focusElementRef,
+      setItemFocusState,
     }
     return () => {
       delete focusContext.focusItems[focusKey]
     }
   }, [])
   return {
-    focusState,
+    itemFocusState,
     getFocusItemProps: () => {
       return {
         tabIndex: -1,
-        ref: focusItemRef,
+        ref: focusElementRef,
         onClick: (someClickEvent) => {
-          focusContext.focusItems[focusKey]!.focusItem({
-            focusType: 'select',
-            onSelect: () => {},
+          focusTargetItem({
             triggerType: 'pointer',
+            focusType: 'select',
+            onSelect,
+            focusContext,
             triggerEvent: someClickEvent,
-            originType: 'external',
-            // originType: 'internal',
-            // setOriginFocusState: () => null,
+            targetFocusItem: focusContext.focusItems[focusKey]!,
           })
         },
         onKeyDown: (someKeyDownEvent) => {
           if (someKeyDownEvent.shiftKey && someKeyDownEvent.key === 'Tab') {
-            focusContext.focusItems[tabPreviousKey]!.focusItem({
-              focusType: 'navigate',
+            focusTargetItem({
               triggerType: 'keyboard',
+              focusType: 'navigate',
+              focusContext,
               triggerEvent: someKeyDownEvent,
-              originType: 'external',
-              // originType: 'internal',
-              // setOriginFocusState: () => null,
+              targetFocusItem: focusContext.focusItems[tabPreviousKey]!,
             })
           } else if (someKeyDownEvent.key === 'Tab') {
-            focusContext.focusItems[tabNextKey]!.focusItem({
-              focusType: 'navigate',
+            focusTargetItem({
               triggerType: 'keyboard',
+              focusType: 'navigate',
+              focusContext,
               triggerEvent: someKeyDownEvent,
-              originType: 'external',
-              // originType: 'internal',
-              // setOriginFocusState: () => null,
+              targetFocusItem: focusContext.focusItems[tabNextKey]!,
             })
           } else if (someKeyDownEvent.key === 'Enter') {
-            focusContext.focusItems[focusKey]!.focusItem({
-              focusType: 'select',
-              onSelect: () => {},
+            focusTargetItem({
               triggerType: 'keyboard',
+              focusType: 'select',
+              onSelect,
+              focusContext,
               triggerEvent: someKeyDownEvent,
-              originType: 'internal',
-              setOriginFocusState: () => null,
+              targetFocusItem: focusContext.focusItems[focusKey]!,
             })
           }
         },
@@ -104,24 +93,3 @@ export function useFocus<
     },
   }
 }
-
-type HtmlElementKey = {
-  [SomeElementKey in keyof JSXInternal.IntrinsicElements]: JSXInternal.IntrinsicElements[SomeElementKey] extends JSXInternal.HTMLAttributes<
-    infer SomeHtmlElement
-  >
-    ? SomeHtmlElement extends HTMLElement
-      ? SomeElementKey
-      : never
-    : never
-}[keyof JSXInternal.IntrinsicElements]
-
-type ExtractHtmlElement<
-  FocusElementKey extends keyof JSXInternal.IntrinsicElements
-> =
-  JSXInternal.IntrinsicElements[FocusElementKey] extends JSXInternal.HTMLAttributes<
-    infer SomeHtmlElement
-  >
-    ? SomeHtmlElement extends HTMLElement
-      ? SomeHtmlElement
-      : never
-    : never
