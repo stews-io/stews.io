@@ -1,5 +1,5 @@
 import { FocusItem } from './FocusItem'
-import { FocusState, FocusStateBase, InternalFocusState } from './FocusState'
+import { FocusState, InternalFocusState } from './FocusState'
 
 export type FocusTargetItemApi =
   | PointerSelectFocusTargetItemApi
@@ -33,25 +33,22 @@ interface FocusTypeBase<FocusType extends string> {
   focusType: FocusType
 }
 
-interface PointerFocusTargetItemApi<
-  GlobalFocusState extends FocusStateBase<string>
-> extends UserFocusTargetItemApiBase<'pointer', GlobalFocusState, MouseEvent> {}
+interface PointerFocusTargetItemApi<GlobalFocusState extends FocusState>
+  extends UserFocusTargetItemApiBase<'pointer', GlobalFocusState, MouseEvent> {}
 
-interface KeyboardFocusTargetItemApi<
-  GlobalFocusState extends FocusStateBase<string>
-> extends UserFocusTargetItemApiBase<
+interface KeyboardFocusTargetItemApi<GlobalFocusState extends FocusState>
+  extends UserFocusTargetItemApiBase<
     'keyboard',
     GlobalFocusState,
     KeyboardEvent
   > {}
 
-interface ManualFocusTargetItemApi<
-  GlobalFocusState extends FocusStateBase<string>
-> extends FocusTargetItemApiBase<'manual', GlobalFocusState> {}
+interface ManualFocusTargetItemApi<GlobalFocusState extends FocusState>
+  extends FocusTargetItemApiBase<'manual', GlobalFocusState> {}
 
 interface UserFocusTargetItemApiBase<
   TriggerType extends string,
-  GlobalFocusState extends FocusStateBase<string>,
+  GlobalFocusState extends FocusState,
   TriggerEvent extends Event
 > extends FocusTargetItemApiBase<TriggerType, GlobalFocusState> {
   triggerEvent: TriggerEvent
@@ -59,7 +56,7 @@ interface UserFocusTargetItemApiBase<
 
 interface FocusTargetItemApiBase<
   TriggerType extends string,
-  GlobalFocusState extends FocusStateBase<string>
+  GlobalFocusState extends FocusState
 > {
   triggerType: TriggerType
   targetFocusItem: FocusItem
