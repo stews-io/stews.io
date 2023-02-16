@@ -1,19 +1,34 @@
-import { createContext, createRef, Ref } from 'preact'
+import { createContext } from 'preact'
+import { Ref } from 'preact/hooks'
 import { FocusItem } from './FocusItem'
 import { FocusState } from './FocusState'
 
 export interface FocusContextValue {
-  focusItems: Record<string, FocusItem>
   globalFocusState: FocusState
+  focusItems: Record<string, FocusItem>
+  keyboardBridgeItem: {
+    focusKey: 'urlBar'
+    tabEntryKeys: Array<string>
+    tabNextEntryElementRef: Ref<HTMLDivElement> | null
+    tabPreviousEntryElementRef: Ref<HTMLDivElement> | null
+    tabExitElementRef: Ref<HTMLDivElement> | null
+  }
 }
 
 export const FocusContext = createContext(getIntialFocusContextValue())
 
-function getIntialFocusContextValue(): FocusContextValue {
+export function getIntialFocusContextValue(): FocusContextValue {
   return {
     focusItems: {},
     globalFocusState: {
       stateType: 'external',
+    },
+    keyboardBridgeItem: {
+      focusKey: 'urlBar',
+      tabEntryKeys: [],
+      tabNextEntryElementRef: null,
+      tabPreviousEntryElementRef: null,
+      tabExitElementRef: null,
     },
   }
 }

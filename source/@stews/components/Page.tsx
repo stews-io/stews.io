@@ -1,4 +1,4 @@
-import { FocusManager } from '@stews/hooks/useFocus/FocusManager'
+import { FocusBridge } from '@stews/hooks/useFocus/FocusBridge'
 import { useFocus, UseFocusApi } from '@stews/hooks/useFocus/useFocus'
 import { ComponentProps, createContext } from 'preact'
 import { Ref, useEffect, useRef } from 'preact/hooks'
@@ -21,28 +21,27 @@ export function Page(props: PageProps) {
         <PageContext.Provider value={pageContentRef}>
           {/* {children} */}
 
-          <FocusManager>
-            <div
-              style={{
-                padding: 8,
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <Foo
-                label={'a'}
-                focusKey={'a'}
-                tabNextKey={'b'}
-                tabPreviousKey={'b'}
-              />
-              <Foo
-                label={'b'}
-                focusKey={'b'}
-                tabNextKey={'a'}
-                tabPreviousKey={'a'}
-              />
-            </div>
-          </FocusManager>
+          <FocusBridge />
+          <div
+            style={{
+              padding: 8,
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+          >
+            <Foo
+              label={'aaa'}
+              focusKey={'a'}
+              tabPreviousKey={'urlBar'}
+              tabNextKey={'b'}
+            />
+            <Foo
+              label={'bbb'}
+              focusKey={'b'}
+              tabPreviousKey={'a'}
+              tabNextKey={'urlBar'}
+            />
+          </div>
         </PageContext.Provider>
       </div>
     </div>

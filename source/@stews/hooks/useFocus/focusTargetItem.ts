@@ -1,3 +1,4 @@
+import { FocusContextValue } from './FocusContext'
 import { FocusItem } from './FocusItem'
 import { FocusState, InternalFocusState } from './FocusState'
 
@@ -62,6 +63,7 @@ interface FocusTargetItemApiBase<
   targetFocusItem: FocusItem
   staleGlobalFocusState: GlobalFocusState
   setGlobalFocusState: (nextGlobalFocusState: GlobalFocusState) => void
+  keyboardBridgeItem: FocusContextValue['keyboardBridgeItem']
 }
 
 export function focusTargetItem(api: FocusTargetItemApi) {
@@ -87,6 +89,7 @@ function pointerSelectFocusTargetItem(api: PointerSelectFocusTargetItemApi) {
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
     onSelect,
   } = api
   triggerEvent.preventDefault()
@@ -96,6 +99,7 @@ function pointerSelectFocusTargetItem(api: PointerSelectFocusTargetItemApi) {
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
   })
   onSelect()
 }
@@ -108,6 +112,7 @@ function keyboardSelectFocusTargetItem(api: KeyboardSelectFocusTargetItemApi) {
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
     onSelect,
   } = api
   triggerEvent.preventDefault()
@@ -117,6 +122,7 @@ function keyboardSelectFocusTargetItem(api: KeyboardSelectFocusTargetItemApi) {
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
   })
   onSelect()
 }
@@ -131,6 +137,7 @@ function keyboardNavigateFocusTargetItem(
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
   } = api
   triggerEvent.preventDefault()
   _focusTargetItem({
@@ -139,6 +146,7 @@ function keyboardNavigateFocusTargetItem(
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
   })
 }
 
@@ -154,6 +162,7 @@ interface _FocusTargetItemApi
     | 'targetFocusItem'
     | 'staleGlobalFocusState'
     | 'setGlobalFocusState'
+    | 'keyboardBridgeItem'
   > {}
 
 function _focusTargetItem(api: _FocusTargetItemApi) {
@@ -163,6 +172,7 @@ function _focusTargetItem(api: _FocusTargetItemApi) {
     targetFocusItem,
     staleGlobalFocusState,
     setGlobalFocusState,
+    keyboardBridgeItem,
   } = api
   const nextFocusState: FocusState = {
     stateType: 'internal',
@@ -174,6 +184,7 @@ function _focusTargetItem(api: _FocusTargetItemApi) {
   targetFocusItem.focusElementRef.current!.focus()
   targetFocusItem.setItemFocusState(nextFocusState)
   setGlobalFocusState(nextFocusState)
+  console.log(staleGlobalFocusState)
   if (
     staleGlobalFocusState.stateType === 'internal' &&
     staleGlobalFocusState.focusKey !== targetFocusItem.focusKey
@@ -181,5 +192,14 @@ function _focusTargetItem(api: _FocusTargetItemApi) {
     staleGlobalFocusState.setItemFocusState({
       stateType: 'external',
     })
+  } else if (staleGlobalFocusState.stateType === 'external') {
+    // pointer focus???
+    const tabExitSlingElement = document.createElement('div')
+    tabExitSlingElement.tabIndex = 1
+    keyboardBridgeItem.tabExitElementRef!.current!.appendChild(
+      tabExitSlingElement
+    )
+    keyboardBridgeItem.tabNextEntryElementRef!.current!.tabIndex = -1
+    keyboardBridgeItem.tabPreviousEntryElementRef!.current!.tabIndex = -1
   }
 }
