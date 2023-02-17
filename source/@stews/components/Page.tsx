@@ -1,7 +1,7 @@
-import { FocusBridge } from '@stews/hooks/useFocus/FocusBridge'
-import { useFocus, UseFocusApi } from '@stews/hooks/useFocus/useFocus'
+import { FocusBridge } from '@stews/hooks/useFocus'
+import { useFocus, UseFocusApi } from '@stews/hooks/useFocus'
 import { ComponentProps, createContext } from 'preact'
-import { Ref, useContext, useEffect, useRef, useState } from 'preact/hooks'
+import { Ref, useEffect, useRef } from 'preact/hooks'
 import cssModule from './Page.module.scss'
 
 type PageContextValue = Ref<HTMLDivElement>
