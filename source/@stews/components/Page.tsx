@@ -1,7 +1,7 @@
 import { FocusBridge } from '@stews/hooks/useFocus/FocusBridge'
 import { useFocus, UseFocusApi } from '@stews/hooks/useFocus/useFocus'
 import { ComponentProps, createContext } from 'preact'
-import { Ref, useEffect, useRef } from 'preact/hooks'
+import { Ref, useContext, useEffect, useRef, useState } from 'preact/hooks'
 import cssModule from './Page.module.scss'
 
 type PageContextValue = Ref<HTMLDivElement>
@@ -62,7 +62,9 @@ function Foo(props: FooProps) {
     onSelect: () => {},
   })
   useEffect(() => {
-    console.log(`${focusKey}: ${JSON.stringify(itemFocusState, null, 2)}`)
+    if (itemFocusState?.stateType === 'internal') {
+      console.log(itemFocusState)
+    }
   }, [itemFocusState])
   return <button {...getFocusItemProps()}>{label}</button>
 }

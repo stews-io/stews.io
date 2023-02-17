@@ -1,5 +1,5 @@
 import { StateUpdater } from 'preact/hooks'
-import { FocusTargetItemApi } from './focusTargetItem'
+import { FocusTargetItemApi } from '../helpers/focusTargetItem'
 
 export type FocusState = InternalFocusState | ExternalFocusState
 

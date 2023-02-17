@@ -1,9 +1,14 @@
 import { useContext, useEffect, useRef, useState } from 'preact/hooks'
 import { JSXInternal } from 'preact/src/jsx'
+import { FocusItem } from './data/FocusItem'
+import { FocusState } from './data/FocusState'
 import { FocusContext } from './FocusContext'
-import { FocusItem } from './FocusItem'
-import { FocusState } from './FocusState'
-import { focusTargetItem } from './focusTargetItem'
+import { focusTargetItem } from './helpers/focusTargetItem'
+import { focusUrlBar } from './helpers/focusUrlBar'
+import {
+  registerFocusItem,
+  unregisterFocusItem,
+} from './helpers/registerFocusItem'
 
 export interface UseFocusApi
   extends Pick<FocusItem, 'focusKey' | 'tabNextKey' | 'tabPreviousKey'> {
@@ -28,25 +33,21 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
     stateType: 'external',
   })
   useEffect(() => {
-    focusContext.focusItems[focusKey] = {
-      focusKey,
-      tabNextKey,
-      tabPreviousKey,
-      focusElementRef,
-      setItemFocusState,
-    }
-    if (tabPreviousKey === 'urlBar') {
-      focusContext.keyboardBridgeItem.tabEntryKeys.unshift(focusKey)
-    } else if (tabNextKey === 'urlBar') {
-      focusContext.keyboardBridgeItem.tabEntryKeys.push(focusKey)
-    }
+    registerFocusItem({
+      focusContext,
+      focusItem: {
+        focusKey,
+        tabNextKey,
+        tabPreviousKey,
+        focusElementRef,
+        setItemFocusState,
+      },
+    })
     return () => {
-      // if (tabNextKey === 'urlBar') {
-      //   focusContext.keyboardBridgeItem.tabEntryKeys.push(focusKey)
-      // } else if (tabPreviousKey === 'urlBar') {
-      //   focusContext.keyboardBridgeItem.tabEntryKeys.unshift(focusKey)
-      // }
-      delete focusContext.focusItems[focusKey]
+      unregisterFocusItem({
+        focusContext,
+        focusKey,
+      })
     }
   }, [])
   return {
@@ -61,55 +62,49 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
             triggerType: 'pointer',
             focusType: 'select',
             onSelect,
+            focusContext,
+            focusKey: focusKey,
             triggerEvent: someClickEvent,
-            targetFocusItem: focusContext.focusItems[focusKey]!,
-            staleGlobalFocusState: focusContext.globalFocusState,
-            setGlobalFocusState: (nextGlobalFocusState) => {
-              focusContext.globalFocusState = nextGlobalFocusState
-            },
-            keyboardBridgeItem: focusContext.keyboardBridgeItem,
           })
         },
         onKeyDown: (someKeyDownEvent) => {
           if (
-            (someKeyDownEvent.shiftKey &&
-              someKeyDownEvent.key === 'Tab' &&
-              tabPreviousKey === 'urlBar') ||
-            (!someKeyDownEvent.shiftKey &&
-              someKeyDownEvent.key === 'Tab' &&
-              tabNextKey === 'urlBar')
+            someKeyDownEvent.shiftKey &&
+            someKeyDownEvent.key === 'Tab' &&
+            tabPreviousKey === 'urlBar'
           ) {
-            const tabExitBridgeChildElement =
-              focusContext.keyboardBridgeItem.tabExitElementRef!.current!
-                .children[0]
-            tabExitBridgeChildElement!.remove()
+            focusUrlBar({
+              focusContext,
+            })
           } else if (
             someKeyDownEvent.shiftKey &&
             someKeyDownEvent.key === 'Tab'
           ) {
-            console.log('bbb')
             focusTargetItem({
               triggerType: 'keyboard',
               focusType: 'navigate',
+              focusContext,
+              focusKey: tabPreviousKey,
               triggerEvent: someKeyDownEvent,
-              targetFocusItem: focusContext.focusItems[tabPreviousKey]!,
-              staleGlobalFocusState: focusContext.globalFocusState,
-              setGlobalFocusState: (nextGlobalFocusState) => {
-                focusContext.globalFocusState = nextGlobalFocusState
-              },
-              keyboardBridgeItem: focusContext.keyboardBridgeItem,
             })
-          } else if (someKeyDownEvent.key === 'Tab') {
+          } else if (
+            !someKeyDownEvent.shiftKey &&
+            someKeyDownEvent.key === 'Tab' &&
+            tabNextKey === 'urlBar'
+          ) {
+            focusUrlBar({
+              focusContext,
+            })
+          } else if (
+            !someKeyDownEvent.shiftKey &&
+            someKeyDownEvent.key === 'Tab'
+          ) {
             focusTargetItem({
               triggerType: 'keyboard',
               focusType: 'navigate',
+              focusContext,
+              focusKey: tabNextKey,
               triggerEvent: someKeyDownEvent,
-              targetFocusItem: focusContext.focusItems[tabNextKey]!,
-              staleGlobalFocusState: focusContext.globalFocusState,
-              setGlobalFocusState: (nextGlobalFocusState) => {
-                focusContext.globalFocusState = nextGlobalFocusState
-              },
-              keyboardBridgeItem: focusContext.keyboardBridgeItem,
             })
           } else if (
             someKeyDownEvent.key === 'Enter' &&
@@ -119,13 +114,9 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
               triggerType: 'keyboard',
               focusType: 'select',
               onSelect,
+              focusContext,
+              focusKey: focusKey,
               triggerEvent: someKeyDownEvent,
-              targetFocusItem: focusContext.focusItems[focusKey]!,
-              staleGlobalFocusState: focusContext.globalFocusState,
-              setGlobalFocusState: (nextGlobalFocusState) => {
-                focusContext.globalFocusState = nextGlobalFocusState
-              },
-              keyboardBridgeItem: focusContext.keyboardBridgeItem,
             })
           }
         },
