@@ -1,5 +1,12 @@
 import { ComponentProps } from 'preact'
-import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks'
+import {
+  StateUpdater,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import {
   ExternalFocusState,
@@ -16,18 +23,20 @@ export function FocusBridge(props: FocusBridgeProps) {
   const {} = props
   const focusContextRef = useContext(FocusContextRef)
   const tabExitElementRef = useRef<HTMLDivElement>(null)
-  const [globalFocusState, setGlobalFocusState] = useState<FocusState>(
-    focusContextRef.current.globalFocusState
-  )
+  const [globalFocusState, setGlobalFocusState] = useState<FocusState>({
+    stateType: 'external',
+  })
   useEffect(() => {
     focusContextRef.current = {
       contextState: 'ready',
       globalFocusState,
       setGlobalFocusState,
-      focusItems: focusContextRef.current.focusItems,
+      focusItems: {},
       keyboardBridgeItem: {
-        ...focusContextRef.current.keyboardBridgeItem,
+        focusKey: 'urlBar',
         tabExitElementRef,
+        tabPreviousEntryKeys: [],
+        tabNextEntryKeys: [],
       },
     }
     const windowBlurHandler = () => {
@@ -36,24 +45,51 @@ export function FocusBridge(props: FocusBridgeProps) {
         focusContext.contextState === 'ready' &&
         focusContext.globalFocusState.stateType === 'internal'
       ) {
-        const nextFocusState: ExternalFocusState = {
-          stateType: 'external',
-        }
-        focusContext.globalFocusState.setItemFocusState(nextFocusState)
-        setGlobalFocusState(nextFocusState)
+        handleInternalFocusToExternalFocus({
+          staleGlobalFocusState: focusContext.globalFocusState,
+          setGlobalFocusState: focusContext.setGlobalFocusState,
+        })
       } else if (focusContext.contextState === 'initializing') {
         throw new Error('invalid path: FocusBridge.windowBlurHandler')
       }
     }
+    const windowPointerDownHandler = (somePointerEvent: PointerEvent) => {
+      const focusContext = focusContextRef.current
+      const internalFocusItem =
+        somePointerEvent.target instanceof HTMLElement
+          ? Boolean(
+              somePointerEvent.target.attributes.getNamedItem(
+                'internal-focus-item'
+              )?.value
+            )
+          : false
+      if (
+        focusContext.contextState === 'ready' &&
+        focusContext.globalFocusState.stateType === 'internal' &&
+        !internalFocusItem
+      ) {
+        handleInternalFocusToExternalFocus({
+          staleGlobalFocusState: focusContext.globalFocusState,
+          setGlobalFocusState: focusContext.setGlobalFocusState,
+        })
+      }
+    }
+    window.addEventListener('pointerdown', windowPointerDownHandler)
     window.addEventListener('blur', windowBlurHandler)
     return () => {
       window.removeEventListener('blur', windowBlurHandler)
+      window.removeEventListener('pointerdown', windowPointerDownHandler)
     }
   }, [])
   useEffect(() => {
-    focusContextRef.current.globalFocusState = globalFocusState
+    if (focusContextRef.current.contextState === 'ready') {
+      focusContextRef.current.globalFocusState = globalFocusState
+    } else {
+      throw new Error('invalid path: FocusBridge.useEffect[globalFocusState]')
+    }
   }, [globalFocusState])
   useEffect(() => {
+    // manage slingshot element
     if (
       globalFocusState.stateType === 'internal' &&
       tabExitElementRef.current
@@ -87,28 +123,31 @@ export function FocusBridge(props: FocusBridgeProps) {
     <Fragment>
       <div ref={tabExitElementRef} />
       <TabEntryBridge
+        tabEntryKeysKey={'tabNextEntryKeys'}
         focusContextRef={focusContextRef}
         tabIndex={tabEntryTabIndex}
-        getTabEntryKeyIndex={() => 0}
       />
       <TabEntryBridge
+        tabEntryKeysKey={'tabPreviousEntryKeys'}
         focusContextRef={focusContextRef}
         tabIndex={tabEntryTabIndex}
-        getTabEntryKeyIndex={(tabEntryKeysLength) => tabEntryKeysLength - 1}
       />
     </Fragment>
   )
 }
 
 interface TabEntryBridgeProps extends Pick<ComponentProps<'div'>, 'tabIndex'> {
-  getTabEntryKeyIndex: (tabEntryKeysLength: number) => number
+  tabEntryKeysKey: keyof Pick<
+    ReadyFocusContext['keyboardBridgeItem'],
+    'tabNextEntryKeys' | 'tabPreviousEntryKeys'
+  >
   focusContextRef: {
     current: FocusContext
   }
 }
 
 function TabEntryBridge(props: TabEntryBridgeProps) {
-  const { tabIndex, focusContextRef, getTabEntryKeyIndex } = props
+  const { tabIndex, focusContextRef, tabEntryKeysKey } = props
   return (
     <div
       tabIndex={tabIndex}
@@ -120,9 +159,7 @@ function TabEntryBridge(props: TabEntryBridgeProps) {
         ) {
           forwardFocusToInternalItem({
             focusContext,
-            tabEntryKeyIndex: getTabEntryKeyIndex(
-              focusContext.keyboardBridgeItem.tabEntryKeys.length
-            ),
+            tabEntryKeys: focusContext.keyboardBridgeItem[tabEntryKeysKey],
           })
         } else {
           throw new Error('invalid path: TabEntryBridge')
@@ -134,33 +171,44 @@ function TabEntryBridge(props: TabEntryBridgeProps) {
 
 interface ForwardFocusToInternalItemApi {
   focusContext: ReadyFocusContext
-  tabEntryKeyIndex: number
+  tabEntryKeys: Array<string>
 }
 
 function forwardFocusToInternalItem(api: ForwardFocusToInternalItemApi) {
-  const { focusContext, tabEntryKeyIndex } = api
-  const tabPreviousEntryKey =
-    focusContext.keyboardBridgeItem.tabEntryKeys[tabEntryKeyIndex]
-  const tabExitFocusItem =
-    tabPreviousEntryKey !== undefined
-      ? focusContext.focusItems[tabPreviousEntryKey]
-      : null
+  const { focusContext, tabEntryKeys } = api
+  const tabEntryKey = tabEntryKeys[0]
+  const targetFocusItem =
+    tabEntryKey !== undefined ? focusContext.focusItems[tabEntryKey] : null
   if (
-    tabPreviousEntryKey &&
-    tabExitFocusItem &&
-    tabExitFocusItem.focusElementRef.current
+    tabEntryKey &&
+    targetFocusItem &&
+    targetFocusItem.focusElementRef.current
   ) {
     const nextFocusState: InternalFocusState = {
       stateType: 'internal',
       triggerType: 'keyboard',
       focusType: 'navigate',
-      focusKey: tabExitFocusItem.focusKey,
-      setItemFocusState: tabExitFocusItem.setItemFocusState,
+      focusKey: targetFocusItem.focusKey,
+      setItemFocusState: targetFocusItem.setItemFocusState,
     }
-    focusContext.setGlobalFocusState!(nextFocusState)
-    tabExitFocusItem.setItemFocusState(nextFocusState)
-    tabExitFocusItem.focusElementRef.current.focus()
+    focusContext.setGlobalFocusState(nextFocusState)
+    targetFocusItem.setItemFocusState(nextFocusState)
+    targetFocusItem.focusElementRef.current.focus()
   } else {
     throw new Error('invalid path: forwardFocusToInternalItem')
   }
+}
+
+interface HandleFocusExternalApi {
+  staleGlobalFocusState: InternalFocusState
+  setGlobalFocusState: StateUpdater<FocusState>
+}
+
+function handleInternalFocusToExternalFocus(api: HandleFocusExternalApi) {
+  const { staleGlobalFocusState, setGlobalFocusState } = api
+  const nextFocusState: ExternalFocusState = {
+    stateType: 'external',
+  }
+  staleGlobalFocusState.setItemFocusState(nextFocusState)
+  setGlobalFocusState(nextFocusState)
 }

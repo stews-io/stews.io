@@ -1,34 +1,26 @@
 import { createContext } from 'preact'
-import { Ref, StateUpdater, useContext } from 'preact/hooks'
+import { Ref, StateUpdater } from 'preact/hooks'
 import { FocusTargetItemApi } from './useFocus'
 
 export type FocusContext = InitializingFocusContext | ReadyFocusContext
 
 export interface InitializingFocusContext
-  extends FocusContextBase<'initializing', KeyboardBridgeItemBase> {}
+  extends FocusContextBase<'initializing'> {}
 
-export interface ReadyFocusContext
-  extends FocusContextBase<'ready', ReadyKeyboardBridgeItem> {
-  setGlobalFocusState: StateUpdater<FocusState>
-}
-
-interface FocusContextBase<
-  ContextState extends string,
-  SomeKeyboardBridgeItem extends KeyboardBridgeItemBase
-> {
-  contextState: ContextState
+export interface ReadyFocusContext extends FocusContextBase<'ready'> {
   focusItems: Record<string, FocusItem>
   globalFocusState: FocusState
-  keyboardBridgeItem: SomeKeyboardBridgeItem
+  setGlobalFocusState: StateUpdater<FocusState>
+  keyboardBridgeItem: {
+    focusKey: 'urlBar'
+    tabNextEntryKeys: Array<string>
+    tabPreviousEntryKeys: Array<string>
+    tabExitElementRef: Ref<HTMLDivElement>
+  }
 }
 
-interface ReadyKeyboardBridgeItem extends KeyboardBridgeItemBase {
-  tabExitElementRef: Ref<HTMLDivElement>
-}
-
-interface KeyboardBridgeItemBase {
-  focusKey: 'urlBar'
-  tabEntryKeys: Array<string>
+interface FocusContextBase<ContextState extends string> {
+  contextState: ContextState
 }
 
 export const FocusContextRef = createContext<{
@@ -36,25 +28,8 @@ export const FocusContextRef = createContext<{
 }>({
   current: {
     contextState: 'initializing',
-    focusItems: {},
-    globalFocusState: {
-      stateType: 'external',
-    },
-    keyboardBridgeItem: {
-      focusKey: 'urlBar',
-      tabEntryKeys: [],
-    },
   },
 })
-
-export function useFocusContext(): ReadyFocusContext {
-  const focusContextRef = useContext(FocusContextRef)
-  if (focusContextRef.current.contextState === 'ready') {
-    return focusContextRef.current
-  } else {
-    throw new Error('invalid path: useFocusContext')
-  }
-}
 
 export type FocusState = InternalFocusState | ExternalFocusState
 

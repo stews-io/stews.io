@@ -1,7 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'preact/hooks'
 import { JSXInternal } from 'preact/src/jsx'
 import {
-  FocusContext,
   FocusContextRef,
   FocusItem,
   FocusState,
@@ -17,30 +16,36 @@ export interface UseFocusResult<SomeHtmlElement extends HTMLElement> {
   itemFocusState: FocusState | null
   getFocusItemProps: () => Pick<
     Required<JSXInternal.HTMLAttributes<SomeHtmlElement>>,
-    'ref' | 'tabIndex' | 'onClick' | 'onKeyDown' | 'className'
-  >
+    'ref' | 'tabIndex' | 'onPointerDown' | 'onClick' | 'onKeyDown' | 'className'
+  > & {
+    'internal-focus-item': true
+  }
 }
 
 export function useFocus<SomeHtmlElement extends HTMLElement>(
   api: UseFocusApi
 ): UseFocusResult<SomeHtmlElement> {
-  const { focusKey, tabNextKey, tabPreviousKey, onSelect } = api
+  const { focusKey, tabPreviousKey, tabNextKey, onSelect } = api
   const focusContextRef = useContext(FocusContextRef)
   const focusElementRef = useRef<SomeHtmlElement>(null)
   const [itemFocusState, setItemFocusState] = useState<FocusState>({
     stateType: 'external',
   })
   useEffect(() => {
-    registerFocusItem({
-      focusContext: focusContextRef.current,
-      focusItem: {
-        focusKey,
-        tabNextKey,
-        tabPreviousKey,
-        focusElementRef,
-        setItemFocusState,
-      },
-    })
+    if (focusContextRef.current.contextState === 'ready') {
+      registerFocusItem({
+        focusContext: focusContextRef.current,
+        focusItem: {
+          focusKey,
+          tabPreviousKey,
+          tabNextKey,
+          focusElementRef,
+          setItemFocusState,
+        },
+      })
+    } else {
+      throw new Error('invalid path: useFocus.useEffect[]')
+    }
     return () => {
       const focusContext = focusContextRef.current
       if (focusContext.contextState === 'ready') {
@@ -49,20 +54,65 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
           focusKey,
         })
       } else {
-        throw new Error('invalid path: useFocus.useEffect[]')
+        throw new Error('invalid path: useFocus.useEffect[].unsubscribe')
       }
     }
   }, [])
+  useEffect(() => {
+    const focusContext = focusContextRef.current
+    if (focusContext.contextState === 'ready') {
+      updateFocusItem({
+        tabKeyKey: 'tabPreviousKey',
+        tabEntryKeysKey: 'tabNextEntryKeys',
+        focusKey,
+        focusContext,
+        tabKey: tabPreviousKey,
+      })
+    } else {
+      throw new Error('invalid path: useFocus.useEffect[tabPreviousKey]')
+    }
+  }, [tabPreviousKey])
+  useEffect(() => {
+    const focusContext = focusContextRef.current
+    if (focusContext.contextState === 'ready') {
+      updateFocusItem({
+        tabKeyKey: 'tabNextKey',
+        tabEntryKeysKey: 'tabPreviousEntryKeys',
+        focusKey,
+        focusContext,
+        tabKey: tabNextKey,
+      })
+    } else {
+      throw new Error('invalid path: useFocus.useEffect[tabNextKey]')
+    }
+  }, [tabNextKey])
   return {
     itemFocusState,
     getFocusItemProps: () => {
       return {
+        'internal-focus-item': true,
         tabIndex: -1,
         className: 'todo',
         ref: focusElementRef,
+        onPointerDown: (somePointerEvent) => {
+          const focusContext = focusContextRef.current
+          if (focusContext.contextState === 'initializing') {
+            throw new Error('invalid path: getFocusItemProps.onPointerDown')
+          } else if (focusContext.contextState === 'ready') {
+            focusTargetItem({
+              triggerType: 'pointer',
+              focusType: 'navigate',
+              focusContext,
+              focusKey: focusKey,
+              triggerEvent: somePointerEvent,
+            })
+          }
+        },
         onClick: (someClickEvent) => {
           const focusContext = focusContextRef.current
-          if (focusContext.contextState === 'ready') {
+          if (focusContext.contextState === 'initializing') {
+            throw new Error('invalid path: getFocusItemProps.onClick')
+          } else if (focusContext.contextState === 'ready') {
             focusTargetItem({
               triggerType: 'pointer',
               focusType: 'select',
@@ -71,8 +121,6 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
               focusKey: focusKey,
               triggerEvent: someClickEvent,
             })
-          } else {
-            throw new Error('invalid path: getFocusItemProps.onClick')
           }
         },
         onKeyDown: (someKeyDownEvent) => {
@@ -133,7 +181,7 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
 }
 
 interface RegisterFocusItemApi {
-  focusContext: FocusContext
+  focusContext: ReadyFocusContext
   focusItem: FocusItem
 }
 
@@ -141,9 +189,12 @@ function registerFocusItem(api: RegisterFocusItemApi) {
   const { focusContext, focusItem } = api
   focusContext.focusItems[focusItem.focusKey] = focusItem
   if (focusItem.tabPreviousKey === 'urlBar') {
-    focusContext.keyboardBridgeItem.tabEntryKeys.unshift(focusItem.focusKey)
-  } else if (focusItem.tabNextKey === 'urlBar') {
-    focusContext.keyboardBridgeItem.tabEntryKeys.push(focusItem.focusKey)
+    focusContext.keyboardBridgeItem.tabNextEntryKeys.push(focusItem.focusKey)
+  }
+  if (focusItem.tabNextKey === 'urlBar') {
+    focusContext.keyboardBridgeItem.tabPreviousEntryKeys.push(
+      focusItem.focusKey
+    )
   }
 }
 
@@ -154,10 +205,48 @@ interface UnregisterFocusItemApi extends Pick<FocusItem, 'focusKey'> {
 function unregisterFocusItem(api: UnregisterFocusItemApi) {
   const { focusContext, focusKey } = api
   delete focusContext.focusItems[focusKey]
-  focusContext.keyboardBridgeItem.tabEntryKeys =
-    focusContext.keyboardBridgeItem.tabEntryKeys.filter(
-      (someTabEntryKey) => someTabEntryKey !== focusKey
+  focusContext.keyboardBridgeItem.tabPreviousEntryKeys =
+    focusContext.keyboardBridgeItem.tabPreviousEntryKeys.filter(
+      (someTabPreviousEntryKey) => someTabPreviousEntryKey !== focusKey
     )
+  focusContext.keyboardBridgeItem.tabNextEntryKeys =
+    focusContext.keyboardBridgeItem.tabNextEntryKeys.filter(
+      (someTabNextEntryKey) => someTabNextEntryKey !== focusKey
+    )
+}
+
+interface UpdateFocusItemApi {
+  focusContext: ReadyFocusContext
+  focusKey: string
+  tabKey: string
+  tabKeyKey: keyof Pick<FocusItem, 'tabPreviousKey' | 'tabNextKey'>
+  tabEntryKeysKey: keyof Pick<
+    ReadyFocusContext['keyboardBridgeItem'],
+    'tabPreviousEntryKeys' | 'tabNextEntryKeys'
+  >
+}
+
+function updateFocusItem(api: UpdateFocusItemApi) {
+  const { focusContext, focusKey, tabKeyKey, tabKey, tabEntryKeysKey } = api
+  const targetFocusItem = focusContext.focusItems[focusKey]
+  if (
+    focusContext.contextState === 'ready' &&
+    targetFocusItem &&
+    targetFocusItem[tabKeyKey] !== tabKey
+  ) {
+    targetFocusItem[tabKeyKey] = tabKey
+    focusContext.keyboardBridgeItem[tabEntryKeysKey] =
+      focusContext.keyboardBridgeItem[tabEntryKeysKey].filter(
+        (someTabEntryKey) => someTabEntryKey !== focusKey
+      )
+    if (tabKey === 'urlBar') {
+      focusContext.keyboardBridgeItem[tabEntryKeysKey].push(focusKey)
+    }
+  } else if (targetFocusItem && targetFocusItem[tabKeyKey] === tabKey) {
+    // noop
+  } else {
+    throw new Error('invalid path: updateFocusItem')
+  }
 }
 
 interface ForwardFocusToUrlBarApi {
@@ -181,12 +270,17 @@ export type FocusTargetItemApi =
 
 type UserFocusTargetItemApi =
   | PointerSelectFocusTargetItemApi
+  | PointerNavigateFocusTargetItemApi
   | KeyboardSelectFocusTargetItemApi
   | KeyboardNavigateFocusTargetItemApi
 
 interface PointerSelectFocusTargetItemApi
   extends PointerFocusTargetItemApi,
     SelectFocusItemApi {}
+
+interface PointerNavigateFocusTargetItemApi
+  extends PointerFocusTargetItemApi,
+    NavigateFocusItemApi {}
 
 interface KeyboardSelectFocusTargetItemApi
   extends KeyboardFocusTargetItemApi,
@@ -231,10 +325,12 @@ interface FocusTargetItemApiBase<TriggerType extends string>
   focusContext: ReadyFocusContext
 }
 
-function focusTargetItem(api: FocusTargetItemApi) {
+export function focusTargetItem(api: FocusTargetItemApi) {
   const { triggerType, focusType } = api
   if (triggerType === 'pointer' && focusType === 'select') {
     pointerSelectFocusTargetItem(api)
+  } else if (triggerType === 'pointer' && focusType === 'navigate') {
+    pointerNavigateFocusTargetItem(api)
   } else if (triggerType === 'keyboard' && focusType === 'select') {
     keyboardSelectFocusTargetItem(api)
   } else if (triggerType === 'keyboard' && focusType === 'navigate') {
@@ -250,6 +346,12 @@ function pointerSelectFocusTargetItem(api: PointerSelectFocusTargetItemApi) {
   const { onSelect, ...userFocusTargetItemApi } = api
   userFocusTargetItem(userFocusTargetItemApi)
   onSelect()
+}
+
+function pointerNavigateFocusTargetItem(
+  api: PointerNavigateFocusTargetItemApi
+) {
+  userFocusTargetItem(api)
 }
 
 function keyboardSelectFocusTargetItem(api: KeyboardSelectFocusTargetItemApi) {
