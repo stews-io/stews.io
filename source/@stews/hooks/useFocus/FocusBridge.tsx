@@ -1,15 +1,7 @@
 import { ComponentProps } from 'preact'
-import {
-  StateUpdater,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'preact/hooks'
+import { useContext, useEffect, useMemo, useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import {
-  ExternalFocusState,
   FocusContext,
   FocusContextRef,
   FocusState,
@@ -45,9 +37,8 @@ export function FocusBridge(props: FocusBridgeProps) {
         focusContext.contextState === 'ready' &&
         focusContext.globalFocusState.stateType === 'internal'
       ) {
-        handleInternalFocusToExternalFocus({
-          staleGlobalFocusState: focusContext.globalFocusState,
-          setGlobalFocusState: focusContext.setGlobalFocusState,
+        setGlobalFocusState({
+          stateType: 'external',
         })
       } else if (focusContext.contextState === 'initializing') {
         throw new Error('invalid path: FocusBridge.windowBlurHandler')
@@ -68,9 +59,8 @@ export function FocusBridge(props: FocusBridgeProps) {
         focusContext.globalFocusState.stateType === 'internal' &&
         !internalFocusItem
       ) {
-        handleInternalFocusToExternalFocus({
-          staleGlobalFocusState: focusContext.globalFocusState,
-          setGlobalFocusState: focusContext.setGlobalFocusState,
+        setGlobalFocusState({
+          stateType: 'external',
         })
       }
     }
@@ -82,8 +72,43 @@ export function FocusBridge(props: FocusBridgeProps) {
     }
   }, [])
   useEffect(() => {
-    if (focusContextRef.current.contextState === 'ready') {
-      focusContextRef.current.globalFocusState = globalFocusState
+    const focusContext = focusContextRef.current
+    if (
+      globalFocusState.stateType === 'internal' &&
+      focusContext.contextState === 'ready' &&
+      focusContext.globalFocusState.stateType === 'internal'
+    ) {
+      focusContext.globalFocusState.setItemFocusState({
+        stateType: 'external',
+      })
+      const targetFocusItem = focusContext.focusItems[globalFocusState.focusKey]
+      targetFocusItem!.setItemFocusState(globalFocusState)
+      targetFocusItem!.focusElementRef.current!.focus()
+      focusContext.globalFocusState = globalFocusState
+    } else if (
+      globalFocusState.stateType === 'internal' &&
+      focusContext.contextState === 'ready' &&
+      focusContext.globalFocusState.stateType === 'external'
+    ) {
+      const targetFocusItem = focusContext.focusItems[globalFocusState.focusKey]
+      targetFocusItem!.setItemFocusState(globalFocusState)
+      targetFocusItem!.focusElementRef.current!.focus()
+      focusContext.globalFocusState = globalFocusState
+    } else if (
+      globalFocusState.stateType === 'external' &&
+      focusContext.contextState === 'ready' &&
+      focusContext.globalFocusState.stateType === 'internal'
+    ) {
+      focusContext.globalFocusState.setItemFocusState({
+        stateType: 'external',
+      })
+      focusContext.globalFocusState = globalFocusState
+    } else if (
+      globalFocusState.stateType === 'external' &&
+      focusContext.contextState === 'ready' &&
+      focusContext.globalFocusState.stateType === 'external'
+    ) {
+      // noop
     } else {
       throw new Error('invalid path: FocusBridge.useEffect[globalFocusState]')
     }
@@ -114,11 +139,14 @@ export function FocusBridge(props: FocusBridgeProps) {
         'invalid path: FocusBridge.useEffect[globalFocusState.stateType]'
       )
     }
+    if (
+      globalFocusState.stateType === 'external' &&
+      document.activeElement instanceof HTMLElement
+    ) {
+      document.activeElement.blur()
+    }
   }, [globalFocusState.stateType])
-  const tabEntryTabIndex = useMemo(
-    () => (globalFocusState.stateType === 'external' ? 1 : -1),
-    [globalFocusState.stateType]
-  )
+  const tabEntryTabIndex = globalFocusState.stateType === 'external' ? 1 : -1
   return (
     <Fragment>
       <div ref={tabExitElementRef} />
@@ -192,23 +220,7 @@ function forwardFocusToInternalItem(api: ForwardFocusToInternalItemApi) {
       setItemFocusState: targetFocusItem.setItemFocusState,
     }
     focusContext.setGlobalFocusState(nextFocusState)
-    targetFocusItem.setItemFocusState(nextFocusState)
-    targetFocusItem.focusElementRef.current.focus()
   } else {
     throw new Error('invalid path: forwardFocusToInternalItem')
   }
-}
-
-interface HandleFocusExternalApi {
-  staleGlobalFocusState: InternalFocusState
-  setGlobalFocusState: StateUpdater<FocusState>
-}
-
-function handleInternalFocusToExternalFocus(api: HandleFocusExternalApi) {
-  const { staleGlobalFocusState, setGlobalFocusState } = api
-  const nextFocusState: ExternalFocusState = {
-    stateType: 'external',
-  }
-  staleGlobalFocusState.setItemFocusState(nextFocusState)
-  setGlobalFocusState(nextFocusState)
 }

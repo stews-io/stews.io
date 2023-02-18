@@ -6,6 +6,7 @@ import {
   FocusState,
   ReadyFocusContext,
 } from './FocusContext'
+import cssModule from './FocusItem.module.scss'
 
 export interface UseFocusApi
   extends Pick<FocusItem, 'focusKey' | 'tabNextKey' | 'tabPreviousKey'> {
@@ -92,9 +93,19 @@ export function useFocus<SomeHtmlElement extends HTMLElement>(
       return {
         'internal-focus-item': true,
         tabIndex: -1,
-        className: 'todo',
+        className:
+          itemFocusState.stateType === 'external'
+            ? ''
+            : itemFocusState.triggerType === 'keyboard'
+            ? cssModule.keyboardFocus!
+            : itemFocusState.triggerType === 'pointer'
+            ? cssModule.pointerFocus!
+            : itemFocusState.triggerType === 'manual'
+            ? cssModule.manualFocus!
+            : '',
         ref: focusElementRef,
         onPointerDown: (somePointerEvent) => {
+          console.log(focusKey)
           const focusContext = focusContextRef.current
           if (focusContext.contextState === 'initializing') {
             throw new Error('invalid path: getFocusItemProps.onPointerDown')
@@ -258,7 +269,7 @@ function forwardFocusToUrlBar(api: ForwardFocusToUrlBarApi) {
   const tabExitSlingshotElement =
     focusContext.keyboardBridgeItem.tabExitElementRef.current?.children[0]
   if (tabExitSlingshotElement) {
-    tabExitSlingshotElement.remove()
+    // tabExitSlingshotElement.remove()
   } else {
     throw new Error('invalid path: forwardFocusToUrlBar')
   }
@@ -369,6 +380,7 @@ function keyboardNavigateFocusTargetItem(
 function userFocusTargetItem(api: Omit<UserFocusTargetItemApi, 'select'>) {
   const { triggerEvent, focusKey, triggerType, focusType, focusContext } = api
   triggerEvent.preventDefault()
+  triggerEvent.stopPropagation()
   _focusTargetItem({
     focusKey,
     triggerType,
@@ -390,7 +402,7 @@ interface _FocusTargetItemApi
 function _focusTargetItem(api: _FocusTargetItemApi) {
   const { focusContext, focusKey, triggerType, focusType } = api
   const targetFocusItem = focusContext.focusItems[focusKey]
-  if (targetFocusItem && targetFocusItem.focusElementRef.current) {
+  if (targetFocusItem) {
     const nextFocusState: FocusState = {
       stateType: 'internal',
       triggerType,
@@ -398,18 +410,7 @@ function _focusTargetItem(api: _FocusTargetItemApi) {
       focusKey: targetFocusItem.focusKey,
       setItemFocusState: targetFocusItem.setItemFocusState,
     }
-    const staleGlobalFocusState = focusContext.globalFocusState
-    targetFocusItem.focusElementRef.current.focus()
-    targetFocusItem.setItemFocusState(nextFocusState)
     focusContext.setGlobalFocusState(nextFocusState)
-    if (
-      staleGlobalFocusState.stateType === 'internal' &&
-      staleGlobalFocusState.focusKey !== targetFocusItem.focusKey
-    ) {
-      staleGlobalFocusState.setItemFocusState({
-        stateType: 'external',
-      })
-    }
   } else {
     throw new Error('invalid path: _focusTargetItem')
   }

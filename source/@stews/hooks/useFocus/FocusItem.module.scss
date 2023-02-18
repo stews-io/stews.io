@@ -1,0 +1,18 @@
+@import "@stews/styles/theme";
+
+.pointerFocus {
+  @extend .visibleFocus;
+}
+
+.keyboardFocus {
+  @extend .visibleFocus;
+}
+
+.manualFocus {
+  @extend .visibleFocus;
+}
+
+.visibleFocus {
+  outline: $themeOutline;
+  outline-offset: $themeOutlineOffset;
+}
