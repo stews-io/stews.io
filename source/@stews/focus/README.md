@@ -38,10 +38,12 @@ lets find out!
 
   - a button can be given focus manually by invoking the focus method on the _target_ element wrapped in a setTimeout within a pointerdown event handler
 
-    - why all of the rigmarole? why not a click event handler? why the setTimeout? triggering focus in a click event handler would give the impression of the correct behavior most of the time, but fails in a few key ways. for instance if you mouse down on the button, then move the mouse outside the button, the button wont be focused, which is not correct. do the same with an input or div with tabIndex and you'll see that they will have focus. the button should behave the same. the setTimeout is needed so that we observe the proper order of events, which goes like pointerdown => focus => focusin => click. on safari without the setTimeout we get an order of events like so: focus => focusin => pointerdown => click => blur => focusout => click, and elsewhere we get focus => focusin => pointerdown => click. the most important effect of the setTimeout is that on safari we bypass the blur event from firing! 
+    - why all of the rigmarole? why not a click event handler? why the setTimeout? triggering focus in a click event handler would give the impression of the correct behavior most of the time, but fails in a few key ways. for instance if you mouse down on the button, then move the mouse outside the button, the button wont be focused, which is not correct. do the same with an input or div with tabIndex and you'll see that they will have focus. the button should behave the same. the setTimeout is needed so that we observe the proper order of events, which goes like pointerdown => focus => focusin => click. on safari without the setTimeout we get an order of events like so: focus => focusin => pointerdown => click => blur => focusout => click, and elsewhere we get focus => focusin => pointerdown => click. the most important effect of the setTimeout is that on safari we bypass the blur event from firing!
+
+  - another workaround could be to use a div for your button element, and decorate it with the proper aria attributes
 
   - [WebKit Bug 22261](https://bugs.webkit.org/show_bug.cgi?id=22261#c68), [WebKit Bug 229895](https://bugs.webkit.org/show_bug.cgi?id=229895)
 
-- focusout
+- on safari the focusout event isnt triggered when the window observes a blur event
 
 - browsers implement a different order of focus events than what the spec laysout

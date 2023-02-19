@@ -1,9 +1,16 @@
 import { RoutableProps } from 'preact-router'
+import { useEffect } from 'preact/hooks'
 import cssModule from './FocusExample.module.scss'
 
 export interface FocusExampleAProps extends Pick<RoutableProps, 'path'> {}
 
 export function FocusExampleA(props: FocusExampleAProps) {
+  useEffect(() => {
+    window.addEventListener('blur', console.log)
+    return () => {
+      window.removeEventListener('blur', console.log)
+    }
+  }, [])
   return (
     <div className={cssModule.exampleContainer}>
       <button
