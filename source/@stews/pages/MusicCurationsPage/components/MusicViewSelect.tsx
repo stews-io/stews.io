@@ -170,26 +170,23 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
           }
         },
         onBlur: (someBlurEvent) => {
-          const nextFocusIsListItem =
+          const windowBlur = someBlurEvent.relatedTarget === null
+          const tabPreviousEscapeOrEnterSelect =
+            popoverOpen && someBlurEvent.relatedTarget === anchorRef.current
+          const tabNextEscape =
+            popoverOpen &&
             someBlurEvent.relatedTarget instanceof HTMLElement &&
-            Boolean(
+            !Boolean(
               someBlurEvent.relatedTarget.attributes.getNamedItem(
                 'data-menu-item'
               )?.value
             )
-          if (
-            // tab next escape
-            !nextFocusIsListItem &&
-            someBlurEvent.relatedTarget !== anchorRef.current
-          ) {
+          if (windowBlur || tabPreviousEscapeOrEnterSelect) {
             setPopoverOpen(false)
+          } else if (tabNextEscape) {
+            setPopoverOpen(false)
+            // redirect focus from tab next target to anchor
             anchorRef.current?.focus()
-          } else if (
-            // tab previous escape && enter select
-            !nextFocusIsListItem &&
-            popoverOpen === true
-          ) {
-            setPopoverOpen(false)
           }
         },
         onFocus: () => {
