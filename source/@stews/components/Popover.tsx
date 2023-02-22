@@ -11,7 +11,7 @@ import { PageContext } from './Page'
 import cssModule from './Popover.module.scss'
 
 export interface PopoverProps extends Pick<ComponentProps<'div'>, 'children'> {
-  anchorRef: Ref<HTMLButtonElement>
+  anchorRef: Ref<HTMLDivElement>
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
 }

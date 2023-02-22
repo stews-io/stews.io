@@ -12,15 +12,24 @@ div {
   @extend .defaultFont;
 }
 
-button {
-  @extend .defaultBoxModel;  
-  @extend .defaultLayout;
-  @extend .defaultFont;
-  background: none;
-  cursor: pointer;
-  user-select: none;
-}
-
 * {
   outline: none;
+
+  &:focus {
+    outline: $themeOutline;
+    outline-offset: $themeOutlineOffset;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:active:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: $themeOutline;
+    outline-offset: $themeOutlineOffset;
+  }
 }

@@ -14,6 +14,7 @@
   @extend .rowContainer;
   align-items: center;
   padding-inline: calc(1 / 2) * $themeSpacer;
+  cursor: pointer;
 }
 
 .buttonLabel {
@@ -47,6 +48,7 @@
 
 .menuItem {
   @extend .rowContainer;
+  @extend .themeNoFocusOutline;
   cursor: pointer;
   
   &:focus-within {
