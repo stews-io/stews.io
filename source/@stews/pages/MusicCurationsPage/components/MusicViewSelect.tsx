@@ -1,4 +1,5 @@
 import { Popover } from '@stews/components/Popover'
+import { getCssClass, throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
 import { Ref, StateUpdater, useEffect, useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
@@ -78,23 +79,39 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
     popoverOpen,
     setPopoverOpen,
     selectMusicView,
+    selectedMusicView,
     musicViews,
   } = props
-  const { getMenuProps, getListItemProps } = useSelectManager({
-    anchorRef,
-    popoverOpen,
-    setPopoverOpen,
-    selectMusicView,
-  })
+  const { getMenuProps, getListItemProps, focusedViewIndex } = useSelectManager(
+    {
+      anchorRef,
+      popoverOpen,
+      setPopoverOpen,
+      selectMusicView,
+    }
+  )
   return (
     <div className={cssModule.selectMenu} {...getMenuProps()}>
       {musicViews.map((someMusicView, musicViewIndex) => (
         <div
           key={someMusicView.viewId}
-          className={cssModule.menuItem}
+          className={getCssClass(cssModule.menuItem, [
+            cssModule.selectedItem,
+            selectedMusicView.viewId === someMusicView.viewId,
+          ])}
           {...getListItemProps(someMusicView, musicViewIndex)}
         >
+          <svg className={cssModule.itemSelectedIcon} viewBox={'0 0 24 24'}>
+            <path
+              d={
+                'M9 16.17L5.53 12.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0L9 16.17z'
+              }
+            />
+          </svg>
           <div className={cssModule.itemLabel}>{someMusicView.viewLabel}</div>
+          {/* <div tabIndex={focusedViewIndex === musicViewIndex ? 0 : -1}>
+            <div></div>
+          </div> */}
         </div>
       ))}
     </div>
@@ -108,6 +125,7 @@ interface UseSelectManagerApi
   > {}
 
 interface UseSelectManagerResult {
+  focusedViewIndex: number | null
   getMenuProps: () => Pick<Required<ComponentProps<'div'>>, 'onKeyDown'>
   getListItemProps: (
     someMusicView: MusicView,
@@ -128,23 +146,26 @@ interface UseSelectManagerResult {
 
 function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
   const { popoverOpen, setPopoverOpen, anchorRef, selectMusicView } = api
-  const listItemsRef = useRef<Array<HTMLDivElement>>([])
+  const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
   useEffect(() => {
     if (popoverOpen) {
-      listItemsRef.current[0]?.focus()
+      listItemsRef.current[0] instanceof HTMLDivElement
+        ? listItemsRef.current[0].focus()
+        : throwInvalidPathError('useSelectManager.useEffect[]')
     } else {
       setFocusedViewIndex(null)
     }
   }, [popoverOpen])
   return {
+    focusedViewIndex,
     getMenuProps: () => {
       return {
         onKeyDown: (someKeyDownEvent) => {
-          if (focusedViewIndex === null) {
-            throw new Error('invalid path reached: ViewSelectMenu.onKeyDown')
-          } else if (someKeyDownEvent.key === 'Escape') {
-            anchorRef.current?.focus()
+          if (someKeyDownEvent.key === 'Escape') {
+            anchorRef.current instanceof HTMLDivElement
+              ? anchorRef.current.focus()
+              : throwInvalidPathError('getMenuProps.onKeyDown.Escape')
           }
         },
       }
@@ -154,19 +175,36 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
         'data-menu-item': true,
         tabIndex: -1,
         ref: (listItemElement) => {
-          listItemsRef.current[musicViewIndex] = listItemElement!
+          listItemsRef.current[musicViewIndex] = listItemElement
         },
         onPointerEnter: () => {
-          listItemsRef.current[musicViewIndex]?.focus()
+          const targetListItemElement = listItemsRef.current[musicViewIndex]
+          targetListItemElement instanceof HTMLDivElement
+            ? targetListItemElement.focus()
+            : throwInvalidPathError('getListItemProps.onPointerEnter')
         },
         onKeyDown: (someKeyDownEvent) => {
+          const listItemsLength = listItemsRef.current.length
           if (someKeyDownEvent.key === 'ArrowDown') {
-            listItemsRef.current[musicViewIndex + 1]?.focus()
+            const nextMusicViewIndex = (musicViewIndex + 1) % listItemsLength
+            const nextListItemElement = listItemsRef.current[nextMusicViewIndex]
+            nextListItemElement instanceof HTMLDivElement
+              ? nextListItemElement.focus()
+              : throwInvalidPathError('getListItemProps.onKeyDown.ArrowDown')
           } else if (someKeyDownEvent.key === 'ArrowUp') {
-            listItemsRef.current[musicViewIndex - 1]?.focus()
+            const previousMusicViewIndex =
+              (((musicViewIndex - 1) % listItemsLength) + listItemsLength) %
+              listItemsLength
+            const previousListItemElement =
+              listItemsRef.current[previousMusicViewIndex]
+            previousListItemElement instanceof HTMLDivElement
+              ? previousListItemElement.focus()
+              : throwInvalidPathError('getListItemProps.onKeyDown.ArrowUp')
           } else if (someKeyDownEvent.key === 'Enter') {
             selectMusicView(someMusicView)
-            anchorRef.current?.focus()
+            anchorRef.current instanceof HTMLDivElement
+              ? anchorRef.current.focus()
+              : throwInvalidPathError('getListItemProps.onKeyDown.Enter')
           }
         },
         onBlur: (someBlurEvent) => {
@@ -186,7 +224,9 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
           } else if (tabNextEscape) {
             setPopoverOpen(false)
             // redirect focus from tab next target to anchor
-            anchorRef.current?.focus()
+            anchorRef.current instanceof HTMLDivElement
+              ? anchorRef.current.focus()
+              : throwInvalidPathError('getListProps.onBlur.tabNextEscape')
           }
         },
         onFocus: () => {

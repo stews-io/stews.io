@@ -44,16 +44,44 @@
 
 .selectMenu {
   @extend .columnContainer;
+  padding-block: $themeSpacer;
+  min-width: 128px;
 }
 
 .menuItem {
   @extend .rowContainer;
   @extend .themeNoFocusOutline;
+  align-items: center;
+  padding-inline: $themeSpacer;
   cursor: pointer;
+
+  &:not(:first-child) {
+    margin-top: $themeSpacer;
+  }
   
   &:focus-within {
     background-color: $themeTextBackgroundColor;
   }
+
+  &.selectedItem {
+    .itemSelectedIcon {
+      visibility: visible;
+    }
+
+    .itemLabel {
+      font-style: italic;
+    }
+  }
+}
+
+.itemSelectedIcon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding-inline-end: $themeSpacer;
+  visibility: hidden;
+  stroke: black;
+  stroke-width: 0.5;
 }
 
 .itemLabel {

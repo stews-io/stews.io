@@ -4,7 +4,11 @@ export type CssClass = JSXInternal.HTMLAttributes['className']
 
 export function getCssClass(
   baseClass: CssClass,
-  extensionClass: CssClass
+  ...extensionClasses: Array<[CssClass, boolean]>
 ): CssClass {
-  return `${baseClass} ${extensionClass}`
+  return `${baseClass}${extensionClasses.reduce(
+    (result, someExtensionClass) =>
+      `${result}${someExtensionClass[1] ? ` ${someExtensionClass[0]}` : ''}`,
+    ''
+  )}`
 }
