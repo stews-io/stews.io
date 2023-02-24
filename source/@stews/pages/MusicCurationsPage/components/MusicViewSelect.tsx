@@ -1,3 +1,4 @@
+import { Button, ButtonProps } from '@stews/components/Button'
 import { Popover } from '@stews/components/Popover'
 import { getCssClass, throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
@@ -19,17 +20,11 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
   return (
     <Fragment>
       <div className={cssModule.buttonContainer}>
-        <div
-          tabIndex={0}
-          ref={anchorRef}
+        <Button
+          elementRef={anchorRef}
           className={cssModule.selectButton}
-          onClick={() => {
-            setPopoverOpen(!popoverOpen)
-          }}
-          onKeyDown={(someKeyDownEvent) => {
-            if (someKeyDownEvent.key === 'Enter') {
-              setPopoverOpen(!popoverOpen)
-            }
+          onSelect={() => {
+            setPopoverOpen(true)
           }}
         >
           <div className={cssModule.buttonLabel}>
@@ -43,7 +38,7 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
               />
             </svg>
           </div>
-        </div>
+        </Button>
       </div>
       <Popover
         anchorRef={anchorRef}
@@ -92,12 +87,11 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
     anchorRef,
     popoverOpen,
     setPopoverOpen,
-    selectMusicView,
   })
   return (
     <div className={cssModule.selectMenu} {...getMenuProps()}>
       {musicViews.map((someMusicView, musicViewIndex) => (
-        <div
+        <Button
           key={someMusicView.viewId}
           className={getCssClass(
             cssModule.menuItem,
@@ -110,6 +104,9 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
               focusedViewIndex === musicViewIndex,
             ]
           )}
+          onSelect={() => {
+            selectMusicView(someMusicView)
+          }}
           {...getListItemProps(someMusicView, musicViewIndex)}
         >
           <svg className={cssModule.itemSelectedIcon} viewBox={'0 0 24 24'}>
@@ -121,7 +118,10 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
           </svg>
           <div className={cssModule.itemLabel}>{someMusicView.viewLabel}</div>
           <div className={cssModule.itemActionContainer}>
-            <div {...getItemActionProps(someMusicView, musicViewIndex)}>
+            <Button
+              onSelect={() => {}}
+              {...getItemActionProps(someMusicView, musicViewIndex)}
+            >
               <svg className={cssModule.actionIcon} viewBox={'0 0 24 24'}>
                 <path
                   d={
@@ -129,24 +129,20 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
                   }
                 />
               </svg>
-            </div>
+            </Button>
           </div>
-        </div>
+        </Button>
       ))}
       <div className={cssModule.menuFooter}>
         <div className={cssModule.footerDivider} />
         <div className={cssModule.footerButtonContainer}>
-          <div
+          <Button
             className={cssModule.createViewButton}
-            tabIndex={0}
-            onClick={() => {}}
-            onKeyDown={() => {
-              console.log('keydown')
-            }}
+            onSelect={() => {}}
             {...getMenuFooterActionProps()}
           >
             create view
-          </div>
+          </Button>
         </div>
       </div>
     </div>
@@ -156,7 +152,7 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
 interface UseSelectManagerApi
   extends Pick<
     ViewSelectMenuProps,
-    'popoverOpen' | 'setPopoverOpen' | 'anchorRef' | 'selectMusicView'
+    'popoverOpen' | 'setPopoverOpen' | 'anchorRef'
   > {}
 
 interface UseSelectManagerResult {
@@ -166,13 +162,13 @@ interface UseSelectManagerResult {
     someMusicView: MusicView,
     musicViewIndex: number
   ) => Pick<
-    Required<ComponentProps<'div'>>,
+    Required<ButtonProps>,
     | 'tabIndex'
-    | 'ref'
+    | 'elementRef'
     | 'onPointerEnter'
-    | 'onKeyDown'
     | 'onBlur'
     | 'onFocus'
+    | 'onKeyDown'
     | 'onClick'
   > & {
     'data-menu-item': true
@@ -180,19 +176,19 @@ interface UseSelectManagerResult {
   getItemActionProps: (
     someMusicView: MusicView,
     musicViewIndex: number
-  ) => Pick<Required<ComponentProps<'div'>>, 'tabIndex' | 'onBlur'> & {
+  ) => Pick<
+    Required<ButtonProps>,
+    'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown'
+  > & {
     'data-menu-item': true
   }
-  getMenuFooterActionProps: () => Pick<
-    Required<ComponentProps<'div'>>,
-    'onBlur'
-  > & {
+  getMenuFooterActionProps: () => Pick<Required<ButtonProps>, 'onBlur'> & {
     'data-menu-item': true
   }
 }
 
 function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
-  const { popoverOpen, setPopoverOpen, anchorRef, selectMusicView } = api
+  const { popoverOpen, setPopoverOpen, anchorRef } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
   useEffect(() => {
@@ -242,51 +238,41 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
     getListItemProps: (someMusicView: MusicView, musicViewIndex: number) => {
       return {
         'data-menu-item': true,
-        tabIndex: -1,
-        ref: (listItemElement) => {
+        tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
+        elementRef: (listItemElement) => {
           listItemsRef.current[musicViewIndex] = listItemElement
         },
         onPointerEnter: () => {
           const targetListItemElement = listItemsRef.current[musicViewIndex]
-          targetListItemElement instanceof HTMLDivElement
-            ? targetListItemElement.focus()
-            : throwInvalidPathError('getListItemProps.onPointerEnter')
+          if (targetListItemElement instanceof HTMLDivElement) {
+            targetListItemElement.focus()
+            targetListItemElement.setAttribute('pointer-focus', 'true')
+          } else {
+            throwInvalidPathError('getListItemProps.onPointerEnter')
+          }
+        },
+        onBlur: getSelectMenuBlurHandler({
+          anchorRef,
+          popoverOpen,
+          setPopoverOpen,
+        }),
+        onFocus: () => {
+          setFocusedViewIndex(musicViewIndex)
         },
         onKeyDown: (someKeyDownEvent) => {
+          // const targetListItemElement = listItemsRef.current[musicViewIndex]
+          // if (targetListItemElement instanceof HTMLDivElement) {
+          //   targetListItemElement.removeAttribute('pointer-focus')
+          // } else {
+          //   throwInvalidPathError('getListItemProps.onPointerEnter')
+          // }
           if (someKeyDownEvent.key === 'Enter') {
-            selectMusicView(someMusicView)
             anchorRef.current instanceof HTMLDivElement
               ? anchorRef.current.focus()
               : throwInvalidPathError('getListItemProps.onKeyDown.Enter')
           }
         },
-        onBlur: (someBlurEvent) => {
-          const windowBlur = someBlurEvent.relatedTarget === null
-          const tabPreviousEscapeOrEnterSelect =
-            popoverOpen && someBlurEvent.relatedTarget === anchorRef.current
-          const tabNextEscape =
-            popoverOpen &&
-            someBlurEvent.relatedTarget instanceof HTMLElement &&
-            !Boolean(
-              someBlurEvent.relatedTarget.attributes.getNamedItem(
-                'data-menu-item'
-              )?.value
-            )
-          if (windowBlur || tabPreviousEscapeOrEnterSelect) {
-            setPopoverOpen(false)
-          } else if (tabNextEscape) {
-            setPopoverOpen(false)
-            // redirect focus from tab next target to anchor
-            anchorRef.current instanceof HTMLDivElement
-              ? anchorRef.current.focus()
-              : throwInvalidPathError('getListProps.onBlur.tabNextEscape')
-          }
-        },
-        onFocus: () => {
-          setFocusedViewIndex(musicViewIndex)
-        },
         onClick: () => {
-          selectMusicView(someMusicView)
           setPopoverOpen(false)
         },
       }
@@ -295,26 +281,17 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
       return {
         'data-menu-item': true,
         tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
-        onBlur: (someBlurEvent) => {
-          const windowBlur = someBlurEvent.relatedTarget === null
-          const tabPreviousEscapeOrEnterSelect =
-            popoverOpen && someBlurEvent.relatedTarget === anchorRef.current
-          const tabNextEscape =
-            popoverOpen &&
-            someBlurEvent.relatedTarget instanceof HTMLElement &&
-            !Boolean(
-              someBlurEvent.relatedTarget.attributes.getNamedItem(
-                'data-menu-item'
-              )?.value
-            )
-          if (windowBlur || tabPreviousEscapeOrEnterSelect) {
-            setPopoverOpen(false)
-          } else if (tabNextEscape) {
-            setPopoverOpen(false)
-            // redirect focus from tab next target to anchor
-            anchorRef.current instanceof HTMLDivElement
-              ? anchorRef.current.focus()
-              : throwInvalidPathError('getItemActionProps.onBlur.tabNextEscape')
+        onBlur: getSelectMenuBlurHandler({
+          anchorRef,
+          popoverOpen,
+          setPopoverOpen,
+        }),
+        onClick: (someClickEvent) => {
+          someClickEvent.stopPropagation()
+        },
+        onKeyDown: (someKeyDownEvent) => {
+          if (someKeyDownEvent.key === 'Enter') {
+            someKeyDownEvent.stopPropagation()
           }
         },
       }
@@ -322,31 +299,43 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
     getMenuFooterActionProps: () => {
       return {
         'data-menu-item': true,
-        onBlur: (someBlurEvent) => {
-          const windowBlur = someBlurEvent.relatedTarget === null
-          const tabPreviousEscapeOrEnterSelect =
-            popoverOpen && someBlurEvent.relatedTarget === anchorRef.current
-          const tabNextEscape =
-            popoverOpen &&
-            someBlurEvent.relatedTarget instanceof HTMLElement &&
-            !Boolean(
-              someBlurEvent.relatedTarget.attributes.getNamedItem(
-                'data-menu-item'
-              )?.value
-            )
-          if (windowBlur || tabPreviousEscapeOrEnterSelect) {
-            setPopoverOpen(false)
-          } else if (tabNextEscape) {
-            setPopoverOpen(false)
-            // redirect focus from tab next target to anchor
-            anchorRef.current instanceof HTMLDivElement
-              ? anchorRef.current.focus()
-              : throwInvalidPathError(
-                  'getMenuFooterActionProps.onBlur.tabNextEscape'
-                )
-          }
-        },
+        onBlur: getSelectMenuBlurHandler({
+          anchorRef,
+          popoverOpen,
+          setPopoverOpen,
+        }),
       }
     },
+  }
+}
+
+interface GetSelectMenuBlurHandlerApi
+  extends Pick<
+    UseSelectManagerApi,
+    'anchorRef' | 'popoverOpen' | 'setPopoverOpen'
+  > {}
+
+function getSelectMenuBlurHandler(api: GetSelectMenuBlurHandlerApi) {
+  const { popoverOpen, anchorRef, setPopoverOpen } = api
+  return (someBlurEvent: FocusEvent) => {
+    const windowBlur = someBlurEvent.relatedTarget === null
+    const tabPreviousEscapeOrEnterSelect =
+      popoverOpen && someBlurEvent.relatedTarget === anchorRef.current
+    const tabNextEscape =
+      popoverOpen &&
+      someBlurEvent.relatedTarget instanceof HTMLElement &&
+      !Boolean(
+        someBlurEvent.relatedTarget.attributes.getNamedItem('data-menu-item')
+          ?.value
+      )
+    if (windowBlur || tabPreviousEscapeOrEnterSelect) {
+      setPopoverOpen(false)
+    } else if (tabNextEscape) {
+      setPopoverOpen(false)
+      // redirect focus from tab next target to anchor
+      anchorRef.current instanceof HTMLDivElement
+        ? anchorRef.current.focus()
+        : throwInvalidPathError('getSelectMenuBlurHandler.tabNextEscape')
+    }
   }
 }

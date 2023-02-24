@@ -40,12 +40,11 @@ $themeOutlineOffset: 0;
   border-radius: $themeBorderRadius;
 }
 
-.themeNoFocusOutline {
-   &:focus {
-    outline: none;
-  }
+.themeFocusOutline {
+  outline: $themeOutline;
+  outline-offset: $themeOutlineOffset;
+}
 
-  &:focus-visible {
-    outline: none;
-  }
+.themeFocusWithoutOutline {
+  outline: none;
 }

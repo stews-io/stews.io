@@ -14,7 +14,6 @@
   @extend .rowContainer;
   align-items: center;
   padding-inline: calc(1 / 2) * $themeSpacer;
-  cursor: pointer;
 }
 
 .buttonLabel {
@@ -50,11 +49,14 @@
 }
 
 .menuItem {
-  @extend .rowContainer;
-  @extend .themeNoFocusOutline;
-  align-items: center;
+  @extend .rowContainer;  
+  align-items: center;  
   padding-inline: $themeSpacer;
   cursor: pointer;
+
+  &:focus {
+    @extend .themeFocusWithoutOutline;
+  }
 
   &:not(:first-child) {
     margin-top: $themeSpacer;
@@ -121,7 +123,6 @@
 }
 
 .createViewButton {
-  white-space: nowrap;
   padding-inline: calc(1 / 2) * $themeSpacer;
   color: $themeButtonTextColor;
   font-size: 20px;

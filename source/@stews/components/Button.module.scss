@@ -1,0 +1,17 @@
+@import '@stews/styles/layout';
+@import '@stews/styles/theme';
+
+.buttonBase {
+  @extend .itemContainer;  
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    @extend .themeFocusOutline;
+
+    &[pointer-focus="true"] {
+      @extend .themeFocusWithoutOutline;
+    }
+  }
+}
