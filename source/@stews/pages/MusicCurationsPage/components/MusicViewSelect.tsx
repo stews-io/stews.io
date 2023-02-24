@@ -243,12 +243,11 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
           listItemsRef.current[musicViewIndex] = listItemElement
         },
         onPointerEnter: () => {
-          const targetListItemElement = listItemsRef.current[musicViewIndex]
-          if (targetListItemElement instanceof HTMLDivElement) {
-            targetListItemElement.focus()
-            targetListItemElement.setAttribute('pointer-focus', 'true')
-          } else {
-            throwInvalidPathError('getListItemProps.onPointerEnter')
+          if (focusedViewIndex !== musicViewIndex) {
+            const targetListItemElement = listItemsRef.current[musicViewIndex]
+            targetListItemElement instanceof HTMLDivElement
+              ? targetListItemElement.focus()
+              : throwInvalidPathError('getListItemProps.onPointerEnter')
           }
         },
         onBlur: getSelectMenuBlurHandler({
@@ -260,12 +259,6 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
           setFocusedViewIndex(musicViewIndex)
         },
         onKeyDown: (someKeyDownEvent) => {
-          // const targetListItemElement = listItemsRef.current[musicViewIndex]
-          // if (targetListItemElement instanceof HTMLDivElement) {
-          //   targetListItemElement.removeAttribute('pointer-focus')
-          // } else {
-          //   throwInvalidPathError('getListItemProps.onPointerEnter')
-          // }
           if (someKeyDownEvent.key === 'Enter') {
             anchorRef.current instanceof HTMLDivElement
               ? anchorRef.current.focus()
