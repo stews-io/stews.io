@@ -26,6 +26,11 @@ export function MusicViewSelect(props: MusicViewSelectProps) {
           onSelect={() => {
             setPopoverOpen(true)
           }}
+          onKeyDown={(someKeyDownEvent) => {
+            if (someKeyDownEvent.key === 'Enter') {
+              anchorRef.current?.setAttribute('keyboard-selected', 'true')
+            }
+          }}
         >
           <div className={cssModule.buttonLabel}>
             {selectedMusicView.viewLabel}
@@ -92,6 +97,7 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
     <div className={cssModule.selectMenu} {...getMenuProps()}>
       {musicViews.map((someMusicView, musicViewIndex) => (
         <Button
+          {...getListItemProps(someMusicView, musicViewIndex)}
           key={someMusicView.viewId}
           className={getCssClass(
             cssModule.menuItem,
@@ -107,7 +113,6 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
           onSelect={() => {
             selectMusicView(someMusicView)
           }}
-          {...getListItemProps(someMusicView, musicViewIndex)}
         >
           <svg className={cssModule.itemSelectedIcon} viewBox={'0 0 24 24'}>
             <path
@@ -116,11 +121,13 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
               }
             />
           </svg>
-          <div className={cssModule.itemLabel}>{someMusicView.viewLabel}</div>
+          <div className={cssModule.itemLabelContainer}>
+            <div className={cssModule.itemLabel}>{someMusicView.viewLabel}</div>
+          </div>
           <div className={cssModule.itemActionContainer}>
             <Button
-              onSelect={() => {}}
               {...getItemActionProps(someMusicView, musicViewIndex)}
+              onSelect={() => {}}
             >
               <svg className={cssModule.actionIcon} viewBox={'0 0 24 24'}>
                 <path
@@ -137,9 +144,9 @@ function ViewSelectMenu(props: ViewSelectMenuProps) {
         <div className={cssModule.footerDivider} />
         <div className={cssModule.footerButtonContainer}>
           <Button
+            {...getMenuFooterActionProps()}
             className={cssModule.createViewButton}
             onSelect={() => {}}
-            {...getMenuFooterActionProps()}
           >
             create view
           </Button>
@@ -178,7 +185,7 @@ interface UseSelectManagerResult {
     musicViewIndex: number
   ) => Pick<
     Required<ButtonProps>,
-    'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown'
+    'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown' | 'onfocusout'
   > & {
     'data-menu-item': true
   }
@@ -192,12 +199,17 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
   useEffect(() => {
-    if (popoverOpen) {
-      listItemsRef.current[0] instanceof HTMLDivElement
-        ? listItemsRef.current[0].focus()
-        : throwInvalidPathError('useSelectManager.useEffect[]')
-    } else {
+    const firstListItem = listItemsRef.current[0]
+    if (popoverOpen && firstListItem instanceof HTMLDivElement) {
+      firstListItem.focus()
+      if (anchorRef.current?.hasAttribute('keyboard-selected')) {
+        anchorRef.current.removeAttribute('keyboard-selected')
+        firstListItem.setAttribute('keyboard-focus', 'true')
+      }
+    } else if (popoverOpen === false) {
       setFocusedViewIndex(null)
+    } else {
+      throwInvalidPathError('useSelectManager.useEffect[]')
     }
   }, [popoverOpen])
   return {
@@ -214,9 +226,12 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
             const nextMusicViewIndex =
               (currentFocusedViewIndex + 1) % listItemsLength
             const nextListItemElement = listItemsRef.current[nextMusicViewIndex]
-            nextListItemElement instanceof HTMLDivElement
-              ? nextListItemElement.focus()
-              : throwInvalidPathError('getListItemProps.onKeyDown.ArrowDown')
+            if (nextListItemElement instanceof HTMLDivElement) {
+              nextListItemElement.focus()
+              nextListItemElement.setAttribute('keyboard-focus', 'true')
+            } else {
+              throwInvalidPathError('getListItemProps.onKeyDown.ArrowDown')
+            }
           } else if (someKeyDownEvent.key === 'ArrowUp') {
             const previousMusicViewIndex =
               (((currentFocusedViewIndex - 1) % listItemsLength) +
@@ -224,9 +239,12 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
               listItemsLength
             const previousListItemElement =
               listItemsRef.current[previousMusicViewIndex]
-            previousListItemElement instanceof HTMLDivElement
-              ? previousListItemElement.focus()
-              : throwInvalidPathError('getListItemProps.onKeyDown.ArrowUp')
+            if (previousListItemElement instanceof HTMLDivElement) {
+              previousListItemElement.focus()
+              previousListItemElement.setAttribute('keyboard-focus', 'true')
+            } else {
+              throwInvalidPathError('getListItemProps.onKeyDown.ArrowUp')
+            }
           } else if (someKeyDownEvent.key === 'Escape') {
             anchorRef.current instanceof HTMLDivElement
               ? anchorRef.current.focus()
@@ -285,6 +303,23 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
         onKeyDown: (someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
             someKeyDownEvent.stopPropagation()
+          } else if (
+            someKeyDownEvent.shiftKey &&
+            someKeyDownEvent.key === 'Tab'
+          ) {
+            someKeyDownEvent.target instanceof HTMLDivElement
+              ? someKeyDownEvent.target.setAttribute('keyboard-blur', 'true')
+              : throwInvalidPathError('getItemActionProps.onKeyDown.ShiftTab')
+          }
+        },
+        onfocusout: (someFocusEvent) => {
+          if (
+            someFocusEvent.target instanceof HTMLDivElement &&
+            someFocusEvent.relatedTarget instanceof HTMLDivElement &&
+            someFocusEvent.target.hasAttribute('keyboard-blur')
+          ) {
+            someFocusEvent.target.removeAttribute('keyboard-blur')
+            someFocusEvent.relatedTarget.setAttribute('keyboard-focus', 'true')
           }
         },
       }

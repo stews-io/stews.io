@@ -54,7 +54,12 @@ export function Button(props: ButtonProps) {
       }}
       onBlur={(someBlurEvent) => {
         if (someBlurEvent.target instanceof HTMLDivElement) {
+          // if a button is focused with a pointer then
+          // it should always have the "pointer-focus" attribute
           someBlurEvent.target.removeAttribute('pointer-focus')
+          // the "keyboard-focus" attribute is only applied on
+          // special occasions like popover keyboard navigation
+          someBlurEvent.target.removeAttribute('keyboard-focus')
         }
         if (onBlur) {
           onBlur(someBlurEvent)

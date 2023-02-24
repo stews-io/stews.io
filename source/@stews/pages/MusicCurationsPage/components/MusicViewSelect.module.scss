@@ -56,6 +56,10 @@
 
   &:focus {
     @extend .themeFocusWithoutOutline;
+
+    &[keyboard-focus="true"] .itemLabel {
+      @extend .themeFocusOutline;
+    }
   }
 
   &:not(:first-child) {
@@ -81,21 +85,28 @@
   flex-shrink: 0;
   width: 22px;
   height: 22px;
-  padding-inline-end: $themeSpacer;
+  padding-inline-end: $themeSpacer - $themeOutlineWidth;
   visibility: hidden;
   stroke: black;
   stroke-width: 0.5;
 }
 
-.itemLabel {
-  @extend .textEllipsis;
+.itemLabelContainer {
+  @extend .rowContainer;
+  padding: $themeOutlineWidth;
+  overflow: hidden;
   flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.itemLabel {
+  @extend .textEllipsis;  
   font-size: 24px;
   font-weight: 700;
 }
 
 .itemActionContainer {
-  padding-inline-start: 3 * $themeSpacer;
+  padding-inline-start: 3 * $themeSpacer - $themeOutlineWidth;
 }
 
 .actionIcon {

@@ -11,7 +11,8 @@ $themeOutlineColor: #2196f3;
 $themeBorder: 1.5px solid black;
 $themeBorderRadius: 4px;
 
-$themeOutline: solid 3px $themeOutlineColor;
+$themeOutlineWidth: 3px;
+$themeOutline: solid $themeOutlineWidth $themeOutlineColor;
 $themeOutlineOffset: 0;
 
 .defaultBoxModel {
