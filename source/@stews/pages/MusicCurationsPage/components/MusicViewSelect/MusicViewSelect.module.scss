@@ -51,8 +51,7 @@
 .menuList {
   @extend .columnContainer;
   max-height: 246px;
-  overflow-y: scroll;
-  padding-block-end: $themeSpacer;
+  overflow-y: scroll;  
 }
 
 .menuItem {
@@ -126,6 +125,7 @@
 .menuFooter {
   @extend .columnContainer;
   padding-inline: $themeSpacer;
+  padding-block-start: $themeSpacer;
 }
 
 .footerDivider {

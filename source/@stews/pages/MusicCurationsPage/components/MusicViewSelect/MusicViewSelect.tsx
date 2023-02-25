@@ -176,7 +176,7 @@ interface UseSelectManagerResult {
     Required<ButtonProps>,
     | 'tabIndex'
     | 'elementRef'
-    | 'onPointerEnter'
+    | 'onPointerMove'
     | 'onBlur'
     | 'onFocus'
     | 'onKeyDown'
@@ -202,6 +202,10 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
   const { popoverOpen, setPopoverOpen, anchorRef } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
+  const pointerClientCoordinatesRef = useRef<{
+    clientX: number
+    clientY: number
+  } | null>(null)
   useEffect(() => {
     const firstListItem = listItemsRef.current[0]
     if (popoverOpen && firstListItem instanceof HTMLDivElement) {
@@ -227,28 +231,35 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
               ? focusedViewIndex
               : throwInvalidPathError('getMenuProps.onKeyDown')
           if (someKeyDownEvent.key === 'ArrowDown') {
-            const nextMusicViewIndex =
-              (currentFocusedViewIndex + 1) % listItemsLength
-            const nextListItemElement = listItemsRef.current[nextMusicViewIndex]
-            if (nextListItemElement instanceof HTMLDivElement) {
-              nextListItemElement.focus()
-              nextListItemElement.setAttribute('keyboard-focus', 'true')
-            } else {
-              throwInvalidPathError('getListItemProps.onKeyDown.ArrowDown')
-            }
+            someKeyDownEvent.preventDefault()
+            setTimeout(() => {
+              const nextMusicViewIndex =
+                (currentFocusedViewIndex + 1) % listItemsLength
+              const nextListItemElement =
+                listItemsRef.current[nextMusicViewIndex]
+              if (nextListItemElement instanceof HTMLDivElement) {
+                nextListItemElement.focus()
+                nextListItemElement.setAttribute('keyboard-focus', 'true')
+              } else {
+                throwInvalidPathError('getListItemProps.onKeyDown.ArrowDown')
+              }
+            })
           } else if (someKeyDownEvent.key === 'ArrowUp') {
-            const previousMusicViewIndex =
-              (((currentFocusedViewIndex - 1) % listItemsLength) +
-                listItemsLength) %
-              listItemsLength
-            const previousListItemElement =
-              listItemsRef.current[previousMusicViewIndex]
-            if (previousListItemElement instanceof HTMLDivElement) {
-              previousListItemElement.focus()
-              previousListItemElement.setAttribute('keyboard-focus', 'true')
-            } else {
-              throwInvalidPathError('getListItemProps.onKeyDown.ArrowUp')
-            }
+            someKeyDownEvent.preventDefault()
+            setTimeout(() => {
+              const previousMusicViewIndex =
+                (((currentFocusedViewIndex - 1) % listItemsLength) +
+                  listItemsLength) %
+                listItemsLength
+              const previousListItemElement =
+                listItemsRef.current[previousMusicViewIndex]
+              if (previousListItemElement instanceof HTMLDivElement) {
+                previousListItemElement.focus()
+                previousListItemElement.setAttribute('keyboard-focus', 'true')
+              } else {
+                throwInvalidPathError('getListItemProps.onKeyDown.ArrowUp')
+              }
+            })
           } else if (someKeyDownEvent.key === 'Escape') {
             anchorRef.current instanceof HTMLDivElement
               ? anchorRef.current.focus()
@@ -264,12 +275,22 @@ function useSelectManager(api: UseSelectManagerApi): UseSelectManagerResult {
         elementRef: (listItemElement) => {
           listItemsRef.current[musicViewIndex] = listItemElement
         },
-        onPointerEnter: () => {
-          if (focusedViewIndex !== musicViewIndex) {
+        onPointerMove: (somePointerMoveEvent) => {
+          if (
+            focusedViewIndex !== musicViewIndex &&
+            getPointerClientCoordinatesChanged({
+              pointerClientCoordinatesRef,
+              somePointerMoveEvent,
+            })
+          ) {
             const targetListItemElement = listItemsRef.current[musicViewIndex]
             targetListItemElement instanceof HTMLDivElement
               ? targetListItemElement.focus()
-              : throwInvalidPathError('getListItemProps.onPointerEnter')
+              : throwInvalidPathError('getListItemProps.onPointerMove')
+          }
+          pointerClientCoordinatesRef.current = {
+            clientX: somePointerMoveEvent.clientX,
+            clientY: somePointerMoveEvent.clientY,
           }
         },
         onBlur: getSelectMenuBlurHandler({
@@ -370,4 +391,21 @@ function getSelectMenuBlurHandler(api: GetSelectMenuBlurHandlerApi) {
         : throwInvalidPathError('getSelectMenuBlurHandler.tabNextEscape')
     }
   }
+}
+
+interface GetPointerClientCoordinatesChangedApi {
+  pointerClientCoordinatesRef: Ref<{ clientX: number; clientY: number } | null>
+  somePointerMoveEvent: PointerEvent
+}
+
+function getPointerClientCoordinatesChanged(
+  api: GetPointerClientCoordinatesChangedApi
+) {
+  const { pointerClientCoordinatesRef, somePointerMoveEvent } = api
+  return (
+    pointerClientCoordinatesRef.current?.clientX !==
+      somePointerMoveEvent.clientX ||
+    pointerClientCoordinatesRef.current?.clientY !==
+      somePointerMoveEvent.clientY
+  )
 }
