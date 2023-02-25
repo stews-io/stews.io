@@ -1,6 +1,6 @@
 import { Page } from '@stews/components/Page'
 import { useState } from 'preact/hooks'
-import { MusicViewSelect } from './components/MusicViewSelect'
+import { MusicViewSelect } from './components/MusicViewSelect/MusicViewSelect'
 import { MusicView } from './data'
 import cssModule from './MusicCurationsPage.module.scss'
 
@@ -30,7 +30,28 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
     },
     {
       viewId: 3,
-      viewLabel: 'asldfkajsdlfkjasdflskajdflskjfslkdfjslkjf',
+      viewLabel: 'super dooper long view name',
+      viewType: 'custom',
+      customType: 'filter',
+      viewFilter: '',
+    },
+    {
+      viewId: 4,
+      viewLabel: 'what what chicken butt',
+      viewType: 'custom',
+      customType: 'filter',
+      viewFilter: '',
+    },
+    {
+      viewId: 5,
+      viewLabel: 'hey oh!',
+      viewType: 'custom',
+      customType: 'filter',
+      viewFilter: '',
+    },
+    {
+      viewId: 6,
+      viewLabel: '🎺🥁🎟',
       viewType: 'custom',
       customType: 'filter',
       viewFilter: '',

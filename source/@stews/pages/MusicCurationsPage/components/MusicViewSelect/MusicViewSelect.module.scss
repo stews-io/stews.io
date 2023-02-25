@@ -48,6 +48,13 @@
   min-width: 128px;
 }
 
+.menuList {
+  @extend .columnContainer;
+  max-height: 246px;
+  overflow-y: scroll;
+  padding-block-end: $themeSpacer;
+}
+
 .menuItem {
   @extend .rowContainer;  
   align-items: center;  
@@ -106,12 +113,12 @@
 }
 
 .itemActionContainer {
-  padding-inline-start: 3 * $themeSpacer - $themeOutlineWidth;
+  padding-inline-start: 4 * $themeSpacer - $themeOutlineWidth;
 }
 
 .actionIcon {
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   fill: $themeButtonTextColor;
   fill-rule: evenodd;
 }
@@ -119,7 +126,6 @@
 .menuFooter {
   @extend .columnContainer;
   padding-inline: $themeSpacer;
-  padding-block-start: $themeSpacer;  
 }
 
 .footerDivider {
