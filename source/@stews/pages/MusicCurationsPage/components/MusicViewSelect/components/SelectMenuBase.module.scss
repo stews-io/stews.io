@@ -1,0 +1,77 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.menuContainer {
+  @extend .columnContainer;
+  padding-block-start: $themeSpacer;
+  padding-block-end: calc(5 / 4) * $themeSpacer;
+  min-width: 128px;
+}
+
+.optionList {
+  @extend .columnContainer;
+  max-height: 244px;
+  overflow-y: scroll;  
+}
+
+.optionItem {
+  @extend .rowContainer;  
+  align-items: center;  
+  padding-inline-start: $themeSpacer;
+  padding-inline-end: 2 * $themeSpacer;
+  cursor: pointer;
+
+  &:focus {
+    @extend .themeFocusWithoutOutline;
+
+    &[keyboard-focus="true"] .optionLabel {
+      @extend .themeFocusOutline;
+    }
+  }
+
+  &:not(:first-child) {
+    margin-top: $themeSpacer;
+  }
+  
+  &.latestFocusedOption {
+    background-color: $themeTextBackgroundColor;
+  }
+
+  &.selectedOption {
+    .optionSelectedIcon {
+      visibility: visible;
+    }
+
+    .optionLabel {
+      font-style: italic;
+    }
+  }
+}
+
+.optionSelectedIcon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding-inline-end: $themeSpacer - $themeOutlineWidth;
+  visibility: hidden;
+  stroke: black;
+  stroke-width: 0.75;
+}
+
+.optionLabelContainer {
+  @extend .rowContainer;
+  padding: $themeOutlineWidth;
+  overflow: hidden;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.optionLabel {
+  @extend .textEllipsis;  
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.optionActionContainer {
+  padding-inline-start: 4 * $themeSpacer - $themeOutlineWidth;
+}

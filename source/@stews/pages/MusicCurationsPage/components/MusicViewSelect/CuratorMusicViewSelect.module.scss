@@ -1,0 +1,35 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.optionActionIcon {
+  width: 21px;
+  height: 21px;
+  fill: $themeButtonTextColor;
+  fill-rule: evenodd;
+  // stroke: $themeButtonTextColor;
+  // stroke-width: 0.5;
+}
+
+.footerContainer {
+  @extend .columnContainer;
+  padding-inline: $themeSpacer;
+  padding-block-start: $themeSpacer;
+}
+
+.footerDivider {
+  margin-bottom: $themeSpacer;
+  height: 1px;
+  background-color: $themeTextBackgroundColor;
+}
+
+.footerActionButtonContainer {
+  @extend .itemContainer;
+  justify-content: center;
+}
+
+.footerActionButton {
+  padding-inline: calc(1 / 2) * $themeSpacer;
+  color: $themeButtonTextColor;
+  font-size: 20px;
+  font-weight: 700;
+}

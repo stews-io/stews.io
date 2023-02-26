@@ -1,6 +1,7 @@
 import { Page } from '@stews/components/Page'
 import { useState } from 'preact/hooks'
-import { MusicViewSelect } from './components/MusicViewSelect/MusicViewSelect'
+import { ConsumerMusicViewSelect } from './components/MusicViewSelect/ConsumerMusicViewSelect'
+import { CuratorMusicViewSelect } from './components/MusicViewSelect/CuratorMusicViewSelect'
 import { MusicView } from './data'
 import cssModule from './MusicCurationsPage.module.scss'
 
@@ -63,15 +64,17 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
   return (
     <Page>
       <div className={cssModule.pageHeader}>
-        <MusicViewSelect
+        <CuratorMusicViewSelect
           musicViews={musicViews}
           selectedMusicView={selectedMusicView}
           selectMusicView={(nextSelectedMusicView) => {
             setSelectedMusicView(nextSelectedMusicView)
           }}
+          navigateToEditMusicViewPage={() => {}}
+          navigateToCreateMusicViewPage={() => {}}
         />
         <div style={{ flexGrow: 1 }} />
-        <MusicViewSelect
+        <ConsumerMusicViewSelect
           musicViews={musicViews}
           selectedMusicView={selectedMusicView}
           selectMusicView={(nextSelectedMusicView) => {

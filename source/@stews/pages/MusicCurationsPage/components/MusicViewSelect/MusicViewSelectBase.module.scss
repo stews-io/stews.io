@@ -1,0 +1,42 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.selectButtonContainer {
+  @extend .columnContainer;
+  width: 0;
+  flex-grow: 1;
+  max-width: fit-content;
+  align-items: stretch;
+  border-bottom: $themeBorder;
+}
+
+.selectButton {
+  @extend .rowContainer;
+  align-items: center;
+  padding-inline: calc(1 / 2) * $themeSpacer;
+}
+
+.selectButtonLabel {
+  @extend .textEllipsis;
+  max-width: 232px;
+  padding-inline-end: calc(5 / 4) * $themeSpacer;
+  font-weight: 700;
+  font-size: 24px;
+  font-style: italic;
+}
+
+.selectButtonIconContainer {
+  @extend .itemContainer;
+}
+
+.selectButtonIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.selectButtonDropdownPolygon {
+  stroke: black;
+  stroke-width: 0.085;
+  stroke-linejoin: round;
+  fill: transparent;
+}
