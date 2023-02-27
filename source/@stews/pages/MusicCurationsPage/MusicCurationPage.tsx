@@ -1,7 +1,9 @@
 import { Page } from '@stews/components/Page'
 import { useState } from 'preact/hooks'
-import { ConsumerMusicViewSelect } from './components/MusicViewSelect/ConsumerMusicViewSelect'
-import { CuratorMusicViewSelect } from './components/MusicViewSelect/CuratorMusicViewSelect'
+import {
+  ConsumerMusicViewSelect,
+  CuratorMusicViewSelect,
+} from './components/MusicViewSelect'
 import { MusicView } from './data'
 import cssModule from './MusicCurationsPage.module.scss'
 

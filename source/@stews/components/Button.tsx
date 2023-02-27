@@ -44,7 +44,7 @@ export function Button(props: ButtonProps) {
       onPointerDown={(somePointerDownEvent) => {
         if (somePointerDownEvent.currentTarget instanceof HTMLDivElement) {
           somePointerDownEvent.currentTarget.setAttribute(
-            'pointer-focus',
+            'data-pointer-focus',
             'true'
           )
         }
@@ -56,10 +56,10 @@ export function Button(props: ButtonProps) {
         if (someBlurEvent.target instanceof HTMLDivElement) {
           // if a button is focused with a pointer then
           // it should always have the "pointer-focus" attribute
-          someBlurEvent.target.removeAttribute('pointer-focus')
+          someBlurEvent.target.removeAttribute('data-pointer-focus')
           // the "keyboard-focus" attribute is only applied on
           // special occasions like popover keyboard navigation
-          someBlurEvent.target.removeAttribute('keyboard-focus')
+          someBlurEvent.target.removeAttribute('data-keyboard-focus')
         }
         if (onBlur) {
           onBlur(someBlurEvent)

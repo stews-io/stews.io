@@ -10,7 +10,7 @@ export function ConsumerMusicViewSelect(props: ConsumerMusicViewSelectProps) {
   return (
     <MusicViewSelectBase
       SelectMenu={ConsumerSelectMenu}
-      customOptionActionProps={null}
+      customOptionActionItemProps={null}
       customMenuFooterProps={null}
       {...props}
     />
@@ -22,14 +22,14 @@ interface ConsumerSelectMenuProps extends SelectMenuProps<null, null> {}
 function ConsumerSelectMenu(props: ConsumerSelectMenuProps) {
   return (
     <SelectMenuBase
-      OptionAction={EmptyOptionAction}
+      OptionActionItem={EmptyOptionActionItem}
       MenuFooter={EmptyMenuFooter}
       {...props}
     />
   )
 }
 
-function EmptyOptionAction() {
+function EmptyOptionActionItem() {
   return null
 }
 

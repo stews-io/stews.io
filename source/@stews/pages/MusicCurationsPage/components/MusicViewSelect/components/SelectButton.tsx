@@ -26,8 +26,8 @@ export function SelectButton(props: SelectButtonProps) {
         onKeyDown={(someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
             anchorRef.current
-              ? anchorRef.current.setAttribute('keyboard-selected', 'true')
-              : throwInvalidPathError('MusicViewSelect.Button.onKeyDown')
+              ? anchorRef.current.setAttribute('data-keyboard-selected', 'true')
+              : throwInvalidPathError('SelectButton.Button.onKeyDown')
           }
         }}
       >

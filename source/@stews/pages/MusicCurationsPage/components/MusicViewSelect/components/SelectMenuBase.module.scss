@@ -17,14 +17,13 @@
 .optionItem {
   @extend .rowContainer;  
   align-items: center;  
-  padding-inline-start: $themeSpacer;
-  padding-inline-end: 2 * $themeSpacer;
+  padding-inline: $themeSpacer;
   cursor: pointer;
 
   &:focus {
     @extend .themeFocusWithoutOutline;
 
-    &[keyboard-focus="true"] .optionLabel {
+    &[data-keyboard-focus="true"] .optionLabel {
       @extend .themeFocusOutline;
     }
   }
@@ -72,6 +71,6 @@
   font-weight: 700;
 }
 
-.optionActionContainer {
-  padding-inline-start: 4 * $themeSpacer - $themeOutlineWidth;
+.optionActionItemContainer {
+  padding-inline-start: 3 * $themeSpacer - $themeOutlineWidth;
 }

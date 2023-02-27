@@ -1,13 +1,15 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
+.optionActionItem {
+  padding-inline: $themeSpacer;
+}
+
 .optionActionIcon {
   width: 21px;
   height: 21px;
   fill: $themeButtonTextColor;
   fill-rule: evenodd;
-  // stroke: $themeButtonTextColor;
-  // stroke-width: 0.5;
 }
 
 .footerContainer {

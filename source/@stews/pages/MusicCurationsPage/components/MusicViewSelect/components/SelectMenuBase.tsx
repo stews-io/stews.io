@@ -10,13 +10,18 @@ import {
 import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
 import cssModule from './SelectMenuBase.module.scss'
 
-export interface SelectMenuProps<CustomOptionActionProps, CustomMenuFooterProps>
-  extends Pick<
-    MusicViewSelectBaseProps<CustomOptionActionProps, CustomMenuFooterProps>,
+export interface SelectMenuProps<
+  CustomOptionActionItemProps,
+  CustomMenuFooterProps
+> extends Pick<
+    MusicViewSelectBaseProps<
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    >,
     | 'musicViews'
     | 'selectedMusicView'
     | 'selectMusicView'
-    | 'customOptionActionProps'
+    | 'customOptionActionItemProps'
     | 'customMenuFooterProps'
   > {
   anchorRef: Ref<HTMLDivElement>
@@ -25,29 +30,32 @@ export interface SelectMenuProps<CustomOptionActionProps, CustomMenuFooterProps>
 }
 
 export interface SelectMenuBaseProps<
-  CustomOptionActionProps,
+  CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends SelectMenuProps<CustomOptionActionProps, CustomMenuFooterProps> {
-  OptionAction: (
-    props: OptionActionProps<CustomOptionActionProps>
+> extends SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps> {
+  OptionActionItem: (
+    props: OptionActionItemProps<CustomOptionActionItemProps>
   ) => JSXInternal.Element | null
   MenuFooter: (
     props: MenuFooterProps<CustomMenuFooterProps>
   ) => JSXInternal.Element | null
 }
 
-export type OptionActionProps<CustomOptionActionProps> =
-  CustomOptionActionProps &
-    Pick<UseSelectMenuNavigationResult, 'getOptionActionProps'> & {
+export type OptionActionItemProps<CustomOptionActionItemProps> =
+  CustomOptionActionItemProps &
+    Pick<UseSelectMenuNavigationResult, 'getOptionActionButtonProps'> & {
       someMusicView: MusicView
       musicViewIndex: number
     }
 
 export type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
-  Pick<UseSelectMenuNavigationResult, 'getFooterActionProps'>
+  Pick<UseSelectMenuNavigationResult, 'getFooterActionButtonProps'>
 
-export function SelectMenuBase<CustomOptionActionProps, CustomMenuFooterProps>(
-  props: SelectMenuBaseProps<CustomOptionActionProps, CustomMenuFooterProps>
+export function SelectMenuBase<
+  CustomOptionActionItemProps,
+  CustomMenuFooterProps
+>(
+  props: SelectMenuBaseProps<CustomOptionActionItemProps, CustomMenuFooterProps>
 ) {
   const {
     anchorRef,
@@ -56,8 +64,8 @@ export function SelectMenuBase<CustomOptionActionProps, CustomMenuFooterProps>(
     musicViews,
     selectedMusicView,
     selectMusicView,
-    OptionAction,
-    customOptionActionProps,
+    OptionActionItem,
+    customOptionActionItemProps,
     MenuFooter,
     customMenuFooterProps,
   } = props
@@ -65,8 +73,8 @@ export function SelectMenuBase<CustomOptionActionProps, CustomMenuFooterProps>(
     focusedViewIndex,
     getMenuContainerProps,
     getMenuOptionProps,
-    getOptionActionProps,
-    getFooterActionProps,
+    getOptionActionButtonProps,
+    getFooterActionButtonProps,
   } = useSelectMenuNavigation({
     anchorRef,
     popoverOpen,
@@ -106,19 +114,19 @@ export function SelectMenuBase<CustomOptionActionProps, CustomMenuFooterProps>(
                 {someMusicView.viewLabel}
               </div>
             </div>
-            <div className={cssModule.optionActionContainer}>
-              <OptionAction
-                getOptionActionProps={getOptionActionProps}
+            <div className={cssModule.optionActionItemContainer}>
+              <OptionActionItem
+                getOptionActionButtonProps={getOptionActionButtonProps}
                 someMusicView={someMusicView}
                 musicViewIndex={musicViewIndex}
-                {...customOptionActionProps}
+                {...customOptionActionItemProps}
               />
             </div>
           </Button>
         ))}
       </div>
       <MenuFooter
-        getFooterActionProps={getFooterActionProps}
+        getFooterActionButtonProps={getFooterActionButtonProps}
         {...customMenuFooterProps}
       />
     </div>

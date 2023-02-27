@@ -13,22 +13,22 @@ export interface MusicViewSelectProps {
 }
 
 export interface MusicViewSelectBaseProps<
-  CustomOptionActionProps,
+  CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends MusicViewSelectProps {
-  customOptionActionProps: CustomOptionActionProps
+  customOptionActionItemProps: CustomOptionActionItemProps
   customMenuFooterProps: CustomMenuFooterProps
   SelectMenu: (
-    props: SelectMenuProps<CustomOptionActionProps, CustomMenuFooterProps>
+    props: SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
   ) => JSXInternal.Element
 }
 
 export function MusicViewSelectBase<
-  CustomOptionActionProps,
+  CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(
   props: MusicViewSelectBaseProps<
-    CustomOptionActionProps,
+    CustomOptionActionItemProps,
     CustomMenuFooterProps
   >
 ) {
@@ -37,7 +37,7 @@ export function MusicViewSelectBase<
     SelectMenu,
     selectMusicView,
     musicViews,
-    customOptionActionProps,
+    customOptionActionItemProps,
     customMenuFooterProps,
   } = props
   const anchorRef = useRef<HTMLDivElement>(null)
@@ -61,7 +61,7 @@ export function MusicViewSelectBase<
           anchorRef={anchorRef}
           popoverOpen={popoverOpen}
           setPopoverOpen={setPopoverOpen}
-          customOptionActionProps={customOptionActionProps}
+          customOptionActionItemProps={customOptionActionItemProps}
           customMenuFooterProps={customMenuFooterProps}
         />
       </Popover>

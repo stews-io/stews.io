@@ -17,12 +17,14 @@ export interface UseSelectMenuNavigationResult {
     'onKeyDown'
   >
   getMenuOptionProps: (musicViewIndex: number) => MenuOptionProps
-  getOptionActionProps: (musicViewIndex: number) => OptionActionProps
-  getFooterActionProps: () => MenuFooterActionItemProps
+  getOptionActionButtonProps: (
+    musicViewIndex: number
+  ) => OptionActionButtonProps
+  getFooterActionButtonProps: () => FooterActionButtonProps
 }
 
 interface MenuOptionProps
-  extends SelectMenuNavigationItemPropsBase,
+  extends SelectMenuNavigationItemProps,
     Pick<
       Required<ButtonProps>,
       | 'tabIndex'
@@ -34,18 +36,18 @@ interface MenuOptionProps
       | 'onClick'
     > {}
 
-interface OptionActionProps
-  extends SelectMenuNavigationItemPropsBase,
+interface OptionActionButtonProps
+  extends SelectMenuNavigationItemProps,
     Pick<
       Required<ButtonProps>,
       'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown' | 'onfocusout'
     > {}
 
-interface MenuFooterActionItemProps
-  extends SelectMenuNavigationItemPropsBase,
+interface FooterActionButtonProps
+  extends SelectMenuNavigationItemProps,
     Pick<Required<ButtonProps>, 'onBlur'> {}
 
-interface SelectMenuNavigationItemPropsBase {
+interface SelectMenuNavigationItemProps {
   'data-select-menu-navigation-item': true
 }
 
@@ -63,9 +65,9 @@ export function useSelectMenuNavigation(
     const firstListItem = listItemsRef.current[0]
     if (popoverOpen && firstListItem instanceof HTMLDivElement) {
       firstListItem.focus()
-      if (anchorRef.current?.hasAttribute('keyboard-selected')) {
-        anchorRef.current.removeAttribute('keyboard-selected')
-        firstListItem.setAttribute('keyboard-focus', 'true')
+      if (anchorRef.current?.hasAttribute('data-keyboard-selected')) {
+        anchorRef.current.removeAttribute('data-keyboard-selected')
+        firstListItem.setAttribute('data-keyboard-focus', 'true')
       }
     } else if (popoverOpen === false) {
       setFocusedViewIndex(null)
@@ -82,7 +84,7 @@ export function useSelectMenuNavigation(
           const currentFocusedViewIndex =
             typeof focusedViewIndex === 'number'
               ? focusedViewIndex
-              : throwInvalidPathError('getMenuProps.onKeyDown')
+              : throwInvalidPathError('getMenuContainerProps.onKeyDown')
           if (someKeyDownEvent.key === 'ArrowDown') {
             handleArrowKeyListNavigation({
               listItemsRef,
@@ -101,7 +103,7 @@ export function useSelectMenuNavigation(
           } else if (someKeyDownEvent.key === 'Escape') {
             anchorRef.current instanceof HTMLDivElement
               ? anchorRef.current.focus()
-              : throwInvalidPathError('getMenuProps.onKeyDown.Escape')
+              : throwInvalidPathError('getMenuContainerProps.onKeyDown.Escape')
           }
         },
       }
@@ -124,7 +126,7 @@ export function useSelectMenuNavigation(
             const targetListItemElement = listItemsRef.current[musicViewIndex]
             targetListItemElement instanceof HTMLDivElement
               ? targetListItemElement.focus()
-              : throwInvalidPathError('getListItemProps.onPointerMove')
+              : throwInvalidPathError('getMenuOptionProps.onPointerMove')
           }
           pointerClientCoordinatesRef.current = {
             clientX: somePointerMoveEvent.clientX,
@@ -143,7 +145,7 @@ export function useSelectMenuNavigation(
           if (someKeyDownEvent.key === 'Enter') {
             anchorRef.current instanceof HTMLDivElement
               ? anchorRef.current.focus()
-              : throwInvalidPathError('getListItemProps.onKeyDown.Enter')
+              : throwInvalidPathError('getMenuOptionProps.onKeyDown.Enter')
           }
         },
         onClick: () => {
@@ -151,7 +153,7 @@ export function useSelectMenuNavigation(
         },
       }
     },
-    getOptionActionProps: (musicViewIndex: number) => {
+    getOptionActionButtonProps: (musicViewIndex: number) => {
       return {
         'data-select-menu-navigation-item': true,
         tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
@@ -171,23 +173,31 @@ export function useSelectMenuNavigation(
             someKeyDownEvent.key === 'Tab'
           ) {
             someKeyDownEvent.target instanceof HTMLDivElement
-              ? someKeyDownEvent.target.setAttribute('keyboard-blur', 'true')
-              : throwInvalidPathError('getItemActionProps.onKeyDown.ShiftTab')
+              ? someKeyDownEvent.target.setAttribute(
+                  'data-keyboard-blur',
+                  'true'
+                )
+              : throwInvalidPathError(
+                  'getOptionActionButtonProps.onKeyDown.ShiftTab'
+                )
           }
         },
         onfocusout: (someFocusEvent) => {
           if (
             someFocusEvent.target instanceof HTMLDivElement &&
             someFocusEvent.relatedTarget instanceof HTMLDivElement &&
-            someFocusEvent.target.hasAttribute('keyboard-blur')
+            someFocusEvent.target.hasAttribute('data-keyboard-blur')
           ) {
-            someFocusEvent.target.removeAttribute('keyboard-blur')
-            someFocusEvent.relatedTarget.setAttribute('keyboard-focus', 'true')
+            someFocusEvent.target.removeAttribute('data-keyboard-blur')
+            someFocusEvent.relatedTarget.setAttribute(
+              'data-keyboard-focus',
+              'true'
+            )
           }
         },
       }
     },
-    getFooterActionProps: () => {
+    getFooterActionButtonProps: () => {
       return {
         'data-select-menu-navigation-item': true,
         onBlur: getSelectMenuBlurHandler({
@@ -247,7 +257,7 @@ function handleArrowKeyListNavigation(api: HandleArrowKeyListNavigationApi) {
     const targetListItemElement = listItemsRef.current[targetViewIndex]
     if (targetListItemElement instanceof HTMLDivElement) {
       targetListItemElement.focus()
-      targetListItemElement.setAttribute('keyboard-focus', 'true')
+      targetListItemElement.setAttribute('data-keyboard-focus', 'true')
     } else {
       throwInvalidPathError('handleArrowKeyListNavigation')
     }
