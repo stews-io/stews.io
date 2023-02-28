@@ -4,6 +4,7 @@ import {
   ConsumerMusicViewSelect,
   CuratorMusicViewSelect,
 } from './components/MusicViewSelect'
+import { ProfileCard } from './components/ProfileCard/ProfileCard'
 import { MusicView } from './data'
 import cssModule from './MusicCurationsPage.module.scss'
 
@@ -66,23 +67,20 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
   return (
     <Page>
       <div className={cssModule.pageHeader}>
-        <CuratorMusicViewSelect
-          musicViews={musicViews}
-          selectedMusicView={selectedMusicView}
-          selectMusicView={(nextSelectedMusicView) => {
-            setSelectedMusicView(nextSelectedMusicView)
-          }}
-          navigateToEditMusicViewPage={() => {}}
-          navigateToCreateMusicViewPage={() => {}}
-        />
-        <div style={{ flexGrow: 1 }} />
-        <ConsumerMusicViewSelect
-          musicViews={musicViews}
-          selectedMusicView={selectedMusicView}
-          selectMusicView={(nextSelectedMusicView) => {
-            setSelectedMusicView(nextSelectedMusicView)
-          }}
-        />
+        <div className={cssModule.viewSelectContainer}>
+          <CuratorMusicViewSelect
+            musicViews={musicViews}
+            selectedMusicView={selectedMusicView}
+            selectMusicView={(nextSelectedMusicView) => {
+              setSelectedMusicView(nextSelectedMusicView)
+            }}
+            navigateToEditMusicViewPage={() => {}}
+            navigateToCreateMusicViewPage={() => {}}
+          />
+        </div>
+        <div className={cssModule.actionContainer}>
+          <ProfileCard />
+        </div>
       </div>
     </Page>
   )

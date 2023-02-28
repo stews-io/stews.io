@@ -1,8 +1,23 @@
 @import "@stews/styles/layout";
+@import "@stews/styles/theme";
 
 .pageHeader {
   @extend .rowContainer;
   z-index: 1;
   position: sticky;
   top: 0;
+  padding: $themeSpacer;
+}
+
+.viewSelectContainer {
+  @extend .itemContainer;
+  justify-content: flex-start;
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+.actionContainer {
+  @extend .rowContainer;
+  align-items: center;
+  padding-inline-start: 4 * $themeSpacer;
 }

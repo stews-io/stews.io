@@ -92,10 +92,10 @@ export function Popover(props: PopoverProps) {
       pageContentRef.current?.getBoundingClientRect()
     const anchorClientRect = anchorRef.current?.getBoundingClientRect()
     if (pageContentClientRect && anchorClientRect && popoverOpen) {
-      const maxPopoverPadding = 24
+      const maxPopoverPadding = 48
       const pageMiddleX =
-        pageContentClientRect.x + pageContentClientRect.width / 2
-      const anchorMiddleX = anchorClientRect.x + anchorClientRect.width / 2
+        pageContentClientRect.left + pageContentClientRect.width / 2
+      const anchorMiddleX = anchorClientRect.left + anchorClientRect.width / 2
       const popoverDirection: 'left' | 'right' =
         anchorMiddleX > pageMiddleX ? 'left' : 'right'
       return {
@@ -105,7 +105,7 @@ export function Popover(props: PopoverProps) {
         maxWidth: pageContentClientRect.width - maxPopoverPadding,
         ...(popoverDirection === 'right'
           ? {
-              left: pageContentClientRect.x - anchorClientRect.x,
+              left: anchorClientRect.left - pageContentClientRect.left,
               right: undefined,
             }
           : {
