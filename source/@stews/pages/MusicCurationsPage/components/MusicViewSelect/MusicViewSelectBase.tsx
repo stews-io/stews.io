@@ -1,7 +1,5 @@
-import { Popover } from '@stews/components/Popover'
+import { Bopper } from '@stews/components/Bopper'
 import { MusicView } from '@stews/pages/MusicCurationsPage/data'
-import { useRef, useState } from 'preact/hooks'
-import { Fragment } from 'preact/jsx-runtime'
 import { JSXInternal } from 'preact/src/jsx'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuProps } from './components/SelectMenuBase'
@@ -40,31 +38,20 @@ export function MusicViewSelectBase<
     customOptionActionItemProps,
     customMenuFooterProps,
   } = props
-  const anchorRef = useRef<HTMLDivElement>(null)
-  const [popoverOpen, setPopoverOpen] = useState(false)
   return (
-    <Fragment>
-      <SelectButton
-        selectedMusicView={selectedMusicView}
-        anchorRef={anchorRef}
-        setPopoverOpen={setPopoverOpen}
-      />
-      <Popover
-        anchorRef={anchorRef}
-        popoverOpen={popoverOpen}
-        setPopoverOpen={setPopoverOpen}
-      >
-        <SelectMenu
-          selectedMusicView={selectedMusicView}
-          selectMusicView={selectMusicView}
-          musicViews={musicViews}
-          anchorRef={anchorRef}
-          popoverOpen={popoverOpen}
-          setPopoverOpen={setPopoverOpen}
-          customOptionActionItemProps={customOptionActionItemProps}
-          customMenuFooterProps={customMenuFooterProps}
-        />
-      </Popover>
-    </Fragment>
+    <Bopper
+      AnchorButton={SelectButton}
+      PopoverContent={SelectMenu}
+      customAnchorButtonProps={{
+        selectedMusicView,
+      }}
+      customPopoverContentProps={{
+        selectedMusicView,
+        selectMusicView,
+        musicViews,
+        customOptionActionItemProps,
+        customMenuFooterProps,
+      }}
+    />
   )
 }

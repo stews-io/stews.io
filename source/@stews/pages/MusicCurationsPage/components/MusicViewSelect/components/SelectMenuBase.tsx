@@ -1,7 +1,7 @@
+import { CorePopoverContentsProps } from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
 import { MusicView } from '@stews/pages/MusicCurationsPage/data'
-import { Ref, StateUpdater } from 'preact/hooks'
 import { JSXInternal } from 'preact/src/jsx'
 import {
   useSelectMenuNavigation,
@@ -13,21 +13,18 @@ import cssModule from './SelectMenuBase.module.scss'
 export interface SelectMenuProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends Pick<
-    MusicViewSelectBaseProps<
-      CustomOptionActionItemProps,
-      CustomMenuFooterProps
-    >,
-    | 'musicViews'
-    | 'selectedMusicView'
-    | 'selectMusicView'
-    | 'customOptionActionItemProps'
-    | 'customMenuFooterProps'
-  > {
-  anchorRef: Ref<HTMLDivElement>
-  popoverOpen: boolean
-  setPopoverOpen: StateUpdater<boolean>
-}
+> extends CorePopoverContentsProps,
+    Pick<
+      MusicViewSelectBaseProps<
+        CustomOptionActionItemProps,
+        CustomMenuFooterProps
+      >,
+      | 'musicViews'
+      | 'selectedMusicView'
+      | 'selectMusicView'
+      | 'customOptionActionItemProps'
+      | 'customMenuFooterProps'
+    > {}
 
 export interface SelectMenuBaseProps<
   CustomOptionActionItemProps,

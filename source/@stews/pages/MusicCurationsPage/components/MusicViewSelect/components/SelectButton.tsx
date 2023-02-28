@@ -1,3 +1,4 @@
+import { CoreAnchorButtonProps } from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { throwInvalidPathError } from '@stews/helpers'
 import { Ref, StateUpdater } from 'preact/hooks'
@@ -5,13 +6,8 @@ import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
 import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps
-  extends Pick<
-    MusicViewSelectBaseProps<unknown, unknown>,
-    'selectedMusicView'
-  > {
-  anchorRef: Ref<HTMLDivElement>
-  setPopoverOpen: StateUpdater<boolean>
-}
+  extends CoreAnchorButtonProps,
+    Pick<MusicViewSelectBaseProps<unknown, unknown>, 'selectedMusicView'> {}
 
 export function SelectButton(props: SelectButtonProps) {
   const { anchorRef, setPopoverOpen, selectedMusicView } = props

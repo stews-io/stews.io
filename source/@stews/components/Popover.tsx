@@ -67,13 +67,13 @@ export function Popover(props: PopoverProps) {
         popoverOpen,
         pageContentRef,
       })}
-      onPointerEnter={(somePointerEnterEvent: PointerEvent) => {
+      onPointerEnter={(somePointerEnterEvent) => {
         if (somePointerEnterEvent.pointerType === 'mouse') {
           pointerStateRef.current.pointerWithin = true
           document.body.style.overflow = 'hidden'
         }
       }}
-      onPointerLeave={(somePointerLeaveEvent: PointerEvent) => {
+      onPointerLeave={(somePointerLeaveEvent) => {
         if (somePointerLeaveEvent.pointerType === 'mouse') {
           pointerStateRef.current.pointerWithin = false
           document.body.style.overflow = 'inherit'
@@ -95,7 +95,7 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
   const pageContentClientRect = pageContentRef.current?.getBoundingClientRect()
   const anchorClientRect = anchorRef.current?.getBoundingClientRect()
   if (pageContentClientRect && anchorClientRect && popoverOpen) {
-    const maxPopoverPadding = 48
+    const maxPopoverPadding = 40
     const pageMiddleX =
       pageContentClientRect.left + pageContentClientRect.width / 2
     const anchorMiddleX = anchorClientRect.left + anchorClientRect.width / 2
