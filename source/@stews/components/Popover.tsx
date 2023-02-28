@@ -1,3 +1,4 @@
+import { throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
 import {
   Ref,
@@ -17,33 +18,21 @@ export interface PopoverProps extends Pick<ComponentProps<'div'>, 'children'> {
 }
 
 export function Popover(props: PopoverProps) {
-  const { setPopoverOpen, anchorRef, children, popoverOpen } = props
+  const { setPopoverOpen, anchorRef, popoverOpen, children } = props
   const popoverRef = useRef<HTMLDivElement>(null)
   const closePopover = useMemo(() => () => setPopoverOpen(false), [])
   const pointerStateRef = useRef({
     pointerWithin: true,
   })
   useEffect(() => {
-    const popoverElement = popoverRef.current
-    if (popoverElement) {
-      const popoverPointerEnterHandler = (somePointerEvent: PointerEvent) => {
-        if (somePointerEvent.pointerType === 'mouse') {
-          pointerStateRef.current.pointerWithin = true
-          document.body.style.overflow = 'hidden'
-        }
+    const windowScrollHandler = () => {
+      if (!pointerStateRef.current.pointerWithin) {
+        closePopover()
       }
-      const popoverPointerLeaveHandler = (somePointerEvent: PointerEvent) => {
-        if (somePointerEvent.pointerType === 'mouse') {
-          pointerStateRef.current.pointerWithin = false
-          document.body.style.overflow = 'inherit'
-        }
-      }
-      const windowScrollHandler = () => {
-        if (!pointerStateRef.current.pointerWithin) {
-          closePopover()
-        }
-      }
-      const windowPointerDownHandler = (somePointerEvent: PointerEvent) => {
+    }
+    const windowPointerDownHandler = (somePointerEvent: PointerEvent) => {
+      const popoverElement = popoverRef.current
+      if (popoverElement instanceof HTMLDivElement) {
         const popoverClientRect = popoverElement.getBoundingClientRect()
         const pointerWithinPopover =
           popoverClientRect &&
@@ -55,83 +44,83 @@ export function Popover(props: PopoverProps) {
           closePopover()
         }
       }
-      const windowResizeHandler = () => {
-        closePopover()
-      }
-      popoverElement.addEventListener(
-        'pointerenter',
-        popoverPointerEnterHandler
-      )
-      popoverElement.addEventListener(
-        'pointerleave',
-        popoverPointerLeaveHandler
-      )
-      window.addEventListener('scroll', windowScrollHandler)
-      window.addEventListener('pointerdown', windowPointerDownHandler)
-      window.addEventListener('resize', windowResizeHandler)
-      return () => {
-        popoverElement.removeEventListener(
-          'pointerenter',
-          popoverPointerEnterHandler
-        )
-        popoverElement.removeEventListener(
-          'pointerleave',
-          popoverPointerLeaveHandler
-        )
-        window.removeEventListener('scroll', windowScrollHandler)
-        window.removeEventListener('pointerdown', windowPointerDownHandler)
-        window.removeEventListener('resize', windowResizeHandler)
-      }
-    } else {
-      throw new Error('invalid path reached: "popoverRef.current" is null')
+    }
+    const windowResizeHandler = () => {
+      closePopover()
+    }
+    window.addEventListener('scroll', windowScrollHandler)
+    window.addEventListener('pointerdown', windowPointerDownHandler)
+    window.addEventListener('resize', windowResizeHandler)
+    return () => {
+      window.removeEventListener('scroll', windowScrollHandler)
+      window.removeEventListener('pointerdown', windowPointerDownHandler)
+      window.removeEventListener('resize', windowResizeHandler)
     }
   }, [])
   const pageContentRef = useContext(PageContext)
-  const popoverLayoutStyle = useMemo(() => {
-    const pageContentClientRect =
-      pageContentRef.current?.getBoundingClientRect()
-    const anchorClientRect = anchorRef.current?.getBoundingClientRect()
-    if (pageContentClientRect && anchorClientRect && popoverOpen) {
-      const maxPopoverPadding = 48
-      const pageMiddleX =
-        pageContentClientRect.left + pageContentClientRect.width / 2
-      const anchorMiddleX = anchorClientRect.left + anchorClientRect.width / 2
-      const popoverDirection: 'left' | 'right' =
-        anchorMiddleX > pageMiddleX ? 'left' : 'right'
-      return {
-        position: 'absolute',
-        top: anchorClientRect.y,
-        maxHeight: window.innerHeight - maxPopoverPadding,
-        maxWidth: pageContentClientRect.width - maxPopoverPadding,
-        ...(popoverDirection === 'right'
-          ? {
-              left: anchorClientRect.left - pageContentClientRect.left,
-              right: undefined,
-            }
-          : {
-              left: undefined,
-              right:
-                pageContentClientRect.width -
-                (anchorClientRect.x -
-                  pageContentClientRect.x +
-                  anchorClientRect.width),
-            }),
-      }
-    } else {
-      return {
-        display: 'none',
-        width: 0,
-        height: 0,
-      }
-    }
-  }, [popoverOpen])
-  return (
+  return popoverOpen ? (
     <div
       ref={popoverRef}
       className={cssModule.popoverContainer}
-      style={popoverLayoutStyle}
+      style={getPopoverLayoutStyle({
+        anchorRef,
+        popoverOpen,
+        pageContentRef,
+      })}
+      onPointerEnter={(somePointerEnterEvent: PointerEvent) => {
+        if (somePointerEnterEvent.pointerType === 'mouse') {
+          pointerStateRef.current.pointerWithin = true
+          document.body.style.overflow = 'hidden'
+        }
+      }}
+      onPointerLeave={(somePointerLeaveEvent: PointerEvent) => {
+        if (somePointerLeaveEvent.pointerType === 'mouse') {
+          pointerStateRef.current.pointerWithin = false
+          document.body.style.overflow = 'inherit'
+        }
+      }}
     >
       {children}
     </div>
-  )
+  ) : null
+}
+
+interface GetPopoverLayoutStyleApi
+  extends Pick<PopoverProps, 'anchorRef' | 'popoverOpen'> {
+  pageContentRef: Ref<HTMLDivElement>
+}
+
+function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
+  const { anchorRef, popoverOpen, pageContentRef } = api
+  const pageContentClientRect = pageContentRef.current?.getBoundingClientRect()
+  const anchorClientRect = anchorRef.current?.getBoundingClientRect()
+  if (pageContentClientRect && anchorClientRect && popoverOpen) {
+    const maxPopoverPadding = 48
+    const pageMiddleX =
+      pageContentClientRect.left + pageContentClientRect.width / 2
+    const anchorMiddleX = anchorClientRect.left + anchorClientRect.width / 2
+    const popoverDirection: 'left' | 'right' =
+      anchorMiddleX > pageMiddleX ? 'left' : 'right'
+    return {
+      position: 'absolute',
+      top: anchorClientRect.y,
+      maxHeight: window.innerHeight - maxPopoverPadding,
+      maxWidth: pageContentClientRect.width - maxPopoverPadding,
+      ...(popoverDirection === 'right'
+        ? {
+            left: anchorClientRect.left - pageContentClientRect.left,
+            right: undefined,
+          }
+        : {
+            left: undefined,
+            right:
+              pageContentClientRect.width -
+              (anchorClientRect.x -
+                pageContentClientRect.x +
+                anchorClientRect.width),
+          }),
+    }
+  } else {
+    throwInvalidPathError('getPopoverLayoutStyle')
+  }
 }
