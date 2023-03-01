@@ -1,7 +1,6 @@
 import { CoreAnchorButtonProps } from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { throwInvalidPathError } from '@stews/helpers'
-import { Ref, StateUpdater } from 'preact/hooks'
 import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
 import cssModule from './SelectButton.module.scss'
 
@@ -10,19 +9,19 @@ export interface SelectButtonProps
     Pick<MusicViewSelectBaseProps<unknown, unknown>, 'selectedMusicView'> {}
 
 export function SelectButton(props: SelectButtonProps) {
-  const { anchorRef, setPopoverOpen, selectedMusicView } = props
+  const { onSelect, anchorElementRef, selectedMusicView } = props
   return (
     <div className={cssModule.buttonContainer}>
       <Button
-        elementRef={anchorRef}
-        className={cssModule.selectButton}
-        onSelect={() => {
-          setPopoverOpen(true)
-        }}
+        onSelect={onSelect}
+        elementRef={anchorElementRef}
         onKeyDown={(someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
-            anchorRef.current
-              ? anchorRef.current.setAttribute('data-keyboard-selected', 'true')
+            anchorElementRef?.current
+              ? anchorElementRef.current.setAttribute(
+                  'data-keyboard-selected',
+                  'true'
+                )
               : throwInvalidPathError('SelectButton.Button.onKeyDown')
           }
         }}

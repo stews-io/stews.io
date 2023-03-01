@@ -1,38 +1,26 @@
-import { Ref, StateUpdater, useRef, useState } from 'preact/hooks'
+import { useMemo, useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { JSXInternal } from 'preact/src/jsx'
-import { Popover } from './Popover'
+import { ButtonProps } from './Button'
+import { Popover, PopoverProps } from './Popover'
 
-export interface BopperProps<
-  CustomAnchorButtonProps,
-  CustomPopoverContentProps
-> {
+export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
+  extends Pick<
+    PopoverProps<CustomPopoverContentProps>,
+    'PopoverContent' | 'customPopoverContentProps'
+  > {
   customAnchorButtonProps: CustomAnchorButtonProps
-  customPopoverContentProps: CustomPopoverContentProps
   AnchorButton: (
     props: AnchorButtonProps<CustomAnchorButtonProps>
-  ) => JSXInternal.Element
-  PopoverContent: (
-    props: PopoverContentProps<CustomPopoverContentProps>
   ) => JSXInternal.Element
 }
 
 type AnchorButtonProps<CustomAnchorButtonProps> = CoreAnchorButtonProps &
   CustomAnchorButtonProps
 
-export interface CoreAnchorButtonProps {
-  anchorRef: Ref<HTMLDivElement>
-  setPopoverOpen: StateUpdater<boolean>
-}
-
-type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentsProps &
-  CustomPopoverContentProps
-
-export interface CorePopoverContentsProps {
-  anchorRef: Ref<HTMLDivElement>
-  popoverOpen: boolean
-  setPopoverOpen: StateUpdater<boolean>
-}
+export interface CoreAnchorButtonProps
+  extends Pick<ButtonProps, 'onSelect'>,
+    Pick<PopoverProps<unknown>, 'anchorElementRef'> {}
 
 export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   props: BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
@@ -43,27 +31,27 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
     PopoverContent,
     customPopoverContentProps,
   } = props
-  const anchorRef = useRef<HTMLDivElement>(null)
+  const anchorElementRef = useRef<HTMLDivElement>(null)
   const [popoverOpen, setPopoverOpen] = useState(false)
+  const coreAnchorButtonProps = useMemo(
+    () => ({
+      anchorElementRef,
+      onSelect: () => {
+        setPopoverOpen(true)
+      },
+    }),
+    [anchorElementRef, setPopoverOpen]
+  )
   return (
     <Fragment>
-      <AnchorButton
-        anchorRef={anchorRef}
-        setPopoverOpen={setPopoverOpen}
-        {...customAnchorButtonProps}
-      />
+      <AnchorButton {...coreAnchorButtonProps} {...customAnchorButtonProps} />
       <Popover
-        anchorRef={anchorRef}
+        PopoverContent={PopoverContent}
+        anchorElementRef={anchorElementRef}
         popoverOpen={popoverOpen}
         setPopoverOpen={setPopoverOpen}
-      >
-        <PopoverContent
-          anchorRef={anchorRef}
-          popoverOpen={popoverOpen}
-          setPopoverOpen={setPopoverOpen}
-          {...customPopoverContentProps}
-        />
-      </Popover>
+        customPopoverContentProps={customPopoverContentProps}
+      />
     </Fragment>
   )
 }

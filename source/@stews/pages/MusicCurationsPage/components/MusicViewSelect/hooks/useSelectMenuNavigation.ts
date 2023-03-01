@@ -1,20 +1,13 @@
 import { ButtonProps } from '@stews/components/Button'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
-import {
-  MutableRef,
-  Ref,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'preact/hooks'
+import { MutableRef, Ref, useEffect, useRef, useState } from 'preact/hooks'
 import { SelectMenuBaseProps } from '../components/SelectMenuBase'
 
 export interface UseSelectMenuNavigationApi
   extends Pick<
     SelectMenuBaseProps<unknown, unknown>,
-    'anchorRef' | 'popoverOpen' | 'setPopoverOpen'
+    'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
   > {}
 
 export interface UseSelectMenuNavigationResult {
@@ -61,7 +54,7 @@ interface SelectMenuNavigationItemProps {
 export function useSelectMenuNavigation(
   api: UseSelectMenuNavigationApi
 ): UseSelectMenuNavigationResult {
-  const { popoverOpen, anchorRef, setPopoverOpen } = api
+  const { popoverOpen, anchorElementRef, setPopoverOpen } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
   const pointerClientCoordinatesRef = useRef<{
@@ -72,8 +65,8 @@ export function useSelectMenuNavigation(
     const firstListItem = listItemsRef.current[0]
     if (popoverOpen && firstListItem instanceof HTMLDivElement) {
       firstListItem.focus()
-      if (anchorRef.current?.hasAttribute('data-keyboard-selected')) {
-        anchorRef.current.removeAttribute('data-keyboard-selected')
+      if (anchorElementRef.current?.hasAttribute('data-keyboard-selected')) {
+        anchorElementRef.current.removeAttribute('data-keyboard-selected')
         firstListItem.setAttribute('data-keyboard-focus', 'true')
       }
     } else if (popoverOpen === false) {
@@ -108,8 +101,8 @@ export function useSelectMenuNavigation(
                 listItemsLength,
             })
           } else if (someKeyDownEvent.key === 'Escape') {
-            anchorRef.current instanceof HTMLDivElement
-              ? anchorRef.current.focus()
+            anchorElementRef.current instanceof HTMLDivElement
+              ? anchorElementRef.current.focus()
               : throwInvalidPathError('getMenuContainerProps.onKeyDown.Escape')
           }
         },
@@ -141,7 +134,7 @@ export function useSelectMenuNavigation(
           }
         },
         onBlur: getSelectMenuBlurHandler({
-          anchorRef,
+          anchorElementRef,
           popoverOpen,
           setPopoverOpen,
         }),
@@ -150,8 +143,8 @@ export function useSelectMenuNavigation(
         },
         onKeyDown: (someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
-            anchorRef.current instanceof HTMLDivElement
-              ? anchorRef.current.focus()
+            anchorElementRef.current instanceof HTMLDivElement
+              ? anchorElementRef.current.focus()
               : throwInvalidPathError('getMenuOptionProps.onKeyDown.Enter')
           }
         },
@@ -165,7 +158,7 @@ export function useSelectMenuNavigation(
         'data-select-menu-navigation-item': true,
         tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
         onBlur: getSelectMenuBlurHandler({
-          anchorRef,
+          anchorElementRef,
           popoverOpen,
           setPopoverOpen,
         }),
@@ -208,7 +201,7 @@ export function useSelectMenuNavigation(
       return {
         'data-select-menu-navigation-item': true,
         onBlur: getSelectMenuBlurHandler({
-          anchorRef,
+          anchorElementRef,
           popoverOpen,
           setPopoverOpen,
         }),
@@ -220,15 +213,15 @@ export function useSelectMenuNavigation(
 interface GetSelectMenuBlurHandlerApi
   extends Pick<
     UseSelectMenuNavigationApi,
-    'anchorRef' | 'popoverOpen' | 'setPopoverOpen'
+    'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
   > {}
 
 function getSelectMenuBlurHandler(api: GetSelectMenuBlurHandlerApi) {
-  const { popoverOpen, anchorRef, setPopoverOpen } = api
+  const { popoverOpen, anchorElementRef, setPopoverOpen } = api
   return (someBlurEvent: FocusEvent) => {
     const windowBlur = someBlurEvent.relatedTarget === null
     const tabPreviousEscapeOrEnterSelect =
-      popoverOpen && someBlurEvent.relatedTarget === anchorRef.current
+      popoverOpen && someBlurEvent.relatedTarget === anchorElementRef.current
     const tabNextEscape =
       popoverOpen &&
       someBlurEvent.relatedTarget instanceof HTMLElement &&
@@ -242,8 +235,8 @@ function getSelectMenuBlurHandler(api: GetSelectMenuBlurHandlerApi) {
     } else if (tabNextEscape) {
       setPopoverOpen(false)
       // redirect focus from tab next target to anchor
-      anchorRef.current instanceof HTMLDivElement
-        ? anchorRef.current.focus()
+      anchorElementRef.current instanceof HTMLDivElement
+        ? anchorElementRef.current.focus()
         : throwInvalidPathError('getSelectMenuBlurHandler.tabNextEscape')
     }
   }

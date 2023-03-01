@@ -1,5 +1,4 @@
 import { throwInvalidPathError } from '@stews/helpers'
-import { ComponentProps } from 'preact'
 import {
   Ref,
   StateUpdater,
@@ -8,17 +7,39 @@ import {
   useMemo,
   useRef,
 } from 'preact/hooks'
+import { JSXInternal } from 'preact/src/jsx'
 import { PageContext } from './Page'
 import cssModule from './Popover.module.scss'
 
-export interface PopoverProps extends Pick<ComponentProps<'div'>, 'children'> {
-  anchorRef: Ref<HTMLDivElement>
+export interface PopoverProps<CustomPopoverContentProps> {
+  anchorElementRef: Ref<HTMLDivElement>
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
+  customPopoverContentProps: CustomPopoverContentProps
+  PopoverContent: (
+    props: PopoverContentProps<CustomPopoverContentProps>
+  ) => JSXInternal.Element
 }
 
-export function Popover(props: PopoverProps) {
-  const { setPopoverOpen, anchorRef, popoverOpen, children } = props
+type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
+  CustomPopoverContentProps
+
+export interface CorePopoverContentProps
+  extends Pick<
+    PopoverProps<unknown>,
+    'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
+  > {}
+
+export function Popover<CustomPopoverContentProps>(
+  props: PopoverProps<CustomPopoverContentProps>
+) {
+  const {
+    setPopoverOpen,
+    anchorElementRef,
+    popoverOpen,
+    PopoverContent,
+    customPopoverContentProps,
+  } = props
   const popoverRef = useRef<HTMLDivElement>(null)
   const closePopover = useMemo(() => () => setPopoverOpen(false), [])
   const pointerStateRef = useRef({
@@ -63,7 +84,7 @@ export function Popover(props: PopoverProps) {
       ref={popoverRef}
       className={cssModule.popoverContainer}
       style={getPopoverLayoutStyle({
-        anchorRef,
+        anchorElementRef,
         popoverOpen,
         pageContentRef,
       })}
@@ -80,20 +101,25 @@ export function Popover(props: PopoverProps) {
         }
       }}
     >
-      {children}
+      <PopoverContent
+        anchorElementRef={anchorElementRef}
+        popoverOpen={popoverOpen}
+        setPopoverOpen={setPopoverOpen}
+        {...customPopoverContentProps}
+      />
     </div>
   ) : null
 }
 
 interface GetPopoverLayoutStyleApi
-  extends Pick<PopoverProps, 'anchorRef' | 'popoverOpen'> {
+  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {
   pageContentRef: Ref<HTMLDivElement>
 }
 
 function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
-  const { anchorRef, popoverOpen, pageContentRef } = api
+  const { anchorElementRef, popoverOpen, pageContentRef } = api
   const pageContentClientRect = pageContentRef.current?.getBoundingClientRect()
-  const anchorClientRect = anchorRef.current?.getBoundingClientRect()
+  const anchorClientRect = anchorElementRef.current?.getBoundingClientRect()
   if (pageContentClientRect && anchorClientRect && popoverOpen) {
     const maxPopoverPadding = 40
     const pageMiddleX =
