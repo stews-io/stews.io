@@ -12,18 +12,20 @@ export interface UseSelectMenuNavigationApi
 
 export interface UseSelectMenuNavigationResult {
   focusedViewIndex: number | null
-  getMenuContainerProps: () => Pick<
+  menuNavigationMenuContainerProps: Pick<
     Required<ComponentProps<'div'>>,
     'onKeyDown'
   >
-  getMenuOptionProps: (musicViewIndex: number) => MenuOptionProps
-  getOptionActionButtonProps: (
+  menuNavigationFooterActionButtonProps: MenuNavigationFooterActionButtonProps
+  getMenuNavigationMenuOptionProps: (
     musicViewIndex: number
-  ) => OptionActionButtonProps
-  getFooterActionButtonProps: () => FooterActionButtonProps
+  ) => MenuNavigationMenuOptionProps
+  getMenuNavigationOptionActionButtonProps: (
+    musicViewIndex: number
+  ) => MenuNavigationOptionActionButtonProps
 }
 
-interface MenuOptionProps
+interface MenuNavigationMenuOptionProps
   extends SelectMenuNavigationItemProps,
     Pick<
       Required<ButtonProps>,
@@ -36,14 +38,14 @@ interface MenuOptionProps
       | 'onClick'
     > {}
 
-interface OptionActionButtonProps
+interface MenuNavigationOptionActionButtonProps
   extends SelectMenuNavigationItemProps,
     Pick<
       Required<ButtonProps>,
       'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown' | 'onfocusout'
     > {}
 
-interface FooterActionButtonProps
+interface MenuNavigationFooterActionButtonProps
   extends SelectMenuNavigationItemProps,
     Pick<Required<ButtonProps>, 'onBlur'> {}
 
@@ -77,38 +79,44 @@ export function useSelectMenuNavigation(
   }, [popoverOpen])
   return {
     focusedViewIndex,
-    getMenuContainerProps: () => {
-      return {
-        onKeyDown: (someKeyDownEvent) => {
-          const listItemsLength = listItemsRef.current.length
-          const currentFocusedViewIndex =
-            typeof focusedViewIndex === 'number'
-              ? focusedViewIndex
-              : throwInvalidPathError('getMenuContainerProps.onKeyDown')
-          if (someKeyDownEvent.key === 'ArrowDown') {
-            handleArrowKeyListNavigation({
-              listItemsRef,
-              someKeyDownEvent,
-              targetViewIndex: (currentFocusedViewIndex + 1) % listItemsLength,
-            })
-          } else if (someKeyDownEvent.key === 'ArrowUp') {
-            handleArrowKeyListNavigation({
-              listItemsRef,
-              someKeyDownEvent,
-              targetViewIndex:
-                (((currentFocusedViewIndex - 1) % listItemsLength) +
-                  listItemsLength) %
-                listItemsLength,
-            })
-          } else if (someKeyDownEvent.key === 'Escape') {
-            anchorElementRef.current instanceof HTMLDivElement
-              ? anchorElementRef.current.focus()
-              : throwInvalidPathError('getMenuContainerProps.onKeyDown.Escape')
-          }
-        },
-      }
+    menuNavigationMenuContainerProps: {
+      onKeyDown: (someKeyDownEvent) => {
+        const listItemsLength = listItemsRef.current.length
+        const currentFocusedViewIndex =
+          typeof focusedViewIndex === 'number'
+            ? focusedViewIndex
+            : throwInvalidPathError('getMenuContainerProps.onKeyDown')
+        if (someKeyDownEvent.key === 'ArrowDown') {
+          handleArrowKeyListNavigation({
+            listItemsRef,
+            someKeyDownEvent,
+            targetViewIndex: (currentFocusedViewIndex + 1) % listItemsLength,
+          })
+        } else if (someKeyDownEvent.key === 'ArrowUp') {
+          handleArrowKeyListNavigation({
+            listItemsRef,
+            someKeyDownEvent,
+            targetViewIndex:
+              (((currentFocusedViewIndex - 1) % listItemsLength) +
+                listItemsLength) %
+              listItemsLength,
+          })
+        } else if (someKeyDownEvent.key === 'Escape') {
+          anchorElementRef.current instanceof HTMLDivElement
+            ? anchorElementRef.current.focus()
+            : throwInvalidPathError('getMenuContainerProps.onKeyDown.Escape')
+        }
+      },
     },
-    getMenuOptionProps: (musicViewIndex: number) => {
+    menuNavigationFooterActionButtonProps: {
+      'data-select-menu-navigation-item': true,
+      onBlur: getSelectMenuBlurHandler({
+        anchorElementRef,
+        popoverOpen,
+        setPopoverOpen,
+      }),
+    },
+    getMenuNavigationMenuOptionProps: (musicViewIndex: number) => {
       return {
         'data-select-menu-navigation-item': true,
         tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
@@ -153,7 +161,7 @@ export function useSelectMenuNavigation(
         },
       }
     },
-    getOptionActionButtonProps: (musicViewIndex: number) => {
+    getMenuNavigationOptionActionButtonProps: (musicViewIndex: number) => {
       return {
         'data-select-menu-navigation-item': true,
         tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
@@ -195,16 +203,6 @@ export function useSelectMenuNavigation(
             )
           }
         },
-      }
-    },
-    getFooterActionButtonProps: () => {
-      return {
-        'data-select-menu-navigation-item': true,
-        onBlur: getSelectMenuBlurHandler({
-          anchorElementRef,
-          popoverOpen,
-          setPopoverOpen,
-        }),
       }
     },
   }

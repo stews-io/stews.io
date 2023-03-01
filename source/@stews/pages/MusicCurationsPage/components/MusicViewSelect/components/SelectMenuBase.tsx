@@ -39,14 +39,15 @@ export interface SelectMenuBaseProps<
 }
 
 export type OptionActionItemProps<CustomOptionActionItemProps> =
-  CustomOptionActionItemProps &
-    Pick<UseSelectMenuNavigationResult, 'getOptionActionButtonProps'> & {
-      someMusicView: MusicView
-      musicViewIndex: number
-    }
+  CustomOptionActionItemProps & {
+    menuNavigationOptionActionButtonProps: ReturnType<
+      UseSelectMenuNavigationResult['getMenuNavigationOptionActionButtonProps']
+    >
+    someMusicView: MusicView
+  }
 
 export type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
-  Pick<UseSelectMenuNavigationResult, 'getFooterActionButtonProps'>
+  Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
 
 export function SelectMenuBase<
   CustomOptionActionItemProps,
@@ -68,21 +69,24 @@ export function SelectMenuBase<
   } = props
   const {
     focusedViewIndex,
-    getMenuContainerProps,
-    getMenuOptionProps,
-    getOptionActionButtonProps,
-    getFooterActionButtonProps,
+    menuNavigationMenuContainerProps,
+    getMenuNavigationMenuOptionProps,
+    getMenuNavigationOptionActionButtonProps,
+    menuNavigationFooterActionButtonProps,
   } = useSelectMenuNavigation({
     anchorElementRef,
     popoverOpen,
     setPopoverOpen,
   })
   return (
-    <div className={cssModule.menuContainer} {...getMenuContainerProps()}>
+    <div
+      {...menuNavigationMenuContainerProps}
+      className={cssModule.menuContainer}
+    >
       <div className={cssModule.optionList}>
         {musicViews.map((someMusicView, musicViewIndex) => (
           <Button
-            {...getMenuOptionProps(musicViewIndex)}
+            {...getMenuNavigationMenuOptionProps(musicViewIndex)}
             key={someMusicView.viewId}
             className={getCssClass(
               cssModule.optionItem,
@@ -113,9 +117,10 @@ export function SelectMenuBase<
             </div>
             <div className={cssModule.optionActionItemContainer}>
               <OptionActionItem
-                getOptionActionButtonProps={getOptionActionButtonProps}
                 someMusicView={someMusicView}
-                musicViewIndex={musicViewIndex}
+                menuNavigationOptionActionButtonProps={getMenuNavigationOptionActionButtonProps(
+                  musicViewIndex
+                )}
                 {...customOptionActionItemProps}
               />
             </div>
@@ -123,7 +128,9 @@ export function SelectMenuBase<
         ))}
       </div>
       <MenuFooter
-        getFooterActionButtonProps={getFooterActionButtonProps}
+        menuNavigationFooterActionButtonProps={
+          menuNavigationFooterActionButtonProps
+        }
         {...customMenuFooterProps}
       />
     </div>

@@ -9,12 +9,14 @@ export interface SelectButtonProps
     Pick<MusicViewSelectBaseProps<unknown, unknown>, 'selectedMusicView'> {}
 
 export function SelectButton(props: SelectButtonProps) {
-  const { onSelect, anchorElementRef, selectedMusicView } = props
+  const { anchorElementRef, setPopoverOpen, selectedMusicView } = props
   return (
     <div className={cssModule.buttonContainer}>
       <Button
-        onSelect={onSelect}
         elementRef={anchorElementRef}
+        onSelect={() => {
+          setPopoverOpen(true)
+        }}
         onKeyDown={(someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
             anchorElementRef?.current

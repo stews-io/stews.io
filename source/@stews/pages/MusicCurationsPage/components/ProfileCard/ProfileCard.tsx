@@ -20,12 +20,14 @@ export function ProfileCard(props: ProfileCardProps) {
 interface ProfileButtonProps extends CoreAnchorButtonProps {}
 
 function ProfileButton(props: ProfileButtonProps) {
-  const { onSelect, anchorElementRef } = props
+  const { setPopoverOpen, anchorElementRef } = props
   return (
     <Button
       className={cssModule.profileButton}
-      onSelect={onSelect}
       elementRef={anchorElementRef}
+      onSelect={() => {
+        setPopoverOpen(true)
+      }}
     >
       <svg className={cssModule.profileIcon} viewBox={'-5 -5 34 34'}>
         <circle
