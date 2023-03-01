@@ -44,6 +44,8 @@ export type OptionActionItemProps<CustomOptionActionItemProps> =
       UseSelectMenuNavigationResult['getMenuNavigationOptionActionButtonProps']
     >
     someMusicView: MusicView
+    musicViewIndex: number
+    latestFocusedViewIndex: UseSelectMenuNavigationResult['latestFocusedViewIndex']
   }
 
 export type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
@@ -68,7 +70,7 @@ export function SelectMenuBase<
     customMenuFooterProps,
   } = props
   const {
-    focusedViewIndex,
+    latestFocusedViewIndex,
     menuNavigationMenuContainerProps,
     getMenuNavigationMenuOptionProps,
     getMenuNavigationOptionActionButtonProps,
@@ -96,7 +98,7 @@ export function SelectMenuBase<
               ],
               [
                 cssModule.latestFocusedOption,
-                focusedViewIndex === musicViewIndex,
+                latestFocusedViewIndex === musicViewIndex,
               ]
             )}
             onSelect={() => {
@@ -117,7 +119,9 @@ export function SelectMenuBase<
             </div>
             <div className={cssModule.optionActionItemContainer}>
               <OptionActionItem
+                latestFocusedViewIndex={latestFocusedViewIndex}
                 someMusicView={someMusicView}
+                musicViewIndex={musicViewIndex}
                 menuNavigationOptionActionButtonProps={getMenuNavigationOptionActionButtonProps(
                   musicViewIndex
                 )}

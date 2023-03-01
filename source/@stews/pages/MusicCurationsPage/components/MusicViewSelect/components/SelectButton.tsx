@@ -13,6 +13,7 @@ export function SelectButton(props: SelectButtonProps) {
   return (
     <div className={cssModule.buttonContainer}>
       <Button
+        className={cssModule.selectButton}
         elementRef={anchorElementRef}
         onSelect={() => {
           setPopoverOpen(true)

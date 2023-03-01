@@ -1,10 +1,7 @@
 import { Page } from '@stews/components/Page'
 import { useState } from 'preact/hooks'
-import {
-  ConsumerMusicViewSelect,
-  CuratorMusicViewSelect,
-} from './components/MusicViewSelect'
-import { ProfileCard } from './components/ProfileCard/ProfileCard'
+import { CuratorMusicViewSelect } from './components/MusicViewSelect'
+import { ProfileBopper } from './components/ProfileBopper/ProfileBopper'
 import { MusicView } from './data'
 import cssModule from './MusicCurationsPage.module.scss'
 
@@ -79,7 +76,27 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
           />
         </div>
         <div className={cssModule.actionContainer}>
-          <ProfileCard />
+          <ProfileBopper
+            musicCurator={{
+              curatorName: 'clumsycomputer',
+              curatorLocation: 'guadalajara, jalisco',
+              curatorStatus: 'just trying to listen and groove',
+              curatorLinks: [
+                {
+                  linkType: 'website',
+                  linkHref: 'https://clumsycomputer.com',
+                },
+                {
+                  linkType: 'github',
+                  linkHref: 'https://github.com/clumsycomputer',
+                },
+                {
+                  linkType: 'twitter',
+                  linkHref: 'https://twitter.com/c1umsyc0mputer',
+                },
+              ],
+            }}
+          />
         </div>
       </div>
     </Page>

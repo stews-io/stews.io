@@ -11,7 +11,7 @@ export interface UseSelectMenuNavigationApi
   > {}
 
 export interface UseSelectMenuNavigationResult {
-  focusedViewIndex: number | null
+  latestFocusedViewIndex: number | null
   menuNavigationMenuContainerProps: Pick<
     Required<ComponentProps<'div'>>,
     'onKeyDown'
@@ -58,7 +58,9 @@ export function useSelectMenuNavigation(
 ): UseSelectMenuNavigationResult {
   const { popoverOpen, anchorElementRef, setPopoverOpen } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
-  const [focusedViewIndex, setFocusedViewIndex] = useState<number | null>(null)
+  const [latestFocusedViewIndex, setFocusedViewIndex] = useState<number | null>(
+    null
+  )
   const pointerClientCoordinatesRef = useRef<{
     clientX: number
     clientY: number
@@ -78,13 +80,13 @@ export function useSelectMenuNavigation(
     }
   }, [popoverOpen])
   return {
-    focusedViewIndex,
+    latestFocusedViewIndex,
     menuNavigationMenuContainerProps: {
       onKeyDown: (someKeyDownEvent) => {
         const listItemsLength = listItemsRef.current.length
         const currentFocusedViewIndex =
-          typeof focusedViewIndex === 'number'
-            ? focusedViewIndex
+          typeof latestFocusedViewIndex === 'number'
+            ? latestFocusedViewIndex
             : throwInvalidPathError('getMenuContainerProps.onKeyDown')
         if (someKeyDownEvent.key === 'ArrowDown') {
           handleArrowKeyListNavigation({
@@ -119,13 +121,13 @@ export function useSelectMenuNavigation(
     getMenuNavigationMenuOptionProps: (musicViewIndex: number) => {
       return {
         'data-select-menu-navigation-item': true,
-        tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
+        tabIndex: latestFocusedViewIndex === musicViewIndex ? 0 : -1,
         elementRef: (listItemElement) => {
           listItemsRef.current[musicViewIndex] = listItemElement
         },
         onPointerMove: (somePointerMoveEvent) => {
           if (
-            focusedViewIndex !== musicViewIndex &&
+            latestFocusedViewIndex !== musicViewIndex &&
             getPointerClientCoordinatesChanged({
               pointerClientCoordinatesRef,
               somePointerMoveEvent,
@@ -164,7 +166,7 @@ export function useSelectMenuNavigation(
     getMenuNavigationOptionActionButtonProps: (musicViewIndex: number) => {
       return {
         'data-select-menu-navigation-item': true,
-        tabIndex: focusedViewIndex === musicViewIndex ? 0 : -1,
+        tabIndex: latestFocusedViewIndex === musicViewIndex ? 0 : -1,
         onBlur: getSelectMenuBlurHandler({
           anchorElementRef,
           popoverOpen,

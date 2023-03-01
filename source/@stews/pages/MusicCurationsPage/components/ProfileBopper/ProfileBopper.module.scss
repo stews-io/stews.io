@@ -1,0 +1,88 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.profileButton {
+}
+
+.profileIcon {  
+  width: 33px;
+  height: 33px;
+}
+
+.profileContainer {
+  @extend .columnContainer;
+  // max-width: 264px;
+  padding-inline-start: calc(9 / 8) * $themeSpacer;
+  padding-inline-end: calc(5 / 8) * $themeSpacer;
+  padding-block-start: calc(3 / 8) * $themeSpacer;
+  padding-block-end: calc(3 / 2) * $themeSpacer;
+}
+
+.profileHeader {
+  @extend .rowContainer;
+  align-items: center;
+}
+
+.curatorName {
+  @extend .textEllipsis;
+  flex-grow: 1;
+  padding-inline-end: 3 * $themeSpacer;
+  font-weight: 700;
+  font-size: 23px,
+}
+
+.closeContainer {
+  @extend .itemContainer;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton {
+  @extend .itemContainer;
+  padding: 0.00rem;  
+}
+
+.closeIcon {
+  width: 25px;
+  height: 25px;
+  // stroke: black;
+  // stroke-width: 1;
+  // fill: white;
+  // fill-rule: evenodd;
+  // shape-rendering: geometricPrecision;
+}
+
+.curatorLocation {
+  @extend .textEllipsis;
+  padding-inline-end: 6 * $themeSpacer;
+  padding-block-start: calc(1 / 4) * $themeSpacer;
+  font-size: 14px;
+}
+
+.curatorStatus {
+  padding-inline-end: 6 * $themeSpacer;
+  padding-block-start: $themeSpacer;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+.curatorLinks {
+  @extend .rowContainer;
+  padding-block-start: calc(13 / 8) * $themeSpacer;
+}
+
+.linkContainer {
+  padding-inline-end: calc(3 / 2) * $themeSpacer;
+}
+
+.linkAnchor {
+  @extend .itemContainer;
+}
+
+.linkIcon {
+  width: 20px;
+  height: 20px;
+}

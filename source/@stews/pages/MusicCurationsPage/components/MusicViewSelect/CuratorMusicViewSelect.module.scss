@@ -8,6 +8,11 @@
 .optionActionIcon {
   width: 21px;
   height: 21px;
+  stroke: $themeButtonTextColor;
+  fill: white;
+}
+
+.latestFocusedOptionActionIcon {
   fill: $themeButtonTextColor;
   fill-rule: evenodd;
 }
