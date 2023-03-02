@@ -62,16 +62,16 @@ interface CustomCuratorOptionActionItemProps
 
 function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
   const {
-    menuNavigationOptionActionButtonProps,
+    getMenuNavigationOptionActionButtonProps,
+    musicViewIndex,
     navigateToEditMusicViewPage,
     someMusicView,
     latestFocusedViewIndex,
-    musicViewIndex,
   } = props
   return (
     <div className={cssModule.optionActionItem}>
       <Button
-        {...menuNavigationOptionActionButtonProps}
+        {...getMenuNavigationOptionActionButtonProps(musicViewIndex)}
         onSelect={() => {
           navigateToEditMusicViewPage(someMusicView)
         }}

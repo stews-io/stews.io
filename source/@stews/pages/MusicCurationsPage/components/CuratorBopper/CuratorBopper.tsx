@@ -3,18 +3,18 @@ import { Button } from '@stews/components/Button'
 import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers'
 import { MusicCurator } from '../../data'
-import cssModule from './ProfileBopper.module.scss'
+import cssModule from './CuratorBopper.module.scss'
 
-export interface ProfileBopperProps {
+export interface CuratorBopperProps {
   musicCurator: MusicCurator
 }
 
-export function ProfileBopper(props: ProfileBopperProps) {
+export function CuratorBopper(props: CuratorBopperProps) {
   const { musicCurator } = props
   return (
     <Bopper
-      AnchorButton={ProfileButton}
-      PopoverContent={ProfileContent}
+      AnchorButton={CuratorButton}
+      PopoverContent={CuratorProfile}
       customAnchorButtonProps={null}
       customPopoverContentProps={{
         musicCurator,
@@ -23,9 +23,9 @@ export function ProfileBopper(props: ProfileBopperProps) {
   )
 }
 
-interface ProfileButtonProps extends CoreAnchorButtonProps {}
+interface CuratorButtonProps extends CoreAnchorButtonProps {}
 
-function ProfileButton(props: ProfileButtonProps) {
+function CuratorButton(props: CuratorButtonProps) {
   const { setPopoverOpen, anchorElementRef } = props
   return (
     <Button
@@ -55,11 +55,11 @@ function ProfileButton(props: ProfileButtonProps) {
   )
 }
 
-interface ProfileContentProps
+interface CuratorProfileProps
   extends CorePopoverContentProps,
-    Pick<ProfileBopperProps, 'musicCurator'> {}
+    Pick<CuratorBopperProps, 'musicCurator'> {}
 
-function ProfileContent(props: ProfileContentProps) {
+function CuratorProfile(props: CuratorProfileProps) {
   const { musicCurator, setPopoverOpen } = props
   return (
     <div className={cssModule.profileContainer}>
@@ -117,22 +117,9 @@ function ProfileContent(props: ProfileContentProps) {
   )
 }
 
-function CloseIcon() {
-  return (
-    <svg className={cssModule.closeIcon} viewBox={'0 0 33 33'}>
-      <circle cx={16.5} cy={16.5} r={15} />
-      <polygon
-        points={
-          '0.5,0.5 0.625,0.375, 0.5,0.5 0.625,0.625 0.5,0.5, 0.375,0.625 0.5,0.5, 0.375,0.375 0.5,0.5'
-        }
-      />
-    </svg>
-  )
-}
-
 interface CuratorLinkIconProps
   extends Pick<
-    ProfileContentProps['musicCurator']['curatorLinks'][number],
+    CuratorProfileProps['musicCurator']['curatorLinks'][number],
     'linkType'
   > {}
 
