@@ -1,21 +1,21 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
-.profileButton {
+.curatorButton {
 }
 
-.profileIcon {  
+.curatorIcon {  
   width: 33px;
   height: 33px;
 }
 
 .profileContainer {
   @extend .columnContainer;
-  // max-width: 264px;
-  padding-inline-start: calc(9 / 8) * $themeSpacer;
-  padding-inline-end: calc(5 / 8) * $themeSpacer;
+  overflow: hidden;
+  padding-inline-start: $themeSpacer;
+  padding-inline-end: calc(3 / 4) * $themeSpacer;
   padding-block-start: calc(3 / 8) * $themeSpacer;
-  padding-block-end: calc(3 / 2) * $themeSpacer;
+  padding-block-end: calc(9 / 8) * $themeSpacer;
 }
 
 .profileHeader {
@@ -31,7 +31,7 @@
   font-size: 23px,
 }
 
-.closeContainer {
+.closeButtonContainer {
   @extend .itemContainer;
   align-items: center;
   justify-content: center;
@@ -43,43 +43,33 @@
 }
 
 .closeIcon {
-  width: 25px;
-  height: 25px;
-  // stroke: black;
-  // stroke-width: 1;
-  // fill: white;
-  // fill-rule: evenodd;
-  // shape-rendering: geometricPrecision;
+  // width: 25px;
+  // height: 25px;
 }
 
 .curatorLocation {
   @extend .textEllipsis;
-  padding-inline-end: 6 * $themeSpacer;
-  padding-block-start: calc(1 / 4) * $themeSpacer;
+  padding-block-start: calc(1 / 8) * $themeSpacer;
+  padding-inline-end: 6 * $themeSpacer;  
   font-size: 14px;
 }
 
 .curatorStatus {
-  padding-inline-end: 6 * $themeSpacer;
-  padding-block-start: $themeSpacer;
+  padding-block-start: calc(3 / 4) * $themeSpacer;
+  padding-inline-end: 6 * $themeSpacer;  
   font-size: 14px;
   font-weight: 700;
   font-style: italic;
-  word-wrap: break-word;
-  word-break: keep-all;
+  hyphens: auto;
 }
 
 .curatorLinks {
   @extend .rowContainer;
-  padding-block-start: calc(13 / 8) * $themeSpacer;
+  padding-block-start: calc(11 / 8) * $themeSpacer;
 }
 
 .linkContainer {
   padding-inline-end: calc(3 / 2) * $themeSpacer;
-}
-
-.linkAnchor {
-  @extend .itemContainer;
 }
 
 .linkIcon {

@@ -29,13 +29,13 @@ function CuratorButton(props: CuratorButtonProps) {
   const { setPopoverOpen, anchorElementRef } = props
   return (
     <Button
-      className={cssModule.profileButton}
+      className={cssModule.curatorButton}
       elementRef={anchorElementRef}
       onSelect={() => {
         setPopoverOpen(true)
       }}
     >
-      <svg className={cssModule.profileIcon} viewBox={'-5 -5 34 34'}>
+      <svg className={cssModule.curatorIcon} viewBox={'-5 -5 34 34'}>
         <circle
           cx={12}
           cy={12}
@@ -65,7 +65,7 @@ function CuratorProfile(props: CuratorProfileProps) {
     <div className={cssModule.profileContainer}>
       <div className={cssModule.profileHeader}>
         <div className={cssModule.curatorName}>{musicCurator.curatorName}</div>
-        <div className={cssModule.closeContainer}>
+        <div className={cssModule.closeButtonContainer}>
           <Button
             className={cssModule.closeButton}
             onSelect={() => {
@@ -102,14 +102,16 @@ function CuratorProfile(props: CuratorProfileProps) {
             key={someCuratorLink.linkType}
             className={cssModule.linkContainer}
           >
-            <a
-              className={cssModule.linkAnchor}
+            {/* <a
               target={'_blank'}
+              className={cssModule.linkAnchor}
               href={someCuratorLink.linkHref}
               onSelect={() => {}}
-            >
+            > */}
+            <Button style={{ padding: 0.5 }} onSelect={() => {}}>
               <CuratorLinkIcon linkType={someCuratorLink.linkType} />
-            </a>
+            </Button>
+            {/* </a> */}
           </div>
         ))}
       </div>
