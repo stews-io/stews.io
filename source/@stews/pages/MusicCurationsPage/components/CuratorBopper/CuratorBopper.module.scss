@@ -9,6 +9,12 @@
   height: 33px;
 }
 
+.curatorIconOutlineCircle {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1.75;
+}
+
 .profileContainer {
   @extend .columnContainer;
   overflow: hidden;
@@ -43,8 +49,14 @@
 }
 
 .closeIcon {
-  // width: 25px;
-  // height: 25px;
+  width: 22.5px;
+  height: 22.5px;
+}
+
+.closeIconOutlineCircle {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1.5;
 }
 
 .curatorLocation {
@@ -68,11 +80,16 @@
   padding-block-start: calc(11 / 8) * $themeSpacer;
 }
 
-.linkContainer {
+.curatorLinkContainer {
+  @extend .itemContainer;
   padding-inline-end: calc(3 / 2) * $themeSpacer;
 }
 
-.linkIcon {
-  width: 20px;
-  height: 20px;
+.curatorLinkButton {
+  padding: calc(1 / 6) * $themeSpacer;
+}
+
+.curatorLinkIcon {
+  width: 21px;
+  height: 21px;
 }
