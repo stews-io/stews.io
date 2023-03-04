@@ -1,6 +1,7 @@
 import { useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { JSXInternal } from 'preact/src/jsx'
+import { Button, ButtonProps } from './Button'
 import { Popover, PopoverProps } from './Popover'
 
 export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
@@ -9,16 +10,8 @@ export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
     'PopoverContent' | 'customPopoverContentProps'
   > {
   customAnchorButtonProps: CustomAnchorButtonProps
-  AnchorButton: (
-    props: AnchorButtonProps<CustomAnchorButtonProps>
-  ) => JSXInternal.Element
+  AnchorButton: (props: BopperAnchorButtonProps) => JSXInternal.Element
 }
-
-type AnchorButtonProps<CustomAnchorButtonProps> = CoreAnchorButtonProps &
-  CustomAnchorButtonProps
-
-export interface CoreAnchorButtonProps
-  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'> {}
 
 export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   props: BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
@@ -46,5 +39,22 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
         customPopoverContentProps={customPopoverContentProps}
       />
     </Fragment>
+  )
+}
+
+export interface BopperAnchorButtonProps
+  extends Omit<ButtonProps, 'elementRef' | 'onSelect'>,
+    Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'> {}
+
+export function BopperAnchorButton(props: BopperAnchorButtonProps) {
+  const { anchorElementRef, setPopoverOpen, ...customAnchorButtonProps } = props
+  return (
+    <Button
+      elementRef={anchorElementRef}
+      onSelect={() => {
+        setPopoverOpen(true)
+      }}
+      {...customAnchorButtonProps}
+    />
   )
 }

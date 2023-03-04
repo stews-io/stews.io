@@ -1,4 +1,5 @@
 import { ButtonProps } from '@stews/components/Button'
+import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
 import { MutableRef, Ref, useEffect, useRef, useState } from 'preact/hooks'
@@ -7,7 +8,11 @@ import { SelectMenuBaseProps } from '../components/SelectMenuBase'
 export interface UseSelectMenuNavigationApi
   extends Pick<
     SelectMenuBaseProps<unknown, unknown>,
-    'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
+    | 'anchorElementRef'
+    | 'popoverOpen'
+    | 'setPopoverOpen'
+    | 'initialFocusElementRef'
+    | 'popoverNavigationItemBlurHandler'
   > {}
 
 export interface UseSelectMenuNavigationResult {
@@ -26,37 +31,36 @@ export interface UseSelectMenuNavigationResult {
 }
 
 interface MenuNavigationMenuOptionProps
-  extends SelectMenuNavigationItemProps,
-    Pick<
-      Required<ButtonProps>,
-      | 'tabIndex'
-      | 'elementRef'
-      | 'onPointerMove'
-      | 'onBlur'
-      | 'onFocus'
-      | 'onKeyDown'
-      | 'onClick'
-    > {}
+  extends Pick<
+    Required<ButtonProps>,
+    | 'tabIndex'
+    | 'elementRef'
+    | 'onPointerMove'
+    | 'onBlur'
+    | 'onFocus'
+    | 'onKeyDown'
+    | 'onClick'
+  > {}
 
 interface MenuNavigationOptionActionButtonProps
-  extends SelectMenuNavigationItemProps,
-    Pick<
-      Required<ButtonProps>,
-      'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown' | 'onfocusout'
-    > {}
+  extends Pick<
+    Required<ButtonProps>,
+    'tabIndex' | 'onBlur' | 'onClick' | 'onKeyDown'
+  > {}
 
 interface MenuNavigationFooterActionButtonProps
-  extends SelectMenuNavigationItemProps,
-    Pick<Required<ButtonProps>, 'onBlur'> {}
-
-interface SelectMenuNavigationItemProps {
-  'data-select-menu-navigation-item': true
-}
+  extends Pick<Required<ButtonProps>, 'onBlur'> {}
 
 export function useSelectMenuNavigation(
   api: UseSelectMenuNavigationApi
 ): UseSelectMenuNavigationResult {
-  const { popoverOpen, anchorElementRef, setPopoverOpen } = api
+  const {
+    popoverOpen,
+    popoverNavigationItemBlurHandler,
+    initialFocusElementRef,
+    anchorElementRef,
+    setPopoverOpen,
+  } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [latestFocusedViewIndex, setFocusedViewIndex] = useState<number | null>(
     null
@@ -66,17 +70,8 @@ export function useSelectMenuNavigation(
     clientY: number
   } | null>(null)
   useEffect(() => {
-    const firstListItem = listItemsRef.current[0]
-    if (popoverOpen && firstListItem instanceof HTMLDivElement) {
-      firstListItem.focus()
-      if (anchorElementRef.current?.hasAttribute('data-keyboard-selected')) {
-        anchorElementRef.current.removeAttribute('data-keyboard-selected')
-        firstListItem.setAttribute('data-keyboard-focus', 'true')
-      }
-    } else if (popoverOpen === false) {
+    if (popoverOpen === false) {
       setFocusedViewIndex(null)
-    } else {
-      throwInvalidPathError('useSelectMenuNavigation.useEffect[]')
     }
   }, [popoverOpen])
   return {
@@ -87,7 +82,9 @@ export function useSelectMenuNavigation(
         const currentFocusedViewIndex =
           typeof latestFocusedViewIndex === 'number'
             ? latestFocusedViewIndex
-            : throwInvalidPathError('getMenuContainerProps.onKeyDown')
+            : throwInvalidPathError(
+                'menuNavigationMenuContainerProps.onKeyDown'
+              )
         if (someKeyDownEvent.key === 'ArrowDown') {
           handleArrowKeyListNavigation({
             listItemsRef,
@@ -103,27 +100,21 @@ export function useSelectMenuNavigation(
                 listItemsLength) %
               listItemsLength,
           })
-        } else if (someKeyDownEvent.key === 'Escape') {
-          anchorElementRef.current instanceof HTMLDivElement
-            ? anchorElementRef.current.focus()
-            : throwInvalidPathError('getMenuContainerProps.onKeyDown.Escape')
         }
       },
     },
     menuNavigationFooterActionButtonProps: {
-      'data-select-menu-navigation-item': true,
-      onBlur: getSelectMenuBlurHandler({
-        anchorElementRef,
-        popoverOpen,
-        setPopoverOpen,
-      }),
+      onBlur: popoverNavigationItemBlurHandler,
     },
     getMenuNavigationMenuOptionProps: (musicViewIndex: number) => {
       return {
-        'data-select-menu-navigation-item': true,
+        onBlur: popoverNavigationItemBlurHandler,
         tabIndex: latestFocusedViewIndex === musicViewIndex ? 0 : -1,
         elementRef: (listItemElement) => {
           listItemsRef.current[musicViewIndex] = listItemElement
+          if (musicViewIndex === 0) {
+            initialFocusElementRef.current = listItemElement
+          }
         },
         onPointerMove: (somePointerMoveEvent) => {
           if (
@@ -134,20 +125,20 @@ export function useSelectMenuNavigation(
             })
           ) {
             const targetListItemElement = listItemsRef.current[musicViewIndex]
-            targetListItemElement instanceof HTMLDivElement
-              ? targetListItemElement.focus()
-              : throwInvalidPathError('getMenuOptionProps.onPointerMove')
+            if (targetListItemElement instanceof HTMLDivElement) {
+              targetListItemElement.focus()
+              targetListItemElement.setAttribute('data-pointer-focus', 'true')
+            } else {
+              throwInvalidPathError(
+                'getMenuNavigationMenuOptionProps.onPointerMove'
+              )
+            }
           }
           pointerClientCoordinatesRef.current = {
             clientX: somePointerMoveEvent.clientX,
             clientY: somePointerMoveEvent.clientY,
           }
         },
-        onBlur: getSelectMenuBlurHandler({
-          anchorElementRef,
-          popoverOpen,
-          setPopoverOpen,
-        }),
         onFocus: () => {
           setFocusedViewIndex(musicViewIndex)
         },
@@ -155,7 +146,9 @@ export function useSelectMenuNavigation(
           if (someKeyDownEvent.key === 'Enter') {
             anchorElementRef.current instanceof HTMLDivElement
               ? anchorElementRef.current.focus()
-              : throwInvalidPathError('getMenuOptionProps.onKeyDown.Enter')
+              : throwInvalidPathError(
+                  'getMenuNavigationMenuOptionProps.onKeyDown.Enter'
+                )
           }
         },
         onClick: () => {
@@ -165,80 +158,18 @@ export function useSelectMenuNavigation(
     },
     getMenuNavigationOptionActionButtonProps: (musicViewIndex: number) => {
       return {
-        'data-select-menu-navigation-item': true,
+        onBlur: popoverNavigationItemBlurHandler,
         tabIndex: latestFocusedViewIndex === musicViewIndex ? 0 : -1,
-        onBlur: getSelectMenuBlurHandler({
-          anchorElementRef,
-          popoverOpen,
-          setPopoverOpen,
-        }),
         onClick: (someClickEvent) => {
           someClickEvent.stopPropagation()
         },
         onKeyDown: (someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
             someKeyDownEvent.stopPropagation()
-          } else if (
-            someKeyDownEvent.shiftKey &&
-            someKeyDownEvent.key === 'Tab'
-          ) {
-            someKeyDownEvent.target instanceof HTMLDivElement
-              ? someKeyDownEvent.target.setAttribute(
-                  'data-keyboard-blur',
-                  'true'
-                )
-              : throwInvalidPathError(
-                  'getOptionActionButtonProps.onKeyDown.ShiftTab'
-                )
-          }
-        },
-        onfocusout: (someFocusEvent) => {
-          if (
-            someFocusEvent.target instanceof HTMLDivElement &&
-            someFocusEvent.relatedTarget instanceof HTMLDivElement &&
-            someFocusEvent.target.hasAttribute('data-keyboard-blur')
-          ) {
-            someFocusEvent.target.removeAttribute('data-keyboard-blur')
-            someFocusEvent.relatedTarget.setAttribute(
-              'data-keyboard-focus',
-              'true'
-            )
           }
         },
       }
     },
-  }
-}
-
-interface GetSelectMenuBlurHandlerApi
-  extends Pick<
-    UseSelectMenuNavigationApi,
-    'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
-  > {}
-
-function getSelectMenuBlurHandler(api: GetSelectMenuBlurHandlerApi) {
-  const { popoverOpen, anchorElementRef, setPopoverOpen } = api
-  return (someBlurEvent: FocusEvent) => {
-    const windowBlur = someBlurEvent.relatedTarget === null
-    const tabPreviousEscapeOrEnterSelect =
-      popoverOpen && someBlurEvent.relatedTarget === anchorElementRef.current
-    const tabNextEscape =
-      popoverOpen &&
-      someBlurEvent.relatedTarget instanceof HTMLElement &&
-      !Boolean(
-        someBlurEvent.relatedTarget.attributes.getNamedItem(
-          'data-select-menu-navigation-item'
-        )?.value
-      )
-    if (windowBlur || tabPreviousEscapeOrEnterSelect) {
-      setPopoverOpen(false)
-    } else if (tabNextEscape) {
-      setPopoverOpen(false)
-      // redirect focus from tab next target to anchor
-      anchorElementRef.current instanceof HTMLDivElement
-        ? anchorElementRef.current.focus()
-        : throwInvalidPathError('getSelectMenuBlurHandler.tabNextEscape')
-    }
   }
 }
 
@@ -255,12 +186,9 @@ function handleArrowKeyListNavigation(api: HandleArrowKeyListNavigationApi) {
   // setTimeout allows for proper modulus list item scrolling on chrome
   setTimeout(() => {
     const targetListItemElement = listItemsRef.current[targetViewIndex]
-    if (targetListItemElement instanceof HTMLDivElement) {
-      targetListItemElement.focus()
-      targetListItemElement.setAttribute('data-keyboard-focus', 'true')
-    } else {
-      throwInvalidPathError('handleArrowKeyListNavigation')
-    }
+    targetListItemElement instanceof HTMLDivElement
+      ? targetListItemElement.focus()
+      : throwInvalidPathError('handleArrowKeyListNavigation')
   })
 }
 

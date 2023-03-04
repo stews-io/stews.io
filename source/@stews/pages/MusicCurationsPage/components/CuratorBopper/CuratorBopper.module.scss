@@ -45,7 +45,7 @@
 
 .closeButton {
   @extend .itemContainer;
-  padding: 0.00rem;  
+  padding: 0.00rem;
 }
 
 .closeIcon {
@@ -86,10 +86,10 @@
 }
 
 .curatorLinkButton {
-  padding: calc(1 / 6) * $themeSpacer;
+  padding: calc(1 / 16) * $themeSpacer;
 }
 
 .curatorLinkIcon {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
 }

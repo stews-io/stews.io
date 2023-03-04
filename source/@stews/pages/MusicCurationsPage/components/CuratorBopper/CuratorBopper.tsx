@@ -1,4 +1,8 @@
-import { Bopper, CoreAnchorButtonProps } from '@stews/components/Bopper'
+import {
+  Bopper,
+  BopperAnchorButton,
+  BopperAnchorButtonProps,
+} from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers'
@@ -23,17 +27,15 @@ export function CuratorBopper(props: CuratorBopperProps) {
   )
 }
 
-interface CuratorButtonProps extends CoreAnchorButtonProps {}
+interface CuratorButtonProps extends BopperAnchorButtonProps {}
 
 function CuratorButton(props: CuratorButtonProps) {
-  const { setPopoverOpen, anchorElementRef } = props
+  const { anchorElementRef, setPopoverOpen } = props
   return (
-    <Button
+    <BopperAnchorButton
       className={cssModule.curatorButton}
-      elementRef={anchorElementRef}
-      onSelect={() => {
-        setPopoverOpen(true)
-      }}
+      anchorElementRef={anchorElementRef}
+      setPopoverOpen={setPopoverOpen}
     >
       <svg className={cssModule.curatorIcon} viewBox={'-5 -5 34 34'}>
         <circle
@@ -49,7 +51,7 @@ function CuratorButton(props: CuratorButtonProps) {
           }
         />
       </svg>
-    </Button>
+    </BopperAnchorButton>
   )
 }
 
@@ -58,16 +60,33 @@ interface CuratorProfileProps
     Pick<CuratorBopperProps, 'musicCurator'> {}
 
 function CuratorProfile(props: CuratorProfileProps) {
-  const { musicCurator, setPopoverOpen } = props
+  const {
+    musicCurator,
+    anchorElementRef,
+    initialFocusElementRef,
+    popoverNavigationItemBlurHandler,
+  } = props
   return (
     <div className={cssModule.profileContainer}>
       <div className={cssModule.profileHeader}>
         <div className={cssModule.curatorName}>{musicCurator.curatorName}</div>
         <div className={cssModule.closeButtonContainer}>
           <Button
+            elementRef={initialFocusElementRef}
             className={cssModule.closeButton}
+            onBlur={popoverNavigationItemBlurHandler}
             onSelect={() => {
-              setPopoverOpen(false)
+              anchorElementRef.current instanceof HTMLDivElement
+                ? anchorElementRef.current.focus()
+                : throwInvalidPathError('CuratorProfile.CloseButton.onSelect')
+            }}
+            onClick={() => {
+              anchorElementRef.current instanceof HTMLDivElement
+                ? anchorElementRef.current.setAttribute(
+                    'data-pointer-focus',
+                    'true'
+                  )
+                : throwInvalidPathError('CuratorProfile.CloseButton.onClick')
             }}
           >
             <svg className={cssModule.closeIcon} viewBox={'0 0 24 24'}>
@@ -97,6 +116,7 @@ function CuratorProfile(props: CuratorProfileProps) {
           <div key={linkIndex} className={cssModule.curatorLinkContainer}>
             <Button
               className={cssModule.curatorLinkButton}
+              onBlur={popoverNavigationItemBlurHandler}
               onSelect={() => {
                 const targetAnchorElement = document.createElement('a')
                 targetAnchorElement.href = someCuratorLink.linkHref

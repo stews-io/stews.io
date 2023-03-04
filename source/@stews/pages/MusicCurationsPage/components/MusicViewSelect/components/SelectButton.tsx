@@ -1,33 +1,22 @@
-import { CoreAnchorButtonProps } from '@stews/components/Bopper'
-import { Button } from '@stews/components/Button'
-import { throwInvalidPathError } from '@stews/helpers'
+import {
+  BopperAnchorButton,
+  BopperAnchorButtonProps,
+} from '@stews/components/Bopper'
 import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
 import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps
-  extends CoreAnchorButtonProps,
+  extends BopperAnchorButtonProps,
     Pick<MusicViewSelectBaseProps<unknown, unknown>, 'selectedMusicView'> {}
 
 export function SelectButton(props: SelectButtonProps) {
   const { anchorElementRef, setPopoverOpen, selectedMusicView } = props
   return (
     <div className={cssModule.buttonContainer}>
-      <Button
+      <BopperAnchorButton
         className={cssModule.selectButton}
-        elementRef={anchorElementRef}
-        onSelect={() => {
-          setPopoverOpen(true)
-        }}
-        onKeyDown={(someKeyDownEvent) => {
-          if (someKeyDownEvent.key === 'Enter') {
-            anchorElementRef?.current
-              ? anchorElementRef.current.setAttribute(
-                  'data-keyboard-selected',
-                  'true'
-                )
-              : throwInvalidPathError('SelectButton.Button.onKeyDown')
-          }
-        }}
+        anchorElementRef={anchorElementRef}
+        setPopoverOpen={setPopoverOpen}
       >
         <div className={cssModule.buttonLabel}>
           {selectedMusicView.viewLabel}
@@ -40,7 +29,7 @@ export function SelectButton(props: SelectButtonProps) {
             />
           </svg>
         </div>
-      </Button>
+      </BopperAnchorButton>
     </div>
   )
 }

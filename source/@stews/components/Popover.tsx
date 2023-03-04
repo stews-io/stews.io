@@ -1,4 +1,5 @@
 import { throwInvalidPathError } from '@stews/helpers'
+import { createRef, RefObject } from 'preact'
 import {
   Ref,
   StateUpdater,
@@ -28,7 +29,10 @@ export interface CorePopoverContentProps
   extends Pick<
     PopoverProps<unknown>,
     'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
-  > {}
+  > {
+  initialFocusElementRef: RefObject<HTMLDivElement>
+  popoverNavigationItemBlurHandler: (someBlurEvent: FocusEvent) => void
+}
 
 export function Popover<CustomPopoverContentProps>(
   props: PopoverProps<CustomPopoverContentProps>
@@ -40,6 +44,7 @@ export function Popover<CustomPopoverContentProps>(
     PopoverContent,
     customPopoverContentProps,
   } = props
+  const pageContentRef = useContext(PageContext)
   const popoverRef = useRef<HTMLDivElement>(null)
   const closePopover = useMemo(() => () => setPopoverOpen(false), [])
   const pointerStateRef = useRef({
@@ -78,9 +83,51 @@ export function Popover<CustomPopoverContentProps>(
       window.removeEventListener('resize', windowResizeHandler)
     }
   }, [])
-  const pageContentRef = useContext(PageContext)
+  const initialFocusElementRef = useMemo(() => createRef<HTMLDivElement>(), [])
+  useEffect(() => {
+    if (popoverOpen) {
+      if (
+        initialFocusElementRef.current instanceof HTMLDivElement &&
+        anchorElementRef.current?.hasAttribute('data-pointer-focus')
+      ) {
+        initialFocusElementRef.current.focus()
+        initialFocusElementRef.current.setAttribute(
+          'data-pointer-focus',
+          'true'
+        )
+      } else if (initialFocusElementRef.current instanceof HTMLDivElement) {
+        initialFocusElementRef.current.focus()
+      } else {
+        throwInvalidPathError('Popover.useEffect[popoverOpen]')
+      }
+    }
+  }, [popoverOpen])
+  const popoverNavigationItemBlurHandler = useMemo(
+    () => (someBlurEvent: FocusEvent) => {
+      const windowBlur = someBlurEvent.relatedTarget === null
+      const tabPreviousEscapeOrEnterSelect =
+        someBlurEvent.relatedTarget === anchorElementRef.current
+      const tabNextEscape =
+        popoverRef.current instanceof HTMLDivElement &&
+        someBlurEvent.relatedTarget instanceof HTMLElement
+          ? !popoverRef.current.contains(someBlurEvent.relatedTarget)
+          : true
+      if (windowBlur || tabPreviousEscapeOrEnterSelect) {
+        setPopoverOpen(false)
+      } else if (tabNextEscape) {
+        setPopoverOpen(false)
+        // redirect focus from tab next target to anchor
+        // // the only time this doesnt work is if next target is urlBar
+        anchorElementRef.current instanceof HTMLDivElement
+          ? anchorElementRef.current.focus()
+          : throwInvalidPathError('getPopoverItemBlurHandler.tabNextEscape')
+      }
+    },
+    [anchorElementRef, setPopoverOpen, popoverRef]
+  )
   return popoverOpen ? (
     <div
+      tabIndex={-1}
       ref={popoverRef}
       className={cssModule.popoverContainer}
       style={getPopoverLayoutStyle({
@@ -100,11 +147,20 @@ export function Popover<CustomPopoverContentProps>(
           document.body.style.overflow = 'inherit'
         }
       }}
+      onKeyDown={(someKeyDownEvent) => {
+        if (someKeyDownEvent.key === 'Escape') {
+          anchorElementRef.current instanceof HTMLDivElement
+            ? anchorElementRef.current.focus()
+            : throwInvalidPathError('popoverContainer.onKeyDown.Escape')
+        }
+      }}
     >
       <PopoverContent
         anchorElementRef={anchorElementRef}
         popoverOpen={popoverOpen}
         setPopoverOpen={setPopoverOpen}
+        initialFocusElementRef={initialFocusElementRef}
+        popoverNavigationItemBlurHandler={popoverNavigationItemBlurHandler}
         {...customPopoverContentProps}
       />
     </div>

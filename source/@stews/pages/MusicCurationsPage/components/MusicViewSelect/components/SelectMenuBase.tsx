@@ -61,6 +61,8 @@ export function SelectMenuBase<
     anchorElementRef,
     popoverOpen,
     setPopoverOpen,
+    initialFocusElementRef,
+    popoverNavigationItemBlurHandler,
     musicViews,
     selectedMusicView,
     selectMusicView,
@@ -79,6 +81,8 @@ export function SelectMenuBase<
     anchorElementRef,
     popoverOpen,
     setPopoverOpen,
+    initialFocusElementRef,
+    popoverNavigationItemBlurHandler,
   })
   return (
     <div

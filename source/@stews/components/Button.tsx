@@ -57,9 +57,6 @@ export function Button(props: ButtonProps) {
           // if a button is focused with a pointer then
           // it should always have the "pointer-focus" attribute
           someBlurEvent.target.removeAttribute('data-pointer-focus')
-          // the "keyboard-focus" attribute is only applied on
-          // special occasions like popover keyboard navigation
-          someBlurEvent.target.removeAttribute('data-keyboard-focus')
         }
         if (onBlur) {
           onBlur(someBlurEvent)

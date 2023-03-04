@@ -23,7 +23,7 @@
   &:focus {
     @extend .themeFocusWithoutOutline;
 
-    &[data-keyboard-focus="true"] .optionLabel {
+    &:not([data-pointer-focus="true"]) .optionLabel {
       @extend .themeFocusOutline;
     }
   }
