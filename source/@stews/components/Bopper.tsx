@@ -10,7 +10,9 @@ export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
     'PopoverContent' | 'customPopoverContentProps'
   > {
   customAnchorButtonProps: CustomAnchorButtonProps
-  AnchorButton: (props: BopperAnchorButtonProps) => JSXInternal.Element
+  AnchorButton: (
+    props: BopperAnchorButtonProps<CustomAnchorButtonProps>
+  ) => JSXInternal.Element
 }
 
 export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
@@ -42,11 +44,14 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   )
 }
 
-export interface BopperAnchorButtonProps
-  extends Omit<ButtonProps, 'elementRef' | 'onSelect'>,
-    Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'> {}
+export type BopperAnchorButtonProps<CustomAnchorButtonProps> =
+  CustomAnchorButtonProps &
+    Omit<ButtonProps, 'elementRef' | 'onSelect'> &
+    Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'>
 
-export function BopperAnchorButton(props: BopperAnchorButtonProps) {
+export function BopperAnchorButton<CustomAnchorButtonProps>(
+  props: BopperAnchorButtonProps<CustomAnchorButtonProps>
+) {
   const { anchorElementRef, setPopoverOpen, ...customAnchorButtonProps } = props
   return (
     <Button
