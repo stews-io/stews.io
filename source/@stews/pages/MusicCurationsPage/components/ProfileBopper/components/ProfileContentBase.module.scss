@@ -1,20 +1,6 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
-.curatorButton {
-}
-
-.curatorIcon {  
-  width: 33px;
-  height: 33px;
-}
-
-.curatorIconOutlineCircle {
-  fill: transparent;
-  stroke: black;
-  stroke-width: 1.75;
-}
-
 .profileContainer {
   @extend .columnContainer;
   overflow: hidden;

@@ -1,127 +1,14 @@
-import {
-  Bopper,
-  BopperAnchorButton,
-  BopperAnchorButtonProps,
-  BopperProps,
-} from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers'
-import { JSXInternal } from 'preact/src/jsx'
-import { MusicCurator } from '../../data'
-import cssModule from './CuratorBopper.module.scss'
+import { ProfileBopperBaseProps } from '../ProfileBopperBase'
+import cssModule from './ProfileContentBase.module.scss'
 
-export interface OtherCuratorBopperProps
-  extends Omit<CuratorBopperBaseProps, 'AnchorButton'> {}
-
-export function OtherCuratorBopper(props: OtherCuratorBopperProps) {
-  return <CuratorBopperBase AnchorButton={OtherCuratorButton} {...props} />
-}
-
-export interface SelfCuratorBopperProps
-  extends Omit<CuratorBopperBaseProps, 'AnchorButton'> {}
-
-export function SelfCuratorBopper(props: SelfCuratorBopperProps) {
-  return <CuratorBopperBase AnchorButton={SelfCuratorButton} {...props} />
-}
-
-interface CuratorBopperBaseProps
-  extends Pick<BopperProps<unknown, unknown>, 'AnchorButton'> {
-  musicCurator: MusicCurator
-}
-
-function CuratorBopperBase(props: CuratorBopperBaseProps) {
-  const { AnchorButton, musicCurator } = props
-  return (
-    <Bopper
-      AnchorButton={AnchorButton}
-      PopoverContent={CuratorProfile}
-      customAnchorButtonProps={null}
-      customPopoverContentProps={{
-        musicCurator,
-      }}
-    />
-  )
-}
-
-interface OtherCuratorButtonProps
-  extends Omit<CuratorButtonBaseProps, 'CuratorIcon'> {}
-
-function OtherCuratorButton(props: OtherCuratorButtonProps) {
-  return (
-    <CuratorButtonBase
-      CuratorIcon={() => (
-        <svg className={cssModule.curatorIcon} viewBox={'-5 -5 34 34'}>
-          <circle
-            className={cssModule.curatorIconOutlineCircle}
-            cx={12}
-            cy={12}
-            r={14}
-          />
-          <g transform={'scale(0.95) translate(0.5,1.5)'}>
-            <circle cx={'12'} cy={'3.75'} r={'2'} />
-            <path
-              d={
-                'M15.89,8.11C15.5,7.72,14.83,7,13.53,7c-0.21,0-1.42,0-2.54,0C8.53,6.99,6.48,5.2,6.07,2.85C5.99,2.36,5.58,2,5.09,2h0 c-0.61,0-1.09,0.54-1,1.14C4.53,5.8,6.47,7.95,9,8.71V21c0,0.55,0.45,1,1,1h0c0.55,0,1-0.45,1-1v-5h2v5c0,0.55,0.45,1,1,1h0 c0.55,0,1-0.45,1-1V10.05l3.24,3.24c0.39,0.39,1.02,0.39,1.41,0v0c0.39-0.39,0.39-1.02,0-1.41L15.89,8.11z'
-              }
-            />
-          </g>
-        </svg>
-      )}
-      {...props}
-    />
-  )
-}
-
-interface SelfCuratorButtonProps
-  extends Omit<CuratorButtonBaseProps, 'CuratorIcon'> {}
-
-function SelfCuratorButton(props: SelfCuratorButtonProps) {
-  return (
-    <CuratorButtonBase
-      CuratorIcon={() => (
-        <svg className={cssModule.curatorIcon} viewBox={'-5 -5 34 34'}>
-          <circle
-            className={cssModule.curatorIconOutlineCircle}
-            cx={12}
-            cy={12}
-            r={14}
-          />
-          <circle cx={'12'} cy={'6'} r={'2'} />
-          <path
-            d={
-              'M21,14.94L21,14.94c0-0.5-0.36-0.93-0.85-0.98c-1.88-0.21-3.49-1.13-4.75-2.63l-1.34-1.6C13.68,9.26,13.12,9,12.53,9 h-1.05c-0.59,0-1.15,0.26-1.53,0.72l-1.34,1.6c-1.25,1.5-2.87,2.42-4.75,2.63C3.36,14.01,3,14.44,3,14.94v0 c0,0.6,0.53,1.07,1.13,1c2.3-0.27,4.32-1.39,5.87-3.19V15l-3.76,1.5c-0.65,0.26-1.16,0.83-1.23,1.53C4.91,19.1,5.74,20,6.79,20H9 v-0.5c0-1.38,1.12-2.5,2.5-2.5h3c0.28,0,0.5,0.22,0.5,0.5S14.78,18,14.5,18h-3c-0.83,0-1.5,0.67-1.5,1.5V20l7.1,0 c0.85,0,1.65-0.54,1.85-1.37c0.21-0.89-0.27-1.76-1.08-2.08L14,15v-2.25c1.56,1.8,3.57,2.91,5.87,3.19C20.47,16,21,15.54,21,14.94 z'
-            }
-          />
-        </svg>
-      )}
-      {...props}
-    />
-  )
-}
-
-type CuratorButtonBaseProps = BopperAnchorButtonProps<{
-  CuratorIcon: () => JSXInternal.Element
-}>
-
-function CuratorButtonBase(props: CuratorButtonBaseProps) {
-  const { anchorElementRef, setPopoverOpen, CuratorIcon } = props
-  return (
-    <BopperAnchorButton
-      className={cssModule.curatorButton}
-      anchorElementRef={anchorElementRef}
-      setPopoverOpen={setPopoverOpen}
-    >
-      <CuratorIcon />
-    </BopperAnchorButton>
-  )
-}
-
-interface CuratorProfileProps
+export interface ProfileContentBaseProps
   extends CorePopoverContentProps,
-    Pick<CuratorBopperBaseProps, 'musicCurator'> {}
+    Pick<ProfileBopperBaseProps<unknown>, 'musicCurator'> {}
 
-function CuratorProfile(props: CuratorProfileProps) {
+export function ProfileContentBase(props: ProfileContentBaseProps) {
   const {
     musicCurator,
     anchorElementRef,
@@ -197,7 +84,7 @@ function CuratorProfile(props: CuratorProfileProps) {
 
 interface CuratorLinkIconProps
   extends Pick<
-    CuratorProfileProps['musicCurator']['curatorLinks'][number],
+    ProfileContentBaseProps['musicCurator']['curatorLinks'][number],
     'linkType'
   > {}
 

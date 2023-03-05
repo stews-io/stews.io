@@ -1,12 +1,12 @@
 import {
   BopperAnchorButton,
-  BopperAnchorButtonProps,
+  CoreBopperAnchorButtonProps,
 } from '@stews/components/Bopper'
 import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
 import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps
-  extends BopperAnchorButtonProps,
+  extends CoreBopperAnchorButtonProps,
     Pick<MusicViewSelectBaseProps<unknown, unknown>, 'selectedMusicView'> {}
 
 export function SelectButton(props: SelectButtonProps) {

@@ -1,10 +1,7 @@
 import { Page } from '@stews/components/Page'
 import { useState } from 'preact/hooks'
 import { CuratorMusicViewSelect } from './components/MusicViewSelect'
-import {
-  OtherCuratorBopper,
-  SelfCuratorBopper,
-} from './components/CuratorBopper'
+import { CuratorProfileBopper } from './components/ProfileBopper'
 import { MusicView } from './data'
 import cssModule from './MusicCurationsPage.module.scss'
 
@@ -79,7 +76,7 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
           />
         </div>
         <div className={cssModule.actionContainer}>
-          <SelfCuratorBopper
+          <CuratorProfileBopper
             musicCurator={{
               curatorName: 'clumsycomputer',
               curatorLocation: 'guadalajara, jalisco',

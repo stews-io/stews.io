@@ -44,10 +44,14 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   )
 }
 
-export type BopperAnchorButtonProps<CustomAnchorButtonProps> =
-  CustomAnchorButtonProps &
-    Omit<ButtonProps, 'elementRef' | 'onSelect'> &
-    Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'>
+type BopperAnchorButtonProps<CustomAnchorButtonProps> =
+  CoreBopperAnchorButtonProps & CustomAnchorButtonProps
+
+export type CoreBopperAnchorButtonProps = Omit<
+  ButtonProps,
+  'elementRef' | 'onSelect'
+> &
+  Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'>
 
 export function BopperAnchorButton<CustomAnchorButtonProps>(
   props: BopperAnchorButtonProps<CustomAnchorButtonProps>
