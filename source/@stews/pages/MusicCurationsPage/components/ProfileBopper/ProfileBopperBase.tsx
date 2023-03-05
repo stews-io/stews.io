@@ -1,32 +1,20 @@
 import { Bopper, BopperProps } from '@stews/components/Bopper'
 import { MusicCurator } from '../../data'
+import { ProfileContentProps } from './components/ProfileContentBase'
 
-export interface ProfileBopperBaseProps<CustomProfileContentProps>
-  extends Pick<
-    BopperProps<
-      unknown,
-      CustomProfileContentPropsBase & CustomProfileContentProps
-    >,
-    'AnchorButton' | 'PopoverContent'
-  > {
+export interface ProfileBopperBaseProps
+  extends DeterminedProfileBoppersProps,
+    Pick<
+      BopperProps<unknown, ProfileContentProps>,
+      'AnchorButton' | 'PopoverContent'
+    > {}
+
+export interface DeterminedProfileBoppersProps {
   musicCurator: MusicCurator
-  customProfileContentProps: CustomProfileContentProps
 }
 
-type CustomProfileContentPropsBase = Pick<
-  ProfileBopperBaseProps<unknown>,
-  'musicCurator'
->
-
-export function ProfileBopperBase<CustomProfileContentProps>(
-  props: ProfileBopperBaseProps<CustomProfileContentProps>
-) {
-  const {
-    AnchorButton,
-    PopoverContent,
-    musicCurator,
-    customProfileContentProps,
-  } = props
+export function ProfileBopperBase(props: ProfileBopperBaseProps) {
+  const { AnchorButton, PopoverContent, musicCurator } = props
   return (
     <Bopper
       AnchorButton={AnchorButton}
@@ -34,7 +22,6 @@ export function ProfileBopperBase<CustomProfileContentProps>(
       customAnchorButtonProps={null}
       customPopoverContentProps={{
         musicCurator,
-        ...customProfileContentProps,
       }}
     />
   )

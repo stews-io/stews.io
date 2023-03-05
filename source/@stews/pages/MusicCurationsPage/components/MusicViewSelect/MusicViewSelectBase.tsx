@@ -4,21 +4,21 @@ import { JSXInternal } from 'preact/src/jsx'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuProps } from './components/SelectMenuBase'
 
-export interface MusicViewSelectProps {
-  musicViews: Array<MusicView>
-  selectedMusicView: MusicView
-  selectMusicView: (nextSelectedMusicView: MusicView) => void
-}
-
 export interface MusicViewSelectBaseProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends MusicViewSelectProps {
+> extends DeterminedMusicViewSelectProps {
   customOptionActionItemProps: CustomOptionActionItemProps
   customMenuFooterProps: CustomMenuFooterProps
   SelectMenu: (
     props: SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
   ) => JSXInternal.Element
+}
+
+export interface DeterminedMusicViewSelectProps {
+  musicViews: Array<MusicView>
+  selectedMusicView: MusicView
+  selectMusicView: (nextSelectedMusicView: MusicView) => void
 }
 
 export function MusicViewSelectBase<

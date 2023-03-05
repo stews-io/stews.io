@@ -4,9 +4,12 @@ import { throwInvalidPathError } from '@stews/helpers'
 import { ProfileBopperBaseProps } from '../ProfileBopperBase'
 import cssModule from './ProfileContentBase.module.scss'
 
+export interface ProfileContentProps
+  extends Pick<ProfileBopperBaseProps, 'musicCurator'> {}
+
 export interface ProfileContentBaseProps
   extends CorePopoverContentProps,
-    Pick<ProfileBopperBaseProps<unknown>, 'musicCurator'> {}
+    ProfileContentProps {}
 
 export function ProfileContentBase(props: ProfileContentBaseProps) {
   const {

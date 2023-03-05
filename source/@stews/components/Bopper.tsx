@@ -1,6 +1,5 @@
 import { useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
-import { JSXInternal } from 'preact/src/jsx'
 import { Button, ButtonProps } from './Button'
 import { Popover, PopoverProps } from './Popover'
 
@@ -10,9 +9,7 @@ export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
     'PopoverContent' | 'customPopoverContentProps'
   > {
   customAnchorButtonProps: CustomAnchorButtonProps
-  AnchorButton: (
-    props: BopperAnchorButtonProps<CustomAnchorButtonProps>
-  ) => JSXInternal.Element
+  AnchorButton: typeof BopperAnchorButton<CustomAnchorButtonProps>
 }
 
 export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(

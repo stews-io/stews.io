@@ -1,10 +1,11 @@
 import { SelectMenuBase, SelectMenuProps } from './components/SelectMenuBase'
 import {
+  DeterminedMusicViewSelectProps,
   MusicViewSelectBase,
-  MusicViewSelectProps,
 } from './MusicViewSelectBase'
 
-export interface ConsumerMusicViewSelectProps extends MusicViewSelectProps {}
+export interface ConsumerMusicViewSelectProps
+  extends DeterminedMusicViewSelectProps {}
 
 export function ConsumerMusicViewSelect(props: ConsumerMusicViewSelectProps) {
   return (

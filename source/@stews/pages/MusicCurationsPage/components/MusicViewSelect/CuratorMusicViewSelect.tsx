@@ -1,4 +1,5 @@
 import { Button } from '@stews/components/Button'
+import { getCssClass } from '@stews/helpers'
 import { MusicView } from '../../data'
 import {
   MenuFooterProps,
@@ -7,13 +8,13 @@ import {
   SelectMenuProps,
 } from './components/SelectMenuBase'
 import {
+  DeterminedMusicViewSelectProps,
   MusicViewSelectBase,
-  MusicViewSelectProps,
 } from './MusicViewSelectBase'
 import cssModule from './CuratorMusicViewSelect.module.scss'
-import { getCssClass } from '@stews/helpers'
 
-export interface CuratorMusicViewSelectProps extends MusicViewSelectProps {
+export interface CuratorMusicViewSelectProps
+  extends DeterminedMusicViewSelectProps {
   navigateToEditMusicViewPage: (someMusicView: MusicView) => void
   navigateToCreateMusicViewPage: () => void
 }

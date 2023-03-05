@@ -3,26 +3,22 @@ import {
   ProfileButtonBaseProps,
   ProfileIconBase,
 } from './components/ProfileButtonBase'
+import { ProfileContentBase } from './components/ProfileContentBase'
 import {
-  ProfileContentBase,
-  ProfileContentBaseProps,
-} from './components/ProfileContentBase'
-import { ProfileBopperBase, ProfileBopperBaseProps } from './ProfileBopperBase'
+  DeterminedProfileBoppersProps,
+  ProfileBopperBase,
+} from './ProfileBopperBase'
 
 export interface CuratorProfileBopperProps
-  extends Omit<
-    ProfileBopperBaseProps<unknown>,
-    'AnchorButton' | 'PopoverContent' | 'customProfileContentProps'
-  > {}
+  extends DeterminedProfileBoppersProps {}
 
 export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
-  const { musicCurator, ...customProfileContentProps } = props
+  const { musicCurator } = props
   return (
     <ProfileBopperBase
       AnchorButton={CuratorProfileButton}
-      PopoverContent={CuratorProfileContent}
+      PopoverContent={ProfileContentBase}
       musicCurator={musicCurator}
-      customProfileContentProps={customProfileContentProps}
     />
   )
 }
@@ -49,10 +45,4 @@ function CuratorProfileIcon() {
       )}
     />
   )
-}
-
-interface CuratorProfileContentProps extends ProfileContentBaseProps {}
-
-function CuratorProfileContent(props: CuratorProfileContentProps) {
-  return <ProfileContentBase {...props} />
 }

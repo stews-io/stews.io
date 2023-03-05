@@ -4,22 +4,21 @@ import {
   ProfileIconBase,
 } from './components/ProfileButtonBase'
 import { ProfileContentBase } from './components/ProfileContentBase'
-import { ProfileBopperBase, ProfileBopperBaseProps } from './ProfileBopperBase'
+import {
+  ProfileBopperBase,
+  DeterminedProfileBoppersProps,
+} from './ProfileBopperBase'
 
 export interface ConsumerProfileBopperProps
-  extends Omit<
-    ProfileBopperBaseProps<unknown>,
-    'AnchorButton' | 'PopoverContent' | 'customProfileContentProps'
-  > {}
+  extends DeterminedProfileBoppersProps {}
 
 export function ConsumerProfileBopper(props: ConsumerProfileBopperProps) {
-  const { musicCurator, ...customProfileContentProps } = props
+  const { musicCurator } = props
   return (
     <ProfileBopperBase
       AnchorButton={ConsumerProfileButton}
       PopoverContent={ProfileContentBase}
       musicCurator={musicCurator}
-      customProfileContentProps={customProfileContentProps}
     />
   )
 }
