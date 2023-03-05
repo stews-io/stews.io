@@ -1,4 +1,3 @@
-import { ConsumerMusicCurationsPage } from './ConsumerMusicCurationsPage'
 import { CuratorMusicCurationsPage } from './CuratorMusicCurationsPage'
 import { MusicCurator, MusicView } from './data'
 
@@ -74,16 +73,16 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
       viewFilter: '',
     },
   ]
-  // return (
-  //   <CuratorMusicCurationsPage
-  //     musicCurator={musicCurator}
-  //     musicViews={musicViews}
-  //   />
-  // )
   return (
-    <ConsumerMusicCurationsPage
+    <CuratorMusicCurationsPage
       musicCurator={musicCurator}
       musicViews={musicViews}
     />
   )
+  // return (
+  //   <ConsumerMusicCurationsPage
+  //     musicCurator={musicCurator}
+  //     musicViews={musicViews}
+  //   />
+  // )
 }
