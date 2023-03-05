@@ -1,14 +1,30 @@
-import { Page } from '@stews/components/Page'
-import { useState } from 'preact/hooks'
-import { CuratorMusicViewSelect } from './components/MusicViewSelect'
-import { CuratorProfileBopper } from './components/ProfileBopper'
-import { MusicView } from './data'
-import cssModule from './MusicCurationsPage.module.scss'
+import { ConsumerMusicCurationsPage } from './ConsumerMusicCurationsPage'
+import { CuratorMusicCurationsPage } from './CuratorMusicCurationsPage'
+import { MusicCurator, MusicView } from './data'
 
 export interface MusicCurationsPageProps {}
 
 export function MusicCurationsPage(props: MusicCurationsPageProps) {
   const {} = props
+  const musicCurator: MusicCurator = {
+    curatorName: 'clumsycomputer',
+    curatorLocation: 'guadalajara, jalisco',
+    curatorStatus: 'just trying to listen and groove',
+    curatorLinks: [
+      {
+        linkType: 'website',
+        linkHref: 'https://clumsycomputer.com',
+      },
+      {
+        linkType: 'github',
+        linkHref: 'https://github.com/clumsycomputer',
+      },
+      {
+        linkType: 'twitter',
+        linkHref: 'https://twitter.com/c1umsyc0mputer',
+      },
+    ],
+  }
   const musicViews: Array<MusicView> = [
     {
       viewId: 0,
@@ -58,47 +74,16 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
       viewFilter: '',
     },
   ]
-  const [selectedMusicView, setSelectedMusicView] = useState<MusicView>(
-    musicViews[0]!
-  )
+  // return (
+  //   <CuratorMusicCurationsPage
+  //     musicCurator={musicCurator}
+  //     musicViews={musicViews}
+  //   />
+  // )
   return (
-    <Page>
-      <div className={cssModule.pageHeader}>
-        <div className={cssModule.viewSelectContainer}>
-          <CuratorMusicViewSelect
-            musicViews={musicViews}
-            selectedMusicView={selectedMusicView}
-            selectMusicView={(nextSelectedMusicView) => {
-              setSelectedMusicView(nextSelectedMusicView)
-            }}
-            navigateToEditMusicViewPage={() => {}}
-            navigateToCreateMusicViewPage={() => {}}
-          />
-        </div>
-        <div className={cssModule.actionContainer}>
-          <CuratorProfileBopper
-            musicCurator={{
-              curatorName: 'clumsycomputer',
-              curatorLocation: 'guadalajara, jalisco',
-              curatorStatus: 'just trying to listen and groove',
-              curatorLinks: [
-                {
-                  linkType: 'website',
-                  linkHref: 'https://clumsycomputer.com',
-                },
-                {
-                  linkType: 'github',
-                  linkHref: 'https://github.com/clumsycomputer',
-                },
-                {
-                  linkType: 'twitter',
-                  linkHref: 'https://twitter.com/c1umsyc0mputer',
-                },
-              ],
-            }}
-          />
-        </div>
-      </div>
-    </Page>
+    <ConsumerMusicCurationsPage
+      musicCurator={musicCurator}
+      musicViews={musicViews}
+    />
   )
 }
