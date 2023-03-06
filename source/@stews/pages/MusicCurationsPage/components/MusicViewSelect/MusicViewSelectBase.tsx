@@ -1,6 +1,6 @@
 import { Bopper } from '@stews/components/Bopper'
 import { MusicView } from '@stews/pages/MusicCurationsPage/data'
-import { JSXInternal } from 'preact/src/jsx'
+import { ComponentType } from 'preact'
 import { MusicCurationsPageBaseProps } from '../../MusicCurationsPageBase'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuProps } from './components/SelectMenuBase'
@@ -11,9 +11,9 @@ export interface MusicViewSelectBaseProps<
 > extends DeterminedMusicViewSelectProps {
   customOptionActionItemProps: CustomOptionActionItemProps
   customMenuFooterProps: CustomMenuFooterProps
-  SelectMenu: (
-    props: SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
-  ) => JSXInternal.Element
+  SelectMenu: ComponentType<
+    SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
+  >
 }
 
 export interface DeterminedMusicViewSelectProps

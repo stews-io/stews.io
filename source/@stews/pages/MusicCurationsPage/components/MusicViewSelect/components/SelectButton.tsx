@@ -1,19 +1,16 @@
-import {
-  BopperAnchorButton,
-  CoreBopperAnchorButtonProps,
-} from '@stews/components/Bopper'
+import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
 import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
 import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps
-  extends CoreBopperAnchorButtonProps,
+  extends CoreAnchorButtonProps,
     Pick<MusicViewSelectBaseProps<unknown, unknown>, 'selectedMusicView'> {}
 
 export function SelectButton(props: SelectButtonProps) {
   const { anchorElementRef, setPopoverOpen, selectedMusicView } = props
   return (
     <div className={cssModule.buttonContainer}>
-      <BopperAnchorButton
+      <AnchorButton
         className={cssModule.selectButton}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
@@ -29,7 +26,7 @@ export function SelectButton(props: SelectButtonProps) {
             />
           </svg>
         </div>
-      </BopperAnchorButton>
+      </AnchorButton>
     </div>
   )
 }

@@ -1,5 +1,6 @@
+import { PageContext } from '@stews/components/Page'
 import { throwInvalidPathError } from '@stews/helpers'
-import { createRef, RefObject } from 'preact'
+import { ComponentType, createRef, RefObject } from 'preact'
 import {
   Ref,
   StateUpdater,
@@ -8,8 +9,6 @@ import {
   useMemo,
   useRef,
 } from 'preact/hooks'
-import { JSXInternal } from 'preact/src/jsx'
-import { PageContext } from './Page'
 import cssModule from './Popover.module.scss'
 
 export interface PopoverProps<CustomPopoverContentProps> {
@@ -17,9 +16,7 @@ export interface PopoverProps<CustomPopoverContentProps> {
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
   customPopoverContentProps: CustomPopoverContentProps
-  PopoverContent: (
-    props: PopoverContentProps<CustomPopoverContentProps>
-  ) => JSXInternal.Element
+  PopoverContent: ComponentType<PopoverContentProps<CustomPopoverContentProps>>
 }
 
 type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &

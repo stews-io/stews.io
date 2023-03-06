@@ -1,5 +1,5 @@
 import { Button } from '@stews/components/Button'
-import { CorePopoverContentProps } from '@stews/components/Popover'
+import { CorePopoverContentProps } from '@stews/components/Bopper'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ProfileBopperBaseProps } from '../ProfileBopperBase'
 import cssModule from './ProfileContentBase.module.scss'

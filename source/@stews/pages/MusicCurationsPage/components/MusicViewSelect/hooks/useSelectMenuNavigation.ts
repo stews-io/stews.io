@@ -1,5 +1,4 @@
 import { ButtonProps } from '@stews/components/Button'
-import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
 import { MutableRef, Ref, useEffect, useRef, useState } from 'preact/hooks'
