@@ -2,7 +2,7 @@ import { CorePopoverContentProps } from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
 import { MusicView } from '@stews/pages/MusicCurationsPage/data'
-import { ComponentType } from 'preact'
+import { FunctionComponent } from 'preact'
 import {
   useSelectMenuNavigation,
   UseSelectMenuNavigationResult,
@@ -30,10 +30,10 @@ export interface SelectMenuBaseProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps> {
-  OptionActionItem: ComponentType<
+  OptionActionItem: FunctionComponent<
     OptionActionItemProps<CustomOptionActionItemProps>
   >
-  MenuFooter: ComponentType<MenuFooterProps<CustomMenuFooterProps>>
+  MenuFooter: FunctionComponent<MenuFooterProps<CustomMenuFooterProps>>
 }
 
 export type OptionActionItemProps<CustomOptionActionItemProps> =

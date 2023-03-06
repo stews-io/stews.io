@@ -1,5 +1,6 @@
 import { Page } from '@stews/components/Page'
-import { ComponentType } from 'preact'
+import { throwInvalidPathError } from '@stews/helpers'
+import { FunctionComponent } from 'preact'
 import { useState } from 'preact/hooks'
 import { DeterminedMusicViewSelectProps } from './components/MusicViewSelect/MusicViewSelectBase'
 import { DeterminedProfileBoppersProps } from './components/ProfileBopper/ProfileBopperBase'
@@ -10,10 +11,10 @@ export interface MusicCurationsPageBaseProps<CustomMusicViewSelectProps> {
   musicCurator: MusicCurator
   musicViews: Array<MusicView>
   customMusicViewSelectProps: CustomMusicViewSelectProps
-  MusicViewSelect: ComponentType<
+  MusicViewSelect: FunctionComponent<
     MusicViewSelectProps<CustomMusicViewSelectProps>
   >
-  ProfileBopper: ComponentType<DeterminedProfileBoppersProps>
+  ProfileBopper: FunctionComponent<DeterminedProfileBoppersProps>
 }
 
 type MusicViewSelectProps<CustomMusicViewSelectProps> =
@@ -30,7 +31,11 @@ export function MusicCurationsPageBase<CustomMusicViewSelectProps>(
     musicCurator,
   } = props
   const [selectedMusicView, setSelectedMusicView] = useState<MusicView>(
-    musicViews[0]!
+    musicViews[0] !== undefined
+      ? musicViews[0]
+      : throwInvalidPathError(
+          'MusicCurationsPageBase.useState.selectedMusicView'
+        )
   )
   return (
     <Page>

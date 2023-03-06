@@ -5,7 +5,7 @@ import { ProfileContentProps } from './components/ProfileContentBase'
 export interface ProfileBopperBaseProps
   extends DeterminedProfileBoppersProps,
     Pick<
-      BopperProps<unknown, ProfileContentProps>,
+      BopperProps<null, ProfileContentProps>,
       'AnchorButton' | 'PopoverContent'
     > {}
 

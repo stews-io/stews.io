@@ -1,9 +1,9 @@
 import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
-import { ComponentType } from 'preact'
+import { FunctionComponent } from 'preact'
 import cssModule from './ProfileButtonBase.module.scss'
 
 export interface ProfileButtonBaseProps extends CoreAnchorButtonProps {
-  ProfileIcon: ComponentType<unknown>
+  ProfileIcon: FunctionComponent<unknown>
 }
 
 export function ProfileButtonBase(props: ProfileButtonBaseProps) {
@@ -19,7 +19,7 @@ export function ProfileButtonBase(props: ProfileButtonBaseProps) {
 }
 
 export interface ProfileIconBaseProps {
-  IconContent: ComponentType<unknown>
+  IconContent: FunctionComponent<unknown>
 }
 
 export function ProfileIconBase(props: ProfileIconBaseProps) {

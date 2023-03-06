@@ -1,6 +1,6 @@
 import { PageContext } from '@stews/components/Page'
 import { throwInvalidPathError } from '@stews/helpers'
-import { ComponentType, createRef, RefObject } from 'preact'
+import { FunctionComponent, createRef, RefObject } from 'preact'
 import {
   Ref,
   StateUpdater,
@@ -16,7 +16,9 @@ export interface PopoverProps<CustomPopoverContentProps> {
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
   customPopoverContentProps: CustomPopoverContentProps
-  PopoverContent: ComponentType<PopoverContentProps<CustomPopoverContentProps>>
+  PopoverContent: FunctionComponent<
+    PopoverContentProps<CustomPopoverContentProps>
+  >
 }
 
 type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
