@@ -1,7 +1,7 @@
 import { Bopper } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import { SelectButton } from './components/SelectButton'
-import { SelectMenuProps } from './components/SelectMenuBase'
+// import { SelectMenuProps } from './components/SelectMenuBase'
 
 export interface SelectBaseProps<
   MenuOption extends Record<string, unknown>,
@@ -19,9 +19,9 @@ export interface SelectBaseProps<
   selectOption: (nextSelectedOption: StrictMenuOption) => void
   customOptionActionItemProps: CustomOptionActionItemProps
   customMenuFooterProps: CustomMenuFooterProps
-  SelectMenu: FunctionComponent<
-    SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
-  >
+  // SelectMenu: FunctionComponent<
+  //   SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
+  // >
 }
 
 type ExtractStrictMenuOption<
@@ -49,7 +49,7 @@ export function SelectBase<
   const {
     selectedOption,
     optionLabelKey,
-    SelectMenu,
+    // SelectMenu,
     selectOption,
     optionsList,
     customOptionActionItemProps,
@@ -58,7 +58,7 @@ export function SelectBase<
   return (
     <Bopper
       AnchorButton={SelectButton}
-      PopoverContent={SelectMenu}
+      PopoverContent={() => null}
       customAnchorButtonProps={{
         selectedOption,
         optionLabelKey,

@@ -28,6 +28,15 @@ export function Button(props: ButtonProps) {
         Boolean(className),
       ])}
       onClick={(someClickEvent) => {
+        if (
+          someClickEvent.currentTarget instanceof HTMLDivElement &&
+          !someClickEvent.currentTarget.hasAttribute('data-pointer-focus')
+        ) {
+          someClickEvent.currentTarget.setAttribute(
+            'data-pointer-focus',
+            'true'
+          )
+        }
         onSelect()
         if (onClick) {
           onClick(someClickEvent)
