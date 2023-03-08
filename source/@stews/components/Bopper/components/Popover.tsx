@@ -25,10 +25,7 @@ type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
   CustomPopoverContentProps
 
 export interface CorePopoverContentProps
-  extends Pick<
-    PopoverProps<unknown>,
-    'anchorElementRef' | 'popoverOpen' | 'setPopoverOpen'
-  > {
+  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {
   initialFocusElementRef: RefObject<HTMLDivElement>
   popoverNavigationItemBlurHandler: (someBlurEvent: FocusEvent) => void
 }
@@ -157,7 +154,6 @@ export function Popover<CustomPopoverContentProps>(
       <PopoverContent
         anchorElementRef={anchorElementRef}
         popoverOpen={popoverOpen}
-        setPopoverOpen={setPopoverOpen}
         initialFocusElementRef={initialFocusElementRef}
         popoverNavigationItemBlurHandler={popoverNavigationItemBlurHandler}
         {...customPopoverContentProps}

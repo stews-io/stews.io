@@ -87,7 +87,6 @@ export function SelectMenuBase<
   const {
     anchorElementRef,
     popoverOpen,
-    setPopoverOpen,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
     optionList,
@@ -108,7 +107,6 @@ export function SelectMenuBase<
   } = useSelectMenuNavigation({
     anchorElementRef,
     popoverOpen,
-    setPopoverOpen,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
   })

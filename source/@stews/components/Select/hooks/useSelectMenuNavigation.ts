@@ -9,7 +9,6 @@ export interface UseSelectMenuNavigationApi
     SelectMenuBaseProps<object, never, unknown, unknown>,
     | 'anchorElementRef'
     | 'popoverOpen'
-    | 'setPopoverOpen'
     | 'initialFocusElementRef'
     | 'popoverNavigationItemBlurHandler'
   > {}
@@ -58,7 +57,6 @@ export function useSelectMenuNavigation(
     popoverNavigationItemBlurHandler,
     initialFocusElementRef,
     anchorElementRef,
-    setPopoverOpen,
   } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
   const [latestFocusedOptionIndex, setFocusedOptionIndex] = useState<
@@ -151,7 +149,10 @@ export function useSelectMenuNavigation(
           }
         },
         onClick: () => {
-          setPopoverOpen(false)
+          if (anchorElementRef.current instanceof HTMLDivElement) {
+            anchorElementRef.current.setAttribute('data-pointer-focus', 'true')
+            anchorElementRef.current.focus()
+          }
         },
       }
     },
