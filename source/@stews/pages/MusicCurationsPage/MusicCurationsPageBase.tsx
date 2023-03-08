@@ -2,52 +2,50 @@ import { Page } from '@stews/components/Page'
 import { throwInvalidPathError } from '@stews/helpers'
 import { FunctionComponent } from 'preact'
 import { useState } from 'preact/hooks'
-import { DeterminedMusicViewSelectProps } from './components/MusicViewSelect/MusicViewSelectBase'
 import { DeterminedProfileBoppersProps } from './components/ProfileBopper/ProfileBopperBase'
-import { MusicCurator, MusicView, StrictMusicView } from './data'
+import { DeterminedViewSelectProps } from './components/ViewSelect'
+import { MusicCurator, MusicView } from './data'
 import cssModule from './MusicCurationsPageBase.module.scss'
 
-export interface MusicCurationsPageBaseProps<CustomMusicViewSelectProps> {
+export interface MusicCurationsPageBaseProps<CustomViewSelectProps> {
   musicCurator: MusicCurator
   musicViews: Array<MusicView>
-  customMusicViewSelectProps: CustomMusicViewSelectProps
-  MusicViewSelect: FunctionComponent<
-    MusicViewSelectProps<CustomMusicViewSelectProps>
-  >
+  customViewSelectProps: CustomViewSelectProps
+  ViewSelect: FunctionComponent<ViewSelectProps<CustomViewSelectProps>>
   ProfileBopper: FunctionComponent<DeterminedProfileBoppersProps>
 }
 
-type MusicViewSelectProps<CustomMusicViewSelectProps> =
-  DeterminedMusicViewSelectProps & CustomMusicViewSelectProps
+type ViewSelectProps<CustomViewSelectProps> = DeterminedViewSelectProps &
+  CustomViewSelectProps
 
-export function MusicCurationsPageBase<CustomMusicViewSelectProps>(
-  props: MusicCurationsPageBaseProps<CustomMusicViewSelectProps>
+export function MusicCurationsPageBase<CustomViewSelectProps>(
+  props: MusicCurationsPageBaseProps<CustomViewSelectProps>
 ) {
   const {
     musicViews,
-    MusicViewSelect,
-    customMusicViewSelectProps,
+    ViewSelect,
+    customViewSelectProps,
     ProfileBopper,
     musicCurator,
   } = props
-  const [selectedMusicView, setSelectedMusicView] = useState<StrictMusicView>(
+  const [selectedView, setSelectedView] = useState<
+    DeterminedViewSelectProps['optionList'][number]
+  >(
     musicViews[0] !== undefined
       ? musicViews[0]
-      : throwInvalidPathError(
-          'MusicCurationsPageBase.useState.selectedMusicView'
-        )
+      : throwInvalidPathError('MusicCurationsPageBase.useState.selectedView')
   )
   return (
     <Page>
       <div className={cssModule.pageHeader}>
         <div className={cssModule.viewSelectContainer}>
-          <MusicViewSelect
+          <ViewSelect
             optionList={musicViews}
-            selectedOption={selectedMusicView}
-            selectOption={(nextSelectedMusicView) => {
-              setSelectedMusicView(nextSelectedMusicView)
+            selectedOption={selectedView}
+            selectOption={(nextSelectedView) => {
+              setSelectedView(nextSelectedView)
             }}
-            {...customMusicViewSelectProps}
+            {...customViewSelectProps}
           />
         </div>
         <div className={cssModule.actionContainer}>

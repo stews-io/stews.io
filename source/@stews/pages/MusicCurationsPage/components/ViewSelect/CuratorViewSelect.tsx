@@ -1,52 +1,48 @@
 import { Button } from '@stews/components/Button'
-import {
-  MenuFooterProps,
-  OptionActionItemProps,
-  SelectMenuBase,
-  SelectMenuProps,
-} from '@stews/components/Select'
+import { SelectMenuBase, SelectMenuBaseProps } from '@stews/components/Select'
 import { getCssClass } from '@stews/helpers'
-import { MusicView } from '../../data'
+import { ComponentProps } from 'preact'
 import {
-  DeterminedMusicViewSelectProps,
-  MusicViewSelectBase,
-} from './MusicViewSelectBase'
-import cssModule from './CuratorMusicViewSelect.module.scss'
+  DeterminedViewSelectProps,
+  ViewSelectBase,
+  ViewSelectBaseProps,
+} from './ViewSelectBase'
+import { StrictMusicView } from './StrictMusicView'
+import cssModule from './CuratorViewSelect.module.scss'
 
-export interface CuratorMusicViewSelectProps
-  extends DeterminedMusicViewSelectProps {
-  navigateToEditMusicViewPage: (
-    someMusicView: DeterminedMusicViewSelectProps['optionList'][number]
+export interface CuratorViewSelectProps extends DeterminedViewSelectProps {
+  navigateToEditViewPage: (
+    someViewOption: DeterminedViewSelectProps['optionList'][number]
   ) => void
-  navigateToCreateMusicViewPage: () => void
+  navigateToCreateViewPage: () => void
 }
 
-export function CuratorMusicViewSelect(props: CuratorMusicViewSelectProps) {
+export function CuratorViewSelect(props: CuratorViewSelectProps) {
   const {
-    navigateToEditMusicViewPage,
-    navigateToCreateMusicViewPage,
-    ...musicViewSelectBaseProps
+    navigateToEditViewPage,
+    navigateToCreateViewPage,
+    ...viewSelectBaseProps
   } = props
   return (
-    <MusicViewSelectBase
+    <ViewSelectBase
       SelectMenu={CuratorSelectMenu}
       customOptionActionItemProps={{
-        navigateToEditMusicViewPage,
+        navigateToEditViewPage,
       }}
       customMenuFooterProps={{
-        navigateToCreateMusicViewPage,
+        navigateToCreateViewPage,
       }}
-      {...musicViewSelectBaseProps}
+      {...viewSelectBaseProps}
     />
   )
 }
 
 interface CuratorSelectMenuProps
-  extends SelectMenuProps<
-    MusicView,
-    'viewLabel',
-    CustomCuratorOptionActionItemProps,
-    CustomCuratorMenuFooterProps
+  extends ComponentProps<
+    ViewSelectBaseProps<
+      CustomCuratorOptionActionItemProps,
+      CustomCuratorMenuFooterProps
+    >['SelectMenu']
   > {}
 
 function CuratorSelectMenu(props: CuratorSelectMenuProps) {
@@ -59,21 +55,25 @@ function CuratorSelectMenu(props: CuratorSelectMenuProps) {
   )
 }
 
-interface CuratorOptionActionItemProps
-  extends OptionActionItemProps<
-    MusicView,
+interface CuratorSelectMenuPropsConfig
+  extends SelectMenuBaseProps<
+    StrictMusicView,
     'viewLabel',
-    CustomCuratorOptionActionItemProps
+    CustomCuratorOptionActionItemProps,
+    CustomCuratorMenuFooterProps
   > {}
 
+interface CuratorOptionActionItemProps
+  extends ComponentProps<CuratorSelectMenuPropsConfig['OptionActionItem']> {}
+
 interface CustomCuratorOptionActionItemProps
-  extends Pick<CuratorMusicViewSelectProps, 'navigateToEditMusicViewPage'> {}
+  extends Pick<CuratorViewSelectProps, 'navigateToEditViewPage'> {}
 
 function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
   const {
     getMenuNavigationOptionActionButtonProps,
     optionIndex,
-    navigateToEditMusicViewPage,
+    navigateToEditViewPage,
     someOption,
     latestFocusedOptionIndex,
   } = props
@@ -82,7 +82,7 @@ function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
       <Button
         {...getMenuNavigationOptionActionButtonProps(optionIndex)}
         onSelect={() => {
-          navigateToEditMusicViewPage(someOption)
+          navigateToEditViewPage(someOption)
         }}
       >
         <svg
@@ -113,16 +113,14 @@ function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
 }
 
 interface CuratorMenuFooterProps
-  extends MenuFooterProps<CustomCuratorMenuFooterProps> {}
+  extends ComponentProps<CuratorSelectMenuPropsConfig['MenuFooter']> {}
 
 interface CustomCuratorMenuFooterProps
-  extends Pick<CuratorMusicViewSelectProps, 'navigateToCreateMusicViewPage'> {}
+  extends Pick<CuratorViewSelectProps, 'navigateToCreateViewPage'> {}
 
 function CurtatorMenuFooter(props: CuratorMenuFooterProps) {
-  const {
-    menuNavigationFooterActionButtonProps,
-    navigateToCreateMusicViewPage,
-  } = props
+  const { menuNavigationFooterActionButtonProps, navigateToCreateViewPage } =
+    props
   return (
     <div className={cssModule.footerContainer}>
       <div className={cssModule.footerDivider} />
@@ -130,7 +128,7 @@ function CurtatorMenuFooter(props: CuratorMenuFooterProps) {
         <Button
           {...menuNavigationFooterActionButtonProps}
           className={cssModule.footerActionButton}
-          onSelect={navigateToCreateMusicViewPage}
+          onSelect={navigateToCreateViewPage}
         >
           create view
         </Button>

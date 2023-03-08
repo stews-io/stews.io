@@ -1,4 +1,4 @@
-import { ConsumerMusicViewSelect } from './components/MusicViewSelect'
+import { ConsumerViewSelect } from './components/ViewSelect'
 import { ConsumerProfileBopper } from './components/ProfileBopper'
 import {
   MusicCurationsPageBase,
@@ -17,11 +17,11 @@ export function ConsumerMusicCurationsPage(
   const { musicCurator, musicViews } = props
   return (
     <MusicCurationsPageBase
-      MusicViewSelect={ConsumerMusicViewSelect}
+      ViewSelect={ConsumerViewSelect}
       ProfileBopper={ConsumerProfileBopper}
       musicCurator={musicCurator}
       musicViews={musicViews}
-      customMusicViewSelectProps={null}
+      customViewSelectProps={null}
     />
   )
 }

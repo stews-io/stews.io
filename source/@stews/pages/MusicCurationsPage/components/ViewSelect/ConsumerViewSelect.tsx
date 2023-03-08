@@ -1,17 +1,16 @@
 import { SelectMenuBase } from '@stews/components/Select'
 import { ComponentProps } from 'preact'
 import {
-  DeterminedMusicViewSelectProps,
-  MusicViewSelectBase,
-  MusicViewSelectBaseProps,
-} from './MusicViewSelectBase'
+  DeterminedViewSelectProps,
+  ViewSelectBase,
+  ViewSelectBaseProps,
+} from './ViewSelectBase'
 
-export interface ConsumerMusicViewSelectProps
-  extends DeterminedMusicViewSelectProps {}
+export interface ConsumerViewSelectProps extends DeterminedViewSelectProps {}
 
-export function ConsumerMusicViewSelect(props: ConsumerMusicViewSelectProps) {
+export function ConsumerViewSelect(props: ConsumerViewSelectProps) {
   return (
-    <MusicViewSelectBase
+    <ViewSelectBase
       SelectMenu={ConsumerSelectMenu}
       customOptionActionItemProps={null}
       customMenuFooterProps={null}
@@ -21,9 +20,7 @@ export function ConsumerMusicViewSelect(props: ConsumerMusicViewSelectProps) {
 }
 
 interface ConsumerSelectMenuProps
-  extends ComponentProps<
-    MusicViewSelectBaseProps<unknown, unknown>['SelectMenu']
-  > {}
+  extends ComponentProps<ViewSelectBaseProps<unknown, unknown>['SelectMenu']> {}
 
 function ConsumerSelectMenu(props: ConsumerSelectMenuProps) {
   return (

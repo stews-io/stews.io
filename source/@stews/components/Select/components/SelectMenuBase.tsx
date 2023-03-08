@@ -51,7 +51,7 @@ export interface SelectMenuBaseProps<
   MenuFooter: FunctionComponent<MenuFooterProps<CustomMenuFooterProps>>
 }
 
-export type OptionActionItemProps<
+type OptionActionItemProps<
   MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
@@ -68,7 +68,7 @@ export type OptionActionItemProps<
     optionIndex: number
   }
 
-export type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
+type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
   Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
 
 export function SelectMenuBase<

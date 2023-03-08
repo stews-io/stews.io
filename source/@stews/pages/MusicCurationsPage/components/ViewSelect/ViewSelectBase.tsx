@@ -1,8 +1,8 @@
 import { SelectBase, SelectBaseProps } from '@stews/components/Select'
-import { StrictMusicView } from '@stews/pages/MusicCurationsPage/data'
 import { ComponentProps } from 'preact'
+import { StrictMusicView } from './StrictMusicView'
 
-export interface MusicViewSelectBaseProps<
+export interface ViewSelectBaseProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends Pick<
@@ -20,25 +20,20 @@ export interface MusicViewSelectBaseProps<
     | 'customMenuFooterProps'
   > {}
 
-export interface DeterminedMusicViewSelectProps
+export interface DeterminedViewSelectProps
   extends Pick<
-    MusicViewSelectBaseProps<unknown, unknown>,
+    ViewSelectBaseProps<unknown, unknown>,
     'optionList' | 'selectedOption' | 'selectOption'
   > {}
 
-export interface MusicViewSelectMenuProps
-  extends ComponentProps<
-    MusicViewSelectBaseProps<unknown, unknown>['SelectMenu']
-  > {}
+export interface ViewSelectMenuProps
+  extends ComponentProps<ViewSelectBaseProps<unknown, unknown>['SelectMenu']> {}
 
-export function MusicViewSelectBase<
+export function ViewSelectBase<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(
-  props: MusicViewSelectBaseProps<
-    CustomOptionActionItemProps,
-    CustomMenuFooterProps
-  >
+  props: ViewSelectBaseProps<CustomOptionActionItemProps, CustomMenuFooterProps>
 ) {
   const {
     SelectMenu,

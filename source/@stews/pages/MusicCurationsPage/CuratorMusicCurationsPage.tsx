@@ -1,4 +1,4 @@
-import { CuratorMusicViewSelect } from './components/MusicViewSelect'
+import { CuratorViewSelect } from './components/ViewSelect'
 import { CuratorProfileBopper } from './components/ProfileBopper'
 import {
   MusicCurationsPageBase,
@@ -17,13 +17,13 @@ export function CuratorMusicCurationsPage(
   const { musicCurator, musicViews } = props
   return (
     <MusicCurationsPageBase
-      MusicViewSelect={CuratorMusicViewSelect}
+      ViewSelect={CuratorViewSelect}
       ProfileBopper={CuratorProfileBopper}
       musicCurator={musicCurator}
       musicViews={musicViews}
-      customMusicViewSelectProps={{
-        navigateToEditMusicViewPage: () => {},
-        navigateToCreateMusicViewPage: () => {},
+      customViewSelectProps={{
+        navigateToEditViewPage: () => {},
+        navigateToCreateViewPage: () => {},
       }}
     />
   )

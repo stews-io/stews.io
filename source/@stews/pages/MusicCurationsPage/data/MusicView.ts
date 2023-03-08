@@ -1,7 +1,3 @@
-import { ExtractStrictMenuOption } from '@stews/components/Select'
-
-export type StrictMusicView = ExtractStrictMenuOption<MusicView, 'viewLabel'>
-
 export type MusicView = DefaultMusicView | FilterMusicView
 
 export interface DefaultMusicView extends MusicViewBase<'default'> {}
