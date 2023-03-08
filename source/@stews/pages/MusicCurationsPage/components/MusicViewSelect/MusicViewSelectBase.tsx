@@ -1,26 +1,35 @@
-import { Bopper } from '@stews/components/Bopper'
+import { SelectBase, SelectBaseProps } from '@stews/components/Select'
 import { MusicView } from '@stews/pages/MusicCurationsPage/data'
-import { FunctionComponent } from 'preact'
-import { MusicCurationsPageBaseProps } from '../../MusicCurationsPageBase'
-import { SelectButton } from './components/SelectButton'
-import { SelectMenuProps } from './components/SelectMenuBase'
+import { ComponentProps } from 'preact'
 
 export interface MusicViewSelectBaseProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends DeterminedMusicViewSelectProps {
-  customOptionActionItemProps: CustomOptionActionItemProps
-  customMenuFooterProps: CustomMenuFooterProps
-  SelectMenu: FunctionComponent<
-    SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
-  >
-}
+> extends Pick<
+    SelectBaseProps<
+      MusicView,
+      'viewLabel',
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    >,
+    | 'SelectMenu'
+    | 'selectedOption'
+    | 'selectOption'
+    | 'optionList'
+    | 'customOptionActionItemProps'
+    | 'customMenuFooterProps'
+  > {}
 
 export interface DeterminedMusicViewSelectProps
-  extends Pick<MusicCurationsPageBaseProps<unknown>, 'musicViews'> {
-  selectedMusicView: MusicView
-  selectMusicView: (nextSelectedMusicView: MusicView) => void
-}
+  extends Pick<
+    MusicViewSelectBaseProps<unknown, unknown>,
+    'optionList' | 'selectedOption' | 'selectOption'
+  > {}
+
+export interface MusicViewSelectMenuProps
+  extends ComponentProps<
+    MusicViewSelectBaseProps<unknown, unknown>['SelectMenu']
+  > {}
 
 export function MusicViewSelectBase<
   CustomOptionActionItemProps,
@@ -32,27 +41,22 @@ export function MusicViewSelectBase<
   >
 ) {
   const {
-    selectedMusicView,
     SelectMenu,
-    selectMusicView,
-    musicViews,
+    optionList,
+    selectedOption,
+    selectOption,
     customOptionActionItemProps,
     customMenuFooterProps,
   } = props
   return (
-    <Bopper
-      AnchorButton={SelectButton}
-      PopoverContent={SelectMenu}
-      customAnchorButtonProps={{
-        selectedMusicView,
-      }}
-      customPopoverContentProps={{
-        selectedMusicView,
-        selectMusicView,
-        musicViews,
-        customOptionActionItemProps,
-        customMenuFooterProps,
-      }}
+    <SelectBase
+      SelectMenu={SelectMenu}
+      optionLabelKey={'viewLabel'}
+      optionList={optionList}
+      selectedOption={selectedOption}
+      selectOption={selectOption}
+      customOptionActionItemProps={customOptionActionItemProps}
+      customMenuFooterProps={customMenuFooterProps}
     />
   )
 }

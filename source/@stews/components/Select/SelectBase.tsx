@@ -1,10 +1,10 @@
 import { Bopper } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import { SelectButton } from './components/SelectButton'
-// import { SelectMenuProps } from './components/SelectMenuBase'
+import { SelectMenuProps } from './components/SelectMenuBase'
 
 export interface SelectBaseProps<
-  MenuOption extends Record<string, unknown>,
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps,
@@ -14,18 +14,23 @@ export interface SelectBaseProps<
   > = ExtractStrictMenuOption<MenuOption, OptionLabelKey>
 > {
   optionLabelKey: OptionLabelKey
-  optionsList: Array<StrictMenuOption>
+  optionList: Array<StrictMenuOption>
   selectedOption: StrictMenuOption
   selectOption: (nextSelectedOption: StrictMenuOption) => void
   customOptionActionItemProps: CustomOptionActionItemProps
   customMenuFooterProps: CustomMenuFooterProps
-  // SelectMenu: FunctionComponent<
-  //   SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps>
-  // >
+  SelectMenu: FunctionComponent<
+    SelectMenuProps<
+      MenuOption,
+      OptionLabelKey,
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    >
+  >
 }
 
-type ExtractStrictMenuOption<
-  MenuOption extends Record<string, unknown>,
+export type ExtractStrictMenuOption<
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption
 > = Omit<MenuOption, OptionLabelKey> & {
   [TargetOptionLabelKey in OptionLabelKey]: MenuOption[TargetOptionLabelKey] extends string
@@ -34,7 +39,7 @@ type ExtractStrictMenuOption<
 }
 
 export function SelectBase<
-  MenuOption extends Record<string, unknown>,
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
@@ -49,24 +54,25 @@ export function SelectBase<
   const {
     selectedOption,
     optionLabelKey,
-    // SelectMenu,
+    SelectMenu,
     selectOption,
-    optionsList,
+    optionList,
     customOptionActionItemProps,
     customMenuFooterProps,
   } = props
   return (
     <Bopper
       AnchorButton={SelectButton}
-      PopoverContent={() => null}
+      PopoverContent={SelectMenu}
       customAnchorButtonProps={{
         selectedOption,
         optionLabelKey,
       }}
       customPopoverContentProps={{
         selectedOption,
+        optionLabelKey,
         selectOption,
-        optionsList,
+        optionList,
         customOptionActionItemProps,
         customMenuFooterProps,
       }}

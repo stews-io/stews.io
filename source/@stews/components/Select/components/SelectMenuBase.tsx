@@ -1,59 +1,88 @@
 import { CorePopoverContentProps } from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
-import { MusicView } from '@stews/pages/MusicCurationsPage/data'
 import { FunctionComponent } from 'preact'
 import {
   useSelectMenuNavigation,
   UseSelectMenuNavigationResult,
 } from '../hooks/useSelectMenuNavigation'
-import { MusicViewSelectBaseProps } from '../MusicViewSelectBase'
+import { ExtractStrictMenuOption, SelectBaseProps } from '../SelectBase'
 import cssModule from './SelectMenuBase.module.scss'
 
 export interface SelectMenuProps<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends CorePopoverContentProps,
     Pick<
-      MusicViewSelectBaseProps<
+      SelectBaseProps<
+        MenuOption,
+        OptionLabelKey,
         CustomOptionActionItemProps,
         CustomMenuFooterProps
       >,
-      | 'musicViews'
-      | 'selectedMusicView'
-      | 'selectMusicView'
+      | 'optionList'
+      | 'selectedOption'
+      | 'selectOption'
+      | 'optionLabelKey'
       | 'customOptionActionItemProps'
       | 'customMenuFooterProps'
     > {}
 
 export interface SelectMenuBaseProps<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends SelectMenuProps<CustomOptionActionItemProps, CustomMenuFooterProps> {
+> extends SelectMenuProps<
+    MenuOption,
+    OptionLabelKey,
+    CustomOptionActionItemProps,
+    CustomMenuFooterProps
+  > {
   OptionActionItem: FunctionComponent<
-    OptionActionItemProps<CustomOptionActionItemProps>
+    OptionActionItemProps<
+      MenuOption,
+      OptionLabelKey,
+      CustomOptionActionItemProps
+    >
   >
   MenuFooter: FunctionComponent<MenuFooterProps<CustomMenuFooterProps>>
 }
 
-export type OptionActionItemProps<CustomOptionActionItemProps> =
-  CustomOptionActionItemProps &
-    Pick<
-      UseSelectMenuNavigationResult,
-      'latestFocusedViewIndex' | 'getMenuNavigationOptionActionButtonProps'
-    > & {
-      someMusicView: MusicView
-      musicViewIndex: number
-    }
+export type OptionActionItemProps<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
+  CustomOptionActionItemProps,
+  StrictMenuOption extends ExtractStrictMenuOption<
+    MenuOption,
+    OptionLabelKey
+  > = ExtractStrictMenuOption<MenuOption, OptionLabelKey>
+> = CustomOptionActionItemProps &
+  Pick<
+    UseSelectMenuNavigationResult,
+    'latestFocusedOptionIndex' | 'getMenuNavigationOptionActionButtonProps'
+  > & {
+    someOption: StrictMenuOption
+    optionIndex: number
+  }
 
 export type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
   Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
 
 export function SelectMenuBase<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(
-  props: SelectMenuBaseProps<CustomOptionActionItemProps, CustomMenuFooterProps>
+  props: SelectMenuBaseProps<
+    MenuOption,
+    OptionLabelKey,
+    CustomOptionActionItemProps,
+    CustomMenuFooterProps
+  >
 ) {
   const {
     anchorElementRef,
@@ -61,16 +90,17 @@ export function SelectMenuBase<
     setPopoverOpen,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
-    musicViews,
-    selectedMusicView,
-    selectMusicView,
+    optionList,
+    selectedOption,
+    selectOption,
+    optionLabelKey,
     OptionActionItem,
     customOptionActionItemProps,
     MenuFooter,
     customMenuFooterProps,
   } = props
   const {
-    latestFocusedViewIndex,
+    latestFocusedOptionIndex,
     menuNavigationMenuContainerProps,
     getMenuNavigationMenuOptionProps,
     getMenuNavigationOptionActionButtonProps,
@@ -88,23 +118,20 @@ export function SelectMenuBase<
       className={cssModule.menuContainer}
     >
       <div className={cssModule.optionList}>
-        {musicViews.map((someMusicView, musicViewIndex) => (
+        {optionList.map((someOption, optionIndex) => (
           <Button
-            {...getMenuNavigationMenuOptionProps(musicViewIndex)}
-            key={someMusicView.viewId}
+            {...getMenuNavigationMenuOptionProps(optionIndex)}
+            key={optionIndex}
             className={getCssClass(
               cssModule.optionItem,
-              [
-                cssModule.selectedOption,
-                selectedMusicView.viewId === someMusicView.viewId,
-              ],
+              [cssModule.selectedOption, selectedOption === someOption],
               [
                 cssModule.latestFocusedOption,
-                latestFocusedViewIndex === musicViewIndex,
+                latestFocusedOptionIndex === optionIndex,
               ]
             )}
             onSelect={() => {
-              selectMusicView(someMusicView)
+              selectOption(someOption)
             }}
           >
             <svg className={cssModule.optionSelectedIcon} viewBox={'0 0 24 24'}>
@@ -116,17 +143,17 @@ export function SelectMenuBase<
             </svg>
             <div className={cssModule.optionLabelContainer}>
               <div className={cssModule.optionLabel}>
-                {someMusicView.viewLabel}
+                {someOption[optionLabelKey]}
               </div>
             </div>
             <div className={cssModule.optionActionItemContainer}>
               <OptionActionItem
-                latestFocusedViewIndex={latestFocusedViewIndex}
+                latestFocusedOptionIndex={latestFocusedOptionIndex}
                 getMenuNavigationOptionActionButtonProps={
                   getMenuNavigationOptionActionButtonProps
                 }
-                someMusicView={someMusicView}
-                musicViewIndex={musicViewIndex}
+                someOption={someOption}
+                optionIndex={optionIndex}
                 {...customOptionActionItemProps}
               />
             </div>

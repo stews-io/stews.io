@@ -42,9 +42,9 @@ export function MusicCurationsPageBase<CustomMusicViewSelectProps>(
       <div className={cssModule.pageHeader}>
         <div className={cssModule.viewSelectContainer}>
           <MusicViewSelect
-            musicViews={musicViews}
-            selectedMusicView={selectedMusicView}
-            selectMusicView={(nextSelectedMusicView) => {
+            optionList={musicViews}
+            selectedOption={selectedMusicView}
+            selectOption={(nextSelectedMusicView) => {
               setSelectedMusicView(nextSelectedMusicView)
             }}
             {...customMusicViewSelectProps}

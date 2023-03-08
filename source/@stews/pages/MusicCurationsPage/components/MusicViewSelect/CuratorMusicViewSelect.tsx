@@ -1,17 +1,17 @@
 import { Button } from '@stews/components/Button'
-import { getCssClass } from '@stews/helpers'
-import { MusicView } from '../../data'
 import {
   MenuFooterProps,
   OptionActionItemProps,
   SelectMenuBase,
   SelectMenuProps,
-} from './components/SelectMenuBase'
+} from '@stews/components/Select'
+import { getCssClass } from '@stews/helpers'
+import { MusicView } from '../../data'
+import cssModule from './CuratorMusicViewSelect.module.scss'
 import {
   DeterminedMusicViewSelectProps,
   MusicViewSelectBase,
 } from './MusicViewSelectBase'
-import cssModule from './CuratorMusicViewSelect.module.scss'
 
 export interface CuratorMusicViewSelectProps
   extends DeterminedMusicViewSelectProps {
@@ -41,6 +41,8 @@ export function CuratorMusicViewSelect(props: CuratorMusicViewSelectProps) {
 
 interface CuratorSelectMenuProps
   extends SelectMenuProps<
+    MusicView,
+    'viewLabel',
     CustomCuratorOptionActionItemProps,
     CustomCuratorMenuFooterProps
   > {}
@@ -56,7 +58,11 @@ function CuratorSelectMenu(props: CuratorSelectMenuProps) {
 }
 
 interface CuratorOptionActionItemProps
-  extends OptionActionItemProps<CustomCuratorOptionActionItemProps> {}
+  extends OptionActionItemProps<
+    MusicView,
+    'viewLabel',
+    CustomCuratorOptionActionItemProps
+  > {}
 
 interface CustomCuratorOptionActionItemProps
   extends Pick<CuratorMusicViewSelectProps, 'navigateToEditMusicViewPage'> {}
@@ -64,23 +70,23 @@ interface CustomCuratorOptionActionItemProps
 function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
   const {
     getMenuNavigationOptionActionButtonProps,
-    musicViewIndex,
+    optionIndex,
     navigateToEditMusicViewPage,
-    someMusicView,
-    latestFocusedViewIndex,
+    someOption,
+    latestFocusedOptionIndex,
   } = props
   return (
     <div className={cssModule.optionActionItem}>
       <Button
-        {...getMenuNavigationOptionActionButtonProps(musicViewIndex)}
+        {...getMenuNavigationOptionActionButtonProps(optionIndex)}
         onSelect={() => {
-          navigateToEditMusicViewPage(someMusicView)
+          navigateToEditMusicViewPage(someOption)
         }}
       >
         <svg
           className={getCssClass(cssModule.optionActionIcon, [
             cssModule.latestFocusedOptionActionIcon,
-            latestFocusedViewIndex === musicViewIndex,
+            latestFocusedOptionIndex === optionIndex,
           ])}
           viewBox={'0 0 24 24'}
         >

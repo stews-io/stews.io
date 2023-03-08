@@ -1,7 +1,9 @@
-import { SelectMenuBase, SelectMenuProps } from './components/SelectMenuBase'
+import { SelectMenuBase } from '@stews/components/Select'
+import { ComponentProps } from 'preact'
 import {
   DeterminedMusicViewSelectProps,
   MusicViewSelectBase,
+  MusicViewSelectBaseProps,
 } from './MusicViewSelectBase'
 
 export interface ConsumerMusicViewSelectProps
@@ -18,7 +20,10 @@ export function ConsumerMusicViewSelect(props: ConsumerMusicViewSelectProps) {
   )
 }
 
-interface ConsumerSelectMenuProps extends SelectMenuProps<null, null> {}
+interface ConsumerSelectMenuProps
+  extends ComponentProps<
+    MusicViewSelectBaseProps<unknown, unknown>['SelectMenu']
+  > {}
 
 function ConsumerSelectMenu(props: ConsumerSelectMenuProps) {
   return (

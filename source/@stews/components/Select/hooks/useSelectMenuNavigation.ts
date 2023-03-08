@@ -6,7 +6,7 @@ import { SelectMenuBaseProps } from '../components/SelectMenuBase'
 
 export interface UseSelectMenuNavigationApi
   extends Pick<
-    SelectMenuBaseProps<unknown, unknown>,
+    SelectMenuBaseProps<object, never, unknown, unknown>,
     | 'anchorElementRef'
     | 'popoverOpen'
     | 'setPopoverOpen'
@@ -15,7 +15,7 @@ export interface UseSelectMenuNavigationApi
   > {}
 
 export interface UseSelectMenuNavigationResult {
-  latestFocusedViewIndex: number | null
+  latestFocusedOptionIndex: number | null
   menuNavigationMenuContainerProps: Pick<
     Required<ComponentProps<'div'>>,
     'onKeyDown'
@@ -61,26 +61,26 @@ export function useSelectMenuNavigation(
     setPopoverOpen,
   } = api
   const listItemsRef = useRef<Array<HTMLDivElement | null>>([])
-  const [latestFocusedViewIndex, setFocusedViewIndex] = useState<number | null>(
-    null
-  )
+  const [latestFocusedOptionIndex, setFocusedOptionIndex] = useState<
+    number | null
+  >(null)
   const pointerClientCoordinatesRef = useRef<{
     clientX: number
     clientY: number
   } | null>(null)
   useEffect(() => {
     if (popoverOpen === false) {
-      setFocusedViewIndex(null)
+      setFocusedOptionIndex(null)
     }
   }, [popoverOpen])
   return {
-    latestFocusedViewIndex,
+    latestFocusedOptionIndex,
     menuNavigationMenuContainerProps: {
       onKeyDown: (someKeyDownEvent) => {
         const listItemsLength = listItemsRef.current.length
-        const currentFocusedViewIndex =
-          typeof latestFocusedViewIndex === 'number'
-            ? latestFocusedViewIndex
+        const currentFocusedOptionIndex =
+          typeof latestFocusedOptionIndex === 'number'
+            ? latestFocusedOptionIndex
             : throwInvalidPathError(
                 'menuNavigationMenuContainerProps.onKeyDown'
               )
@@ -88,14 +88,14 @@ export function useSelectMenuNavigation(
           handleArrowKeyListNavigation({
             listItemsRef,
             someKeyDownEvent,
-            targetViewIndex: (currentFocusedViewIndex + 1) % listItemsLength,
+            targetViewIndex: (currentFocusedOptionIndex + 1) % listItemsLength,
           })
         } else if (someKeyDownEvent.key === 'ArrowUp') {
           handleArrowKeyListNavigation({
             listItemsRef,
             someKeyDownEvent,
             targetViewIndex:
-              (((currentFocusedViewIndex - 1) % listItemsLength) +
+              (((currentFocusedOptionIndex - 1) % listItemsLength) +
                 listItemsLength) %
               listItemsLength,
           })
@@ -105,25 +105,25 @@ export function useSelectMenuNavigation(
     menuNavigationFooterActionButtonProps: {
       onBlur: popoverNavigationItemBlurHandler,
     },
-    getMenuNavigationMenuOptionProps: (musicViewIndex: number) => {
+    getMenuNavigationMenuOptionProps: (optionIndex: number) => {
       return {
         onBlur: popoverNavigationItemBlurHandler,
-        tabIndex: latestFocusedViewIndex === musicViewIndex ? 0 : -1,
+        tabIndex: latestFocusedOptionIndex === optionIndex ? 0 : -1,
         elementRef: (listItemElement) => {
-          listItemsRef.current[musicViewIndex] = listItemElement
-          if (musicViewIndex === 0) {
+          listItemsRef.current[optionIndex] = listItemElement
+          if (optionIndex === 0) {
             initialFocusElementRef.current = listItemElement
           }
         },
         onPointerMove: (somePointerMoveEvent) => {
           if (
-            latestFocusedViewIndex !== musicViewIndex &&
+            latestFocusedOptionIndex !== optionIndex &&
             getPointerClientCoordinatesChanged({
               pointerClientCoordinatesRef,
               somePointerMoveEvent,
             })
           ) {
-            const targetListItemElement = listItemsRef.current[musicViewIndex]
+            const targetListItemElement = listItemsRef.current[optionIndex]
             if (targetListItemElement instanceof HTMLDivElement) {
               targetListItemElement.focus()
               targetListItemElement.setAttribute('data-pointer-focus', 'true')
@@ -139,7 +139,7 @@ export function useSelectMenuNavigation(
           }
         },
         onFocus: () => {
-          setFocusedViewIndex(musicViewIndex)
+          setFocusedOptionIndex(optionIndex)
         },
         onKeyDown: (someKeyDownEvent) => {
           if (someKeyDownEvent.key === 'Enter') {
@@ -158,7 +158,7 @@ export function useSelectMenuNavigation(
     getMenuNavigationOptionActionButtonProps: (musicViewIndex: number) => {
       return {
         onBlur: popoverNavigationItemBlurHandler,
-        tabIndex: latestFocusedViewIndex === musicViewIndex ? 0 : -1,
+        tabIndex: latestFocusedOptionIndex === musicViewIndex ? 0 : -1,
         onClick: (someClickEvent) => {
           someClickEvent.stopPropagation()
         },

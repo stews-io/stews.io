@@ -28,9 +28,11 @@ export function Button(props: ButtonProps) {
         Boolean(className),
       ])}
       onClick={(someClickEvent) => {
+        const touchHitTestPointerDownEventBypassed =
+          !someClickEvent.currentTarget.hasAttribute('data-pointer-focus')
         if (
           someClickEvent.currentTarget instanceof HTMLDivElement &&
-          !someClickEvent.currentTarget.hasAttribute('data-pointer-focus')
+          touchHitTestPointerDownEventBypassed
         ) {
           someClickEvent.currentTarget.setAttribute(
             'data-pointer-focus',
