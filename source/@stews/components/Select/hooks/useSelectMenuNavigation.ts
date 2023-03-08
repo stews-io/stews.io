@@ -66,11 +66,6 @@ export function useSelectMenuNavigation(
     clientX: number
     clientY: number
   } | null>(null)
-  useEffect(() => {
-    if (popoverOpen === false) {
-      setFocusedOptionIndex(null)
-    }
-  }, [popoverOpen])
   return {
     latestFocusedOptionIndex,
     menuNavigationMenuContainerProps: {

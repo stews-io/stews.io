@@ -7,15 +7,17 @@ import {
 } from '@stews/components/Select'
 import { getCssClass } from '@stews/helpers'
 import { MusicView } from '../../data'
-import cssModule from './CuratorMusicViewSelect.module.scss'
 import {
   DeterminedMusicViewSelectProps,
   MusicViewSelectBase,
 } from './MusicViewSelectBase'
+import cssModule from './CuratorMusicViewSelect.module.scss'
 
 export interface CuratorMusicViewSelectProps
   extends DeterminedMusicViewSelectProps {
-  navigateToEditMusicViewPage: (someMusicView: MusicView) => void
+  navigateToEditMusicViewPage: (
+    someMusicView: DeterminedMusicViewSelectProps['optionList'][number]
+  ) => void
   navigateToCreateMusicViewPage: () => void
 }
 

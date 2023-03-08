@@ -4,7 +4,7 @@ import { FunctionComponent } from 'preact'
 import { useState } from 'preact/hooks'
 import { DeterminedMusicViewSelectProps } from './components/MusicViewSelect/MusicViewSelectBase'
 import { DeterminedProfileBoppersProps } from './components/ProfileBopper/ProfileBopperBase'
-import { MusicCurator, MusicView } from './data'
+import { MusicCurator, MusicView, StrictMusicView } from './data'
 import cssModule from './MusicCurationsPageBase.module.scss'
 
 export interface MusicCurationsPageBaseProps<CustomMusicViewSelectProps> {
@@ -30,7 +30,7 @@ export function MusicCurationsPageBase<CustomMusicViewSelectProps>(
     ProfileBopper,
     musicCurator,
   } = props
-  const [selectedMusicView, setSelectedMusicView] = useState<MusicView>(
+  const [selectedMusicView, setSelectedMusicView] = useState<StrictMusicView>(
     musicViews[0] !== undefined
       ? musicViews[0]
       : throwInvalidPathError(

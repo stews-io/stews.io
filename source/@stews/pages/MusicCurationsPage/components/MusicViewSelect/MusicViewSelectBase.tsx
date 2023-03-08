@@ -1,5 +1,5 @@
 import { SelectBase, SelectBaseProps } from '@stews/components/Select'
-import { MusicView } from '@stews/pages/MusicCurationsPage/data'
+import { StrictMusicView } from '@stews/pages/MusicCurationsPage/data'
 import { ComponentProps } from 'preact'
 
 export interface MusicViewSelectBaseProps<
@@ -7,7 +7,7 @@ export interface MusicViewSelectBaseProps<
   CustomMenuFooterProps
 > extends Pick<
     SelectBaseProps<
-      MusicView,
+      StrictMusicView,
       'viewLabel',
       CustomOptionActionItemProps,
       CustomMenuFooterProps
