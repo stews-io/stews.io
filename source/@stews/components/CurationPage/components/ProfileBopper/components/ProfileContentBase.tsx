@@ -5,7 +5,7 @@ import { ProfileBopperBaseProps } from '../ProfileBopperBase'
 import cssModule from './ProfileContentBase.module.scss'
 
 export interface ProfileContentProps
-  extends Pick<ProfileBopperBaseProps, 'musicCurator'> {}
+  extends Pick<ProfileBopperBaseProps, 'curatorInfo'> {}
 
 export interface ProfileContentBaseProps
   extends CorePopoverContentProps,
@@ -13,7 +13,7 @@ export interface ProfileContentBaseProps
 
 export function ProfileContentBase(props: ProfileContentBaseProps) {
   const {
-    musicCurator,
+    curatorInfo,
     anchorElementRef,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
@@ -21,7 +21,7 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
   return (
     <div className={cssModule.profileContainer}>
       <div className={cssModule.profileHeader}>
-        <div className={cssModule.curatorName}>{musicCurator.curatorName}</div>
+        <div className={cssModule.curatorName}>{curatorInfo.curatorName}</div>
         <div className={cssModule.closeButtonContainer}>
           <Button
             elementRef={initialFocusElementRef}
@@ -58,13 +58,11 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
         </div>
       </div>
       <div className={cssModule.curatorLocation}>
-        {musicCurator.curatorLocation}
+        {curatorInfo.curatorLocation}
       </div>
-      <div className={cssModule.curatorStatus}>
-        {musicCurator.curatorStatus}
-      </div>
+      <div className={cssModule.curatorStatus}>{curatorInfo.curatorStatus}</div>
       <div className={cssModule.curatorLinks}>
-        {musicCurator.curatorLinks.map((someCuratorLink, linkIndex) => (
+        {curatorInfo.curatorLinks.map((someCuratorLink, linkIndex) => (
           <div key={linkIndex} className={cssModule.curatorLinkContainer}>
             <Button
               className={cssModule.curatorLinkButton}
@@ -87,7 +85,7 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
 
 interface CuratorLinkIconProps
   extends Pick<
-    ProfileContentBaseProps['musicCurator']['curatorLinks'][number],
+    ProfileContentBaseProps['curatorInfo']['curatorLinks'][number],
     'linkType'
   > {}
 

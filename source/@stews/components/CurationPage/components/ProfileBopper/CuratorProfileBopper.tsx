@@ -13,12 +13,12 @@ export interface CuratorProfileBopperProps
   extends DeterminedProfileBoppersProps {}
 
 export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
-  const { musicCurator } = props
+  const { curatorInfo } = props
   return (
     <ProfileBopperBase
       AnchorButton={CuratorProfileButton}
       PopoverContent={ProfileContentBase}
-      musicCurator={musicCurator}
+      curatorInfo={curatorInfo}
     />
   )
 }

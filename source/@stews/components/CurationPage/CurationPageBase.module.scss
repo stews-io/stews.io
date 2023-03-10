@@ -21,3 +21,13 @@
   align-items: center;
   padding-inline-start: 4 * $themeSpacer;
 }
+
+.pageSubHeader {
+  @extend .columnContainer;
+  padding: $themeSpacer;
+}
+
+.sortSelectContainer {
+  @extend .rowContainer;
+  flex-direction: row-reverse;
+}

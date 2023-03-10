@@ -3,7 +3,7 @@ import { SelectBaseProps } from '../SelectBase'
 import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps<
-  MenuOption extends object,
+  MenuOption extends Record<string, unknown>,
   OptionLabelKey extends keyof MenuOption
 > extends CoreAnchorButtonProps,
     Pick<
@@ -12,7 +12,7 @@ export interface SelectButtonProps<
     > {}
 
 export function SelectButton<
-  MenuOption extends object,
+  MenuOption extends Record<string, unknown>,
   OptionLabelKey extends keyof MenuOption
 >(props: SelectButtonProps<MenuOption, OptionLabelKey>) {
   const { anchorElementRef, setPopoverOpen, selectedOption, optionLabelKey } =

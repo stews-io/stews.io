@@ -1,4 +1,4 @@
-export interface MusicCurator {
+export interface CuratorInfo {
   curatorName: string
   curatorLocation: string
   curatorStatus: string

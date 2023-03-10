@@ -172,6 +172,7 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
   const pageContentClientRect = pageContentRef.current?.getBoundingClientRect()
   const anchorClientRect = anchorElementRef.current?.getBoundingClientRect()
   if (pageContentClientRect && anchorClientRect && popoverOpen) {
+    console.log(pageContentClientRect)
     const maxPopoverPadding = 40
     const offsetLength = 2
     const pageMiddleX =
@@ -187,14 +188,13 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
       ...(popoverDirection === 'right'
         ? {
             right: undefined,
-            left:
-              anchorClientRect.left - pageContentClientRect.left - offsetLength,
+            left: anchorClientRect.left - offsetLength,
           }
         : {
             left: undefined,
             right:
-              pageContentClientRect.right -
-              anchorClientRect.right -
+              pageContentClientRect.left +
+              (pageContentClientRect.right - anchorClientRect.right) -
               offsetLength,
           }),
     }

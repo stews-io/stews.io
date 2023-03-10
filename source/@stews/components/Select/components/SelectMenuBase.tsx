@@ -10,7 +10,7 @@ import { ExtractStrictMenuOption, SelectBaseProps } from '../SelectBase'
 import cssModule from './SelectMenuBase.module.scss'
 
 export interface SelectMenuProps<
-  MenuOption extends object,
+  MenuOption extends Record<string, unknown>,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
@@ -31,7 +31,7 @@ export interface SelectMenuProps<
     > {}
 
 export interface SelectMenuBaseProps<
-  MenuOption extends object,
+  MenuOption extends Record<string, unknown>,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
@@ -52,7 +52,7 @@ export interface SelectMenuBaseProps<
 }
 
 type OptionActionItemProps<
-  MenuOption extends object,
+  MenuOption extends Record<string, unknown>,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   StrictMenuOption extends ExtractStrictMenuOption<
@@ -72,7 +72,7 @@ type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
   Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
 
 export function SelectMenuBase<
-  MenuOption extends object,
+  MenuOption extends Record<string, unknown>,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps

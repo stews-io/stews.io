@@ -1,11 +1,15 @@
-import { CuratorMusicCurationsPage } from './CuratorMusicCurationsPage'
-import { MusicCurator, MusicView } from './data'
+import {
+  ConsumerCurationPage,
+  CuratorCurationPage,
+} from '@stews/components/CurationPage'
+import { CurationView, CuratorInfo } from '@stews/data'
+import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 
-export interface MusicCurationsPageProps {}
+export interface MusicCurationPageProps {}
 
-export function MusicCurationsPage(props: MusicCurationsPageProps) {
+export function MusicCurationPage(props: MusicCurationPageProps) {
   const {} = props
-  const musicCurator: MusicCurator = {
+  const curatorInfo: CuratorInfo = {
     curatorName: 'clumsycomputer',
     curatorLocation: 'guadalajara, jalisco',
     curatorStatus: 'just trying to listen and groove',
@@ -24,7 +28,7 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
       },
     ],
   }
-  const musicViews: Array<MusicView> = [
+  const musicViews: ArrayOfAtLeastOne<CurationView> = [
     {
       viewId: 0,
       viewLabel: 'all',
@@ -74,15 +78,33 @@ export function MusicCurationsPage(props: MusicCurationsPageProps) {
     },
   ]
   return (
-    <CuratorMusicCurationsPage
-      musicCurator={musicCurator}
-      musicViews={musicViews}
+    <CuratorCurationPage
+      curatorInfo={curatorInfo}
+      curationViews={musicViews}
+      curationSortConfig={[
+        {
+          fieldKey: 'musicTitle',
+          fieldType: 'string',
+          sortLabelBase: 'title',
+        },
+        {
+          fieldKey: 'musicArtist',
+          fieldType: 'string',
+          sortLabelBase: 'artist',
+        },
+        {
+          fieldKey: 'musicYear',
+          fieldType: 'number',
+          sortLabelBase: 'year',
+        },
+      ]}
+      curationItems={[]}
     />
   )
   // return (
-  //   <ConsumerMusicCurationsPage
-  //     musicCurator={musicCurator}
-  //     musicViews={musicViews}
+  //   <ConsumerCurationPage
+  //     curatorInfo={curatorInfo}
+  //     curationViews={musicViews}
   //   />
   // )
 }
