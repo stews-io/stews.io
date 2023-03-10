@@ -131,6 +131,7 @@ export function Popover<CustomPopoverContentProps>(
         popoverOpen,
         pageContentRef,
       })}
+      onBlur={popoverNavigationItemBlurHandler}
       onPointerEnter={(somePointerEnterEvent) => {
         if (somePointerEnterEvent.pointerType === 'mouse') {
           pointerStateRef.current.pointerWithin = true
