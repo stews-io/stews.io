@@ -1,0 +1,10 @@
+@import "@stews/styles/theme";
+
+.viewSelectAnchorBorder {
+  border-bottom: $themeBorder;
+  border-bottom-width: calc(1 / 4) * $themeSpacer;
+}
+
+.viewSelectFontSize {
+  font-size: 24px;
+}

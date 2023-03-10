@@ -6,8 +6,8 @@
 }
 
 .optionActionIcon {
-  width: 21px;
-  height: 21px;
+  width: 0.9em;
+  height: 0.9em;
   stroke: $themeButtonTextColor;
   fill: white;
 }
@@ -37,6 +37,6 @@
 .footerActionButton {
   padding-inline: calc(1 / 2) * $themeSpacer;
   color: $themeButtonTextColor;
-  font-size: 20px;
+  font-size: 0.85em;
   font-weight: 700;
 }

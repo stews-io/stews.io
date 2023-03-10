@@ -1,0 +1,9 @@
+@import "@stews/styles/theme";
+
+.sortSelectAnchorBorder {
+  @extend .themeBorder;
+}
+
+.sortSelectFontSize {
+  font-size: 18px;
+}

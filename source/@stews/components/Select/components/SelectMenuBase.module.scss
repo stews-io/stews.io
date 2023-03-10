@@ -49,8 +49,8 @@
 
 .optionSelectedIcon {
   flex-shrink: 0;
-  width: 22px;
-  height: 22px;
+  width: 0.85em;
+  height: 0.85em;
   padding-inline-end: $themeSpacer - $themeOutlineWidth;
   visibility: hidden;
   stroke: black;
@@ -66,8 +66,7 @@
 }
 
 .optionLabel {
-  @extend .textEllipsis;  
-  font-size: 24px;
+  @extend .textEllipsis;
   font-weight: 700;
 }
 

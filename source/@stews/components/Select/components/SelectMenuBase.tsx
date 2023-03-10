@@ -28,6 +28,7 @@ export interface SelectMenuProps<
       | 'optionLabelKey'
       | 'customOptionActionItemProps'
       | 'customMenuFooterProps'
+      | 'fontSizeClassName'
     > {}
 
 export interface SelectMenuBaseProps<
@@ -85,6 +86,7 @@ export function SelectMenuBase<
   >
 ) {
   const {
+    fontSizeClassName,
     anchorElementRef,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
@@ -111,7 +113,10 @@ export function SelectMenuBase<
   return (
     <div
       {...menuNavigationMenuContainerProps}
-      className={cssModule.menuContainer}
+      className={getCssClass(cssModule.menuContainer, [
+        fontSizeClassName,
+        Boolean(fontSizeClassName),
+      ])}
     >
       <div className={cssModule.optionList}>
         {optionList.map((someOption, optionIndex) => (

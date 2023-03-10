@@ -1,6 +1,7 @@
 import { SelectBase, SelectBaseProps } from '@stews/components/Select'
 import { ComponentProps } from 'preact'
 import { StrictCurationView } from './StrictCurationView'
+import cssModule from './ViewSelectBase.module.scss'
 
 export interface ViewSelectBaseProps<
   CustomOptionActionItemProps,
@@ -45,6 +46,8 @@ export function ViewSelectBase<
   } = props
   return (
     <SelectBase
+      anchorBorderClassName={cssModule.viewSelectAnchorBorder}
+      fontSizeClassName={cssModule.viewSelectFontSize}
       SelectMenu={SelectMenu}
       optionLabelKey={'viewLabel'}
       optionList={optionList}

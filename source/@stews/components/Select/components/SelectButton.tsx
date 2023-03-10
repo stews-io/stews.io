@@ -1,4 +1,5 @@
 import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
+import { getCssClass } from '@stews/helpers'
 import { SelectBaseProps } from '../SelectBase'
 import cssModule from './SelectButton.module.scss'
 
@@ -8,17 +9,32 @@ export interface SelectButtonProps<
 > extends CoreAnchorButtonProps,
     Pick<
       SelectBaseProps<MenuOption, OptionLabelKey, unknown, unknown>,
-      'selectedOption' | 'optionLabelKey'
+      | 'selectedOption'
+      | 'optionLabelKey'
+      | 'anchorBorderClassName'
+      | 'fontSizeClassName'
     > {}
 
 export function SelectButton<
   MenuOption extends object,
   OptionLabelKey extends keyof MenuOption
 >(props: SelectButtonProps<MenuOption, OptionLabelKey>) {
-  const { anchorElementRef, setPopoverOpen, selectedOption, optionLabelKey } =
-    props
+  const {
+    anchorBorderClassName,
+    fontSizeClassName,
+    anchorElementRef,
+    setPopoverOpen,
+    selectedOption,
+    optionLabelKey,
+  } = props
   return (
-    <div className={cssModule.buttonContainer}>
+    <div
+      className={getCssClass(
+        cssModule.buttonContainer,
+        [anchorBorderClassName, Boolean(anchorBorderClassName)],
+        [fontSizeClassName, Boolean(fontSizeClassName)]
+      )}
+    >
       <AnchorButton
         className={cssModule.selectButton}
         anchorElementRef={anchorElementRef}

@@ -27,6 +27,8 @@ export interface SelectBaseProps<
       CustomMenuFooterProps
     >
   >
+  anchorBorderClassName?: string
+  fontSizeClassName?: string
 }
 
 export type ExtractStrictMenuOption<
@@ -52,9 +54,11 @@ export function SelectBase<
   >
 ) {
   const {
+    SelectMenu,
+    anchorBorderClassName,
+    fontSizeClassName,
     selectedOption,
     optionLabelKey,
-    SelectMenu,
     selectOption,
     optionList,
     customOptionActionItemProps,
@@ -65,10 +69,13 @@ export function SelectBase<
       AnchorButton={SelectButton}
       PopoverContent={SelectMenu}
       customAnchorButtonProps={{
+        anchorBorderClassName,
+        fontSizeClassName,
         selectedOption,
         optionLabelKey,
       }}
       customPopoverContentProps={{
+        fontSizeClassName,
         selectedOption,
         optionLabelKey,
         selectOption,
