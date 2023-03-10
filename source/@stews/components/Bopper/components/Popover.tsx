@@ -25,7 +25,7 @@ type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
   CustomPopoverContentProps
 
 export interface CorePopoverContentProps
-  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {
+  extends Pick<PopoverProps<unknown>, 'anchorElementRef'> {
   initialFocusElementRef: RefObject<HTMLDivElement>
   popoverNavigationItemBlurHandler: (someBlurEvent: FocusEvent) => void
 }
@@ -153,7 +153,6 @@ export function Popover<CustomPopoverContentProps>(
     >
       <PopoverContent
         anchorElementRef={anchorElementRef}
-        popoverOpen={popoverOpen}
         initialFocusElementRef={initialFocusElementRef}
         popoverNavigationItemBlurHandler={popoverNavigationItemBlurHandler}
         {...customPopoverContentProps}
@@ -170,9 +169,14 @@ interface GetPopoverLayoutStyleApi
 function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
   const { anchorElementRef, popoverOpen, pageContentRef } = api
   const pageContentClientRect = pageContentRef.current?.getBoundingClientRect()
+  const anchorElement = anchorElementRef.current
   const anchorClientRect = anchorElementRef.current?.getBoundingClientRect()
-  if (pageContentClientRect && anchorClientRect && popoverOpen) {
-    console.log(pageContentClientRect)
+  if (
+    pageContentClientRect &&
+    anchorElement &&
+    anchorClientRect &&
+    popoverOpen
+  ) {
     const maxPopoverPadding = 40
     const offsetLength = 2
     const pageMiddleX =
@@ -188,11 +192,13 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
       ...(popoverDirection === 'right'
         ? {
             right: undefined,
-            left: anchorClientRect.left - offsetLength,
+            left: anchorElement.offsetLeft - offsetLength,
           }
         : {
             left: undefined,
             right:
+              anchorElement.offsetLeft -
+              anchorClientRect.left +
               pageContentClientRect.left +
               (pageContentClientRect.right - anchorClientRect.right) -
               offsetLength,

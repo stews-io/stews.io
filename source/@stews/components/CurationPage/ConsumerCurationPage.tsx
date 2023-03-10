@@ -2,16 +2,15 @@ import { ConsumerViewSelect } from './components/ViewSelect'
 import { ConsumerProfileBopper } from './components/ProfileBopper'
 import { CurationPageBase, CurationPageBaseProps } from './CurationPageBase'
 
-export interface ConsumerCurationPageProps<
-  CurationItem extends Record<string, unknown>
-> extends Pick<
+export interface ConsumerCurationPageProps<CurationItem extends object>
+  extends Pick<
     CurationPageBaseProps<CurationItem, unknown>,
     'curationSortConfig' | 'curatorInfo' | 'curationViews' | 'curationItems'
   > {}
 
-export function ConsumerCurationPage<
-  CurationItem extends Record<string, unknown>
->(props: ConsumerCurationPageProps<CurationItem>) {
+export function ConsumerCurationPage<CurationItem extends object>(
+  props: ConsumerCurationPageProps<CurationItem>
+) {
   const { curationSortConfig, curatorInfo, curationViews, curationItems } =
     props
   return (

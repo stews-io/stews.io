@@ -1,14 +1,13 @@
 import { ButtonProps } from '@stews/components/Button'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
-import { MutableRef, Ref, useEffect, useRef, useState } from 'preact/hooks'
+import { MutableRef, Ref, useRef, useState } from 'preact/hooks'
 import { SelectMenuBaseProps } from '../components/SelectMenuBase'
 
 export interface UseSelectMenuNavigationApi
   extends Pick<
     SelectMenuBaseProps<object, never, unknown, unknown>,
     | 'anchorElementRef'
-    | 'popoverOpen'
     | 'initialFocusElementRef'
     | 'popoverNavigationItemBlurHandler'
   > {}
@@ -53,7 +52,6 @@ export function useSelectMenuNavigation(
   api: UseSelectMenuNavigationApi
 ): UseSelectMenuNavigationResult {
   const {
-    popoverOpen,
     popoverNavigationItemBlurHandler,
     initialFocusElementRef,
     anchorElementRef,

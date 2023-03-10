@@ -10,7 +10,7 @@ import { ExtractStrictMenuOption, SelectBaseProps } from '../SelectBase'
 import cssModule from './SelectMenuBase.module.scss'
 
 export interface SelectMenuProps<
-  MenuOption extends Record<string, unknown>,
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
@@ -31,7 +31,7 @@ export interface SelectMenuProps<
     > {}
 
 export interface SelectMenuBaseProps<
-  MenuOption extends Record<string, unknown>,
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
@@ -52,7 +52,7 @@ export interface SelectMenuBaseProps<
 }
 
 type OptionActionItemProps<
-  MenuOption extends Record<string, unknown>,
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   StrictMenuOption extends ExtractStrictMenuOption<
@@ -72,7 +72,7 @@ type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
   Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
 
 export function SelectMenuBase<
-  MenuOption extends Record<string, unknown>,
+  MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
@@ -86,7 +86,6 @@ export function SelectMenuBase<
 ) {
   const {
     anchorElementRef,
-    popoverOpen,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
     optionList,
@@ -106,7 +105,6 @@ export function SelectMenuBase<
     menuNavigationFooterActionButtonProps,
   } = useSelectMenuNavigation({
     anchorElementRef,
-    popoverOpen,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
   })

@@ -10,7 +10,7 @@ export interface ProfileBopperBaseProps
     > {}
 
 export interface DeterminedProfileBoppersProps
-  extends Pick<CurationPageBaseProps<unknown>, 'curatorInfo'> {}
+  extends Pick<CurationPageBaseProps<unknown, unknown>, 'curatorInfo'> {}
 
 export function ProfileBopperBase(props: ProfileBopperBaseProps) {
   const { AnchorButton, PopoverContent, curatorInfo } = props

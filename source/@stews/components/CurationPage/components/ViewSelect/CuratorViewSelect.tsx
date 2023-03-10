@@ -7,7 +7,7 @@ import {
   ViewSelectBase,
   ViewSelectBaseProps,
 } from './ViewSelectBase'
-import { StrictMusicView } from './StrictMusicView'
+import { StrictCurationView } from './StrictCurationView'
 import cssModule from './CuratorViewSelect.module.scss'
 
 export interface CuratorViewSelectProps extends DeterminedViewSelectProps {
@@ -57,7 +57,7 @@ function CuratorSelectMenu(props: CuratorSelectMenuProps) {
 
 interface CuratorSelectMenuPropsConfig
   extends SelectMenuBaseProps<
-    StrictMusicView,
+    StrictCurationView,
     'viewLabel',
     CustomCuratorOptionActionItemProps,
     CustomCuratorMenuFooterProps
