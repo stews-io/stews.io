@@ -5,19 +5,19 @@ import { CurationPageBase, CurationPageBaseProps } from './CurationPageBase'
 export interface ConsumerCurationPageProps<CurationItem extends object>
   extends Pick<
     CurationPageBaseProps<CurationItem, unknown>,
-    'curationSortConfig' | 'curatorInfo' | 'curationViews' | 'curationItems'
+    'viewSortOrderConfig' | 'curatorInfo' | 'curationViews' | 'curationItems'
   > {}
 
 export function ConsumerCurationPage<CurationItem extends object>(
   props: ConsumerCurationPageProps<CurationItem>
 ) {
-  const { curationSortConfig, curatorInfo, curationViews, curationItems } =
+  const { viewSortOrderConfig, curatorInfo, curationViews, curationItems } =
     props
   return (
     <CurationPageBase
       ViewSelect={ConsumerViewSelect}
       ProfileBopper={ConsumerProfileBopper}
-      curationSortConfig={curationSortConfig}
+      viewSortOrderConfig={viewSortOrderConfig}
       curatorInfo={curatorInfo}
       curationViews={curationViews}
       curationItems={curationItems}

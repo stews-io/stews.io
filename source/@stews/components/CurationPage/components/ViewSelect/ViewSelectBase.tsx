@@ -1,6 +1,6 @@
 import { SelectBase, SelectBaseProps } from '@stews/components/Select'
 import { ComponentProps } from 'preact'
-import { StrictCurationView } from './StrictCurationView'
+import { CurationViewSelectOption } from '../../data'
 import cssModule from './ViewSelectBase.module.scss'
 
 export interface ViewSelectBaseProps<
@@ -8,7 +8,7 @@ export interface ViewSelectBaseProps<
   CustomMenuFooterProps
 > extends Pick<
     SelectBaseProps<
-      StrictCurationView,
+      CurationViewSelectOption,
       'viewLabel',
       CustomOptionActionItemProps,
       CustomMenuFooterProps

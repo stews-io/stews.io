@@ -1,7 +1,7 @@
 import { ExtractStrictMenuOption } from '@stews/components/Select'
 import { CurationView } from '@stews/data'
 
-export type StrictCurationView = ExtractStrictMenuOption<
+export type CurationViewSelectOption = ExtractStrictMenuOption<
   CurationView,
   'viewLabel'
 >
