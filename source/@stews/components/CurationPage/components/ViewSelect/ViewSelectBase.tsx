@@ -1,34 +1,35 @@
-import { SelectBase, SelectBaseProps } from '@stews/components/Select'
-import { ComponentProps } from 'preact'
+import {
+  SelectBase,
+  SelectBaseConfigProps,
+  SelectBaseDataProps,
+} from '@stews/components/Select'
 import { CurationViewSelectOption } from '../../data'
 import cssModule from './ViewSelectBase.module.scss'
 
-export interface ViewSelectBaseProps<
+interface ViewSelectBaseProps<
+  CustomOptionActionItemProps,
+  CustomMenuFooterProps
+> extends ViewSelectBaseDataProps,
+    ViewSelectBaseConfigProps<
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    > {}
+
+export interface ViewSelectBaseDataProps
+  extends SelectBaseDataProps<CurationViewSelectOption, 'viewLabel'> {}
+
+export interface ViewSelectBaseConfigProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends Pick<
-    SelectBaseProps<
+    SelectBaseConfigProps<
       CurationViewSelectOption,
       'viewLabel',
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     >,
-    | 'SelectMenu'
-    | 'selectedOption'
-    | 'selectOption'
-    | 'optionList'
-    | 'customOptionActionItemProps'
-    | 'customMenuFooterProps'
+    'SelectMenu' | 'customOptionActionItemProps' | 'customMenuFooterProps'
   > {}
-
-export interface DeterminedViewSelectProps
-  extends Pick<
-    ViewSelectBaseProps<unknown, unknown>,
-    'optionList' | 'selectedOption' | 'selectOption'
-  > {}
-
-export interface ViewSelectMenuProps
-  extends ComponentProps<ViewSelectBaseProps<unknown, unknown>['SelectMenu']> {}
 
 export function ViewSelectBase<
   CustomOptionActionItemProps,

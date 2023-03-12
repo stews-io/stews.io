@@ -1,34 +1,32 @@
 import { Bopper } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import { SelectButton } from './components/SelectButton'
-import { SelectMenuProps } from './components/SelectMenuBase'
+import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
 
-export interface SelectBaseProps<
+interface SelectBaseProps<
   MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
-  CustomMenuFooterProps,
+  CustomMenuFooterProps
+> extends SelectBaseDataProps<MenuOption, OptionLabelKey>,
+    SelectBaseConfigProps<
+      MenuOption,
+      OptionLabelKey,
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    > {}
+
+export interface SelectBaseDataProps<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
   StrictMenuOption extends ExtractStrictMenuOption<
     MenuOption,
     OptionLabelKey
   > = ExtractStrictMenuOption<MenuOption, OptionLabelKey>
 > {
-  optionLabelKey: OptionLabelKey
   optionList: Array<StrictMenuOption>
   selectedOption: StrictMenuOption
   selectOption: (nextSelectedOption: StrictMenuOption) => void
-  customOptionActionItemProps: CustomOptionActionItemProps
-  customMenuFooterProps: CustomMenuFooterProps
-  SelectMenu: FunctionComponent<
-    SelectMenuProps<
-      MenuOption,
-      OptionLabelKey,
-      CustomOptionActionItemProps,
-      CustomMenuFooterProps
-    >
-  >
-  anchorBorderClassName?: string
-  fontSizeClassName?: string
 }
 
 export type ExtractStrictMenuOption<
@@ -38,6 +36,27 @@ export type ExtractStrictMenuOption<
   [TargetOptionLabelKey in OptionLabelKey]: MenuOption[TargetOptionLabelKey] extends string
     ? string
     : never
+}
+
+export interface SelectBaseConfigProps<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
+  CustomOptionActionItemProps,
+  CustomMenuFooterProps
+> {
+  anchorBorderClassName?: string
+  fontSizeClassName?: string
+  optionLabelKey: OptionLabelKey
+  customOptionActionItemProps: CustomOptionActionItemProps
+  customMenuFooterProps: CustomMenuFooterProps
+  SelectMenu: FunctionComponent<
+    SelectMenuBaseDataProps<
+      MenuOption,
+      OptionLabelKey,
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    >
+  >
 }
 
 export function SelectBase<

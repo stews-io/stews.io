@@ -1,16 +1,19 @@
 import { Button } from '@stews/components/Button'
-import { SelectMenuBase, SelectMenuBaseProps } from '@stews/components/Select'
+import {
+  SelectMenuBase,
+  SelectMenuBaseConfigProps,
+} from '@stews/components/Select'
 import { getCssClass } from '@stews/helpers'
 import { ComponentProps } from 'preact'
 import { CurationViewSelectOption } from '../../data'
 import {
-  DeterminedViewSelectProps,
   ViewSelectBase,
-  ViewSelectBaseProps,
+  ViewSelectBaseConfigProps,
+  ViewSelectBaseDataProps,
 } from './ViewSelectBase'
 import cssModule from './CuratorViewSelect.module.scss'
 
-export interface CuratorViewSelectProps extends DeterminedViewSelectProps {
+export interface CuratorViewSelectProps extends ViewSelectBaseDataProps {
   navigateToEditViewPage: (someViewOption: CurationViewSelectOption) => void
   navigateToCreateViewPage: () => void
 }
@@ -37,7 +40,7 @@ export function CuratorViewSelect(props: CuratorViewSelectProps) {
 
 interface CuratorSelectMenuProps
   extends ComponentProps<
-    ViewSelectBaseProps<
+    ViewSelectBaseConfigProps<
       CustomCuratorOptionActionItemProps,
       CustomCuratorMenuFooterProps
     >['SelectMenu']
@@ -54,7 +57,7 @@ function CuratorSelectMenu(props: CuratorSelectMenuProps) {
 }
 
 interface CuratorSelectMenuPropsConfig
-  extends SelectMenuBaseProps<
+  extends SelectMenuBaseConfigProps<
     CurationViewSelectOption,
     'viewLabel',
     CustomCuratorOptionActionItemProps,

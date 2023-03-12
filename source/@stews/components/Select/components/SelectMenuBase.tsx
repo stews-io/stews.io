@@ -6,42 +6,60 @@ import {
   useSelectMenuNavigation,
   UseSelectMenuNavigationResult,
 } from '../hooks/useSelectMenuNavigation'
-import { ExtractStrictMenuOption, SelectBaseProps } from '../SelectBase'
+import {
+  ExtractStrictMenuOption,
+  SelectBaseConfigProps,
+  SelectBaseDataProps,
+} from '../SelectBase'
 import cssModule from './SelectMenuBase.module.scss'
 
-export interface SelectMenuProps<
+interface SelectMenuBaseProps<
+  MenuOption extends object,
+  OptionLabelKey extends keyof MenuOption,
+  CustomOptionActionItemProps,
+  CustomMenuFooterProps
+> extends SelectMenuBaseDataProps<
+      MenuOption,
+      OptionLabelKey,
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    >,
+    SelectMenuBaseConfigProps<
+      MenuOption,
+      OptionLabelKey,
+      CustomOptionActionItemProps,
+      CustomMenuFooterProps
+    > {}
+
+export interface SelectMenuBaseDataProps<
   MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends CorePopoverContentProps,
     Pick<
-      SelectBaseProps<
+      SelectBaseDataProps<MenuOption, OptionLabelKey>,
+      'optionList' | 'selectedOption' | 'selectOption'
+    >,
+    Pick<
+      SelectBaseConfigProps<
         MenuOption,
         OptionLabelKey,
         CustomOptionActionItemProps,
         CustomMenuFooterProps
       >,
-      | 'optionList'
-      | 'selectedOption'
-      | 'selectOption'
       | 'optionLabelKey'
       | 'customOptionActionItemProps'
       | 'customMenuFooterProps'
       | 'fontSizeClassName'
     > {}
 
-export interface SelectMenuBaseProps<
+export interface SelectMenuBaseConfigProps<
   MenuOption extends object,
   OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends SelectMenuProps<
-    MenuOption,
-    OptionLabelKey,
-    CustomOptionActionItemProps,
-    CustomMenuFooterProps
-  > {
+> {
   OptionActionItem: FunctionComponent<
     OptionActionItemProps<
       MenuOption,

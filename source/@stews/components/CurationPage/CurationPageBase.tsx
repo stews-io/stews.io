@@ -3,33 +3,52 @@ import { CurationView, CuratorInfo } from '@stews/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { FunctionComponent } from 'preact'
 import { useState } from 'preact/hooks'
-import { DeterminedProfileBoppersProps } from './components/ProfileBopper'
 import { SortSelect } from './components/SortSelect'
-import { DeterminedViewSelectProps } from './components/ViewSelect'
-import { CurationViewSelectOption, ViewSortOrderSelectOption } from './data'
+import {
+  CurationViewSelectOption,
+  ViewSortOrderOptionConfig,
+  ViewSortOrderSelectOption,
+} from './data'
 import { useViewSortOrderOptions } from './hooks/useViewSortOrderOptions'
 import cssModule from './CurationPageBase.module.scss'
+import { ViewSelectBaseDataProps } from './components/ViewSelect'
 
-export interface CurationPageBaseProps<CurationItem, CustomViewSelectProps> {
+interface CurationPageBaseProps<
+  CurationItem extends object,
+  CustomViewSelectProps
+> extends CurationPageBaseDataProps<CurationItem>,
+    CurationPageBaseConfigProps<CurationItem, CustomViewSelectProps> {}
+
+export interface CurationPageBaseDataProps<CurationItem extends object> {
   curatorInfo: CuratorInfo
   curationViews: ArrayOfAtLeastOne<CurationView>
   curationItems: Array<CurationItem>
-  viewSortOrderConfig: ArrayOfAtLeastOne<{
-    fieldKey: string
-    fieldType: 'string' | 'number'
-    sortLabelBase: string
-  }>
-  customViewSelectProps: CustomViewSelectProps
-  ViewSelect: FunctionComponent<ViewSelectProps<CustomViewSelectProps>>
-  ProfileBopper: FunctionComponent<DeterminedProfileBoppersProps>
+  viewSortOrderConfig: ArrayOfAtLeastOne<
+    ViewSortOrderOptionConfig<CurationItem>
+  >
 }
 
-type ViewSelectProps<CustomViewSelectProps> = DeterminedViewSelectProps &
+export interface CurationPageBaseConfigProps<
+  CurationItem extends object,
+  CustomViewSelectProps
+> {
+  ViewSelect: FunctionComponent<ViewSelectProps<CustomViewSelectProps>>
+  customViewSelectProps: CustomViewSelectProps
+  ProfileBopper: FunctionComponent<ProfileBopperProps>
+}
+
+type ViewSelectProps<CustomViewSelectProps> = ViewSelectBaseDataProps &
   CustomViewSelectProps
 
-export function CurationPageBase<CurationItem, CustomViewSelectProps>(
-  props: CurationPageBaseProps<CurationItem, CustomViewSelectProps>
-) {
+type ProfileBopperProps = Pick<
+  CurationPageBaseProps<object, unknown>,
+  'curatorInfo'
+>
+
+export function CurationPageBase<
+  CurationItem extends object,
+  CustomViewSelectProps
+>(props: CurationPageBaseProps<CurationItem, CustomViewSelectProps>) {
   const {
     viewSortOrderConfig,
     curationViews,
@@ -38,7 +57,7 @@ export function CurationPageBase<CurationItem, CustomViewSelectProps>(
     ProfileBopper,
     curatorInfo,
   } = props
-  const viewSortOrderOptions = useViewSortOrderOptions({
+  const { viewSortOrderOptions } = useViewSortOrderOptions({
     viewSortOrderConfig,
   })
   const [pageState, setPageState] = useState<{

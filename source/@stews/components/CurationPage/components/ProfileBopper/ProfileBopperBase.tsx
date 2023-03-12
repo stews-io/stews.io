@@ -1,16 +1,18 @@
 import { Bopper, BopperProps } from '@stews/components/Bopper'
-import { CurationPageBaseProps } from '../../CurationPageBase'
-import { ProfileContentProps } from './components/ProfileContentBase'
+import { CurationPageBaseDataProps } from '../../CurationPageBase'
 
-export interface ProfileBopperBaseProps
-  extends DeterminedProfileBoppersProps,
-    Pick<
-      BopperProps<null, ProfileContentProps>,
-      'AnchorButton' | 'PopoverContent'
-    > {}
+interface ProfileBopperBaseProps
+  extends ProfileBopperBaseDataProps,
+    ProfileBopperBaseConfigProps {}
 
-export interface DeterminedProfileBoppersProps
-  extends Pick<CurationPageBaseProps<unknown, unknown>, 'curatorInfo'> {}
+export interface ProfileBopperBaseDataProps
+  extends Pick<CurationPageBaseDataProps<object>, 'curatorInfo'> {}
+
+interface ProfileBopperBaseConfigProps
+  extends Pick<
+    BopperProps<null, ProfileBopperBaseDataProps>,
+    'AnchorButton' | 'PopoverContent'
+  > {}
 
 export function ProfileBopperBase(props: ProfileBopperBaseProps) {
   const { AnchorButton, PopoverContent, curatorInfo } = props

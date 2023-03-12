@@ -1,26 +1,22 @@
 import {
   SelectBase,
-  SelectBaseProps,
+  SelectBaseConfigProps,
+  SelectBaseDataProps,
   SelectMenuBase,
 } from '@stews/components/Select'
 import { ComponentProps } from 'preact'
 import { ViewSortOrderSelectOption } from '../../data'
 import cssModule from './SortSelect.module.scss'
 
-export interface SortSelectProps<CurationItem>
-  extends Pick<
-    SortSelectPropsConfig<CurationItem>,
-    'optionList' | 'selectedOption' | 'selectOption'
+export interface SortSelectProps<CurationItem extends object>
+  extends SelectBaseDataProps<
+    ViewSortOrderSelectOption<CurationItem>,
+    'sortLabel'
   > {}
 
-type SortSelectPropsConfig<CurationItem> = SelectBaseProps<
-  ViewSortOrderSelectOption<CurationItem>,
-  'sortLabel',
-  null,
-  null
->
-
-export function SortSelect<CurationItem>(props: SortSelectProps<CurationItem>) {
+export function SortSelect<CurationItem extends object>(
+  props: SortSelectProps<CurationItem>
+) {
   const { optionList, selectedOption, selectOption } = props
   return (
     <SelectBase
@@ -37,10 +33,17 @@ export function SortSelect<CurationItem>(props: SortSelectProps<CurationItem>) {
   )
 }
 
-interface SortSelectMenuProps<CurationItem>
-  extends ComponentProps<SortSelectPropsConfig<CurationItem>['SelectMenu']> {}
+interface SortSelectMenuProps<CurationItem extends object>
+  extends ComponentProps<
+    SelectBaseConfigProps<
+      ViewSortOrderSelectOption<CurationItem>,
+      'sortLabel',
+      null,
+      null
+    >['SelectMenu']
+  > {}
 
-function SortSelectMenu<CurationItem>(
+function SortSelectMenu<CurationItem extends object>(
   props: SortSelectMenuProps<CurationItem>
 ) {
   return (

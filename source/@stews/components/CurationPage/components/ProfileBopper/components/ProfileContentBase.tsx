@@ -1,15 +1,12 @@
 import { Button } from '@stews/components/Button'
 import { CorePopoverContentProps } from '@stews/components/Bopper'
 import { throwInvalidPathError } from '@stews/helpers'
-import { ProfileBopperBaseProps } from '../ProfileBopperBase'
+import { ProfileBopperBaseDataProps } from '../ProfileBopperBase'
 import cssModule from './ProfileContentBase.module.scss'
-
-export interface ProfileContentProps
-  extends Pick<ProfileBopperBaseProps, 'curatorInfo'> {}
 
 export interface ProfileContentBaseProps
   extends CorePopoverContentProps,
-    ProfileContentProps {}
+    Pick<ProfileBopperBaseDataProps, 'curatorInfo'> {}
 
 export function ProfileContentBase(props: ProfileContentBaseProps) {
   const {

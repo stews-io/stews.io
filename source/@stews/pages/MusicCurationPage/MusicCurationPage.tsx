@@ -4,6 +4,7 @@ import {
 } from '@stews/components/CurationPage'
 import { CurationView, CuratorInfo } from '@stews/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
+import { MusicItem } from './data/MusicItem'
 
 export interface MusicCurationPageProps {}
 
@@ -77,6 +78,7 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
       viewFilter: '',
     },
   ]
+  const curationItems: Array<MusicItem> = []
   return (
     <CuratorCurationPage
       curatorInfo={curatorInfo}
@@ -98,7 +100,7 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
           sortLabelBase: 'year',
         },
       ]}
-      curationItems={[]}
+      curationItems={curationItems}
     />
   )
   // return (

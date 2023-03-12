@@ -2,7 +2,11 @@ import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import cssModule from './ProfileButtonBase.module.scss'
 
-export interface ProfileButtonBaseProps extends CoreAnchorButtonProps {
+export interface ProfileButtonBaseProps
+  extends CoreAnchorButtonProps,
+    ProfileButtonBaseConfigProps {}
+
+interface ProfileButtonBaseConfigProps {
   ProfileIcon: FunctionComponent<unknown>
 }
 
