@@ -83,7 +83,7 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
     <CuratorCurationPage
       curatorInfo={curatorInfo}
       curationViews={musicViews}
-      viewSortOrderConfig={[
+      viewSortConfig={[
         {
           fieldKey: 'musicTitle',
           fieldType: 'string',

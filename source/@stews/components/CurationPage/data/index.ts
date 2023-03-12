@@ -1,2 +1,2 @@
 export * from './CurationViewSelectOption'
-export * from './ViewSortOrderSelectOption'
+export * from './ViewSortSelectOption'

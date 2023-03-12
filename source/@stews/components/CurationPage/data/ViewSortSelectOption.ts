@@ -1,7 +1,7 @@
 import { ExtractStrictMenuOption } from '@stews/components/Select'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 
-export type ViewSortOrderSelectOption<CurationItem extends object> =
+export type ViewSortSelectOption<CurationItem extends object> =
   ExtractStrictMenuOption<
     {
       sortId: string
@@ -11,7 +11,7 @@ export type ViewSortOrderSelectOption<CurationItem extends object> =
     'sortLabel'
   >
 
-export type ViewSortOrderOptionConfig<CurationItem extends object> = {
+export type ViewSortOptionConfig<CurationItem extends object> = {
   [SomeItemKey in keyof CurationItem]: SomeItemKey extends string
     ? CurationItem[SomeItemKey] extends string | ArrayOfAtLeastOne<string>
       ? {
