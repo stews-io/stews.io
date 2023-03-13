@@ -1,0 +1,32 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.inputContainer {  
+  @extend .rowContainer;
+  @extend .themeBorder;
+  flex-grow: 1;
+  overflow: hidden;
+  align-items: center;
+  padding-inline: calc(1 / 2) * $themeSpacer;
+  font-size: 18px;
+
+  &:has(input:focus) {
+    @extend .themeFocusOutline;
+  }
+}
+
+.searchInput {
+  font-size: inherit;
+  font-weight: 700;
+  width: 0;
+  flex-grow: 1;
+  padding-inline-end: calc(5 / 4) * $themeSpacer;
+}
+
+.clearIcon {
+  width: 0.675em;
+  height: 0.675em;
+  // stroke: black;
+  // stroke-width: 0.1;
+  // stroke-linejoin: round;
+}

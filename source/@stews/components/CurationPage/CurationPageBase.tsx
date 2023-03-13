@@ -3,7 +3,11 @@ import { CurationView, CuratorInfo } from '@stews/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { FunctionComponent } from 'preact'
 import { useState } from 'preact/hooks'
-import { ViewSelectBaseDataProps, ViewSortSelect } from './components'
+import {
+  ViewSearchInput,
+  ViewSelectBaseDataProps,
+  ViewSortSelect,
+} from './components'
 import {
   CurationViewSelectOption,
   ViewSortOptionConfig,
@@ -97,7 +101,7 @@ export function CurationPageBase<
           />
         </div>
         <div className={cssModule.viewSearchInputContainer}>
-          {/* <ViewSearchInput /> */}
+          <ViewSearchInput />
         </div>
       </div>
     </Page>

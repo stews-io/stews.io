@@ -12,6 +12,13 @@ div {
   @extend .defaultFont;
 }
 
+input {
+  @extend .defaultBoxModel;
+  @extend .defaultLayout;
+  @extend .defaultFont;
+  border: none;
+}
+
 * {
   @extend .themeFocusWithoutOutline;
 }
