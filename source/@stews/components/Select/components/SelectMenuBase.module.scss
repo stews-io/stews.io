@@ -1,6 +1,8 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
+$optionLabelPaddingInline: 0.15em;
+
 .menuContainer {
   @extend .columnContainer;
   padding-block-start: $themeSpacer;
@@ -51,7 +53,7 @@
   flex-shrink: 0;
   width: 0.85em;
   height: 0.85em;
-  padding-inline-end: $themeSpacer - $themeOutlineWidth;
+  padding-inline-end: calc($themeSpacer - $themeOutlineWidth - $optionLabelPaddingInline);
   visibility: hidden;
   stroke: black;
   stroke-width: 0.75;
@@ -68,6 +70,7 @@
 .optionLabel {
   @extend .textEllipsis;
   font-weight: 700;
+  padding-inline: $optionLabelPaddingInline;
 }
 
 .optionActionItemContainer {

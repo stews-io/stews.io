@@ -101,7 +101,16 @@ export function CurationPageBase<
           />
         </div>
         <div className={cssModule.viewSearchInputContainer}>
-          <ViewSearchInput />
+          <ViewSearchInput
+            value={pageState.viewSearch}
+            onChange={(someChangeEvent) => {
+              const nextViewSearch = someChangeEvent.currentTarget.value
+              setPageState((currentPageState) => ({
+                ...currentPageState,
+                viewSearch: nextViewSearch,
+              }))
+            }}
+          />
         </div>
       </div>
     </Page>

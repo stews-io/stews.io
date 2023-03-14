@@ -12,8 +12,10 @@ $themeBorder: 1.5px solid black;
 $themeBorderRadius: 4px;
 
 $themeOutlineWidth: 3px;
-$themeOutline: solid $themeOutlineWidth $themeOutlineColor;
+$themeOutline: solid $themeOutlineWidth transparent;
 $themeOutlineOffset: 0;
+$themeOutlineRadius: 3px;
+$themeBoxShadowOutline: 0 0 0 $themeOutlineWidth $themeOutlineColor;
 
 .defaultBoxModel {
   box-sizing: border-box;
@@ -44,8 +46,12 @@ $themeOutlineOffset: 0;
 .themeFocusOutline {
   outline: $themeOutline;
   outline-offset: $themeOutlineOffset;
+  box-shadow: $themeBoxShadowOutline;
+  border-radius: $themeOutlineRadius;
 }
 
 .themeFocusWithoutOutline {
   outline: none;
+  box-shadow: none;
+  border-radius: 0;
 }

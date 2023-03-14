@@ -1,10 +1,12 @@
 import { Button } from '@stews/components/Button'
+import { ComponentProps } from 'preact'
 import cssModule from './ViewSearchInput.module.scss'
 
-export interface ViewSearchInputProps {}
+export interface ViewSearchInputProps
+  extends Pick<Required<ComponentProps<'input'>>, 'value' | 'onChange'> {}
 
 export function ViewSearchInput(props: ViewSearchInputProps) {
-  const {} = props
+  const { value, onChange } = props
   return (
     <div className={cssModule.inputContainer}>
       <input
@@ -14,16 +16,9 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
         autocapitalize={'off'}
         spellcheck={false}
         placeholder={'search music'}
+        value={value}
+        onChange={onChange}
       />
-      <Button onSelect={() => {}}>
-        <svg className={cssModule.clearIcon} viewBox={'3 3 18 18'}>
-          <path
-            d={
-              'M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z'
-            }
-          />
-        </svg>
-      </Button>
     </div>
   )
 }

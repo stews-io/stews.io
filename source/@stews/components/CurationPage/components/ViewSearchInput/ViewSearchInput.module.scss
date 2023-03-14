@@ -10,7 +10,7 @@
   padding-inline: calc(1 / 2) * $themeSpacer;
   font-size: 18px;
 
-  &:has(input:focus) {
+  &:has(.searchInput:focus) {
     @extend .themeFocusOutline;
   }
 }
@@ -21,12 +21,4 @@
   width: 0;
   flex-grow: 1;
   padding-inline-end: calc(5 / 4) * $themeSpacer;
-}
-
-.clearIcon {
-  width: 0.675em;
-  height: 0.675em;
-  // stroke: black;
-  // stroke-width: 0.1;
-  // stroke-linejoin: round;
 }
