@@ -81,21 +81,24 @@ export function Popover<CustomPopoverContentProps>(
   }, [])
   const initialFocusElementRef = useMemo(() => createRef<HTMLDivElement>(), [])
   useEffect(() => {
-    if (popoverOpen) {
-      if (
-        initialFocusElementRef.current instanceof HTMLDivElement &&
-        anchorElementRef.current?.hasAttribute('data-pointer-focus')
-      ) {
-        initialFocusElementRef.current.focus()
-        initialFocusElementRef.current.setAttribute(
-          'data-pointer-focus',
-          'true'
-        )
-      } else if (initialFocusElementRef.current instanceof HTMLDivElement) {
-        initialFocusElementRef.current.focus()
-      } else {
-        throwInvalidPathError('Popover.useEffect[popoverOpen]')
-      }
+    if (
+      popoverOpen &&
+      initialFocusElementRef.current instanceof HTMLDivElement &&
+      anchorElementRef.current?.hasAttribute('data-pointer-focus')
+    ) {
+      initialFocusElementRef.current.focus()
+      initialFocusElementRef.current.setAttribute('data-pointer-focus', 'true')
+    } else if (
+      popoverOpen &&
+      initialFocusElementRef.current instanceof HTMLDivElement
+    ) {
+      initialFocusElementRef.current.focus()
+    } else if (
+      popoverOpen === false &&
+      document.body.style.overflow === 'hidden'
+    ) {
+      pointerStateRef.current.pointerWithin = false
+      document.body.style.overflow = 'inherit'
     }
   }, [popoverOpen])
   const popoverNavigationItemBlurHandler = useMemo(

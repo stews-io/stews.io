@@ -6,7 +6,7 @@
   z-index: 1;
   position: sticky;
   top: 0;
-  padding: $themeSpacer;
+  padding: calc(3 / 2) * $themeSpacer;
   background-color: $themeBackgroundColor;
 }
 
@@ -25,7 +25,9 @@
 
 .viewHeader {
   @extend .columnContainer;
-  padding: $themeSpacer;
+  padding-inline: calc(3 / 2) * $themeSpacer;
+  padding-block-start: calc(1 / 2) * $themeSpacer;
+  padding-block-end: calc(3 / 2) * $themeSpacer;
 }
 
 .viewSortSelectContainer {
@@ -36,4 +38,10 @@
 .viewSearchInputContainer {
   @extend .rowContainer;
   padding-top: $themeSpacer;
+}
+
+.viewPageList {
+  @extend .columnContainer;
+  padding: calc(3 / 2) * $themeSpacer;
+  // padding-block-start: calc(1 / 2) * $themeSpacer;
 }

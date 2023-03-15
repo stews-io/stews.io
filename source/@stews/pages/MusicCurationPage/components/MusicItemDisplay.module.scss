@@ -1,0 +1,60 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.displayContainer {
+  @extend .columnContainer;
+  padding-block: $themeSpacer;
+}
+
+.topRow {
+  @extend .rowContainer;
+  flex-wrap: wrap;
+}
+
+.musicThumbnail {  
+  height: 160px;
+}
+
+.musicLinks {
+  @extend .columnContainer;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.linkContainer {
+  padding-block-end: $themeSpacer;
+}
+
+.linkButton {
+  font-weight: 700;
+  text-decoration: underline;
+  color: $themeButtonTextColor;
+  padding-inline: calc(1 / 4) * $themeSpacer;
+}
+
+.itemInfoContainer {
+  @extend .columnContainer;
+  padding-inline-start: calc(1 / 4) * $themeSpacer;
+  padding-block-start: calc(3 / 2) * $themeSpacer;
+}
+
+.itemLabelList {
+  @extend .rowContainer;
+  flex-wrap: wrap;
+}
+
+.itemLabel {
+  @extend .textEllipsis;
+  width: 0;
+  max-width: fit-content;
+  flex-grow: 1;
+  margin-inline-end: $themeSpacer; 
+  margin-block-end: $themeSpacer;
+  background-color: $themeTextBackgroundColor;
+  border-radius: 3px;
+  padding-inline: calc(1 / 2) * $themeSpacer;
+  padding-block-start: calc(1 / 8) * $themeSpacer + 1px;
+  padding-block-end: calc(1 / 8) * $themeSpacer;
+  font-weight: 700;
+  font-size: 16px;
+}

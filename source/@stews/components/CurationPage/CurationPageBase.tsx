@@ -27,6 +27,7 @@ export interface CurationPageBaseDataProps<CurationItem extends object> {
   curationViews: ArrayOfAtLeastOne<CurationView>
   curationItems: Array<CurationItem>
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
+  CurationItemDisplay: FunctionComponent<CurationItem>
 }
 
 export interface CurationPageBaseConfigProps<CustomViewSelectProps> {
@@ -54,6 +55,8 @@ export function CurationPageBase<
     customViewSelectProps,
     ProfileBopper,
     curatorInfo,
+    curationItems,
+    CurationItemDisplay,
   } = props
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
@@ -112,6 +115,11 @@ export function CurationPageBase<
             }}
           />
         </div>
+      </div>
+      <div className={cssModule.viewPageList}>
+        {curationItems.map((someCurationItem, itemIndex) => (
+          <CurationItemDisplay key={itemIndex} {...someCurationItem} />
+        ))}
       </div>
     </Page>
   )

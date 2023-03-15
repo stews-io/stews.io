@@ -8,11 +8,18 @@ export interface CuratorCurationPageProps<CurationItem extends object>
 export function CuratorCurationPage<CurationItem extends object>(
   props: CuratorCurationPageProps<CurationItem>
 ) {
-  const { viewSortConfig, curatorInfo, curationViews, curationItems } = props
+  const {
+    CurationItemDisplay,
+    viewSortConfig,
+    curatorInfo,
+    curationViews,
+    curationItems,
+  } = props
   return (
     <CurationPageBase
       ViewSelect={CuratorViewSelect}
       ProfileBopper={CuratorProfileBopper}
+      CurationItemDisplay={CurationItemDisplay}
       viewSortConfig={viewSortConfig}
       curatorInfo={curatorInfo}
       curationViews={curationViews}
