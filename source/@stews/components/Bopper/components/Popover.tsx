@@ -93,12 +93,9 @@ export function Popover<CustomPopoverContentProps>(
       initialFocusElementRef.current instanceof HTMLDivElement
     ) {
       initialFocusElementRef.current.focus()
-    } else if (
-      popoverOpen === false &&
-      document.body.style.overflow === 'hidden'
-    ) {
+    } else if (popoverOpen === false) {
       pointerStateRef.current.pointerWithin = false
-      document.body.style.overflow = 'inherit'
+      document.body.classList.remove(cssModule.preventBodyScroll!)
     }
   }, [popoverOpen])
   const popoverNavigationItemBlurHandler = useMemo(
@@ -112,9 +109,9 @@ export function Popover<CustomPopoverContentProps>(
           ? !popoverRef.current.contains(someBlurEvent.relatedTarget)
           : true
       if (windowBlur || tabPreviousEscapeOrEnterSelect) {
-        setPopoverOpen(false)
+        closePopover()
       } else if (tabNextEscape) {
-        setPopoverOpen(false)
+        closePopover()
         // redirect focus from tab next target to anchor
         // // the only time this doesnt work is if next target is urlBar
         anchorElementRef.current instanceof HTMLDivElement
@@ -135,17 +132,13 @@ export function Popover<CustomPopoverContentProps>(
         pageContentRef,
       })}
       onBlur={popoverNavigationItemBlurHandler}
-      onPointerEnter={(somePointerEnterEvent) => {
-        if (somePointerEnterEvent.pointerType === 'mouse') {
-          pointerStateRef.current.pointerWithin = true
-          document.body.style.overflow = 'hidden'
-        }
+      onPointerEnter={() => {
+        pointerStateRef.current.pointerWithin = true
+        document.body.classList.add(cssModule.preventBodyScroll!)
       }}
-      onPointerLeave={(somePointerLeaveEvent) => {
-        if (somePointerLeaveEvent.pointerType === 'mouse') {
-          pointerStateRef.current.pointerWithin = false
-          document.body.style.overflow = 'inherit'
-        }
+      onPointerLeave={() => {
+        pointerStateRef.current.pointerWithin = false
+        document.body.classList.remove(cssModule.preventBodyScroll!)
       }}
       onKeyDown={(someKeyDownEvent) => {
         if (someKeyDownEvent.key === 'Escape') {

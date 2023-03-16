@@ -2,7 +2,15 @@
 
 .popoverContainer {
   @extend .themeBorder;
+  z-index: 1;
   overflow: hidden;
   touch-action: none;
   background-color: $themeBackgroundColor;
+}
+
+.preventBodyScroll {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
