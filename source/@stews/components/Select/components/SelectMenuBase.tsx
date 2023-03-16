@@ -7,15 +7,16 @@ import {
   UseSelectMenuNavigationResult,
 } from '../hooks/useSelectMenuNavigation'
 import {
-  ExtractStrictMenuOption,
   SelectBaseConfigProps,
   SelectBaseDataProps,
+  VerifiedOptionLabelKey,
 } from '../SelectBase'
+import { SelectOptionLabel } from './SelectOptionLabel'
 import cssModule from './SelectMenuBase.module.scss'
 
 interface SelectMenuBaseProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends SelectMenuBaseDataProps<
@@ -26,19 +27,18 @@ interface SelectMenuBaseProps<
     >,
     SelectMenuBaseConfigProps<
       MenuOption,
-      OptionLabelKey,
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     > {}
 
 export interface SelectMenuBaseDataProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends CorePopoverContentProps,
     Pick<
-      SelectBaseDataProps<MenuOption, OptionLabelKey>,
+      SelectBaseDataProps<MenuOption>,
       'optionList' | 'selectedOption' | 'selectOption'
     >,
     Pick<
@@ -56,34 +56,24 @@ export interface SelectMenuBaseDataProps<
 
 export interface SelectMenuBaseConfigProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > {
   OptionActionItem: FunctionComponent<
-    OptionActionItemProps<
-      MenuOption,
-      OptionLabelKey,
-      CustomOptionActionItemProps
-    >
+    OptionActionItemProps<MenuOption, CustomOptionActionItemProps>
   >
   MenuFooter: FunctionComponent<MenuFooterProps<CustomMenuFooterProps>>
 }
 
 type OptionActionItemProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
-  CustomOptionActionItemProps,
-  StrictMenuOption extends ExtractStrictMenuOption<
-    MenuOption,
-    OptionLabelKey
-  > = ExtractStrictMenuOption<MenuOption, OptionLabelKey>
+  CustomOptionActionItemProps
 > = CustomOptionActionItemProps &
   Pick<
     UseSelectMenuNavigationResult,
     'latestFocusedOptionIndex' | 'getMenuNavigationOptionActionButtonProps'
   > & {
-    someOption: StrictMenuOption
+    someOption: MenuOption
     optionIndex: number
   }
 
@@ -92,7 +82,7 @@ type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
 
 export function SelectMenuBase<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(
@@ -162,7 +152,10 @@ export function SelectMenuBase<
             </svg>
             <div className={cssModule.optionLabelContainer}>
               <div className={cssModule.optionLabel}>
-                {someOption[optionLabelKey]}
+                <SelectOptionLabel
+                  optionLabelKey={optionLabelKey}
+                  someSelectOption={someOption}
+                />
               </div>
             </div>
             <div className={cssModule.optionActionItemContainer}>

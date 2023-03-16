@@ -3,7 +3,7 @@ import {
   SelectBaseConfigProps,
   SelectBaseDataProps,
 } from '@stews/components/Select'
-import { CurationViewSelectOption } from '../../data'
+import { CurationView } from '@stews/data'
 import cssModule from './ViewSelectBase.module.scss'
 
 interface ViewSelectBaseProps<
@@ -16,14 +16,14 @@ interface ViewSelectBaseProps<
     > {}
 
 export interface ViewSelectBaseDataProps
-  extends SelectBaseDataProps<CurationViewSelectOption, 'viewLabel'> {}
+  extends SelectBaseDataProps<CurationView> {}
 
 export interface ViewSelectBaseConfigProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends Pick<
     SelectBaseConfigProps<
-      CurationViewSelectOption,
+      CurationView,
       'viewLabel',
       CustomOptionActionItemProps,
       CustomMenuFooterProps

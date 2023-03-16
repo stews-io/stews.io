@@ -5,10 +5,10 @@ import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
 
 interface SelectBaseProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends SelectBaseDataProps<MenuOption, OptionLabelKey>,
+> extends SelectBaseDataProps<MenuOption>,
     SelectBaseConfigProps<
       MenuOption,
       OptionLabelKey,
@@ -16,31 +16,15 @@ interface SelectBaseProps<
       CustomMenuFooterProps
     > {}
 
-export interface SelectBaseDataProps<
-  MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
-  StrictMenuOption extends ExtractStrictMenuOption<
-    MenuOption,
-    OptionLabelKey
-  > = ExtractStrictMenuOption<MenuOption, OptionLabelKey>
-> {
-  optionList: Array<StrictMenuOption>
-  selectedOption: StrictMenuOption
-  selectOption: (nextSelectedOption: StrictMenuOption) => void
-}
-
-export type ExtractStrictMenuOption<
-  MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption
-> = Omit<MenuOption, OptionLabelKey> & {
-  [TargetOptionLabelKey in OptionLabelKey]: MenuOption[TargetOptionLabelKey] extends string
-    ? string
-    : never
+export interface SelectBaseDataProps<MenuOption extends object> {
+  optionList: Array<MenuOption>
+  selectedOption: MenuOption
+  selectOption: (nextSelectedOption: MenuOption) => void
 }
 
 export interface SelectBaseConfigProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > {
@@ -59,9 +43,15 @@ export interface SelectBaseConfigProps<
   >
 }
 
+export type VerifiedOptionLabelKey<MenuOption extends object> = {
+  [SomeMenuOptionKey in keyof MenuOption]: MenuOption[SomeMenuOptionKey] extends string
+    ? SomeMenuOptionKey
+    : never
+}[keyof MenuOption]
+
 export function SelectBase<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption,
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(

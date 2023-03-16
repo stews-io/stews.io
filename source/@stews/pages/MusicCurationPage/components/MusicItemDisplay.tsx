@@ -1,18 +1,12 @@
 import { Button } from '@stews/components/Button'
+import { ItemDisplayProps } from '@stews/components/CurationPage/CurationPageBase'
 import { MusicItem } from '../data/MusicItem'
 import cssModule from './MusicItemDisplay.module.scss'
 
-export type MusicListItemProps = MusicItem
+export interface MusicItemProps extends ItemDisplayProps<MusicItem> {}
 
-export function MusicItemDisplay(props: MusicListItemProps) {
-  const {
-    musicTitle,
-    musicThumbnailHref,
-    externalLinks,
-    musicArtist,
-    musicStyles,
-    ...musicContextData
-  } = props
+export function MusicItemDisplay(props: MusicItemProps) {
+  const { someItem } = props
   return (
     <div className={cssModule.displayContainer}>
       <div className={cssModule.topRow}>
@@ -21,7 +15,7 @@ export function MusicItemDisplay(props: MusicListItemProps) {
           viewBox={'0 0 100 100'}
           role={'img'}
         >
-          <title>{`${musicTitle}: thumbnail image`}</title>
+          <title>{`${someItem.musicTitle}: thumbnail image`}</title>
           <rect
             x={0}
             y={0}
@@ -32,7 +26,7 @@ export function MusicItemDisplay(props: MusicListItemProps) {
             fill={'#EEEEEE'}
           />
           <image
-            href={musicThumbnailHref}
+            href={someItem.musicThumbnailHref}
             x={1}
             y={1}
             width={98}
@@ -41,7 +35,7 @@ export function MusicItemDisplay(props: MusicListItemProps) {
           />
         </svg>
         <div className={cssModule.musicLinks}>
-          {externalLinks.map((someExternalLink) => {
+          {someItem.externalLinks.map((someExternalLink) => {
             return (
               <div className={cssModule.linkContainer}>
                 <LinkButton
@@ -56,27 +50,25 @@ export function MusicItemDisplay(props: MusicListItemProps) {
       <div className={cssModule.itemInfoContainer}>
         <MusicItemLabelList
           accessibilityLabel={'music title'}
-          musicLabels={[musicTitle]}
+          musicLabels={[someItem.musicTitle]}
         />
         <MusicItemLabelList
           accessibilityLabel={'music artist'}
-          musicLabels={musicArtist}
+          musicLabels={someItem.musicArtist}
         />
         <MusicItemLabelList
           accessibilityLabel={'music context'}
           musicLabels={[
-            `${
-              musicContextData.musicYear
-            } ${musicContextData.recordingContext.join('/')} ${
-              musicContextData.sourceType === 'collection'
-                ? musicContextData.collectionType
-                : musicContextData.sourceType
-            }${musicContextData.musicType === 'clip' ? ' (clip)' : ''}`,
+            `${someItem.musicYear} ${someItem.recordingContext.join('/')} ${
+              someItem.sourceType === 'collection'
+                ? someItem.collectionType
+                : someItem.sourceType
+            }${someItem.musicType === 'clip' ? ' (clip)' : ''}`,
           ]}
         />
         <MusicItemLabelList
           accessibilityLabel={'music styles'}
-          musicLabels={musicStyles}
+          musicLabels={someItem.musicStyles}
         />
       </div>
     </div>

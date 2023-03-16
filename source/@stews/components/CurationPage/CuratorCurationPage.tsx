@@ -9,8 +9,9 @@ export function CuratorCurationPage<CurationItem extends object>(
   props: CuratorCurationPageProps<CurationItem>
 ) {
   const {
-    CurationItemDisplay,
+    ItemDisplay,
     viewSortConfig,
+    getItemSearchSpace,
     curatorInfo,
     curationViews,
     curationItems,
@@ -19,8 +20,9 @@ export function CuratorCurationPage<CurationItem extends object>(
     <CurationPageBase
       ViewSelect={CuratorViewSelect}
       ProfileBopper={CuratorProfileBopper}
-      CurationItemDisplay={CurationItemDisplay}
+      ItemDisplay={ItemDisplay}
       viewSortConfig={viewSortConfig}
+      getItemSearchSpace={getItemSearchSpace}
       curatorInfo={curatorInfo}
       curationViews={curationViews}
       curationItems={curationItems}

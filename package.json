@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@fontsource/red-hat-mono": "^4.5.12",
+    "liqe": "^3.6.0",
     "preact": "^10.1.0",
     "preact-render-to-string": "^5.1.2",
     "preact-router": "^4.1.0",

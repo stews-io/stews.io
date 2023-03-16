@@ -9,12 +9,12 @@ import {
   ViewSortSelect,
 } from './components'
 import {
-  CurationViewSelectOption,
+  useViewSortOptions,
+  ViewSortOption,
   ViewSortOptionConfig,
-  ViewSortSelectOption,
-} from './data'
-import { useViewSortOptions } from './hooks'
+} from './hooks'
 import cssModule from './CurationPageBase.module.scss'
+import { useViewPage } from './hooks/useViewPage'
 
 interface CurationPageBaseProps<
   CurationItem extends object,
@@ -27,7 +27,12 @@ export interface CurationPageBaseDataProps<CurationItem extends object> {
   curationViews: ArrayOfAtLeastOne<CurationView>
   curationItems: Array<CurationItem>
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
-  CurationItemDisplay: FunctionComponent<CurationItem>
+  ItemDisplay: FunctionComponent<ItemDisplayProps<CurationItem>>
+  getItemSearchSpace: (someCurationItem: CurationItem) => string
+}
+
+export interface ItemDisplayProps<CurationItem extends object> {
+  someItem: CurationItem
 }
 
 export interface CurationPageBaseConfigProps<CustomViewSelectProps> {
@@ -55,20 +60,25 @@ export function CurationPageBase<
     customViewSelectProps,
     ProfileBopper,
     curatorInfo,
+    ItemDisplay,
+    getItemSearchSpace,
     curationItems,
-    CurationItemDisplay,
   } = props
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
   })
-  const [pageState, setPageState] = useState<{
-    curationView: CurationViewSelectOption
-    viewSort: ViewSortSelectOption<CurationItem>
-    viewSearch: string
-  }>({
+  const [viewState, setViewState] = useState<ViewState<CurationItem>>({
     curationView: curationViews[0],
     viewSort: viewSortOptions[0],
     viewSearch: '',
+    pageIndex: 0,
+  })
+  const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
+    pageItemSize: 6,
+    ItemDisplay,
+    getItemSearchSpace,
+    curationItems,
+    viewState,
   })
   return (
     <Page>
@@ -76,10 +86,10 @@ export function CurationPageBase<
         <div className={cssModule.viewSelectContainer}>
           <ViewSelect
             optionList={curationViews}
-            selectedOption={pageState.curationView}
+            selectedOption={viewState.curationView}
             selectOption={(nextCurationView) => {
-              setPageState((currentPageState) => ({
-                ...currentPageState,
+              setViewState((currentViewState) => ({
+                ...currentViewState,
                 curationView: nextCurationView,
               }))
             }}
@@ -94,10 +104,10 @@ export function CurationPageBase<
         <div className={cssModule.viewSortSelectContainer}>
           <ViewSortSelect
             optionList={viewSortOptions}
-            selectedOption={pageState.viewSort}
+            selectedOption={viewState.viewSort}
             selectOption={(nextViewSort) => {
-              setPageState((currentPageState) => ({
-                ...currentPageState,
+              setViewState((currentViewState) => ({
+                ...currentViewState,
                 viewSort: nextViewSort,
               }))
             }}
@@ -105,22 +115,25 @@ export function CurationPageBase<
         </div>
         <div className={cssModule.viewSearchInputContainer}>
           <ViewSearchInput
-            value={pageState.viewSearch}
-            onChange={(someChangeEvent) => {
-              const nextViewSearch = someChangeEvent.currentTarget.value
-              setPageState((currentPageState) => ({
-                ...currentPageState,
+            value={viewState.viewSearch}
+            onInput={(someInputEvent) => {
+              const nextViewSearch = someInputEvent.currentTarget.value
+              setViewState((currentViewState) => ({
+                ...currentViewState,
                 viewSearch: nextViewSearch,
               }))
             }}
           />
         </div>
       </div>
-      <div className={cssModule.viewPageList}>
-        {curationItems.map((someCurationItem, itemIndex) => (
-          <CurationItemDisplay key={itemIndex} {...someCurationItem} />
-        ))}
-      </div>
+      <div className={cssModule.viewPageItems}>{viewPageItemElements}</div>
     </Page>
   )
+}
+
+export interface ViewState<CurationItem extends object> {
+  curationView: CurationView
+  viewSort: ViewSortOption<CurationItem>
+  viewSearch: string
+  pageIndex: number
 }

@@ -1,13 +1,18 @@
 import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
 import { getCssClass } from '@stews/helpers'
-import { SelectBaseConfigProps, SelectBaseDataProps } from '../SelectBase'
+import {
+  SelectBaseConfigProps,
+  SelectBaseDataProps,
+  VerifiedOptionLabelKey,
+} from '../SelectBase'
+import { SelectOptionLabel } from './SelectOptionLabel'
 import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>
 > extends CoreAnchorButtonProps,
-    Pick<SelectBaseDataProps<MenuOption, OptionLabelKey>, 'selectedOption'>,
+    Pick<SelectBaseDataProps<MenuOption>, 'selectedOption'>,
     Pick<
       SelectBaseConfigProps<MenuOption, OptionLabelKey, unknown, unknown>,
       'optionLabelKey' | 'anchorBorderClassName' | 'fontSizeClassName'
@@ -15,7 +20,7 @@ export interface SelectButtonProps<
 
 export function SelectButton<
   MenuOption extends object,
-  OptionLabelKey extends keyof MenuOption
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>
 >(props: SelectButtonProps<MenuOption, OptionLabelKey>) {
   const {
     anchorBorderClassName,
@@ -39,7 +44,10 @@ export function SelectButton<
         setPopoverOpen={setPopoverOpen}
       >
         <div className={cssModule.buttonLabel}>
-          {selectedOption[optionLabelKey]}
+          <SelectOptionLabel
+            optionLabelKey={optionLabelKey}
+            someSelectOption={selectedOption}
+          />
         </div>
         <div className={cssModule.iconContainer}>
           <svg className={cssModule.selectIcon} viewBox={'0 0 1 1'}>

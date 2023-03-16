@@ -43,45 +43,52 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
     },
     {
       viewId: 1,
-      viewLabel: 'summer drive',
+      viewLabel: '2010s',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: '',
+      viewFilter: 'musicYear:[2010 TO 2019]',
     },
     {
       viewId: 2,
-      viewLabel: 'sweet',
+      viewLabel: '2000s',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: '',
+      viewFilter: 'musicYear:[2000 TO 2009]',
     },
     {
       viewId: 3,
-      viewLabel: 'super dooper long view name',
+      viewLabel: '1990s',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: '',
+      viewFilter: 'musicYear:[1990 TO 1999]',
     },
     {
       viewId: 4,
-      viewLabel: 'what what chicken butt',
+      viewLabel: 'hip-hop',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: '',
+      viewFilter: 'musicStyles:hip-hop',
     },
     {
       viewId: 5,
-      viewLabel: 'hey oh!',
+      viewLabel: 'jazz',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: '',
+      viewFilter: 'musicStyles:jazz',
     },
     {
       viewId: 6,
-      viewLabel: '🎺🥁🎟',
+      viewLabel: 'electronic',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: '',
+      viewFilter: 'musicStyles:electronic',
+    },
+    {
+      viewId: 7,
+      viewLabel: 'in the now',
+      viewType: 'custom',
+      customType: 'filter',
+      viewFilter: 'recordingContext:live OR recordingContext:concert',
     },
   ]
   const curationItems: Array<MusicItem> = [
@@ -370,9 +377,45 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
       ],
     },
   ]
+  // return (
+  //   <CuratorCurationPage
+  //     CurationItemDisplay={MusicItemDisplay}
+  //     viewSortConfig={[
+  //       {
+  //         fieldKey: 'musicTitle',
+  //         fieldType: 'string',
+  //         sortLabelBase: 'title',
+  //       },
+  //       {
+  //         fieldKey: 'musicArtist',
+  //         fieldType: 'string',
+  //         sortLabelBase: 'artist',
+  //       },
+  //       {
+  //         fieldKey: 'musicYear',
+  //         fieldType: 'number',
+  //         sortLabelBase: 'year',
+  //       },
+  //     ]}
+  //     curatorInfo={curatorInfo}
+  //     curationViews={musicViews}
+  //     curationItems={curationItems}
+  //   />
+  // )
   return (
-    <CuratorCurationPage
-      CurationItemDisplay={MusicItemDisplay}
+    <ConsumerCurationPage
+      ItemDisplay={MusicItemDisplay}
+      getItemSearchSpace={(someMusicItem) =>
+        `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
+          ','
+        )},${someMusicItem.musicStyles.join(',')},${
+          someMusicItem.musicYear
+        },${`${someMusicItem.recordingContext.join('/')} ${
+          someMusicItem.sourceType === 'collection'
+            ? someMusicItem.collectionType
+            : someMusicItem.sourceType
+        }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`
+      }
       viewSortConfig={[
         {
           fieldKey: 'musicTitle',
@@ -381,7 +424,7 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
         },
         {
           fieldKey: 'musicArtist',
-          fieldType: 'string',
+          fieldType: 'orderedStringSet',
           sortLabelBase: 'artist',
         },
         {
@@ -395,10 +438,4 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
       curationItems={curationItems}
     />
   )
-  // return (
-  //   <ConsumerCurationPage
-  //     curatorInfo={curatorInfo}
-  //     curationViews={musicViews}
-  //   />
-  // )
 }
