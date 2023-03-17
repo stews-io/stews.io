@@ -1,6 +1,6 @@
 import { throwInvalidPathError } from '@stews/helpers'
 import * as Liqe from 'liqe'
-import { useEffect, useLayoutEffect, useMemo, useRef } from 'preact/hooks'
+import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { EmptyViewPageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
@@ -52,7 +52,7 @@ export function useViewPage<CurationItem extends object>(
     )
     return {
       viewPageItemElements: (
-        <Fragment key={pageIndex}>
+        <Fragment key={`${Math.random()}`}>
           <div ref={pageTopElementRef} />
           {viewPageItems.length > 0 ? (
             viewPageItems.map((someItem, pageItemIndex) => (
