@@ -112,9 +112,6 @@ export function Popover<CustomPopoverContentProps>(
     },
     [anchorElementRef, setPopoverOpen, popoverRef]
   )
-  const maybePageContentContainerElement = document.getElementById(
-    'pageContentContainer'
-  )
   return popoverOpen ? (
     <div
       tabIndex={-1}
@@ -123,10 +120,6 @@ export function Popover<CustomPopoverContentProps>(
       style={getPopoverLayoutStyle({
         anchorElementRef,
         popoverOpen,
-        pageContentContainerElement:
-          maybePageContentContainerElement instanceof HTMLDivElement
-            ? maybePageContentContainerElement
-            : throwInvalidPathError('Popover.maybePageContentContainerElement'),
       })}
       onBlur={popoverNavigationItemBlurHandler}
       onPointerEnter={() => {
@@ -156,14 +149,13 @@ export function Popover<CustomPopoverContentProps>(
 }
 
 interface GetPopoverLayoutStyleApi
-  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {
-  pageContentContainerElement: HTMLDivElement
-}
+  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {}
 
 function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
-  const { pageContentContainerElement, anchorElementRef, popoverOpen } = api
-  const pageContentClientRect =
-    pageContentContainerElement.getBoundingClientRect()
+  const { anchorElementRef, popoverOpen } = api
+  const pageContentClientRect = document
+    .getElementById('pageContentContainer')
+    ?.getBoundingClientRect()
   const anchorElement = anchorElementRef.current
   const anchorClientRect = anchorElementRef.current?.getBoundingClientRect()
   if (
