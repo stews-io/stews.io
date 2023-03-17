@@ -5,10 +5,10 @@
   @extend .rowContainer;
   z-index: 1;
   position: sticky;
-  top: -1px;
-  margin-top: -1px;
+  top: -4px;
+  margin-top: -4px;
   padding: calc(3 / 2) * $themeSpacer;
-  padding-block-start: calc(3 / 2) * $themeSpacer + 1px;
+  padding-block-start: calc(3 / 2) * $themeSpacer + 4px;
   background-color: $themeBackgroundColor;
 }
 
