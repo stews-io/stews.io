@@ -1,7 +1,7 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
-.pageHeader {
+.pageHeaderContainer {
   @extend .rowContainer;
   z-index: 1;
   position: sticky;
@@ -23,7 +23,7 @@
   padding-inline-start: 4 * $themeSpacer;
 }
 
-.viewHeader {
+.viewHeaderContainer {
   @extend .columnContainer;
   padding-inline: calc(3 / 2) * $themeSpacer;
   padding-block-start: calc(1 / 2) * $themeSpacer;
@@ -40,7 +40,7 @@
   padding-top: $themeSpacer;
 }
 
-.viewPageItems {
+.viewPageItemsContainer {
   @extend .columnContainer;
   padding: calc(3 / 2) * $themeSpacer;
 }

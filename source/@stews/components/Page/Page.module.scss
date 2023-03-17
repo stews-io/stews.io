@@ -5,7 +5,7 @@
   @extend .itemContainer;  
 }
 
-.pageContent {
+.pageContentContainer {
   @extend .columnContainer;
   max-width: 512px;  
   flex-basis: 100%;

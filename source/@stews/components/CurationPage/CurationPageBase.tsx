@@ -8,12 +8,12 @@ import {
   ViewSelectBaseDataProps,
   ViewSortSelect,
 } from './components'
+import cssModule from './CurationPageBase.module.scss'
 import {
   useViewSortOptions,
   ViewSortOption,
   ViewSortOptionConfig,
 } from './hooks'
-import cssModule from './CurationPageBase.module.scss'
 import { useViewPage } from './hooks/useViewPage'
 
 interface CurationPageBaseProps<
@@ -94,7 +94,7 @@ export function CurationPageBase<
   })
   return (
     <Page>
-      <div className={cssModule.pageHeader}>
+      <div className={cssModule.pageHeaderContainer}>
         <div className={cssModule.viewSelectContainer}>
           <ViewSelect
             optionList={curationViews}
@@ -113,7 +113,7 @@ export function CurationPageBase<
           <ProfileBopper curatorInfo={curatorInfo} />
         </div>
       </div>
-      <div className={cssModule.viewHeader}>
+      <div className={cssModule.viewHeaderContainer}>
         <div className={cssModule.viewSortSelectContainer}>
           <ViewSortSelect
             optionList={viewSortOptions}
@@ -141,7 +141,9 @@ export function CurationPageBase<
           />
         </div>
       </div>
-      <div className={cssModule.viewPageItems}>{viewPageItemElements}</div>
+      <div className={cssModule.viewPageItemsContainer}>
+        {viewPageItemElements}
+      </div>
       {viewPageNavigationElement}
     </Page>
   )

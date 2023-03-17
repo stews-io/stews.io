@@ -1,14 +1,6 @@
-import { PageContext } from '@stews/components/Page'
 import { throwInvalidPathError } from '@stews/helpers'
-import { FunctionComponent, createRef, RefObject } from 'preact'
-import {
-  Ref,
-  StateUpdater,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-} from 'preact/hooks'
+import { createRef, FunctionComponent, RefObject } from 'preact'
+import { Ref, StateUpdater, useEffect, useMemo, useRef } from 'preact/hooks'
 import cssModule from './Popover.module.scss'
 
 export interface PopoverProps<CustomPopoverContentProps> {
@@ -40,7 +32,6 @@ export function Popover<CustomPopoverContentProps>(
     PopoverContent,
     customPopoverContentProps,
   } = props
-  const pageContentRef = useContext(PageContext)
   const popoverRef = useRef<HTMLDivElement>(null)
   const closePopover = useMemo(() => () => setPopoverOpen(false), [])
   const pointerStateRef = useRef({
@@ -121,6 +112,9 @@ export function Popover<CustomPopoverContentProps>(
     },
     [anchorElementRef, setPopoverOpen, popoverRef]
   )
+  const maybePageContentContainerElement = document.getElementById(
+    'pageContentContainer'
+  )
   return popoverOpen ? (
     <div
       tabIndex={-1}
@@ -129,7 +123,10 @@ export function Popover<CustomPopoverContentProps>(
       style={getPopoverLayoutStyle({
         anchorElementRef,
         popoverOpen,
-        pageContentRef,
+        pageContentContainerElement:
+          maybePageContentContainerElement instanceof HTMLDivElement
+            ? maybePageContentContainerElement
+            : throwInvalidPathError('Popover.maybePageContentContainerElement'),
       })}
       onBlur={popoverNavigationItemBlurHandler}
       onPointerEnter={() => {
@@ -160,12 +157,13 @@ export function Popover<CustomPopoverContentProps>(
 
 interface GetPopoverLayoutStyleApi
   extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {
-  pageContentRef: Ref<HTMLDivElement>
+  pageContentContainerElement: HTMLDivElement
 }
 
 function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
-  const { anchorElementRef, popoverOpen, pageContentRef } = api
-  const pageContentClientRect = pageContentRef.current?.getBoundingClientRect()
+  const { pageContentContainerElement, anchorElementRef, popoverOpen } = api
+  const pageContentClientRect =
+    pageContentContainerElement.getBoundingClientRect()
   const anchorElement = anchorElementRef.current
   const anchorClientRect = anchorElementRef.current?.getBoundingClientRect()
   if (
