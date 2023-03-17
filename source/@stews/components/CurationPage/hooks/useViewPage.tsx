@@ -29,7 +29,7 @@ export function useViewPage<CurationItem extends object>(
     setPageIndexToPrevious,
     setPageIndexToNext,
   } = api
-  const pageTopItemElementRef = useRef<HTMLDivElement>(null)
+  const pageTopElementRef = useRef<HTMLDivElement>(null)
   const viewPageResult = useMemo(() => {
     const { curationView, viewSearch, viewSort, pageIndex } = viewState
     const viewItems =
@@ -53,7 +53,7 @@ export function useViewPage<CurationItem extends object>(
     return {
       viewPageItemElements: (
         <Fragment>
-          <div ref={pageTopItemElementRef} />
+          <div ref={pageTopElementRef} />
           {viewPageItems.length > 0 ? (
             viewPageItems.map((someItem, pageItemIndex) => (
               <ItemDisplay key={pageItemIndex} someItem={someItem} />
@@ -85,28 +85,32 @@ export function useViewPage<CurationItem extends object>(
     const pageContentContainerElement = document.getElementById(
       'pageContentContainer'
     )
-    const pageTopItemElement = pageTopItemElementRef.current
+    const pageTopElement = pageTopElementRef.current
     if (
       viewState.pageIndex === 0 &&
       pageContentContainerElement instanceof HTMLDivElement
     ) {
+      pageContentContainerElement.setAttribute('tabIndex', '-1')
+      pageContentContainerElement.focus({
+        preventScroll: true,
+      })
+      pageContentContainerElement.removeAttribute('tabIndex')
       window.scrollTo({
         behavior: 'auto',
         top: 0,
       })
-      pageContentContainerElement.setAttribute('tabIndex', '-1')
-      pageContentContainerElement.focus()
-      pageContentContainerElement.removeAttribute('tabIndex')
     } else if (
       viewState.pageIndex > 0 &&
-      pageTopItemElement instanceof HTMLDivElement
+      pageTopElement instanceof HTMLDivElement
     ) {
+      pageTopElement.setAttribute('tabIndex', '-1')
+      pageTopElement.focus({
+        preventScroll: true,
+      })
+      pageTopElement.removeAttribute('tabIndex')
       window.scrollTo({
         behavior: 'auto',
         top: 76,
-      })
-      pageTopItemElement.focus({
-        preventScroll: true,
       })
     } else {
       throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
