@@ -92,6 +92,7 @@ export function CurationPageBase<
       }))
     },
   })
+
   return (
     <Page>
       <div className={cssModule.pageHeaderContainer}>
