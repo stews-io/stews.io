@@ -3,10 +3,11 @@
 
 .pageHeaderContainer {
   @extend .rowContainer;
-  z-index: 1;
-  position: sticky;
+  position: fixed;
   top: -4px;
   margin-top: -4px;
+  max-width: 512px;
+  width: 100%;
   padding: calc(3 / 2) * $themeSpacer;
   padding-block-start: calc(3 / 2) * $themeSpacer + 4px;
   background-color: $themeBackgroundColor;
@@ -27,9 +28,10 @@
 
 .viewHeaderContainer {
   @extend .columnContainer;
+  margin-top: 58px;
   padding-inline: calc(3 / 2) * $themeSpacer;
   padding-block-start: calc(1 / 2) * $themeSpacer;
-  padding-block-end: calc(3 / 2) * $themeSpacer;
+  padding-block-end: calc(3 / 2) * $themeSpacer;  
 }
 
 .viewSortSelectContainer {
