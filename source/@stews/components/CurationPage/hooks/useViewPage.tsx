@@ -1,7 +1,8 @@
 import { CurationPageBaseDataProps, ViewState } from '../CurationPageBase'
 import * as Liqe from 'liqe'
-import { useMemo } from 'preact/hooks'
+import { useEffect, useMemo } from 'preact/hooks'
 import { EmptyViewPageItem } from '../components'
+import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
 
 export interface UseViewPageApi<CurationItem extends object>
   extends Pick<
@@ -10,6 +11,8 @@ export interface UseViewPageApi<CurationItem extends object>
   > {
   viewState: ViewState<CurationItem>
   pageItemSize: number
+  setPageIndexToPrevious: () => void
+  setPageIndexToNext: () => void
 }
 
 export function useViewPage<CurationItem extends object>(
@@ -21,8 +24,10 @@ export function useViewPage<CurationItem extends object>(
     getItemSearchSpace,
     pageItemSize,
     ItemDisplay,
+    setPageIndexToPrevious,
+    setPageIndexToNext,
   } = api
-  return useMemo(() => {
+  const viewPageResult = useMemo(() => {
     const { curationView, viewSearch, viewSort, pageIndex } = viewState
     const viewItems =
       curationView.viewType === 'default'
@@ -37,8 +42,7 @@ export function useViewPage<CurationItem extends object>(
       .sort(viewSort.getSortOrder)
     const pageCount =
       Math.ceil(searchedAndSortedViewItems.length / pageItemSize) || 1
-    const _pageIndex = pageIndex > 0 && pageIndex <= pageCount ? pageIndex : 1
-    const pageIndexStart = pageItemSize * (_pageIndex - 1)
+    const pageIndexStart = pageItemSize * pageIndex
     const viewPageItems = searchedAndSortedViewItems.slice(
       pageIndexStart,
       pageIndexStart + pageItemSize
@@ -52,7 +56,30 @@ export function useViewPage<CurationItem extends object>(
         ) : (
           <EmptyViewPageItem />
         ),
-      viewPageNavigationElement: null,
+      viewPageNavigationElement: (
+        <ViewPageNavigation
+          setPageIndexToPrevious={setPageIndexToPrevious}
+          setPageIndexToNext={setPageIndexToNext}
+          pageIndex={pageIndex}
+          pageCount={pageCount}
+        />
+      ),
     }
-  }, [viewState, curationItems, getItemSearchSpace, pageItemSize, ItemDisplay])
+  }, [
+    viewState,
+    curationItems,
+    getItemSearchSpace,
+    pageItemSize,
+    ItemDisplay,
+    setPageIndexToPrevious,
+    setPageIndexToNext,
+  ])
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    })
+    document.body.focus()
+  }, [viewPageResult.viewPageItemElements])
+  return viewPageResult
 }

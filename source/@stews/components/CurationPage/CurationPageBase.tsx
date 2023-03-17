@@ -74,11 +74,23 @@ export function CurationPageBase<
     pageIndex: 0,
   })
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
-    pageItemSize: 6,
     ItemDisplay,
     getItemSearchSpace,
     curationItems,
     viewState,
+    pageItemSize: 6,
+    setPageIndexToPrevious: () => {
+      setViewState((currentViewState) => ({
+        ...currentViewState,
+        pageIndex: currentViewState.pageIndex - 1,
+      }))
+    },
+    setPageIndexToNext: () => {
+      setViewState((currentViewState) => ({
+        ...currentViewState,
+        pageIndex: currentViewState.pageIndex + 1,
+      }))
+    },
   })
   return (
     <Page>
@@ -91,6 +103,7 @@ export function CurationPageBase<
               setViewState((currentViewState) => ({
                 ...currentViewState,
                 curationView: nextCurationView,
+                pageIndex: 0,
               }))
             }}
             {...customViewSelectProps}
@@ -109,6 +122,7 @@ export function CurationPageBase<
               setViewState((currentViewState) => ({
                 ...currentViewState,
                 viewSort: nextViewSort,
+                pageIndex: 0,
               }))
             }}
           />
@@ -121,12 +135,14 @@ export function CurationPageBase<
               setViewState((currentViewState) => ({
                 ...currentViewState,
                 viewSearch: nextViewSearch,
+                pageIndex: 0,
               }))
             }}
           />
         </div>
       </div>
       <div className={cssModule.viewPageItems}>{viewPageItemElements}</div>
+      {viewPageNavigationElement}
     </Page>
   )
 }

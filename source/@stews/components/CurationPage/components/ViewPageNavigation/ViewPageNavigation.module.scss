@@ -1,0 +1,34 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.navigationContainer {
+  @extend .rowContainer;
+  align-items: baseline;
+  padding-inline: 2 * $themeSpacer;
+  padding-block-start: $themeSpacer;
+  padding-block-end: 2 * $themeSpacer
+}
+
+.navigationMeterContainer {
+  @extend .itemContainer;
+  flex-grow: 1;
+}
+
+.navigationMeter {
+  @extend .navigationText;
+}
+
+.navigationButtonBase {
+  @extend .navigationText;
+  color: $themeButtonTextColor;
+}
+
+.disabledButtonOverride {
+  color: $themeDisabledColor;
+  cursor: default;
+}
+
+.navigationText {
+  font-size: 18px;
+  font-weight: 700;
+}
