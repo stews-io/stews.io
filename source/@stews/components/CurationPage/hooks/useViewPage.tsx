@@ -1,6 +1,6 @@
 import { throwInvalidPathError } from '@stews/helpers'
 import * as Liqe from 'liqe'
-import { useEffect, useMemo, useRef } from 'preact/hooks'
+import { useEffect, useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { EmptyViewPageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
@@ -81,40 +81,42 @@ export function useViewPage<CurationItem extends object>(
     setPageIndexToPrevious,
     setPageIndexToNext,
   ])
-  useEffect(() => {
-    const pageContentContainerElement = document.getElementById(
-      'pageContentContainer'
-    )
-    const pageTopElement = pageTopElementRef.current
-    if (
-      viewState.pageIndex === 0 &&
-      pageContentContainerElement instanceof HTMLDivElement
-    ) {
-      pageContentContainerElement.setAttribute('tabIndex', '-1')
-      pageContentContainerElement.focus({
-        preventScroll: true,
-      })
-      pageContentContainerElement.removeAttribute('tabIndex')
-      window.scrollTo({
-        behavior: 'auto',
-        top: 0,
-      })
-    } else if (
-      viewState.pageIndex > 0 &&
-      pageTopElement instanceof HTMLDivElement
-    ) {
-      pageTopElement.setAttribute('tabIndex', '-1')
-      pageTopElement.focus({
-        preventScroll: true,
-      })
-      pageTopElement.removeAttribute('tabIndex')
-      window.scrollTo({
-        behavior: 'auto',
-        top: 76,
-      })
-    } else {
-      throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
-    }
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      const pageContentContainerElement = document.getElementById(
+        'pageContentContainer'
+      )
+      const pageTopElement = pageTopElementRef.current
+      if (
+        viewState.pageIndex === 0 &&
+        pageContentContainerElement instanceof HTMLDivElement
+      ) {
+        pageContentContainerElement.setAttribute('tabIndex', '-1')
+        pageContentContainerElement.focus({
+          preventScroll: true,
+        })
+        pageContentContainerElement.removeAttribute('tabIndex')
+        window.scrollTo({
+          behavior: 'auto',
+          top: 0,
+        })
+      } else if (
+        viewState.pageIndex > 0 &&
+        pageTopElement instanceof HTMLDivElement
+      ) {
+        pageTopElement.setAttribute('tabIndex', '-1')
+        pageTopElement.focus({
+          preventScroll: true,
+        })
+        pageTopElement.removeAttribute('tabIndex')
+        window.scrollTo({
+          behavior: 'auto',
+          top: 76,
+        })
+      } else {
+        throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
+      }
+    })
   }, [viewState.pageIndex])
   return viewPageResult
 }
