@@ -36,6 +36,7 @@ interface MenuNavigationMenuOptionProps
     | 'onBlur'
     | 'onFocus'
     | 'onKeyDown'
+    | 'onPointerDown'
     | 'onClick'
   > {}
 
@@ -108,6 +109,7 @@ export function useSelectMenuNavigation(
         },
         onPointerMove: (somePointerMoveEvent) => {
           if (
+            somePointerMoveEvent.pointerType === 'mouse' &&
             latestFocusedOptionIndex !== optionIndex &&
             getPointerClientCoordinatesChanged({
               pointerClientCoordinatesRef,
@@ -117,7 +119,10 @@ export function useSelectMenuNavigation(
             const targetListItemElement = listItemsRef.current[optionIndex]
             if (targetListItemElement instanceof HTMLDivElement) {
               targetListItemElement.focus()
-              targetListItemElement.setAttribute('data-pointer-focus', 'true')
+              targetListItemElement.setAttribute(
+                'data-pointer-focus',
+                somePointerMoveEvent.pointerType
+              )
             } else {
               throwInvalidPathError(
                 'getMenuNavigationMenuOptionProps.onPointerMove'
@@ -141,9 +146,21 @@ export function useSelectMenuNavigation(
                 )
           }
         },
-        onClick: () => {
+        onPointerDown: (somePointerEvent) => {
+          if (somePointerEvent.currentTarget instanceof HTMLDivElement) {
+            somePointerEvent.currentTarget.setAttribute(
+              'data-pointer-focus',
+              somePointerEvent.pointerType
+            )
+          }
+        },
+        onClick: (someClickEvent) => {
           if (anchorElementRef.current instanceof HTMLDivElement) {
-            anchorElementRef.current.setAttribute('data-pointer-focus', 'true')
+            anchorElementRef.current.setAttribute(
+              'data-pointer-focus',
+              someClickEvent.currentTarget.getAttribute('data-pointer-focus') ||
+                'touch'
+            )
             anchorElementRef.current.focus()
           }
         },

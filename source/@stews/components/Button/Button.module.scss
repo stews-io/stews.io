@@ -10,7 +10,7 @@
   &:focus {
     @extend .themeFocusOutline;
 
-    &[data-pointer-focus="true"] {
+    &[data-pointer-focus]  {
       @extend .themeFocusWithoutOutline;
     }
   }

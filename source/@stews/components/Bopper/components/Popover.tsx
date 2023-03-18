@@ -63,13 +63,16 @@ export function Popover<CustomPopoverContentProps>(
   const initialFocusElementRef = useMemo(() => createRef<HTMLDivElement>(), [])
   useEffect(() => {
     const initialFocusElement = initialFocusElementRef.current
+    const anchorDataPointerFocus =
+      anchorElementRef.current?.getAttribute('data-pointer-focus')
     if (
       popoverOpen &&
       initialFocusElement instanceof HTMLDivElement &&
-      anchorElementRef.current?.hasAttribute('data-pointer-focus')
+      typeof anchorDataPointerFocus === 'string'
     ) {
       handlePopoverOpenWithPointer({
         initialFocusElement,
+        anchorDataPointerFocus,
       })
     } else if (popoverOpen && initialFocusElement instanceof HTMLDivElement) {
       handlePopoverOpen({
@@ -178,14 +181,16 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
   }
 }
 
-interface HandlePopoverOpenWithPointerApi extends HandlePopoverOpenApi {}
+interface HandlePopoverOpenWithPointerApi extends HandlePopoverOpenApi {
+  anchorDataPointerFocus: string
+}
 
 function handlePopoverOpenWithPointer(api: HandlePopoverOpenWithPointerApi) {
-  const { initialFocusElement } = api
+  const { initialFocusElement, anchorDataPointerFocus } = api
   handlePopoverOpen({
     initialFocusElement,
   })
-  initialFocusElement.setAttribute('data-pointer-focus', 'true')
+  initialFocusElement.setAttribute('data-pointer-focus', anchorDataPointerFocus)
 }
 
 interface HandlePopoverOpenApi {

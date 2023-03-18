@@ -36,7 +36,7 @@ export function Button(props: ButtonProps) {
         ) {
           someClickEvent.currentTarget.setAttribute(
             'data-pointer-focus',
-            'true'
+            'touch'
           )
         }
         onSelect()
@@ -56,7 +56,7 @@ export function Button(props: ButtonProps) {
         if (somePointerDownEvent.currentTarget instanceof HTMLDivElement) {
           somePointerDownEvent.currentTarget.setAttribute(
             'data-pointer-focus',
-            'true'
+            somePointerDownEvent.pointerType
           )
         }
         if (onPointerDown) {

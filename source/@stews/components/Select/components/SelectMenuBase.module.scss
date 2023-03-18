@@ -25,7 +25,7 @@ $optionLabelPaddingInline: 0.15em;
   &:focus {
     @extend .themeFocusWithoutOutline;
 
-    &:not([data-pointer-focus="true"]) .optionLabel {
+    &:not([data-pointer-focus]) .optionLabel {
       @extend .themeFocusOutline;
     }
   }
@@ -34,7 +34,7 @@ $optionLabelPaddingInline: 0.15em;
     margin-top: $themeSpacer;
   }
   
-  &.latestFocusedOption {
+  &.latestFocusedOption:not([data-pointer-focus="touch"]) {
     background-color: $themeTextBackgroundColor;
   }
 
