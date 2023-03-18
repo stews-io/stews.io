@@ -145,6 +145,7 @@ export function CurationPageBase<
         {viewPageItemElements}
       </div>
       {viewPageNavigationElement}
+      <div className={cssModule.pageFooterSpacer} />
     </Page>
   )
 }

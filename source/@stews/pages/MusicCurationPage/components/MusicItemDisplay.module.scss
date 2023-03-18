@@ -11,14 +11,16 @@
   flex-wrap: wrap;
 }
 
-.musicThumbnail {  
-  height: 160px;
+.musicThumbnail {
+  padding-bottom: calc(3 / 4) * $themeSpacer;
+  height: 160px;  
 }
 
 .musicLinks {
   @extend .columnContainer;
   flex-grow: 1;
   align-items: flex-end;
+  padding-inline-start: $themeSpacer;
 }
 
 .linkContainer {
@@ -34,8 +36,8 @@
 
 .itemInfoContainer {
   @extend .columnContainer;
-  padding-inline-start: calc(1 / 4) * $themeSpacer;
-  padding-block-start: calc(3 / 2) * $themeSpacer;
+  padding-inline-start: calc(1 / 3) * $themeSpacer;
+  padding-block-start: calc(3 / 4) * $themeSpacer;
 }
 
 .itemLabelList {

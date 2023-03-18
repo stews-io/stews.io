@@ -52,7 +52,7 @@ export function useViewPage<CurationItem extends object>(
     )
     return {
       viewPageItemElements: (
-        <Fragment key={`${Math.random()}`}>
+        <Fragment key={Math.random()}>
           <div ref={pageTopElementRef} />
           {viewPageItems.length > 0 ? (
             viewPageItems.map((someItem, pageItemIndex) => (

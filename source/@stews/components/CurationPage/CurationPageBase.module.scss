@@ -57,4 +57,10 @@
 .viewPageItemsContainer {
   @extend .columnContainer;
   padding: calc(3 / 2) * $themeSpacer;
+  padding-block-end: 0;
+}
+
+.pageFooterSpacer {
+  @extend .itemContainer;
+  padding-block-end: 2 * $themeSpacer;
 }
