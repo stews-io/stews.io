@@ -8,9 +8,7 @@
   background-color: $themeBackgroundColor;
 }
 
-.preventBodyScroll {
-  touch-action: none;
+.preventUnderscroll {
   -webkit-overflow-scrolling: none;
   overflow: hidden;
-  overscroll-behavior: none;
 }

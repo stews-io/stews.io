@@ -34,15 +34,7 @@ export function Popover<CustomPopoverContentProps>(
   } = props
   const popoverRef = useRef<HTMLDivElement>(null)
   const closePopover = useMemo(() => () => setPopoverOpen(false), [])
-  const pointerStateRef = useRef({
-    pointerWithin: true,
-  })
   useEffect(() => {
-    const windowScrollHandler = () => {
-      if (!pointerStateRef.current.pointerWithin) {
-        closePopover()
-      }
-    }
     const windowPointerDownHandler = (somePointerEvent: PointerEvent) => {
       const popoverElement = popoverRef.current
       if (popoverElement instanceof HTMLDivElement) {
@@ -61,32 +53,30 @@ export function Popover<CustomPopoverContentProps>(
     const windowResizeHandler = () => {
       closePopover()
     }
-    window.addEventListener('scroll', windowScrollHandler)
     window.addEventListener('pointerdown', windowPointerDownHandler)
     window.addEventListener('resize', windowResizeHandler)
     return () => {
-      window.removeEventListener('scroll', windowScrollHandler)
       window.removeEventListener('pointerdown', windowPointerDownHandler)
       window.removeEventListener('resize', windowResizeHandler)
     }
   }, [])
   const initialFocusElementRef = useMemo(() => createRef<HTMLDivElement>(), [])
   useEffect(() => {
+    const initialFocusElement = initialFocusElementRef.current
     if (
       popoverOpen &&
-      initialFocusElementRef.current instanceof HTMLDivElement &&
+      initialFocusElement instanceof HTMLDivElement &&
       anchorElementRef.current?.hasAttribute('data-pointer-focus')
     ) {
-      initialFocusElementRef.current.focus()
-      initialFocusElementRef.current.setAttribute('data-pointer-focus', 'true')
-    } else if (
-      popoverOpen &&
-      initialFocusElementRef.current instanceof HTMLDivElement
-    ) {
-      initialFocusElementRef.current.focus()
+      handlePopoverOpenWithPointer({
+        initialFocusElement,
+      })
+    } else if (popoverOpen && initialFocusElement instanceof HTMLDivElement) {
+      handlePopoverOpen({
+        initialFocusElement,
+      })
     } else if (popoverOpen === false) {
-      pointerStateRef.current.pointerWithin = false
-      document.body.classList.remove(cssModule.preventBodyScroll!)
+      handlePopoverClose()
     }
   }, [popoverOpen])
   const popoverNavigationItemBlurHandler = useMemo(
@@ -122,14 +112,6 @@ export function Popover<CustomPopoverContentProps>(
         popoverOpen,
       })}
       onBlur={popoverNavigationItemBlurHandler}
-      onPointerEnter={() => {
-        pointerStateRef.current.pointerWithin = true
-        document.body.classList.add(cssModule.preventBodyScroll!)
-      }}
-      onPointerLeave={() => {
-        pointerStateRef.current.pointerWithin = false
-        document.body.classList.remove(cssModule.preventBodyScroll!)
-      }}
       onKeyDown={(someKeyDownEvent) => {
         if (someKeyDownEvent.key === 'Escape') {
           anchorElementRef.current instanceof HTMLDivElement
@@ -194,4 +176,30 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
   } else {
     throwInvalidPathError('getPopoverLayoutStyle')
   }
+}
+
+interface HandlePopoverOpenWithPointerApi extends HandlePopoverOpenApi {}
+
+function handlePopoverOpenWithPointer(api: HandlePopoverOpenWithPointerApi) {
+  const { initialFocusElement } = api
+  handlePopoverOpen({
+    initialFocusElement,
+  })
+  initialFocusElement.setAttribute('data-pointer-focus', 'true')
+}
+
+interface HandlePopoverOpenApi {
+  initialFocusElement: NonNullable<
+    CorePopoverContentProps['anchorElementRef']['current']
+  >
+}
+
+function handlePopoverOpen(api: HandlePopoverOpenApi) {
+  const { initialFocusElement } = api
+  initialFocusElement.focus()
+  document.documentElement.classList.add(cssModule.preventUnderscroll!)
+}
+
+function handlePopoverClose() {
+  document.documentElement.classList.remove(cssModule.preventUnderscroll!)
 }
