@@ -36,7 +36,7 @@
 
 .itemInfoContainer {
   @extend .columnContainer;
-  padding-inline-start: calc(1 / 2) * $themeSpacer;
+  padding-inline-start: calc(2 / 5) * $themeSpacer;
   padding-block-start: calc(3 / 4) * $themeSpacer;
 }
 
