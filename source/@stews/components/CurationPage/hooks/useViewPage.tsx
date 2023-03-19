@@ -115,6 +115,6 @@ export function useViewPage<CurationItem extends object>(
     } else {
       throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
     }
-  }, [viewState.pageIndex])
+  }, [viewState.pageIndex, viewState.curationView])
   return viewPageResult
 }
