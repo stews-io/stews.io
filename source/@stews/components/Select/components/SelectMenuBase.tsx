@@ -1,4 +1,7 @@
-import { CorePopoverContentProps } from '@stews/components/Bopper'
+import {
+  CorePopoverContentProps,
+  CustomAnchorButtonBaseProps,
+} from '@stews/components/Bopper'
 import { Button } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
 import { FunctionComponent } from 'preact'
@@ -45,6 +48,7 @@ export interface SelectMenuBaseDataProps<
       SelectBaseConfigProps<
         MenuOption,
         OptionLabelKey,
+        CustomAnchorButtonBaseProps,
         CustomOptionActionItemProps,
         CustomMenuFooterProps
       >,

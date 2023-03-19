@@ -1,4 +1,4 @@
-import { CustomAnchorButtonProps } from '@stews/components/Bopper'
+import { CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
 import {
   SelectBase,
   SelectBaseConfigProps,
@@ -49,7 +49,7 @@ interface ViewSortSelectMenuProps<CurationItem extends object>
     SelectBaseConfigProps<
       ViewSortOption<CurationItem>,
       'sortLabel',
-      CustomAnchorButtonProps,
+      CustomAnchorButtonBaseProps,
       null,
       null
     >['SelectMenu']

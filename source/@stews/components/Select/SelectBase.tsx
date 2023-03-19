@@ -1,4 +1,4 @@
-import { Bopper, CustomAnchorButtonProps } from '@stews/components/Bopper'
+import { Bopper, CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
@@ -6,7 +6,7 @@ import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
 interface SelectBaseProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends SelectBaseDataProps<MenuOption>,
@@ -27,7 +27,7 @@ export interface SelectBaseDataProps<MenuOption extends object> {
 export interface SelectBaseConfigProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > {
@@ -56,14 +56,14 @@ export type VerifiedOptionLabelKey<MenuOption extends object> = {
 export function SelectBase<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
+  CustomAnchorButtonProps extends CustomAnchorButtonBaseProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(
   props: SelectBaseProps<
     MenuOption,
     OptionLabelKey,
-    CustomSelectAnchorButtonProps,
+    CustomAnchorButtonProps,
     CustomOptionActionItemProps,
     CustomMenuFooterProps
   >

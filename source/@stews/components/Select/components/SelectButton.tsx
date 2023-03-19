@@ -1,7 +1,7 @@
 import {
-  AnchorButton,
-  CoreAnchorButtonProps,
-  CustomAnchorButtonProps,
+  AnchorButtonBase,
+  CoreAnchorButtonBaseProps,
+  CustomAnchorButtonBaseProps,
 } from '@stews/components/Bopper'
 import { getCssClass } from '@stews/helpers'
 import {
@@ -15,8 +15,8 @@ import cssModule from './SelectButton.module.scss'
 export interface SelectButtonProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps
-> extends CoreAnchorButtonProps,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps
+> extends CoreAnchorButtonBaseProps,
     Pick<SelectBaseDataProps<MenuOption>, 'selectedOption'>,
     Pick<
       SelectBaseConfigProps<
@@ -35,7 +35,7 @@ export interface SelectButtonProps<
 export function SelectButton<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps
 >(
   props: SelectButtonProps<
     MenuOption,
@@ -60,7 +60,7 @@ export function SelectButton<
         [fontSizeClassName, Boolean(fontSizeClassName)]
       )}
     >
-      <AnchorButton
+      <AnchorButtonBase
         {...customSelectAnchorButtonProps}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
@@ -83,7 +83,7 @@ export function SelectButton<
             />
           </svg>
         </div>
-      </AnchorButton>
+      </AnchorButtonBase>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { CoreAnchorButtonProps } from '@stews/components/Bopper'
+import { CoreAnchorButtonBaseProps } from '@stews/components/Bopper'
 import {
   ProfileButtonBase,
   ProfileIconBase,
@@ -22,7 +22,7 @@ export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
   )
 }
 
-interface CuratorProfileButtonProps extends CoreAnchorButtonProps {}
+interface CuratorProfileButtonProps extends CoreAnchorButtonBaseProps {}
 
 function CuratorProfileButton(props: CuratorProfileButtonProps) {
   return <ProfileButtonBase ProfileIcon={CuratorProfileIcon} {...props} />

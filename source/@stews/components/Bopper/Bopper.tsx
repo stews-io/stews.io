@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'preact'
 import { useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
-import { AnchorButtonProps } from './components/AnchorButton'
+import { CoreAnchorButtonBaseProps } from './components/AnchorButtonBase'
 import { Popover, PopoverProps } from './components/Popover'
 
 export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
@@ -12,6 +12,9 @@ export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
   customAnchorButtonProps: CustomAnchorButtonProps
   AnchorButton: FunctionComponent<AnchorButtonProps<CustomAnchorButtonProps>>
 }
+
+type AnchorButtonProps<CustomAnchorButtonProps> = CoreAnchorButtonBaseProps &
+  CustomAnchorButtonProps
 
 export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   props: BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>

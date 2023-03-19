@@ -1,3 +1,4 @@
+import { CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
 import { throwInvalidPathError } from '@stews/helpers'
 import { Fragment } from 'preact/jsx-runtime'
 import { SelectBaseConfigProps, VerifiedOptionLabelKey } from '../SelectBase'
@@ -6,7 +7,13 @@ export interface SelectMenuOptionLabelProps<
   SelectOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<SelectOption>
 > extends Pick<
-    SelectBaseConfigProps<SelectOption, OptionLabelKey, unknown, unknown>,
+    SelectBaseConfigProps<
+      SelectOption,
+      OptionLabelKey,
+      CustomAnchorButtonBaseProps,
+      unknown,
+      unknown
+    >,
     'optionLabelKey'
   > {
   someSelectOption: SelectOption

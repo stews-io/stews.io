@@ -1,9 +1,12 @@
-import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
+import {
+  AnchorButtonBase,
+  CoreAnchorButtonBaseProps,
+} from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import cssModule from './ProfileButtonBase.module.scss'
 
 export interface ProfileButtonBaseProps
-  extends CoreAnchorButtonProps,
+  extends CoreAnchorButtonBaseProps,
     ProfileButtonBaseConfigProps {}
 
 interface ProfileButtonBaseConfigProps {
@@ -13,12 +16,12 @@ interface ProfileButtonBaseConfigProps {
 export function ProfileButtonBase(props: ProfileButtonBaseProps) {
   const { anchorElementRef, setPopoverOpen, ProfileIcon } = props
   return (
-    <AnchorButton
+    <AnchorButtonBase
       anchorElementRef={anchorElementRef}
       setPopoverOpen={setPopoverOpen}
     >
       <ProfileIcon />
-    </AnchorButton>
+    </AnchorButtonBase>
   )
 }
 
