@@ -1,4 +1,4 @@
-import { Bopper } from '@stews/components/Bopper'
+import { Bopper, CustomAnchorButtonProps } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
@@ -6,12 +6,14 @@ import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
 interface SelectBaseProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > extends SelectBaseDataProps<MenuOption>,
     SelectBaseConfigProps<
       MenuOption,
       OptionLabelKey,
+      CustomSelectAnchorButtonProps,
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     > {}
@@ -25,12 +27,14 @@ export interface SelectBaseDataProps<MenuOption extends object> {
 export interface SelectBaseConfigProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 > {
   anchorBorderClassName?: string
   fontSizeClassName?: string
   optionLabelKey: OptionLabelKey
+  customSelectAnchorButtonProps: CustomSelectAnchorButtonProps
   customOptionActionItemProps: CustomOptionActionItemProps
   customMenuFooterProps: CustomMenuFooterProps
   SelectMenu: FunctionComponent<
@@ -52,18 +56,21 @@ export type VerifiedOptionLabelKey<MenuOption extends object> = {
 export function SelectBase<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
 >(
   props: SelectBaseProps<
     MenuOption,
     OptionLabelKey,
+    CustomSelectAnchorButtonProps,
     CustomOptionActionItemProps,
     CustomMenuFooterProps
   >
 ) {
   const {
     SelectMenu,
+    customSelectAnchorButtonProps,
     anchorBorderClassName,
     fontSizeClassName,
     selectedOption,
@@ -78,6 +85,7 @@ export function SelectBase<
       AnchorButton={SelectButton}
       PopoverContent={SelectMenu}
       customAnchorButtonProps={{
+        customSelectAnchorButtonProps,
         anchorBorderClassName,
         fontSizeClassName,
         selectedOption,

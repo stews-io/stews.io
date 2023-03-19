@@ -1,3 +1,4 @@
+import { CustomAnchorButtonProps } from '@stews/components/Bopper'
 import {
   SelectBase,
   SelectBaseConfigProps,
@@ -24,6 +25,19 @@ export function ViewSortSelect<CurationItem extends object>(
       optionList={optionList}
       selectedOption={selectedOption}
       selectOption={selectOption}
+      customSelectAnchorButtonProps={{
+        onFocus: (someFocusEvent) => {
+          if (
+            !someFocusEvent.currentTarget.hasAttribute('data-pointer-focus') &&
+            someFocusEvent.currentTarget.getBoundingClientRect().top < 59
+          ) {
+            window.scrollTo({
+              behavior: 'smooth',
+              top: 0,
+            })
+          }
+        },
+      }}
       customOptionActionItemProps={null}
       customMenuFooterProps={null}
     />
@@ -35,6 +49,7 @@ interface ViewSortSelectMenuProps<CurationItem extends object>
     SelectBaseConfigProps<
       ViewSortOption<CurationItem>,
       'sortLabel',
+      CustomAnchorButtonProps,
       null,
       null
     >['SelectMenu']

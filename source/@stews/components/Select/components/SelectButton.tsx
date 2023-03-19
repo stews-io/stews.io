@@ -1,4 +1,8 @@
-import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Bopper'
+import {
+  AnchorButton,
+  CoreAnchorButtonProps,
+  CustomAnchorButtonProps,
+} from '@stews/components/Bopper'
 import { getCssClass } from '@stews/helpers'
 import {
   SelectBaseConfigProps,
@@ -10,21 +14,39 @@ import cssModule from './SelectButton.module.scss'
 
 export interface SelectButtonProps<
   MenuOption extends object,
-  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps
 > extends CoreAnchorButtonProps,
     Pick<SelectBaseDataProps<MenuOption>, 'selectedOption'>,
     Pick<
-      SelectBaseConfigProps<MenuOption, OptionLabelKey, unknown, unknown>,
-      'optionLabelKey' | 'anchorBorderClassName' | 'fontSizeClassName'
+      SelectBaseConfigProps<
+        MenuOption,
+        OptionLabelKey,
+        CustomSelectAnchorButtonProps,
+        unknown,
+        unknown
+      >,
+      | 'optionLabelKey'
+      | 'anchorBorderClassName'
+      | 'fontSizeClassName'
+      | 'customSelectAnchorButtonProps'
     > {}
 
 export function SelectButton<
   MenuOption extends object,
-  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>
->(props: SelectButtonProps<MenuOption, OptionLabelKey>) {
+  OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps
+>(
+  props: SelectButtonProps<
+    MenuOption,
+    OptionLabelKey,
+    CustomSelectAnchorButtonProps
+  >
+) {
   const {
     anchorBorderClassName,
     fontSizeClassName,
+    customSelectAnchorButtonProps,
     anchorElementRef,
     setPopoverOpen,
     selectedOption,
@@ -39,9 +61,13 @@ export function SelectButton<
       )}
     >
       <AnchorButton
-        className={cssModule.selectButton}
+        {...customSelectAnchorButtonProps}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
+        className={getCssClass(cssModule.selectButton, [
+          customSelectAnchorButtonProps.className,
+          Boolean(customSelectAnchorButtonProps.className),
+        ])}
       >
         <div className={cssModule.buttonLabel}>
           <SelectOptionLabel

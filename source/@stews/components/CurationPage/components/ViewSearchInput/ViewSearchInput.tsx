@@ -18,6 +18,14 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
         placeholder={'search music'}
         value={value}
         onInput={onInput}
+        onFocus={(someFocusEvent) => {
+          if (someFocusEvent.currentTarget.getBoundingClientRect().top < 62) {
+            window.scrollTo({
+              behavior: 'smooth',
+              top: 0,
+            })
+          }
+        }}
       />
     </div>
   )

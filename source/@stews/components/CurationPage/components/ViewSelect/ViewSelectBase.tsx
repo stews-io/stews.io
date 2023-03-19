@@ -1,3 +1,4 @@
+import { CustomAnchorButtonProps } from '@stews/components/Bopper'
 import {
   SelectBase,
   SelectBaseConfigProps,
@@ -25,6 +26,7 @@ export interface ViewSelectBaseConfigProps<
     SelectBaseConfigProps<
       CurationView,
       'viewLabel',
+      Omit<CustomAnchorButtonProps, keyof CustomAnchorButtonProps>,
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     >,
@@ -56,6 +58,7 @@ export function ViewSelectBase<
       selectOption={selectOption}
       customOptionActionItemProps={customOptionActionItemProps}
       customMenuFooterProps={customMenuFooterProps}
+      customSelectAnchorButtonProps={{}}
     />
   )
 }
