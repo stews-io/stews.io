@@ -50,16 +50,11 @@ export function Popover<CustomPopoverContentProps>(
         }
       }
     }
-    const windowResizeHandler = () => {
-      closePopover()
-    }
     window.addEventListener('pointerdown', windowPointerDownHandler)
-    window.addEventListener('resize', windowResizeHandler)
     return () => {
       window.removeEventListener('pointerdown', windowPointerDownHandler)
-      window.removeEventListener('resize', windowResizeHandler)
     }
-  }, [])
+  }, [popoverOpen])
   const initialFocusElementRef = useMemo(() => createRef<HTMLDivElement>(), [])
   useEffect(() => {
     const initialFocusElement = initialFocusElementRef.current
@@ -203,8 +198,10 @@ function handlePopoverOpen(api: HandlePopoverOpenApi) {
   const { initialFocusElement } = api
   initialFocusElement.focus()
   document.documentElement.classList.add(cssModule.preventUnderscroll!)
+  document.body.classList.add(cssModule.preventUnderscroll!)
 }
 
 function handlePopoverClose() {
   document.documentElement.classList.remove(cssModule.preventUnderscroll!)
+  document.body.classList.remove(cssModule.preventUnderscroll!)
 }
