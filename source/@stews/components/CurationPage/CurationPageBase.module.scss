@@ -1,14 +1,16 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
-// we use a negative margin-top here and
-// related adjustments (-4px|4px) for hiding a 
-// sliver of underscroll content. -1px would 
-// probably suffice 
+// unable to use "position: sticky" here because
+// their is/was a jitter/flicker bug when managing
+// viewState.pageIndex change scrolling
 .pageHeaderContainer {
   @extend .rowContainer;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  margin-top: 4px;
+  top: -4px;
+  left: var(--pageContentLeft);
+  width: var(--pageContentWidth);
   padding: calc(3 / 2) * $themeSpacer;
   padding-block-start: calc(3 / 2) * $themeSpacer;
   background-color: $themeBackgroundColor;
@@ -31,9 +33,9 @@
 // "position: fixed" hack in .pageHeader
 .viewHeaderContainer {
   @extend .columnContainer;
-  margin-top: -58px;
+  margin-top: 58px;
   padding-inline: calc(3 / 2) * $themeSpacer;
-  padding-block-start: calc(1 / 2) * $themeSpacer + 58px;
+  padding-block-start: calc(1 / 2) * $themeSpacer;
   padding-block-end: calc(3 / 2) * $themeSpacer;  
 }
 

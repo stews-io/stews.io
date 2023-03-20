@@ -33,28 +33,35 @@ export function Popover<CustomPopoverContentProps>(
     customPopoverContentProps,
   } = props
   const popoverRef = useRef<HTMLDivElement>(null)
-  const closePopover = useMemo(() => () => setPopoverOpen(false), [])
-  useEffect(() => {
-    const windowPointerDownHandler = (somePointerEvent: PointerEvent) => {
-      const popoverElement = popoverRef.current
-      if (popoverElement instanceof HTMLDivElement) {
-        const popoverClientRect = popoverElement.getBoundingClientRect()
-        const pointerWithinPopover =
-          popoverClientRect &&
-          somePointerEvent.clientX >= popoverClientRect.left &&
-          somePointerEvent.clientX <= popoverClientRect.right &&
-          somePointerEvent.clientY >= popoverClientRect.top &&
-          somePointerEvent.clientY <= popoverClientRect.bottom
-        if (!pointerWithinPopover) {
-          closePopover()
-        }
+  const { closePopover, windowScrollHandler, windowPointerDownHandler } =
+    useMemo(() => {
+      const closePopover = () => {
+        setPopoverOpen(false)
       }
-    }
-    window.addEventListener('pointerdown', windowPointerDownHandler)
-    return () => {
-      window.removeEventListener('pointerdown', windowPointerDownHandler)
-    }
-  }, [popoverOpen])
+      return {
+        closePopover,
+        // needed for when the footer is collapsed on ios
+        // css is unable to block the underscroll in that case
+        windowScrollHandler: () => {
+          closePopover()
+        },
+        windowPointerDownHandler: (somePointerEvent: PointerEvent) => {
+          const popoverElement = popoverRef.current
+          if (popoverElement instanceof HTMLDivElement) {
+            const popoverClientRect = popoverElement.getBoundingClientRect()
+            const pointerWithinPopover =
+              popoverClientRect &&
+              somePointerEvent.clientX >= popoverClientRect.left &&
+              somePointerEvent.clientX <= popoverClientRect.right &&
+              somePointerEvent.clientY >= popoverClientRect.top &&
+              somePointerEvent.clientY <= popoverClientRect.bottom
+            if (!pointerWithinPopover) {
+              closePopover()
+            }
+          }
+        },
+      }
+    }, [])
   const initialFocusElementRef = useMemo(() => createRef<HTMLDivElement>(), [])
   useEffect(() => {
     const initialFocusElement = initialFocusElementRef.current
@@ -67,14 +74,21 @@ export function Popover<CustomPopoverContentProps>(
     ) {
       handlePopoverOpenWithPointer({
         initialFocusElement,
+        windowScrollHandler,
+        windowPointerDownHandler,
         anchorDataPointerFocus,
       })
     } else if (popoverOpen && initialFocusElement instanceof HTMLDivElement) {
       handlePopoverOpen({
         initialFocusElement,
+        windowScrollHandler,
+        windowPointerDownHandler,
       })
     } else if (popoverOpen === false) {
-      handlePopoverClose()
+      handlePopoverClose({
+        windowScrollHandler,
+        windowPointerDownHandler,
+      })
     }
   }, [popoverOpen])
   const popoverNavigationItemBlurHandler = useMemo(
@@ -181,27 +195,47 @@ interface HandlePopoverOpenWithPointerApi extends HandlePopoverOpenApi {
 }
 
 function handlePopoverOpenWithPointer(api: HandlePopoverOpenWithPointerApi) {
-  const { initialFocusElement, anchorDataPointerFocus } = api
+  const {
+    initialFocusElement,
+    windowPointerDownHandler,
+    windowScrollHandler,
+    anchorDataPointerFocus,
+  } = api
   handlePopoverOpen({
     initialFocusElement,
+    windowPointerDownHandler,
+    windowScrollHandler,
   })
   initialFocusElement.setAttribute('data-pointer-focus', anchorDataPointerFocus)
 }
 
-interface HandlePopoverOpenApi {
+interface HandlePopoverOpenApi extends PopoverWindowEventHandlingApi {
   initialFocusElement: NonNullable<
     CorePopoverContentProps['anchorElementRef']['current']
   >
 }
 
 function handlePopoverOpen(api: HandlePopoverOpenApi) {
-  const { initialFocusElement } = api
+  const { initialFocusElement, windowPointerDownHandler, windowScrollHandler } =
+    api
   initialFocusElement.focus()
   document.documentElement.classList.add(cssModule.preventUnderscroll!)
   document.body.classList.add(cssModule.preventUnderscroll!)
+  window.addEventListener('pointerdown', windowPointerDownHandler)
+  window.addEventListener('scroll', windowScrollHandler, { capture: true })
 }
 
-function handlePopoverClose() {
+interface HandlePopoverCloseApi extends PopoverWindowEventHandlingApi {}
+
+function handlePopoverClose(api: HandlePopoverCloseApi) {
+  const { windowPointerDownHandler, windowScrollHandler } = api
   document.documentElement.classList.remove(cssModule.preventUnderscroll!)
   document.body.classList.remove(cssModule.preventUnderscroll!)
+  window.removeEventListener('pointerdown', windowPointerDownHandler)
+  window.removeEventListener('scroll', windowScrollHandler)
+}
+
+interface PopoverWindowEventHandlingApi {
+  windowPointerDownHandler: (somePointerEvent: PointerEvent) => void
+  windowScrollHandler: () => void
 }
