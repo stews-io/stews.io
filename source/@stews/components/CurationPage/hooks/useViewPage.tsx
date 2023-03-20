@@ -110,7 +110,7 @@ export function useViewPage<CurationItem extends object>(
       pageTopElement.removeAttribute('tabIndex')
       window.scrollTo({
         behavior: 'auto',
-        top: 0,
+        top: 78,
       })
     } else {
       throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
