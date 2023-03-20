@@ -42,8 +42,10 @@ export function Popover<CustomPopoverContentProps>(
         closePopover,
         // needed for when the footer is collapsed on ios
         // css is unable to block the underscroll in that case
-        windowScrollHandler: () => {
-          closePopover()
+        windowScrollHandler: (someScrollEvent: Event) => {
+          if (someScrollEvent.target === document) {
+            closePopover()
+          }
         },
         windowPointerDownHandler: (somePointerEvent: PointerEvent) => {
           const popoverElement = popoverRef.current
@@ -237,5 +239,5 @@ function handlePopoverClose(api: HandlePopoverCloseApi) {
 
 interface PopoverWindowEventHandlingApi {
   windowPointerDownHandler: (somePointerEvent: PointerEvent) => void
-  windowScrollHandler: () => void
+  windowScrollHandler: (someScrollEvent: Event) => void
 }
