@@ -21,10 +21,10 @@
   margin-bottom: 57px;
 
   & .pageHeader {
-    position: fixed;
-    top: -8px;
+    position: fixed;    
+    top: -2px;
+    border-top: solid 2px $themeBackgroundColor;
     width: var(--page-header-width);
-    padding-block-start: calc(3 / 2) * $themeSpacer + 8px;
   }
 }
 
