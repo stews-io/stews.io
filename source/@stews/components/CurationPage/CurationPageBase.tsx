@@ -8,13 +8,14 @@ import {
   ViewSelectBaseDataProps,
   ViewSortSelect,
 } from './components'
-import cssModule from './CurationPageBase.module.scss'
 import {
+  useStickyPageHeaderWorkaround,
+  useViewPage,
   useViewSortOptions,
   ViewSortOption,
   ViewSortOptionConfig,
 } from './hooks'
-import { useViewPage } from './hooks/useViewPage'
+import cssModule from './CurationPageBase.module.scss'
 
 interface CurationPageBaseProps<
   CurationItem extends object,
@@ -92,25 +93,31 @@ export function CurationPageBase<
       }))
     },
   })
+  const { pageHeaderContainerRef } = useStickyPageHeaderWorkaround()
   return (
     <Page>
-      <div className={cssModule.pageHeaderContainer}>
-        <div className={cssModule.viewSelectContainer}>
-          <ViewSelect
-            optionList={curationViews}
-            selectedOption={viewState.curationView}
-            selectOption={(nextCurationView) => {
-              setViewState((currentViewState) => ({
-                ...currentViewState,
-                curationView: nextCurationView,
-                pageIndex: 0,
-              }))
-            }}
-            {...customViewSelectProps}
-          />
-        </div>
-        <div className={cssModule.actionContainer}>
-          <ProfileBopper curatorInfo={curatorInfo} />
+      <div
+        ref={pageHeaderContainerRef}
+        className={cssModule.pageHeaderContainer}
+      >
+        <div className={cssModule.pageHeader}>
+          <div className={cssModule.viewSelectContainer}>
+            <ViewSelect
+              optionList={curationViews}
+              selectedOption={viewState.curationView}
+              selectOption={(nextCurationView) => {
+                setViewState((currentViewState) => ({
+                  ...currentViewState,
+                  curationView: nextCurationView,
+                  pageIndex: 0,
+                }))
+              }}
+              {...customViewSelectProps}
+            />
+          </div>
+          <div className={cssModule.actionContainer}>
+            <ProfileBopper curatorInfo={curatorInfo} />
+          </div>
         </div>
       </div>
       <div className={cssModule.viewHeaderContainer}>

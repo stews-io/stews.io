@@ -4,9 +4,8 @@
 .navigationContainer {
   @extend .rowContainer;
   align-items: baseline;
-  padding-inline: 2 * $themeSpacer;
-  padding-block-start: $themeSpacer;
-  padding-block-end: 2 * $themeSpacer
+  padding-inline: calc(3 / 2) * $themeSpacer;
+  padding-block: $themeSpacer;
 }
 
 .navigationMeterContainer {
