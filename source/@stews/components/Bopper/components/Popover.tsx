@@ -43,7 +43,11 @@ export function Popover<CustomPopoverContentProps>(
         // needed for when the footer is collapsed on ios
         // css is unable to block the underscroll in that case
         windowScrollHandler: (someScrollEvent: Event) => {
-          if (someScrollEvent.target === document) {
+          if (
+            someScrollEvent.target === document &&
+            // handle ios bug where footer is collapsed and scrollbar is at the bottom
+            window.innerHeight + window.scrollY !== document.body.offsetHeight
+          ) {
             closePopover()
           }
         },
@@ -91,6 +95,8 @@ export function Popover<CustomPopoverContentProps>(
         windowScrollHandler,
         windowPointerDownHandler,
       })
+    } else {
+      throwInvalidPathError('Popover.useEffect[popoverOpen]')
     }
   }, [popoverOpen])
   const popoverNavigationItemBlurHandler = useMemo(
@@ -224,7 +230,9 @@ function handlePopoverOpen(api: HandlePopoverOpenApi) {
   document.documentElement.classList.add(cssModule.preventUnderscroll!)
   document.body.classList.add(cssModule.preventUnderscroll!)
   window.addEventListener('pointerdown', windowPointerDownHandler)
-  window.addEventListener('scroll', windowScrollHandler, { capture: true })
+  window.addEventListener('scroll', windowScrollHandler, {
+    capture: true,
+  })
 }
 
 interface HandlePopoverCloseApi extends PopoverWindowEventHandlingApi {}
@@ -234,7 +242,9 @@ function handlePopoverClose(api: HandlePopoverCloseApi) {
   document.documentElement.classList.remove(cssModule.preventUnderscroll!)
   document.body.classList.remove(cssModule.preventUnderscroll!)
   window.removeEventListener('pointerdown', windowPointerDownHandler)
-  window.removeEventListener('scroll', windowScrollHandler)
+  window.removeEventListener('scroll', windowScrollHandler, {
+    capture: true,
+  })
 }
 
 interface PopoverWindowEventHandlingApi {

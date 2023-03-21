@@ -22,8 +22,7 @@
 
   & .pageHeader {
     position: fixed;    
-    top: -2px;
-    border-top: solid 2px $themeBackgroundColor;
+    top: 0;
     width: var(--page-header-width);
   }
 }
