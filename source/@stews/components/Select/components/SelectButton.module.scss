@@ -1,5 +1,7 @@
+@use "sass:math";
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
+
 
 .buttonContainer {
   @extend .columnContainer;
@@ -12,12 +14,13 @@
 .selectButton {
   @extend .rowContainer;
   align-items: center;
-  padding-inline: calc(1 / 2) * $themeSpacer;
+  padding-inline-start: calc(1 / 2) * $themeSpacer;
+  padding-inline-end: calc(2 / 3) * $themeSpacer;
 }
 
 .buttonLabel {
   @extend .textEllipsis;
-  padding-inline-end: calc(5 / 4) * $themeSpacer;
+  padding-inline-end: calc(5 / 3) * $themeSpacer;
   font-weight: 700;
   font-style: italic;
 }
@@ -27,13 +30,13 @@
 }
 
 .selectIcon {
-  width: 0.675em;
-  height: 0.675em;
+  width: 0.725em;
+  height: 0.725em;
 }
 
 .dropdownPolygon {
   stroke: black;
-  stroke-width: 0.1;
+  stroke-width: 0.09;
   stroke-linejoin: round;
   fill: transparent;
 }

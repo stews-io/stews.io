@@ -108,9 +108,10 @@ export function useViewPage<CurationItem extends object>(
         preventScroll: true,
       })
       pageTopElement.removeAttribute('tabIndex')
+      const approximateViewHeaderDocumentBottomPlusSome = 88
       window.scrollTo({
         behavior: 'auto',
-        top: 88,
+        top: approximateViewHeaderDocumentBottomPlusSome,
       })
     } else {
       throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')

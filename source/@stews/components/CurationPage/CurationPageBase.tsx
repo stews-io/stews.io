@@ -145,6 +145,13 @@ export function CurationPageBase<
                 pageIndex: 0,
               }))
             }}
+            resetValue={() => {
+              setViewState((currentViewState) => ({
+                ...currentViewState,
+                viewSearch: '',
+                pageIndex: 0,
+              }))
+            }}
           />
         </div>
       </div>

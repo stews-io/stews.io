@@ -1,7 +1,7 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
-$optionLabelPaddingInline: 0.15em;
+$optionLabelPaddingInline: 0.2em;
 
 .menuContainer {
   @extend .columnContainer;
@@ -12,7 +12,7 @@ $optionLabelPaddingInline: 0.15em;
 
 .optionList {
   @extend .columnContainer;
-  max-height: 244px;
+  max-height: 248px;
   overflow-y: scroll;  
 }
 
@@ -31,7 +31,7 @@ $optionLabelPaddingInline: 0.15em;
   }
 
   &:not(:first-child) {
-    margin-top: $themeSpacer;
+    margin-top: calc(3 / 4) * $themeSpacer;
   }
   
   &.latestFocusedOption:not([data-pointer-focus="touch"]) {

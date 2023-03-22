@@ -81,9 +81,17 @@ interface LinkButtonProps {
 }
 
 function LinkButton(props: LinkButtonProps) {
-  const { linkLabel } = props
+  const { linkLabel, linkHref } = props
   return (
-    <Button className={cssModule.linkButton} onSelect={() => {}}>
+    <Button
+      className={cssModule.linkButton}
+      onSelect={() => {
+        const targetAnchorElement = document.createElement('a')
+        targetAnchorElement.href = linkHref
+        targetAnchorElement.setAttribute('target', '_blank')
+        targetAnchorElement.click()
+      }}
+    >
       {linkLabel}
     </Button>
   )

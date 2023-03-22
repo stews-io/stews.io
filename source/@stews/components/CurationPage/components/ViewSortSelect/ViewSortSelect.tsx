@@ -27,9 +27,11 @@ export function ViewSortSelect<CurationItem extends object>(
       selectOption={selectOption}
       customSelectAnchorButtonProps={{
         onFocus: (someFocusEvent) => {
+          const approximateViewSortSelectDocumentTop = 59
           if (
             !someFocusEvent.currentTarget.hasAttribute('data-pointer-focus') &&
-            someFocusEvent.currentTarget.getBoundingClientRect().top < 59
+            someFocusEvent.currentTarget.getBoundingClientRect().top <
+              approximateViewSortSelectDocumentTop
           ) {
             window.scrollTo({
               behavior: 'smooth',

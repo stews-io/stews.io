@@ -31,7 +31,8 @@ $themeBoxShadowOutline: 0 0 0 $themeOutlineWidth $themeOutlineColor;
 
 .defaultFont {
   font-family: 'Red Hat Mono', monospace;
-  line-height: 1.3;
+  // ios seems to put a floor on input line-height at 1.4
+  line-height: 1.4;
   color: black;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;

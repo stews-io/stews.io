@@ -1,11 +1,15 @@
 import { ComponentProps } from 'preact'
-import { useLayoutEffect } from 'preact/hooks'
+import { useEffect, useLayoutEffect } from 'preact/hooks'
 import cssModule from './Page.module.scss'
 
 export interface PageProps extends Pick<ComponentProps<'div'>, 'children'> {}
 
 export function Page(props: PageProps) {
   const { children } = props
+  useEffect(() => {
+    // enable unfocusing buttons, inputs, .etc
+    document.body.setAttribute('tabIndex', '-1')
+  }, [])
   return (
     <div className={cssModule.pageContainer}>
       <div

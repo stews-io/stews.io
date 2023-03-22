@@ -50,6 +50,7 @@
 .viewSortSelectContainer {
   @extend .rowContainer;
   flex-direction: row-reverse;
+  margin-bottom: calc(1 / 2) * $themeSpacer;
 }
 
 .viewSearchInputContainer {
