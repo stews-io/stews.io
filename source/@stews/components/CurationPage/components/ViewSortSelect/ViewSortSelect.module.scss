@@ -7,3 +7,10 @@
 .viewSortSelectFontSize {
   font-size: 18px;
 }
+
+.viewSortSelectIcon {
+  width: 0.725em;
+  height: 0.725em;
+  padding-inline-start: calc(1 / 4) * $themeSpacer;
+  padding-inline-end: calc(1 / 6) * $themeSpacer;
+}

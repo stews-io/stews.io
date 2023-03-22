@@ -19,6 +19,7 @@
   @extend .defaultFont;
   font-size: inherit;
   font-weight: 700;
+  font-style: italic;
   width: 0;
   flex-grow: 1;  
   padding-inline-end: calc(5 / 4) * $themeSpacer;

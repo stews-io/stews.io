@@ -33,6 +33,7 @@ export interface SelectBaseConfigProps<
 > {
   anchorBorderClassName?: string
   fontSizeClassName?: string
+  selectIconClassName?: string
   optionLabelKey: OptionLabelKey
   customSelectAnchorButtonProps: CustomSelectAnchorButtonProps
   customOptionActionItemProps: CustomOptionActionItemProps
@@ -73,6 +74,7 @@ export function SelectBase<
     customSelectAnchorButtonProps,
     anchorBorderClassName,
     fontSizeClassName,
+    selectIconClassName,
     selectedOption,
     optionLabelKey,
     selectOption,
@@ -88,6 +90,7 @@ export function SelectBase<
         customSelectAnchorButtonProps,
         anchorBorderClassName,
         fontSizeClassName,
+        selectIconClassName,
         selectedOption,
         optionLabelKey,
       }}

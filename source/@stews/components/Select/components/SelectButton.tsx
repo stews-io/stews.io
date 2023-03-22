@@ -29,6 +29,7 @@ export interface SelectButtonProps<
       | 'optionLabelKey'
       | 'anchorBorderClassName'
       | 'fontSizeClassName'
+      | 'selectIconClassName'
       | 'customSelectAnchorButtonProps'
     > {}
 
@@ -51,6 +52,7 @@ export function SelectButton<
     setPopoverOpen,
     selectedOption,
     optionLabelKey,
+    selectIconClassName,
   } = props
   return (
     <div
@@ -76,7 +78,13 @@ export function SelectButton<
           />
         </div>
         <div className={cssModule.iconContainer}>
-          <svg className={cssModule.selectIcon} viewBox={'0 0 1 1'}>
+          <svg
+            viewBox={'0 0 1 1'}
+            className={getCssClass(cssModule.selectIcon, [
+              selectIconClassName,
+              Boolean(selectIconClassName),
+            ])}
+          >
             <polygon
               className={cssModule.dropdownPolygon}
               points={'0.2,0.375 0.8,0.375 0.5,0.775'}

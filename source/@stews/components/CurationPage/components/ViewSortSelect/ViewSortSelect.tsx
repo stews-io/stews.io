@@ -20,6 +20,7 @@ export function ViewSortSelect<CurationItem extends object>(
     <SelectBase
       anchorBorderClassName={cssModule.viewSortSelectAnchorBorder}
       fontSizeClassName={cssModule.viewSortSelectFontSize}
+      selectIconClassName={cssModule.viewSortSelectIcon}
       SelectMenu={ViewSortSelectMenu}
       optionLabelKey={'sortLabel'}
       optionList={optionList}

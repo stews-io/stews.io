@@ -14,13 +14,12 @@
 .selectButton {
   @extend .rowContainer;
   align-items: center;
-  padding-inline-start: calc(1 / 2) * $themeSpacer;
-  padding-inline-end: calc(2 / 3) * $themeSpacer;
+  padding-inline: calc(1 / 2) * $themeSpacer;
 }
 
 .buttonLabel {
   @extend .textEllipsis;
-  padding-inline-end: calc(5 / 3) * $themeSpacer;
+  padding-inline-end: calc(5 / 4) * $themeSpacer;
   font-weight: 700;
   font-style: italic;
 }
@@ -30,8 +29,8 @@
 }
 
 .selectIcon {
-  width: 0.725em;
-  height: 0.725em;
+  width: 0.675em;
+  height: 0.675em;
 }
 
 .dropdownPolygon {
