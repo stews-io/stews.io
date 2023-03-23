@@ -5,61 +5,69 @@ import cssModule from './ViewPageNavigation.module.scss'
 
 export interface ViewPageNavigationProps
   extends Pick<
-      UseViewPageApi<object>,
-      'setPageIndexToPrevious' | 'setPageIndexToNext'
-    >,
-    Pick<UseViewPageApi<object>['viewState'], 'pageIndex'> {
+    UseViewPageApi<object>,
+    'setPageIndexToPrevious' | 'setPageIndexToNext'
+  > {
+  adjustedPageIndex: UseViewPageApi<object>['viewState']['pageIndex']
   pageCount: number
 }
 
 export function ViewPageNavigation(props: ViewPageNavigationProps) {
-  const { setPageIndexToPrevious, pageIndex, pageCount, setPageIndexToNext } =
-    props
+  const {
+    adjustedPageIndex,
+    setPageIndexToPrevious,
+    pageCount,
+    setPageIndexToNext,
+  } = props
   return (
     <div className={cssModule.navigationContainer}>
       <PreviousPageButton
+        adjustedPageIndex={adjustedPageIndex}
         setPageIndexToPrevious={setPageIndexToPrevious}
-        buttonEnabled={pageIndex > 0}
+        buttonEnabled={adjustedPageIndex > 0}
       />
       <div className={cssModule.navigationMeterContainer}>
         <div className={cssModule.navigationMeter}>
-          {`${pageIndex + 1} / ${pageCount}`}
+          {`${adjustedPageIndex + 1} / ${pageCount}`}
         </div>
       </div>
       <NextPageButton
+        adjustedPageIndex={adjustedPageIndex}
         setPageIndexToNext={setPageIndexToNext}
-        buttonEnabled={pageIndex < pageCount - 1}
+        buttonEnabled={adjustedPageIndex < pageCount - 1}
       />
     </div>
   )
 }
 
 interface PreviousPageButtonProps
-  extends Pick<UseViewPageApi<object>, 'setPageIndexToPrevious'>,
+  extends Pick<ViewPageNavigationProps, 'setPageIndexToPrevious'>,
     PageButtonBaseDataProps {}
 
 function PreviousPageButton(props: PreviousPageButtonProps) {
-  const { buttonEnabled, setPageIndexToPrevious } = props
+  const { adjustedPageIndex, setPageIndexToPrevious, buttonEnabled } = props
   return (
     <PageButtonBase
+      adjustedPageIndex={adjustedPageIndex}
+      setPageIndex={setPageIndexToPrevious}
       buttonEnabled={buttonEnabled}
       buttonLabel={'prev'}
-      onSelect={setPageIndexToPrevious}
     />
   )
 }
 
 interface NextPageButtonProps
-  extends Pick<UseViewPageApi<object>, 'setPageIndexToNext'>,
+  extends Pick<ViewPageNavigationProps, 'setPageIndexToNext'>,
     PageButtonBaseDataProps {}
 
 function NextPageButton(props: NextPageButtonProps) {
-  const { buttonEnabled, setPageIndexToNext } = props
+  const { adjustedPageIndex, setPageIndexToNext, buttonEnabled } = props
   return (
     <PageButtonBase
+      adjustedPageIndex={adjustedPageIndex}
+      setPageIndex={setPageIndexToNext}
       buttonEnabled={buttonEnabled}
       buttonLabel={'next'}
-      onSelect={setPageIndexToNext}
     />
   )
 }
@@ -68,16 +76,20 @@ interface PageButtonBaseProps
   extends PageButtonBaseDataProps,
     PageButtonBaseConfigProps {}
 
-interface PageButtonBaseDataProps {
+interface PageButtonBaseDataProps
+  extends Pick<ViewPageNavigationProps, 'adjustedPageIndex'> {
   buttonEnabled: boolean
 }
 
-interface PageButtonBaseConfigProps extends Pick<ButtonProps, 'onSelect'> {
+interface PageButtonBaseConfigProps {
   buttonLabel: string
+  setPageIndex:
+    | ViewPageNavigationProps['setPageIndexToPrevious']
+    | ViewPageNavigationProps['setPageIndexToNext']
 }
 
 function PageButtonBase(props: PageButtonBaseProps) {
-  const { buttonEnabled, onSelect, buttonLabel } = props
+  const { buttonEnabled, setPageIndex, adjustedPageIndex, buttonLabel } = props
   return (
     <Button
       className={getCssClass(cssModule.navigationButtonBase, [
@@ -87,7 +99,7 @@ function PageButtonBase(props: PageButtonBaseProps) {
       tabIndex={buttonEnabled ? 0 : -1}
       onSelect={() => {
         if (buttonEnabled) {
-          onSelect()
+          setPageIndex(adjustedPageIndex)
         }
       }}
     >

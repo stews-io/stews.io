@@ -2,7 +2,6 @@ import { Page } from '@stews/components/Page'
 import { CurationView, CuratorInfo } from '@stews/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { FunctionComponent } from 'preact'
-import { useState } from 'preact/hooks'
 import {
   ViewSearchInput,
   ViewSelectBaseDataProps,
@@ -12,8 +11,8 @@ import {
   useStickyPageHeaderWorkaround,
   useViewPage,
   useViewSortOptions,
-  ViewSortOption,
   ViewSortOptionConfig,
+  useViewState,
 } from './hooks'
 import cssModule from './CurationPageBase.module.scss'
 
@@ -68,11 +67,9 @@ export function CurationPageBase<
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
   })
-  const [viewState, setViewState] = useState<ViewState<CurationItem>>({
-    curationView: curationViews[0],
-    viewSort: viewSortOptions[0],
-    viewSearch: '',
-    pageIndex: 0,
+  const [viewState, setViewState] = useViewState({
+    curationViews,
+    viewSortOptions,
   })
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
     ItemDisplay,
@@ -80,16 +77,16 @@ export function CurationPageBase<
     curationItems,
     viewState,
     pageItemSize: 6,
-    setPageIndexToPrevious: () => {
+    setPageIndexToPrevious: (currentAdjustedPageIndex) => {
       setViewState((currentViewState) => ({
         ...currentViewState,
-        pageIndex: currentViewState.pageIndex - 1,
+        pageIndex: currentAdjustedPageIndex - 1,
       }))
     },
-    setPageIndexToNext: () => {
+    setPageIndexToNext: (currentAdjustedPageIndex) => {
       setViewState((currentViewState) => ({
         ...currentViewState,
-        pageIndex: currentViewState.pageIndex + 1,
+        pageIndex: currentAdjustedPageIndex + 1,
       }))
     },
   })
@@ -162,11 +159,4 @@ export function CurationPageBase<
       <div className={cssModule.pageFooterSpacer} />
     </Page>
   )
-}
-
-export interface ViewState<CurationItem extends object> {
-  curationView: CurationView
-  viewSort: ViewSortOption<CurationItem>
-  viewSearch: string
-  pageIndex: number
 }

@@ -9,6 +9,8 @@ export function Page(props: PageProps) {
   useEffect(() => {
     // enable unfocusing buttons, inputs, .etc
     document.body.setAttribute('tabIndex', '-1')
+    // on load/refresh have page start at top
+    window.history.scrollRestoration = 'manual'
   }, [])
   return (
     <div className={cssModule.pageContainer}>

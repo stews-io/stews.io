@@ -37,11 +37,13 @@ export interface ViewSortOption<CurationItem extends object> {
 export interface UseViewSortOptionsApi<CurationItem extends object>
   extends Pick<CurationPageBaseDataProps<CurationItem>, 'viewSortConfig'> {}
 
+export interface UseViewSortOptionsResult<CurationItem extends object> {
+  viewSortOptions: ArrayOfAtLeastOne<ViewSortOption<CurationItem>>
+}
+
 export function useViewSortOptions<CurationItem extends object>(
   api: UseViewSortOptionsApi<CurationItem>
-): {
-  viewSortOptions: ArrayOfAtLeastOne<ViewSortOption<CurationItem>>
-} {
+): UseViewSortOptionsResult<CurationItem> {
   const { viewSortConfig } = api
   return useMemo(
     () => ({

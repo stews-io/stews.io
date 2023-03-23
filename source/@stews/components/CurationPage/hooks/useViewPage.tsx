@@ -4,7 +4,8 @@ import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { EmptyViewPageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
-import { CurationPageBaseDataProps, ViewState } from '../CurationPageBase'
+import { CurationPageBaseDataProps } from '../CurationPageBase'
+import { ViewState } from './useViewState'
 
 export interface UseViewPageApi<CurationItem extends object>
   extends Pick<
@@ -13,9 +14,11 @@ export interface UseViewPageApi<CurationItem extends object>
   > {
   viewState: ViewState<CurationItem>
   pageItemSize: number
-  setPageIndexToPrevious: () => void
-  setPageIndexToNext: () => void
+  setPageIndexToPrevious: PageIndexSetter
+  setPageIndexToNext: PageIndexSetter
 }
+
+type PageIndexSetter = (currentAdjustedPageIndex: number) => void
 
 export function useViewPage<CurationItem extends object>(
   api: UseViewPageApi<CurationItem>
@@ -30,7 +33,7 @@ export function useViewPage<CurationItem extends object>(
     setPageIndexToNext,
   } = api
   const pageTopElementRef = useRef<HTMLDivElement>(null)
-  const viewPageResult = useMemo(() => {
+  const { adjustedPageIndex, ...viewPageResult } = useMemo(() => {
     const { curationView, viewSearch, viewSort, pageIndex } = viewState
     const viewItems =
       curationView.viewType === 'default'
@@ -45,12 +48,15 @@ export function useViewPage<CurationItem extends object>(
       .sort(viewSort.getSortOrder)
     const pageCount =
       Math.ceil(searchedAndSortedViewItems.length / pageItemSize) || 1
-    const pageIndexStart = pageItemSize * pageIndex
+    const adjustedPageIndex =
+      pageIndex >= 0 && pageIndex < pageCount ? pageIndex : 0
+    const pageIndexStart = pageItemSize * adjustedPageIndex
     const viewPageItems = searchedAndSortedViewItems.slice(
       pageIndexStart,
       pageIndexStart + pageItemSize
     )
     return {
+      adjustedPageIndex,
       viewPageItemElements: (
         <Fragment key={Math.random()}>
           <div ref={pageTopElementRef} />
@@ -67,7 +73,7 @@ export function useViewPage<CurationItem extends object>(
         <ViewPageNavigation
           setPageIndexToPrevious={setPageIndexToPrevious}
           setPageIndexToNext={setPageIndexToNext}
-          pageIndex={pageIndex}
+          adjustedPageIndex={adjustedPageIndex}
           pageCount={pageCount}
         />
       ),
@@ -87,7 +93,7 @@ export function useViewPage<CurationItem extends object>(
     )
     const pageTopElement = pageTopElementRef.current
     if (
-      viewState.pageIndex === 0 &&
+      adjustedPageIndex === 0 &&
       pageContentContainerElement instanceof HTMLDivElement
     ) {
       pageContentContainerElement.setAttribute('tabIndex', '-1')
@@ -100,7 +106,7 @@ export function useViewPage<CurationItem extends object>(
         top: 0,
       })
     } else if (
-      viewState.pageIndex > 0 &&
+      adjustedPageIndex > 0 &&
       pageTopElement instanceof HTMLDivElement
     ) {
       pageTopElement.setAttribute('tabIndex', '-1')
@@ -116,6 +122,6 @@ export function useViewPage<CurationItem extends object>(
     } else {
       throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
     }
-  }, [viewState.pageIndex, viewState.curationView])
+  }, [adjustedPageIndex, viewState.curationView])
   return viewPageResult
 }
