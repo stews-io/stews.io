@@ -18,7 +18,6 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
       const searchInputElement =
         searchInputRef.current ??
         throwInvalidPathError('ViewSearchInput.searchInputRef')
-      console.log(searchInputElement.getBoundingClientRect().top)
       if (
         searchInputElement.getBoundingClientRect().top <
         approximateViewSearchDocumentTop

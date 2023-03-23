@@ -20,9 +20,7 @@ export function useViewState<CurationItem extends object>(
 ) {
   const { curationViews, viewSortOptions } = api
   const parsedInitialSearchParams = useMemo(() => {
-    const initialSearchParams = new URLSearchParams(
-      typeof window !== 'undefined' ? window.location.search : ''
-    )
+    const initialSearchParams = new URLSearchParams(window.location.search)
     return {
       viewId: parseInt(initialSearchParams.get('viewId') ?? '0'),
       sortId: initialSearchParams.get('sortId'),
