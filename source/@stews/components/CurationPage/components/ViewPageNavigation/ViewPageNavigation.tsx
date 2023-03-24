@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '@stews/components/Button'
+import { Button } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
 import { UseViewPageApi } from '../../hooks/useViewPage'
 import cssModule from './ViewPageNavigation.module.scss'
@@ -26,7 +26,14 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
         setPageIndexToPrevious={setPageIndexToPrevious}
         buttonEnabled={adjustedPageIndex > 0}
       />
-      <div className={cssModule.navigationMeterContainer}>
+      <div
+        role={'meter'}
+        aria-description={'pagination meter for filtered and sorted view items'}
+        aria-valuemin={1}
+        className={cssModule.navigationMeterContainer}
+        aria-valuenow={adjustedPageIndex}
+        aria-valuemax={pageCount}
+      >
         <div className={cssModule.navigationMeter}>
           {`${adjustedPageIndex + 1} / ${pageCount}`}
         </div>
@@ -48,10 +55,13 @@ function PreviousPageButton(props: PreviousPageButtonProps) {
   const { adjustedPageIndex, setPageIndexToPrevious, buttonEnabled } = props
   return (
     <PageButtonBase
+      buttonLabel={'prev'}
+      accessibilityDescription={
+        'button for viewing the previous page of filtered and sorted view items'
+      }
       adjustedPageIndex={adjustedPageIndex}
       setPageIndex={setPageIndexToPrevious}
       buttonEnabled={buttonEnabled}
-      buttonLabel={'prev'}
     />
   )
 }
@@ -64,10 +74,13 @@ function NextPageButton(props: NextPageButtonProps) {
   const { adjustedPageIndex, setPageIndexToNext, buttonEnabled } = props
   return (
     <PageButtonBase
+      buttonLabel={'next'}
+      accessibilityDescription={
+        'button for viewing the next page of filtered and sorted view items'
+      }
       adjustedPageIndex={adjustedPageIndex}
       setPageIndex={setPageIndexToNext}
       buttonEnabled={buttonEnabled}
-      buttonLabel={'next'}
     />
   )
 }
@@ -82,6 +95,7 @@ interface PageButtonBaseDataProps
 }
 
 interface PageButtonBaseConfigProps {
+  accessibilityDescription: string
   buttonLabel: string
   setPageIndex:
     | ViewPageNavigationProps['setPageIndexToPrevious']
@@ -89,14 +103,21 @@ interface PageButtonBaseConfigProps {
 }
 
 function PageButtonBase(props: PageButtonBaseProps) {
-  const { buttonEnabled, setPageIndex, adjustedPageIndex, buttonLabel } = props
+  const {
+    accessibilityDescription,
+    buttonEnabled,
+    setPageIndex,
+    adjustedPageIndex,
+    buttonLabel,
+  } = props
   return (
     <Button
+      aria-description={accessibilityDescription}
+      tabIndex={buttonEnabled ? 0 : -1}
       className={getCssClass(cssModule.navigationButtonBase, [
         cssModule.disabledButtonOverride,
         !buttonEnabled,
       ])}
-      tabIndex={buttonEnabled ? 0 : -1}
       onSelect={() => {
         if (buttonEnabled) {
           setPageIndex(adjustedPageIndex)
