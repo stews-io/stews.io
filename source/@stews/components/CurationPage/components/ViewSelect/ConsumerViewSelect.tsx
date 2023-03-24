@@ -11,6 +11,7 @@ export interface ConsumerViewSelectProps extends ViewSelectBaseDataProps {}
 export function ConsumerViewSelect(props: ConsumerViewSelectProps) {
   return (
     <ViewSelectBase
+      popoverRole={'listbox'}
       SelectMenu={ConsumerSelectMenu}
       customOptionActionItemProps={null}
       customMenuFooterProps={null}

@@ -3,10 +3,18 @@ import { createRef, FunctionComponent, RefObject } from 'preact'
 import { Ref, StateUpdater, useEffect, useMemo, useRef } from 'preact/hooks'
 import cssModule from './Popover.module.scss'
 
-export interface PopoverProps<CustomPopoverContentProps> {
+export interface PopoverProps<CustomPopoverContentProps>
+  extends PopoverDataProps,
+    PopoverConfigProps<CustomPopoverContentProps> {}
+
+export interface PopoverDataProps {
   anchorElementRef: Ref<HTMLDivElement>
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
+  popoverRole: 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid'
+}
+
+interface PopoverConfigProps<CustomPopoverContentProps> {
   customPopoverContentProps: CustomPopoverContentProps
   PopoverContent: FunctionComponent<
     PopoverContentProps<CustomPopoverContentProps>
@@ -17,7 +25,7 @@ type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
   CustomPopoverContentProps
 
 export interface CorePopoverContentProps
-  extends Pick<PopoverProps<unknown>, 'anchorElementRef'> {
+  extends Pick<PopoverDataProps, 'anchorElementRef'> {
   initialFocusElementRef: RefObject<HTMLDivElement>
   popoverNavigationItemBlurHandler: (someBlurEvent: FocusEvent) => void
 }
@@ -29,6 +37,7 @@ export function Popover<CustomPopoverContentProps>(
     setPopoverOpen,
     anchorElementRef,
     popoverOpen,
+    popoverRole,
     PopoverContent,
     customPopoverContentProps,
   } = props
@@ -125,13 +134,14 @@ export function Popover<CustomPopoverContentProps>(
   return popoverOpen ? (
     <div
       tabIndex={-1}
-      ref={popoverRef}
       className={cssModule.popoverContainer}
+      role={popoverRole}
+      ref={popoverRef}
+      onBlur={popoverNavigationItemBlurHandler}
       style={getPopoverLayoutStyle({
         anchorElementRef,
         popoverOpen,
       })}
-      onBlur={popoverNavigationItemBlurHandler}
       onKeyDown={(someKeyDownEvent) => {
         if (someKeyDownEvent.key === 'Escape') {
           anchorElementRef.current instanceof HTMLDivElement

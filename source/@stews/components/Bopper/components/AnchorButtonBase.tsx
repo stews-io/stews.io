@@ -1,20 +1,29 @@
 import { Button, ButtonProps } from '@stews/components/Button'
-import { PopoverProps } from './Popover'
+import { PopoverDataProps, PopoverProps } from './Popover'
 
 export interface AnchorButtonBaseProps
   extends CoreAnchorButtonBaseProps,
     CustomAnchorButtonBaseProps {}
 
 export interface CoreAnchorButtonBaseProps
-  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'setPopoverOpen'> {}
+  extends Pick<
+    PopoverDataProps,
+    'anchorElementRef' | 'setPopoverOpen' | 'popoverRole'
+  > {}
 
 export interface CustomAnchorButtonBaseProps
   extends Omit<ButtonProps, 'elementRef' | 'onSelect'> {}
 
 export function AnchorButtonBase(props: AnchorButtonBaseProps) {
-  const { anchorElementRef, setPopoverOpen, ...customAnchorButtonProps } = props
+  const {
+    popoverRole,
+    anchorElementRef,
+    setPopoverOpen,
+    ...customAnchorButtonProps
+  } = props
   return (
     <Button
+      aria-haspopup={popoverRole}
       elementRef={anchorElementRef}
       onSelect={() => {
         setPopoverOpen(true)

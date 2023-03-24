@@ -48,6 +48,7 @@ export function SelectButton<
     anchorBorderClassName,
     fontSizeClassName,
     customSelectAnchorButtonProps,
+    popoverRole,
     anchorElementRef,
     setPopoverOpen,
     selectedOption,
@@ -63,13 +64,14 @@ export function SelectButton<
       )}
     >
       <AnchorButtonBase
-        {...customSelectAnchorButtonProps}
+        popoverRole={popoverRole}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
         className={getCssClass(cssModule.selectButton, [
           customSelectAnchorButtonProps.className,
           Boolean(customSelectAnchorButtonProps.className),
         ])}
+        {...customSelectAnchorButtonProps}
       >
         <div className={cssModule.buttonLabel}>
           <SelectOptionLabel

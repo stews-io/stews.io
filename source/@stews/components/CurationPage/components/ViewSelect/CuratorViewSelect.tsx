@@ -26,6 +26,7 @@ export function CuratorViewSelect(props: CuratorViewSelectProps) {
   } = props
   return (
     <ViewSelectBase
+      popoverRole={'menu'}
       SelectMenu={CuratorSelectMenu}
       customOptionActionItemProps={{
         navigateToEditViewPage,

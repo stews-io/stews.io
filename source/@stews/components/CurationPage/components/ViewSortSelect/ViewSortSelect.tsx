@@ -18,11 +18,12 @@ export function ViewSortSelect<CurationItem extends object>(
   const { optionList, selectedOption, selectOption } = props
   return (
     <SelectBase
+      popoverRole={'listbox'}
+      optionLabelKey={'sortLabel'}
+      SelectMenu={ViewSortSelectMenu}
       anchorBorderClassName={cssModule.viewSortSelectAnchorBorder}
       fontSizeClassName={cssModule.viewSortSelectFontSize}
       selectIconClassName={cssModule.viewSortSelectIcon}
-      SelectMenu={ViewSortSelectMenu}
-      optionLabelKey={'sortLabel'}
       optionList={optionList}
       selectedOption={selectedOption}
       selectOption={selectOption}

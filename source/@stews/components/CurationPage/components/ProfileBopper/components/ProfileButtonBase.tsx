@@ -14,9 +14,10 @@ interface ProfileButtonBaseConfigProps {
 }
 
 export function ProfileButtonBase(props: ProfileButtonBaseProps) {
-  const { anchorElementRef, setPopoverOpen, ProfileIcon } = props
+  const { popoverRole, anchorElementRef, setPopoverOpen, ProfileIcon } = props
   return (
     <AnchorButtonBase
+      popoverRole={popoverRole}
       anchorElementRef={anchorElementRef}
       setPopoverOpen={setPopoverOpen}
     >

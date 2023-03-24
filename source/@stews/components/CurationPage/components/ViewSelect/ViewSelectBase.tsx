@@ -1,6 +1,7 @@
 import { CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
 import {
   SelectBase,
+  SelectBaseAccessibilityProps,
   SelectBaseConfigProps,
   SelectBaseDataProps,
 } from '@stews/components/Select'
@@ -10,11 +11,15 @@ import cssModule from './ViewSelectBase.module.scss'
 interface ViewSelectBaseProps<
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends ViewSelectBaseDataProps,
+> extends ViewSelectBaseAccessibilityProps,
+    ViewSelectBaseDataProps,
     ViewSelectBaseConfigProps<
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     > {}
+
+export interface ViewSelectBaseAccessibilityProps
+  extends Pick<SelectBaseAccessibilityProps, 'popoverRole'> {}
 
 export interface ViewSelectBaseDataProps
   extends SelectBaseDataProps<CurationView> {}
@@ -41,6 +46,7 @@ export function ViewSelectBase<
 ) {
   const {
     SelectMenu,
+    popoverRole,
     optionList,
     selectedOption,
     selectOption,
@@ -49,10 +55,11 @@ export function ViewSelectBase<
   } = props
   return (
     <SelectBase
+      optionLabelKey={'viewLabel'}
       anchorBorderClassName={cssModule.viewSelectAnchorBorder}
       fontSizeClassName={cssModule.viewSelectFontSize}
       SelectMenu={SelectMenu}
-      optionLabelKey={'viewLabel'}
+      popoverRole={popoverRole}
       optionList={optionList}
       selectedOption={selectedOption}
       selectOption={selectOption}

@@ -7,7 +7,7 @@ import { Popover, PopoverProps } from './components/Popover'
 export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
   extends Pick<
     PopoverProps<CustomPopoverContentProps>,
-    'PopoverContent' | 'customPopoverContentProps'
+    'PopoverContent' | 'customPopoverContentProps' | 'popoverRole'
   > {
   customAnchorButtonProps: CustomAnchorButtonProps
   AnchorButton: FunctionComponent<AnchorButtonProps<CustomAnchorButtonProps>>
@@ -21,6 +21,7 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
 ) {
   const {
     AnchorButton,
+    popoverRole,
     customAnchorButtonProps,
     PopoverContent,
     customPopoverContentProps,
@@ -30,11 +31,13 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   return (
     <Fragment>
       <AnchorButton
+        popoverRole={popoverRole}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
         {...customAnchorButtonProps}
       />
       <Popover
+        popoverRole={popoverRole}
         PopoverContent={PopoverContent}
         anchorElementRef={anchorElementRef}
         popoverOpen={popoverOpen}

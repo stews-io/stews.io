@@ -1,5 +1,5 @@
-import { Button } from '@stews/components/Button'
 import { ItemDisplayProps } from '@stews/components/CurationPage/CurationPageBase'
+import { LinkButton } from '@stews/components/LinkButton'
 import { MusicItem } from '../data/MusicItem'
 import cssModule from './MusicItemDisplay.module.scss'
 
@@ -39,9 +39,12 @@ export function MusicItemDisplay(props: MusicItemProps) {
             return (
               <div className={cssModule.linkContainer}>
                 <LinkButton
-                  linkLabel={someExternalLink.linkLabel}
-                  linkHref={someExternalLink.linkHref}
-                />
+                  target={'_blank'}
+                  className={cssModule.musicLinkButton}
+                  href={someExternalLink.linkHref}
+                >
+                  {someExternalLink.linkLabel}
+                </LinkButton>
               </div>
             )
           })}
@@ -72,28 +75,6 @@ export function MusicItemDisplay(props: MusicItemProps) {
         />
       </div>
     </div>
-  )
-}
-
-interface LinkButtonProps {
-  linkHref: string
-  linkLabel: string
-}
-
-function LinkButton(props: LinkButtonProps) {
-  const { linkLabel, linkHref } = props
-  return (
-    <Button
-      className={cssModule.linkButton}
-      onSelect={() => {
-        const targetAnchorElement = document.createElement('a')
-        targetAnchorElement.href = linkHref
-        targetAnchorElement.setAttribute('target', '_blank')
-        targetAnchorElement.click()
-      }}
-    >
-      {linkLabel}
-    </Button>
   )
 }
 

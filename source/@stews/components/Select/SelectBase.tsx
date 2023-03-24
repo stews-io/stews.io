@@ -1,4 +1,8 @@
-import { Bopper, CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
+import {
+  Bopper,
+  BopperProps,
+  CustomAnchorButtonBaseProps,
+} from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
@@ -9,7 +13,8 @@ interface SelectBaseProps<
   CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps,
   CustomOptionActionItemProps,
   CustomMenuFooterProps
-> extends SelectBaseDataProps<MenuOption>,
+> extends SelectBaseAccessibilityProps,
+    SelectBaseDataProps<MenuOption>,
     SelectBaseConfigProps<
       MenuOption,
       OptionLabelKey,
@@ -17,6 +22,9 @@ interface SelectBaseProps<
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     > {}
+
+export interface SelectBaseAccessibilityProps
+  extends Pick<BopperProps<unknown, unknown>, 'popoverRole'> {}
 
 export interface SelectBaseDataProps<MenuOption extends object> {
   optionList: Array<MenuOption>
@@ -71,6 +79,7 @@ export function SelectBase<
 ) {
   const {
     SelectMenu,
+    popoverRole,
     customSelectAnchorButtonProps,
     anchorBorderClassName,
     fontSizeClassName,
@@ -86,6 +95,7 @@ export function SelectBase<
     <Bopper
       AnchorButton={SelectButton}
       PopoverContent={SelectMenu}
+      popoverRole={popoverRole}
       customAnchorButtonProps={{
         customSelectAnchorButtonProps,
         anchorBorderClassName,
