@@ -10,30 +10,11 @@ export function MusicItemDisplay(props: MusicItemProps) {
   return (
     <div className={cssModule.displayContainer}>
       <div className={cssModule.topRow}>
-        <svg
+        <img
           className={cssModule.musicThumbnail}
-          viewBox={'0 0 100 100'}
-          role={'img'}
-        >
-          <title>{`${someItem.musicTitle}: thumbnail image`}</title>
-          <rect
-            x={0}
-            y={0}
-            width={100}
-            height={100}
-            rx={4}
-            ry={4}
-            fill={'#EEEEEE'}
-          />
-          <image
-            href={someItem.musicThumbnailHref}
-            x={1}
-            y={1}
-            width={98}
-            height={98}
-            clip-path={'inset(0% round 3)'}
-          />
-        </svg>
+          src={someItem.musicThumbnailHref}
+          alt={`${someItem.musicTitle}: thumbnail`}
+        />
         <div className={cssModule.musicLinks}>
           {someItem.externalLinks.map((someExternalLink) => {
             return (
@@ -87,15 +68,15 @@ function MusicItemLabelList(props: MusicItemLabelListProps) {
   const { accessibilityLabel, musicLabels } = props
   return (
     <div
-      className={cssModule.itemLabelList}
       role={'list'}
+      className={cssModule.itemLabelList}
       aria-label={accessibilityLabel}
     >
       {musicLabels.map((someMusicLabel) => (
         <div
+          role={'listitem'}
           className={cssModule.itemLabel}
           key={someMusicLabel}
-          role={'listitem'}
         >
           {someMusicLabel.toLowerCase()}
         </div>

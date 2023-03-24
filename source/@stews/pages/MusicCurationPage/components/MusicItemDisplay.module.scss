@@ -12,8 +12,13 @@
 }
 
 .musicThumbnail {
-  padding-bottom: calc(3 / 4) * $themeSpacer;
-  height: 160px;  
+  margin-left: 1px;
+  margin-bottom: calc(3 / 4) * $themeSpacer;
+  width: 160px;
+  height: 160px;
+  border-radius: calc(1 / 2) * $themeSpacer;
+  background-color: $themeTextBackgroundColor;
+  box-shadow: 0 0 0 1px $themeTextBackgroundColor;
 }
 
 .musicLinks {
@@ -36,7 +41,7 @@
 
 .itemInfoContainer {
   @extend .columnContainer;
-  padding-inline-start: calc(2 / 5) * $themeSpacer;
+  padding-inline-start: calc(1 / 6) * $themeSpacer;
   padding-block-start: calc(3 / 4) * $themeSpacer;
 }
 
