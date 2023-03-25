@@ -20,6 +20,7 @@ export function ProfileButtonBase(props: ProfileButtonBaseProps) {
       popoverRole={popoverRole}
       anchorElementRef={anchorElementRef}
       setPopoverOpen={setPopoverOpen}
+      aria-label={'profile button'}
     >
       <ProfileIcon />
     </AnchorButtonBase>

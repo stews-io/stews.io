@@ -12,6 +12,7 @@ export function CuratorCurationPage<CurationItem extends object>(
     ItemDisplay,
     viewSortConfig,
     getItemSearchSpace,
+    curationLabel,
     curatorInfo,
     curationViews,
     curationItems,
@@ -23,6 +24,7 @@ export function CuratorCurationPage<CurationItem extends object>(
       ItemDisplay={ItemDisplay}
       viewSortConfig={viewSortConfig}
       getItemSearchSpace={getItemSearchSpace}
+      curationLabel={curationLabel}
       curatorInfo={curatorInfo}
       curationViews={curationViews}
       curationItems={curationItems}

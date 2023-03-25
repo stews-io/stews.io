@@ -23,6 +23,7 @@ interface CurationPageBaseProps<
     CurationPageBaseConfigProps<CustomViewSelectProps> {}
 
 export interface CurationPageBaseDataProps<CurationItem extends object> {
+  curationLabel: string
   curatorInfo: CuratorInfo
   curationViews: ArrayOfAtLeastOne<CurationView>
   curationItems: Array<CurationItem>
@@ -56,10 +57,11 @@ export function CurationPageBase<
   const {
     viewSortConfig,
     curationViews,
+    curatorInfo,
+    curationLabel,
     ViewSelect,
     customViewSelectProps,
     ProfileBopper,
-    curatorInfo,
     ItemDisplay,
     getItemSearchSpace,
     curationItems,
@@ -92,7 +94,9 @@ export function CurationPageBase<
   })
   const { pageHeaderContainerRef } = useStickyPageHeaderWorkaround()
   return (
-    <Page>
+    <Page
+      pageAccessibilityHeader={`${curatorInfo.curatorName}: ${curationLabel} curation`}
+    >
       <div
         ref={pageHeaderContainerRef}
         className={cssModule.pageHeaderContainer}
@@ -100,6 +104,7 @@ export function CurationPageBase<
         <div className={cssModule.pageHeader}>
           <div className={cssModule.viewSelectContainer}>
             <ViewSelect
+              curationLabel={curationLabel}
               optionList={curationViews}
               selectedOption={viewState.curationView}
               selectOption={(nextCurationView) => {
@@ -133,6 +138,7 @@ export function CurationPageBase<
         </div>
         <div className={cssModule.viewSearchInputContainer}>
           <ViewSearchInput
+            curationLabel={curationLabel}
             value={viewState.viewSearch}
             onInput={(someInputEvent) => {
               const nextViewSearch = someInputEvent.currentTarget.value

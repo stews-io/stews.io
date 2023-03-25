@@ -6,6 +6,8 @@ import {
   SelectBaseDataProps,
 } from '@stews/components/Select'
 import { CurationView } from '@stews/data'
+import { Fragment } from 'preact/jsx-runtime'
+import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './ViewSelectBase.module.scss'
 
 interface ViewSelectBaseProps<
@@ -22,7 +24,8 @@ export interface ViewSelectBaseAccessibilityProps
   extends Pick<SelectBaseAccessibilityProps, 'popoverRole'> {}
 
 export interface ViewSelectBaseDataProps
-  extends SelectBaseDataProps<CurationView> {}
+  extends Pick<CurationPageBaseDataProps<object>, 'curationLabel'>,
+    SelectBaseDataProps<CurationView> {}
 
 export interface ViewSelectBaseConfigProps<
   CustomOptionActionItemProps,
@@ -45,6 +48,7 @@ export function ViewSelectBase<
   props: ViewSelectBaseProps<CustomOptionActionItemProps, CustomMenuFooterProps>
 ) {
   const {
+    curationLabel,
     SelectMenu,
     popoverRole,
     optionList,
@@ -54,18 +58,23 @@ export function ViewSelectBase<
     customMenuFooterProps,
   } = props
   return (
-    <SelectBase
-      optionLabelKey={'viewLabel'}
-      anchorBorderClassName={cssModule.viewSelectAnchorBorder}
-      fontSizeClassName={cssModule.viewSelectFontSize}
-      SelectMenu={SelectMenu}
-      popoverRole={popoverRole}
-      optionList={optionList}
-      selectedOption={selectedOption}
-      selectOption={selectOption}
-      customOptionActionItemProps={customOptionActionItemProps}
-      customMenuFooterProps={customMenuFooterProps}
-      customSelectAnchorButtonProps={{}}
-    />
+    <Fragment>
+      <h2
+        className={cssModule.viewAccessibilityHeader}
+      >{`${curationLabel} view: ${selectedOption.viewLabel}`}</h2>
+      <SelectBase
+        optionLabelKey={'viewLabel'}
+        anchorBorderClassName={cssModule.viewSelectAnchorBorder}
+        fontSizeClassName={cssModule.viewSelectFontSize}
+        SelectMenu={SelectMenu}
+        popoverRole={popoverRole}
+        optionList={optionList}
+        selectedOption={selectedOption}
+        selectOption={selectOption}
+        customOptionActionItemProps={customOptionActionItemProps}
+        customMenuFooterProps={customMenuFooterProps}
+        customSelectAnchorButtonProps={{}}
+      />
+    </Fragment>
   )
 }

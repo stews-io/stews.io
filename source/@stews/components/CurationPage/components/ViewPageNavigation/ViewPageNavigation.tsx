@@ -1,5 +1,6 @@
-import { Button } from '@stews/components/Button'
+import { Button, ButtonProps } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
+import { Fragment } from 'preact/jsx-runtime'
 import { UseViewPageApi } from '../../hooks/useViewPage'
 import cssModule from './ViewPageNavigation.module.scss'
 
@@ -19,6 +20,8 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
     pageCount,
     setPageIndexToNext,
   } = props
+  const navigationMeterAccessibilityDescriptionId =
+    'navigation-meter-accessibility-description'
   return (
     <div className={cssModule.navigationContainer}>
       <PreviousPageButton
@@ -28,15 +31,22 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
       />
       <div
         role={'meter'}
-        aria-description={'pagination meter for filtered and sorted view items'}
+        aria-label={'view pagination meter'}
         aria-valuemin={1}
         className={cssModule.navigationMeterContainer}
         aria-valuenow={adjustedPageIndex}
         aria-valuemax={pageCount}
+        aria-describedby={navigationMeterAccessibilityDescriptionId}
       >
         <div className={cssModule.navigationMeter}>
           {`${adjustedPageIndex + 1} / ${pageCount}`}
         </div>
+      </div>
+      <div
+        className={cssModule.navigationMeterAccessibilityDescription}
+        id={navigationMeterAccessibilityDescriptionId}
+      >
+        pagination meter for filtered and sorted view items
       </div>
       <NextPageButton
         adjustedPageIndex={adjustedPageIndex}
@@ -110,21 +120,32 @@ function PageButtonBase(props: PageButtonBaseProps) {
     adjustedPageIndex,
     buttonLabel,
   } = props
+  const buttonDisabled = !buttonEnabled
+  const ariaDescriptionElementId = `${buttonLabel}-accessibility-description`
   return (
-    <Button
-      aria-description={accessibilityDescription}
-      tabIndex={buttonEnabled ? 0 : -1}
-      className={getCssClass(cssModule.navigationButtonBase, [
-        cssModule.disabledButtonOverride,
-        !buttonEnabled,
-      ])}
-      onSelect={() => {
-        if (buttonEnabled) {
+    <Fragment>
+      <Button
+        // lighthouse seems to not recognize aria-description
+        // aria-description={accessibilityDescription}
+        aria-describedby={ariaDescriptionElementId}
+        tabIndex={buttonEnabled ? 0 : -1}
+        disabled={buttonDisabled}
+        className={getCssClass(cssModule.navigationButtonBase, [
+          cssModule.disabledButtonOverride,
+          buttonDisabled,
+        ])}
+        onSelect={() => {
           setPageIndex(adjustedPageIndex)
-        }
-      }}
-    >
-      {buttonLabel}
-    </Button>
+        }}
+      >
+        {buttonLabel}
+      </Button>
+      <div
+        className={cssModule.pageButtonAccessibilityDescription}
+        id={ariaDescriptionElementId}
+      >
+        {accessibilityDescription}
+      </div>
+    </Fragment>
   )
 }

@@ -2,15 +2,17 @@ import { Button } from '@stews/components/Button'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ComponentProps } from 'preact'
 import { useMemo, useRef } from 'preact/hooks'
+import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './ViewSearchInput.module.scss'
 
 export interface ViewSearchInputProps
-  extends Pick<Required<ComponentProps<'input'>>, 'value' | 'onInput'> {
+  extends Pick<CurationPageBaseDataProps<object>, 'curationLabel'>,
+    Pick<Required<ComponentProps<'input'>>, 'value' | 'onInput'> {
   resetValue: () => void
 }
 
 export function ViewSearchInput(props: ViewSearchInputProps) {
-  const { value, onInput, resetValue } = props
+  const { curationLabel, value, onInput, resetValue } = props
   const searchInputRef = useRef<HTMLInputElement>(null)
   const scrollInputIntoFocus = useMemo(
     () => () => {
@@ -33,19 +35,20 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
   return (
     <div className={cssModule.inputContainer}>
       <input
-        ref={searchInputRef}
-        value={value}
-        onInput={onInput}
-        onFocus={scrollInputIntoFocus}
-        className={cssModule.searchInput}
         type={'text'}
         autocomplete={'off'}
         autocorrect={'off'}
         autocapitalize={'off'}
         spellcheck={false}
-        placeholder={'search music'}
+        className={cssModule.searchInput}
+        placeholder={`search ${curationLabel}`}
+        ref={searchInputRef}
+        value={value}
+        onInput={onInput}
+        onFocus={scrollInputIntoFocus}
       />
       <Button
+        aria-label={'clear search button'}
         onFocus={scrollInputIntoFocus}
         onSelect={() => {
           resetValue()
