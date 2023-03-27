@@ -1,6 +1,6 @@
-import { CoreAnchorButtonBaseProps } from '@stews/components/Bopper'
 import {
   ProfileButtonBase,
+  ProfileButtonBaseDataProps,
   ProfileIconBase,
 } from './components/ProfileButtonBase'
 import { ProfileContentBase } from './components/ProfileContentBase'
@@ -23,10 +23,19 @@ export function ConsumerProfileBopper(props: ConsumerProfileBopperProps) {
   )
 }
 
-interface ConsumerProfileButtonProps extends CoreAnchorButtonBaseProps {}
+interface ConsumerProfileButtonProps extends ProfileButtonBaseDataProps {}
 
 function ConsumerProfileButton(props: ConsumerProfileButtonProps) {
-  return <ProfileButtonBase ProfileIcon={ConsumerProfileIcon} {...props} />
+  return (
+    <ProfileButtonBase
+      ariaLabel={`show curator's profile`}
+      ariaDescription={
+        "a button that opens a popover displaying the curator's profile info"
+      }
+      ProfileIcon={ConsumerProfileIcon}
+      {...props}
+    />
+  )
 }
 
 function ConsumerProfileIcon() {

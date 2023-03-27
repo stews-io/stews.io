@@ -1,6 +1,5 @@
-import { CorePopoverContentProps } from '@stews/components/Bopper'
-import { Button } from '@stews/components/Button'
-import { LinkButton } from '@stews/components/LinkButton'
+import { Button, LinkButton } from '@stews/components/Button'
+import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers'
 import { ProfileBopperBaseDataProps } from '../ProfileBopperBase'
 import cssModule from './ProfileContentBase.module.scss'
@@ -22,6 +21,8 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
         <div className={cssModule.curatorName}>{curatorInfo.curatorName}</div>
         <div className={cssModule.closeButtonContainer}>
           <Button
+            ariaLabel={'todo'}
+            ariaDescription={'todo'}
             elementRef={initialFocusElementRef}
             className={cssModule.closeButton}
             onBlur={popoverNavigationItemBlurHandler}
@@ -64,6 +65,8 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
           <div key={linkIndex} className={cssModule.curatorLinkContainer}>
             <LinkButton
               target={'_blank'}
+              ariaLabel={'todo'}
+              ariaDescription={'todo'}
               className={cssModule.curatorLinkButton}
               onBlur={popoverNavigationItemBlurHandler}
               href={someCuratorLink.linkHref}

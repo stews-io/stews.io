@@ -48,7 +48,8 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
         onFocus={scrollInputIntoFocus}
       />
       <Button
-        aria-label={'clear search button'}
+        ariaLabel={'clear search'}
+        ariaDescription={'a button that resets the current search query'}
         onFocus={scrollInputIntoFocus}
         onSelect={() => {
           resetValue()

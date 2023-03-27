@@ -1,6 +1,9 @@
 import { JSXInternal } from 'preact/src/jsx'
 
-export type CssClass = JSXInternal.HTMLAttributes['className']
+export type CssClass = Exclude<
+  JSXInternal.HTMLAttributes['className'],
+  JSXInternal.SignalLike<unknown>
+>
 
 export function getCssClass(
   baseClass: CssClass,

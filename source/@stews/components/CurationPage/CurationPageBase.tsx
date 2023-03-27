@@ -16,11 +16,9 @@ import {
 } from './hooks'
 import cssModule from './CurationPageBase.module.scss'
 
-interface CurationPageBaseProps<
-  CurationItem extends object,
-  CustomViewSelectProps
-> extends CurationPageBaseDataProps<CurationItem>,
-    CurationPageBaseConfigProps<CustomViewSelectProps> {}
+interface CurationPageBaseProps<CurationItem extends object>
+  extends CurationPageBaseDataProps<CurationItem>,
+    CurationPageBaseConfigProps {}
 
 export interface CurationPageBaseDataProps<CurationItem extends object> {
   curationLabel: string
@@ -36,31 +34,25 @@ export interface ItemDisplayProps<CurationItem extends object> {
   someItem: CurationItem
 }
 
-export interface CurationPageBaseConfigProps<CustomViewSelectProps> {
-  ViewSelect: FunctionComponent<ViewSelectProps<CustomViewSelectProps>>
-  customViewSelectProps: CustomViewSelectProps
+export interface CurationPageBaseConfigProps {
+  ViewSelect: FunctionComponent<ViewSelectProps>
   ProfileBopper: FunctionComponent<ProfileBopperProps>
 }
 
-type ViewSelectProps<CustomViewSelectProps> = ViewSelectBaseDataProps &
-  CustomViewSelectProps
+type ViewSelectProps = ViewSelectBaseDataProps &
+  Pick<CurationPageBaseDataProps<object>, 'curationLabel'>
 
-type ProfileBopperProps = Pick<
-  CurationPageBaseProps<object, unknown>,
-  'curatorInfo'
->
+type ProfileBopperProps = Pick<CurationPageBaseProps<object>, 'curatorInfo'>
 
-export function CurationPageBase<
-  CurationItem extends object,
-  CustomViewSelectProps
->(props: CurationPageBaseProps<CurationItem, CustomViewSelectProps>) {
+export function CurationPageBase<CurationItem extends object>(
+  props: CurationPageBaseProps<CurationItem>
+) {
   const {
     viewSortConfig,
     curationViews,
     curatorInfo,
     curationLabel,
     ViewSelect,
-    customViewSelectProps,
     ProfileBopper,
     ItemDisplay,
     getItemSearchSpace,
@@ -114,7 +106,6 @@ export function CurationPageBase<
                   pageIndex: 0,
                 }))
               }}
-              {...customViewSelectProps}
             />
           </div>
           <div className={cssModule.actionContainer}>

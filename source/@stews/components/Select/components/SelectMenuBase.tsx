@@ -1,8 +1,4 @@
-import {
-  CorePopoverContentProps,
-  CustomAnchorButtonBaseProps,
-} from '@stews/components/Bopper'
-import { Button } from '@stews/components/Button'
+import { Button, CustomAnchorButtonProps } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
 import { FunctionComponent } from 'preact'
 import {
@@ -15,13 +11,14 @@ import {
   VerifiedOptionLabelKey,
 } from '../SelectBase'
 import { SelectOptionLabel } from './SelectOptionLabel'
+import { CorePopoverContentProps } from '@stews/components/Popover'
 import cssModule from './SelectMenuBase.module.scss'
 
 interface SelectMenuBaseProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 > extends SelectMenuBaseDataProps<
       MenuOption,
       OptionLabelKey,
@@ -37,8 +34,8 @@ interface SelectMenuBaseProps<
 export interface SelectMenuBaseDataProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 > extends CorePopoverContentProps,
     Pick<
       SelectBaseDataProps<MenuOption>,
@@ -48,7 +45,7 @@ export interface SelectMenuBaseDataProps<
       SelectBaseConfigProps<
         MenuOption,
         OptionLabelKey,
-        CustomAnchorButtonBaseProps,
+        CustomAnchorButtonProps,
         CustomOptionActionItemProps,
         CustomMenuFooterProps
       >,
@@ -60,8 +57,8 @@ export interface SelectMenuBaseDataProps<
 
 export interface SelectMenuBaseConfigProps<
   MenuOption extends object,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 > {
   OptionActionItem: FunctionComponent<
     OptionActionItemProps<MenuOption, CustomOptionActionItemProps>
@@ -71,7 +68,7 @@ export interface SelectMenuBaseConfigProps<
 
 type OptionActionItemProps<
   MenuOption extends object,
-  CustomOptionActionItemProps
+  CustomOptionActionItemProps extends Record<string, unknown>
 > = CustomOptionActionItemProps &
   Pick<
     UseSelectMenuNavigationResult,
@@ -81,14 +78,15 @@ type OptionActionItemProps<
     optionIndex: number
   }
 
-type MenuFooterProps<CustomMenuFooterProps> = CustomMenuFooterProps &
-  Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
+type MenuFooterProps<CustomMenuFooterProps extends Record<string, unknown>> =
+  CustomMenuFooterProps &
+    Pick<UseSelectMenuNavigationResult, 'menuNavigationFooterActionButtonProps'>
 
 export function SelectMenuBase<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 >(
   props: SelectMenuBaseProps<
     MenuOption,
@@ -133,7 +131,8 @@ export function SelectMenuBase<
       <div className={cssModule.optionList}>
         {optionList.map((someOption, optionIndex) => (
           <Button
-            {...getMenuNavigationMenuOptionProps(optionIndex)}
+            ariaLabel={'todo'}
+            ariaDescription={'todo'}
             key={optionIndex}
             className={getCssClass(
               cssModule.optionItem,
@@ -146,6 +145,7 @@ export function SelectMenuBase<
             onSelect={() => {
               selectOption(someOption)
             }}
+            {...getMenuNavigationMenuOptionProps(optionIndex)}
           >
             <svg className={cssModule.optionSelectedIcon} viewBox={'0 0 24 24'}>
               <path

@@ -1,56 +1,55 @@
-import { CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
+import { CustomAnchorButtonProps } from '@stews/components/Button'
 import {
   SelectBase,
-  SelectBaseAccessibilityProps,
   SelectBaseConfigProps,
   SelectBaseDataProps,
 } from '@stews/components/Select'
 import { CurationView } from '@stews/data'
-import { Fragment } from 'preact/jsx-runtime'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './ViewSelectBase.module.scss'
 
 interface ViewSelectBaseProps<
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
-> extends ViewSelectBaseAccessibilityProps,
-    ViewSelectBaseDataProps,
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
+> extends ViewSelectBaseDataProps,
     ViewSelectBaseConfigProps<
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     > {}
 
-export interface ViewSelectBaseAccessibilityProps
-  extends Pick<SelectBaseAccessibilityProps, 'popoverRole'> {}
-
 export interface ViewSelectBaseDataProps
-  extends Pick<CurationPageBaseDataProps<object>, 'curationLabel'>,
-    SelectBaseDataProps<CurationView> {}
+  extends SelectBaseDataProps<CurationView> {}
 
 export interface ViewSelectBaseConfigProps<
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 > extends Pick<
     SelectBaseConfigProps<
       CurationView,
       'viewLabel',
-      Omit<CustomAnchorButtonBaseProps, keyof CustomAnchorButtonBaseProps>,
+      Omit<CustomAnchorButtonProps, keyof CustomAnchorButtonProps>,
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     >,
-    'SelectMenu' | 'customOptionActionItemProps' | 'customMenuFooterProps'
+    | 'SelectMenu'
+    | 'popoverAriaRole'
+    | 'anchorAriaLabel'
+    | 'anchorAriaDescription'
+    | 'customOptionActionItemProps'
+    | 'customMenuFooterProps'
   > {}
 
 export function ViewSelectBase<
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 >(
   props: ViewSelectBaseProps<CustomOptionActionItemProps, CustomMenuFooterProps>
 ) {
   const {
-    curationLabel,
     SelectMenu,
-    popoverRole,
+    popoverAriaRole,
+    anchorAriaLabel,
+    anchorAriaDescription,
     optionList,
     selectedOption,
     selectOption,
@@ -58,23 +57,20 @@ export function ViewSelectBase<
     customMenuFooterProps,
   } = props
   return (
-    <Fragment>
-      <h2
-        className={cssModule.viewAccessibilityHeader}
-      >{`${curationLabel} view: ${selectedOption.viewLabel}`}</h2>
-      <SelectBase
-        optionLabelKey={'viewLabel'}
-        anchorBorderClassName={cssModule.viewSelectAnchorBorder}
-        fontSizeClassName={cssModule.viewSelectFontSize}
-        SelectMenu={SelectMenu}
-        popoverRole={popoverRole}
-        optionList={optionList}
-        selectedOption={selectedOption}
-        selectOption={selectOption}
-        customOptionActionItemProps={customOptionActionItemProps}
-        customMenuFooterProps={customMenuFooterProps}
-        customSelectAnchorButtonProps={{}}
-      />
-    </Fragment>
+    <SelectBase
+      optionLabelKey={'viewLabel'}
+      anchorBorderClassName={cssModule.viewSelectAnchorBorder}
+      fontSizeClassName={cssModule.viewSelectFontSize}
+      SelectMenu={SelectMenu}
+      popoverAriaRole={popoverAriaRole}
+      anchorAriaLabel={anchorAriaLabel}
+      anchorAriaDescription={anchorAriaDescription}
+      optionList={optionList}
+      selectedOption={selectedOption}
+      selectOption={selectOption}
+      customOptionActionItemProps={customOptionActionItemProps}
+      customMenuFooterProps={customMenuFooterProps}
+      customSelectAnchorButtonProps={{}}
+    />
   )
 }

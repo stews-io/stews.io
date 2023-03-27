@@ -6,7 +6,12 @@ import { SelectMenuBaseDataProps } from '../components/SelectMenuBase'
 
 export interface UseSelectMenuNavigationApi
   extends Pick<
-    SelectMenuBaseDataProps<object, never, unknown, unknown>,
+    SelectMenuBaseDataProps<
+      object,
+      never,
+      Record<string, unknown>,
+      Record<string, unknown>
+    >,
     | 'anchorElementRef'
     | 'initialFocusElementRef'
     | 'popoverNavigationItemBlurHandler'

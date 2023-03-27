@@ -1,8 +1,3 @@
-import {
-  AnchorButtonBase,
-  CoreAnchorButtonBaseProps,
-  CustomAnchorButtonBaseProps,
-} from '@stews/components/Bopper'
 import { getCssClass } from '@stews/helpers'
 import {
   SelectBaseConfigProps,
@@ -11,20 +6,25 @@ import {
 } from '../SelectBase'
 import { SelectOptionLabel } from './SelectOptionLabel'
 import cssModule from './SelectButton.module.scss'
+import {
+  AnchorButton,
+  CoreAnchorButtonProps,
+  CustomAnchorButtonProps,
+} from '@stews/components/Button'
 
 export interface SelectButtonProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps
-> extends CoreAnchorButtonBaseProps,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps
+> extends CoreAnchorButtonProps,
     Pick<SelectBaseDataProps<MenuOption>, 'selectedOption'>,
     Pick<
       SelectBaseConfigProps<
         MenuOption,
         OptionLabelKey,
         CustomSelectAnchorButtonProps,
-        unknown,
-        unknown
+        Record<string, unknown>,
+        Record<string, unknown>
       >,
       | 'optionLabelKey'
       | 'anchorBorderClassName'
@@ -36,7 +36,7 @@ export interface SelectButtonProps<
 export function SelectButton<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps
 >(
   props: SelectButtonProps<
     MenuOption,
@@ -48,7 +48,9 @@ export function SelectButton<
     anchorBorderClassName,
     fontSizeClassName,
     customSelectAnchorButtonProps,
-    popoverRole,
+    ariaLabel,
+    ariaDescription,
+    popoverAriaRole,
     anchorElementRef,
     setPopoverOpen,
     selectedOption,
@@ -63,8 +65,10 @@ export function SelectButton<
         [fontSizeClassName, Boolean(fontSizeClassName)]
       )}
     >
-      <AnchorButtonBase
-        popoverRole={popoverRole}
+      <AnchorButton
+        ariaLabel={ariaLabel}
+        ariaDescription={ariaDescription}
+        popoverAriaRole={popoverAriaRole}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
         className={getCssClass(cssModule.selectButton, [
@@ -93,7 +97,7 @@ export function SelectButton<
             />
           </svg>
         </div>
-      </AnchorButtonBase>
+      </AnchorButton>
     </div>
   )
 }

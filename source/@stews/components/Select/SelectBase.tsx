@@ -1,20 +1,16 @@
-import {
-  Bopper,
-  BopperProps,
-  CustomAnchorButtonBaseProps,
-} from '@stews/components/Bopper'
+import { Bopper, BopperProps } from '@stews/components/Bopper'
 import { FunctionComponent } from 'preact'
+import { CustomAnchorButtonProps } from '../Button'
 import { SelectButton } from './components/SelectButton'
 import { SelectMenuBaseDataProps } from './components/SelectMenuBase'
 
 interface SelectBaseProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
-> extends SelectBaseAccessibilityProps,
-    SelectBaseDataProps<MenuOption>,
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
+> extends SelectBaseDataProps<MenuOption>,
     SelectBaseConfigProps<
       MenuOption,
       OptionLabelKey,
@@ -22,9 +18,6 @@ interface SelectBaseProps<
       CustomOptionActionItemProps,
       CustomMenuFooterProps
     > {}
-
-export interface SelectBaseAccessibilityProps
-  extends Pick<BopperProps<unknown, unknown>, 'popoverRole'> {}
 
 export interface SelectBaseDataProps<MenuOption extends object> {
   optionList: Array<MenuOption>
@@ -35,10 +28,13 @@ export interface SelectBaseDataProps<MenuOption extends object> {
 export interface SelectBaseConfigProps<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomSelectAnchorButtonProps extends CustomAnchorButtonBaseProps,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
-> {
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
+> extends Pick<
+    BopperProps<unknown, unknown>,
+    'popoverAriaRole' | 'anchorAriaLabel' | 'anchorAriaDescription'
+  > {
   anchorBorderClassName?: string
   fontSizeClassName?: string
   selectIconClassName?: string
@@ -65,21 +61,23 @@ export type VerifiedOptionLabelKey<MenuOption extends object> = {
 export function SelectBase<
   MenuOption extends object,
   OptionLabelKey extends VerifiedOptionLabelKey<MenuOption>,
-  CustomAnchorButtonProps extends CustomAnchorButtonBaseProps,
-  CustomOptionActionItemProps,
-  CustomMenuFooterProps
+  CustomSelectAnchorButtonProps extends CustomAnchorButtonProps,
+  CustomOptionActionItemProps extends Record<string, unknown>,
+  CustomMenuFooterProps extends Record<string, unknown>
 >(
   props: SelectBaseProps<
     MenuOption,
     OptionLabelKey,
-    CustomAnchorButtonProps,
+    CustomSelectAnchorButtonProps,
     CustomOptionActionItemProps,
     CustomMenuFooterProps
   >
 ) {
   const {
     SelectMenu,
-    popoverRole,
+    popoverAriaRole,
+    anchorAriaLabel,
+    anchorAriaDescription,
     customSelectAnchorButtonProps,
     anchorBorderClassName,
     fontSizeClassName,
@@ -95,7 +93,9 @@ export function SelectBase<
     <Bopper
       AnchorButton={SelectButton}
       PopoverContent={SelectMenu}
-      popoverRole={popoverRole}
+      popoverAriaRole={popoverAriaRole}
+      anchorAriaLabel={anchorAriaLabel}
+      anchorAriaDescription={anchorAriaDescription}
       customAnchorButtonProps={{
         customSelectAnchorButtonProps,
         anchorBorderClassName,

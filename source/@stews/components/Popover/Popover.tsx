@@ -11,7 +11,7 @@ export interface PopoverDataProps {
   anchorElementRef: Ref<HTMLDivElement>
   popoverOpen: boolean
   setPopoverOpen: StateUpdater<boolean>
-  popoverRole: 'dialog' | 'menu' | 'listbox' | 'tree' | 'grid'
+  popoverAriaRole: 'dialog' | 'menu' | 'listbox'
 }
 
 interface PopoverConfigProps<CustomPopoverContentProps> {
@@ -37,7 +37,7 @@ export function Popover<CustomPopoverContentProps>(
     setPopoverOpen,
     anchorElementRef,
     popoverOpen,
-    popoverRole,
+    popoverAriaRole,
     PopoverContent,
     customPopoverContentProps,
   } = props
@@ -135,7 +135,7 @@ export function Popover<CustomPopoverContentProps>(
     <div
       tabIndex={-1}
       className={cssModule.popoverContainer}
-      role={popoverRole}
+      role={popoverAriaRole}
       ref={popoverRef}
       onBlur={popoverNavigationItemBlurHandler}
       style={getPopoverLayoutStyle({

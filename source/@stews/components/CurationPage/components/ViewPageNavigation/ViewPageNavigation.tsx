@@ -1,4 +1,5 @@
 import { Button, ButtonProps } from '@stews/components/Button'
+import { CoreAriaOrnamentsData } from '@stews/components/Button/ButtonBase'
 import { getCssClass } from '@stews/helpers'
 import { Fragment } from 'preact/jsx-runtime'
 import { UseViewPageApi } from '../../hooks/useViewPage'
@@ -66,8 +67,9 @@ function PreviousPageButton(props: PreviousPageButtonProps) {
   return (
     <PageButtonBase
       buttonLabel={'prev'}
-      accessibilityDescription={
-        'button for viewing the previous page of filtered and sorted view items'
+      ariaLabel={'previous page'}
+      ariaDescription={
+        'a button that displays the previous page of filtered and sorted view items'
       }
       adjustedPageIndex={adjustedPageIndex}
       setPageIndex={setPageIndexToPrevious}
@@ -85,8 +87,9 @@ function NextPageButton(props: NextPageButtonProps) {
   return (
     <PageButtonBase
       buttonLabel={'next'}
-      accessibilityDescription={
-        'button for viewing the next page of filtered and sorted view items'
+      ariaLabel={'next page'}
+      ariaDescription={
+        'a button that displays the next page of filtered and sorted view items'
       }
       adjustedPageIndex={adjustedPageIndex}
       setPageIndex={setPageIndexToNext}
@@ -104,8 +107,7 @@ interface PageButtonBaseDataProps
   buttonEnabled: boolean
 }
 
-interface PageButtonBaseConfigProps {
-  accessibilityDescription: string
+interface PageButtonBaseConfigProps extends CoreAriaOrnamentsData {
   buttonLabel: string
   setPageIndex:
     | ViewPageNavigationProps['setPageIndexToPrevious']
@@ -114,38 +116,29 @@ interface PageButtonBaseConfigProps {
 
 function PageButtonBase(props: PageButtonBaseProps) {
   const {
-    accessibilityDescription,
+    ariaLabel,
+    ariaDescription,
     buttonEnabled,
     setPageIndex,
     adjustedPageIndex,
     buttonLabel,
   } = props
   const buttonDisabled = !buttonEnabled
-  const ariaDescriptionElementId = `${buttonLabel}-accessibility-description`
   return (
-    <Fragment>
-      <Button
-        // lighthouse seems to not recognize aria-description
-        // aria-description={accessibilityDescription}
-        aria-describedby={ariaDescriptionElementId}
-        tabIndex={buttonEnabled ? 0 : -1}
-        disabled={buttonDisabled}
-        className={getCssClass(cssModule.navigationButtonBase, [
-          cssModule.disabledButtonOverride,
-          buttonDisabled,
-        ])}
-        onSelect={() => {
-          setPageIndex(adjustedPageIndex)
-        }}
-      >
-        {buttonLabel}
-      </Button>
-      <div
-        className={cssModule.pageButtonAccessibilityDescription}
-        id={ariaDescriptionElementId}
-      >
-        {accessibilityDescription}
-      </div>
-    </Fragment>
+    <Button
+      ariaLabel={ariaLabel}
+      ariaDescription={ariaDescription}
+      tabIndex={buttonEnabled ? 0 : -1}
+      disabled={buttonDisabled}
+      className={getCssClass(cssModule.navigationButtonBase, [
+        cssModule.disabledButtonOverride,
+        buttonDisabled,
+      ])}
+      onSelect={() => {
+        setPageIndex(adjustedPageIndex)
+      }}
+    >
+      {buttonLabel}
+    </Button>
   )
 }

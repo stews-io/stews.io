@@ -28,7 +28,6 @@ export function ConsumerCurationPage<CurationItem extends object>(
       curatorInfo={curatorInfo}
       curationViews={curationViews}
       curationItems={curationItems}
-      customViewSelectProps={null}
     />
   )
 }

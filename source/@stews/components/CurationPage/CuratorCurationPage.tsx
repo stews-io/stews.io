@@ -28,10 +28,6 @@ export function CuratorCurationPage<CurationItem extends object>(
       curatorInfo={curatorInfo}
       curationViews={curationViews}
       curationItems={curationItems}
-      customViewSelectProps={{
-        navigateToEditViewPage: () => {},
-        navigateToCreateViewPage: () => {},
-      }}
     />
   )
 }

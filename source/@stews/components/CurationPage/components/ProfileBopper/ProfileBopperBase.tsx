@@ -18,7 +18,9 @@ export function ProfileBopperBase(props: ProfileBopperBaseProps) {
   const { AnchorButton, PopoverContent, curatorInfo } = props
   return (
     <Bopper
-      popoverRole={'dialog'}
+      popoverAriaRole={'dialog'}
+      anchorAriaLabel={'todo'}
+      anchorAriaDescription={'todo'}
       AnchorButton={AnchorButton}
       PopoverContent={PopoverContent}
       customAnchorButtonProps={null}

@@ -1,5 +1,5 @@
+import { LinkButton } from '@stews/components/Button'
 import { ItemDisplayProps } from '@stews/components/CurationPage/CurationPageBase'
-import { LinkButton } from '@stews/components/LinkButton'
 import { MusicItem } from '../data/MusicItem'
 import cssModule from './MusicItemDisplay.module.scss'
 
@@ -21,6 +21,8 @@ export function MusicItemDisplay(props: MusicItemProps) {
               <div className={cssModule.linkContainer}>
                 <LinkButton
                   target={'_blank'}
+                  ariaLabel={`listen on ${someExternalLink.linkLabel}`}
+                  ariaDescription={`a button that navigates in a new tab to ${someItem.musicTitle} by ${someItem.musicArtist[0]} on ${someExternalLink.linkLabel}`}
                   className={cssModule.musicLinkButton}
                   href={someExternalLink.linkHref}
                 >

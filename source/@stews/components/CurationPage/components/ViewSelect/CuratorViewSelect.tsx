@@ -1,4 +1,4 @@
-import { Button } from '@stews/components/Button'
+import { LinkButton } from '@stews/components/Button'
 import {
   SelectMenuBase,
   SelectMenuBaseConfigProps,
@@ -12,27 +12,25 @@ import {
 } from './ViewSelectBase'
 import { CurationView } from '@stews/data'
 import cssModule from './CuratorViewSelect.module.scss'
+import { CurationPageBaseDataProps } from '../../CurationPageBase'
 
-export interface CuratorViewSelectProps extends ViewSelectBaseDataProps {
-  navigateToEditViewPage: (someViewOption: CurationView) => void
-  navigateToCreateViewPage: () => void
-}
+export interface CuratorViewSelectProps
+  extends ViewSelectBaseDataProps,
+    Pick<CurationPageBaseDataProps<object>, 'curationLabel'> {}
 
 export function CuratorViewSelect(props: CuratorViewSelectProps) {
-  const {
-    navigateToEditViewPage,
-    navigateToCreateViewPage,
-    ...viewSelectBaseProps
-  } = props
+  const { curationLabel, ...viewSelectBaseProps } = props
   return (
     <ViewSelectBase
-      popoverRole={'menu'}
+      popoverAriaRole={'menu'}
+      anchorAriaLabel={`show ${curationLabel} view menu`}
+      anchorAriaDescription={`a button that shows a popover displaying options for selecting, editing, or creating a ${curationLabel} view`}
       SelectMenu={CuratorSelectMenu}
       customOptionActionItemProps={{
-        navigateToEditViewPage,
+        curationLabel,
       }}
       customMenuFooterProps={{
-        navigateToCreateViewPage,
+        curationLabel,
       }}
       {...viewSelectBaseProps}
     />
@@ -68,23 +66,24 @@ interface CuratorOptionActionItemProps
   extends ComponentProps<CuratorSelectMenuPropsConfig['OptionActionItem']> {}
 
 interface CustomCuratorOptionActionItemProps
-  extends Pick<CuratorViewSelectProps, 'navigateToEditViewPage'> {}
+  extends Pick<CuratorViewSelectProps, 'curationLabel'> {}
 
 function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
   const {
+    curationLabel,
+    someOption,
     getMenuNavigationOptionActionButtonProps,
     optionIndex,
-    navigateToEditViewPage,
-    someOption,
     latestFocusedOptionIndex,
   } = props
   return (
     <div className={cssModule.optionActionItem}>
-      <Button
+      <LinkButton
+        target={'_self'}
+        href={`${curationLabel}/view/${someOption.viewId}/edit`}
+        ariaLabel={`edit "${someOption.viewLabel}" ${curationLabel} view`}
+        ariaDescription={`a button that navigates to the edit view page for "${someOption.viewLabel}"`}
         {...getMenuNavigationOptionActionButtonProps(optionIndex)}
-        onSelect={() => {
-          navigateToEditViewPage(someOption)
-        }}
       >
         <svg
           className={getCssClass(cssModule.optionActionIcon, [
@@ -108,7 +107,7 @@ function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
             </g>
           </g>
         </svg>
-      </Button>
+      </LinkButton>
     </div>
   )
 }
@@ -117,22 +116,24 @@ interface CuratorMenuFooterProps
   extends ComponentProps<CuratorSelectMenuPropsConfig['MenuFooter']> {}
 
 interface CustomCuratorMenuFooterProps
-  extends Pick<CuratorViewSelectProps, 'navigateToCreateViewPage'> {}
+  extends Pick<CuratorViewSelectProps, 'curationLabel'> {}
 
 function CurtatorMenuFooter(props: CuratorMenuFooterProps) {
-  const { menuNavigationFooterActionButtonProps, navigateToCreateViewPage } =
-    props
+  const { curationLabel, menuNavigationFooterActionButtonProps } = props
   return (
     <div className={cssModule.footerContainer}>
       <div className={cssModule.footerDivider} />
       <div className={cssModule.footerActionButtonContainer}>
-        <Button
-          {...menuNavigationFooterActionButtonProps}
+        <LinkButton
+          target={'_self'}
+          href={`${curationLabel}/view/create`}
+          ariaLabel={`create ${curationLabel} view`}
+          ariaDescription={''}
           className={cssModule.footerActionButton}
-          onSelect={navigateToCreateViewPage}
+          {...menuNavigationFooterActionButtonProps}
         >
           create view
-        </Button>
+        </LinkButton>
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import { CustomAnchorButtonBaseProps } from '@stews/components/Bopper'
+import { CustomAnchorButtonProps } from '@stews/components/Button'
 import {
   SelectBase,
   SelectBaseConfigProps,
@@ -18,7 +18,9 @@ export function ViewSortSelect<CurationItem extends object>(
   const { optionList, selectedOption, selectOption } = props
   return (
     <SelectBase
-      popoverRole={'listbox'}
+      popoverAriaRole={'listbox'}
+      anchorAriaLabel={'todo'}
+      anchorAriaDescription={'todo'}
       optionLabelKey={'sortLabel'}
       SelectMenu={ViewSortSelectMenu}
       anchorBorderClassName={cssModule.viewSortSelectAnchorBorder}
@@ -27,6 +29,8 @@ export function ViewSortSelect<CurationItem extends object>(
       optionList={optionList}
       selectedOption={selectedOption}
       selectOption={selectOption}
+      customOptionActionItemProps={{}}
+      customMenuFooterProps={{}}
       customSelectAnchorButtonProps={{
         onFocus: (someFocusEvent) => {
           const approximateViewSortSelectDocumentTop = 59
@@ -42,8 +46,6 @@ export function ViewSortSelect<CurationItem extends object>(
           }
         },
       }}
-      customOptionActionItemProps={null}
-      customMenuFooterProps={null}
     />
   )
 }
@@ -53,9 +55,9 @@ interface ViewSortSelectMenuProps<CurationItem extends object>
     SelectBaseConfigProps<
       ViewSortOption<CurationItem>,
       'sortLabel',
-      CustomAnchorButtonBaseProps,
-      null,
-      null
+      CustomAnchorButtonProps,
+      Record<string, unknown>,
+      Record<string, unknown>
     >['SelectMenu']
   > {}
 

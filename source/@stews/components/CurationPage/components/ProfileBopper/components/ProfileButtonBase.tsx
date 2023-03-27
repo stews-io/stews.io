@@ -1,29 +1,39 @@
-import {
-  AnchorButtonBase,
-  CoreAnchorButtonBaseProps,
-} from '@stews/components/Bopper'
+import {} from '@stews/components/Bopper'
+import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Button'
+import { CoreAriaOrnamentsData } from '@stews/components/Button/ButtonBase'
 import { FunctionComponent } from 'preact'
 import cssModule from './ProfileButtonBase.module.scss'
 
 export interface ProfileButtonBaseProps
-  extends CoreAnchorButtonBaseProps,
-    ProfileButtonBaseConfigProps {}
+  extends ProfileButtonBaseConfigProps,
+    ProfileButtonBaseDataProps {}
 
-interface ProfileButtonBaseConfigProps {
+interface ProfileButtonBaseConfigProps extends CoreAriaOrnamentsData {
   ProfileIcon: FunctionComponent<unknown>
 }
 
+export interface ProfileButtonBaseDataProps
+  extends Omit<CoreAnchorButtonProps, keyof CoreAriaOrnamentsData> {}
+
 export function ProfileButtonBase(props: ProfileButtonBaseProps) {
-  const { popoverRole, anchorElementRef, setPopoverOpen, ProfileIcon } = props
+  const {
+    ariaLabel,
+    ariaDescription,
+    popoverAriaRole,
+    anchorElementRef,
+    setPopoverOpen,
+    ProfileIcon,
+  } = props
   return (
-    <AnchorButtonBase
-      popoverRole={popoverRole}
+    <AnchorButton
+      ariaLabel={ariaLabel}
+      ariaDescription={ariaDescription}
+      popoverAriaRole={popoverAriaRole}
       anchorElementRef={anchorElementRef}
       setPopoverOpen={setPopoverOpen}
-      aria-label={'profile button'}
     >
       <ProfileIcon />
-    </AnchorButtonBase>
+    </AnchorButton>
   )
 }
 
