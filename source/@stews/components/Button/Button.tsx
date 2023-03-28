@@ -1,9 +1,5 @@
-import {
-  ButtonBase,
-  ButtonBaseProps,
-  CoreAriaOrnaments,
-  CoreAriaOrnamentsData,
-} from './ButtonBase'
+import { CoreAriaOrnaments, CoreAriaOrnamentsData } from '@stews/hooks/useAria'
+import { ButtonBase, ButtonBaseProps } from './ButtonBase'
 
 export interface ButtonProps extends CoreButtonProps, CustomButtonProps {}
 

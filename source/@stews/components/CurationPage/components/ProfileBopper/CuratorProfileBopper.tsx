@@ -17,7 +17,7 @@ export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
     <ProfileBopperBase
       anchorAriaLabel={`show your profile`}
       anchorAriaDescription={`a button that displays a popover with your profile info`}
-      AnchorButton={CuratorProfileButton}
+      SomeAnchorButton={CuratorProfileButton}
       PopoverContent={ProfileContentBase}
       curatorInfo={curatorInfo}
     />

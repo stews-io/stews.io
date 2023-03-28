@@ -110,7 +110,7 @@ export function Popover<CustomPopoverContentProps>(
   }, [popoverOpen])
   const popoverNavigationItemBlurHandler = useMemo(
     () => (someBlurEvent: FocusEvent) => {
-      const windowBlur = someBlurEvent.relatedTarget === null
+      const windowBlurOrClickAway = someBlurEvent.relatedTarget === null
       const tabPreviousEscapeOrEnterSelect =
         someBlurEvent.relatedTarget === anchorElementRef.current
       const tabNextEscape =
@@ -118,7 +118,7 @@ export function Popover<CustomPopoverContentProps>(
         someBlurEvent.relatedTarget instanceof HTMLElement
           ? !popoverRef.current.contains(someBlurEvent.relatedTarget)
           : true
-      if (windowBlur || tabPreviousEscapeOrEnterSelect) {
+      if (windowBlurOrClickAway || tabPreviousEscapeOrEnterSelect) {
         closePopover()
       } else if (tabNextEscape) {
         closePopover()

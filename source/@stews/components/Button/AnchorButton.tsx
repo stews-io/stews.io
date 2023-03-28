@@ -1,10 +1,6 @@
+import { CoreAriaOrnaments, CoreAriaOrnamentsData } from '@stews/hooks/useAria'
 import { PopoverDataProps } from '../Popover'
-import {
-  ButtonBase,
-  ButtonBaseProps,
-  CoreAriaOrnaments,
-  CoreAriaOrnamentsData,
-} from './ButtonBase'
+import { ButtonBase, ButtonBaseProps } from './ButtonBase'
 
 export interface AnchorButtonProps
   extends CoreAnchorButtonProps,
@@ -14,7 +10,7 @@ export interface CoreAnchorButtonProps
   extends CoreAriaOrnamentsData,
     Pick<
       PopoverDataProps,
-      'anchorElementRef' | 'setPopoverOpen' | 'popoverAriaRole'
+      'anchorElementRef' | 'setPopoverOpen' | 'popoverOpen' | 'popoverAriaRole'
     > {}
 
 export interface CustomAnchorButtonProps
@@ -34,6 +30,8 @@ export function AnchorButton(props: AnchorButtonProps) {
     popoverAriaRole,
     anchorElementRef,
     setPopoverOpen,
+    popoverOpen,
+    disabled,
     ...unadjustedProps
   } = props
   return (
@@ -51,6 +49,7 @@ export function AnchorButton(props: AnchorButtonProps) {
       onSelect={() => {
         setPopoverOpen(true)
       }}
+      disabled={disabled || popoverOpen}
       {...unadjustedProps}
     />
   )

@@ -18,7 +18,7 @@ export function ConsumerProfileBopper(props: ConsumerProfileBopperProps) {
     <ProfileBopperBase
       anchorAriaLabel={`show ${curatorInfo.curatorName}'s profile`}
       anchorAriaDescription={`a button that displays a popover with ${curatorInfo.curatorName}'s profile info`}
-      AnchorButton={ConsumerProfileButton}
+      SomeAnchorButton={ConsumerProfileButton}
       PopoverContent={ProfileContentBase}
       curatorInfo={curatorInfo}
     />

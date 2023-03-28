@@ -1,44 +1,30 @@
-import { getCssClass, throwInvalidPathError } from '@stews/helpers'
+import { getCssClass } from '@stews/helpers'
 import { SimpleComponentProps } from '@stews/helpers/types'
-import { createRef, Ref } from 'preact'
-import { useLayoutEffect, useMemo } from 'preact/hooks'
+import { CoreAriaOrnaments, useAria, UseAriaApi } from '@stews/hooks/useAria'
+import { Ref } from 'preact'
 import cssModule from './ButtonBase.module.scss'
 
 export interface ButtonBaseProps<
   AriaOrnaments extends CoreAriaOrnaments<string>
 > extends Pick<
-    SimpleComponentProps<'div'>,
-    | 'children'
-    | 'className'
-    | 'disabled'
-    | 'tabIndex'
-    | 'onClick'
-    | 'onKeyDown'
-    | 'onPointerDown'
-    | 'onFocus'
-    | 'onBlur'
-    | 'onPointerMove'
-  > {
-  setCustomAriaAttributes: (
-    ariaElement: HTMLDivElement,
-    ariaOrnaments: AriaOrnaments
-  ) => void
-  ariaOrnaments: AriaOrnaments
+      SimpleComponentProps<'div'>,
+      | 'children'
+      | 'className'
+      | 'disabled'
+      | 'tabIndex'
+      | 'onClick'
+      | 'onKeyDown'
+      | 'onPointerDown'
+      | 'onFocus'
+      | 'onBlur'
+      | 'onPointerMove'
+    >,
+    Pick<
+      UseAriaApi<AriaOrnaments>,
+      'ariaOrnaments' | 'setCustomAriaAttributes'
+    > {
   elementRef?: Ref<HTMLDivElement>
   onSelect: () => void
-}
-
-export interface CoreAriaOrnaments<AriaRole extends string>
-  extends CoreAriaOrnamentsConfig<AriaRole>,
-    CoreAriaOrnamentsData {}
-
-interface CoreAriaOrnamentsConfig<AriaRole extends string> {
-  ariaRole: AriaRole
-}
-
-export interface CoreAriaOrnamentsData {
-  ariaLabel: string
-  ariaDescription: string
 }
 
 export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
@@ -58,10 +44,15 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
     onBlur,
     ...unadjustedProps
   } = props
-  const { ariaElementRef } = useButtonAria({
-    setCustomAriaAttributes,
-    ariaOrnaments,
-    disabled,
+  const { ariaElementRef } = useAria({
+    ariaOrnaments: {
+      ...ariaOrnaments,
+      ariaDisabled: `${disabled ?? false}`,
+    },
+    setCustomAriaAttributes: (ariaElement, ariaOrnaments) => {
+      ariaElement.setAttribute('aria-disabled', ariaOrnaments.ariaDisabled)
+      setCustomAriaAttributes(ariaElement, ariaOrnaments)
+    },
   })
   return (
     <div
@@ -141,55 +132,4 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
       {...unadjustedProps}
     />
   )
-}
-
-interface UseButtonAriaApi<AriaOrnaments extends CoreAriaOrnaments<string>>
-  extends Pick<
-    ButtonBaseProps<AriaOrnaments>,
-    'ariaOrnaments' | 'disabled' | 'setCustomAriaAttributes'
-  > {}
-
-function useButtonAria<AriaOrnaments extends CoreAriaOrnaments<string>>(
-  api: UseButtonAriaApi<AriaOrnaments>
-) {
-  const { ariaOrnaments, disabled, setCustomAriaAttributes } = api
-  const { ariaElementRef, ariaDescriptionElementRef } = useMemo(() => {
-    return {
-      ariaElementRef: createRef<HTMLDivElement>(),
-      ariaDescriptionElementRef: createRef<HTMLDivElement>(),
-    }
-  }, [])
-  useLayoutEffect(() => {
-    const ariaElement =
-      ariaElementRef.current ??
-      throwInvalidPathError('useButtonAria.useLayoutEffect[]')
-    const ariaDescriptionElement = document.createElement('div')
-    ariaDescriptionElement.id = `${Math.random()}`
-    ariaDescriptionElement.style.display = 'none'
-    ariaElement.insertAdjacentElement('afterend', ariaDescriptionElement)
-    ariaElement.setAttribute('aria-describedby', ariaDescriptionElement.id)
-    ariaDescriptionElementRef.current = ariaDescriptionElement
-    return () => {
-      ariaDescriptionElement.remove()
-    }
-  }, [])
-  useLayoutEffect(() => {
-    const ariaElement = ariaElementRef.current
-    const ariaDescriptionElement = ariaDescriptionElementRef.current
-    if (
-      ariaElement instanceof HTMLDivElement &&
-      ariaDescriptionElement instanceof HTMLDivElement
-    ) {
-      ariaElement.setAttribute('role', ariaOrnaments.ariaRole)
-      ariaElement.setAttribute('aria-label', ariaOrnaments.ariaLabel)
-      ariaElement.setAttribute('aria-disabled', `${disabled ?? false}`)
-      ariaDescriptionElement.innerText = ariaOrnaments.ariaDescription
-      setCustomAriaAttributes(ariaElement, ariaOrnaments)
-    } else {
-      throwInvalidPathError(
-        'useButtonAria.useLayoutEffect[ariaOrnaments, disabled]'
-      )
-    }
-  }, [ariaOrnaments, disabled])
-  return { ariaElementRef }
 }

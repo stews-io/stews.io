@@ -91,12 +91,12 @@ export function SelectBase<
   } = props
   return (
     <Bopper
-      AnchorButton={SelectButton}
+      SomeAnchorButton={SelectButton}
       PopoverContent={SelectMenu}
       popoverAriaRole={popoverAriaRole}
       anchorAriaLabel={anchorAriaLabel}
       anchorAriaDescription={anchorAriaDescription}
-      customAnchorButtonProps={{
+      customSomeAnchorButtonProps={{
         customSelectAnchorButtonProps,
         anchorBorderClassName,
         fontSizeClassName,

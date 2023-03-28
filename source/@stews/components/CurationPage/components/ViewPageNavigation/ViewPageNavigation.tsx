@@ -1,6 +1,6 @@
 import { Button } from '@stews/components/Button'
-import { CoreAriaOrnamentsData } from '@stews/components/Button/ButtonBase'
 import { getCssClass } from '@stews/helpers'
+import { CoreAriaOrnamentsData, useAria } from '@stews/hooks/useAria'
 import { UseViewPageApi } from '../../hooks/useViewPage'
 import cssModule from './ViewPageNavigation.module.scss'
 
@@ -20,8 +20,21 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
     pageCount,
     setPageIndexToNext,
   } = props
-  const navigationMeterAccessibilityDescriptionId =
-    'navigation-meter-accessibility-description'
+  const { ariaElementRef } = useAria({
+    ariaOrnaments: {
+      ariaRole: 'meter',
+      ariaLabel: 'view pagination meter',
+      ariaDescription: 'pagination meter for filtered and sorted view items',
+      ariaValueMin: `${1}`,
+      ariaValueNow: `${adjustedPageIndex}`,
+      ariaValueMax: `${pageCount}`,
+    },
+    setCustomAriaAttributes: (ariaElement, ariaOrnaments) => {
+      ariaElement.setAttribute('aria-valuemin', ariaOrnaments.ariaValueMin)
+      ariaElement.setAttribute('aria-valuenow', ariaOrnaments.ariaValueNow)
+      ariaElement.setAttribute('aria-valuemax', ariaOrnaments.ariaValueMax)
+    },
+  })
   return (
     <div className={cssModule.navigationContainer}>
       <PreviousPageButton
@@ -29,24 +42,10 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
         setPageIndexToPrevious={setPageIndexToPrevious}
         buttonEnabled={adjustedPageIndex > 0}
       />
-      <div
-        className={cssModule.navigationMeterContainer}
-        role={'meter'}
-        aria-label={'view pagination meter'}
-        aria-valuemin={1}
-        aria-valuenow={adjustedPageIndex}
-        aria-valuemax={pageCount}
-        aria-describedby={navigationMeterAccessibilityDescriptionId}
-      >
+      <div className={cssModule.navigationMeterContainer} ref={ariaElementRef}>
         <div className={cssModule.navigationMeter}>
           {`${adjustedPageIndex + 1} / ${pageCount}`}
         </div>
-      </div>
-      <div
-        className={cssModule.navigationMeterAccessibilityDescription}
-        id={navigationMeterAccessibilityDescriptionId}
-      >
-        pagination meter for filtered and sorted view items
       </div>
       <NextPageButton
         adjustedPageIndex={adjustedPageIndex}

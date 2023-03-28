@@ -9,8 +9,6 @@ export interface PageProps extends Pick<ComponentProps<'div'>, 'children'> {
 export function Page(props: PageProps) {
   const { pageAriaHeader, children } = props
   useEffect(() => {
-    // enable unfocusing buttons, inputs, .etc
-    document.body.setAttribute('tabIndex', '-1')
     // have page start at top after load/refresh
     window.history.scrollRestoration = 'manual'
   }, [])

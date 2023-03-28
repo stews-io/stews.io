@@ -1,32 +1,37 @@
+import { CoreAriaOrnamentsData } from '@stews/hooks/useAria'
 import { FunctionComponent } from 'preact'
 import { useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
-import { CoreAnchorButtonProps, CoreAriaOrnamentsData } from '../Button'
+import { CoreAnchorButtonProps } from '../Button'
 import { Popover, PopoverProps } from '../Popover'
 
-export interface BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
-  extends Pick<
+export interface BopperProps<
+  CustomSomeAnchorButtonProps,
+  CustomPopoverContentProps
+> extends Pick<
     PopoverProps<CustomPopoverContentProps>,
     'PopoverContent' | 'customPopoverContentProps' | 'popoverAriaRole'
   > {
   anchorAriaLabel: CoreAriaOrnamentsData['ariaLabel']
   anchorAriaDescription: CoreAriaOrnamentsData['ariaDescription']
-  customAnchorButtonProps: CustomAnchorButtonProps
-  AnchorButton: FunctionComponent<AnchorButtonProps<CustomAnchorButtonProps>>
+  customSomeAnchorButtonProps: CustomSomeAnchorButtonProps
+  SomeAnchorButton: FunctionComponent<
+    SomeAnchorButtonProps<CustomSomeAnchorButtonProps>
+  >
 }
 
-type AnchorButtonProps<CustomAnchorButtonProps> = CoreAnchorButtonProps &
+type SomeAnchorButtonProps<CustomAnchorButtonProps> = CoreAnchorButtonProps &
   CustomAnchorButtonProps
 
-export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
-  props: BopperProps<CustomAnchorButtonProps, CustomPopoverContentProps>
+export function Bopper<CustomSomeAnchorButtonProps, CustomPopoverContentProps>(
+  props: BopperProps<CustomSomeAnchorButtonProps, CustomPopoverContentProps>
 ) {
   const {
-    AnchorButton,
+    SomeAnchorButton,
     anchorAriaLabel,
     anchorAriaDescription,
     popoverAriaRole,
-    customAnchorButtonProps,
+    customSomeAnchorButtonProps,
     PopoverContent,
     customPopoverContentProps,
   } = props
@@ -34,13 +39,14 @@ export function Bopper<CustomAnchorButtonProps, CustomPopoverContentProps>(
   const [popoverOpen, setPopoverOpen] = useState(false)
   return (
     <Fragment>
-      <AnchorButton
+      <SomeAnchorButton
         ariaLabel={anchorAriaLabel}
         ariaDescription={anchorAriaDescription}
         popoverAriaRole={popoverAriaRole}
         anchorElementRef={anchorElementRef}
+        popoverOpen={popoverOpen}
         setPopoverOpen={setPopoverOpen}
-        {...customAnchorButtonProps}
+        {...customSomeAnchorButtonProps}
       />
       <Popover
         popoverAriaRole={popoverAriaRole}

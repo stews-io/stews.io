@@ -1,10 +1,6 @@
 import { SimpleComponentProps } from '@stews/helpers/types'
-import {
-  ButtonBase,
-  ButtonBaseProps,
-  CoreAriaOrnaments,
-  CoreAriaOrnamentsData,
-} from './ButtonBase'
+import { CoreAriaOrnaments, CoreAriaOrnamentsData } from '@stews/hooks/useAria'
+import { ButtonBase, ButtonBaseProps } from './ButtonBase'
 
 export interface LinkButtonProps
   extends CoreLinkButtonProps,

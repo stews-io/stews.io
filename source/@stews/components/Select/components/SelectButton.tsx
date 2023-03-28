@@ -47,12 +47,13 @@ export function SelectButton<
   const {
     anchorBorderClassName,
     fontSizeClassName,
-    customSelectAnchorButtonProps,
     ariaLabel,
     ariaDescription,
     popoverAriaRole,
     anchorElementRef,
     setPopoverOpen,
+    popoverOpen,
+    customSelectAnchorButtonProps,
     selectedOption,
     optionLabelKey,
     selectIconClassName,
@@ -71,6 +72,7 @@ export function SelectButton<
         popoverAriaRole={popoverAriaRole}
         anchorElementRef={anchorElementRef}
         setPopoverOpen={setPopoverOpen}
+        popoverOpen={popoverOpen}
         className={getCssClass(cssModule.selectButton, [
           customSelectAnchorButtonProps.className,
           Boolean(customSelectAnchorButtonProps.className),

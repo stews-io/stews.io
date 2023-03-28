@@ -1,5 +1,4 @@
 import { Bopper, BopperProps } from '@stews/components/Bopper'
-import { CoreAriaOrnamentsData } from '@stews/components/Button'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 
 interface ProfileBopperBaseProps
@@ -14,7 +13,7 @@ interface ProfileBopperBaseConfigProps
     BopperProps<null, ProfileBopperBaseDataProps>,
     | 'anchorAriaLabel'
     | 'anchorAriaDescription'
-    | 'AnchorButton'
+    | 'SomeAnchorButton'
     | 'PopoverContent'
   > {}
 
@@ -22,7 +21,7 @@ export function ProfileBopperBase(props: ProfileBopperBaseProps) {
   const {
     anchorAriaLabel,
     anchorAriaDescription,
-    AnchorButton,
+    SomeAnchorButton,
     PopoverContent,
     curatorInfo,
   } = props
@@ -31,9 +30,9 @@ export function ProfileBopperBase(props: ProfileBopperBaseProps) {
       popoverAriaRole={'dialog'}
       anchorAriaLabel={anchorAriaLabel}
       anchorAriaDescription={anchorAriaDescription}
-      AnchorButton={AnchorButton}
+      SomeAnchorButton={SomeAnchorButton}
       PopoverContent={PopoverContent}
-      customAnchorButtonProps={null}
+      customSomeAnchorButtonProps={null}
       customPopoverContentProps={{
         curatorInfo,
       }}
