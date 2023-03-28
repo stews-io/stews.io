@@ -15,7 +15,9 @@ export interface CoreAriaOrnamentsData {
   ariaDescription: string
 }
 
-export interface UseAriaApi<AriaOrnaments extends CoreAriaOrnaments<string>> {
+export interface UseInteractiveAriaApi<
+  AriaOrnaments extends CoreAriaOrnaments<string>
+> {
   ariaOrnaments: AriaOrnaments
   setCustomAriaAttributes: (
     ariaElement: HTMLDivElement,
@@ -23,9 +25,9 @@ export interface UseAriaApi<AriaOrnaments extends CoreAriaOrnaments<string>> {
   ) => void
 }
 
-export function useAria<AriaOrnaments extends CoreAriaOrnaments<string>>(
-  api: UseAriaApi<AriaOrnaments>
-) {
+export function useInteractiveAria<
+  AriaOrnaments extends CoreAriaOrnaments<string>
+>(api: UseInteractiveAriaApi<AriaOrnaments>) {
   const { ariaOrnaments, setCustomAriaAttributes } = api
   const { ariaElementRef, ariaDescriptionElementRef } = useMemo(() => {
     return {

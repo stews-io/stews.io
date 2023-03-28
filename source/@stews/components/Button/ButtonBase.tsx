@@ -1,6 +1,10 @@
 import { getCssClass } from '@stews/helpers'
 import { SimpleComponentProps } from '@stews/helpers/types'
-import { CoreAriaOrnaments, useAria, UseAriaApi } from '@stews/hooks/useAria'
+import {
+  CoreAriaOrnaments,
+  useInteractiveAria,
+  UseInteractiveAriaApi,
+} from '@stews/hooks/useInteractiveAria'
 import { Ref } from 'preact'
 import cssModule from './ButtonBase.module.scss'
 
@@ -20,7 +24,7 @@ export interface ButtonBaseProps<
       | 'onPointerMove'
     >,
     Pick<
-      UseAriaApi<AriaOrnaments>,
+      UseInteractiveAriaApi<AriaOrnaments>,
       'ariaOrnaments' | 'setCustomAriaAttributes'
     > {
   elementRef?: Ref<HTMLDivElement>
@@ -44,7 +48,7 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
     onBlur,
     ...unadjustedProps
   } = props
-  const { ariaElementRef } = useAria({
+  const { ariaElementRef } = useInteractiveAria({
     ariaOrnaments: {
       ...ariaOrnaments,
       ariaDisabled: `${disabled ?? false}`,

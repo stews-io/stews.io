@@ -1,5 +1,5 @@
 import { AnchorButton, CoreAnchorButtonProps } from '@stews/components/Button'
-import { CoreAriaOrnamentsData } from '@stews/hooks/useAria'
+import { CoreAriaOrnamentsData } from '@stews/hooks/useInteractiveAria'
 import { FunctionComponent } from 'preact'
 import cssModule from './ProfileButtonBase.module.scss'
 

@@ -22,6 +22,7 @@ export function ViewSortSelect<CurationItem extends object>(
       popoverAriaRole={'listbox'}
       anchorAriaLabel={'select view sort order'}
       anchorAriaDescription={`a button that displays a popover with the view sort order options`}
+      optionTypeLabel={'view sort order'}
       optionLabelKey={'sortLabel'}
       SelectMenu={ViewSortSelectMenu}
       anchorBorderClassName={cssModule.viewSortSelectAnchorBorder}

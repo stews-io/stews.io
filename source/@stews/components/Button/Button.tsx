@@ -1,4 +1,7 @@
-import { CoreAriaOrnaments, CoreAriaOrnamentsData } from '@stews/hooks/useAria'
+import {
+  CoreAriaOrnaments,
+  CoreAriaOrnamentsData,
+} from '@stews/hooks/useInteractiveAria'
 import { ButtonBase, ButtonBaseProps } from './ButtonBase'
 
 export interface ButtonProps extends CoreButtonProps, CustomButtonProps {}

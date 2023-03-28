@@ -1,4 +1,7 @@
-import { CoreAriaOrnaments, CoreAriaOrnamentsData } from '@stews/hooks/useAria'
+import {
+  CoreAriaOrnaments,
+  CoreAriaOrnamentsData,
+} from '@stews/hooks/useInteractiveAria'
 import { PopoverDataProps } from '../Popover'
 import { ButtonBase, ButtonBaseProps } from './ButtonBase'
 

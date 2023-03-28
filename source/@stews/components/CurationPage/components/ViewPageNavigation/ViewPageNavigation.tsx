@@ -1,6 +1,9 @@
 import { Button } from '@stews/components/Button'
 import { getCssClass } from '@stews/helpers'
-import { CoreAriaOrnamentsData, useAria } from '@stews/hooks/useAria'
+import {
+  CoreAriaOrnamentsData,
+  useInteractiveAria,
+} from '@stews/hooks/useInteractiveAria'
 import { UseViewPageApi } from '../../hooks/useViewPage'
 import cssModule from './ViewPageNavigation.module.scss'
 
@@ -21,7 +24,7 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
     setPageIndexToNext,
   } = props
   const displayPageIndex = adjustedPageIndex + 1
-  const { ariaElementRef } = useAria({
+  const { ariaElementRef } = useInteractiveAria({
     ariaOrnaments: {
       ariaRole: 'meter',
       ariaLabel: 'view pagination meter',

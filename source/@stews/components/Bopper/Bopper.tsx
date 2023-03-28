@@ -1,4 +1,4 @@
-import { CoreAriaOrnamentsData } from '@stews/hooks/useAria'
+import { CoreAriaOrnamentsData } from '@stews/hooks/useInteractiveAria'
 import { FunctionComponent } from 'preact'
 import { useRef, useState } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'

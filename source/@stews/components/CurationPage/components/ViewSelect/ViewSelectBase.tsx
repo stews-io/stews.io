@@ -63,6 +63,7 @@ export function ViewSelectBase<
     <Fragment>
       <h2 style={{ display: 'none' }}>{viewAriaHeader}</h2>
       <SelectBase
+        optionTypeLabel={'view'}
         optionLabelKey={'viewLabel'}
         anchorBorderClassName={cssModule.viewSelectAnchorBorder}
         fontSizeClassName={cssModule.viewSelectFontSize}

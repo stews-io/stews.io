@@ -49,6 +49,7 @@ export interface SelectMenuBaseDataProps<
         CustomOptionActionItemProps,
         CustomMenuFooterProps
       >,
+      | 'optionTypeLabel'
       | 'optionLabelKey'
       | 'customOptionActionItemProps'
       | 'customMenuFooterProps'
@@ -104,6 +105,7 @@ export function SelectMenuBase<
     selectedOption,
     selectOption,
     optionLabelKey,
+    optionTypeLabel,
     OptionActionItem,
     customOptionActionItemProps,
     MenuFooter,
@@ -131,8 +133,8 @@ export function SelectMenuBase<
       <div className={cssModule.optionList}>
         {optionList.map((someOption, optionIndex) => (
           <Button
-            ariaLabel={'todo'}
-            ariaDescription={'todo'}
+            ariaLabel={`select "${someOption[optionLabelKey]}" ${optionTypeLabel}`}
+            ariaDescription={`a button that updates the current ${optionTypeLabel} to "${someOption[optionLabelKey]}"`}
             key={optionIndex}
             className={getCssClass(
               cssModule.optionItem,
