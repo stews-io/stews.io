@@ -1,7 +1,6 @@
-import { Button, ButtonProps } from '@stews/components/Button'
+import { Button } from '@stews/components/Button'
 import { CoreAriaOrnamentsData } from '@stews/components/Button/ButtonBase'
 import { getCssClass } from '@stews/helpers'
-import { Fragment } from 'preact/jsx-runtime'
 import { UseViewPageApi } from '../../hooks/useViewPage'
 import cssModule from './ViewPageNavigation.module.scss'
 
@@ -31,10 +30,10 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
         buttonEnabled={adjustedPageIndex > 0}
       />
       <div
+        className={cssModule.navigationMeterContainer}
         role={'meter'}
         aria-label={'view pagination meter'}
         aria-valuemin={1}
-        className={cssModule.navigationMeterContainer}
         aria-valuenow={adjustedPageIndex}
         aria-valuemax={pageCount}
         aria-describedby={navigationMeterAccessibilityDescriptionId}

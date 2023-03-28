@@ -87,7 +87,7 @@ export function CurationPageBase<CurationItem extends object>(
   const { pageHeaderContainerRef } = useStickyPageHeaderWorkaround()
   return (
     <Page
-      pageAccessibilityHeader={`${curatorInfo.curatorName}: ${curationLabel} curation`}
+      pageAriaHeader={`${curatorInfo.curatorName}: ${curationLabel} curation`}
     >
       <div
         ref={pageHeaderContainerRef}
@@ -96,6 +96,7 @@ export function CurationPageBase<CurationItem extends object>(
         <div className={cssModule.pageHeader}>
           <div className={cssModule.viewSelectContainer}>
             <ViewSelect
+              viewAriaHeader={`${curationLabel} view: ${viewState.curationView.viewLabel}`}
               curationLabel={curationLabel}
               optionList={curationViews}
               selectedOption={viewState.curationView}
