@@ -17,7 +17,7 @@ export interface CoreLinkButtonProps
 interface OptionalLinkButtonProps
   extends Omit<
     ButtonBaseProps<LinkButtonAriaOrnaments>,
-    'ariaOrnaments' | 'onSelect'
+    'ariaOrnaments' | 'setCustomAriaAttributes' | 'onSelect'
   > {}
 
 interface LinkButtonAriaOrnaments extends CoreAriaOrnaments<'link'> {}
@@ -26,6 +26,7 @@ export function LinkButton(props: LinkButtonProps) {
   const { ariaLabel, ariaDescription, href, target, ...unadjustedProps } = props
   return (
     <ButtonBase<LinkButtonAriaOrnaments>
+      setCustomAriaAttributes={() => {}}
       ariaOrnaments={{
         ariaRole: 'link',
         ariaLabel,

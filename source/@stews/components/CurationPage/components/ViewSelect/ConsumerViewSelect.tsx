@@ -16,8 +16,8 @@ export function ConsumerViewSelect(props: ConsumerViewSelectProps) {
   return (
     <ViewSelectBase
       popoverAriaRole={'listbox'}
-      anchorAriaLabel={`show ${curationLabel} view options`}
-      anchorAriaDescription={`a button that shows a popover displaying a list of options for selecting a ${curationLabel} view`}
+      anchorAriaLabel={`select ${curationLabel} view`}
+      anchorAriaDescription={`${curationLabel} view`}
       SelectMenu={ConsumerSelectMenu}
       customOptionActionItemProps={{}}
       customMenuFooterProps={{}}

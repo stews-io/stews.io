@@ -6,6 +6,7 @@ import {
   SelectMenuBase,
 } from '@stews/components/Select'
 import { ComponentProps } from 'preact'
+import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import { ViewSortOption } from '../../hooks'
 import cssModule from './ViewSortSelect.module.scss'
 
@@ -19,8 +20,8 @@ export function ViewSortSelect<CurationItem extends object>(
   return (
     <SelectBase
       popoverAriaRole={'listbox'}
-      anchorAriaLabel={'todo'}
-      anchorAriaDescription={'todo'}
+      anchorAriaLabel={'select view sort order'}
+      anchorAriaDescription={`a button that displays a popover with the view sort order options`}
       optionLabelKey={'sortLabel'}
       SelectMenu={ViewSortSelectMenu}
       anchorBorderClassName={cssModule.viewSortSelectAnchorBorder}

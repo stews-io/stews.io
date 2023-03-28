@@ -24,7 +24,7 @@ export function CuratorViewSelect(props: CuratorViewSelectProps) {
     <ViewSelectBase
       popoverAriaRole={'menu'}
       anchorAriaLabel={`show ${curationLabel} view menu`}
-      anchorAriaDescription={`a button that shows a popover displaying options for selecting, editing, or creating a ${curationLabel} view`}
+      anchorAriaDescription={`a button that displays a popover with options for selecting, editing, or creating a ${curationLabel} view`}
       SelectMenu={CuratorSelectMenu}
       customOptionActionItemProps={{
         curationLabel,

@@ -15,6 +15,8 @@ export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
   const { curatorInfo } = props
   return (
     <ProfileBopperBase
+      anchorAriaLabel={`show your profile`}
+      anchorAriaDescription={`a button that displays a popover with your profile info`}
       AnchorButton={CuratorProfileButton}
       PopoverContent={ProfileContentBase}
       curatorInfo={curatorInfo}

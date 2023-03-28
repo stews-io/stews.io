@@ -21,8 +21,8 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
         <div className={cssModule.curatorName}>{curatorInfo.curatorName}</div>
         <div className={cssModule.closeButtonContainer}>
           <Button
-            ariaLabel={'todo'}
-            ariaDescription={'todo'}
+            ariaLabel={'close popover'}
+            ariaDescription={'a button that closes the profile popover'}
             elementRef={initialFocusElementRef}
             className={cssModule.closeButton}
             onBlur={popoverNavigationItemBlurHandler}
@@ -65,8 +65,8 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
           <div key={linkIndex} className={cssModule.curatorLinkContainer}>
             <LinkButton
               target={'_blank'}
-              ariaLabel={'todo'}
-              ariaDescription={'todo'}
+              ariaLabel={`go to ${curatorInfo.curatorName}'s ${someCuratorLink.linkType}`}
+              ariaDescription={`a button that opens a new tab and navigates to ${curatorInfo.curatorName}'s ${someCuratorLink.linkType}`}
               className={cssModule.curatorLinkButton}
               onBlur={popoverNavigationItemBlurHandler}
               href={someCuratorLink.linkHref}

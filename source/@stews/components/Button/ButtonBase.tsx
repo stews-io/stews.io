@@ -1,6 +1,7 @@
 import { getCssClass } from '@stews/helpers'
 import { SimpleComponentProps } from '@stews/helpers/types'
-import { Ref } from 'preact'
+import { createRef, Ref } from 'preact'
+import { useLayoutEffect, useMemo } from 'preact/hooks'
 import cssModule from './ButtonBase.module.scss'
 
 export interface ButtonBaseProps<
@@ -18,6 +19,10 @@ export interface ButtonBaseProps<
     | 'onBlur'
     | 'onPointerMove'
   > {
+  setCustomAriaAttributes: (
+    ariaElement: HTMLDivElement,
+    ariaOrnaments: AriaOrnaments
+  ) => void
   ariaOrnaments: AriaOrnaments
   elementRef?: Ref<HTMLDivElement>
   onSelect: () => void
@@ -40,6 +45,7 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
   props: ButtonBaseProps<AriaOrnaments>
 ) {
   const {
+    setCustomAriaAttributes,
     ariaOrnaments,
     disabled,
     elementRef,
@@ -52,9 +58,21 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
     onBlur,
     ...unadjustedProps
   } = props
+  const { ariaElementRef } = useButtonAria({
+    setCustomAriaAttributes,
+    ariaOrnaments,
+    disabled,
+  })
   return (
     <div
-      ref={elementRef}
+      ref={(elementNode) => {
+        ariaElementRef.current = elementNode
+        if (elementRef && typeof elementRef === 'object') {
+          elementRef.current = elementNode
+        } else if (typeof elementRef === 'function') {
+          elementRef(elementNode)
+        }
+      }}
       tabIndex={tabIndex ?? 0}
       className={getCssClass(cssModule.buttonBase, [
         className,
@@ -123,4 +141,39 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
       {...unadjustedProps}
     />
   )
+}
+
+interface UseButtonAriaApi<AriaOrnaments extends CoreAriaOrnaments<string>>
+  extends Pick<
+    ButtonBaseProps<AriaOrnaments>,
+    'ariaOrnaments' | 'disabled' | 'setCustomAriaAttributes'
+  > {}
+
+function useButtonAria<AriaOrnaments extends CoreAriaOrnaments<string>>(
+  api: UseButtonAriaApi<AriaOrnaments>
+) {
+  const { ariaOrnaments, disabled, setCustomAriaAttributes } = api
+  const { ariaElementRef, ariaDescriptionElementId } = useMemo(
+    () => ({
+      ariaElementRef: createRef<HTMLDivElement>(),
+      ariaDescriptionElementId: `${Math.random()}`,
+    }),
+    []
+  )
+  useLayoutEffect(() => {
+    const ariaElement = ariaElementRef.current
+    if (ariaElement instanceof HTMLDivElement) {
+      ariaElement.setAttribute('role', ariaOrnaments.ariaRole)
+      ariaElement.setAttribute('aria-label', ariaOrnaments.ariaLabel)
+      ariaElement.setAttribute('aria-describedby', ariaDescriptionElementId)
+      ariaElement.setAttribute('aria-disabled', `${disabled ?? false}`)
+      const ariaDescriptionElement = document.createElement('div')
+      ariaDescriptionElement.id = ariaDescriptionElementId
+      ariaDescriptionElement.style.display = 'none'
+      ariaDescriptionElement.innerText = ariaOrnaments.ariaDescription
+      ariaElement.insertAdjacentElement('afterend', ariaDescriptionElement)
+      setCustomAriaAttributes(ariaElement, ariaOrnaments)
+    }
+  }, [])
+  return { ariaElementRef }
 }

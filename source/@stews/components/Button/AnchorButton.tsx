@@ -20,7 +20,7 @@ export interface CoreAnchorButtonProps
 export interface CustomAnchorButtonProps
   extends Omit<
     ButtonBaseProps<AnchorButtonAriaOrnaments>,
-    'ariaOrnaments' | 'elementRef' | 'onSelect'
+    'ariaOrnaments' | 'setCustomAriaAttributes' | 'elementRef' | 'onSelect'
   > {}
 
 interface AnchorButtonAriaOrnaments extends CoreAriaOrnaments<'button'> {
@@ -44,6 +44,9 @@ export function AnchorButton(props: AnchorButtonProps) {
         ariaLabel,
         ariaDescription,
         ariaHasPopup: popoverAriaRole,
+      }}
+      setCustomAriaAttributes={(ariaElement, ariaOrnaments) => {
+        ariaElement.setAttribute('aria-haspopup', ariaOrnaments.ariaHasPopup)
       }}
       onSelect={() => {
         setPopoverOpen(true)
