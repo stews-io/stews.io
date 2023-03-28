@@ -20,13 +20,14 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
     pageCount,
     setPageIndexToNext,
   } = props
+  const displayPageIndex = adjustedPageIndex + 1
   const { ariaElementRef } = useAria({
     ariaOrnaments: {
       ariaRole: 'meter',
       ariaLabel: 'view pagination meter',
       ariaDescription: 'pagination meter for filtered and sorted view items',
       ariaValueMin: `${1}`,
-      ariaValueNow: `${adjustedPageIndex}`,
+      ariaValueNow: `${displayPageIndex}`,
       ariaValueMax: `${pageCount}`,
     },
     setCustomAriaAttributes: (ariaElement, ariaOrnaments) => {
@@ -44,7 +45,7 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
       />
       <div className={cssModule.navigationMeterContainer} ref={ariaElementRef}>
         <div className={cssModule.navigationMeter}>
-          {`${adjustedPageIndex + 1} / ${pageCount}`}
+          {`${displayPageIndex} / ${pageCount}`}
         </div>
       </div>
       <NextPageButton

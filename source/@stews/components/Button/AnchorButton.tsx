@@ -25,18 +25,19 @@ interface AnchorButtonAriaOrnaments extends CoreAriaOrnaments<'button'> {
 
 export function AnchorButton(props: AnchorButtonProps) {
   const {
+    anchorElementRef,
+    disabled,
+    popoverOpen,
     ariaLabel,
     ariaDescription,
     popoverAriaRole,
-    anchorElementRef,
     setPopoverOpen,
-    popoverOpen,
-    disabled,
     ...unadjustedProps
   } = props
   return (
     <ButtonBase<AnchorButtonAriaOrnaments>
       elementRef={anchorElementRef}
+      disabled={disabled || popoverOpen}
       ariaOrnaments={{
         ariaRole: 'button',
         ariaLabel,
@@ -49,7 +50,6 @@ export function AnchorButton(props: AnchorButtonProps) {
       onSelect={() => {
         setPopoverOpen(true)
       }}
-      disabled={disabled || popoverOpen}
       {...unadjustedProps}
     />
   )
