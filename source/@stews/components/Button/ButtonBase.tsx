@@ -1,4 +1,4 @@
-import { getCssClass } from '@stews/helpers'
+import { getCssClass, throwInvalidPathError } from '@stews/helpers'
 import { SimpleComponentProps } from '@stews/helpers/types'
 import { createRef, Ref } from 'preact'
 import { useLayoutEffect, useMemo } from 'preact/hooks'
@@ -153,27 +153,43 @@ function useButtonAria<AriaOrnaments extends CoreAriaOrnaments<string>>(
   api: UseButtonAriaApi<AriaOrnaments>
 ) {
   const { ariaOrnaments, disabled, setCustomAriaAttributes } = api
-  const { ariaElementRef, ariaDescriptionElementId } = useMemo(
-    () => ({
+  const { ariaElementRef, ariaDescriptionElementRef } = useMemo(() => {
+    return {
       ariaElementRef: createRef<HTMLDivElement>(),
-      ariaDescriptionElementId: `${Math.random()}`,
-    }),
-    []
-  )
-  useLayoutEffect(() => {
-    const ariaElement = ariaElementRef.current
-    if (ariaElement instanceof HTMLDivElement) {
-      ariaElement.setAttribute('role', ariaOrnaments.ariaRole)
-      ariaElement.setAttribute('aria-label', ariaOrnaments.ariaLabel)
-      ariaElement.setAttribute('aria-describedby', ariaDescriptionElementId)
-      ariaElement.setAttribute('aria-disabled', `${disabled ?? false}`)
-      const ariaDescriptionElement = document.createElement('div')
-      ariaDescriptionElement.id = ariaDescriptionElementId
-      ariaDescriptionElement.style.display = 'none'
-      ariaDescriptionElement.innerText = ariaOrnaments.ariaDescription
-      ariaElement.insertAdjacentElement('afterend', ariaDescriptionElement)
-      setCustomAriaAttributes(ariaElement, ariaOrnaments)
+      ariaDescriptionElementRef: createRef<HTMLDivElement>(),
     }
   }, [])
+  useLayoutEffect(() => {
+    const ariaElement =
+      ariaElementRef.current ??
+      throwInvalidPathError('useButtonAria.useLayoutEffect[]')
+    const ariaDescriptionElement = document.createElement('div')
+    ariaDescriptionElement.id = `${Math.random()}`
+    ariaDescriptionElement.style.display = 'none'
+    ariaElement.insertAdjacentElement('afterend', ariaDescriptionElement)
+    ariaElement.setAttribute('aria-describedby', ariaDescriptionElement.id)
+    ariaDescriptionElementRef.current = ariaDescriptionElement
+    return () => {
+      ariaDescriptionElement.remove()
+    }
+  }, [])
+  useLayoutEffect(() => {
+    const ariaElement = ariaElementRef.current
+    const ariaDescriptionElement = ariaDescriptionElementRef.current
+    if (
+      ariaElement instanceof HTMLDivElement &&
+      ariaDescriptionElement instanceof HTMLDivElement
+    ) {
+      ariaElement.setAttribute('role', ariaOrnaments.ariaRole)
+      ariaElement.setAttribute('aria-label', ariaOrnaments.ariaLabel)
+      ariaElement.setAttribute('aria-disabled', `${disabled ?? false}`)
+      ariaDescriptionElement.innerText = ariaOrnaments.ariaDescription
+      setCustomAriaAttributes(ariaElement, ariaOrnaments)
+    } else {
+      throwInvalidPathError(
+        'useButtonAria.useLayoutEffect[ariaOrnaments, disabled]'
+      )
+    }
+  }, [ariaOrnaments, disabled])
   return { ariaElementRef }
 }
