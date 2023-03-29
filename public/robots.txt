@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.curations.clumsycomputer.com
-
-# Sitemaps
-Sitemap: https://www.curations.clumsycomputer.com/sitemap.xml

@@ -1,0 +1,12 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.emptyViewPageItem {
+  @extend .itemContainer;
+  padding: 4 * $themeSpacer;
+  padding-block-start: 2 * $themeSpacer;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+  color: $themeDisabledColor;
+}

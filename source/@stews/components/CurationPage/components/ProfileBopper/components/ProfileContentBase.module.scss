@@ -1,0 +1,81 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.profileContainer {
+  @extend .columnContainer;
+  overflow: hidden;
+  padding-inline-start: $themeSpacer;
+  padding-inline-end: calc(3 / 4) * $themeSpacer;
+  padding-block-start: calc(3 / 8) * $themeSpacer;
+  padding-block-end: calc(9 / 8) * $themeSpacer;
+}
+
+.profileHeader {
+  @extend .rowContainer;
+  align-items: center;
+}
+
+.curatorName {
+  @extend .textEllipsis;
+  flex-grow: 1;
+  padding-inline-end: 3 * $themeSpacer;
+  font-weight: 700;
+  font-size: 23px,
+}
+
+.closeButtonContainer {
+  @extend .itemContainer;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton {
+  @extend .itemContainer;
+  padding: 0.00rem;
+}
+
+.closeIcon {
+  width: 22.5px;
+  height: 22.5px;
+}
+
+.closeIconOutlineCircle {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 1.5;
+}
+
+.curatorLocation {
+  @extend .textEllipsis;
+  padding-block-start: calc(1 / 8) * $themeSpacer;
+  padding-inline-end: 6 * $themeSpacer;  
+  font-size: 14px;
+}
+
+.curatorStatus {
+  padding-block-start: calc(3 / 4) * $themeSpacer;
+  padding-inline-end: 6 * $themeSpacer;  
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  hyphens: auto;
+}
+
+.curatorLinks {
+  @extend .rowContainer;
+  padding-block-start: calc(11 / 8) * $themeSpacer;
+}
+
+.curatorLinkContainer {
+  @extend .itemContainer;
+  padding-inline-end: calc(3 / 2) * $themeSpacer;
+}
+
+.curatorLinkButton {
+  padding: calc(1 / 16) * $themeSpacer;
+}
+
+.curatorLinkIcon {
+  width: 20px;
+  height: 20px;
+}

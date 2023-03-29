@@ -1,0 +1,13 @@
+@import "@stews/styles/theme";
+
+.viewSelectAnchorBorder {
+  border-bottom: $themeBorder;
+}
+
+.viewSelectFontSize {
+  font-size: 24px;
+}
+
+.viewAccessibilityHeader {
+  display: none;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "stews.io",
+  "short_name": "stews",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+    "icons": [
+    {
+      "src": "assets/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}

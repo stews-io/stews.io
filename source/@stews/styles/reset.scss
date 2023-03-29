@@ -1,0 +1,24 @@
+@import-normalize;
+@import "@stews/styles/theme";
+
+body {
+  @extend .defaultBoxModel;
+  @extend .defaultFont;
+}
+
+div {
+  @extend .defaultBoxModel;
+  @extend .defaultLayout;
+  @extend .defaultFont;
+}
+
+input {
+  @extend .defaultBoxModel;
+  @extend .defaultLayout;
+  @extend .defaultFont;
+  border: none;
+}
+
+* {
+  @extend .themeFocusWithoutOutline;
+}
