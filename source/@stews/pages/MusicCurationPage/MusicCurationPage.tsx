@@ -2,8 +2,6 @@ import {
   ConsumerCurationPage,
   // CuratorCurationPage,
 } from '@stews/components/CurationPage'
-import { CurationView, CuratorInfo } from '@stews/data'
-import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { MusicItemDisplay } from './components/MusicItemDisplay'
 import { musicItems } from './musicItemsDataset'
 
@@ -12,82 +10,6 @@ export interface MusicCurationPageProps {
 }
 
 export function MusicCurationPage(props: MusicCurationPageProps) {
-  const {} = props
-  const curatorInfo: CuratorInfo = {
-    curatorName: 'clumsycomputer',
-    curatorLocation: 'guadalajara, jalisco',
-    curatorStatus: 'just trying to listen and groove',
-    curatorLinks: [
-      {
-        linkType: 'website',
-        linkHref: 'https://clumsycomputer.com',
-      },
-      {
-        linkType: 'github',
-        linkHref: 'https://github.com/clumsycomputer',
-      },
-      {
-        linkType: 'twitter',
-        linkHref: 'https://twitter.com/c1umsyc0mputer',
-      },
-    ],
-  }
-  const musicViews: ArrayOfAtLeastOne<CurationView> = [
-    {
-      viewId: 0,
-      viewLabel: 'all',
-      viewType: 'default',
-    },
-    {
-      viewId: 1,
-      viewLabel: '2010s',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicYear:[2010 TO 2019]',
-    },
-    {
-      viewId: 2,
-      viewLabel: '2000s',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicYear:[2000 TO 2009]',
-    },
-    {
-      viewId: 3,
-      viewLabel: '1990s',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicYear:[1990 TO 1999]',
-    },
-    {
-      viewId: 4,
-      viewLabel: 'hip-hop',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicStyles:hip-hop',
-    },
-    {
-      viewId: 5,
-      viewLabel: 'jazz',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicStyles:jazz',
-    },
-    {
-      viewId: 6,
-      viewLabel: 'electronic',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicStyles:electronic',
-    },
-    {
-      viewId: 7,
-      viewLabel: 'in the now',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'recordingContext:live OR recordingContext:concert',
-    },
-  ]
   return (
     <ConsumerCurationPage
       curationLabel={'music'}
@@ -120,8 +42,81 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
           sortLabelBase: 'year',
         },
       ]}
-      curatorInfo={curatorInfo}
-      curationViews={musicViews}
+      curatorInfo={{
+        curatorName: 'clumsycomputer',
+        curatorLocation: 'guadalajara, jalisco',
+        curatorStatus: 'just trying to listen and groove',
+        curatorLinks: [
+          {
+            linkType: 'website',
+            linkHref: 'https://clumsycomputer.com',
+          },
+          {
+            linkType: 'github',
+            linkHref: 'https://github.com/clumsycomputer',
+          },
+          {
+            linkType: 'twitter',
+            linkHref: 'https://twitter.com/c1umsyc0mputer',
+          },
+        ],
+      }}
+      curationViews={[
+        {
+          viewId: 0,
+          viewLabel: 'all',
+          viewType: 'default',
+        },
+        {
+          viewId: 1,
+          viewLabel: '2010s',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'musicYear:[2010 TO 2019]',
+        },
+        {
+          viewId: 2,
+          viewLabel: '2000s',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'musicYear:[2000 TO 2009]',
+        },
+        {
+          viewId: 3,
+          viewLabel: '1990s',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'musicYear:[1990 TO 1999]',
+        },
+        {
+          viewId: 4,
+          viewLabel: 'hip-hop',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'musicStyles:hip-hop',
+        },
+        {
+          viewId: 5,
+          viewLabel: 'jazz',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'musicStyles:jazz',
+        },
+        {
+          viewId: 6,
+          viewLabel: 'electronic',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'musicStyles:electronic',
+        },
+        {
+          viewId: 7,
+          viewLabel: 'in the now',
+          viewType: 'custom',
+          customType: 'filter',
+          viewFilter: 'recordingContext:live OR recordingContext:concert',
+        },
+      ]}
       curationItems={musicItems}
     />
   )
