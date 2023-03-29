@@ -185,7 +185,7 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
       anchorMiddleX > pageMiddleX ? 'left' : 'right'
     return {
       position: 'absolute',
-      top: anchorClientRect.top - offsetLength,
+      top: anchorElement.offsetTop - offsetLength,
       maxHeight: window.innerHeight - maxPopoverPadding,
       maxWidth: pageContentClientRect.width - maxPopoverPadding,
       ...(popoverDirection === 'right'
