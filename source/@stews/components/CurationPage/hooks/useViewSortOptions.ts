@@ -203,12 +203,12 @@ function pushSortOptions<CurationItem extends object>(
     getDescendingSortOrder,
   } = api
   viewSortOptionsResult.push({
-    sortId: `${someSortOptionConfig.fieldKey}_ascending`,
+    sortId: `${someSortOptionConfig.fieldKey}Ascending`,
     sortLabel: `${someSortOptionConfig.sortLabelBase}: ${ascendingSortLabelExtension}`,
     getSortOrder: getAscendingSortOrder,
   })
   viewSortOptionsResult.push({
-    sortId: `${someSortOptionConfig.fieldKey}_descending`,
+    sortId: `${someSortOptionConfig.fieldKey}Descending`,
     sortLabel: `${someSortOptionConfig.sortLabelBase}: ${descendingSortLabelExtension}`,
     getSortOrder: getDescendingSortOrder,
   })

@@ -12,7 +12,7 @@ import {
   useViewPage,
   useViewSortOptions,
   ViewSortOptionConfig,
-  useViewState,
+  useCurationPageState,
 } from './hooks'
 import cssModule from './CurationPageBase.module.scss'
 
@@ -61,26 +61,26 @@ export function CurationPageBase<CurationItem extends object>(
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
   })
-  const [viewState, setViewState] = useViewState({
+  const [curationPageState, setCurationPageState] = useCurationPageState({
     curationViews,
     viewSortOptions,
   })
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
+    pageItemSize: 6,
     ItemDisplay,
     getItemSearchSpace,
     curationItems,
-    viewState,
-    pageItemSize: 6,
+    curationPageState,
     setPageIndexToPrevious: (currentAdjustedPageIndex) => {
-      setViewState((currentViewState) => ({
-        ...currentViewState,
-        pageIndex: currentAdjustedPageIndex - 1,
+      setCurationPageState((currentCurationPageState) => ({
+        ...currentCurationPageState,
+        viewPageIndex: currentAdjustedPageIndex - 1,
       }))
     },
     setPageIndexToNext: (currentAdjustedPageIndex) => {
-      setViewState((currentViewState) => ({
-        ...currentViewState,
-        pageIndex: currentAdjustedPageIndex + 1,
+      setCurationPageState((currentCurationPageState) => ({
+        ...currentCurationPageState,
+        viewPageIndex: currentAdjustedPageIndex + 1,
       }))
     },
   })
@@ -96,15 +96,15 @@ export function CurationPageBase<CurationItem extends object>(
         <div className={cssModule.pageHeader}>
           <div className={cssModule.viewSelectContainer}>
             <ViewSelect
-              viewAriaHeader={`${curationLabel} view: ${viewState.curationView.viewLabel}`}
+              viewAriaHeader={`${curationLabel} view: ${curationPageState.curationView.viewLabel}`}
               curationLabel={curationLabel}
               optionList={curationViews}
-              selectedOption={viewState.curationView}
+              selectedOption={curationPageState.curationView}
               selectOption={(nextCurationView) => {
-                setViewState((currentViewState) => ({
-                  ...currentViewState,
+                setCurationPageState((currentCurationPageState) => ({
+                  ...currentCurationPageState,
                   curationView: nextCurationView,
-                  pageIndex: 0,
+                  viewPageIndex: 0,
                 }))
               }}
             />
@@ -118,12 +118,12 @@ export function CurationPageBase<CurationItem extends object>(
         <div className={cssModule.viewSortSelectContainer}>
           <ViewSortSelect
             optionList={viewSortOptions}
-            selectedOption={viewState.viewSort}
-            selectOption={(nextViewSort) => {
-              setViewState((currentViewState) => ({
-                ...currentViewState,
-                viewSort: nextViewSort,
-                pageIndex: 0,
+            selectedOption={curationPageState.viewSortOption}
+            selectOption={(nextViewSortOption) => {
+              setCurationPageState((currentCurationPageState) => ({
+                ...currentCurationPageState,
+                viewSortOption: nextViewSortOption,
+                viewPageIndex: 0,
               }))
             }}
           />
@@ -131,20 +131,20 @@ export function CurationPageBase<CurationItem extends object>(
         <div className={cssModule.viewSearchInputContainer}>
           <ViewSearchInput
             curationLabel={curationLabel}
-            value={viewState.viewSearch}
+            value={curationPageState.viewSearchQuery}
             onInput={(someInputEvent) => {
               const nextViewSearch = someInputEvent.currentTarget.value
-              setViewState((currentViewState) => ({
-                ...currentViewState,
-                viewSearch: nextViewSearch,
-                pageIndex: 0,
+              setCurationPageState((currentCurationPageState) => ({
+                ...currentCurationPageState,
+                viewSearchQuery: nextViewSearch,
+                viewPageIndex: 0,
               }))
             }}
             resetValue={() => {
-              setViewState((currentViewState) => ({
-                ...currentViewState,
-                viewSearch: '',
-                pageIndex: 0,
+              setCurationPageState((currentCurationPageState) => ({
+                ...currentCurationPageState,
+                viewSearchQuery: '',
+                viewPageIndex: 0,
               }))
             }}
           />

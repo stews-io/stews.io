@@ -4,34 +4,34 @@ import {
   CoreAriaOrnamentsData,
   useInteractiveAria,
 } from '@stews/hooks/useInteractiveAria'
-import { UseViewPageApi } from '../../hooks/useViewPage'
+import { UseViewPageApi } from '../../hooks'
 import cssModule from './ViewPageNavigation.module.scss'
 
 export interface ViewPageNavigationProps
   extends Pick<
-    UseViewPageApi<object>,
-    'setPageIndexToPrevious' | 'setPageIndexToNext'
-  > {
-  adjustedPageIndex: UseViewPageApi<object>['viewState']['pageIndex']
-  pageCount: number
+      UseViewPageApi<object>,
+      'setPageIndexToPrevious' | 'setPageIndexToNext'
+    >,
+    Pick<UseViewPageApi<object>['curationPageState'], 'viewPageIndex'> {
+  viewPageCount: number
 }
 
 export function ViewPageNavigation(props: ViewPageNavigationProps) {
   const {
-    adjustedPageIndex,
+    viewPageIndex,
     setPageIndexToPrevious,
-    pageCount,
+    viewPageCount,
     setPageIndexToNext,
   } = props
-  const displayPageIndex = adjustedPageIndex + 1
+  const displayViewPageIndex = viewPageIndex + 1
   const { ariaElementRef } = useInteractiveAria({
     ariaOrnaments: {
       ariaRole: 'meter',
       ariaLabel: 'view pagination meter',
       ariaDescription: 'pagination meter for filtered and sorted view items',
       ariaValueMin: `${1}`,
-      ariaValueNow: `${displayPageIndex}`,
-      ariaValueMax: `${pageCount}`,
+      ariaValueNow: `${displayViewPageIndex}`,
+      ariaValueMax: `${viewPageCount}`,
     },
     setCustomAriaAttributes: (ariaElement, ariaOrnaments) => {
       ariaElement.setAttribute('aria-valuemin', ariaOrnaments.ariaValueMin)
@@ -42,19 +42,19 @@ export function ViewPageNavigation(props: ViewPageNavigationProps) {
   return (
     <div className={cssModule.navigationContainer}>
       <PreviousPageButton
-        adjustedPageIndex={adjustedPageIndex}
+        viewPageIndex={viewPageIndex}
         setPageIndexToPrevious={setPageIndexToPrevious}
-        buttonEnabled={adjustedPageIndex > 0}
+        buttonEnabled={viewPageIndex > 0}
       />
       <div className={cssModule.navigationMeterContainer} ref={ariaElementRef}>
         <div className={cssModule.navigationMeter}>
-          {`${displayPageIndex} / ${pageCount}`}
+          {`${displayViewPageIndex} / ${viewPageCount}`}
         </div>
       </div>
       <NextPageButton
-        adjustedPageIndex={adjustedPageIndex}
+        viewPageIndex={viewPageIndex}
         setPageIndexToNext={setPageIndexToNext}
-        buttonEnabled={adjustedPageIndex < pageCount - 1}
+        buttonEnabled={viewPageIndex < viewPageCount - 1}
       />
     </div>
   )
@@ -65,7 +65,7 @@ interface PreviousPageButtonProps
     PageButtonBaseDataProps {}
 
 function PreviousPageButton(props: PreviousPageButtonProps) {
-  const { adjustedPageIndex, setPageIndexToPrevious, buttonEnabled } = props
+  const { viewPageIndex, setPageIndexToPrevious, buttonEnabled } = props
   return (
     <PageButtonBase
       buttonLabel={'prev'}
@@ -73,7 +73,7 @@ function PreviousPageButton(props: PreviousPageButtonProps) {
       ariaDescription={
         'a button that displays the previous page of filtered and sorted view items'
       }
-      adjustedPageIndex={adjustedPageIndex}
+      viewPageIndex={viewPageIndex}
       setPageIndex={setPageIndexToPrevious}
       buttonEnabled={buttonEnabled}
     />
@@ -85,7 +85,7 @@ interface NextPageButtonProps
     PageButtonBaseDataProps {}
 
 function NextPageButton(props: NextPageButtonProps) {
-  const { adjustedPageIndex, setPageIndexToNext, buttonEnabled } = props
+  const { viewPageIndex, setPageIndexToNext, buttonEnabled } = props
   return (
     <PageButtonBase
       buttonLabel={'next'}
@@ -93,7 +93,7 @@ function NextPageButton(props: NextPageButtonProps) {
       ariaDescription={
         'a button that displays the next page of filtered and sorted view items'
       }
-      adjustedPageIndex={adjustedPageIndex}
+      viewPageIndex={viewPageIndex}
       setPageIndex={setPageIndexToNext}
       buttonEnabled={buttonEnabled}
     />
@@ -105,7 +105,7 @@ interface PageButtonBaseProps
     PageButtonBaseConfigProps {}
 
 interface PageButtonBaseDataProps
-  extends Pick<ViewPageNavigationProps, 'adjustedPageIndex'> {
+  extends Pick<ViewPageNavigationProps, 'viewPageIndex'> {
   buttonEnabled: boolean
 }
 
@@ -122,7 +122,7 @@ function PageButtonBase(props: PageButtonBaseProps) {
     ariaDescription,
     buttonEnabled,
     setPageIndex,
-    adjustedPageIndex,
+    viewPageIndex,
     buttonLabel,
   } = props
   const buttonDisabled = !buttonEnabled
@@ -137,7 +137,7 @@ function PageButtonBase(props: PageButtonBaseProps) {
         buttonDisabled,
       ])}
       onSelect={() => {
-        setPageIndex(adjustedPageIndex)
+        setPageIndex(viewPageIndex)
       }}
     >
       {buttonLabel}

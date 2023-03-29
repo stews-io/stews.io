@@ -5,14 +5,14 @@ import { Fragment } from 'preact/jsx-runtime'
 import { EmptyViewPageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
-import { ViewState } from './useViewState'
+import { CurationPageState } from './useCurationPageState'
 
 export interface UseViewPageApi<CurationItem extends object>
   extends Pick<
     CurationPageBaseDataProps<CurationItem>,
     'ItemDisplay' | 'getItemSearchSpace' | 'curationItems'
   > {
-  viewState: ViewState<CurationItem>
+  curationPageState: CurationPageState<CurationItem>
   pageItemSize: number
   setPageIndexToPrevious: PageIndexSetter
   setPageIndexToNext: PageIndexSetter
@@ -24,7 +24,7 @@ export function useViewPage<CurationItem extends object>(
   api: UseViewPageApi<CurationItem>
 ) {
   const {
-    viewState,
+    curationPageState,
     curationItems,
     getItemSearchSpace,
     pageItemSize,
@@ -33,8 +33,9 @@ export function useViewPage<CurationItem extends object>(
     setPageIndexToNext,
   } = api
   const pageTopElementRef = useRef<HTMLDivElement>(null)
-  const { adjustedPageIndex, ...viewPageResult } = useMemo(() => {
-    const { curationView, viewSearch, viewSort, pageIndex } = viewState
+  const viewPageResult = useMemo(() => {
+    const { curationView, viewSearchQuery, viewSortOption, viewPageIndex } =
+      curationPageState
     const viewItems =
       curationView.viewType === 'default'
         ? curationItems
@@ -43,20 +44,17 @@ export function useViewPage<CurationItem extends object>(
       .filter((someViewItem) =>
         getItemSearchSpace(someViewItem)
           .toLowerCase()
-          .includes(viewSearch.toLowerCase())
+          .includes(viewSearchQuery.toLowerCase())
       )
-      .sort(viewSort.getSortOrder)
-    const pageCount =
+      .sort(viewSortOption.getSortOrder)
+    const viewPageCount =
       Math.ceil(searchedAndSortedViewItems.length / pageItemSize) || 1
-    const adjustedPageIndex =
-      pageIndex >= 0 && pageIndex < pageCount ? pageIndex : 0
-    const pageIndexStart = pageItemSize * adjustedPageIndex
+    const pageIndexStart = pageItemSize * viewPageIndex
     const viewPageItems = searchedAndSortedViewItems.slice(
       pageIndexStart,
       pageIndexStart + pageItemSize
     )
     return {
-      adjustedPageIndex,
       viewPageItemElements: (
         <Fragment key={Math.random()}>
           <div ref={pageTopElementRef} />
@@ -73,13 +71,13 @@ export function useViewPage<CurationItem extends object>(
         <ViewPageNavigation
           setPageIndexToPrevious={setPageIndexToPrevious}
           setPageIndexToNext={setPageIndexToNext}
-          adjustedPageIndex={adjustedPageIndex}
-          pageCount={pageCount}
+          viewPageIndex={viewPageIndex}
+          viewPageCount={viewPageCount}
         />
       ),
     }
   }, [
-    viewState,
+    curationPageState,
     curationItems,
     getItemSearchSpace,
     pageItemSize,
@@ -93,7 +91,7 @@ export function useViewPage<CurationItem extends object>(
     )
     const pageTopElement = pageTopElementRef.current
     if (
-      adjustedPageIndex === 0 &&
+      curationPageState.viewPageIndex === 0 &&
       pageContentContainerElement instanceof HTMLDivElement
     ) {
       pageContentContainerElement.setAttribute('tabIndex', '-1')
@@ -106,7 +104,7 @@ export function useViewPage<CurationItem extends object>(
         top: 0,
       })
     } else if (
-      adjustedPageIndex > 0 &&
+      curationPageState.viewPageIndex > 0 &&
       pageTopElement instanceof HTMLDivElement
     ) {
       pageTopElement.setAttribute('tabIndex', '-1')
@@ -120,8 +118,10 @@ export function useViewPage<CurationItem extends object>(
         top: approximateViewHeaderDocumentBottomPlusSome,
       })
     } else {
-      throwInvalidPathError('useViewPage.useEffect[viewState.pageIndex]')
+      throwInvalidPathError(
+        'useViewPage.useEffect[curationPageState.curationView, curationPageState.viewPageIndex]'
+      )
     }
-  }, [adjustedPageIndex, viewState.curationView])
+  }, [curationPageState.curationView, curationPageState.viewPageIndex])
   return viewPageResult
 }
