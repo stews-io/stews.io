@@ -1,4 +1,4 @@
-import Router, { route as navigateToRoute } from 'preact-router'
+import Router from 'preact-router'
 import { useEffect } from 'preact/hooks'
 import { MusicCurationPage } from './pages/MusicCurationPage'
 import './StewsApp.scss'
@@ -23,7 +23,7 @@ function DefaultRedirectToMusicCurationPage(
   props: DefaultRedirectToMusicCurationPage
 ) {
   useEffect(() => {
-    navigateToRoute('/music/0')
+    window.location.assign('/music/0')
   }, [])
   return null
 }
