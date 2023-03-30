@@ -95,6 +95,9 @@ export function SelectBase<
     <Bopper
       SomeAnchorButton={SelectButton}
       PopoverContent={SelectMenu}
+      getPopoverLayoutTop={({ anchorElement }) =>
+        anchorElement.offsetTop + anchorElement.offsetHeight + 4
+      }
       popoverAriaRole={popoverAriaRole}
       anchorAriaLabel={anchorAriaLabel}
       anchorAriaDescription={anchorAriaDescription}

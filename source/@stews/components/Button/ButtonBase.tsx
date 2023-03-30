@@ -68,7 +68,7 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
           elementRef(elementNode)
         }
       }}
-      tabIndex={tabIndex ?? 0}
+      tabIndex={disabled ? undefined : tabIndex ?? 0}
       className={getCssClass(cssModule.buttonBase, [
         className,
         Boolean(className),
