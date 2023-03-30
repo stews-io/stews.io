@@ -88,21 +88,21 @@ export function ButtonBase<AriaOrnaments extends CoreAriaOrnaments<string>>(
                   'touch'
                 )
               }
-              onSelect()
               if (onClick) {
                 onClick(someClickEvent)
               }
+              onSelect()
             }
       }
       onKeyDown={
         disabled
           ? undefined
           : (someKeyDownEvent) => {
-              if (someKeyDownEvent.key === 'Enter') {
-                onSelect()
-              }
               if (onKeyDown) {
                 onKeyDown(someKeyDownEvent)
+              }
+              if (someKeyDownEvent.key === 'Enter') {
+                onSelect()
               }
             }
       }
