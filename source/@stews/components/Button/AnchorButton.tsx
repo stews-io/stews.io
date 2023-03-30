@@ -29,7 +29,6 @@ interface AnchorButtonAriaOrnaments extends CoreAriaOrnaments<'button'> {
 export function AnchorButton(props: AnchorButtonProps) {
   const {
     anchorElementRef,
-    disabled,
     popoverOpen,
     ariaLabel,
     ariaDescription,
@@ -40,7 +39,6 @@ export function AnchorButton(props: AnchorButtonProps) {
   return (
     <ButtonBase<AnchorButtonAriaOrnaments>
       elementRef={anchorElementRef}
-      disabled={disabled || popoverOpen}
       ariaOrnaments={{
         ariaRole: 'button',
         ariaLabel,
@@ -50,8 +48,20 @@ export function AnchorButton(props: AnchorButtonProps) {
       setCustomAriaAttributes={(ariaElement, ariaOrnaments) => {
         ariaElement.setAttribute('aria-haspopup', ariaOrnaments.ariaHasPopup)
       }}
+      onPointerDown={() => {
+        if (popoverOpen && anchorElementRef.current instanceof HTMLDivElement) {
+          anchorElementRef.current.setAttribute('data-popoveropen', 'true')
+        }
+      }}
       onSelect={() => {
-        setPopoverOpen(true)
+        if (
+          anchorElementRef.current instanceof HTMLDivElement &&
+          anchorElementRef.current.hasAttribute('data-popoveropen')
+        ) {
+          anchorElementRef.current.removeAttribute('data-popoveropen')
+        } else {
+          setPopoverOpen(true)
+        }
       }}
       {...unadjustedProps}
     />

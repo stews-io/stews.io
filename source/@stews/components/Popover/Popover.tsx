@@ -19,6 +19,7 @@ interface PopoverConfigProps<CustomPopoverContentProps> {
   PopoverContent: FunctionComponent<
     PopoverContentProps<CustomPopoverContentProps>
   >
+  getPopoverLayoutTop: (api: { anchorElement: HTMLDivElement }) => number
 }
 
 type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
@@ -38,6 +39,7 @@ export function Popover<CustomPopoverContentProps>(
     anchorElementRef,
     popoverOpen,
     popoverAriaRole,
+    getPopoverLayoutTop,
     PopoverContent,
     customPopoverContentProps,
   } = props
@@ -141,6 +143,7 @@ export function Popover<CustomPopoverContentProps>(
       style={getPopoverLayoutStyle({
         anchorElementRef,
         popoverOpen,
+        getPopoverLayoutTop,
       })}
       onKeyDown={(someKeyDownEvent) => {
         if (someKeyDownEvent.key === 'Escape') {
@@ -161,10 +164,13 @@ export function Popover<CustomPopoverContentProps>(
 }
 
 interface GetPopoverLayoutStyleApi
-  extends Pick<PopoverProps<unknown>, 'anchorElementRef' | 'popoverOpen'> {}
+  extends Pick<
+    PopoverProps<unknown>,
+    'anchorElementRef' | 'popoverOpen' | 'getPopoverLayoutTop'
+  > {}
 
 function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
-  const { anchorElementRef, popoverOpen } = api
+  const { anchorElementRef, popoverOpen, getPopoverLayoutTop } = api
   const pageContentClientRect = document
     .getElementById('pageContentContainer')
     ?.getBoundingClientRect()
@@ -177,7 +183,7 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
     popoverOpen
   ) {
     const maxPopoverPadding = 40
-    const offsetLength = 2
+    const horizontalShift = 2
     const pageMiddleX =
       pageContentClientRect.left + pageContentClientRect.width / 2
     const anchorMiddleX = anchorClientRect.left + anchorClientRect.width / 2
@@ -185,13 +191,15 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
       anchorMiddleX > pageMiddleX ? 'left' : 'right'
     return {
       position: 'absolute',
-      top: anchorElement.offsetTop - offsetLength,
+      top: getPopoverLayoutTop({
+        anchorElement,
+      }),
       maxHeight: window.innerHeight - maxPopoverPadding,
       maxWidth: pageContentClientRect.width - maxPopoverPadding,
       ...(popoverDirection === 'right'
         ? {
             right: undefined,
-            left: anchorElement.offsetLeft - offsetLength,
+            left: anchorElement.offsetLeft - horizontalShift,
           }
         : {
             left: undefined,
@@ -200,7 +208,7 @@ function getPopoverLayoutStyle(api: GetPopoverLayoutStyleApi) {
               anchorClientRect.left +
               pageContentClientRect.left +
               (pageContentClientRect.right - anchorClientRect.right) -
-              offsetLength,
+              horizontalShift,
           }),
     }
   } else {

@@ -10,7 +10,10 @@ export interface BopperProps<
   CustomPopoverContentProps
 > extends Pick<
     PopoverProps<CustomPopoverContentProps>,
-    'PopoverContent' | 'customPopoverContentProps' | 'popoverAriaRole'
+    | 'PopoverContent'
+    | 'getPopoverLayoutTop'
+    | 'customPopoverContentProps'
+    | 'popoverAriaRole'
   > {
   anchorAriaLabel: CoreAriaOrnamentsData['ariaLabel']
   anchorAriaDescription: CoreAriaOrnamentsData['ariaDescription']
@@ -33,6 +36,7 @@ export function Bopper<CustomSomeAnchorButtonProps, CustomPopoverContentProps>(
     popoverAriaRole,
     customSomeAnchorButtonProps,
     PopoverContent,
+    getPopoverLayoutTop,
     customPopoverContentProps,
   } = props
   const anchorElementRef = useRef<HTMLDivElement>(null)
@@ -51,6 +55,7 @@ export function Bopper<CustomSomeAnchorButtonProps, CustomPopoverContentProps>(
       <Popover
         popoverAriaRole={popoverAriaRole}
         PopoverContent={PopoverContent}
+        getPopoverLayoutTop={getPopoverLayoutTop}
         anchorElementRef={anchorElementRef}
         popoverOpen={popoverOpen}
         setPopoverOpen={setPopoverOpen}

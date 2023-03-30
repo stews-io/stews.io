@@ -33,6 +33,7 @@ export function ProfileBopperBase(props: ProfileBopperBaseProps) {
       SomeAnchorButton={SomeAnchorButton}
       PopoverContent={PopoverContent}
       customSomeAnchorButtonProps={null}
+      getPopoverLayoutTop={({ anchorElement }) => anchorElement.offsetTop - 2}
       customPopoverContentProps={{
         curatorInfo,
       }}
