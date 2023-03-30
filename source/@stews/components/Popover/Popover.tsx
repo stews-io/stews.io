@@ -19,11 +19,15 @@ interface PopoverConfigProps<CustomPopoverContentProps> {
   PopoverContent: FunctionComponent<
     PopoverContentProps<CustomPopoverContentProps>
   >
-  getPopoverLayoutTop: (api: { anchorElement: HTMLDivElement }) => number
+  getPopoverLayoutTop: (api: GetPopoverLayoutTopApi) => number
 }
 
 type PopoverContentProps<CustomPopoverContentProps> = CorePopoverContentProps &
   CustomPopoverContentProps
+
+interface GetPopoverLayoutTopApi {
+  anchorElement: HTMLDivElement
+}
 
 export interface CorePopoverContentProps
   extends Pick<PopoverDataProps, 'anchorElementRef'> {
