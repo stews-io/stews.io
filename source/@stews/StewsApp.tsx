@@ -1,26 +1,14 @@
-import Router from 'preact-router'
-import { RoutePage } from './components/RoutePage'
 import { MusicCurationPage } from './pages/MusicCurationPage'
+import { RouterPage } from './RouterPage'
 import './StewsApp.scss'
 
 export function StewsApp() {
   return (
-    <Router>
-      <RoutePage path={'/music/:viewId'} TargetPage={MusicCurationPage} />
-      <DefaultRedirectToMusicCurationPage default={true} />
-    </Router>
+    <RouterPage
+      defaultPagePath={'music/0'}
+      pageMap={{
+        '/music/:viewId': MusicCurationPage,
+      }}
+    />
   )
-}
-
-interface DefaultRedirectToMusicCurationPage {
-  default: true
-}
-
-function DefaultRedirectToMusicCurationPage(
-  props: DefaultRedirectToMusicCurationPage
-) {
-  if (typeof window !== 'undefined') {
-    window.location.replace('/music/0')
-  }
-  return null
 }

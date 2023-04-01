@@ -1,0 +1,21 @@
+@import "@stews/styles/layout";
+@import "@stews/styles/theme";
+
+.splashLogoContainer {
+  @extend .itemContainer;
+  height: 100vh;
+  padding-inline: calc(9 / 2) * $themeSpacer;
+}
+
+.splashLogo {
+  margin-top: -112px;
+  width: 100%;
+}
+
+.splashTextPath {
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1mm;
+  fill: none;
+}
