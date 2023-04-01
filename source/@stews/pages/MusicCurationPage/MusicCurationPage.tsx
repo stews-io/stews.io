@@ -5,9 +5,7 @@ import {
 import { MusicItemDisplay } from './components/MusicItemDisplay'
 import { musicItems } from './musicItemsDataset'
 
-export interface MusicCurationPageProps {
-  path: string
-}
+export interface MusicCurationPageProps {}
 
 export function MusicCurationPage(props: MusicCurationPageProps) {
   return (
