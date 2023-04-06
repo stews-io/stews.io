@@ -1,10 +1,10 @@
 import {
   CurationConfigBase,
-  CurationPageConfig,
   CurationCuratorConfig,
+  CurationPageConfig,
 } from '@stews/data/CurationConfig'
+import { MusicItemDisplay } from '../components'
 import { MusicItem } from './MusicItem'
-import { MusicItemDisplay } from './MusicItemDisplay'
 
 export interface MusicCurationConfig
   extends CurationConfigBase<'music', MusicItem> {}
@@ -17,7 +17,6 @@ export type MusicCurationPageConfig = CurationPageConfig<MusicCurationConfig>
 export const musicCurationPageConfig: MusicCurationPageConfig = {
   ItemDisplay: MusicItemDisplay,
   curationType: 'music',
-  curationLabel: 'music',
   viewSortConfig: [
     {
       fieldKey: 'musicTitle',

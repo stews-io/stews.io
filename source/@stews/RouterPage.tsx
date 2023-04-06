@@ -1,18 +1,19 @@
 import { FunctionComponent } from 'preact'
 import Router, { RoutableProps } from 'preact-router'
 import { StateUpdater, useEffect, useState } from 'preact/hooks'
+import { ConsumerCurationPage } from './components/CurationPage'
 import { Page } from './components/Page'
+import { CuratorInfo } from './data'
+import { MusicItemDisplay } from './domains/music/components'
+import { throwInvalidPathError } from './helpers'
 import cssModule from './RouterPage.module.scss'
 
 export interface RouterPageProps {
-  defaultPagePath: string
-  pageMap: {
-    [pagePath: string]: FunctionComponent
-  }
+  adjustedCuratorConfig: any
 }
 
 export function RouterPage(props: RouterPageProps) {
-  const { pageMap, defaultPagePath } = props
+  const { adjustedCuratorConfig } = props
   const [resourcesStatus, setResourcseStatus] = useState<'loading' | 'loaded'>(
     'loading'
   )
@@ -21,14 +22,21 @@ export function RouterPage(props: RouterPageProps) {
       setResourcseStatus,
     })
   }, [])
-  return (
+  return resourcesStatus === 'loading' ? (
+    <SplashPage />
+  ) : (
     <Router>
-      <DefaultPageRedirect default={true} defaultPagePath={defaultPagePath} />
-      {Object.entries(pageMap).map(([somePagePath, TargetPage]) => (
+      <DefaultPageRedirect
+        default={true}
+        defaultPagePath={`/${adjustedCuratorConfig.curations[0].curationType}/0`}
+      />
+      {adjustedCuratorConfig.curations.map((someCuration: any) => (
         <RoutePage
           resourcesStatus={resourcesStatus}
-          path={somePagePath}
-          TargetPage={TargetPage}
+          path={`/${someCuration.curationType}/:viewId`}
+          curatorInfo={adjustedCuratorConfig.curatorInfo}
+          someCuration={someCuration}
+          // TargetPage={TargetPage}
         />
       ))}
     </Router>
@@ -74,8 +82,8 @@ async function loadResources(api: LoadResourcesApi) {
   document.body.style.overflow = 'inherit'
 }
 
-interface DefaultRedirectToMusicCurationPage
-  extends Pick<RouterPageProps, 'defaultPagePath'> {
+interface DefaultRedirectToMusicCurationPage {
+  defaultPagePath: string
   default: true
 }
 
@@ -89,17 +97,58 @@ function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
 
 interface RoutePageProps extends Required<Pick<RoutableProps, 'path'>> {
   resourcesStatus: 'loading' | 'loaded'
-  TargetPage: FunctionComponent
+  someCuration: any
+  curatorInfo: CuratorInfo
+  // TargetPage: FunctionComponent
 }
 
 function RoutePage(props: RoutePageProps) {
-  const { resourcesStatus, TargetPage } = props
-  return resourcesStatus === 'loading' ? <SplashPage /> : <TargetPage />
+  const { resourcesStatus, someCuration, curatorInfo } = props
+  return resourcesStatus === 'loading' ? (
+    <SplashPage />
+  ) : someCuration.curationType === 'music' ? (
+    <ConsumerCurationPage
+      ItemDisplay={MusicItemDisplay}
+      getItemSearchSpace={(someMusicItem) =>
+        `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
+          ','
+        )},${someMusicItem.musicStyles.join(',')},${
+          someMusicItem.musicYear
+        },${`${someMusicItem.recordingContext.join('/')} ${
+          someMusicItem.sourceType === 'collection'
+            ? someMusicItem.collectionType
+            : someMusicItem.sourceType
+        }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`
+      }
+      viewSortConfig={[
+        {
+          fieldKey: 'musicTitle',
+          fieldType: 'string',
+          sortLabelBase: 'title',
+        },
+        {
+          fieldKey: 'musicArtist',
+          fieldType: 'orderedStringSet',
+          sortLabelBase: 'artist',
+        },
+        {
+          fieldKey: 'musicYear',
+          fieldType: 'number',
+          sortLabelBase: 'year',
+        },
+      ]}
+      curationType={someCuration.curationType}
+      curationViews={someCuration.curationViews}
+      curatorInfo={curatorInfo}
+    />
+  ) : (
+    throwInvalidPathError('RouterPage')
+  )
 }
 
-interface SplashPageProps {}
+export interface SplashPageProps {}
 
-function SplashPage(props: SplashPageProps) {
+export function SplashPage(props: SplashPageProps) {
   return (
     <Page pageAriaHeader={'stews.io splash screen'}>
       <div className={cssModule.splashLogoContainer}>

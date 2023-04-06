@@ -1,14 +1,12 @@
-import { MusicCurationPage } from './pages/MusicCurationPage'
-import { RouterPage } from './RouterPage'
+// import { MusicCurationPage } from './pages/MusicCurationPage'
+// import { RouterPage } from './RouterPage'
+import { RouterPage, SplashPage } from './RouterPage'
 import './StewsApp.scss'
 
-export function StewsApp() {
+export function StewsApp(props: any) {
   return (
     <RouterPage
-      defaultPagePath={'music/0'}
-      pageMap={{
-        '/music/:viewId': MusicCurationPage,
-      }}
+      adjustedCuratorConfig={props.CLI_DATA.preRenderData.adjustedCuratorConfig}
     />
   )
 }

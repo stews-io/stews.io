@@ -1,11 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "ES6",
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -13,12 +8,17 @@
     "noUncheckedIndexedAccess": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "noFallthroughCasesInSwitch": true,    
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "resolveJsonModule": true,    
     "noEmit": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "module": "ES2020",
+    "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "baseUrl": "source",
@@ -28,5 +28,12 @@
   },
   "include": [
     "source",
-  ]
+  ],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"],
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
 }

@@ -21,10 +21,9 @@ interface CurationPageBaseProps<CurationItem extends object>
     CurationPageBaseConfigProps {}
 
 export interface CurationPageBaseDataProps<CurationItem extends object> {
-  curationLabel: string
+  curationType: string
   curatorInfo: CuratorInfo
   curationViews: ArrayOfAtLeastOne<CurationView>
-  curationItems: Array<CurationItem>
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
   ItemDisplay: FunctionComponent<ItemDisplayProps<CurationItem>>
   getItemSearchSpace: (someCurationItem: CurationItem) => string
@@ -40,7 +39,7 @@ export interface CurationPageBaseConfigProps {
 }
 
 type ViewSelectProps = ViewSelectBaseDataProps &
-  Pick<CurationPageBaseDataProps<object>, 'curationLabel'>
+  Pick<CurationPageBaseDataProps<object>, 'curationType'>
 
 type ProfileBopperProps = Pick<CurationPageBaseProps<object>, 'curatorInfo'>
 
@@ -50,13 +49,12 @@ export function CurationPageBase<CurationItem extends object>(
   const {
     viewSortConfig,
     curationViews,
+    curationType,
     curatorInfo,
-    curationLabel,
     ViewSelect,
     ProfileBopper,
     ItemDisplay,
     getItemSearchSpace,
-    curationItems,
   } = props
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
@@ -67,9 +65,9 @@ export function CurationPageBase<CurationItem extends object>(
   })
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
     pageItemSize: 6,
+    curationType,
     ItemDisplay,
     getItemSearchSpace,
-    curationItems,
     curationPageState,
     setPageIndexToPrevious: (currentAdjustedPageIndex) => {
       setCurationPageState((currentCurationPageState) => ({
@@ -87,7 +85,7 @@ export function CurationPageBase<CurationItem extends object>(
   const { pageHeaderContainerRef } = useStickyPageHeaderWorkaround()
   return (
     <Page
-      pageAriaHeader={`${curatorInfo.curatorName}: ${curationLabel} curation`}
+      pageAriaHeader={`${curatorInfo.curatorName}: ${curationType} curation`}
     >
       <div
         ref={pageHeaderContainerRef}
@@ -96,8 +94,8 @@ export function CurationPageBase<CurationItem extends object>(
         <div className={cssModule.pageHeader}>
           <div className={cssModule.viewSelectContainer}>
             <ViewSelect
-              viewAriaHeader={`${curationLabel} view: ${curationPageState.curationView.viewLabel}`}
-              curationLabel={curationLabel}
+              viewAriaHeader={`${curationType} view: ${curationPageState.curationView.viewLabel}`}
+              curationType={curationType}
               optionList={curationViews}
               selectedOption={curationPageState.curationView}
               selectOption={(nextCurationView) => {
@@ -130,7 +128,7 @@ export function CurationPageBase<CurationItem extends object>(
         </div>
         <div className={cssModule.viewSearchInputContainer}>
           <ViewSearchInput
-            curationLabel={curationLabel}
+            curationType={curationType}
             value={curationPageState.viewSearchQuery}
             onInput={(someInputEvent) => {
               const nextViewSearch = someInputEvent.currentTarget.value

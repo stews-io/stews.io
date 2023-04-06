@@ -16,21 +16,21 @@ import { CurationPageBaseDataProps } from '../../CurationPageBase'
 
 export interface CuratorViewSelectProps
   extends ViewSelectBaseDataProps,
-    Pick<CurationPageBaseDataProps<object>, 'curationLabel'> {}
+    Pick<CurationPageBaseDataProps<object>, 'curationType'> {}
 
 export function CuratorViewSelect(props: CuratorViewSelectProps) {
-  const { curationLabel, ...viewSelectBaseProps } = props
+  const { curationType, ...viewSelectBaseProps } = props
   return (
     <ViewSelectBase
       popoverAriaRole={'menu'}
-      anchorAriaLabel={`show ${curationLabel} view menu`}
-      anchorAriaDescription={`a button that displays a popover with options for selecting, editing, or creating a ${curationLabel} view`}
+      anchorAriaLabel={`show ${curationType} view menu`}
+      anchorAriaDescription={`a button that displays a popover with options for selecting, editing, or creating a ${curationType} view`}
       SelectMenu={CuratorSelectMenu}
       customOptionActionItemProps={{
-        curationLabel,
+        curationType,
       }}
       customMenuFooterProps={{
-        curationLabel,
+        curationType,
       }}
       {...viewSelectBaseProps}
     />
@@ -66,11 +66,11 @@ interface CuratorOptionActionItemProps
   extends ComponentProps<CuratorSelectMenuPropsConfig['OptionActionItem']> {}
 
 interface CustomCuratorOptionActionItemProps
-  extends Pick<CuratorViewSelectProps, 'curationLabel'> {}
+  extends Pick<CuratorViewSelectProps, 'curationType'> {}
 
 function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
   const {
-    curationLabel,
+    curationType,
     someOption,
     getMenuNavigationOptionActionButtonProps,
     optionIndex,
@@ -80,8 +80,8 @@ function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
     <div className={cssModule.optionActionItem}>
       <LinkButton
         target={'_self'}
-        href={`${curationLabel}/view/${someOption.viewId}/edit`}
-        ariaLabel={`edit "${someOption.viewLabel}" ${curationLabel} view`}
+        href={`${curationType}/view/${someOption.viewId}/edit`}
+        ariaLabel={`edit "${someOption.viewLabel}" ${curationType} view`}
         ariaDescription={`a button that navigates to the edit view page for "${someOption.viewLabel}"`}
         {...getMenuNavigationOptionActionButtonProps(optionIndex)}
       >
@@ -116,18 +116,18 @@ interface CuratorMenuFooterProps
   extends ComponentProps<CuratorSelectMenuPropsConfig['MenuFooter']> {}
 
 interface CustomCuratorMenuFooterProps
-  extends Pick<CuratorViewSelectProps, 'curationLabel'> {}
+  extends Pick<CuratorViewSelectProps, 'curationType'> {}
 
 function CurtatorMenuFooter(props: CuratorMenuFooterProps) {
-  const { curationLabel, menuNavigationFooterActionButtonProps } = props
+  const { curationType, menuNavigationFooterActionButtonProps } = props
   return (
     <div className={cssModule.footerContainer}>
       <div className={cssModule.footerDivider} />
       <div className={cssModule.footerActionButtonContainer}>
         <LinkButton
           target={'_self'}
-          href={`${curationLabel}/view/create`}
-          ariaLabel={`create ${curationLabel} view`}
+          href={`${curationType}/view/create`}
+          ariaLabel={`create ${curationType} view`}
           ariaDescription={''}
           className={cssModule.footerActionButton}
           {...menuNavigationFooterActionButtonProps}

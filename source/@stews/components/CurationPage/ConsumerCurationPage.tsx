@@ -12,10 +12,9 @@ export function ConsumerCurationPage<CurationItem extends object>(
     ItemDisplay,
     viewSortConfig,
     getItemSearchSpace,
-    curationLabel,
+    curationType,
     curatorInfo,
     curationViews,
-    curationItems,
   } = props
   return (
     <CurationPageBase
@@ -24,10 +23,9 @@ export function ConsumerCurationPage<CurationItem extends object>(
       ProfileBopper={ConsumerProfileBopper}
       viewSortConfig={viewSortConfig}
       getItemSearchSpace={getItemSearchSpace}
-      curationLabel={curationLabel}
+      curationType={curationType}
       curatorInfo={curatorInfo}
       curationViews={curationViews}
-      curationItems={curationItems}
     />
   )
 }

@@ -1,6 +1,7 @@
 import { CurationPageBaseDataProps } from '@stews/components/CurationPage'
+import { MusicCurationCuratorConfig } from '@stews/domains/music/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
-import { DefaultCurationView } from './CurationView'
+import { DefaultCurationView, FilterCurationView } from './CurationView'
 import { CuratorInfo } from './CuratorInfo'
 
 export interface CurationConfigBase<
@@ -11,11 +12,11 @@ export interface CurationConfigBase<
     | 'ItemDisplay'
     | 'viewSortConfig'
     | 'getItemSearchSpace'
-    | 'curationLabel'
+    | 'curationType'
     | 'curationViews'
-    | 'curationItems'
   > {
   curationType: CurationType
+  curationItems: Array<CurationItem>
 }
 
 export type CurationPageConfig<
@@ -26,11 +27,11 @@ export type CurationPageConfig<
   | 'ItemDisplay'
   | 'viewSortConfig'
   | 'getItemSearchSpace'
-  | 'curationLabel'
+  | 'curationType'
 >
 
 export interface CuratorConfig<
-  Curations extends ArrayOfAtLeastOne<CurationCuratorConfig<any>>
+  Curations extends ArrayOfAtLeastOne<MusicCurationCuratorConfig>
 > {
   curatorInfo: CuratorInfo
   curations: Curations
@@ -39,7 +40,13 @@ export interface CuratorConfig<
 export type CurationCuratorConfig<
   SomeCurationConfig extends CurationConfigBase<any, any>
 > = Pick<SomeCurationConfig, 'curationType' | 'curationItems'> & {
-  curationViews: Array<
-    Exclude<SomeCurationConfig['curationViews'][number], DefaultCurationView>
-  >
+  // curationViews: Array<
+  //   Exclude<SomeCurationConfig['curationViews'][number], DefaultCurationView>
+  // >
+  curationViews: Array<CuratorFilterCurationView>
+}
+
+interface CuratorFilterCurationView
+  extends Omit<FilterCurationView, 'viewItemIds'> {
+  viewFilter: string
 }
