@@ -32,11 +32,10 @@ export function RouterPage(props: RouterPageProps) {
       />
       {adjustedCuratorConfig.curations.map((someCuration: any) => (
         <RoutePage
-          resourcesStatus={resourcesStatus}
+          // resourcesStatus={resourcesStatus}
           path={`/${someCuration.curationType}/:viewId`}
           curatorInfo={adjustedCuratorConfig.curatorInfo}
           someCuration={someCuration}
-          // TargetPage={TargetPage}
         />
       ))}
     </Router>
@@ -96,17 +95,15 @@ function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
 }
 
 interface RoutePageProps extends Required<Pick<RoutableProps, 'path'>> {
-  resourcesStatus: 'loading' | 'loaded'
+  // resourcesStatus: 'loading' | 'loaded'
   someCuration: any
   curatorInfo: CuratorInfo
   // TargetPage: FunctionComponent
 }
 
 function RoutePage(props: RoutePageProps) {
-  const { resourcesStatus, someCuration, curatorInfo } = props
-  return resourcesStatus === 'loading' ? (
-    <SplashPage />
-  ) : someCuration.curationType === 'music' ? (
+  const { someCuration, curatorInfo } = props
+  return (
     <ConsumerCurationPage
       ItemDisplay={MusicItemDisplay}
       getItemSearchSpace={(someMusicItem) =>
@@ -141,8 +138,6 @@ function RoutePage(props: RoutePageProps) {
       curationViews={someCuration.curationViews}
       curatorInfo={curatorInfo}
     />
-  ) : (
-    throwInvalidPathError('RouterPage')
   )
 }
 

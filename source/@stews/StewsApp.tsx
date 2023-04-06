@@ -1,6 +1,4 @@
-// import { MusicCurationPage } from './pages/MusicCurationPage'
-// import { RouterPage } from './RouterPage'
-import { RouterPage, SplashPage } from './RouterPage'
+import { RouterPage } from './RouterPage'
 import './StewsApp.scss'
 
 export function StewsApp(props: any) {
