@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'preact'
+import { Fragment, FunctionComponent } from 'preact'
 import Router, { RoutableProps } from 'preact-router'
 import { StateUpdater, useEffect, useState } from 'preact/hooks'
 import { ConsumerCurationPage } from './components/CurationPage'
@@ -22,23 +22,24 @@ export function RouterPage(props: RouterPageProps) {
       setResourcseStatus,
     })
   }, [])
-  return resourcesStatus === 'loading' ? (
-    <SplashPage />
-  ) : (
-    <Router>
-      <DefaultPageRedirect
-        default={true}
-        defaultPagePath={`/${adjustedCuratorConfig.curations[0].curationType}/0`}
-      />
-      {adjustedCuratorConfig.curations.map((someCuration: any) => (
-        <RoutePage
-          // resourcesStatus={resourcesStatus}
-          path={`/${someCuration.curationType}/:viewId`}
-          curatorInfo={adjustedCuratorConfig.curatorInfo}
-          someCuration={someCuration}
+  return (
+    <Fragment>
+      {resourcesStatus === 'loading' ? <SplashPage /> : null}
+      <Router>
+        <DefaultPageRedirect
+          default={true}
+          defaultPagePath={`/${adjustedCuratorConfig.curations[0].curationType}/0`}
         />
-      ))}
-    </Router>
+        {adjustedCuratorConfig.curations.map((someCuration: any) => (
+          <RoutePage
+            resourcesStatus={resourcesStatus}
+            path={`/${someCuration.curationType}/:viewId`}
+            curatorInfo={adjustedCuratorConfig.curatorInfo}
+            someCuration={someCuration}
+          />
+        ))}
+      </Router>
+    </Fragment>
   )
 }
 
@@ -95,15 +96,14 @@ function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
 }
 
 interface RoutePageProps extends Required<Pick<RoutableProps, 'path'>> {
-  // resourcesStatus: 'loading' | 'loaded'
+  resourcesStatus: 'loading' | 'loaded'
   someCuration: any
   curatorInfo: CuratorInfo
-  // TargetPage: FunctionComponent
 }
 
 function RoutePage(props: RoutePageProps) {
-  const { someCuration, curatorInfo } = props
-  return (
+  const { resourcesStatus, someCuration, curatorInfo } = props
+  return resourcesStatus === 'loaded' ? (
     <ConsumerCurationPage
       ItemDisplay={MusicItemDisplay}
       getItemSearchSpace={(someMusicItem) =>
@@ -138,7 +138,7 @@ function RoutePage(props: RoutePageProps) {
       curationViews={someCuration.curationViews}
       curatorInfo={curatorInfo}
     />
-  )
+  ) : null
 }
 
 export interface SplashPageProps {}

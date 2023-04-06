@@ -43,14 +43,10 @@ export function useViewPage<CurationItem extends object>(
       initialAsyncDataState: {
         stateType: 'loading',
       },
-      fetchAsyncData: (): Promise<Record<string, CurationItem>> => {
-        return fetch(`/assets/curations/${curationType}.json`).then(
-          (serverResponse) => {
-            console.log(serverResponse)
-            return serverResponse.json()
-          }
-        )
-      },
+      fetchAsyncData: (): Promise<Record<string, CurationItem>> =>
+        fetch(`/assets/curations/${curationType}.json`).then((serverResponse) =>
+          serverResponse.json()
+        ),
     })
   useEffect(() => {
     triggerFetchCurationItemsMap()
