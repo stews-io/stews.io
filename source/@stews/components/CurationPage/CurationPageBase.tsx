@@ -1,6 +1,7 @@
 import { Page } from '@stews/components/Page'
 import { CurationView, CuratorInfo } from '@stews/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
+import { AsyncDataState } from '@stews/hooks/useAsyncData'
 import { FunctionComponent } from 'preact'
 import {
   ViewSearchInput,
@@ -27,6 +28,7 @@ export interface CurationPageBaseDataProps<CurationItem extends object> {
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
   ItemDisplay: FunctionComponent<ItemDisplayProps<CurationItem>>
   getItemSearchSpace: (someCurationItem: CurationItem) => string
+  fetchCurationItemsMapState: AsyncDataState<Record<string, CurationItem>>
 }
 
 export interface ItemDisplayProps<CurationItem extends object> {
@@ -49,12 +51,13 @@ export function CurationPageBase<CurationItem extends object>(
   const {
     viewSortConfig,
     curationViews,
+    ItemDisplay,
+    getItemSearchSpace,
+    fetchCurationItemsMapState,
     curationType,
     curatorInfo,
     ViewSelect,
     ProfileBopper,
-    ItemDisplay,
-    getItemSearchSpace,
   } = props
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
@@ -65,9 +68,9 @@ export function CurationPageBase<CurationItem extends object>(
   })
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
     pageItemSize: 6,
-    curationType,
     ItemDisplay,
     getItemSearchSpace,
+    fetchCurationItemsMapState,
     curationPageState,
     setPageIndexToPrevious: (currentAdjustedPageIndex) => {
       setCurationPageState((currentCurationPageState) => ({

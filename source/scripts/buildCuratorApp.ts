@@ -8,6 +8,7 @@ import {
   CuratorConfigSchema,
 } from '@stews/data/CuratorConfig'
 import { FilterCurationView } from '@stews/data'
+import { MusicItem } from '@stews/domains/music/data'
 
 buildCuratorApp({
   curatorConfigPath: Path.join(
@@ -48,8 +49,8 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
       curationType: curatorConfig.musicCurationConfig.curationType,
       curationViews: [
         {
-          viewType: 'default',
           viewId: 0,
+          viewType: 'default',
           viewLabel: 'all',
           viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
             (someCurationItem) => someCurationItem.musicId
@@ -97,7 +98,7 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     ),
     JSON.stringify(
       curatorConfig.musicCurationConfig.curationItems.reduce<
-        Record<string, object>
+        Record<string, MusicItem>
       >((curationItemsMapResult, someCurationItem) => {
         curationItemsMapResult[someCurationItem.musicId] = someCurationItem
         return curationItemsMapResult
