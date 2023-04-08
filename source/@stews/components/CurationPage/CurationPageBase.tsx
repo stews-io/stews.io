@@ -1,5 +1,5 @@
 import { Page } from '@stews/components/Page'
-import { CurationView, CuratorInfo } from '@stews/data'
+import { AdjustedCurationView, CuratorInfo } from '@stews/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { AsyncDataState } from '@stews/hooks/useAsyncData'
 import { FunctionComponent } from 'preact'
@@ -24,7 +24,7 @@ interface CurationPageBaseProps<CurationItem extends object>
 export interface CurationPageBaseDataProps<CurationItem extends object> {
   curationType: string
   curatorInfo: CuratorInfo
-  curationViews: ArrayOfAtLeastOne<CurationView>
+  curationViews: ArrayOfAtLeastOne<AdjustedCurationView>
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
   ItemDisplay: FunctionComponent<ItemDisplayProps<CurationItem>>
   getItemSearchSpace: (someCurationItem: CurationItem) => string

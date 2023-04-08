@@ -7,7 +7,7 @@ import {
   CuratorConfig,
   CuratorConfigSchema,
 } from '@stews/data/CuratorConfig'
-import { FilterCurationView } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data'
 import { MusicItem } from '@stews/domains/music/data'
 
 buildCuratorApp({
@@ -50,16 +50,13 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
       curationViews: [
         {
           viewId: 0,
-          viewType: 'default',
           viewLabel: 'all',
           viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
             (someCurationItem) => someCurationItem.musicId
           ),
         },
         ...curatorConfig.musicCurationConfig.curationViews.map(
-          (someCurationView): FilterCurationView => ({
-            viewType: 'custom',
-            customType: 'filter',
+          (someCurationView): AdjustedCurationView => ({
             viewId: someCurationView.viewId,
             viewLabel: someCurationView.viewLabel,
             viewItemIds: Liqe.filter(

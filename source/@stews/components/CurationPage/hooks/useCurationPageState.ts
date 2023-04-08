@@ -1,4 +1,4 @@
-import { CurationView } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data'
 import { throwInvalidPathError } from '@stews/helpers'
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
@@ -6,7 +6,7 @@ import { UseViewSortOptionsResult, ViewSortOption } from './useViewSortOptions'
 
 export interface CurationPageState<CurationItem extends object> {
   curationKey: string
-  curationView: CurationView
+  curationView: AdjustedCurationView
   viewSortOption: ViewSortOption<CurationItem>
   viewSearchQuery: string
   viewPageIndex: number
