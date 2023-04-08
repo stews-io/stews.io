@@ -2,7 +2,7 @@ import {
   AdjustedCurationCuratorConfig,
   CurationConfigBase,
   CurationCuratorConfig,
-} from '@stews/data/CurationConfig'
+} from '@stews/data/CuratorConfig'
 import { MusicItem } from './MusicItem'
 
 export interface MusicCurationConfig

@@ -1,4 +1,4 @@
-import { AdjustedCuratorConfig } from '@stews/data/CurationConfig'
+import { AdjustedCuratorConfig } from '@stews/data/CuratorConfig'
 import { Fragment } from 'preact/jsx-runtime'
 import { AppRouter } from './components/AppRouter'
 import { SplashPage } from './components/SplashPage'

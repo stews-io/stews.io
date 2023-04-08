@@ -1,11 +1,14 @@
-import { curatorConfig } from '../curators/clumsycomputer'
 import * as Liqe from 'liqe'
 import ChildProcess from 'child_process'
 import Path from 'path'
 import FileSystem from 'fs'
+import { CuratorConfig, CuratorConfigSchema } from '@stews/data/CuratorConfig'
 
 buildCuratorApp({
-  curatorConfigPath: Path.join(process.cwd(), './curators/clumsycomputer'),
+  curatorConfigPath: Path.join(
+    process.cwd(),
+    './source/curators/clumsycomputer'
+  ),
 })
 
 interface BuildCuratorAppApi {
@@ -13,7 +16,11 @@ interface BuildCuratorAppApi {
 }
 
 async function buildCuratorApp(api: BuildCuratorAppApi) {
-  const {} = api
+  const { curatorConfigPath } = api
+  const curatorConfigModule = await import(curatorConfigPath)
+  const curatorConfig: CuratorConfig = CuratorConfigSchema.parse(
+    curatorConfigModule.curatorConfig
+  )
   const preactAppDirectoryPath = Path.join(process.cwd(), './source/app')
   const preactBuildDirectoryPath = Path.join(
     process.cwd(),
