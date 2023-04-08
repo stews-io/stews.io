@@ -3,6 +3,7 @@ import {
   AdjustedMusicCurationCuratorConfig,
   MusicCurationCuratorConfig,
 } from '@stews/domains/music/data'
+import { MusicItemSchema } from '@stews/domains/music/data/MusicItemSchema'
 import Zod from 'zod'
 import { FilterCurationView } from './CurationView'
 import { CuratorInfo } from './CuratorInfo'
@@ -27,94 +28,6 @@ export interface CuratorConfig {
   musicCurationConfig: MusicCurationCuratorConfig
 }
 
-const MusicItemSchemaBase = Zod.object({
-  musicId: Zod.number(),
-  musicThumbnailHref: Zod.string(),
-  musicTitle: Zod.string(),
-  musicYear: Zod.number(),
-  musicArtist: Zod.tuple([Zod.string()]).rest(Zod.string()),
-  musicStyles: Zod.tuple([Zod.string()]).rest(Zod.string()),
-  recordingContext: Zod.tuple([
-    Zod.union([
-      Zod.literal('studio'),
-      Zod.literal('live'),
-      Zod.literal('concert'),
-    ]),
-  ]).rest(
-    Zod.union([
-      Zod.literal('studio'),
-      Zod.literal('live'),
-      Zod.literal('concert'),
-    ])
-  ),
-  externalLinks: Zod.tuple([
-    Zod.object({
-      linkLabel: Zod.string(),
-      linkHref: Zod.string(),
-    }),
-  ]).rest(
-    Zod.object({
-      linkLabel: Zod.string(),
-      linkHref: Zod.string(),
-    })
-  ),
-})
-
-const SourceMusicItemSchemaBase = MusicItemSchemaBase.extend({
-  musicType: Zod.literal('source'),
-})
-
-const SongMusicItem = SourceMusicItemSchemaBase.extend({
-  sourceType: Zod.literal('track'),
-})
-
-const MixMusicItem = SourceMusicItemSchemaBase.extend({
-  sourceType: Zod.literal('mix'),
-})
-
-const CollectionMusicItemSchemaBase = SourceMusicItemSchemaBase.extend({
-  sourceType: Zod.literal('collection'),
-})
-
-const CollectionMusicItem = Zod.union([
-  CollectionMusicItemSchemaBase.extend({
-    collectionType: Zod.literal('single'),
-  }),
-  CollectionMusicItemSchemaBase.extend({
-    collectionType: Zod.literal('ep'),
-  }),
-  CollectionMusicItemSchemaBase.extend({
-    collectionType: Zod.literal('album'),
-  }),
-  CollectionMusicItemSchemaBase.extend({
-    collectionType: Zod.literal('compilation'),
-  }),
-  CollectionMusicItemSchemaBase.extend({
-    collectionType: Zod.literal('soundtrack'),
-  }),
-])
-
-const ClippedMusicItemSchemaBase = MusicItemSchemaBase.extend({
-  musicType: Zod.literal('clip'),
-})
-
-const SongClipMusicItemSchema = ClippedMusicItemSchemaBase.extend(
-  SongMusicItem.pick({
-    sourceType: true,
-  }).shape
-)
-
-const MixClipMusicItemSchema = ClippedMusicItemSchemaBase.extend(
-  MixMusicItem.pick({
-    sourceType: true,
-  }).shape
-)
-
-const ClipMusicItemSchema = Zod.union([
-  SongClipMusicItemSchema,
-  MixClipMusicItemSchema,
-])
-
 export const CuratorConfigSchema = Zod.object({
   curatorInfo: Zod.object({
     curatorName: Zod.string(),
@@ -136,21 +49,12 @@ export const CuratorConfigSchema = Zod.object({
     curationType: Zod.literal('music'),
     curationViews: Zod.array(
       Zod.object({
-        viewType: Zod.literal('custom'),
-        customType: Zod.literal('filter'),
         viewId: Zod.number(),
         viewLabel: Zod.string(),
         viewFilter: Zod.string(),
       })
     ),
-    curationItems: Zod.array(
-      Zod.union([
-        ClipMusicItemSchema,
-        SongMusicItem,
-        CollectionMusicItem,
-        MixMusicItem,
-      ])
-    ),
+    curationItems: Zod.array(MusicItemSchema),
   }),
 })
 
@@ -161,7 +65,7 @@ export type CurationCuratorConfig<
 }
 
 interface CuratorFilterCurationView
-  extends Omit<FilterCurationView, 'viewItemIds'> {
+  extends Pick<FilterCurationView, 'viewId' | 'viewLabel'> {
   viewFilter: string
 }
 
@@ -172,4 +76,4 @@ export interface AdjustedCuratorConfig {
 
 export type AdjustedCurationCuratorConfig<
   SomeCurationConfig extends CurationConfigBase<any, any>
-> = Pick<SomeCurationConfig, 'curationType' | 'curationViews' | 'curationItems'>
+> = Pick<SomeCurationConfig, 'curationType' | 'curationViews'>
