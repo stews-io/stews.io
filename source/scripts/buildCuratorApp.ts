@@ -89,6 +89,35 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     recursive: true,
     force: true,
   })
+  FileSystem.writeFileSync(
+    Path.join(preactBuildDirectoryPath, './manifest.json'),
+    JSON.stringify({
+      name: `stews.io: ${curatorConfig.curatorInfo.curatorName}`,
+      short_name: curatorConfig.curatorInfo.curatorName,
+      start_url: '/',
+      display: 'standalone',
+      orientation: 'portrait',
+      background_color: '#FFFFFF',
+      theme_color: '#FFFFFF',
+      icons: [
+        {
+          src: 'assets/icon-192x192.png',
+          type: 'image/png',
+          sizes: '192x192',
+        },
+        {
+          src: 'assets/icon-384x384.png',
+          type: 'image/png',
+          sizes: '384x384',
+        },
+        {
+          src: 'assets/icon-512x512.png',
+          type: 'image/png',
+          sizes: '512x512',
+        },
+      ],
+    })
+  )
   FileSystem.mkdirSync(curationDatasetsDirectoryPath)
   FileSystem.writeFileSync(
     Path.join(
