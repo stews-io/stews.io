@@ -1,9 +1,8 @@
 import {
+  AdjustedCurationCuratorConfig,
   CurationConfigBase,
   CurationCuratorConfig,
-  CurationPageConfig,
 } from '@stews/data/CurationConfig'
-import { MusicItemDisplay } from '../components'
 import { MusicItem } from './MusicItem'
 
 export interface MusicCurationConfig
@@ -12,36 +11,39 @@ export interface MusicCurationConfig
 export type MusicCurationCuratorConfig =
   CurationCuratorConfig<MusicCurationConfig>
 
-export type MusicCurationPageConfig = CurationPageConfig<MusicCurationConfig>
+export type AdjustedMusicCurationCuratorConfig =
+  AdjustedCurationCuratorConfig<MusicCurationConfig>
 
-export const musicCurationPageConfig: MusicCurationPageConfig = {
-  ItemDisplay: MusicItemDisplay,
-  curationType: 'music',
-  viewSortConfig: [
-    {
-      fieldKey: 'musicTitle',
-      fieldType: 'string',
-      sortLabelBase: 'title',
-    },
-    {
-      fieldKey: 'musicArtist',
-      fieldType: 'orderedStringSet',
-      sortLabelBase: 'artist',
-    },
-    {
-      fieldKey: 'musicYear',
-      fieldType: 'number',
-      sortLabelBase: 'year',
-    },
-  ],
-  getItemSearchSpace: (someMusicItem) =>
-    `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
-      ','
-    )},${someMusicItem.musicStyles.join(',')},${
-      someMusicItem.musicYear
-    },${`${someMusicItem.recordingContext.join('/')} ${
-      someMusicItem.sourceType === 'collection'
-        ? someMusicItem.collectionType
-        : someMusicItem.sourceType
-    }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`,
-}
+// export type MusicCurationPageConfig = CurationPageConfig<MusicCurationConfig>
+
+// export const musicCurationPageConfig: MusicCurationPageConfig = {
+//   ItemDisplay: MusicItemDisplay,
+//   curationType: 'music',
+//   viewSortConfig: [
+//     {
+//       fieldKey: 'musicTitle',
+//       fieldType: 'string',
+//       sortLabelBase: 'title',
+//     },
+//     {
+//       fieldKey: 'musicArtist',
+//       fieldType: 'orderedStringSet',
+//       sortLabelBase: 'artist',
+//     },
+//     {
+//       fieldKey: 'musicYear',
+//       fieldType: 'number',
+//       sortLabelBase: 'year',
+//     },
+//   ],
+//   getItemSearchSpace: (someMusicItem) =>
+//     `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
+//       ','
+//     )},${someMusicItem.musicStyles.join(',')},${
+//       someMusicItem.musicYear
+//     },${`${someMusicItem.recordingContext.join('/')} ${
+//       someMusicItem.sourceType === 'collection'
+//         ? someMusicItem.collectionType
+//         : someMusicItem.sourceType
+//     }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`,
+// }

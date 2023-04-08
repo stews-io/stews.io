@@ -1,150 +1,13 @@
-import { Fragment, FunctionComponent } from 'preact'
-import Router, { RoutableProps } from 'preact-router'
-import { StateUpdater, useEffect, useState } from 'preact/hooks'
-import { ConsumerCurationPage } from './components/CurationPage'
-import { Page } from './components/Page'
-import { CuratorInfo } from './data'
-import { MusicItemDisplay } from './domains/music/components'
-import { throwInvalidPathError } from './helpers'
-import cssModule from './RouterPage.module.scss'
+import { Page } from '@stews/components/Page'
+import { UseAppResourcesResult } from '../hooks/useAppResources'
+import cssModule from './SplashPage.module.scss'
 
-export interface RouterPageProps {
-  adjustedCuratorConfig: any
-}
-
-export function RouterPage(props: RouterPageProps) {
-  const { adjustedCuratorConfig } = props
-  const [resourcesStatus, setResourcseStatus] = useState<'loading' | 'loaded'>(
-    'loading'
-  )
-  useEffect(() => {
-    loadResources({
-      setResourcseStatus,
-    })
-  }, [])
-  return (
-    <Fragment>
-      {resourcesStatus === 'loading' ? <SplashPage /> : null}
-      <Router>
-        <DefaultPageRedirect
-          default={true}
-          defaultPagePath={`/${adjustedCuratorConfig.curations[0].curationType}/0`}
-        />
-        {adjustedCuratorConfig.curations.map((someCuration: any) => (
-          <RoutePage
-            resourcesStatus={resourcesStatus}
-            path={`/${someCuration.curationType}/:viewId`}
-            curatorInfo={adjustedCuratorConfig.curatorInfo}
-            someCuration={someCuration}
-          />
-        ))}
-      </Router>
-    </Fragment>
-  )
-}
-
-interface LoadResourcesApi {
-  setResourcseStatus: StateUpdater<'loading' | 'loaded'>
-}
-
-async function loadResources(api: LoadResourcesApi) {
-  const { setResourcseStatus } = api
-  document.body.style.overflow = 'hidden'
-  const regularRedHatMonoFontFace = new FontFace(
-    'Red Hat Mono',
-    'url(/assets/fonts/RedHatMonoVF.woff2)',
-    {
-      weight: '200 900',
-    }
-  )
-  const italicRedHatMonoFontFace = new FontFace(
-    'Red Hat Mono',
-    'url(/assets/fonts/RedHatMonoVF-Italic.woff2)',
-    {
-      style: 'italic',
-      weight: '200 900',
-    }
-  )
-  document.fonts.add(regularRedHatMonoFontFace)
-  document.fonts.add(italicRedHatMonoFontFace)
-  regularRedHatMonoFontFace.load()
-  italicRedHatMonoFontFace.load()
-  await Promise.all([
-    document.fonts.ready,
-    new Promise<void>((resolve) => {
-      const minDisplayTime = 350
-      setTimeout(() => {
-        resolve()
-      }, minDisplayTime)
-    }),
-  ])
-  setResourcseStatus('loaded')
-  document.body.style.overflow = 'inherit'
-}
-
-interface DefaultRedirectToMusicCurationPage {
-  defaultPagePath: string
-  default: true
-}
-
-function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
-  const { defaultPagePath } = props
-  if (typeof window !== 'undefined') {
-    window.location.replace(defaultPagePath)
-  }
-  return null
-}
-
-interface RoutePageProps extends Required<Pick<RoutableProps, 'path'>> {
-  resourcesStatus: 'loading' | 'loaded'
-  someCuration: any
-  curatorInfo: CuratorInfo
-}
-
-function RoutePage(props: RoutePageProps) {
-  const { resourcesStatus, someCuration, curatorInfo } = props
-  return resourcesStatus === 'loaded' ? (
-    <ConsumerCurationPage
-      ItemDisplay={MusicItemDisplay}
-      getItemSearchSpace={(someMusicItem) =>
-        `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
-          ','
-        )},${someMusicItem.musicStyles.join(',')},${
-          someMusicItem.musicYear
-        },${`${someMusicItem.recordingContext.join('/')} ${
-          someMusicItem.sourceType === 'collection'
-            ? someMusicItem.collectionType
-            : someMusicItem.sourceType
-        }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`
-      }
-      viewSortConfig={[
-        {
-          fieldKey: 'musicTitle',
-          fieldType: 'string',
-          sortLabelBase: 'title',
-        },
-        {
-          fieldKey: 'musicArtist',
-          fieldType: 'orderedStringSet',
-          sortLabelBase: 'artist',
-        },
-        {
-          fieldKey: 'musicYear',
-          fieldType: 'number',
-          sortLabelBase: 'year',
-        },
-      ]}
-      curationType={someCuration.curationType}
-      curationViews={someCuration.curationViews}
-      curatorInfo={curatorInfo}
-    />
-  ) : null
-}
-
-export interface SplashPageProps {}
+export interface SplashPageProps
+  extends Pick<UseAppResourcesResult, 'appResourcesStatus'> {}
 
 export function SplashPage(props: SplashPageProps) {
-  return (
+  const { appResourcesStatus } = props
+  return appResourcesStatus === 'loading' ? (
     <Page pageAriaHeader={'stews.io splash screen'}>
       <div className={cssModule.splashLogoContainer}>
         <svg className={cssModule.splashLogo} viewBox={'-5 -5 480.201 90'}>
@@ -157,5 +20,5 @@ export function SplashPage(props: SplashPageProps) {
         </svg>
       </div>
     </Page>
-  )
+  ) : null
 }

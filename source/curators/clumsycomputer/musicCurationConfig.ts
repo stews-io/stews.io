@@ -10,10 +10,10 @@ export const musicCurationConfig: MusicCurationCuratorConfig = {
   curationViews: [
     {
       viewId: 1,
-      viewLabel: '2010s',
+      viewLabel: '1990s',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: 'musicYear:[2010 TO 2019]',
+      viewFilter: 'musicYear:[1990 TO 1999]',
     },
     {
       viewId: 2,
@@ -24,31 +24,31 @@ export const musicCurationConfig: MusicCurationCuratorConfig = {
     },
     {
       viewId: 3,
-      viewLabel: '1990s',
+      viewLabel: '2010s',
       viewType: 'custom',
       customType: 'filter',
-      viewFilter: 'musicYear:[1990 TO 1999]',
+      viewFilter: 'musicYear:[2010 TO 2019]',
     },
     {
       viewId: 4,
+      viewLabel: 'electronic',
+      viewType: 'custom',
+      customType: 'filter',
+      viewFilter: 'musicStyles:electronic',
+    },
+    {
+      viewId: 5,
       viewLabel: 'hip-hop',
       viewType: 'custom',
       customType: 'filter',
       viewFilter: 'musicStyles:hip-hop',
     },
     {
-      viewId: 5,
+      viewId: 6,
       viewLabel: 'jazz',
       viewType: 'custom',
       customType: 'filter',
       viewFilter: 'musicStyles:jazz',
-    },
-    {
-      viewId: 6,
-      viewLabel: 'electronic',
-      viewType: 'custom',
-      customType: 'filter',
-      viewFilter: 'musicStyles:electronic',
     },
     {
       viewId: 7,

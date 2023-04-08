@@ -36,36 +36,31 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
       {
         url: '/',
         adjustedCuratorConfig: {
-          curatorInfo: curatorConfig.curatorInfo,
-          curations: curatorConfig.curations.map(
-            (someCuratorCurationConfig) => {
-              return {
-                curationType: someCuratorCurationConfig.curationType,
-                curationViews: [
-                  {
-                    viewType: 'default',
-                    viewLabel: 'all',
-                    viewId: 0,
-                    viewItemIds: someCuratorCurationConfig.curationItems.map(
-                      (someCurationItem) => someCurationItem.musicId
-                    ),
-                  },
-                  ...someCuratorCurationConfig.curationViews
-                    .map((someCurationView) => ({
-                      viewId: someCurationView.viewId,
-                      viewLabel: someCurationView.viewLabel,
-                      viewItemIds: Liqe.filter(
-                        Liqe.parse(someCurationView.viewFilter),
-                        someCuratorCurationConfig.curationItems
-                      ).map((someViewItem) => someViewItem.musicId),
-                    }))
-                    .sort((viewA, viewB) =>
-                      viewA.viewLabel.localeCompare(viewB.viewLabel)
-                    ),
-                ],
-              }
-            }
-          ),
+          ...curatorConfig,
+          musicCurationConfig: {
+            curationType: curatorConfig.musicCurationConfig.curationType,
+            curationViews: [
+              {
+                viewType: 'default',
+                viewLabel: 'all',
+                viewId: 0,
+                viewItemIds:
+                  curatorConfig.musicCurationConfig.curationItems.map(
+                    (someCurationItem) => someCurationItem.musicId
+                  ),
+              },
+              ...curatorConfig.musicCurationConfig.curationViews.map(
+                (someCurationView) => ({
+                  viewId: someCurationView.viewId,
+                  viewLabel: someCurationView.viewLabel,
+                  viewItemIds: Liqe.filter(
+                    Liqe.parse(someCurationView.viewFilter),
+                    curatorConfig.musicCurationConfig.curationItems
+                  ).map((someViewItem) => someViewItem.musicId),
+                })
+              ),
+            ],
+          },
         },
       },
     ])
@@ -81,23 +76,20 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     force: true,
   })
   FileSystem.mkdirSync(curationDatasetsDirectoryPath)
-  curatorConfig.curations.forEach((someCurationConfig) => {
-    FileSystem.writeFileSync(
-      Path.join(
-        curationDatasetsDirectoryPath,
-        `./${someCurationConfig.curationType}.json`
-      ),
-      JSON.stringify(
-        someCurationConfig.curationItems.reduce<Record<string, object>>(
-          (curationItemsMapResult, someCurationItem) => {
-            curationItemsMapResult[someCurationItem.musicId] = someCurationItem
-            return curationItemsMapResult
-          },
-          {}
-        )
-      )
+  FileSystem.writeFileSync(
+    Path.join(
+      curationDatasetsDirectoryPath,
+      `./${curatorConfig.musicCurationConfig.curationType}.json`
+    ),
+    JSON.stringify(
+      curatorConfig.musicCurationConfig.curationItems.reduce<
+        Record<string, object>
+      >((curationItemsMapResult, someCurationItem) => {
+        curationItemsMapResult[someCurationItem.musicId] = someCurationItem
+        return curationItemsMapResult
+      }, {})
     )
-  })
+  )
   ChildProcess.execSync(
     `cp ${Path.join(preactAppDirectoryPath, './assets/robots.txt')} ${Path.join(
       preactBuildDirectoryPath,

@@ -1,8 +1,7 @@
 import { CuratorConfig } from '@stews/data/CurationConfig'
-import { MusicCurationCuratorConfig } from '@stews/domains/music/data'
 import { musicCurationConfig } from './musicCurationConfig'
 
-export const curatorConfig: CuratorConfig<[MusicCurationCuratorConfig]> = {
+export const curatorConfig: CuratorConfig = {
   curatorInfo: {
     curatorName: 'clumsycomputer',
     curatorLocation: 'guadalajara, jalisco',
@@ -22,5 +21,5 @@ export const curatorConfig: CuratorConfig<[MusicCurationCuratorConfig]> = {
       },
     ],
   },
-  curations: [musicCurationConfig],
+  musicCurationConfig,
 }
