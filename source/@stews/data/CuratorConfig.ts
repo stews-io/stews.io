@@ -1,31 +1,16 @@
-import { CurationPageBaseDataProps } from '@stews/components/CurationPage'
 import {
-  AdjustedMusicCurationCuratorConfig,
-  MusicCurationCuratorConfig,
+  MusicAdjustedCurationConfig,
+  MusicCuratorCurationConfig,
 } from '@stews/domains/music/data'
 import { MusicItemSchema } from '@stews/domains/music/data/MusicItemSchema'
+import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import Zod from 'zod'
-import { FilterCurationView } from './CurationView'
+import { AdjustedCurationView, CuratorCurationView } from './CurationView'
 import { CuratorInfo } from './CuratorInfo'
-
-export interface CurationConfigBase<
-  CurationType extends string,
-  CurationItem extends object
-> extends Pick<
-    CurationPageBaseDataProps<CurationItem>,
-    | 'ItemDisplay'
-    | 'viewSortConfig'
-    | 'getItemSearchSpace'
-    | 'curationType'
-    | 'curationViews'
-  > {
-  curationType: CurationType
-  curationItems: Array<CurationItem>
-}
 
 export interface CuratorConfig {
   curatorInfo: CuratorInfo
-  musicCurationConfig: MusicCurationCuratorConfig
+  musicCurationConfig: MusicCuratorCurationConfig
 }
 
 export const CuratorConfigSchema = Zod.object({
@@ -47,7 +32,13 @@ export const CuratorConfigSchema = Zod.object({
   }),
   musicCurationConfig: Zod.object({
     curationType: Zod.literal('music'),
-    curationViews: Zod.array(
+    curationViews: Zod.tuple([
+      Zod.object({
+        viewId: Zod.number(),
+        viewLabel: Zod.string(),
+        viewFilter: Zod.string(),
+      }),
+    ]).rest(
       Zod.object({
         viewId: Zod.number(),
         viewLabel: Zod.string(),
@@ -58,22 +49,22 @@ export const CuratorConfigSchema = Zod.object({
   }),
 })
 
-export type CurationCuratorConfig<
-  SomeCurationConfig extends CurationConfigBase<any, any>
-> = Pick<SomeCurationConfig, 'curationType' | 'curationItems'> & {
-  curationViews: Array<CuratorFilterCurationView>
-}
-
-interface CuratorFilterCurationView
-  extends Pick<FilterCurationView, 'viewId' | 'viewLabel'> {
-  viewFilter: string
+export interface CuratorCurationConfig<
+  CurationType extends string,
+  CurationItem
+> extends CurationConfigBase<CurationType, CuratorCurationView> {
+  curationItems: Array<CurationItem>
 }
 
 export interface AdjustedCuratorConfig {
   curatorInfo: CuratorInfo
-  musicCurationConfig: AdjustedMusicCurationCuratorConfig
+  musicCurationConfig: MusicAdjustedCurationConfig
 }
 
-export type AdjustedCurationCuratorConfig<
-  SomeCurationConfig extends CurationConfigBase<any, any>
-> = Pick<SomeCurationConfig, 'curationType' | 'curationViews'>
+export interface AdjustedCurationConfig<CurationType extends string>
+  extends CurationConfigBase<CurationType, AdjustedCurationView> {}
+
+interface CurationConfigBase<CurationType extends string, CurationView> {
+  curationType: CurationType
+  curationViews: ArrayOfAtLeastOne<CurationView>
+}

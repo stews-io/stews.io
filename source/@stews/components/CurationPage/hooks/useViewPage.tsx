@@ -1,11 +1,5 @@
 import { throwInvalidPathError } from '@stews/helpers'
-import {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'preact/hooks'
+import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { ViewPageMessageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
@@ -15,7 +9,7 @@ import { CurationPageState } from './useCurationPageState'
 export interface UseViewPageApi<CurationItem extends object>
   extends Pick<
     CurationPageBaseDataProps<CurationItem>,
-    'ItemDisplay' | 'getItemSearchSpace' | 'curationType'
+    'ItemDisplay' | 'getItemSearchSpace' | 'fetchCurationItemsMapState'
   > {
   curationPageState: CurationPageState<CurationItem>
   pageItemSize: number
@@ -29,7 +23,7 @@ export function useViewPage<CurationItem extends object>(
   api: UseViewPageApi<CurationItem>
 ) {
   const {
-    curationType,
+    fetchCurationItemsMapState,
     curationPageState,
     getItemSearchSpace,
     pageItemSize,
@@ -38,19 +32,6 @@ export function useViewPage<CurationItem extends object>(
     setPageIndexToNext,
   } = api
   const pageTopElementRef = useRef<HTMLDivElement>(null)
-  const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
-    useAsyncData({
-      initialAsyncDataState: {
-        stateType: 'loading',
-      },
-      fetchAsyncData: (): Promise<Record<string, CurationItem>> =>
-        fetch(`/assets/curations/${curationType}.json`).then((serverResponse) =>
-          serverResponse.json()
-        ),
-    })
-  useEffect(() => {
-    triggerFetchCurationItemsMap()
-  }, [])
   const viewPageResult = useMemo(() => {
     if (fetchCurationItemsMapState.stateType === 'loading') {
       return {
@@ -164,78 +145,4 @@ export function useViewPage<CurationItem extends object>(
     }
   }, [curationPageState.curationView, curationPageState.viewPageIndex])
   return viewPageResult
-}
-
-interface UseAsyncDataApi<
-  FetchAsyncDataApi extends Array<any>,
-  FetchAsyncData extends (...args: FetchAsyncDataApi) => Promise<any>,
-  AsyncData extends PromiseValue<ReturnType<FetchAsyncData>> = PromiseValue<
-    ReturnType<FetchAsyncData>
-  >
-> {
-  initialAsyncDataState: AsyncDataState<AsyncData>
-  fetchAsyncData: FetchAsyncData
-}
-
-function useAsyncData<
-  FetchAsyncDataApi extends Array<any>,
-  FetchAsyncData extends (...args: FetchAsyncDataApi) => Promise<any>,
-  AsyncData extends PromiseValue<ReturnType<FetchAsyncData>> = PromiseValue<
-    ReturnType<FetchAsyncData>
-  >
->(
-  api: UseAsyncDataApi<FetchAsyncDataApi, FetchAsyncData>
-): [AsyncDataState<AsyncData>, (...args: FetchAsyncDataApi) => void] {
-  const { initialAsyncDataState, fetchAsyncData } = api
-  const [asyncDataState, setAsyncDataState] = useState<
-    AsyncDataState<AsyncData>
-  >(initialAsyncDataState)
-  const triggerFetchAsyncData = useMemo(() => {
-    return (...args: FetchAsyncDataApi) => {
-      fetchAsyncData(...args)
-        .then((someAsyncData) => {
-          setAsyncDataState({
-            stateType: 'success',
-            data: someAsyncData,
-          })
-        })
-        .catch(() => {
-          setAsyncDataState({
-            stateType: 'error',
-            errorMessage: 'oops, something happened!!!',
-          })
-        })
-      setAsyncDataState({
-        stateType: 'loading',
-      })
-    }
-  }, [])
-  return [asyncDataState, triggerFetchAsyncData]
-}
-
-type PromiseValue<T extends Promise<any>> = T extends Promise<infer U>
-  ? U
-  : never
-
-type AsyncDataState<AsyncData> =
-  | EmptyAsyncDataState
-  | LoadingAsyncDataState
-  | SuccessAsyncDataState<AsyncData>
-  | ErrorAsyncDatatState
-
-interface EmptyAsyncDataState extends AsyncDataStateBase<'empty'> {}
-
-interface LoadingAsyncDataState extends AsyncDataStateBase<'loading'> {}
-
-interface SuccessAsyncDataState<AsyncData>
-  extends AsyncDataStateBase<'success'> {
-  data: AsyncData
-}
-
-interface ErrorAsyncDatatState extends AsyncDataStateBase<'error'> {
-  errorMessage: string
-}
-
-interface AsyncDataStateBase<StateType extends string> {
-  stateType: StateType
 }

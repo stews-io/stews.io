@@ -4,7 +4,7 @@ import {
   SelectBaseConfigProps,
   SelectBaseDataProps,
 } from '@stews/components/Select'
-import { CurationView } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data'
 import { Fragment } from 'preact/jsx-runtime'
 import cssModule from './ViewSelectBase.module.scss'
 
@@ -18,7 +18,7 @@ interface ViewSelectBaseProps<
     > {}
 
 export interface ViewSelectBaseDataProps
-  extends SelectBaseDataProps<CurationView> {
+  extends SelectBaseDataProps<AdjustedCurationView> {
   viewAriaHeader: string
 }
 
@@ -27,7 +27,7 @@ export interface ViewSelectBaseConfigProps<
   CustomMenuFooterProps extends Record<string, unknown>
 > extends Pick<
     SelectBaseConfigProps<
-      CurationView,
+      AdjustedCurationView,
       'viewLabel',
       Omit<CustomAnchorButtonProps, keyof CustomAnchorButtonProps>,
       CustomOptionActionItemProps,

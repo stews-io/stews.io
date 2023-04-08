@@ -7,7 +7,8 @@ import {
   CuratorConfig,
   CuratorConfigSchema,
 } from '@stews/data/CuratorConfig'
-import { FilterCurationView } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data'
+import { MusicItem } from '@stews/domains/music/data'
 
 buildCuratorApp({
   curatorConfigPath: Path.join(
@@ -48,7 +49,6 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
       curationType: curatorConfig.musicCurationConfig.curationType,
       curationViews: [
         {
-          viewType: 'default',
           viewId: 0,
           viewLabel: 'all',
           viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
@@ -56,9 +56,7 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
           ),
         },
         ...curatorConfig.musicCurationConfig.curationViews.map(
-          (someCurationView): FilterCurationView => ({
-            viewType: 'custom',
-            customType: 'filter',
+          (someCurationView): AdjustedCurationView => ({
             viewId: someCurationView.viewId,
             viewLabel: someCurationView.viewLabel,
             viewItemIds: Liqe.filter(
@@ -75,6 +73,8 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     JSON.stringify([
       {
         url: '/',
+        headTitle: curatorConfig.curatorInfo.curatorName,
+        metaDescription: `curations by ${curatorConfig.curatorInfo.curatorName}`,
         adjustedCuratorConfig,
       },
     ])
@@ -89,6 +89,35 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     recursive: true,
     force: true,
   })
+  FileSystem.writeFileSync(
+    Path.join(preactBuildDirectoryPath, './manifest.json'),
+    JSON.stringify({
+      name: `stews.io: ${curatorConfig.curatorInfo.curatorName}`,
+      short_name: curatorConfig.curatorInfo.curatorName,
+      start_url: '/',
+      display: 'standalone',
+      orientation: 'portrait',
+      background_color: '#FFFFFF',
+      theme_color: '#FFFFFF',
+      icons: [
+        {
+          src: 'assets/icon-192x192.png',
+          type: 'image/png',
+          sizes: '192x192',
+        },
+        {
+          src: 'assets/icon-384x384.png',
+          type: 'image/png',
+          sizes: '384x384',
+        },
+        {
+          src: 'assets/icon-512x512.png',
+          type: 'image/png',
+          sizes: '512x512',
+        },
+      ],
+    })
+  )
   FileSystem.mkdirSync(curationDatasetsDirectoryPath)
   FileSystem.writeFileSync(
     Path.join(
@@ -97,7 +126,7 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     ),
     JSON.stringify(
       curatorConfig.musicCurationConfig.curationItems.reduce<
-        Record<string, object>
+        Record<string, MusicItem>
       >((curationItemsMapResult, someCurationItem) => {
         curationItemsMapResult[someCurationItem.musicId] = someCurationItem
         return curationItemsMapResult
@@ -109,6 +138,13 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
       preactBuildDirectoryPath,
       './robots.txt'
     )}`,
+    { stdio: 'inherit' }
+  )
+  ChildProcess.execSync(
+    `cp ${Path.join(
+      preactAppDirectoryPath,
+      './assets/favicon.svg'
+    )} ${Path.join(preactBuildDirectoryPath, './favicon.svg')}`,
     { stdio: 'inherit' }
   )
 }

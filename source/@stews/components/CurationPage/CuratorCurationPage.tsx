@@ -15,6 +15,7 @@ export function CuratorCurationPage<CurationItem extends object>(
     curationType,
     curatorInfo,
     curationViews,
+    fetchCurationItemsMapState,
   } = props
   return (
     <CurationPageBase
@@ -26,6 +27,7 @@ export function CuratorCurationPage<CurationItem extends object>(
       curationType={curationType}
       curatorInfo={curatorInfo}
       curationViews={curationViews}
+      fetchCurationItemsMapState={fetchCurationItemsMapState}
     />
   )
 }

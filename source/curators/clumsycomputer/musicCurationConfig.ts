@@ -1,11 +1,11 @@
-import { MusicCurationCuratorConfig } from '@stews/domains/music/data'
+import { MusicCuratorCurationConfig } from '@stews/domains/music/data'
 import {
   getAppleLinkData,
   getSpotifyLinkData,
   getYoutubeLinkData,
 } from '@stews/domains/music/helpers'
 
-export const musicCurationConfig: MusicCurationCuratorConfig = {
+export const musicCurationConfig: MusicCuratorCurationConfig = {
   curationType: 'music',
   curationViews: [
     {

@@ -1,6 +1,9 @@
 import { ConsumerCurationPage } from '@stews/components/CurationPage'
 import { MusicItemDisplay } from '@stews/domains/music/components'
+import { MusicItem } from '@stews/domains/music/data'
+import { useAsyncData } from '@stews/hooks/useAsyncData'
 import Router, { RoutableProps } from 'preact-router'
+import { useEffect } from 'preact/hooks'
 import { UseAppResourcesResult } from '../hooks/useAppResources'
 import { StewsAppProps } from '../StewsApp'
 
@@ -51,6 +54,19 @@ interface CurationRoutePageProps
 
 function CurationRoutePage(props: CurationRoutePageProps) {
   const { appResourcesStatus, someCuration, curatorInfo } = props
+  const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
+    useAsyncData({
+      initialAsyncDataState: {
+        stateType: 'loading',
+      },
+      fetchAsyncData: (): Promise<Record<string, MusicItem>> =>
+        fetch(`/assets/curations/${someCuration.curationType}.json`).then(
+          (serverResponse) => serverResponse.json()
+        ),
+    })
+  useEffect(() => {
+    triggerFetchCurationItemsMap()
+  }, [])
   return appResourcesStatus === 'loaded' ? (
     <ConsumerCurationPage
       ItemDisplay={MusicItemDisplay}
@@ -82,9 +98,10 @@ function CurationRoutePage(props: CurationRoutePageProps) {
           sortLabelBase: 'year',
         },
       ]}
+      curatorInfo={curatorInfo}
       curationType={someCuration.curationType}
       curationViews={someCuration.curationViews}
-      curatorInfo={curatorInfo}
+      fetchCurationItemsMapState={fetchCurationItemsMapState}
     />
   ) : null
 }
