@@ -9,15 +9,15 @@ import {
 
 export interface ConsumerViewSelectProps
   extends ViewSelectBaseDataProps,
-    Pick<CurationPageBaseDataProps<object>, 'curationLabel'> {}
+    Pick<CurationPageBaseDataProps<object>, 'curationType'> {}
 
 export function ConsumerViewSelect(props: ConsumerViewSelectProps) {
-  const { curationLabel, ...viewSelectBaseProps } = props
+  const { curationType, ...viewSelectBaseProps } = props
   return (
     <ViewSelectBase
       popoverAriaRole={'listbox'}
-      anchorAriaLabel={`select ${curationLabel} view`}
-      anchorAriaDescription={`${curationLabel} view`}
+      anchorAriaLabel={`select ${curationType} view`}
+      anchorAriaDescription={`${curationType} view`}
       SelectMenu={ConsumerSelectMenu}
       customOptionActionItemProps={{}}
       customMenuFooterProps={{}}

@@ -1,6 +1,6 @@
 import { LinkButton } from '@stews/components/Button'
 import { ItemDisplayProps } from '@stews/components/CurationPage/CurationPageBase'
-import { MusicItem } from '../data/MusicItem'
+import { MusicItem } from '../data'
 import cssModule from './MusicItemDisplay.module.scss'
 
 export interface MusicItemProps extends ItemDisplayProps<MusicItem> {}

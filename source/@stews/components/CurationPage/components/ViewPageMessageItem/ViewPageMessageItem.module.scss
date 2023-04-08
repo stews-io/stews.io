@@ -1,7 +1,7 @@
 @import "@stews/styles/layout";
 @import "@stews/styles/theme";
 
-.emptyViewPageItem {
+.viewPageMessageItem {
   @extend .itemContainer;
   padding: 4 * $themeSpacer;
   padding-block-start: 2 * $themeSpacer;

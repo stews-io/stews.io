@@ -1,106 +1,13 @@
-import { FunctionComponent } from 'preact'
-import Router, { RoutableProps } from 'preact-router'
-import { StateUpdater, useEffect, useState } from 'preact/hooks'
-import { Page } from './components/Page'
-import cssModule from './RouterPage.module.scss'
+import { Page } from '@stews/components/Page'
+import { UseAppResourcesResult } from '../hooks/useAppResources'
+import cssModule from './SplashPage.module.scss'
 
-export interface RouterPageProps {
-  defaultPagePath: string
-  pageMap: {
-    [pagePath: string]: FunctionComponent
-  }
-}
+export interface SplashPageProps
+  extends Pick<UseAppResourcesResult, 'appResourcesStatus'> {}
 
-export function RouterPage(props: RouterPageProps) {
-  const { pageMap, defaultPagePath } = props
-  const [resourcesStatus, setResourcseStatus] = useState<'loading' | 'loaded'>(
-    'loading'
-  )
-  useEffect(() => {
-    loadResources({
-      setResourcseStatus,
-    })
-  }, [])
-  return (
-    <Router>
-      <DefaultPageRedirect default={true} defaultPagePath={defaultPagePath} />
-      {Object.entries(pageMap).map(([somePagePath, TargetPage]) => (
-        <RoutePage
-          resourcesStatus={resourcesStatus}
-          path={somePagePath}
-          TargetPage={TargetPage}
-        />
-      ))}
-    </Router>
-  )
-}
-
-interface LoadResourcesApi {
-  setResourcseStatus: StateUpdater<'loading' | 'loaded'>
-}
-
-async function loadResources(api: LoadResourcesApi) {
-  const { setResourcseStatus } = api
-  document.body.style.overflow = 'hidden'
-  const regularRedHatMonoFontFace = new FontFace(
-    'Red Hat Mono',
-    'url(/assets/fonts/RedHatMonoVF.woff2)',
-    {
-      weight: '200 900',
-    }
-  )
-  const italicRedHatMonoFontFace = new FontFace(
-    'Red Hat Mono',
-    'url(/assets/fonts/RedHatMonoVF-Italic.woff2)',
-    {
-      style: 'italic',
-      weight: '200 900',
-    }
-  )
-  document.fonts.add(regularRedHatMonoFontFace)
-  document.fonts.add(italicRedHatMonoFontFace)
-  regularRedHatMonoFontFace.load()
-  italicRedHatMonoFontFace.load()
-  await Promise.all([
-    document.fonts.ready,
-    new Promise<void>((resolve) => {
-      const minDisplayTime = 350
-      setTimeout(() => {
-        resolve()
-      }, minDisplayTime)
-    }),
-  ])
-  setResourcseStatus('loaded')
-  document.body.style.overflow = 'inherit'
-}
-
-interface DefaultRedirectToMusicCurationPage
-  extends Pick<RouterPageProps, 'defaultPagePath'> {
-  default: true
-}
-
-function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
-  const { defaultPagePath } = props
-  if (typeof window !== 'undefined') {
-    window.location.replace(defaultPagePath)
-  }
-  return null
-}
-
-interface RoutePageProps extends Required<Pick<RoutableProps, 'path'>> {
-  resourcesStatus: 'loading' | 'loaded'
-  TargetPage: FunctionComponent
-}
-
-function RoutePage(props: RoutePageProps) {
-  const { resourcesStatus, TargetPage } = props
-  return resourcesStatus === 'loading' ? <SplashPage /> : <TargetPage />
-}
-
-interface SplashPageProps {}
-
-function SplashPage(props: SplashPageProps) {
-  return (
+export function SplashPage(props: SplashPageProps) {
+  const { appResourcesStatus } = props
+  return appResourcesStatus === 'loading' ? (
     <Page pageAriaHeader={'stews.io splash screen'}>
       <div className={cssModule.splashLogoContainer}>
         <svg className={cssModule.splashLogo} viewBox={'-5 -5 480.201 90'}>
@@ -113,5 +20,5 @@ function SplashPage(props: SplashPageProps) {
         </svg>
       </div>
     </Page>
-  )
+  ) : null
 }
