@@ -73,6 +73,8 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     JSON.stringify([
       {
         url: '/',
+        headTitle: curatorConfig.curatorInfo.curatorName,
+        metaDescription: `curations by ${curatorConfig.curatorInfo.curatorName}`,
         adjustedCuratorConfig,
       },
     ])
@@ -107,6 +109,13 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
       preactBuildDirectoryPath,
       './robots.txt'
     )}`,
+    { stdio: 'inherit' }
+  )
+  ChildProcess.execSync(
+    `cp ${Path.join(
+      preactAppDirectoryPath,
+      './assets/favicon.svg'
+    )} ${Path.join(preactBuildDirectoryPath, './favicon.svg')}`,
     { stdio: 'inherit' }
   )
 }
