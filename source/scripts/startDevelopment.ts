@@ -16,11 +16,10 @@ interface StartDevelopmentApi {
 
 async function startDevelopment(api: StartDevelopmentApi) {
   const { curatorConfigPath } = api
-  await buildApp({
+  const developmentBuildDirectoryPath = await buildApp({
     curatorConfigPath,
     getBuildDirectoryName: () => 'build',
   })
-  const developmentBuildDirectoryPath = Path.join(process.cwd(), './build')
   const sourceAppDirectoryPath = Path.join(process.cwd(), `./source/app`)
   const targetAppDirectoryPath = Path.join(
     developmentBuildDirectoryPath,
@@ -44,23 +43,25 @@ async function startDevelopment(api: StartDevelopmentApi) {
       recursive: true,
     }
   )
-  const sourcePrerenderUrlsJsonPath = Path.join(
+  const cliPrerenderDataJsonPath = Path.join(
     developmentBuildDirectoryPath,
     './preact_prerender_data.json'
   )
-  const prerenderDataJson = JSON.parse(
-    FileSystem.readFileSync(sourcePrerenderUrlsJsonPath, { encoding: 'utf-8' })
+  const cliPrerenderData = JSON.parse(
+    FileSystem.readFileSync(cliPrerenderDataJsonPath, {
+      encoding: 'utf-8',
+    })
   )
-  const targetPrerenderUrlsJsonPath = Path.join(
+  const prerenderUrlsJsonPath = Path.join(
     developmentBuildDirectoryPath,
     './prerender-urls-.json'
   )
   FileSystem.writeFileSync(
-    targetPrerenderUrlsJsonPath,
-    JSON.stringify([prerenderDataJson])
+    prerenderUrlsJsonPath,
+    JSON.stringify([cliPrerenderData])
   )
   ChildProcess.execSync(
-    `cross-env NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/preact watch --src ${targetAppDirectoryPath} --prerender --prerenderUrls ${targetPrerenderUrlsJsonPath}  --H 127.0.0.1`,
+    `cross-env NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/preact watch --src ${targetAppDirectoryPath} --prerender --prerenderUrls ${prerenderUrlsJsonPath}  --host 127.0.0.1`,
     {
       stdio: 'inherit',
     }

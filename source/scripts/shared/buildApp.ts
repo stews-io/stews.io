@@ -141,4 +141,5 @@ export async function buildApp(api: BuildAppApi) {
     )} ${Path.join(preactBuildDirectoryPath, './favicon.svg')}`,
     { stdio: 'inherit' }
   )
+  return preactBuildDirectoryPath
 }
