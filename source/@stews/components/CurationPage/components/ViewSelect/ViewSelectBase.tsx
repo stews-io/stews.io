@@ -4,7 +4,7 @@ import {
   SelectBaseConfigProps,
   SelectBaseDataProps,
 } from '@stews/components/Select'
-import { AdjustedCurationView } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data/CurationView'
 import { Fragment } from 'preact/jsx-runtime'
 import cssModule from './ViewSelectBase.module.scss'
 

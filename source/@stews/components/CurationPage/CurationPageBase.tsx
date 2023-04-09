@@ -1,5 +1,6 @@
 import { Page } from '@stews/components/Page'
-import { AdjustedCurationView, CuratorInfo } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data/CurationView'
+import { CuratorInfo } from '@stews/data/CuratorInfo'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { AsyncDataState } from '@stews/hooks/useAsyncData'
 import { FunctionComponent } from 'preact'
@@ -9,11 +10,11 @@ import {
   ViewSortSelect,
 } from './components'
 import {
+  useCurationPageState,
   useStickyPageHeaderWorkaround,
   useViewPage,
   useViewSortOptions,
   ViewSortOptionConfig,
-  useCurationPageState,
 } from './hooks'
 import cssModule from './CurationPageBase.module.scss'
 

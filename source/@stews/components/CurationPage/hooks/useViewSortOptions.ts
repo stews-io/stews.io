@@ -1,4 +1,4 @@
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { useMemo } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'

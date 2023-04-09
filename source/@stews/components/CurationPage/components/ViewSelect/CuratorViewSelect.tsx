@@ -3,14 +3,14 @@ import {
   SelectMenuBase,
   SelectMenuBaseConfigProps,
 } from '@stews/components/Select'
-import { getCssClass } from '@stews/helpers'
+import { getCssClass } from '@stews/helpers/getCssClass'
 import { ComponentProps } from 'preact'
 import {
   ViewSelectBase,
   ViewSelectBaseConfigProps,
   ViewSelectBaseDataProps,
 } from './ViewSelectBase'
-import { AdjustedCurationView } from '@stews/data'
+import { AdjustedCurationView } from '@stews/data/CurationView'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './CuratorViewSelect.module.scss'
 

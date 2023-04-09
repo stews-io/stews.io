@@ -1,5 +1,5 @@
 import { CustomAnchorButtonProps } from '@stews/components/Button'
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { Fragment } from 'preact/jsx-runtime'
 import { SelectBaseConfigProps, VerifiedOptionLabelKey } from '../SelectBase'
 

@@ -1,5 +1,5 @@
 import { ButtonProps } from '@stews/components/Button'
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ComponentProps } from 'preact'
 import { MutableRef, Ref, useRef, useState } from 'preact/hooks'
 import { SelectMenuBaseDataProps } from '../components/SelectMenuBase'

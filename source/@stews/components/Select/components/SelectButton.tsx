@@ -1,4 +1,4 @@
-import { getCssClass } from '@stews/helpers'
+import { getCssClass } from '@stews/helpers/getCssClass'
 import {
   SelectBaseConfigProps,
   SelectBaseDataProps,
