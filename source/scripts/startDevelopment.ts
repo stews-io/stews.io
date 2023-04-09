@@ -1,61 +1,68 @@
-// import { AdjustedCurationView } from '@stews/data/CurationView'
-// import { AdjustedCuratorConfig } from '@stews/data/CuratorConfig'
-// import ChildProcess from 'child_process'
-// import FileSystem from 'fs'
-// import Path from 'path'
-export {}
-// startDevelopment()
+import ChildProcess from 'child_process'
+import FileSystem from 'fs'
+import Path from 'path'
+import { buildApp } from './shared/buildApp'
 
-// function startDevelopment() {
-//   const adjustedCuratorConfig: AdjustedCuratorConfig = {
-//     ...curatorConfig,
-//     musicCurationConfig: {
-//       curationType: curatorConfig.musicCurationConfig.curationType,
-//       curationViews: [
-//         {
-//           viewId: 0,
-//           viewLabel: 'all',
-//           viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
-//             (someCurationItem) => someCurationItem.musicId
-//           ),
-//         },
-//         ...curatorConfig.musicCurationConfig.curationViews.map(
-//           (someCurationView): AdjustedCurationView => ({
-//             viewId: someCurationView.viewId,
-//             viewLabel: someCurationView.viewLabel,
-//             viewItemIds: Liqe.filter(
-//               Liqe.parse(someCurationView.viewFilter),
-//               curatorConfig.musicCurationConfig.curationItems
-//             ).map((someViewItem) => someViewItem.musicId),
-//           })
-//         ),
-//       ],
-//     },
-//   }
-//   const prerenderUrlsJsonData = [
-//     {
-//       url: '/',
-//       headTitle: curatorConfig.curatorInfo.curatorName,
-//       metaDescription: `curations by ${curatorConfig.curatorInfo.curatorName}`,
-//       adjustedCuratorConfig,
-//     },
-//   ]
-//   const prerenderUrlsTempDirectoryPath = FileSystem.mkdtempSync(
-//     `temp_${curatorConfig.curatorInfo.curatorName}`
-//   )
-//   const prerenderUrlsJsonPath = `${Path.join(
-//     process.cwd(),
-//     prerenderUrlsTempDirectoryPath
-//   )}/prerender-urls.json`
-//   FileSystem.writeFileSync(
-//     prerenderUrlsJsonPath,
-//     JSON.stringify(prerenderUrlsJsonData)
-//   )
-//   ChildProcess.execSync(
-//     `cross-env NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/preact watch --src ${} --prerenderUrls ${prerenderUrlsJsonPath} --H 127.0.0.1`
-//   )
-//   FileSystem.rmSync(prerenderUrlsTempDirectoryPath, {
-//     recursive: true,
-//     force: true,
-//   })
-// }
+startDevelopment({
+  curatorConfigPath: Path.join(
+    process.cwd(),
+    './source/curators/clumsycomputer'
+  ),
+})
+
+interface StartDevelopmentApi {
+  curatorConfigPath: string
+}
+
+async function startDevelopment(api: StartDevelopmentApi) {
+  const { curatorConfigPath } = api
+  await buildApp({
+    curatorConfigPath,
+    getBuildDirectoryName: () => 'build',
+  })
+  const developmentBuildDirectoryPath = Path.join(process.cwd(), './build')
+  const sourceAppDirectoryPath = Path.join(process.cwd(), `./source/app`)
+  const targetAppDirectoryPath = Path.join(
+    developmentBuildDirectoryPath,
+    `./app`
+  )
+  FileSystem.cpSync(sourceAppDirectoryPath, targetAppDirectoryPath, {
+    recursive: true,
+  })
+  const sourceCurationsDirectoryPath = Path.join(
+    developmentBuildDirectoryPath,
+    './assets/curations'
+  )
+  const targetCurationsDirectoryPath = Path.join(
+    targetAppDirectoryPath,
+    './assets/curations'
+  )
+  FileSystem.cpSync(
+    sourceCurationsDirectoryPath,
+    targetCurationsDirectoryPath,
+    {
+      recursive: true,
+    }
+  )
+  const sourcePrerenderUrlsJsonPath = Path.join(
+    developmentBuildDirectoryPath,
+    './preact_prerender_data.json'
+  )
+  const prerenderDataJson = JSON.parse(
+    FileSystem.readFileSync(sourcePrerenderUrlsJsonPath, { encoding: 'utf-8' })
+  )
+  const targetPrerenderUrlsJsonPath = Path.join(
+    developmentBuildDirectoryPath,
+    './prerender-urls-.json'
+  )
+  FileSystem.writeFileSync(
+    targetPrerenderUrlsJsonPath,
+    JSON.stringify([prerenderDataJson])
+  )
+  ChildProcess.execSync(
+    `cross-env NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/preact watch --src ${targetAppDirectoryPath} --prerender --prerenderUrls ${targetPrerenderUrlsJsonPath}  --H 127.0.0.1`,
+    {
+      stdio: 'inherit',
+    }
+  )
+}

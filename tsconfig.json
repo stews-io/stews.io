@@ -21,9 +21,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-    "baseUrl": "source",
+    "baseUrl": ".",
     "paths": {
-      "@stews/*": ["./@stews/*"]
+      "@stews/*": ["./source/@stews/*"]
     }
   },
   "include": [
@@ -33,7 +33,7 @@
   "ts-node": {
     "require": ["tsconfig-paths/register"],
     "compilerOptions": {
-      "module": "commonjs"
+      "module": "commonjs",
     }
   },
 }
