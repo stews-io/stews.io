@@ -1,4 +1,4 @@
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { createRef } from 'preact'
 import { useLayoutEffect, useMemo } from 'preact/hooks'
 

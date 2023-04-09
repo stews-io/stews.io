@@ -1,4 +1,4 @@
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useLayoutEffect, useRef } from 'preact/hooks'
 import cssModule from '../CurationPageBase.module.scss'
 

@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "dev": "ts-node ./source/scripts/startDevelopment.ts",
     "build": "ts-node ./source/scripts/buildCuratorApp.ts",
-    "serve": "sirv clumsycomputer_build --port 8080 --cors --single",
-    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider preact watch --src source/app --H 127.0.0.1"
+    "serve": "sirv clumsycomputer_build --port 8080 --cors --single"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

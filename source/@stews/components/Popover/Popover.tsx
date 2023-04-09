@@ -1,4 +1,4 @@
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { createRef, FunctionComponent, RefObject } from 'preact'
 import { Ref, StateUpdater, useEffect, useMemo, useRef } from 'preact/hooks'
 import cssModule from './Popover.module.scss'

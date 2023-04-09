@@ -1,5 +1,5 @@
 import { Button } from '@stews/components/Button'
-import { throwInvalidPathError } from '@stews/helpers'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ComponentProps } from 'preact'
 import { useMemo, useRef } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'

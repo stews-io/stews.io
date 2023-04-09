@@ -1,4 +1,4 @@
-import { getCssClass } from '@stews/helpers'
+import { getCssClass } from '@stews/helpers/getCssClass'
 import { SimpleComponentProps } from '@stews/helpers/types'
 import {
   CoreAriaOrnaments,

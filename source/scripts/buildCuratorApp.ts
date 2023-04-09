@@ -1,14 +1,14 @@
-import * as Liqe from 'liqe'
-import ChildProcess from 'child_process'
-import Path from 'path'
-import FileSystem from 'fs'
+import { AdjustedCurationView } from '@stews/data/CurationView'
 import {
   AdjustedCuratorConfig,
   CuratorConfig,
   CuratorConfigSchema,
 } from '@stews/data/CuratorConfig'
-import { AdjustedCurationView } from '@stews/data'
 import { MusicItem } from '@stews/domains/music/data'
+import ChildProcess from 'child_process'
+import FileSystem from 'fs'
+import * as Liqe from 'liqe'
+import Path from 'path'
 
 buildCuratorApp({
   curatorConfigPath: Path.join(
@@ -80,7 +80,7 @@ async function buildCuratorApp(api: BuildCuratorAppApi) {
     ])
   )
   ChildProcess.execSync(
-    `NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/preact build --src ${preactAppDirectoryPath} --dest ${preactBuildDirectoryPath} --prerenderUrls ${prerenderUrlsJsonPath} --sw false --esm false `,
+    `NODE_OPTIONS=--openssl-legacy-provider ./node_modules/.bin/preact build --src ${preactAppDirectoryPath} --dest ${preactBuildDirectoryPath} --prerenderUrls ${prerenderUrlsJsonPath} --sw false --esm false`,
     {
       stdio: 'inherit',
     }

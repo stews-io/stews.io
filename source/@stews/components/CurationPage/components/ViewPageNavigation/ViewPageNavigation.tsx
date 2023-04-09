@@ -1,5 +1,5 @@
 import { Button } from '@stews/components/Button'
-import { getCssClass } from '@stews/helpers'
+import { getCssClass } from '@stews/helpers/getCssClass'
 import {
   CoreAriaOrnamentsData,
   useInteractiveAria,

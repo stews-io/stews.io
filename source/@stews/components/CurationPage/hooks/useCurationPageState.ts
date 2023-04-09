@@ -1,5 +1,5 @@
-import { AdjustedCurationView } from '@stews/data'
-import { throwInvalidPathError } from '@stews/helpers'
+import { AdjustedCurationView } from '@stews/data/CurationView'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { UseViewSortOptionsResult, ViewSortOption } from './useViewSortOptions'

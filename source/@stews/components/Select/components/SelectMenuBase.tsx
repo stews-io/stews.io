@@ -1,5 +1,5 @@
 import { Button, CustomAnchorButtonProps } from '@stews/components/Button'
-import { getCssClass } from '@stews/helpers'
+import { getCssClass } from '@stews/helpers/getCssClass'
 import { FunctionComponent } from 'preact'
 import {
   useSelectMenuNavigation,
