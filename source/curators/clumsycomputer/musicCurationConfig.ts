@@ -4266,7 +4266,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         'https://m.media-amazon.com/images/I/61GWeClwpkL._UX500_FMwebp_QL85_.jpg',
       musicYear: 2018,
       musicTitle: 'Have a Cigar',
-      musicArtist: ['Elephant Revival'],
+      musicArtist: ['Elephant Revival', 'Pink Floyd'],
       recordingContext: ['concert'],
       musicStyles: ['folk', 'rock'],
       externalLinks: [
@@ -4419,6 +4419,372 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref: 'https://music.apple.com/us/album/grand-champ/1434896071',
+        }),
+      ],
+    },
+    {
+      musicId: 169,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51V2HZNGsbL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1981,
+      musicTitle: 'Computer Love',
+      musicArtist: ['Kraftwerk'],
+      recordingContext: ['studio'],
+      musicStyles: ['electronic', 'pop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/CFmmzFcM-MA',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/7CZdd0S4WTktuiiARS8pY4?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/computer-love/830083942?i=830083954',
+        }),
+      ],
+    },
+    {
+      musicId: 170,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51KC4AjeeGL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1973,
+      musicTitle: 'Head Hunters',
+      musicArtist: ['Herbie Hancock'],
+      recordingContext: ['studio'],
+      musicStyles: ['funk'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=WYRrIBqKsJ4&list=OLAK5uy_m789U0dt-J4aLVd7p-dXJxSfDliep-NT0&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/5fmIolILp5NAtNYiRPjhzA?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/head-hunters/158571524',
+        }),
+      ],
+    },
+    {
+      musicId: 171,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51fHn-+pMgL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1962,
+      musicTitle: 'Soul Bossa Nova',
+      musicArtist: ['Quincy Jones'],
+      recordingContext: ['studio'],
+      musicStyles: ['orchestral', 'jazz'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/T5ALPzS0QfQ',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/0Jw3cPBXlGnA6DEJrZSTI0?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/soul-bossa-nova/1440871985?i=1440872209',
+        }),
+      ],
+    },
+    {
+      musicId: 172,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61VZzwX5CoL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2018,
+      musicTitle: 'Your Queen Is A Reptile',
+      musicArtist: ['Sons of Kemet'],
+      recordingContext: ['studio'],
+      musicStyles: ['primal', 'jazz'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=T19IrfO3-LQ&list=OLAK5uy_mdR5-PUuPUSgBH5P9NE3YqHbSIHawdriU&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4pxnDGBdoGu88h8ZInX5f5?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/your-queen-is-a-reptile/1440908967',
+        }),
+      ],
+    },
+    {
+      musicId: 173,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41kxaBE4TsL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2016,
+      musicTitle: 'The Silent Partner',
+      musicArtist: ['Havoc', 'The Alchemist'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=wYa-CVUjNKw&list=PLHM1MRwUfb-gWiyI5aYq30B6rUayX44x1&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0ZmFxitDMDj0FMBKGY1Rnc?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/the-silent-partner/1095760832',
+        }),
+      ],
+    },
+    {
+      musicId: 174,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41Q9HD2Ra2L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2013,
+      musicTitle: 'Albert Einstein',
+      musicArtist: ['Prodigy', 'The Alchemist'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=JyuVc8pV-Pw&list=OLAK5uy_lLGOJgIZnDUaJsYbnQxTBmxGjw5pCSpbc&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0PRSoLxeEZXSvk3Hh606ig?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/albert-einstein-p-mc2-deluxe-edition/1623258631',
+        }),
+      ],
+    },
+    {
+      musicId: 175,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51Y9a8pQv0L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2017,
+      musicTitle: "Rapper's Best Friend 4",
+      musicArtist: ['The Alchemist'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=XTvxyK11PvA&list=PLPS9FyI3nqbet4mQJgmioL2TF3kat0CzZ&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/2KcgndSRaT7yKbYPDR3SsZ?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/rappers-best-friend-4-an-instrumental-series/1208654209',
+        }),
+      ],
+    },
+    {
+      musicId: 176,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51mT-6UU5yS._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2016,
+      musicTitle: 'Yes Lawd!',
+      musicArtist: ['NxWorries', 'Knxwledge', 'Anderson .Paak'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'soul'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=rrU2P6_VCWw&list=OLAK5uy_meZUV0Bdg_ubTLnVJ9b_fSpdpXaRJCOLo&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0gpxUkqSnLwD50aaRir6jH?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/yes-lawd/1150640159',
+        }),
+      ],
+    },
+    {
+      musicId: 177,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/5113QCYDPIL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1995,
+      musicTitle: 'KRS-One',
+      musicArtist: ['KRS-One'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=2z-dn5-4qPc&list=OLAK5uy_maR74vljzUi_hxY7Aa7BKbcnrtxLObE24&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/17C90B1H8gxYa664SSVM9x?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/krs-one/254976930',
+        }),
+      ],
+    },
+    {
+      musicId: 178,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61uhvrac+sL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1998,
+      musicTitle: 'Extinction Level Event: The Final World Front',
+      musicArtist: ['Busta Rhymes'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=KGLH8e_dtOQ&list=OLAK5uy_lwtHEgimb2GIy6d-PIQbpFG-4TaPZ97JU&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4zb4gmGzDYtlWMjmc1NZWW?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/extinction-level-event-the-final-world-front/322122753',
+        }),
+      ],
+    },
+    {
+      musicId: 179,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxV5upOQfjettgg6SCciDVa8jF6L7I3F5KA&usqp=CAU',
+      musicYear: 2017,
+      musicTitle: 'Teardrop',
+      musicArtist: ['AURORA', 'Massive Attack'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['downtempo', 'electronic', 'pop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/GPTY6l_PX5k',
+        }),
+      ],
+    },
+    {
+      musicId: 180,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/avatars-zXgGs26rSNYeO4eN-HIZ6FA-t500x500.jpg',
+      musicYear: 2023,
+      musicTitle: 'UMI Says',
+      musicArtist: ['Joey Bada$$', 'Mos Def'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/nP6EoNotPZk',
+        }),
+      ],
+    },
+    {
+      musicId: 181,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41vxyDrOCfL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1999,
+      musicTitle: 'When The Pawn...',
+      musicArtist: ['Fiona Apple'],
+      recordingContext: ['studio'],
+      musicStyles: ['soul', 'rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=7c6OVI7MUvs&list=OLAK5uy_nOn6YPJa_ZmbxxdFKFOIpJUJ7o7_UD7ck&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/3o5EnVZNJXtfPV8tCoagjI?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/when-the-pawn-hits-the-conflicts-he-thinks-like-a-king/153019510',
+        }),
+      ],
+    },
+    {
+      musicId: 182,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51K2gpvDQAL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2018,
+      musicTitle: 'Up',
+      musicArtist: ['EarthGang'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/zgNVvtOp8mU',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/7dEa0aHVVIMTZnDL8OM7yn?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/up-a-colors-show/1483839728?i=1483839734',
+        }),
+      ],
+    },
+    {
+      musicId: 183,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://images.genius.com/2129b932f5e2a35d861407d108d6600e.1000x1000x1.jpg',
+      musicYear: 2018,
+      musicTitle: '91 Flex',
+      musicArtist: ['Serious Klein'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/nV883rnogtM',
         }),
       ],
     },
