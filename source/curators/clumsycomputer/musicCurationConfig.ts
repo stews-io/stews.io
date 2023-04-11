@@ -9,37 +9,47 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
   curationType: 'music',
   curationViews: [
     {
-      viewId: 1,
+      viewId: 'XUZ8',
       viewLabel: '1990s',
       viewFilter: 'musicYear:[1990 TO 1999]',
     },
     {
-      viewId: 2,
+      viewId: 'COSZ',
       viewLabel: '2000s',
       viewFilter: 'musicYear:[2000 TO 2009]',
     },
     {
-      viewId: 3,
+      viewId: 'TE06',
       viewLabel: '2010s',
       viewFilter: 'musicYear:[2010 TO 2019]',
     },
     {
-      viewId: 4,
+      viewId: '22T8',
+      viewLabel: '2020s',
+      viewFilter: 'musicYear:[2020 TO 2029]',
+    },
+    {
+      viewId: 'N4RQ',
       viewLabel: 'electronic',
       viewFilter: 'musicStyles:electronic',
     },
     {
-      viewId: 5,
+      viewId: 'Z014',
       viewLabel: 'hip-hop',
       viewFilter: 'musicStyles:hip-hop',
     },
     {
-      viewId: 6,
+      viewId: '0BA4',
       viewLabel: 'jazz',
       viewFilter: 'musicStyles:jazz',
     },
     {
-      viewId: 7,
+      viewId: '0I1O',
+      viewLabel: 'rock',
+      viewFilter: 'musicStyles:rock',
+    },
+    {
+      viewId: '75II',
       viewLabel: 'in the now',
       viewFilter: 'recordingContext:live OR recordingContext:concert',
     },
@@ -60,7 +70,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nCjQf37f4TiIDL2budDY-NCgch1gRrPH0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=pvkk7REuV1E&list=OLAK5uy_nCjQf37f4TiIDL2budDY-NCgch1gRrPH0&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -86,7 +96,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://www.youtube.com/watch?v=tl7dASVOY-U&list=OLAK5uy_ly5-qc6sTJFqfArTGCB9HoBaRZFWWpLMM&index=1',
+            'https://www.youtube.com/watch?v=tl7dASVOY-U&list=OLAK5uy_ly5-qc6sTJFqfArTGCB9HoBaRZFWWpLMM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -113,7 +123,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lLJK7Z5OSt6XzI7rcgDmeIWpqervk2ycE&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=siY7GGocJbY&list=OLAK5uy_lLJK7Z5OSt6XzI7rcgDmeIWpqervk2ycE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -139,7 +149,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://www.youtube.com/watch?v=wILVn4QrNxU&list=OLAK5uy_mnKHdXzQnlF54alv4i-UTCtpxLc-ujwfo&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=wILVn4QrNxU&list=OLAK5uy_mnKHdXzQnlF54alv4i-UTCtpxLc-ujwfo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -166,7 +176,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nn39BWFdkmInyIa8zuRv16th53bELbtBQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=HFfQ5rXZxBI&list=OLAK5uy_nn39BWFdkmInyIa8zuRv16th53bELbtBQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -193,7 +203,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lR47WSacINRlobDIqT57PVHE-Hp5FKizg&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=Qbmpx8xumlQ&list=OLAK5uy_lR47WSacINRlobDIqT57PVHE-Hp5FKizg&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -220,7 +230,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_n9kdQogDwJvVlB5KLTebiUjyPQ5TXKxGQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=wG0YCR-3FYY&list=OLAK5uy_n9kdQogDwJvVlB5KLTebiUjyPQ5TXKxGQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -246,7 +256,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_liodoEz6-VjfyY_RJpJgLW2IMA2Eo-nGc&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=xa2uRlL3zhY&list=OLAK5uy_liodoEz6-VjfyY_RJpJgLW2IMA2Eo-nGc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -272,7 +282,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mZIP4yLMAoq7d2wa8NojzttHzBPuV3PY0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=PKq1UbpkbRQ&list=OLAK5uy_mZIP4yLMAoq7d2wa8NojzttHzBPuV3PY0&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -299,7 +309,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mQuwlK3nAsIdmW9FCAZe-VHy94NRlzt34&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=CFe-LdCgy_4&list=OLAK5uy_mQuwlK3nAsIdmW9FCAZe-VHy94NRlzt34&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -325,7 +335,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['folk'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://www.youtube.com/watch?v=A9Tp5fl18Ho',
+          youtubeHref: 'https://youtu.be/A9Tp5fl18Ho',
         }),
       ],
     },
@@ -342,7 +352,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://www.youtube.com/watch?v=BDwAlto-NKU',
+          youtubeHref: 'https://youtu.be/BDwAlto-NKU',
         }),
         getAppleLinkData({
           appleHref:
@@ -364,7 +374,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['experimental', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://www.youtube.com/watch?v=DWuAn6C8Mfc',
+          youtubeHref: 'https://youtu.be/DWuAn6C8Mfc',
         }),
       ],
     },
@@ -381,7 +391,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['experimental', 'ambient', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://www.youtube.com/watch?v=JqjhIrys238',
+          youtubeHref: 'https://youtu.be/JqjhIrys238',
         }),
         {
           linkLabel: 'soundcloud(1)',
@@ -428,7 +438,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nGAVB_h2YgCbmGLq2I5j3gGXNDdpUkJfI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=8CfWTV5kQUM&list=OLAK5uy_nGAVB_h2YgCbmGLq2I5j3gGXNDdpUkJfI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -454,7 +464,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_meOmPY5SdCTsCv6wm6BN0RerkZxW2hfFU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=AXljOsLI534&list=OLAK5uy_meOmPY5SdCTsCv6wm6BN0RerkZxW2hfFU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -481,7 +491,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kRf5h8JiqTHMJnHP-KCq_Gpoc-cfCgJ4g&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=O_8w56Cx5NI&list=OLAK5uy_kRf5h8JiqTHMJnHP-KCq_Gpoc-cfCgJ4g&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -507,7 +517,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nwNPu8L9UeH0F6OmbX-7XfOeriSJljt9k&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=-UYjnTSVy2U&list=OLAK5uy_nwNPu8L9UeH0F6OmbX-7XfOeriSJljt9k&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -533,7 +543,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lA4P3neYe5g7f9Vs7VD0oCYHcEPytjupI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=em2aSt_k9eY&list=OLAK5uy_mGy2XHO_iuRHzN_QHcOcz9R5_yowNEp-c&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -586,7 +596,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nlsLRecArw04-4_Vo3qGJjlIUYXJ3a8Yc&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=ucgLjQ-PFag&list=OLAK5uy_nlsLRecArw04-4_Vo3qGJjlIUYXJ3a8Yc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -612,7 +622,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ndzMGozj4WUls-asc1dYQ_srOAacIY4yM&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=lVKbF8khsrI&list=OLAK5uy_ndzMGozj4WUls-asc1dYQ_srOAacIY4yM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -639,7 +649,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kuJ7H1aJ5o6nLTCfQVV3rMqUdb4LLZ8U0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=GHzIl82165g&list=OLAK5uy_kuJ7H1aJ5o6nLTCfQVV3rMqUdb4LLZ8U0&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -666,7 +676,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nYHzD9LEtWIKxLhNm8OfmtIJ2Pu324MfU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=_3eC35LoF4U&list=OLAK5uy_nYHzD9LEtWIKxLhNm8OfmtIJ2Pu324MfU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -693,7 +703,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kpSCH55anM5tIYEjIKdLUAY3RTrvUoceM&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=ozy-wuxpg6U&list=OLAK5uy_kpSCH55anM5tIYEjIKdLUAY3RTrvUoceM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -719,7 +729,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kClWWfWghQXro7ONQ-DfH3RZ1oxiu0kMA&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=diIFhc_Kzng&list=OLAK5uy_kClWWfWghQXro7ONQ-DfH3RZ1oxiu0kMA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -745,7 +755,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kBFHQWSR3V3RPeRDSA1JKl_HpHDVgYYEA&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=e0QT4N-5PA4&list=OLAK5uy_kBFHQWSR3V3RPeRDSA1JKl_HpHDVgYYEA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -772,7 +782,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mxQdlK-tNsc1GCJG5XZ64I3fQBBt5ijv4&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=25aGMj4C9bI&list=OLAK5uy_mxQdlK-tNsc1GCJG5XZ64I3fQBBt5ijv4&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -799,7 +809,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kgLpntHizHSMzb85u4xPEDwVCm3gTINPA&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=pW8truBfgiM&list=OLAK5uy_kgLpntHizHSMzb85u4xPEDwVCm3gTINPA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -826,7 +836,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kTsALwS42z9SeG0UZ3vVeyEybgmN9S9fI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=x5jEUfGbUe8&list=OLAK5uy_kTsALwS42z9SeG0UZ3vVeyEybgmN9S9fI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -852,14 +862,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nc7f_y7E_3cXhJmMkV8yq9CU2iqpnooug&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=Tiixq9rT_J0&list=OLAK5uy_nc7f_y7E_3cXhJmMkV8yq9CU2iqpnooug&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/ctrl/1239976329',
+          appleHref: 'https://music.apple.com/us/album/ctrl/1239976329',
         }),
       ],
     },
@@ -878,14 +888,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=7i3wE2M1BBI&list=OLAK5uy_l6ka6bY5unpGPgYZhsNDDGRZmLJQGGkL4',
+            'https://www.youtube.com/watch?v=gogNs2ZY8RM&list=OLAK5uy_l6ka6bY5unpGPgYZhsNDDGRZmLJQGGkL4&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/30qOEMzZYtb5VJYk5cRKxS?si=SFj5Gjh_S3urZBu-4dQlkA?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/overcast/1516916379',
+          appleHref: 'https://music.apple.com/us/album/overcast/1516916379',
         }),
       ],
     },
@@ -904,14 +914,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ljAN3FWIIkF0zqP_32xyMpC5WrheadLAQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=CW8buGIi59k&list=OLAK5uy_ljAN3FWIIkF0zqP_32xyMpC5WrheadLAQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/4z6F5s3RVaOsekuaegbLfD?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/the-score/281701670',
+          appleHref: 'https://music.apple.com/us/album/the-score/281701670',
         }),
       ],
     },
@@ -930,14 +940,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_k1SkzsVL3L_X97PnTRlRJg4GQBRJAWLos&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=7brVyb8MomQ&list=OLAK5uy_k1SkzsVL3L_X97PnTRlRJg4GQBRJAWLos&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/6VoOCCv0bXPrTHDncJyIgF?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/evil-friends/613557623',
+          appleHref: 'https://music.apple.com/us/album/evil-friends/613557623',
         }),
       ],
     },
@@ -956,7 +966,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lmWE5WDOJdEPaDEuFWW78-MsDjeRp5LN8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=e6oFHWKCcIc&list=OLAK5uy_lmWE5WDOJdEPaDEuFWW78-MsDjeRp5LN8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -964,7 +974,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/flight-of-the-conchords/278064216',
+            'https://music.apple.com/us/album/flight-of-the-conchords/278064216',
         }),
       ],
     },
@@ -983,14 +993,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=NFeUko-lQHg&list=OLAK5uy_mx98OhRuCf1iPS49rGdS-PxBTvjXdlU6I',
+            'https://www.youtube.com/watch?v=NFeUko-lQHg&list=OLAK5uy_mx98OhRuCf1iPS49rGdS-PxBTvjXdlU6I&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/1jWmEhn3ggaL6isoyLfwBn?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/the-doors/1622368510',
+          appleHref: 'https://music.apple.com/us/album/the-doors/1622368510',
         }),
       ],
     },
@@ -1008,7 +1018,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['atonal', 'classical'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://m.youtube.com/watch?v=Q3SvnwGVem4',
+          youtubeHref: 'https://youtu.be/EkwqPJZe8ms',
         }),
         getSpotifyLinkData({
           spotifyHref: 'https://open.spotify.com/album/4JSlgU7UYZWKuYspYvP00h',
@@ -1034,14 +1044,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mFc2D3li3lEnZGOa5sPoYsoYdLdgAHSS8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=aTAxW1ELZpY&list=OLAK5uy_mFc2D3li3lEnZGOa5sPoYsoYdLdgAHSS8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/2btMPVa8QYYO6japUqGsZl?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/adult-themes/1497327175',
+          appleHref: 'https://music.apple.com/us/album/adult-themes/1497327175',
         }),
       ],
     },
@@ -1060,7 +1070,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_noKjXkmoXHZpg3PiwVvfOYJMIgKMSYdW8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=08lCPZrgWJU&list=OLAK5uy_noKjXkmoXHZpg3PiwVvfOYJMIgKMSYdW8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1085,7 +1095,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['country'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://m.youtube.com/watch?v=WtVrDud1gZM',
+          youtubeHref: 'https://youtu.be/WtVrDud1gZM',
         }),
       ],
     },
@@ -1102,7 +1112,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['bluegrass'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://www.youtube.com/watch?v=7Owzmf9vp3E',
+          youtubeHref: 'https://youtu.be/7Owzmf9vp3E',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1110,7 +1120,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/girlfriend-is-better/1229254751?i=1229254761',
+            'https://music.apple.com/us/album/girlfriend-is-better/1229254751?i=1229254761',
         }),
       ],
     },
@@ -1128,15 +1138,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['synth', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mnKHVBgZ9G6rpLaG7kBDx29McU7sCDCS4&playnext=1&index=1',
+          youtubeHref: 'https://youtu.be/dHMs91l4XKU',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/34AtsFexhxnKPVJFtLIN1I?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/little-dragon/258615649',
+          appleHref: 'https://music.apple.com/us/album/little-dragon/258615649',
         }),
       ],
     },
@@ -1155,7 +1164,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mUZqe4t8Kj9nBNfFN0xgsfiRSaVt0eza4&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=_zcXYg1tv_s&list=OLAK5uy_mUZqe4t8Kj9nBNfFN0xgsfiRSaVt0eza4&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1163,7 +1172,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/turmoil-tinfoil/1285696865',
+            'https://music.apple.com/us/album/turmoil-tinfoil/1285696865',
         }),
       ],
     },
@@ -1182,14 +1191,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=lvfbHQ5kNTo&list=OLAK5uy_nDgp2lEchi1x_c3JnF9i9yjQXM2YJvVmk',
+            'https://www.youtube.com/watch?v=lvfbHQ5kNTo&list=OLAK5uy_nDgp2lEchi1x_c3JnF9i9yjQXM2YJvVmk&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/6y5l3VyZmHrIabKU0Lrp8n?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/natureboy/962791803',
+          appleHref: 'https://music.apple.com/us/album/natureboy/962791803',
         }),
       ],
     },
@@ -1208,7 +1217,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nA-a4QgGruRJy24mbLh8HkZocpZo_ZM6I&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=QByM9Kk14wc&list=OLAK5uy_nA-a4QgGruRJy24mbLh8HkZocpZo_ZM6I&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1216,7 +1225,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/shark-wolf-rabbit-snake/1553491366',
+            'https://music.apple.com/us/album/shark-wolf-rabbit-snake/1553491366',
         }),
       ],
     },
@@ -1235,7 +1244,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=SOdbgUKx-s8&list=PL7FP4DkWGBb5BmcBuFaDjBVEaePMeE866',
+            'https://www.youtube.com/watch?v=SOdbgUKx-s8&list=PL7FP4DkWGBb5BmcBuFaDjBVEaePMeE866&pp=iAQB8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1262,14 +1271,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kSDZsWub6uFJmTYpR5JhZdtpbp6sQ_Mv0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=NC7cmWkBoz4&list=OLAK5uy_kSDZsWub6uFJmTYpR5JhZdtpbp6sQ_Mv0&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/7f6xPqyaolTiziKf5R5Z0c?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/golden-hour/1440918116',
+          appleHref: 'https://music.apple.com/us/album/golden-hour/1440918116',
         }),
       ],
     },
@@ -1288,7 +1297,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nkwORLvfaOjs4WxwsEfoeKadIDcxok-qk&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=oJXhzVUNMEE&list=OLAK5uy_n-exWbyjA99NNGScaAjNOVLS8HOVWXcGw&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1296,7 +1305,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/on-the-night-remastered-live/1440910981',
+            'https://music.apple.com/us/album/on-the-night-remastered-live/1440910981',
         }),
       ],
     },
@@ -1315,14 +1324,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_l7KrE4YuWhZsfCdXlLJERHyk4YlwydukA&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=h_TUP2vuaDs&list=OLAK5uy_l7KrE4YuWhZsfCdXlLJERHyk4YlwydukA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/1fvWYcbjuycyHpzNPH1Vfk?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/10-000-days/1474250650',
+          appleHref: 'https://music.apple.com/us/album/10-000-days/1474250650',
         }),
       ],
     },
@@ -1341,7 +1350,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ly1GjQX6ksVI_JPynYXAssySTmgKsCN0U&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=hPdxYIcCuHM&list=OLAK5uy_ly1GjQX6ksVI_JPynYXAssySTmgKsCN0U&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1368,7 +1377,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mU6NoiUNrq0gGFf-7y2gR7GXaW2VA-huY&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=-Y_akY6-Pgc&list=OLAK5uy_mU6NoiUNrq0gGFf-7y2gR7GXaW2VA-huY&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1394,7 +1403,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kLBv1ZbTasPgNhwBRetBKPuqPxHNyp1Ls&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=OoJaV-rqsiU&list=OLAK5uy_kLBv1ZbTasPgNhwBRetBKPuqPxHNyp1Ls&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1420,7 +1429,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=ZS4l3NuSjDM&list=OLAK5uy_mBml-e54liexygnBq2s9lYACv9J_QTzaE',
+            'https://www.youtube.com/watch?v=ZS4l3NuSjDM&list=OLAK5uy_mBml-e54liexygnBq2s9lYACv9J_QTzaE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1447,7 +1456,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mG_O2IZQqda0JOo1RQ9CHDrMjTcD8HJiw&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=DAFV5RFmY9Y&list=OLAK5uy_mG_O2IZQqda0JOo1RQ9CHDrMjTcD8HJiw&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1474,7 +1483,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_l1UCXPjqeTGO130ZjhMRPrHRaNukHqLZU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=qTrqmNieVKI&list=OLAK5uy_l1UCXPjqeTGO130ZjhMRPrHRaNukHqLZU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1501,7 +1510,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=-gagW4QNcC4&list=OLAK5uy_mfGMP65Xt17DHisxYdEVpe-qY2660o5Vs',
+            'https://www.youtube.com/watch?v=boQGrt3sJDo&list=OLAK5uy_mlZY0r--p4ZD7KKBWjM9S3ecIZMptm3Tc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1527,7 +1536,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=iWe8Yx_SFcw&list=OLAK5uy_n68suY4-R7b6iLvlJOM9BwbBHqkwKARpM',
+            'https://www.youtube.com/watch?v=sod7Ev_o54E&list=OLAK5uy_msQ0hAZIcKla4svG74tee8-KValomznQY&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1554,7 +1563,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=-y3h4sIHzVo&list=OLAK5uy_kDIyut2vE2O5z0CCn2MyhBhm-ojwP2Bns',
+            'https://www.youtube.com/watch?v=g7Px2wK10jg&list=OLAK5uy_kDIyut2vE2O5z0CCn2MyhBhm-ojwP2Bns&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1581,7 +1590,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mEzcfTNRVCifyQ0frr0G7PGD_JouHSD-4&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=vGh-EvmZVCQ&list=OLAK5uy_mEzcfTNRVCifyQ0frr0G7PGD_JouHSD-4&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1607,7 +1616,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_k2Qyv7jShU8WuWSBxfK5r20PZrwb81TPY&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=hbe3CQamF8k&list=OLAK5uy_k2Qyv7jShU8WuWSBxfK5r20PZrwb81TPY&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1633,7 +1642,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nWbm1n0nx7GV9PMjwqdoF9a5MJuA_JBuI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=5Mcj_YtQhbQ&list=OLAK5uy_nWbm1n0nx7GV9PMjwqdoF9a5MJuA_JBuI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1659,7 +1668,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_l27tUNcpmHN5RPafx4QHnzfUY6m2GA9CA&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=M2ePKxZ6_QM&list=OLAK5uy_l27tUNcpmHN5RPafx4QHnzfUY6m2GA9CA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1685,14 +1694,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mgNjCiPvJes7uDGvGD0EtIKJrWNa0Hd_M&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=fsIk5-ab38M&list=OLAK5uy_mgNjCiPvJes7uDGvGD0EtIKJrWNa0Hd_M&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/2x2VoPa1pG2jSElA73a9Xa?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/obzen/274547457',
+          appleHref: 'https://music.apple.com/us/album/obzen/274547457',
         }),
       ],
     },
@@ -1711,14 +1720,14 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mDBx9zKmDyvGMR1obcyOGwq-knkpK7ez8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=evfM1QDfleM&list=OLAK5uy_mDBx9zKmDyvGMR1obcyOGwq-knkpK7ez8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
             'https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/isolation/1358285249',
+          appleHref: 'https://music.apple.com/us/album/isolation/1358285249',
         }),
       ],
     },
@@ -1737,7 +1746,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nzsuqiqd2_BIUSjIA9R77yLv_CfWnha7M&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=Z03ThlGgVFo&list=OLAK5uy_nzsuqiqd2_BIUSjIA9R77yLv_CfWnha7M&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1763,7 +1772,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mVhy2T-LOfEM3LYcZGYVAJJuAfPXdXafQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=NaevkdTeAb8&list=OLAK5uy_kGWaGiCU6342KcXYWOsXcFgcBzcWkA37I&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1789,7 +1798,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lllYOGq5U_RWH8jEK367eUgoetZIOlKMU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=bwCKiw7VVa4&list=OLAK5uy_lllYOGq5U_RWH8jEK367eUgoetZIOlKMU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1815,7 +1824,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=UMbNfVIN2Bg&list=PLJXDRKQUE7CAwc4ycTxQdEhmHhUMFaiBt',
+            'https://www.youtube.com/watch?v=UMbNfVIN2Bg&list=PLJXDRKQUE7CAwc4ycTxQdEhmHhUMFaiBt&pp=iAQB8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1841,7 +1850,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=VuCXo7Vtrks&list=OLAK5uy_l8YHyFTor9ODe5M80fUoSo5W3Ava4KwRo',
+            'https://www.youtube.com/watch?v=VuCXo7Vtrks&list=OLAK5uy_l8YHyFTor9ODe5M80fUoSo5W3Ava4KwRo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1868,7 +1877,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=2CHr63JjgGM&list=OLAK5uy_ljP5OGG4FVLyDdsAW80PnBZHNgl3KOvOA',
+            'https://www.youtube.com/watch?v=2CHr63JjgGM&list=OLAK5uy_ljP5OGG4FVLyDdsAW80PnBZHNgl3KOvOA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1895,7 +1904,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_k-Homl-MhTJmgWrYh4Vl9LaK1apMwKcK0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=sdwXDAitXGs&list=OLAK5uy_k-Homl-MhTJmgWrYh4Vl9LaK1apMwKcK0&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1921,7 +1930,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_noItPgVtIYqK5GoaAkjc1tQbZ9tFHKr0A&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=CcRvM_OuRn0&list=OLAK5uy_noItPgVtIYqK5GoaAkjc1tQbZ9tFHKr0A&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1948,7 +1957,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_khGVsZgYtss5nGHpgwNNDPylcXbWP4ruc&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=NNEYkm7c-jk&list=OLAK5uy_khGVsZgYtss5nGHpgwNNDPylcXbWP4ruc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -1974,7 +1983,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_n5h-Iqdogy6kMId3BriCkKjgr09dgRwto&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=zGGxF7x7-qk&list=OLAK5uy_n5h-Iqdogy6kMId3BriCkKjgr09dgRwto&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2000,7 +2009,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kkbTa04DN2fq6ZttwNDi3CIopqwsmJ4ZY&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=U4GqwMaEasw&list=OLAK5uy_kkbTa04DN2fq6ZttwNDi3CIopqwsmJ4ZY&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2026,7 +2035,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kqhKkmbySqG4EMUgLHLkavMNLOEXmZQKw&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=CXX-1gNz1ko&list=OLAK5uy_kqhKkmbySqG4EMUgLHLkavMNLOEXmZQKw&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2052,7 +2061,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mH-IhOeeJOXkDhlSKaR2PQSmZ7lKl79l8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=qXeOwKQ7mCk&list=OLAK5uy_mH-IhOeeJOXkDhlSKaR2PQSmZ7lKl79l8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2079,7 +2088,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_m4osqPwgG9lghYoipG9XQZbxz6Uop8WIg&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=yjOrbNFVnNY&list=OLAK5uy_m4osqPwgG9lghYoipG9XQZbxz6Uop8WIg&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2105,7 +2114,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=duMX-T4qDm8&list=PLOa7rvaTYe0Z96jY1oifR4AQ_YA9oAbC5',
+            'https://www.youtube.com/watch?v=duMX-T4qDm8&list=PLOa7rvaTYe0Z96jY1oifR4AQ_YA9oAbC5&pp=iAQB8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2131,7 +2140,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mG7ndizgcX0QrrKh3zF9lFyU6eFzprgiE&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=MUaL1FnotRQ&list=OLAK5uy_mG7ndizgcX0QrrKh3zF9lFyU6eFzprgiE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2156,7 +2165,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['synth', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://www.youtube.com/watch?v=YcgBgJCaC-M',
+          youtubeHref: 'https://youtu.be/YcgBgJCaC-M',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2183,7 +2192,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_noXzslSBp14rG_4GcV90IFNxepFTUXaSY&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=nOYX5GhPlnA&list=OLAK5uy_noXzslSBp14rG_4GcV90IFNxepFTUXaSY&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2209,7 +2218,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mm0bQQzoFsaWkr90K_qrnhtVYBWti6ABU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=w8qydN1w4m4&list=OLAK5uy_mm0bQQzoFsaWkr90K_qrnhtVYBWti6ABU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2235,7 +2244,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=A-TWpsfEO2U&list=OLAK5uy_lmxfos_kLmLAiSr3D8YM9f9uKaKaD9xnU',
+            'https://www.youtube.com/watch?v=rmqp0RfS-1o&list=OLAK5uy_lmxfos_kLmLAiSr3D8YM9f9uKaKaD9xnU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2262,7 +2271,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lH2xUVNwi41nO_YeXVWSkTcejBwDN2MdE&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=3-0-vDbjdqQ&list=OLAK5uy_lH2xUVNwi41nO_YeXVWSkTcejBwDN2MdE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2288,7 +2297,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mebYgGjMINiO11XqdRUSOHf7i30KuJ4Ns&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=OfHz4bIaqE8&list=OLAK5uy_mebYgGjMINiO11XqdRUSOHf7i30KuJ4Ns&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2315,7 +2324,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_liwjzoU3ZYzKmofLkADaaHg3oK7I_-Ib0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=iuThobnjcc8&list=OLAK5uy_kLHp8BUH2y4BTmLG8Ou7imVSnqEQ01z6k&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2341,7 +2350,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kY6oiIafXcHlROlDvHDUb4IgwYoGw2sCU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=0oJI3vxKZXY&list=OLAK5uy_kY6oiIafXcHlROlDvHDUb4IgwYoGw2sCU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2368,7 +2377,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=laMkR-fxg6g&list=OLAK5uy_lNgiqMe1FzN7OlTUBG73a39yyzqV8tuBY',
+            'https://www.youtube.com/watch?v=laMkR-fxg6g&list=OLAK5uy_lNgiqMe1FzN7OlTUBG73a39yyzqV8tuBY&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2395,7 +2404,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=8NYL2zl_qo0&list=OLAK5uy_nqyp1stMgk_Z-jomPVj8S_DHvU5_M24k0',
+            'https://www.youtube.com/watch?v=cpzmsHB0INE&list=OLAK5uy_n0f6DLL-pfoGJamPKFsqo25lR0pvF0rSQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2421,7 +2430,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nGEtbcXMhfXIhpf5n7wMiHzwdhcthin4w&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=OgAcUup67Mk&list=OLAK5uy_nGEtbcXMhfXIhpf5n7wMiHzwdhcthin4w&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2447,7 +2456,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nkOzLA76zVCUotP8td84Cvi4I788jjC1s&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=UqyT8IEBkvY&list=OLAK5uy_nkOzLA76zVCUotP8td84Cvi4I788jjC1s&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2473,7 +2482,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lsVLUb5HMhJ10EVmUIrJbvhpSoU8cZSxI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=kQsOSkgGwBU&list=OLAK5uy_lsVLUb5HMhJ10EVmUIrJbvhpSoU8cZSxI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2500,7 +2509,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=8Ee4QjCEHHc&list=PLKDRMeFOOHVgv9c0wPQqt_4lDUyWGv5nI',
+            'https://www.youtube.com/watch?v=8Ee4QjCEHHc&list=PLKDRMeFOOHVgv9c0wPQqt_4lDUyWGv5nI&pp=iAQB8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2527,7 +2536,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lnXmxUy2fhwy881e88r2_-4zIeS5WCMBQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=YexwvQx1ukg&list=OLAK5uy_lnXmxUy2fhwy881e88r2_-4zIeS5WCMBQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2553,7 +2562,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lXO8ouPsTDuM2jpY9R95Gwd1ob7Mbw5NQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=1bVl6vCo-4k&list=OLAK5uy_lXO8ouPsTDuM2jpY9R95Gwd1ob7Mbw5NQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2580,7 +2589,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lkJ_5y5TaPnSZto82qlNfRFcIZd2JHWBE&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=c8YPaW3ExNo&list=OLAK5uy_lkJ_5y5TaPnSZto82qlNfRFcIZd2JHWBE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2607,7 +2616,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_miDydIpPg4OVMW9EFqiXzX2NL9kUtm1Is&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=9NZZOWC1YJQ&list=OLAK5uy_miDydIpPg4OVMW9EFqiXzX2NL9kUtm1Is&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2634,7 +2643,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_milII0AL66b3Z-LdHfEemlrpwLWSjdcxo&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=A06rb4QCXz4&list=OLAK5uy_milII0AL66b3Z-LdHfEemlrpwLWSjdcxo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2661,7 +2670,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=HOHa6j6Pd5E&list=OLAK5uy_m8VPjbn9rF3ninCB-n_ToxxHH5U3_TkvE',
+            'https://www.youtube.com/watch?v=HOHa6j6Pd5E&list=OLAK5uy_m8VPjbn9rF3ninCB-n_ToxxHH5U3_TkvE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2687,7 +2696,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lSoKa_JSXsvMGFOTc7JqL791Mk1KnnwGk&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=_hZCsgcKa-g&list=OLAK5uy_lbuUPQuPZcgV0-GZ-1CXsNPWZsTqzNPCM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2714,7 +2723,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nDheeuXYg9hksmCezWxswPTivVoqyNCQc&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=W4ocPPhtglU&list=OLAK5uy_nDheeuXYg9hksmCezWxswPTivVoqyNCQc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2740,7 +2749,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nymiUNxoqFZEzgvf4t0SW8ej2glgpTFRI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=xiVNoKARAQc&list=OLAK5uy_nymiUNxoqFZEzgvf4t0SW8ej2glgpTFRI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2766,7 +2775,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mYzpOFB-6D0ooK-rCL5PuR9zjAxFIV9lo&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=KESIZbP4R8U&list=OLAK5uy_mYzpOFB-6D0ooK-rCL5PuR9zjAxFIV9lo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2792,7 +2801,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lyUazMI1Dzud6YTMopEEaMoefFQ_F0L80&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=4mz_3AL7wzI&list=OLAK5uy_lyUazMI1Dzud6YTMopEEaMoefFQ_F0L80&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2818,7 +2827,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=LKZ3fGR2SDY&list=OLAK5uy_mfRTetqFB_MtRhjeOxR5tp0uVfK1YH-Sw',
+            'https://www.youtube.com/watch?v=LKZ3fGR2SDY&list=OLAK5uy_mfRTetqFB_MtRhjeOxR5tp0uVfK1YH-Sw&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2845,7 +2854,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lod7nZPYLV_S1fF4PlB_WQgR2yt680jYg&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=rI-tgeaAEnc&list=OLAK5uy_lod7nZPYLV_S1fF4PlB_WQgR2yt680jYg&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2872,7 +2881,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=V4zGRmrG20w&list=OLAK5uy_kzoWUKmY03AQ8TpSRznZOusi-IQX3y5FM',
+            'https://www.youtube.com/watch?v=V4zGRmrG20w&list=OLAK5uy_kzoWUKmY03AQ8TpSRznZOusi-IQX3y5FM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2898,7 +2907,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_m-_It5NCT_EsFze1o2V0_mKYYtyVnKUNE&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=RDHs_k5Fm2s&list=OLAK5uy_m-_It5NCT_EsFze1o2V0_mKYYtyVnKUNE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2924,7 +2933,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lkCgIijL5sMC8ks-r6oAlOJXDZMt8mUQI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=SDNA934EEVk&list=OLAK5uy_lkCgIijL5sMC8ks-r6oAlOJXDZMt8mUQI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2950,7 +2959,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_k0ZBPQh_nb1yaxillHshHa80jdM2Q96t0&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=UCbt_x5K7c8&list=OLAK5uy_k0ZBPQh_nb1yaxillHshHa80jdM2Q96t0&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -2977,7 +2986,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nwQaP_wXtJiNSkfmaUkQYxY7RztNFtLIU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=ISCEilPMNak&list=OLAK5uy_nwQaP_wXtJiNSkfmaUkQYxY7RztNFtLIU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3003,7 +3012,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ke9gfBt56OHmCZr7SONStxmyMKu5zZdqI&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=G-9QCsH3OQM&list=OLAK5uy_ke9gfBt56OHmCZr7SONStxmyMKu5zZdqI&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3030,7 +3039,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kO1qhmbRQWD-9EnC6P0bP1IbQbRuFbm-8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=DpXwAUYlu9A&list=OLAK5uy_kO1qhmbRQWD-9EnC6P0bP1IbQbRuFbm-8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3056,7 +3065,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mBQkB2kJcdmt0pEhNzVCvkJ6au1ROUnyg&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=54HQpe_2p1E&list=OLAK5uy_mBQkB2kJcdmt0pEhNzVCvkJ6au1ROUnyg&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3083,7 +3092,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=q_YrcGRzIE0&list=PLRI0bqhn-VeZz9_SpgRkNMoHF8BsZbXwn',
+            'https://www.youtube.com/watch?v=q_YrcGRzIE0&list=PLRI0bqhn-VeZz9_SpgRkNMoHF8BsZbXwn&pp=iAQB8AUB',
         }),
         {
           linkLabel: 'soundcloud',
@@ -3107,7 +3116,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nl7mHg_l7FRu7pINT5r348Y2337k9KAcM&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=MjEzEQdjQec&list=OLAK5uy_nl7mHg_l7FRu7pINT5r348Y2337k9KAcM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3134,7 +3143,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lpWWJEDKyxBhoJDIj4Jqvn9TtMWQUKgPc&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=r9n2lKVJPi8&list=OLAK5uy_lpWWJEDKyxBhoJDIj4Jqvn9TtMWQUKgPc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3160,7 +3169,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=3S6u8FHkIeE&list=OLAK5uy_mRl7Fkins6Y3F1l6WXlYvcgjvF0FmUlPw',
+            'https://www.youtube.com/watch?v=3S6u8FHkIeE&list=OLAK5uy_mRl7Fkins6Y3F1l6WXlYvcgjvF0FmUlPw&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3187,7 +3196,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_m9VyQofRLP7MOGChiLyrW0ConRAorzVvo&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=wLNxSDYNjQA&list=OLAK5uy_m9VyQofRLP7MOGChiLyrW0ConRAorzVvo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3214,7 +3223,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ld_sn54tu8SauZbwd1nE1l2B5GhTfgbwU&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=kBXCB2jTxdA&list=OLAK5uy_ld_sn54tu8SauZbwd1nE1l2B5GhTfgbwU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3241,7 +3250,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=VKzWLUQizz8&list=PLH3lfNtPhUxjcC11tohb73LKyZFo6v9hB',
+            'https://www.youtube.com/watch?v=VKzWLUQizz8&list=PLH3lfNtPhUxjcC11tohb73LKyZFo6v9hB&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3267,7 +3276,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_n8o8zzM1VvkMTBhELfpCzuc37Bwzih9u8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=d9eyIpAvANo&list=OLAK5uy_n8o8zzM1VvkMTBhELfpCzuc37Bwzih9u8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3294,7 +3303,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ng4N3XsgdNZashXG2Xl07KP59F_PFc72g&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=5PFZnKYnL1s&list=OLAK5uy_ng4N3XsgdNZashXG2Xl07KP59F_PFc72g&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3321,7 +3330,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kj-NXH-Dp19sAf08Q04Zkn-bWXMUb-_hk&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=RjBJI5WVUCY&list=OLAK5uy_kj-NXH-Dp19sAf08Q04Zkn-bWXMUb-_hk&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3348,7 +3357,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mgky2T34Kbdail-Cfmz8ka62izlZzMVFs&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=vzQP6-II0oE&list=OLAK5uy_mgky2T34Kbdail-Cfmz8ka62izlZzMVFs&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3374,7 +3383,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mRFuqe0IIrexXkU7JOxo4rOb0WLEcwuz8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=UTH1VNHLjng&list=OLAK5uy_mRFuqe0IIrexXkU7JOxo4rOb0WLEcwuz8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3401,7 +3410,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ni-4jK_Z1iHKOkLAL1_6wzbnmJi-SXG-8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=oIoZgIOgu3o&list=OLAK5uy_ni-4jK_Z1iHKOkLAL1_6wzbnmJi-SXG-8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3428,7 +3437,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ndXRQcfXenF1Uw-0aAIjlJhJSI2fvtp2I&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=PO3mri47s7M&list=OLAK5uy_ndXRQcfXenF1Uw-0aAIjlJhJSI2fvtp2I&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3454,7 +3463,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_n98-iurWG5FdxK2pdV71vltAvY-fzrcHo&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=xa4vBlzMaeQ&list=OLAK5uy_n98-iurWG5FdxK2pdV71vltAvY-fzrcHo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3481,7 +3490,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lwzyxndqmZUFugX14sD1uEOw22Lbwq7_c&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=qxrTf5qAW5Y&list=OLAK5uy_lwzyxndqmZUFugX14sD1uEOw22Lbwq7_c&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3507,7 +3516,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mRg0fag70i_uNV_4XSkw6ueMJzPk4sV18&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=cS3xfMAUFMc&list=OLAK5uy_mRg0fag70i_uNV_4XSkw6ueMJzPk4sV18&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3534,7 +3543,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mzFOUXdaAgjlZjJFNOcXOqMuXVwXUOw0I&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=nSf3pBIX2RU&list=OLAK5uy_mzFOUXdaAgjlZjJFNOcXOqMuXVwXUOw0I&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3561,7 +3570,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lWegs8qXAGPC1bpf8uT6lJPOuEV4nRvJQ&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=KzvywmVRWAo&list=OLAK5uy_lWegs8qXAGPC1bpf8uT6lJPOuEV4nRvJQ&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3588,7 +3597,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nWgYNwy_If96pi6iiOHTPqJ4JHmuQxs1M&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=V74famrJi5M&list=OLAK5uy_nWgYNwy_If96pi6iiOHTPqJ4JHmuQxs1M&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3614,7 +3623,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nRBW1WQYURvrK2sGYyppRD0urZmMWuC-I&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=q5apUhTJdwE&list=OLAK5uy_nRBW1WQYURvrK2sGYyppRD0urZmMWuC-I&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3640,7 +3649,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ndleDeDM1b2BP8QnQFb3FrSAacMZ6s1ms&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=Z1IMp9KwNMg&list=OLAK5uy_ndleDeDM1b2BP8QnQFb3FrSAacMZ6s1ms&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3667,7 +3676,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ndleDeDM1b2BP8QnQFb3FrSAacMZ6s1ms&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=FyH-QuLSEcM&list=OLAK5uy_lx7sboO8BIrw40JskC50zPciHZV-6c16Y&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3693,7 +3702,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_m7XvFMv9lIVAUzROJ5lCLbXk2pGpa46Nc&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=3TNMZeFisY0&list=OLAK5uy_m7XvFMv9lIVAUzROJ5lCLbXk2pGpa46Nc&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3719,7 +3728,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lX-poAvJBtrLW_JSreTbJhGW9Y_8_Ujjw&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=y31HIQuz7J8&list=OLAK5uy_lX-poAvJBtrLW_JSreTbJhGW9Y_8_Ujjw&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3745,7 +3754,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_mao9YHfZtBBTlxeT138lO0prcGHzNSWQM&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=6S20mJvr4vs&list=OLAK5uy_mao9YHfZtBBTlxeT138lO0prcGHzNSWQM&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3771,7 +3780,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_n6xUHqxPh80G5tZ1iUYQ3oorop6NjEj5A&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=cugjazbGYgQ&list=OLAK5uy_n6xUHqxPh80G5tZ1iUYQ3oorop6NjEj5A&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3796,7 +3805,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicStyles: ['electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://m.youtube.com/watch?v=PcWK10DaQL4',
+          youtubeHref: 'https://youtu.be/PcWK10DaQL4',
         }),
         {
           linkLabel: 'bandcamp',
@@ -3820,7 +3829,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nNowSDRXeotBWkCyljP2pnYkLOvj9CMnA&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=ylXk1LBvIqU&list=OLAK5uy_nNowSDRXeotBWkCyljP2pnYkLOvj9CMnA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3846,7 +3855,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=HT_Zs5FKDZE&list=PLBZmD4G_qXo6wSvUYQqjtBINnPkfwoXWB',
+            'https://www.youtube.com/watch?v=HT_Zs5FKDZE&list=PLKZWLu6q09LN0kEPS7OkuCoNfnWdDqqRM&pp=iAQB8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3872,7 +3881,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nzNqlLAs3PLitt_FR1-_pO-1Vswhe8ff8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=FqPC-BkylxA&list=OLAK5uy_nzNqlLAs3PLitt_FR1-_pO-1Vswhe8ff8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3898,7 +3907,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_nmXv5bzBPXOZ3NKknqdRQZPS4OsFosUY8',
+            'https://www.youtube.com/watch?v=IJLGf8om63g&list=OLAK5uy_nmXv5bzBPXOZ3NKknqdRQZPS4OsFosUY8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3924,7 +3933,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=9hAhUtSo_cs&list=OLAK5uy_mxkjFCnH2TghtjbYERjk0DXkHjKK1s9KU',
+            'https://www.youtube.com/watch?v=9hAhUtSo_cs&list=OLAK5uy_mxkjFCnH2TghtjbYERjk0DXkHjKK1s9KU&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3951,7 +3960,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_n11RbnA-499JA8KZvuaSc2m61ADPbwLV8&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=dVkdlcGvbLw&list=OLAK5uy_n11RbnA-499JA8KZvuaSc2m61ADPbwLV8&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -3978,7 +3987,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=YuuFffOrpGU&list=OLAK5uy_kCi14IYffUedwbnb0nSH50RaMoS8tq7pg',
+            'https://www.youtube.com/watch?v=YuuFffOrpGU&list=OLAK5uy_kCi14IYffUedwbnb0nSH50RaMoS8tq7pg&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -4005,7 +4014,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_ljVZnWy6vv0AYRrdmDX0zl0qnab2b9OeE&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=P9Ce1rSdGRY&list=OLAK5uy_ljVZnWy6vv0AYRrdmDX0zl0qnab2b9OeE&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -4032,7 +4041,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/watch?v=W3J9-OvxNpo&list=OLAK5uy_n0UUwQ0J6b5pUhLbzGvGsowXv6i5EGJXA',
+            'https://www.youtube.com/watch?v=W3J9-OvxNpo&list=OLAK5uy_n0UUwQ0J6b5pUhLbzGvGsowXv6i5EGJXA&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -4058,7 +4067,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_kcg-bvjRqOWwcUuevJ3FJR5Z7sMnPVDJo&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=3NFqqUoh3BI&list=OLAK5uy_kcg-bvjRqOWwcUuevJ3FJR5Z7sMnPVDJo&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -4084,7 +4093,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
-            'https://m.youtube.com/playlist?list=OLAK5uy_lHrVYnUmTzoxyS_ltzi8T9jJuwK-myu7Q&playnext=1&index=1',
+            'https://www.youtube.com/watch?v=s9DMDulMIz4&list=OLAK5uy_lHrVYnUmTzoxyS_ltzi8T9jJuwK-myu7Q&pp=8AUB',
         }),
         getSpotifyLinkData({
           spotifyHref:
@@ -4093,6 +4102,689 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         getAppleLinkData({
           appleHref:
             'https://music.apple.com/us/album/everything-not-saved-will-be-lost-part-i/1551376342',
+        }),
+      ],
+    },
+    {
+      musicId: 155,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61a3cnxLbJL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2004,
+      musicTitle: 'Official Space Tape',
+      musicArtist: ['Kool Keith'],
+      recordingContext: ['studio'],
+      musicStyles: ['left-field', 'rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=5_mI0jN1mqY&list=OLAK5uy_lrKI_KkjMoczpTzM6OY_w6vqJP2uNmWDQ&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/6CwSY8MpOvEf8lPujm6YEL?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/official-space-tape/286565876',
+        }),
+      ],
+    },
+    {
+      musicId: 156,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41Hknp7zc9L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1996,
+      musicTitle: 'All Eyez on Me',
+      musicArtist: ['2Pac'],
+      recordingContext: ['studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=77nB_9uIcN4&list=OLAK5uy_m9IB94zMFAkv9cTMvr_5bDNET3vnxwuMQ&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/78iX7tMceN0FsnmabAtlOC?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/all-eyez-on-me/1588480719',
+        }),
+      ],
+    },
+    {
+      musicId: 157,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41ERQnawWoL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2007,
+      musicTitle: 'Boxer',
+      musicArtist: ['The National'],
+      recordingContext: ['studio'],
+      musicStyles: ['rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=8WRWno_c_W8&list=OLAK5uy_kafrkwlOgNnuXlp3AlIvUuG0i_nF8THTw&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/2pwNkShhY1uip80rLMHUgX?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/boxer/220311706',
+        }),
+      ],
+    },
+    {
+      musicId: 158,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41Wob7wsgpL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2022,
+      musicTitle: 'How Can I Make It Ok? – (The Pool Sessions)',
+      musicArtist: ['Wolf Alice'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/Jdb8ODEMmb4',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/music-video/how-can-i-make-it-ok-live-the-pool-sessions/1603677296',
+        }),
+      ],
+    },
+    {
+      musicId: 159,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://pbs.twimg.com/media/DXunE23U8AMfcSg.jpg:medium',
+      musicYear: 2018,
+      musicTitle: 'Formidable Cool',
+      musicArtist: ['Wolf Alice'],
+      recordingContext: ['concert'],
+      musicStyles: ['rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/_ohA_T3n3VA',
+        }),
+      ],
+    },
+    {
+      musicId: 160,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/avatars-xy9z67yMn7B5c6YD-PzVMbw-t500x500.jpg',
+      musicYear: 2014,
+      musicTitle: 'Burn Them',
+      musicArtist: ['Greensky Bluegrass'],
+      recordingContext: ['live'],
+      musicStyles: ['bluegrass'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/KVfX1qiZWEs',
+        }),
+      ],
+    },
+    {
+      musicId: 161,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://s3.amazonaws.com/bit-photos/large/12504359.jpeg',
+      musicYear: 2023,
+      musicTitle: 'Big Jet Plane',
+      musicArtist: ['Angus Stone', 'Post Malone'],
+      recordingContext: ['concert'],
+      musicStyles: ['folk'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/WEIuAB7FTtk',
+        }),
+      ],
+    },
+    {
+      musicId: 162,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'single',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61GWeClwpkL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2018,
+      musicTitle: 'Have a Cigar',
+      musicArtist: ['Elephant Revival', 'Pink Floyd'],
+      recordingContext: ['concert'],
+      musicStyles: ['folk', 'rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/L0gnM9h-hjs',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/3xQ1t0ABHBITfmai3jpU9R?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/have-a-cigar-live-at-red-rocks/1375142322?i=1375142336',
+        }),
+      ],
+    },
+    {
+      musicId: 163,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://i.discogs.com/Q3qBX3dKw5F9nttCsGpvmPgv4vxz_y9doieYy1aP_40/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1OTQz/Mi0xNDcwNDA5ODQ3/LTg1OTYucG5n.jpeg',
+      musicYear: 2003,
+      musicTitle: 'The Black Album',
+      musicArtist: ['Jay-Z'],
+      recordingContext: ['studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=4X8E1hkfGgM&list=PLdH-RUFy-XJXr_XN60gD7Bk-F0KEH4muW&pp=iAQB8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4FWvo9oS4gRgHtAwDwUjiO?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/the-black-album/1440785433',
+        }),
+      ],
+    },
+    {
+      musicId: 164,
+      musicType: 'source',
+      sourceType: 'mix',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/artworks-000362632845-thiglr-t500x500.jpg',
+      musicYear: 2016,
+      musicTitle: 'Contact High Mixtape',
+      musicArtist: ['Poolside', 'Misc.'],
+      recordingContext: ['studio'],
+      musicStyles: ['groove', 'alternative'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/fY1IXtyyRp0',
+        }),
+        {
+          linkLabel: 'soundcloud',
+          linkHref: 'https://soundcloud.com/poolside/contact-high-mixtape',
+        },
+      ],
+    },
+    {
+      musicId: 165,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51PRDqUXkVL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2013,
+      musicTitle: 'Hesitation Marks',
+      musicArtist: ['Nine Inch Nails'],
+      recordingContext: ['studio'],
+      musicStyles: ['industrial', 'electronic'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=vXHay7TDLik&list=OLAK5uy_nQmtk2WggYtvlCJzrJKq1ePRGOp5izHc4&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/26m96TIXkNAiL4fl4aiFvd?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/hesitation-marks/655150305',
+        }),
+      ],
+    },
+    {
+      musicId: 166,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/artworks-000505307811-39wbxx-t500x500.jpg',
+      musicYear: 2016,
+      musicTitle: 'Rule The World',
+      musicArtist: ['Michael Kiwanuka'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['soul', 'rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/VTPCbmXX4Qw',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/tt/music-video/rule-the-world-live-session/1445140893',
+        }),
+      ],
+    },
+    {
+      musicId: 167,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://media.pitchfork.com/photos/63bebc39a795af62e49c604a/1:1/w_720,h_720,c_limit/Black-Thought.jpg',
+      musicYear: 2023,
+      musicTitle: 'Grateful',
+      musicArtist: ['Black Thought', 'El Michels Affair'],
+      recordingContext: ['live'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/IgLf2TyuYXc',
+        }),
+      ],
+    },
+    {
+      musicId: 168,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61r2aLgwH9L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2003,
+      musicTitle: 'Grand Champ',
+      musicArtist: ['DMX'],
+      recordingContext: ['studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=Qy8LChcoBm8&list=OLAK5uy_kAILYwC1vnfqo8oEVqZ_ILjvMHIO85Xps&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0FeqrLI13XnYNY1s414uQd?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/grand-champ/1434896071',
+        }),
+      ],
+    },
+    {
+      musicId: 169,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51V2HZNGsbL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1981,
+      musicTitle: 'Computer Love',
+      musicArtist: ['Kraftwerk'],
+      recordingContext: ['studio'],
+      musicStyles: ['electronic', 'pop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/CFmmzFcM-MA',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/7CZdd0S4WTktuiiARS8pY4?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/computer-love/830083942?i=830083954',
+        }),
+      ],
+    },
+    {
+      musicId: 170,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51KC4AjeeGL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1973,
+      musicTitle: 'Head Hunters',
+      musicArtist: ['Herbie Hancock'],
+      recordingContext: ['studio'],
+      musicStyles: ['funk'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=WYRrIBqKsJ4&list=OLAK5uy_m789U0dt-J4aLVd7p-dXJxSfDliep-NT0&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/5fmIolILp5NAtNYiRPjhzA?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/head-hunters/158571524',
+        }),
+      ],
+    },
+    {
+      musicId: 171,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51fHn-+pMgL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1962,
+      musicTitle: 'Soul Bossa Nova',
+      musicArtist: ['Quincy Jones'],
+      recordingContext: ['studio'],
+      musicStyles: ['orchestral', 'jazz'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/T5ALPzS0QfQ',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/0Jw3cPBXlGnA6DEJrZSTI0?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/soul-bossa-nova/1440871985?i=1440872209',
+        }),
+      ],
+    },
+    {
+      musicId: 172,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61VZzwX5CoL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2018,
+      musicTitle: 'Your Queen Is A Reptile',
+      musicArtist: ['Sons of Kemet'],
+      recordingContext: ['studio'],
+      musicStyles: ['primal', 'jazz'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=T19IrfO3-LQ&list=OLAK5uy_mdR5-PUuPUSgBH5P9NE3YqHbSIHawdriU&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4pxnDGBdoGu88h8ZInX5f5?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/your-queen-is-a-reptile/1440908967',
+        }),
+      ],
+    },
+    {
+      musicId: 173,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41kxaBE4TsL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2016,
+      musicTitle: 'The Silent Partner',
+      musicArtist: ['Havoc', 'The Alchemist'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=wYa-CVUjNKw&list=PLHM1MRwUfb-gWiyI5aYq30B6rUayX44x1&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0ZmFxitDMDj0FMBKGY1Rnc?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/the-silent-partner/1095760832',
+        }),
+      ],
+    },
+    {
+      musicId: 174,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41Q9HD2Ra2L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2013,
+      musicTitle: 'Albert Einstein',
+      musicArtist: ['Prodigy', 'The Alchemist'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=JyuVc8pV-Pw&list=OLAK5uy_lLGOJgIZnDUaJsYbnQxTBmxGjw5pCSpbc&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0PRSoLxeEZXSvk3Hh606ig?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/albert-einstein-p-mc2-deluxe-edition/1623258631',
+        }),
+      ],
+    },
+    {
+      musicId: 175,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51Y9a8pQv0L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2017,
+      musicTitle: "Rapper's Best Friend 4",
+      musicArtist: ['The Alchemist'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=XTvxyK11PvA&list=PLPS9FyI3nqbet4mQJgmioL2TF3kat0CzZ&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/2KcgndSRaT7yKbYPDR3SsZ?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/rappers-best-friend-4-an-instrumental-series/1208654209',
+        }),
+      ],
+    },
+    {
+      musicId: 176,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51mT-6UU5yS._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2016,
+      musicTitle: 'Yes Lawd!',
+      musicArtist: ['NxWorries', 'Knxwledge', 'Anderson .Paak'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'soul'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=rrU2P6_VCWw&list=OLAK5uy_meZUV0Bdg_ubTLnVJ9b_fSpdpXaRJCOLo&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0gpxUkqSnLwD50aaRir6jH?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/yes-lawd/1150640159',
+        }),
+      ],
+    },
+    {
+      musicId: 177,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/5113QCYDPIL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1995,
+      musicTitle: 'KRS-One',
+      musicArtist: ['KRS-One'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=2z-dn5-4qPc&list=OLAK5uy_maR74vljzUi_hxY7Aa7BKbcnrtxLObE24&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/17C90B1H8gxYa664SSVM9x?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/krs-one/254976930',
+        }),
+      ],
+    },
+    {
+      musicId: 178,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61uhvrac+sL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1998,
+      musicTitle: 'Extinction Level Event: The Final World Front',
+      musicArtist: ['Busta Rhymes'],
+      recordingContext: ['studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=KGLH8e_dtOQ&list=OLAK5uy_lwtHEgimb2GIy6d-PIQbpFG-4TaPZ97JU&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4zb4gmGzDYtlWMjmc1NZWW?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/extinction-level-event-the-final-world-front/322122753',
+        }),
+      ],
+    },
+    {
+      musicId: 179,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxV5upOQfjettgg6SCciDVa8jF6L7I3F5KA&usqp=CAU',
+      musicYear: 2017,
+      musicTitle: 'Teardrop',
+      musicArtist: ['AURORA', 'Massive Attack'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['downtempo', 'electronic', 'pop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/GPTY6l_PX5k',
+        }),
+      ],
+    },
+    {
+      musicId: 180,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/avatars-zXgGs26rSNYeO4eN-HIZ6FA-t500x500.jpg',
+      musicYear: 2023,
+      musicTitle: 'UMI Says',
+      musicArtist: ['Joey Bada$$', 'Mos Def'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/nP6EoNotPZk',
+        }),
+      ],
+    },
+    {
+      musicId: 181,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41vxyDrOCfL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1999,
+      musicTitle: 'When The Pawn...',
+      musicArtist: ['Fiona Apple'],
+      recordingContext: ['studio'],
+      musicStyles: ['soul', 'rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=7c6OVI7MUvs&list=OLAK5uy_nOn6YPJa_ZmbxxdFKFOIpJUJ7o7_UD7ck&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/3o5EnVZNJXtfPV8tCoagjI?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/when-the-pawn-hits-the-conflicts-he-thinks-like-a-king/153019510',
+        }),
+      ],
+    },
+    {
+      musicId: 182,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51K2gpvDQAL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2018,
+      musicTitle: 'Up',
+      musicArtist: ['EarthGang'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/zgNVvtOp8mU',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/7dEa0aHVVIMTZnDL8OM7yn?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/up-a-colors-show/1483839728?i=1483839734',
+        }),
+      ],
+    },
+    {
+      musicId: 183,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://images.genius.com/2129b932f5e2a35d861407d108d6600e.1000x1000x1.jpg',
+      musicYear: 2018,
+      musicTitle: '91 Flex',
+      musicArtist: ['Serious Klein'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['hip-hop', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/nV883rnogtM',
         }),
       ],
     },

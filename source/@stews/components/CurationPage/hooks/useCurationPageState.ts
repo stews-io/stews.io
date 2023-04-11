@@ -28,7 +28,7 @@ export function useCurationPageState<CurationItem extends object>(
       curationKey:
         urlPathCurationKey ??
         throwInvalidPathError('useCurationPageState.urlPathCurationKey'),
-      viewId: parseInt(urlPathViewId ?? '0'),
+      viewId: urlPathViewId,
       sortId: initialSearchParams.get('sort'),
       viewSearchQuery: initialSearchParams.get('search') ?? '',
       viewPageIndex: 0,

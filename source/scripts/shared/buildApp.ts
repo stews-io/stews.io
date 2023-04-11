@@ -43,7 +43,7 @@ export async function buildApp(api: BuildAppApi) {
       curationType: curatorConfig.musicCurationConfig.curationType,
       curationViews: [
         {
-          viewId: 0,
+          viewId: 'AAAA',
           viewLabel: 'all',
           viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
             (someCurationItem) => someCurationItem.musicId

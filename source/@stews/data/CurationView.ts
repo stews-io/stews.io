@@ -7,6 +7,6 @@ export interface AdjustedCurationView extends CurationViewBase {
 }
 
 interface CurationViewBase {
-  viewId: number
+  viewId: string
   viewLabel: string
 }

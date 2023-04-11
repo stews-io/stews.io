@@ -45,16 +45,19 @@
   padding-block-start: calc(3 / 4) * $themeSpacer;
 }
 
+.itemLabelListContainer {
+  @extend .rowContainer;
+}
+
 .itemLabelList {
   @extend .rowContainer;
   flex-wrap: wrap;
+  width: 0;
+  flex-grow: 1;
 }
 
 .itemLabel {
   @extend .textEllipsis;
-  width: 0;
-  max-width: fit-content;
-  flex-grow: 1;
   margin-inline-end: $themeSpacer; 
   margin-block-end: $themeSpacer;
   background-color: $themeTextBackgroundColor;
