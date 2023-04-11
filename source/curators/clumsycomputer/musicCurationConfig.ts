@@ -4095,5 +4095,339 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
       ],
     },
+    {
+      musicId: 155,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61a3cnxLbJL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2004,
+      musicTitle: 'Official Space Tape',
+      musicArtist: ['Kool Keith'],
+      recordingContext: ['studio'],
+      musicStyles: ['left-field', 'rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=5_mI0jN1mqY&list=OLAK5uy_lrKI_KkjMoczpTzM6OY_w6vqJP2uNmWDQ&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/6CwSY8MpOvEf8lPujm6YEL?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/official-space-tape/286565876',
+        }),
+      ],
+    },
+    {
+      musicId: 156,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41Hknp7zc9L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 1996,
+      musicTitle: 'All Eyez on Me',
+      musicArtist: ['2Pac'],
+      recordingContext: ['studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=77nB_9uIcN4&list=OLAK5uy_m9IB94zMFAkv9cTMvr_5bDNET3vnxwuMQ&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/78iX7tMceN0FsnmabAtlOC?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/all-eyez-on-me/1588480719',
+        }),
+      ],
+    },
+    {
+      musicId: 157,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41ERQnawWoL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2007,
+      musicTitle: 'Boxer',
+      musicArtist: ['The National'],
+      recordingContext: ['studio'],
+      musicStyles: ['rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=8WRWno_c_W8&list=OLAK5uy_kafrkwlOgNnuXlp3AlIvUuG0i_nF8THTw&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/2pwNkShhY1uip80rLMHUgX?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/boxer/220311706',
+        }),
+      ],
+    },
+    {
+      musicId: 158,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/41Wob7wsgpL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2022,
+      musicTitle: 'How Can I Make It Ok? – (The Pool Sessions)',
+      musicArtist: ['Wolf Alice'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/Jdb8ODEMmb4',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/music-video/how-can-i-make-it-ok-live-the-pool-sessions/1603677296',
+        }),
+      ],
+    },
+    {
+      musicId: 159,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://pbs.twimg.com/media/DXunE23U8AMfcSg.jpg:medium',
+      musicYear: 2018,
+      musicTitle: 'Formidable Cool',
+      musicArtist: ['Wolf Alice'],
+      recordingContext: ['concert'],
+      musicStyles: ['rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/_ohA_T3n3VA',
+        }),
+      ],
+    },
+    {
+      musicId: 160,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/avatars-xy9z67yMn7B5c6YD-PzVMbw-t500x500.jpg',
+      musicYear: 2014,
+      musicTitle: 'Burn Them',
+      musicArtist: ['Greensky Bluegrass'],
+      recordingContext: ['live'],
+      musicStyles: ['bluegrass'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/KVfX1qiZWEs',
+        }),
+      ],
+    },
+    {
+      musicId: 161,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://s3.amazonaws.com/bit-photos/large/12504359.jpeg',
+      musicYear: 2023,
+      musicTitle: 'Big Jet Plane',
+      musicArtist: ['Angus Stone', 'Post Malone'],
+      recordingContext: ['concert'],
+      musicStyles: ['folk'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/WEIuAB7FTtk',
+        }),
+      ],
+    },
+    {
+      musicId: 162,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'single',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61GWeClwpkL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2018,
+      musicTitle: 'Have a Cigar',
+      musicArtist: ['Elephant Revival'],
+      recordingContext: ['concert'],
+      musicStyles: ['folk', 'rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/L0gnM9h-hjs',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/track/3xQ1t0ABHBITfmai3jpU9R?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/have-a-cigar-live-at-red-rocks/1375142322?i=1375142336',
+        }),
+      ],
+    },
+    {
+      musicId: 163,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://i.discogs.com/Q3qBX3dKw5F9nttCsGpvmPgv4vxz_y9doieYy1aP_40/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI1OTQz/Mi0xNDcwNDA5ODQ3/LTg1OTYucG5n.jpeg',
+      musicYear: 2003,
+      musicTitle: 'The Black Album',
+      musicArtist: ['Jay-Z'],
+      recordingContext: ['studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=4X8E1hkfGgM&list=PLdH-RUFy-XJXr_XN60gD7Bk-F0KEH4muW&pp=iAQB8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4FWvo9oS4gRgHtAwDwUjiO?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/the-black-album/1440785433',
+        }),
+      ],
+    },
+    {
+      musicId: 164,
+      musicType: 'source',
+      sourceType: 'mix',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/artworks-000362632845-thiglr-t500x500.jpg',
+      musicYear: 2016,
+      musicTitle: 'Contact High Mixtape',
+      musicArtist: ['Poolside', 'Misc.'],
+      recordingContext: ['studio'],
+      musicStyles: ['groove', 'alternative'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/fY1IXtyyRp0',
+        }),
+        {
+          linkLabel: 'soundcloud',
+          linkHref: 'https://soundcloud.com/poolside/contact-high-mixtape',
+        },
+      ],
+    },
+    {
+      musicId: 165,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51PRDqUXkVL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2013,
+      musicTitle: 'Hesitation Marks',
+      musicArtist: ['Nine Inch Nails'],
+      recordingContext: ['studio'],
+      musicStyles: ['industrial', 'electronic'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=vXHay7TDLik&list=OLAK5uy_nQmtk2WggYtvlCJzrJKq1ePRGOp5izHc4&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/26m96TIXkNAiL4fl4aiFvd?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/hesitation-marks/655150305',
+        }),
+      ],
+    },
+    {
+      musicId: 166,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://i1.sndcdn.com/artworks-000505307811-39wbxx-t500x500.jpg',
+      musicYear: 2016,
+      musicTitle: 'Rule The World',
+      musicArtist: ['Michael Kiwanuka'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['soul', 'rock'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/VTPCbmXX4Qw',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/tt/music-video/rule-the-world-live-session/1445140893',
+        }),
+      ],
+    },
+    {
+      musicId: 167,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://media.pitchfork.com/photos/63bebc39a795af62e49c604a/1:1/w_720,h_720,c_limit/Black-Thought.jpg',
+      musicYear: 2023,
+      musicTitle: 'Grateful',
+      musicArtist: ['Black Thought', 'El Michels Affair'],
+      recordingContext: ['live'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/IgLf2TyuYXc',
+        }),
+      ],
+    },
+    {
+      musicId: 168,
+      musicType: 'source',
+      sourceType: 'track',
+      musicThumbnailHref:
+        'https://media.pitchfork.com/photos/63bebc39a795af62e49c604a/1:1/w_720,h_720,c_limit/Black-Thought.jpg',
+      musicYear: 2023,
+      musicTitle: 'Grateful',
+      musicArtist: ['Black Thought', 'El Michels Affair'],
+      recordingContext: ['live', 'studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref: 'https://youtu.be/IgLf2TyuYXc',
+        }),
+      ],
+    },
+    {
+      musicId: 169,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/61r2aLgwH9L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2003,
+      musicTitle: 'Grand Champ',
+      musicArtist: ['DMX'],
+      recordingContext: ['studio'],
+      musicStyles: ['rap', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=Qy8LChcoBm8&list=OLAK5uy_kAILYwC1vnfqo8oEVqZ_ILjvMHIO85Xps&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0FeqrLI13XnYNY1s414uQd?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref: 'https://music.apple.com/us/album/grand-champ/1434896071',
+        }),
+      ],
+    },
   ],
 }
