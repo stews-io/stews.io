@@ -34,13 +34,13 @@ export const CuratorConfigSchema = Zod.object({
     curationType: Zod.literal('music'),
     curationViews: Zod.tuple([
       Zod.object({
-        viewId: Zod.number(),
+        viewId: Zod.string(),
         viewLabel: Zod.string(),
         viewFilter: Zod.string(),
       }),
     ]).rest(
       Zod.object({
-        viewId: Zod.number(),
+        viewId: Zod.string(),
         viewLabel: Zod.string(),
         viewFilter: Zod.string(),
       })

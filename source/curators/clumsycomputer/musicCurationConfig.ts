@@ -9,37 +9,47 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
   curationType: 'music',
   curationViews: [
     {
-      viewId: 1,
+      viewId: 'XUZ8',
       viewLabel: '1990s',
       viewFilter: 'musicYear:[1990 TO 1999]',
     },
     {
-      viewId: 2,
+      viewId: 'COSZ',
       viewLabel: '2000s',
       viewFilter: 'musicYear:[2000 TO 2009]',
     },
     {
-      viewId: 3,
+      viewId: 'TE06',
       viewLabel: '2010s',
       viewFilter: 'musicYear:[2010 TO 2019]',
     },
     {
-      viewId: 4,
+      viewId: '22T8',
+      viewLabel: '2020s',
+      viewFilter: 'musicYear:[2020 TO 2029]',
+    },
+    {
+      viewId: 'N4RQ',
       viewLabel: 'electronic',
       viewFilter: 'musicStyles:electronic',
     },
     {
-      viewId: 5,
+      viewId: 'Z014',
       viewLabel: 'hip-hop',
       viewFilter: 'musicStyles:hip-hop',
     },
     {
-      viewId: 6,
+      viewId: '0BA4',
       viewLabel: 'jazz',
       viewFilter: 'musicStyles:jazz',
     },
     {
-      viewId: 7,
+      viewId: '0I1O',
+      viewLabel: 'rock',
+      viewFilter: 'musicStyles:rock',
+    },
+    {
+      viewId: '75II',
       viewLabel: 'in the now',
       viewFilter: 'recordingContext:live OR recordingContext:concert',
     },
@@ -4388,23 +4398,6 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
     },
     {
       musicId: 168,
-      musicType: 'source',
-      sourceType: 'track',
-      musicThumbnailHref:
-        'https://media.pitchfork.com/photos/63bebc39a795af62e49c604a/1:1/w_720,h_720,c_limit/Black-Thought.jpg',
-      musicYear: 2023,
-      musicTitle: 'Grateful',
-      musicArtist: ['Black Thought', 'El Michels Affair'],
-      recordingContext: ['live', 'studio'],
-      musicStyles: ['rap', 'hip-hop'],
-      externalLinks: [
-        getYoutubeLinkData({
-          youtubeHref: 'https://youtu.be/IgLf2TyuYXc',
-        }),
-      ],
-    },
-    {
-      musicId: 169,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
