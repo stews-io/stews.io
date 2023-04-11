@@ -123,7 +123,7 @@ export function useSelectMenuNavigation(
           ) {
             const targetListItemElement = listItemsRef.current[optionIndex]
             if (targetListItemElement instanceof HTMLDivElement) {
-              targetListItemElement.focus()
+              targetListItemElement.focus({ preventScroll: true })
               targetListItemElement.setAttribute(
                 'data-pointer-focus',
                 somePointerMoveEvent.pointerType

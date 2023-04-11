@@ -70,19 +70,24 @@ function MusicItemLabelList(props: MusicItemLabelListProps) {
   const { accessibilityLabel, musicLabels } = props
   return (
     <div
-      role={'list'}
-      className={cssModule.itemLabelList}
+      className={cssModule.itemLabelListContainer}
       aria-label={accessibilityLabel}
     >
-      {musicLabels.map((someMusicLabel) => (
-        <div
-          role={'listitem'}
-          className={cssModule.itemLabel}
-          key={someMusicLabel}
-        >
-          {someMusicLabel.toLowerCase()}
-        </div>
-      ))}
+      <div
+        role={'list'}
+        className={cssModule.itemLabelList}
+        aria-label={accessibilityLabel}
+      >
+        {musicLabels.map((someMusicLabel) => (
+          <div
+            role={'listitem'}
+            className={cssModule.itemLabel}
+            key={someMusicLabel}
+          >
+            {someMusicLabel.toLowerCase()}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
