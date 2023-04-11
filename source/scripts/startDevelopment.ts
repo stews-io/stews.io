@@ -6,7 +6,7 @@ import { buildApp } from './shared/buildApp'
 startDevelopment({
   curatorConfigPath: Path.join(
     process.cwd(),
-    './source/curators/clumsycomputer'
+    './source/curators/pretttylights'
   ),
 })
 
