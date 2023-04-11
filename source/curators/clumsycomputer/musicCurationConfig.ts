@@ -859,7 +859,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/ctrl/1239976329',
+          appleHref: 'https://music.apple.com/us/album/ctrl/1239976329',
         }),
       ],
     },
@@ -885,7 +885,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/30qOEMzZYtb5VJYk5cRKxS?si=SFj5Gjh_S3urZBu-4dQlkA?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/overcast/1516916379',
+          appleHref: 'https://music.apple.com/us/album/overcast/1516916379',
         }),
       ],
     },
@@ -911,7 +911,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/4z6F5s3RVaOsekuaegbLfD?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/the-score/281701670',
+          appleHref: 'https://music.apple.com/us/album/the-score/281701670',
         }),
       ],
     },
@@ -937,7 +937,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/6VoOCCv0bXPrTHDncJyIgF?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/evil-friends/613557623',
+          appleHref: 'https://music.apple.com/us/album/evil-friends/613557623',
         }),
       ],
     },
@@ -964,7 +964,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/flight-of-the-conchords/278064216',
+            'https://music.apple.com/us/album/flight-of-the-conchords/278064216',
         }),
       ],
     },
@@ -990,7 +990,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/1jWmEhn3ggaL6isoyLfwBn?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/the-doors/1622368510',
+          appleHref: 'https://music.apple.com/us/album/the-doors/1622368510',
         }),
       ],
     },
@@ -1041,7 +1041,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/2btMPVa8QYYO6japUqGsZl?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/adult-themes/1497327175',
+          appleHref: 'https://music.apple.com/us/album/adult-themes/1497327175',
         }),
       ],
     },
@@ -1110,7 +1110,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/girlfriend-is-better/1229254751?i=1229254761',
+            'https://music.apple.com/us/album/girlfriend-is-better/1229254751?i=1229254761',
         }),
       ],
     },
@@ -1135,7 +1135,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/34AtsFexhxnKPVJFtLIN1I?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/little-dragon/258615649',
+          appleHref: 'https://music.apple.com/us/album/little-dragon/258615649',
         }),
       ],
     },
@@ -1162,7 +1162,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/turmoil-tinfoil/1285696865',
+            'https://music.apple.com/us/album/turmoil-tinfoil/1285696865',
         }),
       ],
     },
@@ -1188,7 +1188,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/6y5l3VyZmHrIabKU0Lrp8n?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/natureboy/962791803',
+          appleHref: 'https://music.apple.com/us/album/natureboy/962791803',
         }),
       ],
     },
@@ -1215,7 +1215,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/shark-wolf-rabbit-snake/1553491366',
+            'https://music.apple.com/us/album/shark-wolf-rabbit-snake/1553491366',
         }),
       ],
     },
@@ -1268,7 +1268,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/7f6xPqyaolTiziKf5R5Z0c?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/golden-hour/1440918116',
+          appleHref: 'https://music.apple.com/us/album/golden-hour/1440918116',
         }),
       ],
     },
@@ -1295,7 +1295,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
         }),
         getAppleLinkData({
           appleHref:
-            'https://music.apple.com/br/album/on-the-night-remastered-live/1440910981',
+            'https://music.apple.com/us/album/on-the-night-remastered-live/1440910981',
         }),
       ],
     },
@@ -1321,7 +1321,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
             'https://open.spotify.com/album/1fvWYcbjuycyHpzNPH1Vfk?autoplay=true',
         }),
         getAppleLinkData({
-          appleHref: 'https://music.apple.com/br/album/10-000-days/1474250650',
+          appleHref: 'https://music.apple.com/us/album/10-000-days/1474250650',
         }),
       ],
     },
