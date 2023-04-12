@@ -31,36 +31,21 @@ export const curatorConfig: CuratorConfig = {
       {
         viewId: '67ZF',
         viewLabel: 'discography',
-        viewFilter: 'collectionType:*',
+        viewFilter: 'collectionType:* AND NOT recordingContext:concert',
+      },
+      {
+        viewId: 'YVFB',
+        viewLabel: 'in the now',
+        viewFilter: 'recordingContext:concert',
       },
       // {
       //   viewId: 'U5FX',
-      //   viewLabel: 'crew',
-      //   viewFilter: '',
-      // },
-      // {
-      //   viewId: 'YVFB',
-      //   viewLabel: 'concerts',
-      //   viewFilter: '',
-      // },
-      // {
-      //   viewId: '8CY7',
-      //   viewLabel: 'flips',
+      //   viewLabel: 'posse',
       //   viewFilter: '',
       // },
       // {
       //   viewId: '2UBR',
       //   viewLabel: 'rare teas',
-      //   viewFilter: '',
-      // },
-      // {
-      //   viewId: 'Z4PD',
-      //   viewLabel: 'moments',
-      //   viewFilter: '',
-      // },
-      // {
-      //   viewId: 'Z4PD',
-      //   viewLabel: 'pl pre-set',
       //   viewFilter: '',
       // },
     ],
@@ -442,7 +427,7 @@ export const curatorConfig: CuratorConfig = {
         musicId: 14,
         musicType: 'source',
         sourceType: 'collection',
-        collectionType: 'single',
+        collectionType: 'compilation',
         musicThumbnailHref:
           'https://cdn.shopify.com/s/files/1/0485/1009/products/plm_unreleasedremixes-476x476_large.jpg?v=1402688585',
         musicYear: 2011,
@@ -453,7 +438,7 @@ export const curatorConfig: CuratorConfig = {
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
-              'https://www.youtube.com/watch?v=1xehKUVkoEU&list=PL4F3F7016C211A2EB&pp=iAQB8AUB',
+              'https://www.youtube.com/watch?v=kxS7VgnPeGc&list=PLP7qiRflB78QaFGwy1h0QWIQklcbO5yTX&pp=8AUB',
           }),
           {
             linkLabel: 'free zip',
@@ -461,41 +446,273 @@ export const curatorConfig: CuratorConfig = {
               'https://www.prettylightslive.com/Download/Unreleased-2010-Remixes.zip',
           },
           {
-            linkLabel: 'plm ($0.00)',
+            linkLabel: 'pretty lights',
             linkHref:
               'https://store.prettylightsmusic.com/products/2010-remixes-download',
           },
         ],
       },
-      // {
-      //   musicId: 15,
-      //   musicType: 'source',
-      //   sourceType: 'collection',
-      //   collectionType: 'single',
-      //   musicThumbnailHref:
-      //     'https://cdn.shopify.com/s/files/1/0485/1009/products/plm_unreleasedremixes-476x476_large.jpg?v=1402688585',
-      //   musicYear: 2011,
-      //   musicTitle: 'Unreleased 2010 Remixes',
-      //   musicArtist: ['Pretty Lights'],
-      //   recordingContext: ['studio'],
-      //   musicStyles: ['electronic', 'hip-hop'],
-      //   externalLinks: [
-      //     getYoutubeLinkData({
-      //       youtubeHref:
-      //         'https://www.youtube.com/watch?v=1xehKUVkoEU&list=PL4F3F7016C211A2EB&pp=iAQB8AUB',
-      //     }),
-      //     {
-      //       linkLabel: 'free zip',
-      //       linkHref:
-      //         'https://www.prettylightslive.com/Download/Unreleased-2010-Remixes.zip',
-      //     },
-      //     {
-      //       linkLabel: 'pretty lights store',
-      //       linkHref:
-      //         'https://store.prettylightsmusic.com/products/2010-remixes-download',
-      //     },
-      //   ],
-      // },
+      {
+        musicId: 15,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://i.discogs.com/YXWlffY10UpLnKBmaCxzU3EhJn--U9nyuDC_zgSGmMg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NjI3/MTk1LTE2MjcyNzgx/NjktMTcxNy5wbmc.jpeg',
+        musicYear: 2011,
+        musicTitle: 'Pretty Lights vs Radiohead vs Nirvana vs NIN',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/vou6F9Q2u6Q',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref: 'https://soundcloud.com/drugoy/pretty-lights-vs',
+          },
+        ],
+      },
+      {
+        musicId: 16,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/Cxdk25RC/maxresdefault.jpg',
+        musicYear: 2011,
+        musicTitle: 'Pretty Lights vs Summertime',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/9-X08mLwFV0',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/djneez/pretty-lights-vs-summertime',
+          },
+        ],
+      },
+      {
+        musicId: 17,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/L6SJcTs3/hqdefault.jpg',
+        musicYear: 2011,
+        musicTitle: 'Pretty Lights vs Led Zeppelin',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/W-0u5bUrRdM',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/blueskyeer/pretty-lights-vs-led-zeppelin',
+          },
+        ],
+      },
+      {
+        musicId: 18,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/YqXtdfL9/hqdefault-1.jpg',
+        musicYear: 2011,
+        musicTitle: 'How We Do Remix',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/q_TtoiQ3cwM',
+          }),
+        ],
+      },
+      {
+        musicId: 19,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/7L515V0T/hqdefault-2.jpg',
+        musicYear: 2011,
+        musicTitle: "It's Tricky",
+        musicArtist: ['Pretty Lights', 'Run-DMC'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/mGEJMmzKviY',
+          }),
+          getSpotifyLinkData({
+            spotifyHref:
+              'https://open.spotify.com/track/6gUG1VnMhce9CrBaxAkqw1?autoplay=true',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/ca/album/its-tricky-ssx-pretty-lights-remix-single/504647825',
+          }),
+        ],
+      },
+      {
+        musicId: 20,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/Y93SMc0N/maxresdefault-1.jpg',
+        musicYear: 2012,
+        musicTitle: 'Halloween Funtime REMIXMONSTRousMASHup',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/p7ZubVyNTwI',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/more-pl-rarities/halloween-funtime-remixmonstrousmashup',
+          },
+        ],
+      },
+      {
+        musicId: 21,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/g0490Gy0/maxresdefault-2.jpg',
+        musicYear: 2013,
+        musicTitle: 'The Day Is Gone',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/YdtICIYXvg4',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref: 'https://soundcloud.com/superfueg/the-day-is-gone',
+          },
+        ],
+      },
+      {
+        musicId: 22,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/63wdMNFC/hqdefault-3.jpg',
+        musicYear: 2013,
+        musicTitle: 'Give Your Love Away',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/M6ZNu-bLMFI',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/pretty-lights-family/pretty-lights-give-your-love',
+          },
+        ],
+      },
+      {
+        musicId: 23,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/RhWqRsCc/sddefault.jpg',
+        musicYear: 2015,
+        musicTitle: 'Dionysus Break',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/ezuIJtX9nMM',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/brett-shredmunds/dionysus-break-live-from-red-rocks',
+          },
+        ],
+      },
+      {
+        musicId: 24,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref: 'https://i.postimg.cc/PxSnxdj4/PLTell-500x630.jpg',
+        musicYear: 2015,
+        musicTitle: 'Live in Telluride',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicStyles: ['electronic', 'hip-hop', 'jam'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref:
+              'https://www.youtube.com/watch?v=couldU-H-C4&list=PLRI0bqhn-VebdI_moiZg4JOJ-UwoNTwH3&pp=8AUB',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/slidingcolors/sets/pretty-lights-live-in-telluride-2015',
+          },
+        ],
+      },
+      {
+        musicId: 25,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/avatars-000299423614-ubnxos-t500x500.jpg',
+        musicYear: 2016,
+        musicTitle: '2016 Flips',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicStyles: ['electronic', 'hip-hop', 'jam'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref:
+              'https://www.youtube.com/watch?v=L6KYju6sNxc&list=PLRI0bqhn-Vebh0JS-KlZsloeAarOCEIdP&pp=iAQB8AUB',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref: 'https://soundcloud.com/plflips/sets/pretty-lights-flips',
+          },
+        ],
+      },
+      {
+        musicId: 26,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'ep',
+        musicThumbnailHref:
+          'https://cdn.shopify.com/s/files/1/0485/1009/products/NYE_2009_Cover_large.jpg?v=1402688355',
+        musicYear: 2009,
+        musicTitle: '2009 NYE (Midnight At The Vic Theatre)',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref:
+              'https://www.youtube.com/watch?v=IXXkOR9SDOc&list=PLP7qiRflB78Swkk1Li4_PzisZRBc8IGaj&pp=gAQBiAQB8AUB&pp=8AUB',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/babollinger/sets/pretty-lights-nye-2009',
+          },
+          {
+            linkLabel: 'pretty lights',
+            linkHref:
+              'https://store.prettylightsmusic.com/products/nye-2009-midnight-at-vic-theatre-download',
+          },
+        ],
+      },
     ],
   },
 }
