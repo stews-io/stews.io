@@ -713,6 +713,236 @@ export const curatorConfig: CuratorConfig = {
           },
         ],
       },
+      {
+        musicId: 27,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://images.genius.com/7c2f6e76d0f5a2573ae0cb2b70088c23.600x600x1.png',
+        musicYear: 2015,
+        musicTitle: 'Ethereal',
+        musicArtist: ['Pretty Lights', 'Nosaj Thing'],
+        recordingContext: ['studio'],
+        musicStyles: ['hypnotic', 'electronic'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/cxa1Y71Lgyg',
+          }),
+          getSpotifyLinkData({
+            spotifyHref:
+              'https://open.spotify.com/track/0HFUgGLJNa738pJ1BFf9mV?autoplay=true',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/us/album/ethereal/1469760343?i=1469760349',
+          }),
+        ],
+      },
+      {
+        musicId: 28,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://f4.bcbits.com/img/a0960972328_16.jpg',
+        musicYear: 2009,
+        musicTitle: 'Beyond Right Now (remix)',
+        musicArtist: ['Pretty Lights', 'STS9'],
+        recordingContext: ['studio'],
+        musicStyles: ['hypnotic', 'electronic'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/figC40YNABQ',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/us/album/beyond-right-now-pretty-lights-remix/318240604?i=318241042',
+          }),
+        ],
+      },
+      {
+        musicId: 29,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://i.postimg.cc/Ghypq3sN/Barns-grand-tetons-1.jpg',
+        musicYear: 2005,
+        musicTitle: 'Summer Love',
+        musicArtist: ['Michal Menert', 'Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/DwGdV-f9_AM',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/troubledr/michal-menert-and-derek',
+          },
+        ],
+      },
+      {
+        musicId: 30,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref: 'https://i.postimg.cc/SR7mbR7N/hqdefault-4.jpg',
+        musicYear: 2011,
+        musicTitle: 'Country Roads (remix)',
+        musicArtist: ['Pretty Lights', 'John Denver'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/NAXz2z4giws',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/howo-music/pretty-lights-country-roads',
+          },
+        ],
+      },
+      {
+        musicId: 31,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://sidekick-music.com/wp-content/uploads/2022/01/DAFTB-PUNK.jpg',
+        musicYear: 2011,
+        musicTitle: 'Solar Sailer (remix)',
+        musicArtist: ['Pretty Lights', 'Daft Punk'],
+        recordingContext: ['studio'],
+        musicStyles: ['hypnotic', 'electronic'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/LXetZiLyiIw',
+          }),
+          getSpotifyLinkData({
+            spotifyHref:
+              'https://open.spotify.com/track/4OgB6TRmIGBRT4NoFxxIQd?autoplay=true',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/us/album/solar-sailer-remixed-by-pretty-lights/1440617977?i=1440618237',
+          }),
+        ],
+      },
+      {
+        musicId: 32,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://i.scdn.co/image/ab67616d0000b27339113b398256f76ab7d4ee89',
+        musicYear: 2013,
+        musicTitle: 'I Put A Spell on You (remix)',
+        musicArtist: ['Pretty Lights', 'Nina Simone'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/XYrXcBawnhE',
+          }),
+          getSpotifyLinkData({
+            spotifyHref:
+              'https://open.spotify.com/track/52ml3ut1WD9308zSJtKaYv?autoplay=true',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/us/song/i-put-a-spell-on-you-pretty-lights-remix/1440859992',
+          }),
+        ],
+      },
+      {
+        musicId: 33,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-N6WVn90hc5AO-0-t500x500.jpg',
+        musicYear: 2013,
+        musicTitle: 'Exodus (remix)',
+        musicArtist: ['Pretty Lights', 'Bob Marley'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'reggae'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/dQiH237y9dc',
+          }),
+          getSpotifyLinkData({
+            spotifyHref:
+              'https://open.spotify.com/track/59jrOy7jDfyyU9QMQEFh2x?autoplay=true',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/us/album/exodus-pretty-lights-remix/1442830055?i=1442830347',
+          }),
+        ],
+      },
+      {
+        musicId: 34,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://m.media-amazon.com/images/I/41Zigr+qiwL._UX716_FMwebp_QL85_.jpg',
+        musicYear: 2018,
+        musicTitle: 'One Nation',
+        musicArtist: ['Pretty Lights', 'Tom Morello'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'rock'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/LjdvfjKq40Y',
+          }),
+          getSpotifyLinkData({
+            spotifyHref:
+              'https://open.spotify.com/track/1WjiaXCZZJPOq9bSIFZ0C7?autoplay=true',
+          }),
+          getAppleLinkData({
+            appleHref:
+              'https://music.apple.com/us/album/one-nation-feat-pretty-lights/1405707225?i=1405707940',
+          }),
+        ],
+      },
+      {
+        musicId: 35,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref: 'https://i.postimg.cc/K8RBx34Y/maxresdefault-3.jpg',
+        musicYear: 2012,
+        musicTitle: 'Essential Mix',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/wyv4-BDNCo4',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref:
+              'https://soundcloud.com/whoisvin/pretty-lights-essential-mix',
+          },
+        ],
+      },
+      {
+        musicId: 36,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://a.espncdn.com/photo/2011/1228/life_e_regeneration11_300.jpg',
+        musicYear: 2012,
+        musicTitle: 'Wayfaring Stranger',
+        musicArtist: ['Pretty Lights', 'LeAnn Rimes', 'Dr Ralph Stanley'],
+        recordingContext: ['studio'],
+        musicStyles: ['electronic', 'country'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/XqMGKf4qSSw',
+          }),
+          {
+            linkLabel: 'soundcloud',
+            linkHref: 'https://soundcloud.com/samorlik/pretty-lights-wayfaring',
+          },
+        ],
+      },
     ],
   },
 }
