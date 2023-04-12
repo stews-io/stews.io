@@ -1,3 +1,4 @@
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import ChildProcess from 'child_process'
 import FileSystem from 'fs'
 import Path from 'path'
@@ -6,7 +7,8 @@ import { buildApp } from './shared/buildApp'
 startDevelopment({
   curatorConfigPath: Path.join(
     process.cwd(),
-    './source/curators/clumsycomputer'
+    process.argv.at(2) ??
+      throwInvalidPathError('curatorConfigPath not provided')
   ),
 })
 
