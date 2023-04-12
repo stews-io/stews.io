@@ -38,16 +38,11 @@ export const curatorConfig: CuratorConfig = {
         viewLabel: 'in the now',
         viewFilter: 'recordingContext:concert',
       },
-      // {
-      //   viewId: 'U5FX',
-      //   viewLabel: 'posse',
-      //   viewFilter: '',
-      // },
-      // {
-      //   viewId: '2UBR',
-      //   viewLabel: 'rare teas',
-      //   viewFilter: '',
-      // },
+      {
+        viewId: 'YVFB',
+        viewLabel: 'one time',
+        viewFilter: 'sourceType:track',
+      },
     ],
     curationItems: [
       {
@@ -441,11 +436,6 @@ export const curatorConfig: CuratorConfig = {
               'https://www.youtube.com/watch?v=kxS7VgnPeGc&list=PLP7qiRflB78QaFGwy1h0QWIQklcbO5yTX&pp=8AUB',
           }),
           {
-            linkLabel: 'free zip',
-            linkHref:
-              'https://www.prettylightslive.com/Download/Unreleased-2010-Remixes.zip',
-          },
-          {
             linkLabel: 'pretty lights',
             linkHref:
               'https://store.prettylightsmusic.com/products/2010-remixes-download',
@@ -459,7 +449,7 @@ export const curatorConfig: CuratorConfig = {
         musicThumbnailHref:
           'https://i.discogs.com/YXWlffY10UpLnKBmaCxzU3EhJn--U9nyuDC_zgSGmMg/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE5NjI3/MTk1LTE2MjcyNzgx/NjktMTcxNy5wbmc.jpeg',
         musicYear: 2011,
-        musicTitle: 'Pretty Lights vs Radiohead vs Nirvana vs NIN',
+        musicTitle: 'Radiohead vs Nirvana vs NIN',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
         musicStyles: ['electronic', 'hip-hop'],
@@ -477,7 +467,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 16,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/Cxdk25RC/maxresdefault.jpg',
+        musicThumbnailHref:
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-07-45.jpeg?raw=true',
         musicYear: 2011,
         musicTitle: 'Pretty Lights vs Summertime',
         musicArtist: ['Pretty Lights'],
@@ -499,7 +490,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOR5XdutStKZ8WOpE__WenYWd6Cym2lFZjrIoPBKkvwkl13u-By0d8-ZDx0AghLayv8K2BvZoQ3AsbXBRChCwaqya8nw=w1486-h1592',
+          'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/rathing.jpeg',
         musicYear: 2011,
         musicTitle: 'Pretty Lights vs Led Zeppelin',
         musicArtist: ['Pretty Lights'],
@@ -521,7 +512,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://raw.githubusercontent.com/clumsycomputer/clumsy-website/production/public/graphics/mahs-koh-teh.low.png',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-03-43.jpeg?raw=true',
         musicYear: 2011,
         musicTitle: 'How We Do Remix',
         musicArtist: ['Pretty Lights'],
@@ -538,7 +529,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTEKowPKHxzyCh0VmaBUh1GtzYhllPoTSZXv1J6ELMfE8jrOQQN1wvtTuj5Xw7DGL_qWAjNhcS34vPHUZSmaW9fVzn07w=w2880-h1592',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/ryan-anderson-animation-itsnicet.format-webp.width-1440_qtmbOdGm6RIDF5wV.jpeg?raw=true',
         musicYear: 2011,
         musicTitle: "It's Tricky (remix)",
         musicArtist: ['Pretty Lights', 'Run-DMC'],
@@ -563,7 +554,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSr3VQydpSQQ7YcG0IMiw2bJrE7Unram0dDygOCFtOT6lVd5LhHUNfReqPFTt0A4PzEeVQfPUYK4suUSuo4jybc3esV=w2880-h1592',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-10-05.jpeg?raw=true',
         musicYear: 2012,
         musicTitle: 'Halloween Funtime REMIXMONSTRousMASHup',
         musicArtist: ['Pretty Lights'],
@@ -585,7 +576,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOT9a87HlHI_w5sG6m4FqppbI-pqOMNLIsNwujxeKIAzXW1ZXckckW6f9qlsoozgZcS06y1KFyPtsHeEGFB0czfsZ6VAaw=w1486-h1592',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-03-18.jpeg?raw=true',
         musicYear: 2013,
         musicTitle: 'The Day Is Gone',
         musicArtist: ['Pretty Lights'],
@@ -606,7 +597,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTMAqkhDkSQTkixx8EhDxborU65fauvkAw2zeA5qhjwzI_stLn8DPxwbia2XCPXNjNpvi0PiSCWV3RPVmaqsEg3-oYBhA=w1486-h1592',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-06-52.jpeg?raw=true',
         musicYear: 2013,
         musicTitle: 'Give Your Love Away',
         musicArtist: ['Pretty Lights'],
@@ -628,7 +619,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://i1.sndcdn.com/artworks-000118958082-43a0z9-t500x500.jpg',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-08-28.jpeg?raw=true',
         musicYear: 2015,
         musicTitle: 'Dionysus Break',
         musicArtist: ['Pretty Lights'],
@@ -651,12 +642,12 @@ export const curatorConfig: CuratorConfig = {
         sourceType: 'collection',
         collectionType: 'compilation',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTdbgqNlRpaGzsnpEcjNrCAOKLEnpaF9Cj6HvaiXR6VnCMwoP7kJYFy5e3eAJYLizAQ1D_RJL6Yd9qfF88iFY7PRUzm2Q=w1486-h1592',
+          'https://i1.sndcdn.com/artworks-000157936781-ca4smv-t500x500.jpg',
         musicYear: 2015,
         musicTitle: 'Live in Telluride',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicStyles: ['electronic', 'hip-hop', 'jam'],
+        musicStyles: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -680,7 +671,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: '2016 Flips',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicStyles: ['electronic', 'hip-hop', 'jam'],
+        musicStyles: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -726,7 +717,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://raw.githubusercontent.com/clumsycomputer/clumsy-website/production/public/graphics/sonsetrise.png',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-11-07.jpeg?raw=true',
         musicYear: 2015,
         musicTitle: 'Ethereal',
         musicArtist: ['Pretty Lights', 'Nosaj Thing'],
@@ -771,7 +762,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://i.postimg.cc/Ghypq3sN/Barns-grand-tetons-1.jpg',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-10-55.jpeg?raw=true',
         musicYear: 2005,
         musicTitle: 'Summer Love',
         musicArtist: ['Michal Menert', 'Pretty Lights'],
@@ -793,7 +784,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTRQeD-Pi28yo0rW71ZuQ7WjbT7MkkoLl91tsr0lARMPqhmj509hSB6g2B0JQVsfz7ooKyajxBNgmHKaEh89NjJGXIB=w2880-h1592',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-08-48.jpeg?raw=true',
         musicYear: 2011,
         musicTitle: 'Country Roads (remix)',
         musicArtist: ['Pretty Lights', 'John Denver'],
@@ -815,7 +806,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSYjsnwDpCXsQzA0YileBb2P9a6XNQDRMDH53f-3dUKM4jqyBtPjg6geeRPvY6wrYYWBaDAL8c2Z_t7z89sOAOh82mFhg=w1486-h1592',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-05-07.jpeg?raw=true',
         musicYear: 2011,
         musicTitle: 'Solar Sailer (remix)',
         musicArtist: ['Pretty Lights', 'Daft Punk'],
@@ -890,7 +881,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://m.media-amazon.com/images/I/41Zigr+qiwL._UX716_FMwebp_QL85_.jpg',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-09-11.jpeg?raw=true',
         musicYear: 2018,
         musicTitle: 'One Nation',
         musicArtist: ['Pretty Lights', 'Tom Morello'],
@@ -910,33 +901,33 @@ export const curatorConfig: CuratorConfig = {
           }),
         ],
       },
-      {
-        musicId: 35,
-        musicType: 'source',
-        sourceType: 'mix',
-        musicThumbnailHref: 'https://i.postimg.cc/K8RBx34Y/maxresdefault-3.jpg',
-        musicYear: 2012,
-        musicTitle: 'Essential Mix',
-        musicArtist: ['Pretty Lights'],
-        recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
-        externalLinks: [
-          getYoutubeLinkData({
-            youtubeHref: 'https://youtu.be/wyv4-BDNCo4',
-          }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
-              'https://soundcloud.com/whoisvin/pretty-lights-essential-mix',
-          },
-        ],
-      },
+      // {
+      //   musicId: 35,
+      //   musicType: 'source',
+      //   sourceType: 'mix',
+      //   musicThumbnailHref: 'https://i.postimg.cc/K8RBx34Y/maxresdefault-3.jpg',
+      //   musicYear: 2012,
+      //   musicTitle: 'Essential Mix',
+      //   musicArtist: ['Pretty Lights'],
+      //   recordingContext: ['studio'],
+      //   musicStyles: ['electronic', 'hip-hop'],
+      //   externalLinks: [
+      //     getYoutubeLinkData({
+      //       youtubeHref: 'https://youtu.be/wyv4-BDNCo4',
+      //     }),
+      //     {
+      //       linkLabel: 'soundcloud',
+      //       linkHref:
+      //         'https://soundcloud.com/whoisvin/pretty-lights-essential-mix',
+      //     },
+      //   ],
+      // },
       {
         musicId: 36,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://raw.githubusercontent.com/clumsycomputer/clumsy-website/production/public/graphics/kool-pah-bleh.low.png',
+          'https://github.com/untitledthumbs/ra_thumbs/blob/main/Frame-12-04-2023-12-05-51.jpeg?raw=true',
         musicYear: 2012,
         musicTitle: 'Wayfaring Stranger',
         musicArtist: ['Pretty Lights', 'LeAnn Rimes', 'Dr Ralph Stanley'],
