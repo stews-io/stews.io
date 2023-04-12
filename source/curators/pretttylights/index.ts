@@ -498,7 +498,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 17,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/L6SJcTs3/hqdefault.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOR5XdutStKZ8WOpE__WenYWd6Cym2lFZjrIoPBKkvwkl13u-By0d8-ZDx0AghLayv8K2BvZoQ3AsbXBRChCwaqya8nw=w1486-h1592',
         musicYear: 2011,
         musicTitle: 'Pretty Lights vs Led Zeppelin',
         musicArtist: ['Pretty Lights'],
@@ -519,7 +520,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 18,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/YqXtdfL9/hqdefault-1.jpg',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/clumsycomputer/clumsy-website/production/public/graphics/mahs-koh-teh.low.png',
         musicYear: 2011,
         musicTitle: 'How We Do Remix',
         musicArtist: ['Pretty Lights'],
@@ -535,9 +537,10 @@ export const curatorConfig: CuratorConfig = {
         musicId: 19,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/7L515V0T/hqdefault-2.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTEKowPKHxzyCh0VmaBUh1GtzYhllPoTSZXv1J6ELMfE8jrOQQN1wvtTuj5Xw7DGL_qWAjNhcS34vPHUZSmaW9fVzn07w=w2880-h1592',
         musicYear: 2011,
-        musicTitle: "It's Tricky",
+        musicTitle: "It's Tricky (remix)",
         musicArtist: ['Pretty Lights', 'Run-DMC'],
         recordingContext: ['studio'],
         musicStyles: ['electronic', 'hip-hop'],
@@ -559,7 +562,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 20,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/Y93SMc0N/maxresdefault-1.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSr3VQydpSQQ7YcG0IMiw2bJrE7Unram0dDygOCFtOT6lVd5LhHUNfReqPFTt0A4PzEeVQfPUYK4suUSuo4jybc3esV=w2880-h1592',
         musicYear: 2012,
         musicTitle: 'Halloween Funtime REMIXMONSTRousMASHup',
         musicArtist: ['Pretty Lights'],
@@ -580,7 +584,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 21,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/g0490Gy0/maxresdefault-2.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOT9a87HlHI_w5sG6m4FqppbI-pqOMNLIsNwujxeKIAzXW1ZXckckW6f9qlsoozgZcS06y1KFyPtsHeEGFB0czfsZ6VAaw=w1486-h1592',
         musicYear: 2013,
         musicTitle: 'The Day Is Gone',
         musicArtist: ['Pretty Lights'],
@@ -600,7 +605,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 22,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/63wdMNFC/hqdefault-3.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTMAqkhDkSQTkixx8EhDxborU65fauvkAw2zeA5qhjwzI_stLn8DPxwbia2XCPXNjNpvi0PiSCWV3RPVmaqsEg3-oYBhA=w1486-h1592',
         musicYear: 2013,
         musicTitle: 'Give Your Love Away',
         musicArtist: ['Pretty Lights'],
@@ -621,7 +627,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 23,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/RhWqRsCc/sddefault.jpg',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000118958082-43a0z9-t500x500.jpg',
         musicYear: 2015,
         musicTitle: 'Dionysus Break',
         musicArtist: ['Pretty Lights'],
@@ -643,7 +650,8 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'compilation',
-        musicThumbnailHref: 'https://i.postimg.cc/PxSnxdj4/PLTell-500x630.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTdbgqNlRpaGzsnpEcjNrCAOKLEnpaF9Cj6HvaiXR6VnCMwoP7kJYFy5e3eAJYLizAQ1D_RJL6Yd9qfF88iFY7PRUzm2Q=w1486-h1592',
         musicYear: 2015,
         musicTitle: 'Live in Telluride',
         musicArtist: ['Pretty Lights'],
@@ -718,7 +726,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://images.genius.com/7c2f6e76d0f5a2573ae0cb2b70088c23.600x600x1.png',
+          'https://raw.githubusercontent.com/clumsycomputer/clumsy-website/production/public/graphics/sonsetrise.png',
         musicYear: 2015,
         musicTitle: 'Ethereal',
         musicArtist: ['Pretty Lights', 'Nosaj Thing'],
@@ -784,7 +792,8 @@ export const curatorConfig: CuratorConfig = {
         musicId: 30,
         musicType: 'source',
         sourceType: 'track',
-        musicThumbnailHref: 'https://i.postimg.cc/SR7mbR7N/hqdefault-4.jpg',
+        musicThumbnailHref:
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOTRQeD-Pi28yo0rW71ZuQ7WjbT7MkkoLl91tsr0lARMPqhmj509hSB6g2B0JQVsfz7ooKyajxBNgmHKaEh89NjJGXIB=w2880-h1592',
         musicYear: 2011,
         musicTitle: 'Country Roads (remix)',
         musicArtist: ['Pretty Lights', 'John Denver'],
@@ -806,7 +815,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://sidekick-music.com/wp-content/uploads/2022/01/DAFTB-PUNK.jpg',
+          'https://lh3.googleusercontent.com/u/0/drive-viewer/AAOQEOSYjsnwDpCXsQzA0YileBb2P9a6XNQDRMDH53f-3dUKM4jqyBtPjg6geeRPvY6wrYYWBaDAL8c2Z_t7z89sOAOh82mFhg=w1486-h1592',
         musicYear: 2011,
         musicTitle: 'Solar Sailer (remix)',
         musicArtist: ['Pretty Lights', 'Daft Punk'],
@@ -925,9 +934,9 @@ export const curatorConfig: CuratorConfig = {
       {
         musicId: 36,
         musicType: 'source',
-        sourceType: 'mix',
+        sourceType: 'track',
         musicThumbnailHref:
-          'https://a.espncdn.com/photo/2011/1228/life_e_regeneration11_300.jpg',
+          'https://raw.githubusercontent.com/clumsycomputer/clumsy-website/production/public/graphics/kool-pah-bleh.low.png',
         musicYear: 2012,
         musicTitle: 'Wayfaring Stranger',
         musicArtist: ['Pretty Lights', 'LeAnn Rimes', 'Dr Ralph Stanley'],
