@@ -1,4 +1,5 @@
 import { SelectMenuBase } from '@stews/components/Select'
+import { CurationItemBase } from '@stews/data/CurationItem'
 import { ComponentProps } from 'preact'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import {
@@ -9,7 +10,7 @@ import {
 
 export interface ConsumerViewSelectProps
   extends ViewSelectBaseDataProps,
-    Pick<CurationPageBaseDataProps<object>, 'curationType'> {}
+    Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'> {}
 
 export function ConsumerViewSelect(props: ConsumerViewSelectProps) {
   const { curationType, ...viewSelectBaseProps } = props

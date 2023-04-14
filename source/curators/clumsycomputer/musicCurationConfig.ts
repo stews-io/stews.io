@@ -56,7 +56,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
   ],
   curationItems: [
     {
-      musicId: 0,
+      itemId: 0,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -82,7 +82,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 1,
+      itemId: 1,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -109,7 +109,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 2,
+      itemId: 2,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -135,7 +135,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 3,
+      itemId: 3,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'compilation',
@@ -162,7 +162,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 4,
+      itemId: 4,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -189,7 +189,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 5,
+      itemId: 5,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -216,7 +216,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 6,
+      itemId: 6,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -242,7 +242,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 7,
+      itemId: 7,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -268,7 +268,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 8,
+      itemId: 8,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -295,7 +295,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 9,
+      itemId: 9,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -322,7 +322,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 10,
+      itemId: 10,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -340,7 +340,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 11,
+      itemId: 11,
       musicType: 'source',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -361,7 +361,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 12,
+      itemId: 12,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -379,7 +379,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 13,
+      itemId: 13,
       musicType: 'source',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -406,7 +406,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 14,
+      itemId: 14,
       musicType: 'clip',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -424,7 +424,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 15,
+      itemId: 15,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -450,7 +450,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 16,
+      itemId: 16,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -477,7 +477,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 17,
+      itemId: 17,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -503,7 +503,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 18,
+      itemId: 18,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -529,7 +529,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 19,
+      itemId: 19,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -555,7 +555,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 20,
+      itemId: 20,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -582,7 +582,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 21,
+      itemId: 21,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -608,7 +608,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 22,
+      itemId: 22,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -635,7 +635,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 23,
+      itemId: 23,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -662,7 +662,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 24,
+      itemId: 24,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -689,7 +689,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 25,
+      itemId: 25,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -715,7 +715,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 26,
+      itemId: 26,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -741,7 +741,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 27,
+      itemId: 27,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -768,7 +768,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 28,
+      itemId: 28,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -795,7 +795,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 29,
+      itemId: 29,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -822,7 +822,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 30,
+      itemId: 30,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -848,7 +848,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 31,
+      itemId: 31,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -874,7 +874,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 32,
+      itemId: 32,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -900,7 +900,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 33,
+      itemId: 33,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -926,7 +926,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 34,
+      itemId: 34,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -952,7 +952,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 35,
+      itemId: 35,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -979,7 +979,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 36,
+      itemId: 36,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1005,7 +1005,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 37,
+      itemId: 37,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1030,7 +1030,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 38,
+      itemId: 38,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1056,7 +1056,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 39,
+      itemId: 39,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1083,7 +1083,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 40,
+      itemId: 40,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -1100,7 +1100,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 41,
+      itemId: 41,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -1125,7 +1125,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 42,
+      itemId: 42,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1150,7 +1150,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 43,
+      itemId: 43,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1177,7 +1177,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 44,
+      itemId: 44,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1203,7 +1203,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 45,
+      itemId: 45,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1230,7 +1230,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 46,
+      itemId: 46,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1257,7 +1257,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 47,
+      itemId: 47,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1283,7 +1283,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 48,
+      itemId: 48,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1310,7 +1310,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 49,
+      itemId: 49,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1336,7 +1336,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 50,
+      itemId: 50,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1363,7 +1363,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 51,
+      itemId: 51,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1389,7 +1389,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 52,
+      itemId: 52,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1415,7 +1415,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 53,
+      itemId: 53,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1442,7 +1442,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 54,
+      itemId: 54,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1469,7 +1469,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 55,
+      itemId: 55,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1496,7 +1496,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 56,
+      itemId: 56,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1522,7 +1522,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 57,
+      itemId: 57,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1549,7 +1549,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 58,
+      itemId: 58,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -1576,7 +1576,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 59,
+      itemId: 59,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1602,7 +1602,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 60,
+      itemId: 60,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1628,7 +1628,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 61,
+      itemId: 61,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1654,7 +1654,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 62,
+      itemId: 62,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1680,7 +1680,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 63,
+      itemId: 63,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1706,7 +1706,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 64,
+      itemId: 64,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1732,7 +1732,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 65,
+      itemId: 65,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'soundtrack',
@@ -1758,7 +1758,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 66,
+      itemId: 66,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1784,7 +1784,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 67,
+      itemId: 67,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1810,7 +1810,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 68,
+      itemId: 68,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1836,7 +1836,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 69,
+      itemId: 69,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1863,7 +1863,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 70,
+      itemId: 70,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1890,7 +1890,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 71,
+      itemId: 71,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1916,7 +1916,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 72,
+      itemId: 72,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1943,7 +1943,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 73,
+      itemId: 73,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1969,7 +1969,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 74,
+      itemId: 74,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1995,7 +1995,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 75,
+      itemId: 75,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2021,7 +2021,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 76,
+      itemId: 76,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2047,7 +2047,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 77,
+      itemId: 77,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2074,7 +2074,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 78,
+      itemId: 78,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2100,7 +2100,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 79,
+      itemId: 79,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2126,7 +2126,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 80,
+      itemId: 80,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2153,7 +2153,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 81,
+      itemId: 81,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -2178,7 +2178,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 82,
+      itemId: 82,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2204,7 +2204,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 83,
+      itemId: 83,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2230,7 +2230,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 84,
+      itemId: 84,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2257,7 +2257,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 85,
+      itemId: 85,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2283,7 +2283,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 86,
+      itemId: 86,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2310,7 +2310,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 87,
+      itemId: 87,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2336,7 +2336,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 88,
+      itemId: 88,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2363,7 +2363,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 89,
+      itemId: 89,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -2390,7 +2390,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 90,
+      itemId: 90,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2416,7 +2416,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 91,
+      itemId: 91,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2442,7 +2442,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 92,
+      itemId: 92,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2468,7 +2468,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 93,
+      itemId: 93,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2495,7 +2495,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 94,
+      itemId: 94,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2522,7 +2522,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 95,
+      itemId: 95,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2548,7 +2548,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 96,
+      itemId: 96,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -2575,7 +2575,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 97,
+      itemId: 97,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2602,7 +2602,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 98,
+      itemId: 98,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2629,7 +2629,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 99,
+      itemId: 99,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2656,7 +2656,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 100,
+      itemId: 100,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2682,7 +2682,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 101,
+      itemId: 101,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2709,7 +2709,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 102,
+      itemId: 102,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2735,7 +2735,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 103,
+      itemId: 103,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2761,7 +2761,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 104,
+      itemId: 104,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2787,7 +2787,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 105,
+      itemId: 105,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2813,7 +2813,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 106,
+      itemId: 106,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2840,7 +2840,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 107,
+      itemId: 107,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2867,7 +2867,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 108,
+      itemId: 108,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2893,7 +2893,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 109,
+      itemId: 109,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2919,7 +2919,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 110,
+      itemId: 110,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2945,7 +2945,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 111,
+      itemId: 111,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2972,7 +2972,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 112,
+      itemId: 112,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2998,7 +2998,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 113,
+      itemId: 113,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3025,7 +3025,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 114,
+      itemId: 114,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3051,7 +3051,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 115,
+      itemId: 115,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3078,7 +3078,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 116,
+      itemId: 116,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3102,7 +3102,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 117,
+      itemId: 117,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3129,7 +3129,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 118,
+      itemId: 118,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3155,7 +3155,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 119,
+      itemId: 119,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3182,7 +3182,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 120,
+      itemId: 120,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3209,7 +3209,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 121,
+      itemId: 121,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3236,7 +3236,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 122,
+      itemId: 122,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3262,7 +3262,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 123,
+      itemId: 123,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3289,7 +3289,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 124,
+      itemId: 124,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3316,7 +3316,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 125,
+      itemId: 125,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3343,7 +3343,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 126,
+      itemId: 126,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3369,7 +3369,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 127,
+      itemId: 127,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3396,7 +3396,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 128,
+      itemId: 128,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3423,7 +3423,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 129,
+      itemId: 129,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3449,7 +3449,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 130,
+      itemId: 130,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3476,7 +3476,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 131,
+      itemId: 131,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3502,7 +3502,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 132,
+      itemId: 132,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3529,7 +3529,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 133,
+      itemId: 133,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3556,7 +3556,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 134,
+      itemId: 134,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3583,7 +3583,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 135,
+      itemId: 135,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3609,7 +3609,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 136,
+      itemId: 136,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3635,7 +3635,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 137,
+      itemId: 137,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3662,7 +3662,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 138,
+      itemId: 138,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3688,7 +3688,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 139,
+      itemId: 139,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3714,7 +3714,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 140,
+      itemId: 140,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3740,7 +3740,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 141,
+      itemId: 141,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3766,7 +3766,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 142,
+      itemId: 142,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3793,7 +3793,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 143,
+      itemId: 143,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3815,7 +3815,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 144,
+      itemId: 144,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3841,7 +3841,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 145,
+      itemId: 145,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3867,7 +3867,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 146,
+      itemId: 146,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3893,7 +3893,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 147,
+      itemId: 147,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3919,7 +3919,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 148,
+      itemId: 148,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3946,7 +3946,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 149,
+      itemId: 149,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3973,7 +3973,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 150,
+      itemId: 150,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4000,7 +4000,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 151,
+      itemId: 151,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4027,7 +4027,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 152,
+      itemId: 152,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4053,7 +4053,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 153,
+      itemId: 153,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4079,7 +4079,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 154,
+      itemId: 154,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4106,7 +4106,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 155,
+      itemId: 155,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4133,7 +4133,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 156,
+      itemId: 156,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4160,7 +4160,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 157,
+      itemId: 157,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4186,7 +4186,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 158,
+      itemId: 158,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4207,7 +4207,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 159,
+      itemId: 159,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4224,7 +4224,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 160,
+      itemId: 160,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4241,7 +4241,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 161,
+      itemId: 161,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4258,7 +4258,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 162,
+      itemId: 162,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'single',
@@ -4284,7 +4284,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 163,
+      itemId: 163,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4311,7 +4311,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 164,
+      itemId: 164,
       musicType: 'source',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -4332,7 +4332,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 165,
+      itemId: 165,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4359,7 +4359,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 166,
+      itemId: 166,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4380,7 +4380,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 167,
+      itemId: 167,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4397,7 +4397,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 168,
+      itemId: 168,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4423,7 +4423,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 169,
+      itemId: 169,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4448,7 +4448,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 170,
+      itemId: 170,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4474,7 +4474,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 171,
+      itemId: 171,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4499,7 +4499,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 172,
+      itemId: 172,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4526,7 +4526,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 173,
+      itemId: 173,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4553,7 +4553,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 174,
+      itemId: 174,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4580,7 +4580,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 175,
+      itemId: 175,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4607,7 +4607,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 176,
+      itemId: 176,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4633,7 +4633,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 177,
+      itemId: 177,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4659,7 +4659,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 178,
+      itemId: 178,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4686,7 +4686,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 179,
+      itemId: 179,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4703,7 +4703,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 180,
+      itemId: 180,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4720,7 +4720,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 181,
+      itemId: 181,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4747,7 +4747,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 182,
+      itemId: 182,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4772,7 +4772,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 183,
+      itemId: 183,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:

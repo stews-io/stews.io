@@ -1,7 +1,7 @@
 import Zod from 'zod'
 
 const MusicItemSchemaBase = Zod.object({
-  musicId: Zod.number(),
+  itemId: Zod.number(),
   musicThumbnailHref: Zod.string(),
   musicTitle: Zod.string(),
   musicYear: Zod.number(),

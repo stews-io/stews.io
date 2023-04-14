@@ -33,3 +33,15 @@ export function getAppleLinkData(api: GetAppleLinkDataApi) {
     linkHref: appleHref,
   }
 }
+
+export interface GetSoundcloudLinkDataApi {
+  soundcloudHref: string
+}
+
+export function getSoundcloudLinkData(api: GetSoundcloudLinkDataApi) {
+  const { soundcloudHref } = api
+  return {
+    linkLabel: 'soundcloud',
+    linkHref: soundcloudHref,
+  }
+}

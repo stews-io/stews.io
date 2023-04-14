@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node ./source/scripts/startDevelopment.ts",
     "build": "ts-node ./source/scripts/buildCuratorApp.ts",
-    "serve": "sirv clumsycomputer_build --port 8080 --cors --single"
+    "serve": "sirv pretttylights_build --port 8080 --cors --single"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",

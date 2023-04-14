@@ -1,4 +1,5 @@
 import { Bopper, BopperProps } from '@stews/components/Bopper'
+import { CurationItemBase } from '@stews/data/CurationItem'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 
 interface ProfileBopperBaseProps
@@ -6,7 +7,7 @@ interface ProfileBopperBaseProps
     ProfileBopperBaseConfigProps {}
 
 export interface ProfileBopperBaseDataProps
-  extends Pick<CurationPageBaseDataProps<object>, 'curatorInfo'> {}
+  extends Pick<CurationPageBaseDataProps<CurationItemBase>, 'curatorInfo'> {}
 
 interface ProfileBopperBaseConfigProps
   extends Pick<
