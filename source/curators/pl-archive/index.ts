@@ -1130,6 +1130,91 @@ export const curatorConfig: CuratorConfig = {
           }),
         ],
       },
+      {
+        itemId: 47,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/PrettyLights_DetroitNYE_TWYoast.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Detroit - 12/28/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/1z3uzH4rs9U',
+          }),
+        ],
+      },
+      {
+        itemId: 48,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/PrettyLights_DetroitNYE_TWYoast.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Detroit - 12/29/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/mvfJlCdkEeY',
+          }),
+        ],
+      },
+      {
+        itemId: 49,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/PrettyLights_PhillyNYE_TWYoast_UPDATED.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Philly - 12/31/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/WXLNryvr03c',
+          }),
+        ],
+      },
+      {
+        itemId: 50,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/redrocks18.jpeg',
+        musicYear: 2018,
+        musicTitle: 'Red Rocks - 08/10/18',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/8kB_mU2OUvU',
+          }),
+        ],
+      },
+      {
+        itemId: 51,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/redrocks18.jpeg',
+        musicYear: 2018,
+        musicTitle: 'Red Rocks - 08/11/18',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/8VY6yAFD5tU',
+          }),
+        ],
+      },
     ],
   },
 }
