@@ -35,7 +35,6 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
   return (
     <div className={cssModule.inputContainer}>
       <input
-        key={'viewSearchInput'}
         type={'text'}
         autocomplete={'off'}
         autocorrect={'off'}

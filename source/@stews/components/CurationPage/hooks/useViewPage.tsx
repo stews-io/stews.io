@@ -111,7 +111,9 @@ export function useViewPage<CurationItem extends object>(
       'pageContentContainer'
     )
     const pageTopElement = pageTopElementRef.current
-    if (
+    if (document.activeElement instanceof HTMLInputElement) {
+      // noop
+    } else if (
       curationPageState.viewPageIndex === 0 &&
       pageContentContainerElement instanceof HTMLDivElement
     ) {
