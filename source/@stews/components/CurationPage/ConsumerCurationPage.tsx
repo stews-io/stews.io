@@ -1,11 +1,13 @@
-import { ConsumerViewSelect } from './components/ViewSelect'
+import { CurationItemBase } from '@stews/data/CurationItem'
 import { ConsumerProfileBopper } from './components/ProfileBopper'
+import { ConsumerViewSelect } from './components/ViewSelect'
 import { CurationPageBase, CurationPageBaseDataProps } from './CurationPageBase'
 
-export interface ConsumerCurationPageProps<CurationItem extends object>
-  extends CurationPageBaseDataProps<CurationItem> {}
+export interface ConsumerCurationPageProps<
+  CurationItem extends CurationItemBase
+> extends CurationPageBaseDataProps<CurationItem> {}
 
-export function ConsumerCurationPage<CurationItem extends object>(
+export function ConsumerCurationPage<CurationItem extends CurationItemBase>(
   props: ConsumerCurationPageProps<CurationItem>
 ) {
   const {

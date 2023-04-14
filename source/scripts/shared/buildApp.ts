@@ -46,7 +46,7 @@ export async function buildApp(api: BuildAppApi) {
           viewId: 'AAAA',
           viewLabel: 'all',
           viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
-            (someCurationItem) => someCurationItem.musicId
+            (someCurationItem) => someCurationItem.itemId
           ),
         },
         ...curatorConfig.musicCurationConfig.curationViews.map(
@@ -56,7 +56,7 @@ export async function buildApp(api: BuildAppApi) {
             viewItemIds: Liqe.filter(
               Liqe.parse(someCurationView.viewFilter),
               curatorConfig.musicCurationConfig.curationItems
-            ).map((someViewItem) => someViewItem.musicId),
+            ).map((someViewItem) => someViewItem.itemId),
           })
         ),
       ],
@@ -122,7 +122,7 @@ export async function buildApp(api: BuildAppApi) {
       curatorConfig.musicCurationConfig.curationItems.reduce<
         Record<string, MusicItem>
       >((curationItemsMapResult, someCurationItem) => {
-        curationItemsMapResult[someCurationItem.musicId] = someCurationItem
+        curationItemsMapResult[someCurationItem.itemId] = someCurationItem
         return curationItemsMapResult
       }, {})
     )

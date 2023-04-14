@@ -1,12 +1,12 @@
 import Zod from 'zod'
 
 const MusicItemSchemaBase = Zod.object({
-  musicId: Zod.number(),
+  itemId: Zod.number(),
   musicThumbnailHref: Zod.string(),
   musicTitle: Zod.string(),
   musicYear: Zod.number(),
   musicArtist: Zod.tuple([Zod.string()]).rest(Zod.string()),
-  musicStyles: Zod.tuple([Zod.string()]).rest(Zod.string()),
+  musicTags: Zod.tuple([Zod.string()]).rest(Zod.string()),
   recordingContext: Zod.tuple([
     Zod.union([
       Zod.literal('studio'),

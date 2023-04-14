@@ -31,22 +31,22 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
     {
       viewId: 'N4RQ',
       viewLabel: 'electronic',
-      viewFilter: 'musicStyles:electronic',
+      viewFilter: 'musicTags:electronic',
     },
     {
       viewId: 'Z014',
       viewLabel: 'hip-hop',
-      viewFilter: 'musicStyles:hip-hop',
+      viewFilter: 'musicTags:hip-hop',
     },
     {
       viewId: '0BA4',
       viewLabel: 'jazz',
-      viewFilter: 'musicStyles:jazz',
+      viewFilter: 'musicTags:jazz',
     },
     {
       viewId: '0I1O',
       viewLabel: 'rock',
-      viewFilter: 'musicStyles:rock',
+      viewFilter: 'musicTags:rock',
     },
     {
       viewId: '75II',
@@ -56,7 +56,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
   ],
   curationItems: [
     {
-      musicId: 0,
+      itemId: 0,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -66,7 +66,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'IC-01 Hanoi',
       musicArtist: ['Unknown Mortal Orchestra'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'jazz', 'rock'],
+      musicTags: ['experimental', 'jazz', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -82,7 +82,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 1,
+      itemId: 1,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -92,7 +92,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Premiers Symptômes',
       musicArtist: ['Air'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -109,7 +109,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 2,
+      itemId: 2,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -119,7 +119,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicYear: 2020,
       musicArtist: ['Parcels'],
       recordingContext: ['live'],
-      musicStyles: ['disco', 'funk', 'pop'],
+      musicTags: ['disco', 'funk', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -135,7 +135,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 3,
+      itemId: 3,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'compilation',
@@ -145,7 +145,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "The Best Of What's Around Vol. 01",
       musicArtist: ['Dave Matthews Band'],
       recordingContext: ['studio', 'concert'],
-      musicStyles: ['jam', 'rock'],
+      musicTags: ['jam', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -162,7 +162,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 4,
+      itemId: 4,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -172,7 +172,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Blank Face LP',
       musicArtist: ['ScHoolboy Q'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -189,7 +189,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 5,
+      itemId: 5,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -199,7 +199,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Pickin' on Modest Mouse: A Bluegrass Tribute",
       musicArtist: ['Iron Horse', 'Modest Mouse'],
       recordingContext: ['studio'],
-      musicStyles: ['bluegrass'],
+      musicTags: ['bluegrass'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -216,7 +216,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 6,
+      itemId: 6,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -226,7 +226,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Trouble',
       musicArtist: ['Totally Extinct Enormous Dinosaurs'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'pop'],
+      musicTags: ['electronic', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -242,7 +242,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 7,
+      itemId: 7,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -252,7 +252,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Room 41',
       musicArtist: ['Paul Cauthen'],
       recordingContext: ['studio'],
-      musicStyles: ['country', 'rock', 'soul'],
+      musicTags: ['country', 'rock', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -268,7 +268,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 8,
+      itemId: 8,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -278,7 +278,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Organ Recital',
       musicArtist: ['Bastien Keb'],
       recordingContext: ['studio'],
-      musicStyles: ['r&b', 'folk', 'soul'],
+      musicTags: ['r&b', 'folk', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -295,7 +295,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 9,
+      itemId: 9,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -305,7 +305,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Filling Up the City Skies - Disc 1',
       musicArtist: ['Pretty Lights'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'hip-hop', 'soul'],
+      musicTags: ['downtempo', 'hip-hop', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -322,7 +322,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 10,
+      itemId: 10,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -332,7 +332,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Bon Iver at AIR studios',
       musicArtist: ['Bon Iver', 'Sean Carey'],
       recordingContext: ['live'],
-      musicStyles: ['folk'],
+      musicTags: ['folk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/A9Tp5fl18Ho',
@@ -340,7 +340,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 11,
+      itemId: 11,
       musicType: 'source',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -349,7 +349,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'WhoMadeWho',
       musicArtist: ['WhoMadeWho live at Abu Simbel'],
       recordingContext: ['live'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/BDwAlto-NKU',
@@ -361,7 +361,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 12,
+      itemId: 12,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -371,7 +371,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'In Rainbows From the Basement',
       musicArtist: ['Radiohead', 'Nigel Godrich'],
       recordingContext: ['live'],
-      musicStyles: ['experimental', 'rock'],
+      musicTags: ['experimental', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/DWuAn6C8Mfc',
@@ -379,7 +379,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 13,
+      itemId: 13,
       musicType: 'source',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -388,7 +388,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Nicolás Jaar Presents the Network',
       musicArtist: ['Nicolás Jaar'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'ambient', 'electronic'],
+      musicTags: ['experimental', 'ambient', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/JqjhIrys238',
@@ -406,7 +406,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 14,
+      itemId: 14,
       musicType: 'clip',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -415,7 +415,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'hip-hop portion - Nicolás Jaar Presents the Network',
       musicArtist: ['Nicolás Jaar'],
       recordingContext: ['studio'],
-      musicStyles: ['ambient', 'electronic', 'hip-hop'],
+      musicTags: ['ambient', 'electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -424,7 +424,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 15,
+      itemId: 15,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -434,7 +434,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'iridescence',
       musicArtist: ['BROCKHAMPTON'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'hip-hop', 'rap'],
+      musicTags: ['pop', 'hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -450,7 +450,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 16,
+      itemId: 16,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -460,7 +460,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Beyond Serious',
       musicArtist: ['Bibio'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -477,7 +477,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 17,
+      itemId: 17,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -487,7 +487,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Surrounded',
       musicArtist: ['Tipper'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -503,7 +503,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 18,
+      itemId: 18,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -513,7 +513,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'OOFIE',
       musicArtist: ['Wiki'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -529,7 +529,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 19,
+      itemId: 19,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -539,7 +539,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Entroducing',
       musicArtist: ['DJ Shadow'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'hip-hop'],
+      musicTags: ['downtempo', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -555,7 +555,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 20,
+      itemId: 20,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -565,7 +565,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Love Below',
       musicArtist: ['Andre 3000', 'Outkast'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -582,7 +582,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 21,
+      itemId: 21,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -592,7 +592,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Los Angeles',
       musicArtist: ['Flying Lotus'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'experimental', 'electronic'],
+      musicTags: ['downtempo', 'experimental', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -608,7 +608,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 22,
+      itemId: 22,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -618,7 +618,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Alive 2007',
       musicArtist: ['Daft Punk'],
       recordingContext: ['concert'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -635,7 +635,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 23,
+      itemId: 23,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -645,7 +645,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Con Todo El Mundo',
       musicArtist: ['Khruangbin'],
       recordingContext: ['studio'],
-      musicStyles: ['funk'],
+      musicTags: ['funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -662,7 +662,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 24,
+      itemId: 24,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -672,7 +672,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Speaking in Tongues',
       musicArtist: ['Talking Heads'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'new wave'],
+      musicTags: ['pop', 'new wave'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -689,7 +689,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 25,
+      itemId: 25,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -699,7 +699,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Witches Stew',
       musicArtist: ['Lettuce'],
       recordingContext: ['live'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -715,7 +715,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 26,
+      itemId: 26,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -725,7 +725,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Blonde',
       musicArtist: ['Frank Ocean'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'r&b'],
+      musicTags: ['pop', 'r&b'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -741,7 +741,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 27,
+      itemId: 27,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -751,7 +751,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Little Dark Age',
       musicArtist: ['MGMT'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'rock'],
+      musicTags: ['psychedelic', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -768,7 +768,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 28,
+      itemId: 28,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -778,7 +778,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Choose Your Weapon',
       musicArtist: ['Hiatus Kaiyote'],
       recordingContext: ['studio'],
-      musicStyles: ['funk', 'soul'],
+      musicTags: ['funk', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -795,7 +795,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 29,
+      itemId: 29,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -805,7 +805,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Mister Mellow',
       musicArtist: ['Washed Out'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'downtempo', 'electronic'],
+      musicTags: ['psychedelic', 'downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -822,7 +822,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 30,
+      itemId: 30,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -832,7 +832,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'STUDIO',
       musicArtist: ['Benny Sings'],
       recordingContext: ['studio'],
-      musicStyles: ['pop'],
+      musicTags: ['pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -848,7 +848,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 31,
+      itemId: 31,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -858,7 +858,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Ctrl',
       musicArtist: ['SZA'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'r&b'],
+      musicTags: ['pop', 'r&b'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -874,7 +874,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 32,
+      itemId: 32,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -884,7 +884,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Overcast!',
       musicArtist: ['Atmosphere'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -900,7 +900,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 33,
+      itemId: 33,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -910,7 +910,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Score',
       musicArtist: ['Fugees'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -926,7 +926,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 34,
+      itemId: 34,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -936,7 +936,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Evil Friends',
       musicArtist: ['Portugal. The Man'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'rock'],
+      musicTags: ['psychedelic', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -952,7 +952,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 35,
+      itemId: 35,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -962,7 +962,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Flight of the Conchords',
       musicArtist: ['Flight of the Conchords'],
       recordingContext: ['studio'],
-      musicStyles: ['parody'],
+      musicTags: ['parody'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -979,7 +979,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 36,
+      itemId: 36,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -989,7 +989,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Doors',
       musicArtist: ['The Doors'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'rock'],
+      musicTags: ['psychedelic', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1005,7 +1005,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 37,
+      itemId: 37,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1015,7 +1015,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Le Sacre du Printemps',
       musicArtist: ['Igor Stravinsky'],
       recordingContext: ['live'],
-      musicStyles: ['atonal', 'classical'],
+      musicTags: ['atonal', 'classical'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/EkwqPJZe8ms',
@@ -1030,7 +1030,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 38,
+      itemId: 38,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1040,7 +1040,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Adult Themes',
       musicArtist: ['El Michels Affair'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo'],
+      musicTags: ['downtempo'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1056,7 +1056,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 39,
+      itemId: 39,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1066,7 +1066,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'No Better Time Than Now',
       musicArtist: ['Shigeto'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1083,7 +1083,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 40,
+      itemId: 40,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -1092,7 +1092,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Whitehouse Road',
       musicArtist: ['Tyler Childers'],
       recordingContext: ['concert'],
-      musicStyles: ['country'],
+      musicTags: ['country'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/WtVrDud1gZM',
@@ -1100,7 +1100,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 41,
+      itemId: 41,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -1109,7 +1109,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Girlfriend is Better',
       musicArtist: ['Yonder Mountain String Band', 'Talking Heads'],
       recordingContext: ['concert'],
-      musicStyles: ['bluegrass'],
+      musicTags: ['bluegrass'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/7Owzmf9vp3E',
@@ -1125,7 +1125,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 42,
+      itemId: 42,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1135,7 +1135,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Little Dragon',
       musicArtist: ['Little Dragon'],
       recordingContext: ['studio'],
-      musicStyles: ['synth', 'pop'],
+      musicTags: ['synth', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/dHMs91l4XKU',
@@ -1150,7 +1150,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 43,
+      itemId: 43,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1160,7 +1160,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Tinfoil & Turmoil',
       musicArtist: ['Billy Strings'],
       recordingContext: ['studio'],
-      musicStyles: ['bluegrass'],
+      musicTags: ['bluegrass'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1177,7 +1177,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 44,
+      itemId: 44,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1187,7 +1187,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Natureboy',
       musicArtist: ['Natureboy Flako'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1203,7 +1203,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 45,
+      itemId: 45,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1213,7 +1213,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Shark Wolf Rabbit Snake',
       musicArtist: ['Eliot Lipp'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1230,7 +1230,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 46,
+      itemId: 46,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1240,7 +1240,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Forever Story',
       musicArtist: ['JID'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1257,7 +1257,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 47,
+      itemId: 47,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1267,7 +1267,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Golden Hour',
       musicArtist: ['Kacey Musgraves'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'country'],
+      musicTags: ['pop', 'country'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1283,7 +1283,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 48,
+      itemId: 48,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1293,7 +1293,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'On the Night',
       musicArtist: ['Dire Straits'],
       recordingContext: ['concert'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1310,7 +1310,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 49,
+      itemId: 49,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1320,7 +1320,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '10 000 Days',
       musicArtist: ['Tool'],
       recordingContext: ['studio'],
-      musicStyles: ['metal'],
+      musicTags: ['metal'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1336,7 +1336,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 50,
+      itemId: 50,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1346,7 +1346,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Nü Religion: HYENA',
       musicArtist: ['THEY.'],
       recordingContext: ['studio'],
-      musicStyles: ['r&b', 'rap'],
+      musicTags: ['r&b', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1363,7 +1363,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 51,
+      itemId: 51,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1373,7 +1373,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Wildflower',
       musicArtist: ['The Avalanches'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'downtempo', 'hip-hop'],
+      musicTags: ['psychedelic', 'downtempo', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1389,7 +1389,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 52,
+      itemId: 52,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1399,7 +1399,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Bronco',
       musicArtist: ['Orville Peck'],
       recordingContext: ['studio'],
-      musicStyles: ['country'],
+      musicTags: ['country'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1415,7 +1415,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 53,
+      itemId: 53,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1425,7 +1425,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Timeless: Suite For Ma Dukes',
       musicArtist: ['Miguel Atwood-Ferguson', 'J Dilla'],
       recordingContext: ['studio'],
-      musicStyles: ['classical', 'hip-hop'],
+      musicTags: ['classical', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1442,7 +1442,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 54,
+      itemId: 54,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1452,7 +1452,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Roseland NYC Live',
       musicArtist: ['Portishead'],
       recordingContext: ['concert'],
-      musicStyles: ['downtempo', 'soul'],
+      musicTags: ['downtempo', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1469,7 +1469,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 55,
+      itemId: 55,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1479,7 +1479,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'We Got It From Here... Thank You 4 Your Service',
       musicArtist: ['A Tribe Called Quest'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1496,7 +1496,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 56,
+      itemId: 56,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1506,7 +1506,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '2017–2019',
       musicArtist: ['Against All Logic', 'Nicolás Jaar'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'electronic'],
+      musicTags: ['experimental', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1522,7 +1522,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 57,
+      itemId: 57,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1532,7 +1532,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Anything in Return',
       musicArtist: ['Toro y Moi'],
       recordingContext: ['studio'],
-      musicStyles: ['synth', 'pop'],
+      musicTags: ['synth', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1549,7 +1549,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 58,
+      itemId: 58,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -1559,7 +1559,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Death to the Planet',
       musicArtist: ['The Comet is Coming', 'Shabaka Hutchings'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'jazz'],
+      musicTags: ['electronic', 'jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1576,7 +1576,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 59,
+      itemId: 59,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1586,7 +1586,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Palomino',
       musicArtist: ['Trampled By Turtles'],
       recordingContext: ['studio'],
-      musicStyles: ['bluegrass', 'country'],
+      musicTags: ['bluegrass', 'country'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1602,7 +1602,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 60,
+      itemId: 60,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1612,7 +1612,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Mezzanine',
       musicArtist: ['Massive Attack', 'Tricky'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1628,7 +1628,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 61,
+      itemId: 61,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1638,7 +1638,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Melody A.M.',
       musicArtist: ['Röyksopp'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1654,7 +1654,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 62,
+      itemId: 62,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1664,7 +1664,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Artifact',
       musicArtist: ['STS9'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'jam'],
+      musicTags: ['electronic', 'jam'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1680,7 +1680,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 63,
+      itemId: 63,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1690,7 +1690,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'obZen',
       musicArtist: ['Meshuggah'],
       recordingContext: ['studio'],
-      musicStyles: ['metal'],
+      musicTags: ['metal'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1706,7 +1706,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 64,
+      itemId: 64,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1716,7 +1716,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Isolation',
       musicArtist: ['Kali Uchis'],
       recordingContext: ['studio'],
-      musicStyles: ['r&b', 'pop'],
+      musicTags: ['r&b', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1732,7 +1732,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 65,
+      itemId: 65,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'soundtrack',
@@ -1742,7 +1742,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'For Ever',
       musicArtist: ['Jungle'],
       recordingContext: ['studio'],
-      musicStyles: ['funk', 'pop'],
+      musicTags: ['funk', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1758,7 +1758,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 66,
+      itemId: 66,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1768,7 +1768,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'I Tell A Fly',
       musicArtist: ['Benjamin Clementine'],
       recordingContext: ['studio'],
-      musicStyles: ['soul', 'folk'],
+      musicTags: ['soul', 'folk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1784,7 +1784,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 67,
+      itemId: 67,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1794,7 +1794,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Butter',
       musicArtist: ['Hudson Mohawke'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'electronic'],
+      musicTags: ['experimental', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1810,7 +1810,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 68,
+      itemId: 68,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1820,7 +1820,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Amygdala',
       musicArtist: ['DJ Koze'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1836,7 +1836,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 69,
+      itemId: 69,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1846,7 +1846,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Lonesome Crowded West',
       musicArtist: ['Modest Mouse'],
       recordingContext: ['studio'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1863,7 +1863,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 70,
+      itemId: 70,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1873,7 +1873,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Prefuse 73 Reads The Books E.P.',
       musicArtist: ['Prefuse 73', 'The Books'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'hip-hop'],
+      musicTags: ['downtempo', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1890,7 +1890,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 71,
+      itemId: 71,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1900,7 +1900,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Our Love',
       musicArtist: ['Caribou'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1916,7 +1916,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 72,
+      itemId: 72,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1926,7 +1926,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Harry Hard-On',
       musicArtist: ['Allan Rayman'],
       recordingContext: ['studio'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1943,7 +1943,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 73,
+      itemId: 73,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1953,7 +1953,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Danish & Blue',
       musicArtist: ['Lilacs & Champagne'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'hip-hop'],
+      musicTags: ['downtempo', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1969,7 +1969,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 74,
+      itemId: 74,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -1979,7 +1979,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'SBTRKT',
       musicArtist: ['SBTRKT'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -1995,7 +1995,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 75,
+      itemId: 75,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2005,7 +2005,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Grotto',
       musicArtist: ['Wilma Vritra'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop'],
+      musicTags: ['hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2021,7 +2021,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 76,
+      itemId: 76,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2031,7 +2031,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'IV',
       musicArtist: ['BADBADNOTGOOD'],
       recordingContext: ['studio'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2047,7 +2047,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 77,
+      itemId: 77,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2057,7 +2057,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Even If It Isn't Right",
       musicArtist: ['Michal Menert'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'hip-hop'],
+      musicTags: ['electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2074,7 +2074,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 78,
+      itemId: 78,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2084,7 +2084,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Black Up',
       musicArtist: ['Shabazz Palaces'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'hip-hop', 'rap'],
+      musicTags: ['experimental', 'hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2100,7 +2100,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 79,
+      itemId: 79,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2110,7 +2110,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Louie',
       musicArtist: ['Kenny Beats'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop'],
+      musicTags: ['hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2126,7 +2126,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 80,
+      itemId: 80,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2136,7 +2136,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Rage Against The Machine',
       musicArtist: ['Rage Against The Machine'],
       recordingContext: ['studio'],
-      musicStyles: ['rock', 'hip-hop'],
+      musicTags: ['rock', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2153,7 +2153,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 81,
+      itemId: 81,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -2162,7 +2162,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Love Kills',
       musicArtist: ['Freddie Mercury', 'Giorgio Moroder'],
       recordingContext: ['studio'],
-      musicStyles: ['synth', 'pop'],
+      musicTags: ['synth', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/YcgBgJCaC-M',
@@ -2178,7 +2178,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 82,
+      itemId: 82,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2188,7 +2188,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Be Strong',
       musicArtist: ['The 2 Bears'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2204,7 +2204,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 83,
+      itemId: 83,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2214,7 +2214,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Loaded',
       musicArtist: ['The Wood Brothers'],
       recordingContext: ['studio'],
-      musicStyles: ['rock', 'blues'],
+      musicTags: ['rock', 'blues'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2230,7 +2230,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 84,
+      itemId: 84,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2240,7 +2240,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Visions of Backbeat',
       musicArtist: ['BoomBox'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'funk'],
+      musicTags: ['electronic', 'funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2257,7 +2257,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 85,
+      itemId: 85,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2267,7 +2267,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '99.9%',
       musicArtist: ['Kaytranada'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'hip-hop'],
+      musicTags: ['electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2283,7 +2283,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 86,
+      itemId: 86,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2293,7 +2293,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Hi This Is Flume',
       musicArtist: ['Flume'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'electronic'],
+      musicTags: ['experimental', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2310,7 +2310,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 87,
+      itemId: 87,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2320,7 +2320,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Bloom',
       musicArtist: ['Rüfüs Du Sol'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2336,7 +2336,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 88,
+      itemId: 88,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2346,7 +2346,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Traditional Synthesizer Music',
       musicArtist: ['Venetian Snares'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2363,7 +2363,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 89,
+      itemId: 89,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -2373,7 +2373,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Computer Controlled Acoustic Instruments pt2',
       musicArtist: ['Aphex Twin'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'electronic'],
+      musicTags: ['experimental', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2390,7 +2390,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 90,
+      itemId: 90,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2400,7 +2400,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Ghetty Green',
       musicArtist: ['Project Pat'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2416,7 +2416,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 91,
+      itemId: 91,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2426,7 +2426,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Paradise',
       musicArtist: ['Knox Fortune'],
       recordingContext: ['studio'],
-      musicStyles: ['pop'],
+      musicTags: ['pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2442,7 +2442,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 92,
+      itemId: 92,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2452,7 +2452,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '24K Magic',
       musicArtist: ['Bruno Mars'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'funk'],
+      musicTags: ['pop', 'funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2468,7 +2468,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 93,
+      itemId: 93,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2478,7 +2478,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Guns Don't Kill People... Lazers Do",
       musicArtist: ['Major Lazer'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'reggae'],
+      musicTags: ['electronic', 'reggae'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2495,7 +2495,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 94,
+      itemId: 94,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2505,7 +2505,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Funk Wav Bounces Vol. 1',
       musicArtist: ['Calvin Harris'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'pop'],
+      musicTags: ['electronic', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2522,7 +2522,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 95,
+      itemId: 95,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2532,7 +2532,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Lucky Shiner',
       musicArtist: ['Gold Panda'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2548,7 +2548,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 96,
+      itemId: 96,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'ep',
@@ -2558,7 +2558,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Channel Tres',
       musicArtist: ['Channel Tres'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'house'],
+      musicTags: ['electronic', 'house'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2575,7 +2575,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 97,
+      itemId: 97,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2585,7 +2585,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Cold Spring Fault Less Youth',
       musicArtist: ['Mount Kimbie'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2602,7 +2602,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 98,
+      itemId: 98,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2612,7 +2612,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Fahrenheit Fair Enough',
       musicArtist: ['Telefon Tel Aviv'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2629,7 +2629,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 99,
+      itemId: 99,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2639,7 +2639,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Imagination & the Misfit Kid',
       musicArtist: ['Labrinth'],
       recordingContext: ['studio'],
-      musicStyles: ['pop'],
+      musicTags: ['pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2656,7 +2656,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 100,
+      itemId: 100,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2666,7 +2666,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Donuts',
       musicArtist: ['J Dilla'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop'],
+      musicTags: ['hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2682,7 +2682,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 101,
+      itemId: 101,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2692,7 +2692,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '"AWAKEN, MY LOVE!"',
       musicArtist: ['Childish Gambino'],
       recordingContext: ['studio'],
-      musicStyles: ['r&b', 'pop'],
+      musicTags: ['r&b', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2709,7 +2709,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 102,
+      itemId: 102,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2719,7 +2719,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Swimming',
       musicArtist: ['Mac Miller'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2735,7 +2735,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 103,
+      itemId: 103,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2745,7 +2745,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Elaenia',
       musicArtist: ['Floating Points'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2761,7 +2761,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 104,
+      itemId: 104,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2771,7 +2771,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Plastic Beach',
       musicArtist: ['Gorillaz'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'electronic', 'hip-hop'],
+      musicTags: ['pop', 'electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2787,7 +2787,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 105,
+      itemId: 105,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2797,7 +2797,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Amnioverse',
       musicArtist: ['Lapalux'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2813,7 +2813,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 106,
+      itemId: 106,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2823,7 +2823,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Ambient 1: Music for Airports',
       musicArtist: ['Brian Eno'],
       recordingContext: ['studio'],
-      musicStyles: ['ambient', 'electronic'],
+      musicTags: ['ambient', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2840,7 +2840,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 107,
+      itemId: 107,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2850,7 +2850,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Elephant Revival',
       musicArtist: ['Elephant Revival'],
       recordingContext: ['studio'],
-      musicStyles: ['folk'],
+      musicTags: ['folk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2867,7 +2867,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 108,
+      itemId: 108,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2877,7 +2877,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Permutation',
       musicArtist: ['Amon Tobin'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'electronic'],
+      musicTags: ['experimental', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2893,7 +2893,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 109,
+      itemId: 109,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2903,7 +2903,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'GEA',
       musicArtist: ['Mia Doi Todd'],
       recordingContext: ['studio'],
-      musicStyles: ['folk'],
+      musicTags: ['folk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2919,7 +2919,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 110,
+      itemId: 110,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2929,7 +2929,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Dive',
       musicArtist: ['Tycho'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo'],
+      musicTags: ['downtempo'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2945,7 +2945,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 111,
+      itemId: 111,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2955,7 +2955,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'This Is All Yours',
       musicArtist: ['alt-J'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'rock'],
+      musicTags: ['psychedelic', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2972,7 +2972,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 112,
+      itemId: 112,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -2982,7 +2982,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '22, A Million',
       musicArtist: ['Bon Iver'],
       recordingContext: ['studio'],
-      musicStyles: ['psychedelic', 'folk'],
+      musicTags: ['psychedelic', 'folk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -2998,7 +2998,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 113,
+      itemId: 113,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3008,7 +3008,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Heaven To A Tortured Mind',
       musicArtist: ['Yves Tumour'],
       recordingContext: ['studio'],
-      musicStyles: ['experimental', 'rock'],
+      musicTags: ['experimental', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3025,7 +3025,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 114,
+      itemId: 114,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3035,7 +3035,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Sunsetter',
       musicArtist: ['Leisure'],
       recordingContext: ['studio'],
-      musicStyles: ['pop', 'funk'],
+      musicTags: ['pop', 'funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3051,7 +3051,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 115,
+      itemId: 115,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3061,7 +3061,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Galactic Melt',
       musicArtist: ['Com Truise'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3078,7 +3078,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 116,
+      itemId: 116,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3088,7 +3088,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Studio Sessions From A Color Map of the Sun',
       musicArtist: ['Pretty Lights', 'Joel Hamilton'],
       recordingContext: ['live'],
-      musicStyles: ['funk', 'soul', 'instrumental'],
+      musicTags: ['funk', 'soul', 'instrumental'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3102,7 +3102,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 117,
+      itemId: 117,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3112,7 +3112,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Psyence Fiction',
       musicArtist: ['Unkle'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3129,7 +3129,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 118,
+      itemId: 118,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3139,7 +3139,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Cloak',
       musicArtist: ['Jordan Rakei'],
       recordingContext: ['studio'],
-      musicStyles: ['soul', 'funk'],
+      musicTags: ['soul', 'funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3155,7 +3155,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 119,
+      itemId: 119,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3165,7 +3165,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Water 4 The Soul',
       musicArtist: ['Gramatik'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'hip-hop', 'funk'],
+      musicTags: ['electronic', 'hip-hop', 'funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3182,7 +3182,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 120,
+      itemId: 120,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3192,7 +3192,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'French Kiwi Juice',
       musicArtist: ['FKJ'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'jazz', 'funk'],
+      musicTags: ['electronic', 'jazz', 'funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3209,7 +3209,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 121,
+      itemId: 121,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3219,7 +3219,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Synchronicity',
       musicArtist: ['WhoMadeWho'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3236,7 +3236,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 122,
+      itemId: 122,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3246,7 +3246,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Justice',
       musicArtist: ['Justice'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3262,7 +3262,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 123,
+      itemId: 123,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3272,7 +3272,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Collections 01',
       musicArtist: ['Teebs'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop'],
+      musicTags: ['hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3289,7 +3289,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 124,
+      itemId: 124,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3299,7 +3299,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Far Field',
       musicArtist: ['Future Islands'],
       recordingContext: ['studio'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3316,7 +3316,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 125,
+      itemId: 125,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3326,7 +3326,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Tomorrow's Harvest",
       musicArtist: ['Boards of Canada'],
       recordingContext: ['studio'],
-      musicStyles: ['downtempo', 'electronic'],
+      musicTags: ['downtempo', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3343,7 +3343,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 126,
+      itemId: 126,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3353,7 +3353,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Drift',
       musicArtist: ['Nosaj Thing'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic'],
+      musicTags: ['electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3369,7 +3369,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 127,
+      itemId: 127,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3379,7 +3379,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'My Beautiful Dark Twisted Fantasy',
       musicArtist: ['Kanye West'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3396,7 +3396,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 128,
+      itemId: 128,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3406,7 +3406,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'untitled unmastered.',
       musicArtist: ['Kendrick Lamar'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3423,7 +3423,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 129,
+      itemId: 129,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3433,7 +3433,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Veteran',
       musicArtist: ['JPEGMAFIA'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3449,7 +3449,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 130,
+      itemId: 130,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3459,7 +3459,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Big Fish Theory',
       musicArtist: ['Vince Staples'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3476,7 +3476,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 131,
+      itemId: 131,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3486,7 +3486,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Aquemini',
       musicArtist: ['Outkast'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3502,7 +3502,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 132,
+      itemId: 132,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3512,7 +3512,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Atrocity Exhibition',
       musicArtist: ['Danny Brown'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3529,7 +3529,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 133,
+      itemId: 133,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3539,7 +3539,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "If You're Reading This It's Too Late",
       musicArtist: ['Drake'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3556,7 +3556,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 134,
+      itemId: 134,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3566,7 +3566,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Passion, Pain, and Demon Slayin'",
       musicArtist: ['Kid Cudi'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3583,7 +3583,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 135,
+      itemId: 135,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3593,7 +3593,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Piñata',
       musicArtist: ['Freddie Gibbs', 'Madlib'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3609,7 +3609,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 136,
+      itemId: 136,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3619,7 +3619,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Infamous',
       musicArtist: ['Mobb Deep'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3635,7 +3635,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 137,
+      itemId: 137,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3645,7 +3645,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Enter The Wu-Tang (36 Chambers)',
       musicArtist: ['Wu-Tang Clan'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3662,7 +3662,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 138,
+      itemId: 138,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3672,7 +3672,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Blacklisted',
       musicArtist: ['Skepta'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3688,7 +3688,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 139,
+      itemId: 139,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3698,7 +3698,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'At What Cost',
       musicArtist: ['Goldlink'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3714,7 +3714,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 140,
+      itemId: 140,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3724,7 +3724,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Double Cup',
       musicArtist: ['DJ Rashad'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'hip-hop'],
+      musicTags: ['electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3740,7 +3740,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 141,
+      itemId: 141,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3750,7 +3750,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'IGOR',
       musicArtist: ['Tyler, The Creator'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap', 'pop'],
+      musicTags: ['hip-hop', 'rap', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3766,7 +3766,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 142,
+      itemId: 142,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3776,7 +3776,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'PRETTY GIRLS LIKE TRAP MUSIC',
       musicArtist: ['2 Chainz'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3793,7 +3793,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 143,
+      itemId: 143,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3802,7 +3802,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Three Piece Puzzel',
       musicArtist: ['Jneiro Jarel'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'hip-hop'],
+      musicTags: ['electronic', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/PcWK10DaQL4',
@@ -3815,7 +3815,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 144,
+      itemId: 144,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3825,7 +3825,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Kind of Blue',
       musicArtist: ['Miles Davis'],
       recordingContext: ['studio'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3841,7 +3841,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 145,
+      itemId: 145,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3851,7 +3851,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Blue Train',
       musicArtist: ['John Coltrane', 'Rudy Van Gelder'],
       recordingContext: ['studio'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3867,7 +3867,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 146,
+      itemId: 146,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3877,7 +3877,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Time Out',
       musicArtist: ['Dave Brubeck'],
       recordingContext: ['studio'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3893,7 +3893,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 147,
+      itemId: 147,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3903,7 +3903,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Moanin'",
       musicArtist: ['Art Blakey', 'Rudy Van Gelder'],
       recordingContext: ['studio'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3919,7 +3919,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 148,
+      itemId: 148,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3929,7 +3929,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Actual Factual Pterodactyl',
       musicArtist: ['Homeboy Sandman'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3946,7 +3946,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 149,
+      itemId: 149,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3956,7 +3956,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Imaginary Audience',
       musicArtist: ['Mindchatter'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'r&b', 'pop'],
+      musicTags: ['electronic', 'r&b', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -3973,7 +3973,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 150,
+      itemId: 150,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -3983,7 +3983,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Portrait in Jazz',
       musicArtist: ['Bill Evans'],
       recordingContext: ['studio'],
-      musicStyles: ['jazz'],
+      musicTags: ['jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4000,7 +4000,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 151,
+      itemId: 151,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4010,7 +4010,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Man from Waco',
       musicArtist: ['Charley Crockett'],
       recordingContext: ['studio'],
-      musicStyles: ['cajun', 'country'],
+      musicTags: ['cajun', 'country'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4027,7 +4027,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 152,
+      itemId: 152,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4037,7 +4037,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'DS2',
       musicArtist: ['Future'],
       recordingContext: ['studio'],
-      musicStyles: ['rap', 'hip-hop'],
+      musicTags: ['rap', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4053,7 +4053,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 153,
+      itemId: 153,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4063,7 +4063,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Ratatat',
       musicArtist: ['Ratatat'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'rock'],
+      musicTags: ['electronic', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4079,7 +4079,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 154,
+      itemId: 154,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4089,7 +4089,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Everything Not Saved Will Be Lost - Part 1',
       musicArtist: ['Foals'],
       recordingContext: ['studio'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4106,7 +4106,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 155,
+      itemId: 155,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4116,7 +4116,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Official Space Tape',
       musicArtist: ['Kool Keith'],
       recordingContext: ['studio'],
-      musicStyles: ['left-field', 'rap', 'hip-hop'],
+      musicTags: ['left-field', 'rap', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4133,7 +4133,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 156,
+      itemId: 156,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4143,7 +4143,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'All Eyez on Me',
       musicArtist: ['2Pac'],
       recordingContext: ['studio'],
-      musicStyles: ['rap', 'hip-hop'],
+      musicTags: ['rap', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4160,7 +4160,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 157,
+      itemId: 157,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4170,7 +4170,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Boxer',
       musicArtist: ['The National'],
       recordingContext: ['studio'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4186,7 +4186,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 158,
+      itemId: 158,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4195,7 +4195,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'How Can I Make It Ok? – (The Pool Sessions)',
       musicArtist: ['Wolf Alice'],
       recordingContext: ['live', 'studio'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/Jdb8ODEMmb4',
@@ -4207,7 +4207,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 159,
+      itemId: 159,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4216,7 +4216,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Formidable Cool',
       musicArtist: ['Wolf Alice'],
       recordingContext: ['concert'],
-      musicStyles: ['rock'],
+      musicTags: ['rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/_ohA_T3n3VA',
@@ -4224,7 +4224,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 160,
+      itemId: 160,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4233,7 +4233,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Burn Them',
       musicArtist: ['Greensky Bluegrass'],
       recordingContext: ['live'],
-      musicStyles: ['bluegrass'],
+      musicTags: ['bluegrass'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/KVfX1qiZWEs',
@@ -4241,7 +4241,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 161,
+      itemId: 161,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4250,7 +4250,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Big Jet Plane',
       musicArtist: ['Angus Stone', 'Post Malone'],
       recordingContext: ['concert'],
-      musicStyles: ['folk'],
+      musicTags: ['folk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/WEIuAB7FTtk',
@@ -4258,7 +4258,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 162,
+      itemId: 162,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'single',
@@ -4268,7 +4268,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Have a Cigar',
       musicArtist: ['Elephant Revival', 'Pink Floyd'],
       recordingContext: ['concert'],
-      musicStyles: ['folk', 'rock'],
+      musicTags: ['folk', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/L0gnM9h-hjs',
@@ -4284,7 +4284,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 163,
+      itemId: 163,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4294,7 +4294,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Black Album',
       musicArtist: ['Jay-Z'],
       recordingContext: ['studio'],
-      musicStyles: ['rap', 'hip-hop'],
+      musicTags: ['rap', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4311,7 +4311,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 164,
+      itemId: 164,
       musicType: 'source',
       sourceType: 'mix',
       musicThumbnailHref:
@@ -4320,7 +4320,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Contact High Mixtape',
       musicArtist: ['Poolside', 'Misc.'],
       recordingContext: ['studio'],
-      musicStyles: ['groove', 'alternative'],
+      musicTags: ['groove', 'alternative'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/fY1IXtyyRp0',
@@ -4332,7 +4332,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 165,
+      itemId: 165,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4342,7 +4342,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Hesitation Marks',
       musicArtist: ['Nine Inch Nails'],
       recordingContext: ['studio'],
-      musicStyles: ['industrial', 'electronic'],
+      musicTags: ['industrial', 'electronic'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4359,7 +4359,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 166,
+      itemId: 166,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4368,7 +4368,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Rule The World',
       musicArtist: ['Michael Kiwanuka'],
       recordingContext: ['live', 'studio'],
-      musicStyles: ['soul', 'rock'],
+      musicTags: ['soul', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/VTPCbmXX4Qw',
@@ -4380,7 +4380,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 167,
+      itemId: 167,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4389,7 +4389,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Grateful',
       musicArtist: ['Black Thought', 'El Michels Affair'],
       recordingContext: ['live'],
-      musicStyles: ['rap', 'hip-hop'],
+      musicTags: ['rap', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/IgLf2TyuYXc',
@@ -4397,7 +4397,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 168,
+      itemId: 168,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4407,7 +4407,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Grand Champ',
       musicArtist: ['DMX'],
       recordingContext: ['studio'],
-      musicStyles: ['rap', 'hip-hop'],
+      musicTags: ['rap', 'hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4423,7 +4423,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 169,
+      itemId: 169,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4432,7 +4432,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Computer Love',
       musicArtist: ['Kraftwerk'],
       recordingContext: ['studio'],
-      musicStyles: ['electronic', 'pop'],
+      musicTags: ['electronic', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/CFmmzFcM-MA',
@@ -4448,7 +4448,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 170,
+      itemId: 170,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4458,7 +4458,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Head Hunters',
       musicArtist: ['Herbie Hancock'],
       recordingContext: ['studio'],
-      musicStyles: ['funk'],
+      musicTags: ['funk'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4474,7 +4474,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 171,
+      itemId: 171,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4483,7 +4483,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Soul Bossa Nova',
       musicArtist: ['Quincy Jones'],
       recordingContext: ['studio'],
-      musicStyles: ['orchestral', 'jazz'],
+      musicTags: ['orchestral', 'jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/T5ALPzS0QfQ',
@@ -4499,7 +4499,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 172,
+      itemId: 172,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4509,7 +4509,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Your Queen Is A Reptile',
       musicArtist: ['Sons of Kemet'],
       recordingContext: ['studio'],
-      musicStyles: ['primal', 'jazz'],
+      musicTags: ['primal', 'jazz'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4526,7 +4526,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 173,
+      itemId: 173,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4536,7 +4536,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'The Silent Partner',
       musicArtist: ['Havoc', 'The Alchemist'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4553,7 +4553,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 174,
+      itemId: 174,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4563,7 +4563,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Albert Einstein',
       musicArtist: ['Prodigy', 'The Alchemist'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4580,7 +4580,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 175,
+      itemId: 175,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4590,7 +4590,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: "Rapper's Best Friend 4",
       musicArtist: ['The Alchemist'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop'],
+      musicTags: ['hip-hop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4607,7 +4607,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 176,
+      itemId: 176,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4617,7 +4617,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Yes Lawd!',
       musicArtist: ['NxWorries', 'Knxwledge', 'Anderson .Paak'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'soul'],
+      musicTags: ['hip-hop', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4633,7 +4633,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 177,
+      itemId: 177,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4643,7 +4643,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'KRS-One',
       musicArtist: ['KRS-One'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4659,7 +4659,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 178,
+      itemId: 178,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4669,7 +4669,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Extinction Level Event: The Final World Front',
       musicArtist: ['Busta Rhymes'],
       recordingContext: ['studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4686,7 +4686,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 179,
+      itemId: 179,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4695,7 +4695,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Teardrop',
       musicArtist: ['AURORA', 'Massive Attack'],
       recordingContext: ['live', 'studio'],
-      musicStyles: ['downtempo', 'electronic', 'pop'],
+      musicTags: ['downtempo', 'electronic', 'pop'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/GPTY6l_PX5k',
@@ -4703,7 +4703,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 180,
+      itemId: 180,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4712,7 +4712,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'UMI Says',
       musicArtist: ['Joey Bada$$', 'Mos Def'],
       recordingContext: ['live', 'studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/nP6EoNotPZk',
@@ -4720,7 +4720,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 181,
+      itemId: 181,
       musicType: 'source',
       sourceType: 'collection',
       collectionType: 'album',
@@ -4730,7 +4730,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'When The Pawn...',
       musicArtist: ['Fiona Apple'],
       recordingContext: ['studio'],
-      musicStyles: ['soul', 'rock'],
+      musicTags: ['soul', 'rock'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref:
@@ -4747,7 +4747,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 182,
+      itemId: 182,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4756,7 +4756,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: 'Up',
       musicArtist: ['EarthGang'],
       recordingContext: ['live', 'studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/zgNVvtOp8mU',
@@ -4772,7 +4772,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       ],
     },
     {
-      musicId: 183,
+      itemId: 183,
       musicType: 'source',
       sourceType: 'track',
       musicThumbnailHref:
@@ -4781,7 +4781,7 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
       musicTitle: '91 Flex',
       musicArtist: ['Serious Klein'],
       recordingContext: ['live', 'studio'],
-      musicStyles: ['hip-hop', 'rap'],
+      musicTags: ['hip-hop', 'rap'],
       externalLinks: [
         getYoutubeLinkData({
           youtubeHref: 'https://youtu.be/nV883rnogtM',

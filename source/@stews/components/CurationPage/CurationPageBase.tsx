@@ -17,12 +17,15 @@ import {
   ViewSortOptionConfig,
 } from './hooks'
 import cssModule from './CurationPageBase.module.scss'
+import { CurationItemBase } from '@stews/data/CurationItem'
 
-interface CurationPageBaseProps<CurationItem extends object>
+interface CurationPageBaseProps<CurationItem extends CurationItemBase>
   extends CurationPageBaseDataProps<CurationItem>,
     CurationPageBaseConfigProps {}
 
-export interface CurationPageBaseDataProps<CurationItem extends object> {
+export interface CurationPageBaseDataProps<
+  CurationItem extends CurationItemBase
+> {
   curationType: string
   curatorInfo: CuratorInfo
   curationViews: ArrayOfAtLeastOne<AdjustedCurationView>
@@ -32,7 +35,7 @@ export interface CurationPageBaseDataProps<CurationItem extends object> {
   fetchCurationItemsMapState: AsyncDataState<Record<string, CurationItem>>
 }
 
-export interface ItemDisplayProps<CurationItem extends object> {
+export interface ItemDisplayProps<CurationItem extends CurationItemBase> {
   someItem: CurationItem
 }
 
@@ -42,11 +45,14 @@ export interface CurationPageBaseConfigProps {
 }
 
 type ViewSelectProps = ViewSelectBaseDataProps &
-  Pick<CurationPageBaseDataProps<object>, 'curationType'>
+  Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'>
 
-type ProfileBopperProps = Pick<CurationPageBaseProps<object>, 'curatorInfo'>
+type ProfileBopperProps = Pick<
+  CurationPageBaseProps<CurationItemBase>,
+  'curatorInfo'
+>
 
-export function CurationPageBase<CurationItem extends object>(
+export function CurationPageBase<CurationItem extends CurationItemBase>(
   props: CurationPageBaseProps<CurationItem>
 ) {
   const {

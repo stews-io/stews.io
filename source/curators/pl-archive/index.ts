@@ -1,15 +1,16 @@
 import { CuratorConfig } from '@stews/data/CuratorConfig'
 import {
   getAppleLinkData,
+  getSoundcloudLinkData,
   getSpotifyLinkData,
   getYoutubeLinkData,
 } from '@stews/domains/music/helpers'
 
 export const curatorConfig: CuratorConfig = {
   curatorInfo: {
-    curatorName: 'pretttylights',
+    curatorName: 'pl-archive',
     curatorLocation: 'worldwide official',
-    curatorStatus: 'dreams dreams dreams...',
+    curatorStatus: 'the time has come for bad things to end...',
     curatorLinks: [
       {
         linkType: 'website',
@@ -46,7 +47,7 @@ export const curatorConfig: CuratorConfig = {
     ],
     curationItems: [
       {
-        musicId: 0,
+        itemId: 0,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'album',
@@ -56,7 +57,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Taking Up Your Precious Time',
         musicArtist: ['Pretty Lights', 'Derek Vincent Smith', 'Michal Menert'],
         recordingContext: ['studio'],
-        musicStyles: ['downtempo', 'electronic', 'hip-hop'],
+        musicTags: ['downtempo', 'electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -73,7 +74,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 1,
+        itemId: 1,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'album',
@@ -83,7 +84,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Filling Up the City Skies [Disc 1]',
         musicArtist: ['Pretty Lights', 'Derek Vincent Smith'],
         recordingContext: ['studio'],
-        musicStyles: ['downtempo', 'electronic', 'hip-hop'],
+        musicTags: ['downtempo', 'electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -100,7 +101,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 2,
+        itemId: 2,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'album',
@@ -110,7 +111,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Filling Up the City Skies [Disc 2]',
         musicArtist: ['Pretty Lights', 'Derek Vincent Smith'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -127,7 +128,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 3,
+        itemId: 3,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'album',
@@ -137,7 +138,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Passing by Behind Your Eyes',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -154,7 +155,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 4,
+        itemId: 4,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'ep',
@@ -164,7 +165,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Making Up a Changing Mind',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -181,7 +182,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 5,
+        itemId: 5,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'ep',
@@ -191,7 +192,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Spilling over Every Side',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -208,7 +209,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 6,
+        itemId: 6,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'ep',
@@ -218,7 +219,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Glowing in the Darkest Night',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -235,7 +236,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 7,
+        itemId: 7,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'album',
@@ -245,7 +246,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'A Color Map of the Sun',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -262,7 +263,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 8,
+        itemId: 8,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'ep',
@@ -272,7 +273,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'The Hidden Shades',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -289,7 +290,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 9,
+        itemId: 9,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'single',
@@ -299,7 +300,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'I Know the Truth',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['dubstep', 'soul'],
+        musicTags: ['heavy', 'soul'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/8wCgxkQj_Qo',
@@ -315,7 +316,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 10,
+        itemId: 10,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'single',
@@ -325,7 +326,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'You Get High',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop', 'soul', 'funk'],
+        musicTags: ['electronic', 'hip-hop', 'soul', 'funk'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/uv3Sj3Qdhx8',
@@ -341,7 +342,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 11,
+        itemId: 11,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'single',
@@ -351,7 +352,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'We Must Go On',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['downtempo', 'hip-hop', 'soul'],
+        musicTags: ['downtempo', 'hip-hop', 'soul'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/9Z5NMHKY5PE',
@@ -367,7 +368,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 12,
+        itemId: 12,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'single',
@@ -377,7 +378,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Only Yesterday',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['hip-hop', 'soul'],
+        musicTags: ['hip-hop', 'soul'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/wMt2shWPaOw',
@@ -393,7 +394,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 13,
+        itemId: 13,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'single',
@@ -403,7 +404,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Rainbows & Waterfalls',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['hip-hop', 'dubstep', 'soul'],
+        musicTags: ['hip-hop', 'dubstep', 'soul'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/7NSVB-4q3kk',
@@ -419,7 +420,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 14,
+        itemId: 14,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'compilation',
@@ -429,7 +430,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Unreleased 2010 Remixes',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -443,7 +444,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 15,
+        itemId: 15,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -452,19 +453,18 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Radiohead vs Nirvana vs NIN',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/vou6F9Q2u6Q',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref: 'https://soundcloud.com/drugoy/pretty-lights-vs',
-          },
+          getSoundcloudLinkData({
+            soundcloudHref: 'https://soundcloud.com/drugoy/pretty-lights-vs',
+          }),
         ],
       },
       {
-        musicId: 16,
+        itemId: 16,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -473,20 +473,19 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Pretty Lights vs Summertime',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['hip-hop'],
+        musicTags: ['hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/9-X08mLwFV0',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/djneez/pretty-lights-vs-summertime',
-          },
+          }),
         ],
       },
       {
-        musicId: 17,
+        itemId: 17,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -495,29 +494,28 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Pretty Lights vs Led Zeppelin',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/W-0u5bUrRdM',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/blueskyeer/pretty-lights-vs-led-zeppelin',
-          },
+          }),
         ],
       },
       {
-        musicId: 18,
+        itemId: 18,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
           'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/Frame-12-04-2023-12-03-43.jpeg',
         musicYear: 2011,
-        musicTitle: 'How We Do Remix',
+        musicTitle: 'How We Do [Remix]',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/q_TtoiQ3cwM',
@@ -525,7 +523,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 19,
+        itemId: 19,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -534,7 +532,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: "It's Tricky (remix)",
         musicArtist: ['Pretty Lights', 'Run-DMC'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/mGEJMmzKviY',
@@ -550,7 +548,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 20,
+        itemId: 20,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -559,20 +557,19 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Halloween Funtime REMIXMONSTRousMASHup',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/p7ZubVyNTwI',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/more-pl-rarities/halloween-funtime-remixmonstrousmashup',
-          },
+          }),
         ],
       },
       {
-        musicId: 21,
+        itemId: 21,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -581,19 +578,18 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'The Day Is Gone',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/YdtICIYXvg4',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref: 'https://soundcloud.com/superfueg/the-day-is-gone',
-          },
+          getSoundcloudLinkData({
+            soundcloudHref: 'https://soundcloud.com/superfueg/the-day-is-gone',
+          }),
         ],
       },
       {
-        musicId: 22,
+        itemId: 22,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -602,42 +598,40 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Give Your Love Away',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/M6ZNu-bLMFI',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/pretty-lights-family/pretty-lights-give-your-love',
-          },
+          }),
         ],
       },
       {
-        musicId: 23,
+        itemId: 23,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/Frame-12-04-2023-12-08-28.jpeg',
+          'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/Frame-12-04-2023-12-04-34.jpeg',
         musicYear: 2015,
         musicTitle: 'Dionysus Break',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/ezuIJtX9nMM',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/brett-shredmunds/dionysus-break-live-from-red-rocks',
-          },
+          }),
         ],
       },
       {
-        musicId: 24,
+        itemId: 24,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'compilation',
@@ -647,21 +641,20 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Live in Telluride',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
               'https://www.youtube.com/watch?v=couldU-H-C4&list=PLRI0bqhn-VebdI_moiZg4JOJ-UwoNTwH3&pp=8AUB',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/slidingcolors/sets/pretty-lights-live-in-telluride-2015',
-          },
+          }),
         ],
       },
       {
-        musicId: 25,
+        itemId: 25,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'compilation',
@@ -671,20 +664,20 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: '2016 Flips',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
               'https://www.youtube.com/watch?v=L6KYju6sNxc&list=PLRI0bqhn-Vebh0JS-KlZsloeAarOCEIdP&pp=iAQB8AUB',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref: 'https://soundcloud.com/plflips/sets/pretty-lights-flips',
-          },
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/plflips/sets/pretty-lights-flips',
+          }),
         ],
       },
       {
-        musicId: 26,
+        itemId: 26,
         musicType: 'source',
         sourceType: 'collection',
         collectionType: 'ep',
@@ -694,21 +687,20 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: '2009 NYE (Midnight At The Vic Theatre)',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
               'https://www.youtube.com/watch?v=IXXkOR9SDOc&list=PLP7qiRflB78Swkk1Li4_PzisZRBc8IGaj&pp=gAQBiAQB8AUB&pp=8AUB',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/babollinger/sets/pretty-lights-nye-2009',
-          },
+          }),
         ],
       },
       {
-        musicId: 27,
+        itemId: 27,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -717,7 +709,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Ethereal',
         musicArtist: ['Pretty Lights', 'Nosaj Thing'],
         recordingContext: ['studio'],
-        musicStyles: ['hypnotic', 'electronic'],
+        musicTags: ['hypnotic', 'electronic'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/cxa1Y71Lgyg',
@@ -733,7 +725,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 28,
+        itemId: 28,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref: 'https://f4.bcbits.com/img/a0960972328_16.jpg',
@@ -741,7 +733,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Beyond Right Now (remix)',
         musicArtist: ['Pretty Lights', 'STS9'],
         recordingContext: ['studio'],
-        musicStyles: ['hypnotic', 'electronic'],
+        musicTags: ['hypnotic', 'electronic'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/figC40YNABQ',
@@ -753,7 +745,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 29,
+        itemId: 29,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -762,20 +754,19 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Summer Love',
         musicArtist: ['Michal Menert', 'Pretty Lights'],
         recordingContext: ['studio'],
-        musicStyles: ['hip-hop', 'soul'],
+        musicTags: ['hip-hop', 'soul'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/DwGdV-f9_AM',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/troubledr/michal-menert-and-derek',
-          },
+          }),
         ],
       },
       {
-        musicId: 30,
+        itemId: 30,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -784,20 +775,19 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Country Roads (remix)',
         musicArtist: ['Pretty Lights', 'John Denver'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'hip-hop'],
+        musicTags: ['electronic', 'hip-hop'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/NAXz2z4giws',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref:
+          getSoundcloudLinkData({
+            soundcloudHref:
               'https://soundcloud.com/howo-music/pretty-lights-country-roads',
-          },
+          }),
         ],
       },
       {
-        musicId: 31,
+        itemId: 31,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -806,7 +796,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Solar Sailer (remix)',
         musicArtist: ['Pretty Lights', 'Daft Punk'],
         recordingContext: ['studio'],
-        musicStyles: ['hypnotic', 'electronic'],
+        musicTags: ['hypnotic', 'electronic'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/LXetZiLyiIw',
@@ -822,7 +812,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 32,
+        itemId: 32,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -831,7 +821,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'I Put A Spell on You (remix)',
         musicArtist: ['Pretty Lights', 'Nina Simone'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'soul'],
+        musicTags: ['electronic', 'soul'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/XYrXcBawnhE',
@@ -847,7 +837,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 33,
+        itemId: 33,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -856,7 +846,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Exodus (remix)',
         musicArtist: ['Pretty Lights', 'Bob Marley'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'reggae'],
+        musicTags: ['electronic', 'reggae'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/dQiH237y9dc',
@@ -872,7 +862,7 @@ export const curatorConfig: CuratorConfig = {
         ],
       },
       {
-        musicId: 34,
+        itemId: 34,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -881,7 +871,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'One Nation',
         musicArtist: ['Pretty Lights', 'Tom Morello'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'rock'],
+        musicTags: ['electronic', 'rock'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/LjdvfjKq40Y',
@@ -896,29 +886,8 @@ export const curatorConfig: CuratorConfig = {
           }),
         ],
       },
-      // {
-      //   musicId: 35,
-      //   musicType: 'source',
-      //   sourceType: 'mix',
-      //   musicThumbnailHref: 'https://i.postimg.cc/K8RBx34Y/maxresdefault-3.jpg',
-      //   musicYear: 2012,
-      //   musicTitle: 'Essential Mix',
-      //   musicArtist: ['Pretty Lights'],
-      //   recordingContext: ['studio'],
-      //   musicStyles: ['electronic', 'hip-hop'],
-      //   externalLinks: [
-      //     getYoutubeLinkData({
-      //       youtubeHref: 'https://youtu.be/wyv4-BDNCo4',
-      //     }),
-      //     {
-      //       linkLabel: 'soundcloud',
-      //       linkHref:
-      //         'https://soundcloud.com/whoisvin/pretty-lights-essential-mix',
-      //     },
-      //   ],
-      // },
       {
-        musicId: 36,
+        itemId: 35,
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
@@ -927,15 +896,323 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Wayfaring Stranger',
         musicArtist: ['Pretty Lights', 'LeAnn Rimes', 'Dr Ralph Stanley'],
         recordingContext: ['studio'],
-        musicStyles: ['electronic', 'country'],
+        musicTags: ['electronic', 'country'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/XqMGKf4qSSw',
           }),
-          {
-            linkLabel: 'soundcloud',
-            linkHref: 'https://soundcloud.com/samorlik/pretty-lights-wayfaring',
-          },
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/samorlik/pretty-lights-wayfaring',
+          }),
+        ],
+      },
+      {
+        itemId: 36,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/Frame-12-04-2023-12-05-23.jpeg',
+        musicYear: 2008,
+        musicTitle: 'Speaking of Happiness [blacklisted]',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicTags: ['downtempo', 'electronic', 'hip-hop'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/4sKOVrjsr0Q',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/di-o/5-8-2012-pretty-lights',
+          }),
+        ],
+      },
+      {
+        itemId: 37,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499692459-mizk1m-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Gorge - 08/04/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/GYpwTZLfO7E',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-04-live-the-gorge-amphitheatre',
+          }),
+        ],
+      },
+      {
+        itemId: 38,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499692459-mizk1m-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Gorge - 08/05/17',
+        musicArtist: ['Pretty Lights', 'Michal Menert', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/jyqm9r4YYFA',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-05-live-the-gorge-amphitheatre',
+          }),
+        ],
+      },
+      {
+        itemId: 39,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499710954-nd1eio-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Red Rocks - 08/11/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/lmf1qqJFjx8',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-11-live-red-rocks',
+          }),
+        ],
+      },
+      {
+        itemId: 40,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499710954-nd1eio-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Red Rocks - 08/12/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/qvDeZXmwENU',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-12-live-red-rocks',
+          }),
+        ],
+      },
+      {
+        itemId: 41,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499754661-qnlqo8-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Chicago - 08/18/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/ilhtEsP3K7w',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-18-live-chicago',
+          }),
+        ],
+      },
+      {
+        itemId: 42,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499754661-qnlqo8-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Chicago - 08/19/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/RYChdFUZrp8',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-19-live-chicago',
+          }),
+        ],
+      },
+      {
+        itemId: 43,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499694196-56cm6r-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Gilford - 09/15/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/AW0Ms7ggE2o',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-09-05-live-new-hampshire',
+          }),
+        ],
+      },
+      {
+        itemId: 44,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499694196-56cm6r-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Gilford - 09/16/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/mCpEl2vjRNY',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-09-06-live-new-hampshire',
+          }),
+        ],
+      },
+      {
+        itemId: 45,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/Whitewater.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Whitewater - 09/29/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/HcTDeqtzCo',
+          }),
+        ],
+      },
+      {
+        itemId: 46,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/Whitewater.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Whitewater - 09/30/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/PUpnvFB-CkQ',
+          }),
+        ],
+      },
+      {
+        itemId: 47,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/PrettyLights_DetroitNYE_TWYoast.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Detroit - 12/28/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/1z3uzH4rs9U',
+          }),
+        ],
+      },
+      {
+        itemId: 48,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/PrettyLights_DetroitNYE_TWYoast.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Detroit - 12/29/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/mvfJlCdkEeY',
+          }),
+        ],
+      },
+      {
+        itemId: 49,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/PrettyLights_PhillyNYE_TWYoast_UPDATED.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Philly - 12/31/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/WXLNryvr03c',
+          }),
+        ],
+      },
+      {
+        itemId: 50,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/redrocks18.jpeg',
+        musicYear: 2018,
+        musicTitle: 'Red Rocks - 08/10/18',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/8kB_mU2OUvU',
+          }),
+        ],
+      },
+      {
+        itemId: 51,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/redrocks18.jpeg',
+        musicYear: 2018,
+        musicTitle: 'Red Rocks - 08/11/18',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/8VY6yAFD5tU',
+          }),
         ],
       },
     ],

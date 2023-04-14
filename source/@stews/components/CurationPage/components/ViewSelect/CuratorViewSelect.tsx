@@ -13,10 +13,11 @@ import {
 import { AdjustedCurationView } from '@stews/data/CurationView'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './CuratorViewSelect.module.scss'
+import { CurationItemBase } from '@stews/data/CurationItem'
 
 export interface CuratorViewSelectProps
   extends ViewSelectBaseDataProps,
-    Pick<CurationPageBaseDataProps<object>, 'curationType'> {}
+    Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'> {}
 
 export function CuratorViewSelect(props: CuratorViewSelectProps) {
   const { curationType, ...viewSelectBaseProps } = props

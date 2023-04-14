@@ -1,3 +1,4 @@
+import { CurationItemBase } from '@stews/data/CurationItem'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 
 export type MusicItem = ClippedMusicItem | WholeMusicItem
@@ -39,14 +40,13 @@ interface SourceMusicItemBase<SourceType extends string>
   sourceType: SourceType
 }
 
-interface MusicItemBase<MusicItemType extends string> {
-  musicId: number
+interface MusicItemBase<MusicItemType extends string> extends CurationItemBase {
   musicType: MusicItemType
   musicThumbnailHref: string
   musicTitle: string
   musicYear: number
   musicArtist: ArrayOfAtLeastOne<string>
-  musicStyles: ArrayOfAtLeastOne<string>
+  musicTags: ArrayOfAtLeastOne<string>
   recordingContext: ArrayOfAtLeastOne<'studio' | 'live' | 'concert'>
   externalLinks: ArrayOfAtLeastOne<{
     linkLabel: string

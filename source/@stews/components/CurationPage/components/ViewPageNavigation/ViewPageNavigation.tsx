@@ -1,4 +1,5 @@
 import { Button } from '@stews/components/Button'
+import { CurationItemBase } from '@stews/data/CurationItem'
 import { getCssClass } from '@stews/helpers/getCssClass'
 import {
   CoreAriaOrnamentsData,
@@ -9,10 +10,13 @@ import cssModule from './ViewPageNavigation.module.scss'
 
 export interface ViewPageNavigationProps
   extends Pick<
-      UseViewPageApi<object>,
+      UseViewPageApi<CurationItemBase>,
       'setPageIndexToPrevious' | 'setPageIndexToNext'
     >,
-    Pick<UseViewPageApi<object>['curationPageState'], 'viewPageIndex'> {
+    Pick<
+      UseViewPageApi<CurationItemBase>['curationPageState'],
+      'viewPageIndex'
+    > {
   viewPageCount: number
 }
 

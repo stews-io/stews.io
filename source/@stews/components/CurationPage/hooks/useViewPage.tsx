@@ -1,3 +1,4 @@
+import { CurationItemBase } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
@@ -6,7 +7,7 @@ import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNav
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { CurationPageState } from './useCurationPageState'
 
-export interface UseViewPageApi<CurationItem extends object>
+export interface UseViewPageApi<CurationItem extends CurationItemBase>
   extends Pick<
     CurationPageBaseDataProps<CurationItem>,
     'ItemDisplay' | 'getItemSearchSpace' | 'fetchCurationItemsMapState'
@@ -19,7 +20,7 @@ export interface UseViewPageApi<CurationItem extends object>
 
 type PageIndexSetter = (currentAdjustedPageIndex: number) => void
 
-export function useViewPage<CurationItem extends object>(
+export function useViewPage<CurationItem extends CurationItemBase>(
   api: UseViewPageApi<CurationItem>
 ) {
   const {
@@ -65,11 +66,11 @@ export function useViewPage<CurationItem extends object>(
       )
       return {
         viewPageItemElements: (
-          <Fragment key={Math.random()}>
+          <Fragment>
             <div ref={pageTopElementRef} />
             {viewPageItems.length > 0 ? (
-              viewPageItems.map((someItem, pageItemIndex) => (
-                <ItemDisplay key={pageItemIndex} someItem={someItem} />
+              viewPageItems.map((someItem) => (
+                <ItemDisplay key={someItem.itemId} someItem={someItem} />
               ))
             ) : (
               <ViewPageMessageItem message={'no items match'} />
