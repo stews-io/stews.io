@@ -8,7 +8,7 @@ import {
 
 export const curatorConfig: CuratorConfig = {
   curatorInfo: {
-    curatorName: 'pretttylights',
+    curatorName: 'pl-archive',
     curatorLocation: 'worldwide official',
     curatorStatus: 'dreams dreams dreams...',
     curatorLinks: [
@@ -925,6 +925,48 @@ export const curatorConfig: CuratorConfig = {
           getSoundcloudLinkData({
             soundcloudHref:
               'https://soundcloud.com/di-o/5-8-2012-pretty-lights',
+          }),
+        ],
+      },
+      {
+        itemId: 37,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/GorgePoster.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Gorge Amphitheatre - 08/04/17',
+        musicArtist: ['Pretty Lights', 'Michal Menert', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicStyles: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/jyqm9r4YYFA',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-04-live-the-gorge-amphitheatre',
+          }),
+        ],
+      },
+      {
+        itemId: 38,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/GorgePoster.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Gorge Amphitheatre - 08/05/17',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicStyles: ['electronic', 'hip-hop', 'soul'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/jyqm9r4YYFA',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2017-08-05-live-the-gorge-amphitheatre',
           }),
         ],
       },
