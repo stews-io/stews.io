@@ -46,7 +46,7 @@ interface MusicItemBase<MusicItemType extends string> extends CurationItemBase {
   musicTitle: string
   musicYear: number
   musicArtist: ArrayOfAtLeastOne<string>
-  musicStyles: ArrayOfAtLeastOne<string>
+  musicTags: ArrayOfAtLeastOne<string>
   recordingContext: ArrayOfAtLeastOne<'studio' | 'live' | 'concert'>
   externalLinks: ArrayOfAtLeastOne<{
     linkLabel: string

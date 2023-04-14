@@ -54,7 +54,7 @@ export function MusicItemDisplay(props: MusicItemProps) {
         />
         <MusicItemLabelList
           accessibilityLabel={'music styles'}
-          musicLabels={someItem.musicStyles}
+          musicLabels={someItem.musicTags}
         />
       </div>
     </div>

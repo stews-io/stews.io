@@ -73,7 +73,7 @@ function CurationRoutePage(props: CurationRoutePageProps) {
       getItemSearchSpace={(someMusicItem) =>
         `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
           ','
-        )},${someMusicItem.musicStyles.join(',')},${
+        )},${someMusicItem.musicTags.join(',')},${
           someMusicItem.musicYear
         },${`${someMusicItem.recordingContext.join('/')} ${
           someMusicItem.sourceType === 'collection'
