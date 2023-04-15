@@ -1215,6 +1215,136 @@ export const curatorConfig: CuratorConfig = {
           }),
         ],
       },
+      {
+        itemId: 52,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'ep',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000186426272-9dq891-t500x500.jpg',
+        musicYear: 2008,
+        musicTitle: 'Electro City',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicTags: ['unofficial'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/pretty-lights-rarities/sets/electro-city-ep',
+          }),
+        ],
+      },
+      {
+        itemId: 53,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/recreation2008.jpeg',
+        musicYear: 2008,
+        musicTitle: 'Re:Creation Festival',
+        musicArtist: ['Pretty Lights', 'Corey Eberhard'],
+        recordingContext: ['concert'],
+        musicTags: ['og'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/J7WyWXq4e90',
+          }),
+        ],
+      },
+      {
+        itemId: 54,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/mishawaka.jpeg',
+        musicYear: 2008,
+        musicTitle: 'Mishawaka - 07/06/2008',
+        musicArtist: ['Pretty Lights', 'Corey Eberhard'],
+        recordingContext: ['concert'],
+        musicTags: ['og'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/UmabwUVC2KE',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2008-07-06-live-mishawaka',
+          }),
+        ],
+      },
+      {
+        itemId: 55,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/og_c.jpeg',
+        musicYear: 2007,
+        musicTitle: 'Re:Creation - 09/14/2007',
+        musicArtist: ['Pretty Lights', 'Corey Eberhard'],
+        recordingContext: ['concert'],
+        musicTags: ['og'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2007-09-14-live-re_creation',
+          }),
+        ],
+      },
+      {
+        itemId: 56,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/og_a.jpeg',
+        musicYear: 2008,
+        musicTitle: 'STS9 After Party - 01/25/2008',
+        musicArtist: ['Pretty Lights', 'Corey Eberhard'],
+        recordingContext: ['concert'],
+        musicTags: ['og'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/4tO79CVrwUo',
+          }),
+        ],
+      },
+      {
+        itemId: 57,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/og_b.jpeg',
+        musicYear: 2009,
+        musicTitle: 'GSP Release Party - 02/05/2009 ???',
+        musicArtist: ['Pretty Lights', 'Corey Eberhard'],
+        recordingContext: ['concert'],
+        musicTags: ['og'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/Db0npvXDt0Q',
+          }),
+        ],
+      },
+      {
+        itemId: 58,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/og_a.jpeg',
+        musicYear: 2008,
+        musicTitle: 'Crystallization - 09/13/2008',
+        musicArtist: ['Pretty Lights', 'Corey Eberhard'],
+        recordingContext: ['concert'],
+        musicTags: ['og'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/pqd1IJ9XZ7I',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2008-09-13-live-crystallization',
+          }),
+        ],
+      },
     ],
   },
 }
