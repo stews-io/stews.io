@@ -1413,6 +1413,57 @@ export const curatorConfig: CuratorConfig = {
           }),
         ],
       },
+      {
+        itemId: 63,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/truck.jpeg',
+        musicYear: 2016,
+        musicTitle: 'campground fuck around',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live'],
+        musicTags: ['modular synth'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/cv4jbQKks_s',
+          }),
+        ],
+      },
+      {
+        itemId: 64,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/transmission.jpeg',
+        musicYear: 2016,
+        musicTitle: 'analog transmission',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['modular synth'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/r3mAAfsgJHE',
+          }),
+        ],
+      },
+      {
+        itemId: 65,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/moogfactory.jpeg',
+        musicYear: 2010,
+        musicTitle: "moog factory (can't stop me now remix)",
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['monome'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/hcPGbJt3uVA',
+          }),
+        ],
+      },
     ],
   },
 }
