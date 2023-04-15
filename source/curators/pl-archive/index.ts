@@ -45,6 +45,11 @@ export const curatorConfig: CuratorConfig = {
         viewFilter: 'recordingContext:concert AND sourceType:mix',
       },
       {
+        viewId: 'YVFB',
+        viewLabel: 'flips',
+        viewFilter: 'musicTags:flips',
+      },
+      {
         viewId: '9TSA',
         viewLabel: 'oh gee',
         viewFilter: 'musicTags:o.g.',
@@ -669,7 +674,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Flips :: 2016',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicTags: ['live band'],
+        musicTags: ['live band', 'flips'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref:
@@ -735,7 +740,7 @@ export const curatorConfig: CuratorConfig = {
         sourceType: 'track',
         musicThumbnailHref: 'https://f4.bcbits.com/img/a0960972328_16.jpg',
         musicYear: 2009,
-        musicTitle: 'Beyond Right Now (remix)',
+        musicTitle: 'Beyond Right Now',
         musicArtist: ['Pretty Lights', 'STS9'],
         recordingContext: ['studio'],
         musicTags: ['o.g.', 'remix'],
@@ -1554,7 +1559,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Flips :: Okeechobee',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicTags: ['live band'],
+        musicTags: ['live band', 'flips'],
         externalLinks: [
           getSoundcloudLinkData({
             soundcloudHref:
@@ -1573,7 +1578,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Flips :: Euphoria',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicTags: ['live band'],
+        musicTags: ['live band', 'flips'],
         externalLinks: [
           getSoundcloudLinkData({
             soundcloudHref:
@@ -1592,7 +1597,7 @@ export const curatorConfig: CuratorConfig = {
         musicTitle: 'Flips :: Telluride',
         musicArtist: ['Pretty Lights'],
         recordingContext: ['concert'],
-        musicTags: ['live band'],
+        musicTags: ['live band', 'flips'],
         externalLinks: [
           getSoundcloudLinkData({
             soundcloudHref:
@@ -1607,7 +1612,7 @@ export const curatorConfig: CuratorConfig = {
         musicThumbnailHref:
           'https://i1.sndcdn.com/artworks-000222468808-zacj50-t500x500.jpg',
         musicYear: 2015,
-        musicTitle: 'Savages (remix)',
+        musicTitle: 'Savages',
         musicArtist: ['Pretty Lights', 'Five Knives'],
         recordingContext: ['studio'],
         musicTags: ['commission', 'remix'],
