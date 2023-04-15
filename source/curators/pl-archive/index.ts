@@ -1314,7 +1314,7 @@ export const curatorConfig: CuratorConfig = {
         musicThumbnailHref:
           'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/og_b.jpeg',
         musicYear: 2009,
-        musicTitle: 'GSP Release Party - 02/05/2009 ???',
+        musicTitle: 'GSP CD Release Party - 02/05/2009 ???',
         musicArtist: ['Pretty Lights', 'Corey Eberhard'],
         recordingContext: ['concert'],
         musicTags: ['og'],
@@ -1342,6 +1342,74 @@ export const curatorConfig: CuratorConfig = {
           getSoundcloudLinkData({
             soundcloudHref:
               'https://soundcloud.com/prettylightslive/sets/2008-09-13-live-crystallization',
+          }),
+        ],
+      },
+      {
+        itemId: 59,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/monome_i.jpeg',
+        musicYear: 2007,
+        musicTitle: 'monome i',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['og', 'monome'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/hXHsXzaoFkI',
+          }),
+        ],
+      },
+      {
+        itemId: 60,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/monome_ii.jpeg',
+        musicYear: 2007,
+        musicTitle: 'monome ii',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['og', 'monome'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/qPqTdOERX3c',
+          }),
+        ],
+      },
+      {
+        itemId: 61,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/monome_iii.jpeg',
+        musicYear: 2008,
+        musicTitle: 'monome iii (finally moving)',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['og', 'monome'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/hsYcLnGmzVE',
+          }),
+        ],
+      },
+      {
+        itemId: 62,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/monome_iv.jpeg',
+        musicYear: 2008,
+        musicTitle: 'monome iv',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['og', 'monome'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/dR7qEd-jll0',
           }),
         ],
       },
