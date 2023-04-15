@@ -41,12 +41,12 @@ export const curatorConfig: CuratorConfig = {
       },
       {
         viewId: 'YVFB',
-        viewLabel: 'concerts',
-        viewFilter: 'recordingContext:concert',
+        viewLabel: 'shows',
+        viewFilter: 'recordingContext:concert AND sourceType:mix',
       },
       {
         viewId: '9TSA',
-        viewLabel: 'o.g.',
+        viewLabel: 'oh gee',
         viewFilter: 'musicTags:o.g.',
       },
     ],
@@ -1624,7 +1624,8 @@ export const curatorConfig: CuratorConfig = {
       {
         itemId: 74,
         musicType: 'source',
-        sourceType: 'track',
+        sourceType: 'collection',
+        collectionType: 'album',
         musicThumbnailHref:
           'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/prefaces.jpeg',
         musicYear: 2015,
@@ -1657,6 +1658,99 @@ export const curatorConfig: CuratorConfig = {
           getSoundcloudLinkData({
             soundcloudHref:
               'https://soundcloud.com/michalmenert/hindsight-w-derek-vincent',
+          }),
+        ],
+      },
+      {
+        itemId: 76,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499686756-yo9ra8-t500x500.jpg',
+        musicYear: 2018,
+        musicTitle: 'The Hive - 09/02/16',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/9TF8ZDXk',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/nick-schacherer-1/pretty-lights-live-the-hive-1',
+          }),
+        ],
+      },
+      {
+        itemId: 77,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/bumbershoot.jpeg',
+        musicYear: 2018,
+        musicTitle: 'Bumbershoot - 09/03/16',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/gvyS76n10os',
+          }),
+        ],
+      },
+      {
+        itemId: 78,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/illumination.jpeg',
+        musicYear: 2013,
+        musicTitle: 'San Francisco - 11/30/13',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['analog future band'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/0ySGpCfm-rA',
+          }),
+        ],
+      },
+      {
+        itemId: 79,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000497682195-cki1wg-t500x500.jpg',
+        musicYear: 2016,
+        musicTitle: 'Nashville - 10/07/16',
+        musicArtist: ['Pretty Lights', 'Lazer Shark'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/kUjRaNTM_EU',
+          }),
+        ],
+      },
+      {
+        itemId: 80,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000499666107-vl28is-t500x500.jpg',
+        musicYear: 2014,
+        musicTitle: 'Madison - 06/06/09',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicTags: ['o.g.'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/4YrsSgHtG3s',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2009-06-06-live-madison-wi',
           }),
         ],
       },
