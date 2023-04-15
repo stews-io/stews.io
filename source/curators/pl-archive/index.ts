@@ -437,7 +437,7 @@ export const curatorConfig: CuratorConfig = {
               'https://www.youtube.com/watch?v=kxS7VgnPeGc&list=PLP7qiRflB78QaFGwy1h0QWIQklcbO5yTX&pp=8AUB',
           }),
           {
-            linkLabel: 'pretty lights',
+            linkLabel: 'plm store',
             linkHref:
               'https://store.prettylightsmusic.com/products/2010-remixes-download',
           },
@@ -1461,6 +1461,197 @@ export const curatorConfig: CuratorConfig = {
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/hcPGbJt3uVA',
+          }),
+        ],
+      },
+      {
+        itemId: 66,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000235625449-v12i4e-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'USB 2.0',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicTags: ['unreleased'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/pretty-lights-rarities/sets/pretty-lights-usb-20',
+          }),
+        ],
+      },
+      {
+        itemId: 67,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/yearbook.jpeg',
+        musicYear: 2017,
+        musicTitle: 'Jam Cruise USB',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicTags: ['unreleased'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/more-pl-rarities/sets/jam-cruise-flash-drive',
+          }),
+        ],
+      },
+      {
+        itemId: 68,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000160309121-801r0v-t500x500.jpg',
+        musicYear: 2014,
+        musicTitle: 'Maida Vale (BBC)',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['analog future band'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/more-pl-rarities/sets/pretty-lights-bbc-radio-1',
+          }),
+        ],
+      },
+      {
+        itemId: 69,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/worldcafe.jpeg',
+        musicYear: 2013,
+        musicTitle: 'World Cafe (NPR)',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['live', 'studio'],
+        musicTags: ['analog future band'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://www.npr.org/sections/world-cafe/2013/12/20/255846882/pretty-lights-on-world-cafe',
+          }),
+        ],
+      },
+      {
+        itemId: 70,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000222468808-zacj50-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Flips :: Okeechobee',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/moreplflips/sets/pretty-lights-flips-okeechobee',
+          }),
+        ],
+      },
+      {
+        itemId: 71,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000222468808-zacj50-t500x500.jpg',
+        musicYear: 2017,
+        musicTitle: 'Flips :: Euphoria',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/moreplflips/sets/pretty-lights-flips-euphoria',
+          }),
+        ],
+      },
+      {
+        itemId: 72,
+        musicType: 'source',
+        sourceType: 'collection',
+        collectionType: 'compilation',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000222468808-zacj50-t500x500.jpg',
+        musicYear: 2016,
+        musicTitle: 'Flips :: Telluride',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/moreplflips/sets/pretty-lights-flips-telluride',
+          }),
+        ],
+      },
+      {
+        itemId: 73,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000222468808-zacj50-t500x500.jpg',
+        musicYear: 2015,
+        musicTitle: 'Savages (remix)',
+        musicArtist: ['Pretty Lights', 'Five Knives'],
+        recordingContext: ['studio'],
+        musicTags: ['remix'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/2QLExN6SNOI',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://i1.sndcdn.com/artworks-000091222683-cjvl6c-t500x500.jpg',
+          }),
+        ],
+      },
+      {
+        itemId: 74,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/prefaces.jpeg',
+        musicYear: 2015,
+        musicTitle: 'Prefaces',
+        musicArtist: ['Michal Menert', 'Derek Vincent Smith'],
+        recordingContext: ['studio'],
+        musicTags: ['og'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/gleZ_ykFcCw',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/old-school-pl-rarities-1/sets/prefaces',
+          }),
+        ],
+      },
+      {
+        itemId: 75,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000026298248-1g3fom-t500x500.jpg',
+        musicYear: 2003,
+        musicTitle: 'Hindsight',
+        musicArtist: ['Michal Menert', 'Derek Vincent Smith'],
+        recordingContext: ['studio'],
+        musicTags: ['og'],
+        externalLinks: [
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/michalmenert/hindsight-w-derek-vincent',
           }),
         ],
       },
