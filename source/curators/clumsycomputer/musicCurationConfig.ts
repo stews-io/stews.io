@@ -4774,17 +4774,81 @@ export const musicCurationConfig: MusicCuratorCurationConfig = {
     {
       itemId: 183,
       musicType: 'source',
-      sourceType: 'track',
+      sourceType: 'collection',
+      collectionType: 'album',
       musicThumbnailHref:
-        'https://images.genius.com/2129b932f5e2a35d861407d108d6600e.1000x1000x1.jpg',
-      musicYear: 2018,
-      musicTitle: '91 Flex',
-      musicArtist: ['Serious Klein'],
-      recordingContext: ['live', 'studio'],
-      musicTags: ['hip-hop', 'rap'],
+        'https://m.media-amazon.com/images/I/61A4jIdyo3L._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2005,
+      musicTitle: 'Welcom To Jamrock',
+      musicArtist: ['Damian Marley'],
+      recordingContext: ['studio'],
+      musicTags: ['reggae', 'rap', 'soul'],
       externalLinks: [
         getYoutubeLinkData({
-          youtubeHref: 'https://youtu.be/nV883rnogtM',
+          youtubeHref:
+            'https://www.youtube.com/watch?v=9Fgp93HIa6I&list=OLAK5uy_lkPJ4TlfxoHe3ICM5VDSXwYVEw8Fjof1Q&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4Y0PrDckfFKxKaVXsscDLB?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/welcome-to-jamrock/1440766268',
+        }),
+      ],
+    },
+    {
+      itemId: 184,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/519vHU5YGiL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2012,
+      musicTitle: 'Eternal Champ',
+      musicArtist: ['Sweet Valley'],
+      recordingContext: ['studio'],
+      musicTags: ['left-field', 'electronic', 'hip-hop'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=2dZUqEBL2qo&list=OLAK5uy_mKdb_NHNzhC3URl9l8q1gVOnV6BX3LvYg&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/4c7iuSPb81diFdaaxed9nV?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/eternal-champ/1513484002',
+        }),
+      ],
+    },
+    {
+      itemId: 185,
+      musicType: 'source',
+      sourceType: 'collection',
+      collectionType: 'album',
+      musicThumbnailHref:
+        'https://m.media-amazon.com/images/I/51e2lNiYTxL._UX500_FMwebp_QL85_.jpg',
+      musicYear: 2023,
+      musicTitle: 'Glorious Game',
+      musicArtist: ['El Michels Affair', 'Black Thought'],
+      recordingContext: ['studio'],
+      musicTags: ['hip-hop', 'soul', 'rap'],
+      externalLinks: [
+        getYoutubeLinkData({
+          youtubeHref:
+            'https://www.youtube.com/watch?v=6YX2QMCVZD8&list=OLAK5uy_mY5asfdnOqc208xtc3J7GMcPZQh6r1KmU&pp=8AUB',
+        }),
+        getSpotifyLinkData({
+          spotifyHref:
+            'https://open.spotify.com/album/0gsCTUrsjKnfF3TgYkgtEn?autoplay=true',
+        }),
+        getAppleLinkData({
+          appleHref:
+            'https://music.apple.com/us/album/glorious-game/1659479903',
         }),
       ],
     },

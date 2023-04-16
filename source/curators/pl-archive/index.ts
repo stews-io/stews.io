@@ -1759,6 +1759,95 @@ export const curatorConfig: CuratorConfig = {
           }),
         ],
       },
+      {
+        itemId: 81,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000496664679-p5a4b8-t500x500.jpg',
+        musicYear: 2014,
+        musicTitle: 'Ibiza - 05/22/14',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicTags: ['solo'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/WmnBf3Nn-I0',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2014-05-22-live-ibiza',
+          }),
+          {
+            linkLabel: 'mixcloud',
+            linkHref:
+              'https://www.mixcloud.com/EFMrage/pretty-lights-live-live-at-ims-2014-dalt-vila-ibiza-22052014/',
+          },
+        ],
+      },
+      {
+        itemId: 82,
+        musicType: 'source',
+        sourceType: 'mix',
+        musicThumbnailHref:
+          'https://i1.sndcdn.com/artworks-000497674404-dw6ad9-t500x500.jpg',
+        musicYear: 2016,
+        musicTitle: 'Chicago - 09/24/16',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['concert'],
+        musicTags: ['live band'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/C6ucFZoU1Pk',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/prettylightslive/sets/2016-09-24-live-chicago',
+          }),
+        ],
+      },
+      {
+        itemId: 83,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/Frame-12-04-2023-12-08-28.jpeg',
+        musicYear: 2008,
+        musicTitle: 'Regulators',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio', 'live'],
+        musicTags: ['unreleased', 'o.g.'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/hQo__Rx7Zx8',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/old-school-pl-rarities-1/regulators?in=old-school-pl-rarities-1/sets/defocused-on-the-bright-diamonds',
+          }),
+        ],
+      },
+      {
+        itemId: 84,
+        musicType: 'source',
+        sourceType: 'track',
+        musicThumbnailHref:
+          'https://raw.githubusercontent.com/untitledthumbs/ra_thumbs/main/Frame-12-04-2023-12-06-36.jpeg',
+        musicYear: 2008,
+        musicTitle: 'Bump N Hustle',
+        musicArtist: ['Pretty Lights'],
+        recordingContext: ['studio'],
+        musicTags: ['unreleased', 'o.g.'],
+        externalLinks: [
+          getYoutubeLinkData({
+            youtubeHref: 'https://youtu.be/xf1j1SWluiU',
+          }),
+          getSoundcloudLinkData({
+            soundcloudHref:
+              'https://soundcloud.com/old-school-pl-rarities-1/bump-n-hustle?in=old-school-pl-rarities-1/sets/defocused-on-the-bright-diamonds',
+          }),
+        ],
+      },
     ],
   },
 }
