@@ -1323,11 +1323,11 @@ export const curatorConfig: CuratorConfig = {
         sourceType: 'mix',
         musicThumbnailHref:
           'https://raw.githubusercontent.com/untitledthumbs/pl_thumbs/main/og_b.jpeg',
-        musicYear: 2009,
-        musicTitle: 'GSP CD Release Party - 02/05/2009',
+        musicYear: 2008,
+        musicTitle: 'GSP CD Release Party - 04/20/2008',
         musicArtist: ['Pretty Lights', 'Corey Eberhard'],
         recordingContext: ['concert'],
-        musicTags: ['o.g.', '???'],
+        musicTags: ['o.g.'],
         externalLinks: [
           getYoutubeLinkData({
             youtubeHref: 'https://youtu.be/Db0npvXDt0Q',
@@ -1610,7 +1610,7 @@ export const curatorConfig: CuratorConfig = {
         musicType: 'source',
         sourceType: 'track',
         musicThumbnailHref:
-          'https://i1.sndcdn.com/artworks-000222468808-zacj50-t500x500.jpg',
+          'https://i1.sndcdn.com/artworks-000091222683-cjvl6c-t500x500.jpg',
         musicYear: 2015,
         musicTitle: 'Savages',
         musicArtist: ['Pretty Lights', 'Five Knives'],
