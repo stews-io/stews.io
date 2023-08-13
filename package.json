@@ -4,11 +4,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node ./source/scripts/startDevelopment.ts",
-    "build": "ts-node ./source/scripts/buildCuratorApp.ts",
-    "serve": "sirv pretttylights_build --port 8080 --cors --single"
+    "developApp": "ts-node ./app/scripts/startDevelopment.ts",
+    "buildApp": "ts-node ./app/scripts/buildCuratorApp.ts",
+    "serveApp": "sirv pretttylights_build --port 8080 --cors --single",
+    "developWebsite": "NODE_OPTIONS=--openssl-legacy-provider preact watch --cwd ./website --src ./source"
   },
   "devDependencies": {
+    "@types/node": "^20.4.10",
     "cross-env": "^7.0.3",
     "preact-cli": "^3.0.0",
     "sass-loader": "10",

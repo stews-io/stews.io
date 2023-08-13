@@ -22,7 +22,7 @@ async function startDevelopment(api: StartDevelopmentApi) {
     curatorConfigPath,
     getBuildDirectoryName: () => 'build',
   })
-  const sourceAppDirectoryPath = Path.join(process.cwd(), `./source/app`)
+  const sourceAppDirectoryPath = Path.join(process.cwd(), `./app/app`)
   const targetAppDirectoryPath = Path.join(
     developmentBuildDirectoryPath,
     `./app`

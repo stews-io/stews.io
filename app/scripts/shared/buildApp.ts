@@ -21,7 +21,7 @@ export async function buildApp(api: BuildAppApi) {
   const curatorConfig: CuratorConfig = CuratorConfigSchema.parse(
     curatorConfigModule.curatorConfig
   )
-  const preactAppDirectoryPath = Path.join(process.cwd(), './source/app')
+  const preactAppDirectoryPath = Path.join(process.cwd(), './app/app')
   const preactBuildDirectoryPath = Path.join(
     process.cwd(),
     `./${getBuildDirectoryName({ curatorConfig })}`
