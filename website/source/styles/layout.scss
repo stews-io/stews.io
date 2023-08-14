@@ -28,8 +28,12 @@
   flex-direction: column;
 }
 
-.textEllipsis {
+.textContainer {
   display: block;
+}
+
+.textEllipsis {
+  @extend .textContainer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

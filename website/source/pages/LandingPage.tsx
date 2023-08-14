@@ -40,6 +40,35 @@ export function LandingPage() {
                 a collection of curations demonstrating the potential of a more
                 human-web
               </div>
+              <div className={cssModule.curationSectionContainer}>
+                <div className={cssModule.curationSectionTitle}>featured</div>
+                <div className={cssModule.curationList}>
+                  <div className={cssModule.curationItem}>
+                    <a
+                      className={cssModule.curationLink}
+                      href={'https://clumsycomputer.stews.io'}
+                      target={'_blank'}
+                    >
+                      clumsycomputer
+                    </a>
+                    <div className={cssModule.curationItemDescription}>
+                      a collection of awesome music and wonderful spots
+                    </div>
+                  </div>
+                  <div className={cssModule.curationItem}>
+                    <a
+                      className={cssModule.curationLink}
+                      href={'https://prettylights.stews.io'}
+                      target={'_blank'}
+                    >
+                      pl-archive
+                    </a>
+                    <div className={cssModule.curationItemDescription}>
+                      an extensive catalog of the Pretty Lights musical project
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>phase 1</div>
@@ -50,7 +79,7 @@ export function LandingPage() {
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>phase N</div>
               <div className={cssModule.sectionParagraph}>
-                continue improving the ergonomics around curating and sharing
+                continue improving the ergonomics around sharing and curating
                 this world of ours
               </div>
             </div>
@@ -60,7 +89,31 @@ export function LandingPage() {
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>developers</div>
               <div className={cssModule.sectionParagraph}>
-                y'all know what it is, head on over to github and jump on in!!!
+                y'all know what it is, head on over to{' '}
+                <a
+                  className={cssModule.paragraphLink}
+                  href={'https://github.com/clumsycomputer/stews.io'}
+                  target={'_blank'}
+                >
+                  github
+                </a>{' '}
+                and jump on in!!!
+              </div>
+            </div>
+            <div className={cssModule.subSectionContainer}>
+              <div className={cssModule.subSectionTitle}>funding</div>
+              <div className={cssModule.sectionParagraph}>
+                this project is the result of many's generosity :) currently
+                we're using github's{' '}
+                <a
+                  className={cssModule.paragraphLink}
+                  href={'https://github.com/sponsors/clumsycomputer'}
+                  target={'_blank'}
+                >
+                  sponsor
+                </a>{' '}
+                program, making it possible for you to get value in return for
+                your financial contribution!
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
@@ -68,19 +121,12 @@ export function LandingPage() {
               <div className={cssModule.sectionParagraph}>
                 it's more than possible to get started curating today, but a lot
                 of rough edges remain. we're working diligently towards
-                providing y'all with the tools you need for sharing your world
+                providing y'all with the tools you need for sharing your world,
                 the way it deserves!
               </div>
             </div>
-            <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>funding</div>
-              <div className={cssModule.sectionParagraph}>
-                this project is the result of many's generosity :) currently
-                we're using github's sponsor program, making it possible for you
-                to get value in return for your financial contribution!
-              </div>
-            </div>
           </div>
+          <div className={cssModule.pageFooter} />
         </div>
       </div>
     </div>
