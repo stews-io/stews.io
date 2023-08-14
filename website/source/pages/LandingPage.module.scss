@@ -1,0 +1,49 @@
+@import '../styles/theme.scss';
+@import '../styles/layout.scss';
+
+.pageContainer {
+  @extend .itemContainer;
+}
+
+.pageContentContainer {
+  @extend .columnContainer;
+  max-width: 512px;
+  flex-basis: 100%;
+}
+
+.pageHeader {
+  @extend .rowContainer;
+  align-items: center;
+}
+
+.pageTitleGraphic {
+}
+
+.pageMainContainer {
+  @extend .columnContainer;
+}
+
+.sectionContainer {
+  @extend .columnContainer;
+}
+
+.subSectionContainer {
+  @extend .sectionContainer;
+}
+
+.sectionTitle {
+  font-weight: 700;
+  //   font-style: italic;
+  font-size: 1.375rem;
+}
+
+.subSectionTitle {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.sectionParagraph {
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: italic;
+}
