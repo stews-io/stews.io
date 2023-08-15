@@ -110,7 +110,8 @@ export function LandingPage() {
                   target={'_blank'}
                 >
                   sponsor
-                </a>{' '}
+                </a>
+                {'  '}
                 program, making it possible for you to get value in return for
                 your financial contribution!
               </div>
