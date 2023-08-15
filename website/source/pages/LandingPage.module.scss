@@ -36,8 +36,8 @@
 
 .subSectionContainer {
   @extend .sectionContainerBase;
-  padding-block-end: 0.5 * $themeSpacer;
-  padding-block-end: 1.5 * $themeSpacer;
+  padding-block-start: 0.5 * $themeSpacer;
+  padding-block-end: 1 * $themeSpacer;
 }
 
 .sectionTitle {
@@ -58,7 +58,7 @@
   @extend .textContainer;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-block-start: 0.375 * $themeSpacer;
+  padding-block-start: 0.5 * $themeSpacer;
   font-weight: 400;
   font-size: 1rem;
   font-style: italic;
@@ -73,6 +73,7 @@
   display: inline-block;
   cursor: pointer;
   color: $themeButtonTextColor;
+  text-decoration: none;
 }
 
 .paragraphLink {
@@ -84,22 +85,11 @@
 .curationSectionContainer {
   @extend .columnContainer;
   padding-block-start: $themeSpacer;
-  padding-block-end: 0.5 * $themeSpacer;
-}
-
-.curationSectionTitle {
-  @extend .textEllipsis;
-  font-weight: 500;
-  font-size: 1rem;
 }
 
 .curationList {
   @extend .columnContainer;
-  background-color: $themeTextBackgroundColor;
   border-radius: $themeBorderRadius;
-  padding-inline-start: $themeSpacer;
-  padding-inline-end: 1.25 * $themeSpacer;
-  padding-block: 0.5 * $themeSpacer;
 }
 
 .curationItem {
@@ -110,7 +100,7 @@
 .curationLink {
   @extend .externalLink;
   @extend .textEllipsis;
-  min-width: 144px;
+  min-width: 164px;
   font-weight: 600;
 }
 

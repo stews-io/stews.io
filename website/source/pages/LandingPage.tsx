@@ -41,7 +41,6 @@ export function LandingPage() {
                 human-web
               </div>
               <div className={cssModule.curationSectionContainer}>
-                <div className={cssModule.curationSectionTitle}>featured</div>
                 <div className={cssModule.curationList}>
                   <div className={cssModule.curationItem}>
                     <a
@@ -73,7 +72,7 @@ export function LandingPage() {
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>phase 1</div>
               <div className={cssModule.sectionParagraph}>
-                provide a simple cli for creating and managing curations
+                provide a simple tool for creating and managing curations
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
@@ -121,7 +120,7 @@ export function LandingPage() {
               <div className={cssModule.sectionParagraph}>
                 it's more than possible to get started curating today, but a lot
                 of rough edges remain. we're working diligently towards
-                providing y'all with the tools you need for sharing your world,
+                providing y'all with the tools you need, for sharing your world,
                 the way it deserves!
               </div>
             </div>
