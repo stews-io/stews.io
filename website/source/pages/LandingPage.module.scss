@@ -94,6 +94,7 @@
 
 .curationItem {
   @extend .rowContainer;
+  flex-wrap: wrap;
   padding-block: 0.75 * $themeSpacer;
 }
 
@@ -106,6 +107,9 @@
 
 .curationItemDescription {
   @extend .textContainer;
+  width: 0;
+  flex-grow: 1;
+  min-width: 128px;
   font-weight: 300;
   font-size: 0.9rem;
   font-style: italic;
