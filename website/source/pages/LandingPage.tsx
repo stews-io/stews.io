@@ -38,7 +38,7 @@ export function LandingPage() {
               <div className={cssModule.subSectionTitle}>phase 0</div>
               <div className={cssModule.sectionParagraph}>
                 a collection of curations demonstrating the potential of a more
-                human-web
+                human web
               </div>
               <div className={cssModule.curationSectionContainer}>
                 <div className={cssModule.curationList}>
