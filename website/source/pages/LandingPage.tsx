@@ -28,8 +28,8 @@ export function LandingPage() {
           <div className={cssModule.sectionContainer}>
             <div className={cssModule.sectionTitle}>what?</div>
             <div className={cssModule.sectionParagraph}>
-              a project empowering individuals and communities in curating their
-              world
+              a project empowering individuals and communities towards curating
+              their world
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
@@ -72,7 +72,7 @@ export function LandingPage() {
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>phase 1</div>
               <div className={cssModule.sectionParagraph}>
-                provide a simple tool for creating and managing curations
+                provide a simple cli for creating and managing curations
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
