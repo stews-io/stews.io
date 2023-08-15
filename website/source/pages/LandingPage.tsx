@@ -119,10 +119,9 @@ export function LandingPage() {
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>curators</div>
               <div className={cssModule.sectionParagraph}>
-                it's more than possible to get started curating today, but rough
-                edges abound. we're working diligently towards providing y'all
-                with the tools you need, for sharing your world, the way it
-                deserves!
+                you can started curating today, but rough edges abound. we're
+                working diligently towards providing y'all with the tools you
+                need, for sharing your world, the way it deserves!
               </div>
             </div>
           </div>
