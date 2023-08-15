@@ -28,8 +28,8 @@ export function LandingPage() {
           <div className={cssModule.sectionContainer}>
             <div className={cssModule.sectionTitle}>what?</div>
             <div className={cssModule.sectionParagraph}>
-              a project empowering individuals and communities towards curating
-              their world
+              a project empowering individuals and communities in their quest to
+              curate and share their world
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
@@ -119,10 +119,10 @@ export function LandingPage() {
             <div className={cssModule.subSectionContainer}>
               <div className={cssModule.subSectionTitle}>curators</div>
               <div className={cssModule.sectionParagraph}>
-                it's more than possible to get started curating today, but a lot
-                of rough edges remain. we're working diligently towards
-                providing y'all with the tools you need, for sharing your world,
-                the way it deserves!
+                it's more than possible to get started curating today, but rough
+                edges abound. we're working diligently towards providing y'all
+                with the tools you need, for sharing your world, the way it
+                deserves!
               </div>
             </div>
           </div>
