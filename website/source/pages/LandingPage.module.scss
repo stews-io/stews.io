@@ -98,10 +98,15 @@
   padding-block: 0.75 * $themeSpacer;
 }
 
+.curationItemTitle {
+  @extend .rowContainer;
+  align-items: flex-start;
+  min-width: 164px;
+}
+
 .curationLink {
   @extend .externalLink;
   @extend .textEllipsis;
-  min-width: 164px;
   font-weight: 600;
 }
 

@@ -26,43 +26,71 @@ export function LandingPage() {
         </div>
         <div className={cssModule.pageMainContainer} role={'main'}>
           <div className={cssModule.sectionContainer}>
-            <div className={cssModule.sectionTitle}>what?</div>
-            <div className={cssModule.sectionParagraph}>
+            <div
+              className={cssModule.sectionTitle}
+              role={'heading'}
+              aria-level={'2'}
+            >
+              what?
+            </div>
+            <div className={cssModule.sectionParagraph} role={'paragraph'}>
               a project empowering individuals and communities in their quest to
               curate and share their world
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
-            <div className={cssModule.sectionTitle}>where?</div>
+            <div
+              className={cssModule.sectionTitle}
+              role={'heading'}
+              aria-level={'2'}
+            >
+              where?
+            </div>
             <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>phase 0</div>
-              <div className={cssModule.sectionParagraph}>
+              <div
+                className={cssModule.subSectionTitle}
+                role={'heading'}
+                aria-level={'3'}
+              >
+                phase 0
+              </div>
+              <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 a collection of curations demonstrating the potential of a more
                 human web
               </div>
               <div className={cssModule.curationSectionContainer}>
                 <div className={cssModule.curationList}>
                   <div className={cssModule.curationItem}>
-                    <a
-                      className={cssModule.curationLink}
-                      href={'https://clumsycomputer.stews.io'}
-                      target={'_blank'}
+                    <div className={cssModule.curationItemTitle}>
+                      <a
+                        className={cssModule.curationLink}
+                        href={'https://clumsycomputer.stews.io'}
+                        target={'_blank'}
+                      >
+                        clumsycomputer
+                      </a>
+                    </div>
+                    <div
+                      className={cssModule.curationItemDescription}
+                      role={'paragraph'}
                     >
-                      clumsycomputer
-                    </a>
-                    <div className={cssModule.curationItemDescription}>
                       a collection of awesome music and wonderful spots
                     </div>
                   </div>
                   <div className={cssModule.curationItem}>
-                    <a
-                      className={cssModule.curationLink}
-                      href={'https://prettylights.stews.io'}
-                      target={'_blank'}
+                    <div className={cssModule.curationItemTitle}>
+                      <a
+                        className={cssModule.curationLink}
+                        href={'https://prettylights.stews.io'}
+                        target={'_blank'}
+                      >
+                        pl-archive
+                      </a>
+                    </div>
+                    <div
+                      className={cssModule.curationItemDescription}
+                      role={'paragraph'}
                     >
-                      pl-archive
-                    </a>
-                    <div className={cssModule.curationItemDescription}>
                       an extensive catalog of the Pretty Lights musical project
                     </div>
                   </div>
@@ -70,24 +98,48 @@ export function LandingPage() {
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>phase 1</div>
-              <div className={cssModule.sectionParagraph}>
+              <div
+                className={cssModule.subSectionTitle}
+                role={'heading'}
+                aria-level={'3'}
+              >
+                phase 1
+              </div>
+              <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 provide a simple cli for creating and managing curations
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>phase N</div>
-              <div className={cssModule.sectionParagraph}>
+              <div
+                className={cssModule.subSectionTitle}
+                role={'heading'}
+                aria-level={'3'}
+              >
+                phase N
+              </div>
+              <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 continue improving the ergonomics around sharing and curating
                 this world of ours
               </div>
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
-            <div className={cssModule.sectionTitle}>wanna assist?</div>
+            <div
+              className={cssModule.sectionTitle}
+              role={'heading'}
+              aria-level={'2'}
+            >
+              wanna assist?
+            </div>
             <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>developers</div>
-              <div className={cssModule.sectionParagraph}>
+              <div
+                className={cssModule.subSectionTitle}
+                role={'heading'}
+                aria-level={'3'}
+              >
+                developers
+              </div>
+              <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 y'all know what it is, head on over to{' '}
                 <a
                   className={cssModule.paragraphLink}
@@ -100,8 +152,14 @@ export function LandingPage() {
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>funding</div>
-              <div className={cssModule.sectionParagraph}>
+              <div
+                className={cssModule.subSectionTitle}
+                role={'heading'}
+                aria-level={'3'}
+              >
+                funding
+              </div>
+              <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 this project is the result of many's generosity :) currently
                 we're using github's{' '}
                 <a
@@ -117,8 +175,14 @@ export function LandingPage() {
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
-              <div className={cssModule.subSectionTitle}>curators</div>
-              <div className={cssModule.sectionParagraph}>
+              <div
+                className={cssModule.subSectionTitle}
+                role={'heading'}
+                aria-level={'3'}
+              >
+                curators
+              </div>
+              <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 you can get started curating today, but rough edges abound.
                 we're working diligently towards providing y'all with the tools
                 you need, for sharing your world, the way it deserves!
