@@ -24,7 +24,7 @@ export function LandingPage() {
             />
           </svg>
         </div>
-        <div className={cssModule.pageMainContainer}>
+        <div className={cssModule.pageMainContainer} role={'main'}>
           <div className={cssModule.sectionContainer}>
             <div className={cssModule.sectionTitle}>what?</div>
             <div className={cssModule.sectionParagraph}>
