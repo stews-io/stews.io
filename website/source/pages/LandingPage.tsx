@@ -169,7 +169,7 @@ export function LandingPage() {
                 funding
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                this project is the result of many's generosity :) currently
+                this project is the result of manies' generosity :) currently
                 we're using github's{' '}
                 <a
                   className={cssModule.paragraphLink}
