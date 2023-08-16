@@ -83,7 +83,7 @@ export function LandingPage() {
                       className={cssModule.curationItemDescription}
                       role={'paragraph'}
                     >
-                      a collection of awesome music and wonderful spots
+                      a collection of kick-ass music and awesome spots
                     </div>
                   </div>
                   <div className={cssModule.curationItem}>
@@ -192,9 +192,9 @@ export function LandingPage() {
                 curators
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                you can get started curating today, but rough edges abound.
-                we're working diligently towards providing y'all with the tools
-                you need, for sharing your world, the way it deserves!
+                you can get started today, but rough edges abound. we're working
+                diligently on smoothing things out and providing y'all with the
+                tools you need, for sharing your world, the way it deserves!
               </div>
             </div>
           </div>
