@@ -23,6 +23,15 @@ export function LandingPage() {
               }
             />
           </svg>
+          <div className={cssModule.hiddenPageTitleContainer}>
+            <div
+              className={cssModule.pageTitle}
+              role={'heading'}
+              aria-level={'1'}
+            >
+              stews.io
+            </div>
+          </div>
         </div>
         <div className={cssModule.pageMainContainer} role={'main'}>
           <div className={cssModule.sectionContainer}>

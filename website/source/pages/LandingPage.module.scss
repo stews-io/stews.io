@@ -21,6 +21,15 @@
 .pageTitleGraphic {
 }
 
+.hiddenPageTitleContainer {
+  height: 0;
+  overflow: hidden;
+}
+
+.pageTitle {
+  min-height: 1rem;
+}
+
 .pageMainContainer {
   @extend .columnContainer;
 }
