@@ -83,7 +83,7 @@ export function LandingPage() {
                       className={cssModule.curationItemDescription}
                       role={'paragraph'}
                     >
-                      a collection of kick-ass music and awesome spots
+                      a collection of great music and awesome spots
                     </div>
                   </div>
                   <div className={cssModule.curationItem}>
