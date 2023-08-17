@@ -1,2 +1,2 @@
-export * from './MusicCurationConfig'
 export * from './MusicItem'
+export * from './MusicItemSchema'

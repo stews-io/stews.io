@@ -10,10 +10,10 @@ import {
   ViewSelectBaseConfigProps,
   ViewSelectBaseDataProps,
 } from './ViewSelectBase'
-import { AdjustedCurationView } from '@stews/data/CurationView'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './CuratorViewSelect.module.scss'
 import { CurationItemBase } from '@stews/data/CurationItem'
+import { AdjustedSegmentView } from '@stews/data/CuratorConfig'
 
 export interface CuratorViewSelectProps
   extends ViewSelectBaseDataProps,
@@ -58,7 +58,7 @@ function CuratorSelectMenu(props: CuratorSelectMenuProps) {
 
 interface CuratorSelectMenuPropsConfig
   extends SelectMenuBaseConfigProps<
-    AdjustedCurationView,
+    AdjustedSegmentView,
     CustomCuratorOptionActionItemProps,
     CustomCuratorMenuFooterProps
   > {}

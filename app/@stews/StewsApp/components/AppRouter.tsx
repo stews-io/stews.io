@@ -1,11 +1,14 @@
-import { ConsumerCurationPage } from '@stews/components/CurationPage'
-import { MusicItemDisplay } from '@stews/domains/music/components'
-import { MusicItem } from '@stews/domains/music/data'
+import { ConsumerCurationPageProps } from '@stews/components/CurationPage'
+import { CurationItemBase } from '@stews/data/CurationItem'
+import { MusicCurationPage } from '@stews/domains/music/components/MusicCurationPage'
+import { SpotCurationPage } from '@stews/domains/spot/components'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useAsyncData } from '@stews/hooks/useAsyncData'
 import Router, { RoutableProps } from 'preact-router'
 import { useEffect } from 'preact/hooks'
-import { UseAppResourcesResult } from '../hooks/useAppResources'
+import { JSXInternal } from 'preact/src/jsx'
 import { StewsAppProps } from '../StewsApp'
+import { UseAppResourcesResult } from '../hooks/useAppResources'
 
 export interface AppRouterProps
   extends Pick<
@@ -20,14 +23,25 @@ export function AppRouter(props: AppRouterProps) {
     <Router>
       <DefaultPageRedirect
         default={true}
-        defaultPagePath={`/${adjustedCuratorConfig.musicCurationConfig.curationType}/0`}
+        defaultPagePath={`/${adjustedCuratorConfig.curationSegments[0].segmentLabel.toLowerCase()}/0`}
       />
-      <CurationRoutePage
-        appResourcesStatus={appResourcesStatus}
-        path={`/${adjustedCuratorConfig.musicCurationConfig.curationType}/:viewId`}
-        curatorInfo={adjustedCuratorConfig.curatorInfo}
-        someCuration={adjustedCuratorConfig.musicCurationConfig}
-      />
+      {adjustedCuratorConfig.curationSegments.map((someCurationSegment) => {
+        return (
+          <CurationSegmentRoutePage
+            appResourcesStatus={appResourcesStatus}
+            path={`/${someCurationSegment.segmentLabel.toLowerCase()}/:viewId`}
+            curatorInfo={adjustedCuratorConfig.curatorInfo}
+            someCurationSegment={someCurationSegment}
+            CurationSegmentPage={
+              someCurationSegment.segmentType === 'music'
+                ? MusicCurationPage
+                : someCurationSegment.segmentType === 'spot'
+                ? SpotCurationPage
+                : throwInvalidPathError('AppRouter')
+            }
+          />
+        )
+      })}
     </Router>
   )
 }
@@ -45,62 +59,49 @@ function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
   return null
 }
 
-interface CurationRoutePageProps
-  extends Required<Pick<RoutableProps, 'path'>>,
+interface CurationSegmentRoutePageProps<
+  CurationItem extends CurationItemBase,
+  CurationSegmentPageProps extends CurationSegmentPagePropsBase<CurationItem> = CurationSegmentPagePropsBase<CurationItem>
+> extends Required<Pick<RoutableProps, 'path'>>,
     Pick<AppRouterProps, 'appResourcesStatus'>,
     Pick<AppRouterProps['adjustedCuratorConfig'], 'curatorInfo'> {
-  someCuration: AppRouterProps['adjustedCuratorConfig']['musicCurationConfig']
+  someCurationSegment: AppRouterProps['adjustedCuratorConfig']['curationSegments'][number]
+  CurationSegmentPage: (props: any) => JSXInternal.Element
 }
 
-function CurationRoutePage(props: CurationRoutePageProps) {
-  const { appResourcesStatus, someCuration, curatorInfo } = props
+export interface CurationSegmentPagePropsBase<
+  CurationItem extends CurationItemBase
+> extends Pick<
+    ConsumerCurationPageProps<CurationItem>,
+    'curatorInfo' | 'curationViews' | 'fetchCurationItemsMapState'
+  > {}
+
+function CurationSegmentRoutePage<CurationItem extends CurationItemBase>(
+  props: CurationSegmentRoutePageProps<CurationItem>
+) {
+  const {
+    appResourcesStatus,
+    someCurationSegment,
+    curatorInfo,
+    CurationSegmentPage,
+  } = props
   const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
     useAsyncData({
       initialAsyncDataState: {
         stateType: 'loading',
       },
-      fetchAsyncData: (): Promise<Record<string, MusicItem>> =>
-        fetch(`/assets/curations/${someCuration.curationType}.json`).then(
-          (serverResponse) => serverResponse.json()
-        ),
+      fetchAsyncData: (): Promise<Record<string, CurationItem>> =>
+        fetch(
+          `/assets/curations/${someCurationSegment.segmentLabel.toLowerCase()}.json`
+        ).then((serverResponse) => serverResponse.json()),
     })
   useEffect(() => {
     triggerFetchCurationItemsMap()
   }, [])
   return appResourcesStatus === 'loaded' ? (
-    <ConsumerCurationPage
-      ItemDisplay={MusicItemDisplay}
-      getItemSearchSpace={(someMusicItem) =>
-        `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(
-          ','
-        )},${someMusicItem.musicTags.join(',')},${
-          someMusicItem.musicYear
-        },${`${someMusicItem.recordingContext.join('/')} ${
-          someMusicItem.sourceType === 'collection'
-            ? someMusicItem.collectionType
-            : someMusicItem.sourceType
-        }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`
-      }
-      viewSortConfig={[
-        {
-          fieldKey: 'musicTitle',
-          fieldType: 'string',
-          sortLabelBase: 'title',
-        },
-        {
-          fieldKey: 'musicArtist',
-          fieldType: 'orderedStringSet',
-          sortLabelBase: 'artist',
-        },
-        {
-          fieldKey: 'musicYear',
-          fieldType: 'number',
-          sortLabelBase: 'year',
-        },
-      ]}
+    <CurationSegmentPage
       curatorInfo={curatorInfo}
-      curationType={someCuration.curationType}
-      curationViews={someCuration.curationViews}
+      curationViews={someCurationSegment.segmentViews}
       fetchCurationItemsMapState={fetchCurationItemsMapState}
     />
   ) : null

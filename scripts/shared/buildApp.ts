@@ -1,10 +1,12 @@
-import { AdjustedCurationView } from '@stews/data/CurationView'
 import {
+  AdjustedCurationSegment,
   AdjustedCuratorConfig,
   CuratorConfig,
   CuratorConfigSchema,
 } from '@stews/data/CuratorConfig'
 import { MusicItem } from '@stews/domains/music/data'
+import { SpotItem } from '@stews/domains/spot/data'
+import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import ChildProcess from 'child_process'
 import FileSystem from 'fs'
 import * as Liqe from 'liqe'
@@ -39,28 +41,30 @@ export async function buildApp(api: BuildAppApi) {
   )
   const adjustedCuratorConfig: AdjustedCuratorConfig = {
     ...curatorConfig,
-    musicCurationConfig: {
-      curationType: curatorConfig.musicCurationConfig.curationType,
-      curationViews: [
-        {
-          viewId: 'AAAA',
-          viewLabel: 'all',
-          viewItemIds: curatorConfig.musicCurationConfig.curationItems.map(
-            (someCurationItem) => someCurationItem.itemId
-          ),
-        },
-        ...curatorConfig.musicCurationConfig.curationViews.map(
-          (someCurationView): AdjustedCurationView => ({
-            viewId: someCurationView.viewId,
-            viewLabel: someCurationView.viewLabel,
-            viewItemIds: Liqe.filter(
-              Liqe.parse(someCurationView.viewFilter),
-              curatorConfig.musicCurationConfig.curationItems
-            ).map((someViewItem) => someViewItem.itemId),
-          })
-        ),
-      ],
-    },
+    curationSegments:
+      curatorConfig.curationSegments.map<AdjustedCurationSegment>(
+        (someCurationSegment) => ({
+          segmentType: someCurationSegment.segmentType,
+          segmentLabel: someCurationSegment.segmentLabel,
+          segmentViews: [
+            {
+              viewId: 'AAAA',
+              viewLabel: 'all',
+              viewItemIds: someCurationSegment.segmentItems.map(
+                (someCurationItem) => someCurationItem.itemId
+              ),
+            },
+            ...someCurationSegment.segmentViews.map((someCurationView) => ({
+              viewId: someCurationView.viewId,
+              viewLabel: someCurationView.viewLabel,
+              viewItemIds: Liqe.filter<MusicItem | SpotItem>(
+                Liqe.parse(someCurationView.viewFilter),
+                someCurationSegment.segmentItems
+              ).map((someViewItem) => someViewItem.itemId),
+            })),
+          ],
+        })
+      ) as ArrayOfAtLeastOne<AdjustedCurationSegment>,
   }
   FileSystem.writeFileSync(
     prerenderUrlsJsonPath,
@@ -113,20 +117,27 @@ export async function buildApp(api: BuildAppApi) {
     })
   )
   FileSystem.mkdirSync(curationDatasetsDirectoryPath)
-  FileSystem.writeFileSync(
-    Path.join(
-      curationDatasetsDirectoryPath,
-      `./${curatorConfig.musicCurationConfig.curationType}.json`
-    ),
-    JSON.stringify(
-      curatorConfig.musicCurationConfig.curationItems.reduce<
-        Record<string, MusicItem>
-      >((curationItemsMapResult, someCurationItem) => {
-        curationItemsMapResult[someCurationItem.itemId] = someCurationItem
-        return curationItemsMapResult
-      }, {})
+  curatorConfig.curationSegments.forEach((someCurationSegment) => {
+    FileSystem.writeFileSync(
+      Path.join(
+        curationDatasetsDirectoryPath,
+        `./${someCurationSegment.segmentLabel.toLowerCase()}.json`
+      ),
+      JSON.stringify(
+        // @ts-expect-error
+        someCurationSegment.segmentItems.reduce(
+          (
+            curationItemsMapResult: Record<string, MusicItem | SpotItem>,
+            someCurationItem: MusicItem | SpotItem
+          ) => {
+            curationItemsMapResult[someCurationItem.itemId] = someCurationItem
+            return curationItemsMapResult
+          },
+          {}
+        )
+      )
     )
-  )
+  })
   ChildProcess.execSync(
     `cp ${Path.join(preactAppDirectoryPath, './assets/robots.txt')} ${Path.join(
       preactBuildDirectoryPath,
