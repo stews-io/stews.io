@@ -1,0 +1,40 @@
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.flexChild {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.itemContainer {
+  @extend .flexContainer;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowContainer {
+  @extend .flexContainer;
+  flex-direction: row;
+}
+
+.columnContainer {
+  @extend .flexContainer;
+  flex-direction: column;
+}
+
+.textContainer {
+  display: block;
+}
+
+.textEllipsis {
+  @extend .textContainer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

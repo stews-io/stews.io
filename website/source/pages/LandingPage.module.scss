@@ -1,0 +1,130 @@
+@import '../styles/theme.scss';
+@import '../styles/layout.scss';
+
+.pageContainer {
+  @extend .itemContainer;
+}
+
+.pageContentContainer {
+  @extend .columnContainer;
+  max-width: 512px;
+  flex-basis: 100%;
+  padding-inline: 2 * $themeSpacer;
+  padding-block-start: $themeSpacer;
+}
+
+.pageHeader {
+  @extend .rowContainer;
+  align-items: center;
+}
+
+.pageTitleGraphic {
+}
+
+.hiddenPageTitleContainer {
+  height: 0;
+  overflow: hidden;
+}
+
+.pageTitle {
+  min-height: 1rem;
+}
+
+.pageMainContainer {
+  @extend .columnContainer;
+}
+
+.sectionContainerBase {
+  @extend .columnContainer;
+}
+
+.sectionContainer {
+  @extend .sectionContainerBase;
+  padding-block-start: 2 * $themeSpacer;
+}
+
+.subSectionContainer {
+  @extend .sectionContainerBase;
+  padding-block-start: 0.5 * $themeSpacer;
+  padding-block-end: 1 * $themeSpacer;
+}
+
+.sectionTitle {
+  @extend .textEllipsis;
+  justify-content: flex-start;
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+
+.subSectionTitle {
+  @extend .textEllipsis;
+  justify-content: flex-start;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.sectionParagraph {
+  @extend .textContainer;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-block-start: 0.5 * $themeSpacer;
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.pageFooter {
+  padding-block-start: 4 * $themeSpacer;
+}
+
+.externalLink {
+  @extend .textContainer;
+  display: inline-block;
+  cursor: pointer;
+  color: $themeButtonTextColor;
+  text-decoration: none;
+}
+
+.paragraphLink {
+  @extend .externalLink;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.curationSectionContainer {
+  @extend .columnContainer;
+  padding-block-start: $themeSpacer;
+}
+
+.curationList {
+  @extend .columnContainer;
+  border-radius: $themeBorderRadius;
+}
+
+.curationItem {
+  @extend .rowContainer;
+  flex-wrap: wrap;
+  padding-block: 0.75 * $themeSpacer;
+}
+
+.curationItemTitle {
+  @extend .rowContainer;
+  align-items: flex-start;
+  min-width: 164px;
+}
+
+.curationLink {
+  @extend .externalLink;
+  @extend .textEllipsis;
+  font-weight: 600;
+}
+
+.curationItemDescription {
+  @extend .textContainer;
+  width: 0;
+  flex-grow: 1;
+  min-width: 128px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  font-style: italic;
+}

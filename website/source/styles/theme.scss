@@ -1,0 +1,58 @@
+@import './layout.scss';
+
+$themeSpacer: 8px;
+
+$themeBackgroundColor: #ffffff;
+$themeTextBackgroundColor: #eeeeee;
+$themeDisabledColor: #aaaaaa;
+$themeButtonTextColor: #5e35b1;
+$themeOutlineColor: #2196f3;
+
+$themeBorder: 1.5px solid black;
+$themeBorderRadius: 4px;
+
+$themeOutlineWidth: 3px;
+$themeOutline: solid $themeOutlineWidth transparent;
+$themeOutlineOffset: 0;
+$themeOutlineRadius: 4px;
+$themeBoxShadowOutline: 0 0 0 $themeOutlineWidth $themeOutlineColor;
+
+.defaultBoxModel {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.defaultLayout {
+  @extend .flexContainer;
+  @extend .flexChild;
+}
+
+.defaultFont {
+  font-family: 'Red Hat Mono', monospace;
+  // ios seems to put a floor on input line-height at 1.4
+  line-height: 1.4;
+  color: black;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.themeBorder {
+  border: $themeBorder;
+  border-radius: $themeBorderRadius;
+}
+
+.themeFocusOutline {
+  outline: $themeOutline;
+  outline-offset: $themeOutlineOffset;
+  box-shadow: $themeBoxShadowOutline;
+  border-radius: $themeOutlineRadius;
+}
+
+.themeFocusWithoutOutline {
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}

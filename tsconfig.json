@@ -8,32 +8,26 @@
     "noUncheckedIndexedAccess": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,    
+    "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,    
+    "resolveJsonModule": true,
     "noEmit": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "module": "ES2020",
     "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
     "baseUrl": ".",
     "paths": {
-      "@stews/*": ["./source/@stews/*"]
+      "@stews/*": ["./app/@stews/*"]
     }
   },
-  "include": [
-    "source",
-  ],
   "exclude": ["node_modules"],
+  "include": ["./app", "./curations", "./scripts", "./website"],
   "ts-node": {
     "require": ["tsconfig-paths/register"],
     "compilerOptions": {
-      "module": "commonjs",
+      "module": "commonjs"
     }
-  },
+  }
 }
