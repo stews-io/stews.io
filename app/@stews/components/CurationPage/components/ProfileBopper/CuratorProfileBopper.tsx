@@ -12,7 +12,12 @@ import {
 export interface CuratorProfileBopperProps extends ProfileBopperBaseDataProps {}
 
 export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
-  const { curatorInfo } = props
+  const {
+    curatorInfo,
+    curationSegments,
+    activeCurationSegment,
+    selectCurationSegment,
+  } = props
   return (
     <ProfileBopperBase
       anchorAriaLabel={`show your profile`}
@@ -20,6 +25,9 @@ export function CuratorProfileBopper(props: CuratorProfileBopperProps) {
       SomeAnchorButton={CuratorProfileButton}
       PopoverContent={ProfileContentBase}
       curatorInfo={curatorInfo}
+      curationSegments={curationSegments}
+      activeCurationSegment={activeCurationSegment}
+      selectCurationSegment={selectCurationSegment}
     />
   )
 }

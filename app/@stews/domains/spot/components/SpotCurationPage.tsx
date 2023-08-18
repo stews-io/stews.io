@@ -1,13 +1,26 @@
-import { ConsumerCurationPage } from '@stews/components/CurationPage'
+import {
+  ConsumerCurationPage,
+  ConsumerCurationPageProps,
+} from '@stews/components/CurationPage'
 import { SpotItem } from '../data'
 import { SpotItemDisplay } from './SpotItemDisplay'
-import { CurationSegmentPagePropsBase } from '@stews/StewsApp/components/AppRouter'
 
 export interface SpotCurationPageProps
-  extends CurationSegmentPagePropsBase<SpotItem> {}
+  extends Pick<
+    ConsumerCurationPageProps<SpotItem>,
+    | 'curatorInfo'
+    | 'curationSegments'
+    | 'activeCurationSegment'
+    | 'setActiveCurationSegment'
+  > {}
 
 export function SpotCurationPage(props: SpotCurationPageProps) {
-  const { curatorInfo, curationViews, fetchCurationItemsMapState } = props
+  const {
+    curatorInfo,
+    curationSegments,
+    activeCurationSegment,
+    setActiveCurationSegment,
+  } = props
   return (
     <ConsumerCurationPage<SpotItem>
       curationType={'spot'}
@@ -30,8 +43,9 @@ export function SpotCurationPage(props: SpotCurationPageProps) {
         },
       ]}
       curatorInfo={curatorInfo}
-      curationViews={curationViews}
-      fetchCurationItemsMapState={fetchCurationItemsMapState}
+      curationSegments={curationSegments}
+      activeCurationSegment={activeCurationSegment}
+      setActiveCurationSegment={setActiveCurationSegment}
     />
   )
 }

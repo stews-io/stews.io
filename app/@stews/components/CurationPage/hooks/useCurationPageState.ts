@@ -6,7 +6,6 @@ import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { UseViewSortOptionsResult, ViewSortOption } from './useViewSortOptions'
 
 export interface CurationPageState<CurationItem extends CurationItemBase> {
-  curationKey: string
   curationView: AdjustedSegmentView
   viewSortOption: ViewSortOption<CurationItem>
   viewSearchQuery: string
@@ -14,21 +13,21 @@ export interface CurationPageState<CurationItem extends CurationItemBase> {
 }
 
 export interface UseCurationPageStateApi<CurationItem extends CurationItemBase>
-  extends Pick<CurationPageBaseDataProps<CurationItem>, 'curationViews'>,
+  extends Pick<
+      CurationPageBaseDataProps<CurationItem>,
+      'activeCurationSegment'
+    >,
     Pick<UseViewSortOptionsResult<CurationItem>, 'viewSortOptions'> {}
 
 export function useCurationPageState<CurationItem extends CurationItemBase>(
   api: UseCurationPageStateApi<CurationItem>
 ) {
-  const { curationViews, viewSortOptions } = api
+  const { activeCurationSegment, viewSortOptions } = api
   const initialUrlPageState = useMemo(() => {
     const [_, urlPathCurationKey, urlPathViewId] =
       window.location.pathname.split('/')
     const initialSearchParams = new URLSearchParams(window.location.search)
     return {
-      curationKey:
-        urlPathCurationKey ??
-        throwInvalidPathError('useCurationPageState.urlPathCurationKey'),
       viewId: urlPathViewId,
       sortId: initialSearchParams.get('sort'),
       viewSearchQuery: initialSearchParams.get('search') ?? '',
@@ -36,12 +35,11 @@ export function useCurationPageState<CurationItem extends CurationItemBase>(
     }
   }, [])
   const useCurationPageStateResult = useState<CurationPageState<CurationItem>>({
-    curationKey: initialUrlPageState.curationKey,
     curationView:
-      curationViews.find(
+      activeCurationSegment.segmentViews.find(
         (someCurationView) =>
           someCurationView.viewId === initialUrlPageState.viewId
-      ) ?? curationViews[0],
+      ) ?? activeCurationSegment.segmentViews[0],
     viewSortOption:
       viewSortOptions.find(
         (someViewSortOption) =>
@@ -63,7 +61,7 @@ export function useCurationPageState<CurationItem extends CurationItemBase>(
     window.history.replaceState(
       null,
       'noop',
-      `/${curationPageState.curationKey}/${
+      `/${activeCurationSegment.segmentKey}/${
         curationPageState.curationView.viewId
       }?${nextUrlSearchParams.toString()}`
     )

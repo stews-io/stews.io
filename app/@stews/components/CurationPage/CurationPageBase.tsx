@@ -1,23 +1,28 @@
 import { Page } from '@stews/components/Page'
+import { CurationItemBase } from '@stews/data/CurationItem'
+import {
+  AdjustedCurationSegment,
+  AdjustedSegmentView,
+} from '@stews/data/CurationSegment'
 import { CuratorInfo } from '@stews/data/CuratorInfo'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { AsyncDataState } from '@stews/hooks/useAsyncData'
 import { FunctionComponent } from 'preact'
+import cssModule from './CurationPageBase.module.scss'
 import {
+  ProfileBopperBaseDataProps,
   ViewSearchInput,
   ViewSelectBaseDataProps,
   ViewSortSelect,
 } from './components'
 import {
+  ViewSortOptionConfig,
   useCurationPageState,
   useStickyPageHeaderWorkaround,
   useViewPage,
   useViewSortOptions,
-  ViewSortOptionConfig,
 } from './hooks'
-import cssModule from './CurationPageBase.module.scss'
-import { CurationItemBase } from '@stews/data/CurationItem'
-import { AdjustedSegmentView } from '@stews/data/CurationSegment'
+import { StateUpdater } from 'preact/hooks'
 
 interface CurationPageBaseProps<CurationItem extends CurationItemBase>
   extends CurationPageBaseDataProps<CurationItem>,
@@ -28,11 +33,12 @@ export interface CurationPageBaseDataProps<
 > {
   curationType: string
   curatorInfo: CuratorInfo
-  curationViews: ArrayOfAtLeastOne<AdjustedSegmentView>
+  curationSegments: ArrayOfAtLeastOne<AdjustedCurationSegment>
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
   ItemDisplay: FunctionComponent<ItemDisplayProps<CurationItem>>
   getItemSearchSpace: (someCurationItem: CurationItem) => string
-  fetchCurationItemsMapState: AsyncDataState<Record<string, CurationItem>>
+  activeCurationSegment: AdjustedCurationSegment
+  setActiveCurationSegment: StateUpdater<AdjustedCurationSegment>
 }
 
 export interface ItemDisplayProps<CurationItem extends CurationItemBase> {
@@ -47,37 +53,35 @@ export interface CurationPageBaseConfigProps {
 type ViewSelectProps = ViewSelectBaseDataProps &
   Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'>
 
-type ProfileBopperProps = Pick<
-  CurationPageBaseProps<CurationItemBase>,
-  'curatorInfo'
->
+type ProfileBopperProps = ProfileBopperBaseDataProps
 
 export function CurationPageBase<CurationItem extends CurationItemBase>(
   props: CurationPageBaseProps<CurationItem>
 ) {
   const {
     viewSortConfig,
-    curationViews,
+    activeCurationSegment,
     ItemDisplay,
     getItemSearchSpace,
-    fetchCurationItemsMapState,
     curationType,
     curatorInfo,
+    curationSegments,
     ViewSelect,
     ProfileBopper,
+    setActiveCurationSegment,
   } = props
   const { viewSortOptions } = useViewSortOptions({
     viewSortConfig,
   })
   const [curationPageState, setCurationPageState] = useCurationPageState({
-    curationViews,
+    activeCurationSegment,
     viewSortOptions,
   })
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
     pageItemSize: 6,
+    activeCurationSegment,
     ItemDisplay,
     getItemSearchSpace,
-    fetchCurationItemsMapState,
     curationPageState,
     setPageIndexToPrevious: (currentAdjustedPageIndex) => {
       setCurationPageState((currentCurationPageState) => ({
@@ -106,7 +110,7 @@ export function CurationPageBase<CurationItem extends CurationItemBase>(
             <ViewSelect
               viewAriaHeader={`${curationType} view: ${curationPageState.curationView.viewLabel}`}
               curationType={curationType}
-              optionList={curationViews}
+              optionList={activeCurationSegment.segmentViews}
               selectedOption={curationPageState.curationView}
               selectOption={(nextCurationView) => {
                 setCurationPageState((currentCurationPageState) => ({
@@ -118,7 +122,14 @@ export function CurationPageBase<CurationItem extends CurationItemBase>(
             />
           </div>
           <div className={cssModule.actionContainer}>
-            <ProfileBopper curatorInfo={curatorInfo} />
+            <ProfileBopper
+              curatorInfo={curatorInfo}
+              curationSegments={curationSegments}
+              activeCurationSegment={activeCurationSegment}
+              selectCurationSegment={(nextCurationSegment) => {
+                setActiveCurationSegment(nextCurationSegment)
+              }}
+            />
           </div>
         </div>
       </div>

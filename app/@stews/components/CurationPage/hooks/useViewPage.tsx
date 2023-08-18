@@ -1,16 +1,17 @@
 import { CurationItemBase } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
-import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
+import { useEffect, useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { ViewPageMessageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { CurationPageState } from './useCurationPageState'
+import { useAsyncData } from '@stews/hooks/useAsyncData'
 
 export interface UseViewPageApi<CurationItem extends CurationItemBase>
   extends Pick<
     CurationPageBaseDataProps<CurationItem>,
-    'ItemDisplay' | 'getItemSearchSpace' | 'fetchCurationItemsMapState'
+    'ItemDisplay' | 'getItemSearchSpace' | 'activeCurationSegment'
   > {
   curationPageState: CurationPageState<CurationItem>
   pageItemSize: number
@@ -24,7 +25,7 @@ export function useViewPage<CurationItem extends CurationItemBase>(
   api: UseViewPageApi<CurationItem>
 ) {
   const {
-    fetchCurationItemsMapState,
+    activeCurationSegment,
     curationPageState,
     getItemSearchSpace,
     pageItemSize,
@@ -32,6 +33,19 @@ export function useViewPage<CurationItem extends CurationItemBase>(
     setPageIndexToPrevious,
     setPageIndexToNext,
   } = api
+  const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
+    useAsyncData({
+      initialAsyncDataState: {
+        stateType: 'loading',
+      },
+      fetchAsyncData: (): Promise<Record<string, CurationItem>> =>
+        fetch(
+          `/assets/curations/${activeCurationSegment.segmentDataset}.json`
+        ).then((serverResponse) => serverResponse.json()),
+    })
+  useEffect(() => {
+    triggerFetchCurationItemsMap()
+  }, [activeCurationSegment.segmentDataset])
   const pageTopElementRef = useRef<HTMLDivElement>(null)
   const viewPageResult = useMemo(() => {
     if (fetchCurationItemsMapState.stateType === 'loading') {

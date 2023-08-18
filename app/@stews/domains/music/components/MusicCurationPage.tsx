@@ -1,13 +1,26 @@
-import { CurationSegmentPagePropsBase } from '@stews/StewsApp/components/AppRouter'
-import { ConsumerCurationPage } from '@stews/components/CurationPage'
+import {
+  ConsumerCurationPage,
+  ConsumerCurationPageProps,
+} from '@stews/components/CurationPage'
 import { MusicItem } from '../data'
 import { MusicItemDisplay } from './MusicItemDisplay'
 
 export interface MusicCurationPageProps
-  extends CurationSegmentPagePropsBase<MusicItem> {}
+  extends Pick<
+    ConsumerCurationPageProps<MusicItem>,
+    | 'curatorInfo'
+    | 'curationSegments'
+    | 'activeCurationSegment'
+    | 'setActiveCurationSegment'
+  > {}
 
 export function MusicCurationPage(props: MusicCurationPageProps) {
-  const { curatorInfo, curationViews, fetchCurationItemsMapState } = props
+  const {
+    curatorInfo,
+    curationSegments,
+    activeCurationSegment,
+    setActiveCurationSegment,
+  } = props
   return (
     <ConsumerCurationPage<MusicItem>
       curationType={'music'}
@@ -41,8 +54,9 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
         },
       ]}
       curatorInfo={curatorInfo}
-      curationViews={curationViews}
-      fetchCurationItemsMapState={fetchCurationItemsMapState}
+      curationSegments={curationSegments}
+      activeCurationSegment={activeCurationSegment}
+      setActiveCurationSegment={setActiveCurationSegment}
     />
   )
 }

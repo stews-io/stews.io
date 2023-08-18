@@ -3,14 +3,24 @@ import { CorePopoverContentProps } from '@stews/components/Popover'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ProfileBopperBaseDataProps } from '../ProfileBopperBase'
 import cssModule from './ProfileContentBase.module.scss'
+import { getCssClass } from '@stews/helpers/getCssClass'
 
 export interface ProfileContentBaseProps
   extends CorePopoverContentProps,
-    Pick<ProfileBopperBaseDataProps, 'curatorInfo'> {}
+    Pick<
+      ProfileBopperBaseDataProps,
+      | 'curatorInfo'
+      | 'curationSegments'
+      | 'selectCurationSegment'
+      | 'activeCurationSegment'
+    > {}
 
 export function ProfileContentBase(props: ProfileContentBaseProps) {
   const {
     curatorInfo,
+    curationSegments,
+    selectCurationSegment,
+    activeCurationSegment,
     anchorElementRef,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
@@ -60,6 +70,30 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
         {curatorInfo.curatorLocation}
       </div>
       <div className={cssModule.curatorStatus}>{curatorInfo.curatorStatus}</div>
+      <div className={cssModule.segmentLinks}>
+        {curationSegments.map((someCurationSegment) => (
+          <div
+            key={someCurationSegment.segmentKey}
+            className={cssModule.segmentLinkContainer}
+          >
+            <Button
+              ariaLabel={`view the ${someCurationSegment.segmentLabel} segment`}
+              ariaDescription={`a button that navigates to the ${someCurationSegment.segmentLabel} segment`}
+              className={getCssClass(cssModule.segmentLinkButton, [
+                cssModule.activeSegment,
+                someCurationSegment.segmentKey ===
+                  activeCurationSegment.segmentKey,
+              ])}
+              onBlur={popoverNavigationItemBlurHandler}
+              onSelect={() => {
+                selectCurationSegment(someCurationSegment)
+              }}
+            >
+              {someCurationSegment.segmentLabel}
+            </Button>
+          </div>
+        ))}
+      </div>
       <div className={cssModule.curatorLinks}>
         {curatorInfo.curatorLinks.map((someCuratorLink, linkIndex) => (
           <div key={linkIndex} className={cssModule.curatorLinkContainer}>

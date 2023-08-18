@@ -16,8 +16,9 @@ export function ConsumerCurationPage<CurationItem extends CurationItemBase>(
     getItemSearchSpace,
     curationType,
     curatorInfo,
-    curationViews,
-    fetchCurationItemsMapState,
+    curationSegments,
+    activeCurationSegment,
+    setActiveCurationSegment,
   } = props
   return (
     <CurationPageBase
@@ -28,8 +29,9 @@ export function ConsumerCurationPage<CurationItem extends CurationItemBase>(
       getItemSearchSpace={getItemSearchSpace}
       curationType={curationType}
       curatorInfo={curatorInfo}
-      curationViews={curationViews}
-      fetchCurationItemsMapState={fetchCurationItemsMapState}
+      curationSegments={curationSegments}
+      activeCurationSegment={activeCurationSegment}
+      setActiveCurationSegment={setActiveCurationSegment}
     />
   )
 }
