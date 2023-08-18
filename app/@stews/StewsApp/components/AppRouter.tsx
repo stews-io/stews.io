@@ -23,21 +23,25 @@ export function AppRouter(props: AppRouterProps) {
     <Router>
       <DefaultPageRedirect
         default={true}
-        defaultPagePath={`/${adjustedCuratorConfig.curationSegments[0].segmentLabel.toLowerCase()}/0`}
+        defaultPagePath={`/${adjustedCuratorConfig.curationSegments[0].segmentKey}/0`}
       />
       {adjustedCuratorConfig.curationSegments.map((someCurationSegment) => {
+        const segmentDataset =
+          adjustedCuratorConfig.curationDatasets[
+            someCurationSegment.segmentDataset
+          ] ?? throwInvalidPathError('AppRouter.segmentDataset')
         return (
           <CurationSegmentRoutePage
             appResourcesStatus={appResourcesStatus}
-            path={`/${someCurationSegment.segmentLabel.toLowerCase()}/:viewId`}
+            path={`/${someCurationSegment.segmentKey}/:viewId`}
             curatorInfo={adjustedCuratorConfig.curatorInfo}
             someCurationSegment={someCurationSegment}
             CurationSegmentPage={
-              someCurationSegment.segmentType === 'music'
+              segmentDataset.datasetType === 'music'
                 ? MusicCurationPage
-                : someCurationSegment.segmentType === 'spot'
+                : segmentDataset.datasetType === 'spot'
                 ? SpotCurationPage
-                : throwInvalidPathError('AppRouter')
+                : throwInvalidPathError('AppRouter.CurationSegmentPage')
             }
           />
         )
@@ -59,10 +63,8 @@ function DefaultPageRedirect(props: DefaultRedirectToMusicCurationPage) {
   return null
 }
 
-interface CurationSegmentRoutePageProps<
-  CurationItem extends CurationItemBase,
-  CurationSegmentPageProps extends CurationSegmentPagePropsBase<CurationItem> = CurationSegmentPagePropsBase<CurationItem>
-> extends Required<Pick<RoutableProps, 'path'>>,
+interface CurationSegmentRoutePageProps<CurationItem extends CurationItemBase>
+  extends Required<Pick<RoutableProps, 'path'>>,
     Pick<AppRouterProps, 'appResourcesStatus'>,
     Pick<AppRouterProps['adjustedCuratorConfig'], 'curatorInfo'> {
   someCurationSegment: AppRouterProps['adjustedCuratorConfig']['curationSegments'][number]
@@ -92,7 +94,7 @@ function CurationSegmentRoutePage<CurationItem extends CurationItemBase>(
       },
       fetchAsyncData: (): Promise<Record<string, CurationItem>> =>
         fetch(
-          `/assets/curations/${someCurationSegment.segmentLabel.toLowerCase()}.json`
+          `/assets/curations/${someCurationSegment.segmentDataset}.json`
         ).then((serverResponse) => serverResponse.json()),
     })
   useEffect(() => {

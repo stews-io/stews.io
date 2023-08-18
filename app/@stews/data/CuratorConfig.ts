@@ -1,17 +1,23 @@
-import { MusicItem, MusicItemSchema } from '@stews/domains/music/data'
-import { SpotItem, SpotItemSchema } from '@stews/domains/spot/data'
+import { MusicItemSchema } from '@stews/domains/music/data'
+import { SpotItemSchema } from '@stews/domains/spot/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
-import Zod from 'zod'
+import Zod, { ZodType } from 'zod'
+import {
+  AdjustedCurationDataset,
+  CuratorCurationDataset,
+} from './CurationDataset'
+import {
+  AdjustedCurationSegment,
+  CuratorCurationSegment,
+} from './CurationSegment'
 import { CuratorInfo } from './CuratorInfo'
+import { arrayOfOneSchema } from './helpers'
 
 export interface CuratorConfig {
   curatorInfo: CuratorInfo
+  curationDatasets: Record<string, CuratorCurationDataset>
   curationSegments: ArrayOfAtLeastOne<CuratorCurationSegment>
 }
-
-type CuratorCurationSegment =
-  | CuratorCurationSegmentBase<'music', MusicItem>
-  | CuratorCurationSegmentBase<'spot', SpotItem>
 
 export const CuratorConfigSchema = Zod.object({
   curatorInfo: Zod.object({
@@ -30,122 +36,41 @@ export const CuratorConfigSchema = Zod.object({
       })
     ),
   }),
-  curationSegments: Zod.tuple([
+  curationDatasets: Zod.record(
+    Zod.object({
+      datasetKey: Zod.string(),
+      datasetType: Zod.string(),
+      // todo improve from Zod.any()
+      datasetItems: Zod.array(Zod.any()),
+    })
+  ),
+  curationSegments: arrayOfOneSchema(
     Zod.union([
-      Zod.object({
-        segmentType: Zod.literal('music'),
-        segmentLabel: Zod.string(),
-        segmentViews: Zod.tuple([
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          }),
-        ]).rest(
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          })
-        ),
-        segmentItems: Zod.array(MusicItemSchema),
-      }),
-      Zod.object({
-        segmentType: Zod.literal('spot'),
-        segmentLabel: Zod.string(),
-        segmentViews: Zod.tuple([
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          }),
-        ]).rest(
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          })
-        ),
-        segmentItems: Zod.array(SpotItemSchema),
-      }),
-    ]),
-  ]).rest(
-    Zod.union([
-      Zod.object({
-        segmentType: Zod.literal('music'),
-        segmentLabel: Zod.string(),
-        segmentViews: Zod.tuple([
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          }),
-        ]).rest(
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          })
-        ),
-        segmentItems: Zod.array(MusicItemSchema),
-      }),
-      Zod.object({
-        segmentType: Zod.literal('spot'),
-        segmentLabel: Zod.string(),
-        segmentViews: Zod.tuple([
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          }),
-        ]).rest(
-          Zod.object({
-            viewId: Zod.string(),
-            viewLabel: Zod.string(),
-            viewFilter: Zod.string(),
-          })
-        ),
-        segmentItems: Zod.array(SpotItemSchema),
-      }),
+      curationSegmentSchema(MusicItemSchema),
+      curationSegmentSchema(SpotItemSchema),
     ])
   ),
 })
 
+function curationSegmentSchema<SegmentItemSchema extends ZodType>(
+  segmentItemSchema: SegmentItemSchema
+) {
+  return Zod.object({
+    segmentKey: Zod.string(),
+    segmentLabel: Zod.string(),
+    segmentDataset: Zod.string(),
+    segmentViews: arrayOfOneSchema(
+      Zod.object({
+        viewId: Zod.string(),
+        viewLabel: Zod.string(),
+        viewFilter: Zod.string(),
+      })
+    ),
+  })
+}
+
 export interface AdjustedCuratorConfig {
   curatorInfo: CuratorInfo
+  curationDatasets: Record<string, AdjustedCurationDataset>
   curationSegments: ArrayOfAtLeastOne<AdjustedCurationSegment>
-}
-
-export type AdjustedCurationSegment =
-  | AdjustedCurationSegmentBase<'music'>
-  | AdjustedCurationSegmentBase<'spot'>
-
-interface CuratorCurationSegmentBase<SegmentType extends string, SegmentItem>
-  extends CurationSegmentBase<SegmentType, CuratorSegmentView> {
-  segmentItems: Array<SegmentItem>
-}
-
-interface AdjustedCurationSegmentBase<SegmentType extends string>
-  extends CurationSegmentBase<SegmentType, AdjustedSegmentView> {}
-
-interface CurationSegmentBase<
-  SegmentType extends string,
-  SegmentView extends SegmentViewBase
-> {
-  segmentType: SegmentType
-  segmentLabel: string
-  segmentViews: Array<SegmentView>
-}
-
-export interface CuratorSegmentView extends SegmentViewBase {
-  viewFilter: string
-}
-
-export interface AdjustedSegmentView extends SegmentViewBase {
-  viewItemIds: Array<number>
-}
-
-interface SegmentViewBase {
-  viewId: string
-  viewLabel: string
 }

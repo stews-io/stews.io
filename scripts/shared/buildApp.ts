@@ -1,11 +1,11 @@
+import { CurationItemBase } from '@stews/data/CurationItem'
+import { AdjustedCurationSegment } from '@stews/data/CurationSegment'
 import {
-  AdjustedCurationSegment,
   AdjustedCuratorConfig,
   CuratorConfig,
   CuratorConfigSchema,
 } from '@stews/data/CuratorConfig'
-import { MusicItem } from '@stews/domains/music/data'
-import { SpotItem } from '@stews/domains/spot/data'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import ChildProcess from 'child_process'
 import FileSystem from 'fs'
@@ -43,27 +43,34 @@ export async function buildApp(api: BuildAppApi) {
     ...curatorConfig,
     curationSegments:
       curatorConfig.curationSegments.map<AdjustedCurationSegment>(
-        (someCurationSegment) => ({
-          segmentType: someCurationSegment.segmentType,
-          segmentLabel: someCurationSegment.segmentLabel,
-          segmentViews: [
-            {
-              viewId: 'AAAA',
-              viewLabel: 'all',
-              viewItemIds: someCurationSegment.segmentItems.map(
-                (someCurationItem) => someCurationItem.itemId
-              ),
-            },
-            ...someCurationSegment.segmentViews.map((someCurationView) => ({
-              viewId: someCurationView.viewId,
-              viewLabel: someCurationView.viewLabel,
-              viewItemIds: Liqe.filter<MusicItem | SpotItem>(
-                Liqe.parse(someCurationView.viewFilter),
-                someCurationSegment.segmentItems
-              ).map((someViewItem) => someViewItem.itemId),
-            })),
-          ],
-        })
+        (someCurationSegment) => {
+          const segmentDataset =
+            curatorConfig.curationDatasets[
+              someCurationSegment.segmentDataset
+            ] ?? throwInvalidPathError('buildApp.segmentDataset')
+          return {
+            segmentKey: someCurationSegment.segmentKey,
+            segmentLabel: someCurationSegment.segmentLabel,
+            segmentDataset: someCurationSegment.segmentDataset,
+            segmentViews: [
+              {
+                viewId: 'AAAA',
+                viewLabel: 'all',
+                viewItemIds: segmentDataset.datasetItems.map(
+                  (someCurationItem) => someCurationItem.itemId
+                ),
+              },
+              ...someCurationSegment.segmentViews.map((someCurationView) => ({
+                viewId: someCurationView.viewId,
+                viewLabel: someCurationView.viewLabel,
+                viewItemIds: Liqe.filter<CurationItemBase>(
+                  Liqe.parse(someCurationView.viewFilter),
+                  segmentDataset.datasetItems
+                ).map((someViewItem) => someViewItem.itemId),
+              })),
+            ],
+          }
+        }
       ) as ArrayOfAtLeastOne<AdjustedCurationSegment>,
   }
   FileSystem.writeFileSync(
@@ -118,18 +125,17 @@ export async function buildApp(api: BuildAppApi) {
   )
   FileSystem.mkdirSync(curationDatasetsDirectoryPath)
   curatorConfig.curationSegments.forEach((someCurationSegment) => {
+    const segmentDataset =
+      curatorConfig.curationDatasets[someCurationSegment.segmentDataset] ??
+      throwInvalidPathError('buildApp.segmentDataset_2')
     FileSystem.writeFileSync(
       Path.join(
         curationDatasetsDirectoryPath,
-        `./${someCurationSegment.segmentLabel.toLowerCase()}.json`
+        `./${someCurationSegment.segmentDataset}.json`
       ),
       JSON.stringify(
-        // @ts-expect-error
-        someCurationSegment.segmentItems.reduce(
-          (
-            curationItemsMapResult: Record<string, MusicItem | SpotItem>,
-            someCurationItem: MusicItem | SpotItem
-          ) => {
+        segmentDataset.datasetItems.reduce<Record<string, CurationItemBase>>(
+          (curationItemsMapResult, someCurationItem) => {
             curationItemsMapResult[someCurationItem.itemId] = someCurationItem
             return curationItemsMapResult
           },

@@ -1,5 +1,5 @@
 import { CurationItemBase } from '@stews/data/CurationItem'
-import { AdjustedSegmentView } from '@stews/data/CuratorConfig'
+import { AdjustedSegmentView } from '@stews/data/CurationSegment'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'

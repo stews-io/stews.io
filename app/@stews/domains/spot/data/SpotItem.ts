@@ -5,7 +5,7 @@ export interface SpotItem extends CurationItemBase {
   spotName: string
   spotLocation: string
   spotTags: ArrayOfAtLeastOne<string>
-  externalLinks: ArrayOfAtLeastOne<{
+  spotLinks: ArrayOfAtLeastOne<{
     linkLabel: string
     linkHref: string
   }>

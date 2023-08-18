@@ -1,5 +1,4 @@
 import { Page } from '@stews/components/Page'
-import { AdjustedSegmentView } from '@stews/data/CuratorConfig'
 import { CuratorInfo } from '@stews/data/CuratorInfo'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { AsyncDataState } from '@stews/hooks/useAsyncData'
@@ -18,6 +17,7 @@ import {
 } from './hooks'
 import cssModule from './CurationPageBase.module.scss'
 import { CurationItemBase } from '@stews/data/CurationItem'
+import { AdjustedSegmentView } from '@stews/data/CurationSegment'
 
 interface CurationPageBaseProps<CurationItem extends CurationItemBase>
   extends CurationPageBaseDataProps<CurationItem>,

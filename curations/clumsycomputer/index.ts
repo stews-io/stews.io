@@ -22,9 +22,22 @@ export const curatorConfig: CuratorConfig = {
       },
     ],
   },
+  curationDatasets: {
+    music: {
+      datasetKey: 'music',
+      datasetType: 'music',
+      datasetItems: musicItems,
+    },
+    spots: {
+      datasetKey: 'spots',
+      datasetType: 'spot',
+      datasetItems: spotItems,
+    },
+  },
   curationSegments: [
     {
-      segmentType: 'music',
+      segmentKey: 'music',
+      segmentDataset: 'music',
       segmentLabel: 'music',
       segmentViews: [
         {
@@ -73,19 +86,18 @@ export const curatorConfig: CuratorConfig = {
           viewFilter: 'recordingContext:live OR recordingContext:concert',
         },
       ],
-      segmentItems: musicItems,
     },
     {
-      segmentType: 'spot',
+      segmentKey: 'spots',
+      segmentDataset: 'spots',
       segmentLabel: 'spots',
       segmentViews: [
         {
           viewId: 'G3BC',
           viewLabel: 'eateries',
-          viewFilter: 'mugsTags:eatery',
+          viewFilter: 'spotTags:eatery',
         },
       ],
-      segmentItems: spotItems,
     },
   ],
 }

@@ -13,7 +13,7 @@ import {
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './CuratorViewSelect.module.scss'
 import { CurationItemBase } from '@stews/data/CurationItem'
-import { AdjustedSegmentView } from '@stews/data/CuratorConfig'
+import { AdjustedSegmentView } from '@stews/data/CurationSegment'
 
 export interface CuratorViewSelectProps
   extends ViewSelectBaseDataProps,
