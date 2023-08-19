@@ -7,13 +7,16 @@ import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './ViewSearchInput.module.scss'
 
 export interface ViewSearchInputProps
-  extends Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'>,
+  extends Pick<
+      CurationPageBaseDataProps<CurationItemBase>,
+      'activeCurationSegment'
+    >,
     Pick<Required<ComponentProps<'input'>>, 'value' | 'onInput'> {
   resetValue: () => void
 }
 
 export function ViewSearchInput(props: ViewSearchInputProps) {
-  const { curationType, value, onInput, resetValue } = props
+  const { value, onInput, activeCurationSegment, resetValue } = props
   const searchInputRef = useRef<HTMLInputElement>(null)
   const scrollInputIntoFocus = useMemo(
     () => () => {
@@ -42,7 +45,7 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
         autocapitalize={'off'}
         spellcheck={false}
         className={cssModule.searchInput}
-        placeholder={`search ${curationType}`}
+        placeholder={`search ${activeCurationSegment.segmentLabel}`}
         ref={searchInputRef}
         value={value}
         onInput={onInput}

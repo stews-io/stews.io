@@ -31,7 +31,6 @@ interface CurationPageBaseProps<CurationItem extends CurationItemBase>
 export interface CurationPageBaseDataProps<
   CurationItem extends CurationItemBase
 > {
-  curationType: string
   curatorInfo: CuratorInfo
   curationSegments: ArrayOfAtLeastOne<AdjustedCurationSegment>
   viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
@@ -51,7 +50,7 @@ export interface CurationPageBaseConfigProps {
 }
 
 type ViewSelectProps = ViewSelectBaseDataProps &
-  Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'>
+  Pick<CurationPageBaseDataProps<CurationItemBase>, 'activeCurationSegment'>
 
 type ProfileBopperProps = ProfileBopperBaseDataProps
 
@@ -63,7 +62,6 @@ export function CurationPageBase<CurationItem extends CurationItemBase>(
     activeCurationSegment,
     ItemDisplay,
     getItemSearchSpace,
-    curationType,
     curatorInfo,
     curationSegments,
     ViewSelect,
@@ -99,7 +97,7 @@ export function CurationPageBase<CurationItem extends CurationItemBase>(
   const { pageHeaderContainerRef } = useStickyPageHeaderWorkaround()
   return (
     <Page
-      pageAriaHeader={`${curatorInfo.curatorName}: ${curationType} curation`}
+      pageAriaHeader={`${curatorInfo.curatorName}: ${activeCurationSegment.segmentLabel} curation`}
     >
       <div
         ref={pageHeaderContainerRef}
@@ -108,8 +106,8 @@ export function CurationPageBase<CurationItem extends CurationItemBase>(
         <div className={cssModule.pageHeader}>
           <div className={cssModule.viewSelectContainer}>
             <ViewSelect
-              viewAriaHeader={`${curationType} view: ${curationPageState.curationView.viewLabel}`}
-              curationType={curationType}
+              viewAriaHeader={`${activeCurationSegment.segmentLabel} view: ${curationPageState.curationView.viewLabel}`}
+              activeCurationSegment={activeCurationSegment}
               optionList={activeCurationSegment.segmentViews}
               selectedOption={curationPageState.curationView}
               selectOption={(nextCurationView) => {
@@ -149,7 +147,7 @@ export function CurationPageBase<CurationItem extends CurationItemBase>(
         </div>
         <div className={cssModule.viewSearchInputContainer}>
           <ViewSearchInput
-            curationType={curationType}
+            activeCurationSegment={activeCurationSegment}
             value={curationPageState.viewSearchQuery}
             onInput={(someInputEvent) => {
               const nextViewSearch = someInputEvent.currentTarget.value

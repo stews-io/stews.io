@@ -23,7 +23,6 @@ export function SpotCurationPage(props: SpotCurationPageProps) {
   } = props
   return (
     <ConsumerCurationPage<SpotItem>
-      curationType={'spot'}
       ItemDisplay={SpotItemDisplay}
       getItemSearchSpace={(someSpotItem) =>
         `${someSpotItem.spotName},${

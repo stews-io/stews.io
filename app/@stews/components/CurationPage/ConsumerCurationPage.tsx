@@ -14,7 +14,6 @@ export function ConsumerCurationPage<CurationItem extends CurationItemBase>(
     ItemDisplay,
     viewSortConfig,
     getItemSearchSpace,
-    curationType,
     curatorInfo,
     curationSegments,
     activeCurationSegment,
@@ -27,7 +26,6 @@ export function ConsumerCurationPage<CurationItem extends CurationItemBase>(
       ProfileBopper={ConsumerProfileBopper}
       viewSortConfig={viewSortConfig}
       getItemSearchSpace={getItemSearchSpace}
-      curationType={curationType}
       curatorInfo={curatorInfo}
       curationSegments={curationSegments}
       activeCurationSegment={activeCurationSegment}

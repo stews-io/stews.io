@@ -13,7 +13,6 @@ export function CuratorCurationPage<CurationItem extends CurationItemBase>(
     ItemDisplay,
     viewSortConfig,
     getItemSearchSpace,
-    curationType,
     curatorInfo,
     curationSegments,
     activeCurationSegment,
@@ -26,7 +25,6 @@ export function CuratorCurationPage<CurationItem extends CurationItemBase>(
       ItemDisplay={ItemDisplay}
       viewSortConfig={viewSortConfig}
       getItemSearchSpace={getItemSearchSpace}
-      curationType={curationType}
       curatorInfo={curatorInfo}
       curationSegments={curationSegments}
       activeCurationSegment={activeCurationSegment}

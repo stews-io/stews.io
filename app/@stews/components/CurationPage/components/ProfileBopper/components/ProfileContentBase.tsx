@@ -87,6 +87,17 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
               onBlur={popoverNavigationItemBlurHandler}
               onSelect={() => {
                 selectCurationSegment(someCurationSegment)
+                anchorElementRef.current instanceof HTMLDivElement
+                  ? anchorElementRef.current.focus()
+                  : throwInvalidPathError('CuratorProfile.CloseButton.onSelect')
+              }}
+              onClick={() => {
+                anchorElementRef.current instanceof HTMLDivElement
+                  ? anchorElementRef.current.setAttribute(
+                      'data-pointer-focus',
+                      'true'
+                    )
+                  : throwInvalidPathError('CuratorProfile.CloseButton.onClick')
               }}
             >
               {someCurationSegment.segmentLabel}

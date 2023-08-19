@@ -1,5 +1,5 @@
-@import "@stews/styles/layout";
-@import "@stews/styles/theme";
+@import '@stews/styles/layout';
+@import '@stews/styles/theme';
 
 .displayContainer {
   @extend .columnContainer;
@@ -58,7 +58,7 @@
 
 .itemLabel {
   @extend .textEllipsis;
-  margin-inline-end: $themeSpacer; 
+  margin-inline-end: $themeSpacer;
   margin-block-end: $themeSpacer;
   background-color: $themeTextBackgroundColor;
   border-radius: 3px;

@@ -23,7 +23,6 @@ export function MusicCurationPage(props: MusicCurationPageProps) {
   } = props
   return (
     <ConsumerCurationPage<MusicItem>
-      curationType={'music'}
       ItemDisplay={MusicItemDisplay}
       getItemSearchSpace={(someMusicItem) =>
         `${someMusicItem.musicTitle},${someMusicItem.musicArtist.join(

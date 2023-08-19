@@ -96,6 +96,7 @@
   font-weight: 700;
 
   &.activeSegment {
+    font-style: italic;
     text-decoration: underline;
   }
 }
