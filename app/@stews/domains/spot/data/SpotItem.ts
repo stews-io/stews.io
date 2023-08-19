@@ -3,7 +3,8 @@ import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 
 export interface SpotItem extends CurationItemBase {
   spotName: string
-  spotLocation: string
+  spotThumbnailHref: string
+  spotLocation: ArrayOfAtLeastOne<string>
   spotTags: ArrayOfAtLeastOne<string>
   spotLinks: ArrayOfAtLeastOne<{
     linkLabel: string

@@ -1,7 +1,7 @@
 @import '@stews/styles/layout';
 @import '@stews/styles/theme';
 
-.displayContainer {
+.itemDisplayContainer {
   @extend .columnContainer;
   padding-block: $themeSpacer;
 }
@@ -11,7 +11,7 @@
   flex-wrap: wrap;
 }
 
-.musicThumbnail {
+.itemThumbnail {
   margin-left: 1px;
   margin-bottom: calc(3 / 4) * $themeSpacer;
   width: 160px;
@@ -21,18 +21,18 @@
   box-shadow: 0 0 0 1px $themeTextBackgroundColor;
 }
 
-.musicLinks {
+.itemLinks {
   @extend .columnContainer;
   flex-grow: 1;
   align-items: flex-end;
   padding-inline-start: $themeSpacer;
 }
 
-.linkContainer {
+.itemLinkContainer {
   padding-block-end: $themeSpacer;
 }
 
-.musicLinkButton {
+.itemLinkButton {
   font-weight: 700;
   text-decoration: underline;
   color: $themeButtonTextColor;

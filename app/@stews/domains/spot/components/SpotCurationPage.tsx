@@ -37,7 +37,7 @@ export function SpotCurationPage(props: SpotCurationPageProps) {
         },
         {
           fieldKey: 'spotLocation',
-          fieldType: 'string',
+          fieldType: 'orderedStringSet',
           sortLabelBase: 'location',
         },
       ]}
