@@ -68,7 +68,7 @@
   @extend .itemContainer;
   justify-content: flex-start;
   padding-inline: calc(3 / 2) * $themeSpacer;
-  padding-block-start: 3 * $themeSpacer;
+  padding-block-start: calc(3 / 2) * $themeSpacer;
 }
 
 .generalFooter {
@@ -89,5 +89,5 @@
 
 .pageFooterSpacer {
   @extend .itemContainer;
-  padding-block-end: calc(7 / 2) * $themeSpacer;
+  padding-block-end: 3 * $themeSpacer;
 }
