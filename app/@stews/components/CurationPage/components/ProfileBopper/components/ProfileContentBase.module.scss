@@ -1,5 +1,5 @@
-@import "@stews/styles/layout";
-@import "@stews/styles/theme";
+@import '@stews/styles/layout';
+@import '@stews/styles/theme';
 
 .profileContainer {
   @extend .columnContainer;
@@ -20,7 +20,7 @@
   flex-grow: 1;
   padding-inline-end: 3 * $themeSpacer;
   font-weight: 700;
-  font-size: 23px,
+  font-size: 23px;
 }
 
 .closeButtonContainer {
@@ -31,7 +31,7 @@
 
 .closeButton {
   @extend .itemContainer;
-  padding: 0.00rem;
+  padding: 0rem;
 }
 
 .closeIcon {
@@ -48,13 +48,13 @@
 .curatorLocation {
   @extend .textEllipsis;
   padding-block-start: calc(1 / 8) * $themeSpacer;
-  padding-inline-end: 6 * $themeSpacer;  
+  padding-inline-end: 6 * $themeSpacer;
   font-size: 14px;
 }
 
 .curatorStatus {
   padding-block-start: calc(3 / 4) * $themeSpacer;
-  padding-inline-end: 6 * $themeSpacer;  
+  padding-inline-end: 6 * $themeSpacer;
   font-size: 14px;
   font-weight: 700;
   font-style: italic;
@@ -78,4 +78,26 @@
 .curatorLinkIcon {
   width: 20px;
   height: 20px;
+}
+
+.segmentLinks {
+  @extend .rowContainer;
+  flex-wrap: wrap;
+}
+
+.segmentLinkContainer {
+  @extend .itemContainer;
+  padding-inline-end: 2 * $themeSpacer;
+  padding-block: $themeSpacer;
+}
+
+.segmentLinkButton {
+  color: $themeButtonTextColor;
+  font-weight: 700;
+
+  &.activeSegment {
+    font-style: italic;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+  }
 }

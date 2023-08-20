@@ -1,4 +1,3 @@
-export interface CurationItemBase {
+export interface CurationItem {
   itemId: number
-  // itemTags: Array<string>
 }

@@ -1,25 +1,25 @@
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { useMemo } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 
-export type ViewSortOptionConfig<CurationItem extends CurationItemBase> = {
-  [SomeItemKey in keyof CurationItem]: SomeItemKey extends string &
-    keyof CurationItem
-    ? CurationItem[SomeItemKey] extends string
+export type ViewSortOptionConfig<SomeCurationItem extends CurationItem> = {
+  [SomeItemKey in keyof SomeCurationItem]: SomeItemKey extends string &
+    keyof SomeCurationItem
+    ? SomeCurationItem[SomeItemKey] extends string
       ? {
           fieldKey: SomeItemKey
           fieldType: 'string'
           sortLabelBase: string
         }
-      : CurationItem[SomeItemKey] extends ArrayOfAtLeastOne<string>
+      : SomeCurationItem[SomeItemKey] extends ArrayOfAtLeastOne<string>
       ? {
           fieldKey: SomeItemKey
           fieldType: 'orderedStringSet'
           sortLabelBase: string
         }
-      : CurationItem[SomeItemKey] extends number
+      : SomeCurationItem[SomeItemKey] extends number
       ? {
           fieldKey: SomeItemKey
           fieldType: 'number'
@@ -27,26 +27,26 @@ export type ViewSortOptionConfig<CurationItem extends CurationItemBase> = {
         }
       : never
     : never
-}[keyof CurationItem]
+}[keyof SomeCurationItem]
 
-export interface ViewSortOption<CurationItem extends CurationItemBase> {
+export interface ViewSortOption<SomeCurationItem extends CurationItem> {
   sortId: string
   sortLabel: string
-  getSortOrder: NonNullable<Parameters<Array<CurationItem>['sort']>[0]>
+  getSortOrder: NonNullable<Parameters<Array<SomeCurationItem>['sort']>[0]>
 }
 
-export interface UseViewSortOptionsApi<CurationItem extends CurationItemBase>
-  extends Pick<CurationPageBaseDataProps<CurationItem>, 'viewSortConfig'> {}
+export interface UseViewSortOptionsApi<SomeCurationItem extends CurationItem>
+  extends Pick<CurationPageBaseDataProps<SomeCurationItem>, 'viewSortConfig'> {}
 
 export interface UseViewSortOptionsResult<
-  CurationItem extends CurationItemBase
+  SomeCurationItem extends CurationItem
 > {
-  viewSortOptions: ArrayOfAtLeastOne<ViewSortOption<CurationItem>>
+  viewSortOptions: ArrayOfAtLeastOne<ViewSortOption<SomeCurationItem>>
 }
 
-export function useViewSortOptions<CurationItem extends CurationItemBase>(
-  api: UseViewSortOptionsApi<CurationItem>
-): UseViewSortOptionsResult<CurationItem> {
+export function useViewSortOptions<SomeCurationItem extends CurationItem>(
+  api: UseViewSortOptionsApi<SomeCurationItem>
+): UseViewSortOptionsResult<SomeCurationItem> {
   const { viewSortConfig } = api
   return useMemo(
     () => ({
@@ -72,18 +72,18 @@ export function useViewSortOptions<CurationItem extends CurationItemBase>(
           }
           return viewSortOptionsResult
         },
-        [] as unknown as ArrayOfAtLeastOne<ViewSortOption<CurationItem>>
+        [] as unknown as ArrayOfAtLeastOne<ViewSortOption<SomeCurationItem>>
       ),
     }),
     [viewSortConfig]
   )
 }
 
-interface PushStringSortOptionsApi<CurationItem extends CurationItemBase>
-  extends PushSortOptionsDataApi<CurationItem> {}
+interface PushStringSortOptionsApi<SomeCurationItem extends CurationItem>
+  extends PushSortOptionsDataApi<SomeCurationItem> {}
 
-function pushStringSortOptions<CurationItem extends CurationItemBase>(
-  api: PushStringSortOptionsApi<CurationItem>
+function pushStringSortOptions<SomeCurationItem extends CurationItem>(
+  api: PushStringSortOptionsApi<SomeCurationItem>
 ) {
   const { viewSortOptionsResult, someSortOptionConfig } = api
   pushStringSortOptionsBase({
@@ -99,11 +99,11 @@ function pushStringSortOptions<CurationItem extends CurationItemBase>(
 }
 
 interface PushOrderedStringSetSortOptionsApi<
-  CurationItem extends CurationItemBase
-> extends PushSortOptionsDataApi<CurationItem> {}
+  SomeCurationItem extends CurationItem
+> extends PushSortOptionsDataApi<SomeCurationItem> {}
 
-function pushOrderedStringSetSortOptions<CurationItem extends CurationItemBase>(
-  api: PushOrderedStringSetSortOptionsApi<CurationItem>
+function pushOrderedStringSetSortOptions<SomeCurationItem extends CurationItem>(
+  api: PushOrderedStringSetSortOptionsApi<SomeCurationItem>
 ) {
   const { viewSortOptionsResult, someSortOptionConfig } = api
   pushStringSortOptionsBase({
@@ -118,16 +118,16 @@ function pushOrderedStringSetSortOptions<CurationItem extends CurationItemBase>(
   })
 }
 
-interface PushStringSortOptionsBaseApi<CurationItem extends CurationItemBase>
-  extends PushSortOptionsDataApi<CurationItem> {
+interface PushStringSortOptionsBaseApi<SomeCurationItem extends CurationItem>
+  extends PushSortOptionsDataApi<SomeCurationItem> {
   getFieldValue: (
-    someItem: CurationItem,
-    fieldKey: PushSortOptionsDataApi<CurationItem>['someSortOptionConfig']['fieldKey']
+    someItem: SomeCurationItem,
+    fieldKey: PushSortOptionsDataApi<SomeCurationItem>['someSortOptionConfig']['fieldKey']
   ) => string
 }
 
-function pushStringSortOptionsBase<CurationItem extends CurationItemBase>(
-  api: PushStringSortOptionsBaseApi<CurationItem>
+function pushStringSortOptionsBase<SomeCurationItem extends CurationItem>(
+  api: PushStringSortOptionsBaseApi<SomeCurationItem>
 ) {
   const { viewSortOptionsResult, someSortOptionConfig, getFieldValue } = api
   pushSortOptions({
@@ -148,11 +148,11 @@ function pushStringSortOptionsBase<CurationItem extends CurationItemBase>(
   })
 }
 
-interface PushNumberSortOptionsApi<CurationItem extends CurationItemBase>
-  extends PushSortOptionsDataApi<CurationItem> {}
+interface PushNumberSortOptionsApi<SomeCurationItem extends CurationItem>
+  extends PushSortOptionsDataApi<SomeCurationItem> {}
 
-function pushNumberSortOptions<CurationItem extends CurationItemBase>(
-  api: PushNumberSortOptionsApi<CurationItem>
+function pushNumberSortOptions<SomeCurationItem extends CurationItem>(
+  api: PushNumberSortOptionsApi<SomeCurationItem>
 ) {
   const { viewSortOptionsResult, someSortOptionConfig } = api
   pushSortOptions({
@@ -177,26 +177,26 @@ function pushNumberSortOptions<CurationItem extends CurationItemBase>(
   })
 }
 
-interface PushSortOptionsApi<CurationItem extends CurationItemBase>
-  extends PushSortOptionsDataApi<CurationItem>,
-    PushSortOptionsConfigApi<CurationItem> {}
+interface PushSortOptionsApi<SomeCurationItem extends CurationItem>
+  extends PushSortOptionsDataApi<SomeCurationItem>,
+    PushSortOptionsConfigApi<SomeCurationItem> {}
 
-interface PushSortOptionsDataApi<CurationItem extends CurationItemBase> {
+interface PushSortOptionsDataApi<SomeCurationItem extends CurationItem> {
   viewSortOptionsResult: ReturnType<
-    typeof useViewSortOptions<CurationItem>
+    typeof useViewSortOptions<SomeCurationItem>
   >['viewSortOptions']
-  someSortOptionConfig: UseViewSortOptionsApi<CurationItem>['viewSortConfig'][number]
+  someSortOptionConfig: UseViewSortOptionsApi<SomeCurationItem>['viewSortConfig'][number]
 }
 
-interface PushSortOptionsConfigApi<CurationItem extends CurationItemBase> {
+interface PushSortOptionsConfigApi<SomeCurationItem extends CurationItem> {
   ascendingSortLabelExtension: string
   descendingSortLabelExtension: string
-  getAscendingSortOrder: ViewSortOption<CurationItem>['getSortOrder']
-  getDescendingSortOrder: ViewSortOption<CurationItem>['getSortOrder']
+  getAscendingSortOrder: ViewSortOption<SomeCurationItem>['getSortOrder']
+  getDescendingSortOrder: ViewSortOption<SomeCurationItem>['getSortOrder']
 }
 
-function pushSortOptions<CurationItem extends CurationItemBase>(
-  api: PushSortOptionsApi<CurationItem>
+function pushSortOptions<SomeCurationItem extends CurationItem>(
+  api: PushSortOptionsApi<SomeCurationItem>
 ) {
   const {
     viewSortOptionsResult,

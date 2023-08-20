@@ -1,47 +1,46 @@
-import { CurationItemBase } from '@stews/data/CurationItem'
-import { AdjustedCurationView } from '@stews/data/CurationView'
-import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
+import { CurationItem } from '@stews/data/CurationItem'
+import { AdjustedSegmentView } from '@stews/data/CurationSegment'
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { UseViewSortOptionsResult, ViewSortOption } from './useViewSortOptions'
 
-export interface CurationPageState<CurationItem extends CurationItemBase> {
-  curationKey: string
-  curationView: AdjustedCurationView
-  viewSortOption: ViewSortOption<CurationItem>
+export interface CurationPageState<SomeCurationItem extends CurationItem> {
+  curationView: AdjustedSegmentView
+  viewSortOption: ViewSortOption<SomeCurationItem>
   viewSearchQuery: string
   viewPageIndex: number
 }
 
-export interface UseCurationPageStateApi<CurationItem extends CurationItemBase>
-  extends Pick<CurationPageBaseDataProps<CurationItem>, 'curationViews'>,
-    Pick<UseViewSortOptionsResult<CurationItem>, 'viewSortOptions'> {}
+export interface UseCurationPageStateApi<SomeCurationItem extends CurationItem>
+  extends Pick<
+      CurationPageBaseDataProps<SomeCurationItem>,
+      'activeCurationSegment'
+    >,
+    Pick<UseViewSortOptionsResult<SomeCurationItem>, 'viewSortOptions'> {}
 
-export function useCurationPageState<CurationItem extends CurationItemBase>(
-  api: UseCurationPageStateApi<CurationItem>
+export function useCurationPageState<SomeCurationItem extends CurationItem>(
+  api: UseCurationPageStateApi<SomeCurationItem>
 ) {
-  const { curationViews, viewSortOptions } = api
+  const { activeCurationSegment, viewSortOptions } = api
   const initialUrlPageState = useMemo(() => {
     const [_, urlPathCurationKey, urlPathViewId] =
       window.location.pathname.split('/')
     const initialSearchParams = new URLSearchParams(window.location.search)
     return {
-      curationKey:
-        urlPathCurationKey ??
-        throwInvalidPathError('useCurationPageState.urlPathCurationKey'),
       viewId: urlPathViewId,
       sortId: initialSearchParams.get('sort'),
       viewSearchQuery: initialSearchParams.get('search') ?? '',
       viewPageIndex: 0,
     }
   }, [])
-  const useCurationPageStateResult = useState<CurationPageState<CurationItem>>({
-    curationKey: initialUrlPageState.curationKey,
+  const useCurationPageStateResult = useState<
+    CurationPageState<SomeCurationItem>
+  >({
     curationView:
-      curationViews.find(
+      activeCurationSegment.segmentViews.find(
         (someCurationView) =>
           someCurationView.viewId === initialUrlPageState.viewId
-      ) ?? curationViews[0],
+      ) ?? activeCurationSegment.segmentViews[0],
     viewSortOption:
       viewSortOptions.find(
         (someViewSortOption) =>
@@ -63,7 +62,7 @@ export function useCurationPageState<CurationItem extends CurationItemBase>(
     window.history.replaceState(
       null,
       'noop',
-      `/${curationPageState.curationKey}/${
+      `/${activeCurationSegment.segmentKey}/${
         curationPageState.curationView.viewId
       }?${nextUrlSearchParams.toString()}`
     )

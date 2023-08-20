@@ -1,18 +1,19 @@
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
-import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
+import { useEffect, useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { ViewPageMessageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { CurationPageState } from './useCurationPageState'
+import { useAsyncData } from '@stews/hooks/useAsyncData'
 
-export interface UseViewPageApi<CurationItem extends CurationItemBase>
+export interface UseViewPageApi<SomeCurationItem extends CurationItem>
   extends Pick<
-    CurationPageBaseDataProps<CurationItem>,
-    'ItemDisplay' | 'getItemSearchSpace' | 'fetchCurationItemsMapState'
+    CurationPageBaseDataProps<SomeCurationItem>,
+    'ItemDisplay' | 'getItemSearchSpace' | 'activeCurationSegment'
   > {
-  curationPageState: CurationPageState<CurationItem>
+  curationPageState: CurationPageState<SomeCurationItem>
   pageItemSize: number
   setPageIndexToPrevious: PageIndexSetter
   setPageIndexToNext: PageIndexSetter
@@ -20,11 +21,11 @@ export interface UseViewPageApi<CurationItem extends CurationItemBase>
 
 type PageIndexSetter = (currentAdjustedPageIndex: number) => void
 
-export function useViewPage<CurationItem extends CurationItemBase>(
-  api: UseViewPageApi<CurationItem>
+export function useViewPage<SomeCurationItem extends CurationItem>(
+  api: UseViewPageApi<SomeCurationItem>
 ) {
   const {
-    fetchCurationItemsMapState,
+    activeCurationSegment,
     curationPageState,
     getItemSearchSpace,
     pageItemSize,
@@ -32,6 +33,19 @@ export function useViewPage<CurationItem extends CurationItemBase>(
     setPageIndexToPrevious,
     setPageIndexToNext,
   } = api
+  const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
+    useAsyncData({
+      initialAsyncDataState: {
+        stateType: 'loading',
+      },
+      fetchAsyncData: (): Promise<Record<string, SomeCurationItem>> =>
+        fetch(
+          `/assets/curations/${activeCurationSegment.segmentDataset}.json`
+        ).then((serverResponse) => serverResponse.json()),
+    })
+  useEffect(() => {
+    triggerFetchCurationItemsMap()
+  }, [activeCurationSegment.segmentDataset])
   const pageTopElementRef = useRef<HTMLDivElement>(null)
   const viewPageResult = useMemo(() => {
     if (fetchCurationItemsMapState.stateType === 'loading') {
@@ -43,7 +57,7 @@ export function useViewPage<CurationItem extends CurationItemBase>(
       const { curationView, viewSearchQuery, viewSortOption, viewPageIndex } =
         curationPageState
       const searchedAndSortedViewItems = curationView.viewItemIds
-        .reduce<Array<CurationItem>>((result, someViewItemId) => {
+        .reduce<Array<SomeCurationItem>>((result, someViewItemId) => {
           const someViewItem =
             fetchCurationItemsMapState.data[someViewItemId] ??
             throwInvalidPathError('useViewPage.fetchCurationItemsMapState.data')

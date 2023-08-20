@@ -10,28 +10,28 @@ import {
   ViewSelectBaseConfigProps,
   ViewSelectBaseDataProps,
 } from './ViewSelectBase'
-import { AdjustedCurationView } from '@stews/data/CurationView'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import cssModule from './CuratorViewSelect.module.scss'
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
+import { AdjustedSegmentView } from '@stews/data/CurationSegment'
 
 export interface CuratorViewSelectProps
   extends ViewSelectBaseDataProps,
-    Pick<CurationPageBaseDataProps<CurationItemBase>, 'curationType'> {}
+    Pick<CurationPageBaseDataProps<CurationItem>, 'activeCurationSegment'> {}
 
 export function CuratorViewSelect(props: CuratorViewSelectProps) {
-  const { curationType, ...viewSelectBaseProps } = props
+  const { activeCurationSegment, ...viewSelectBaseProps } = props
   return (
     <ViewSelectBase
       popoverAriaRole={'menu'}
-      anchorAriaLabel={`show ${curationType} view menu`}
-      anchorAriaDescription={`a button that displays a popover with options for selecting, editing, or creating a ${curationType} view`}
+      anchorAriaLabel={`show ${activeCurationSegment.segmentLabel} view menu`}
+      anchorAriaDescription={`a button that displays a popover with options for selecting, editing, or creating a ${activeCurationSegment.segmentLabel} view`}
       SelectMenu={CuratorSelectMenu}
       customOptionActionItemProps={{
-        curationType,
+        activeCurationSegment,
       }}
       customMenuFooterProps={{
-        curationType,
+        activeCurationSegment,
       }}
       {...viewSelectBaseProps}
     />
@@ -58,7 +58,7 @@ function CuratorSelectMenu(props: CuratorSelectMenuProps) {
 
 interface CuratorSelectMenuPropsConfig
   extends SelectMenuBaseConfigProps<
-    AdjustedCurationView,
+    AdjustedSegmentView,
     CustomCuratorOptionActionItemProps,
     CustomCuratorMenuFooterProps
   > {}
@@ -67,11 +67,11 @@ interface CuratorOptionActionItemProps
   extends ComponentProps<CuratorSelectMenuPropsConfig['OptionActionItem']> {}
 
 interface CustomCuratorOptionActionItemProps
-  extends Pick<CuratorViewSelectProps, 'curationType'> {}
+  extends Pick<CuratorViewSelectProps, 'activeCurationSegment'> {}
 
 function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
   const {
-    curationType,
+    activeCurationSegment,
     someOption,
     getMenuNavigationOptionActionButtonProps,
     optionIndex,
@@ -81,8 +81,8 @@ function CuratorOptionActionItem(props: CuratorOptionActionItemProps) {
     <div className={cssModule.optionActionItem}>
       <LinkButton
         target={'_self'}
-        href={`${curationType}/view/${someOption.viewId}/edit`}
-        ariaLabel={`edit "${someOption.viewLabel}" ${curationType} view`}
+        href={`${activeCurationSegment.segmentKey}/view/${someOption.viewId}/edit`}
+        ariaLabel={`edit "${someOption.viewLabel}" ${activeCurationSegment.segmentLabel} view`}
         ariaDescription={`a button that navigates to the edit view page for "${someOption.viewLabel}"`}
         {...getMenuNavigationOptionActionButtonProps(optionIndex)}
       >
@@ -117,18 +117,18 @@ interface CuratorMenuFooterProps
   extends ComponentProps<CuratorSelectMenuPropsConfig['MenuFooter']> {}
 
 interface CustomCuratorMenuFooterProps
-  extends Pick<CuratorViewSelectProps, 'curationType'> {}
+  extends Pick<CuratorViewSelectProps, 'activeCurationSegment'> {}
 
 function CurtatorMenuFooter(props: CuratorMenuFooterProps) {
-  const { curationType, menuNavigationFooterActionButtonProps } = props
+  const { activeCurationSegment, menuNavigationFooterActionButtonProps } = props
   return (
     <div className={cssModule.footerContainer}>
       <div className={cssModule.footerDivider} />
       <div className={cssModule.footerActionButtonContainer}>
         <LinkButton
           target={'_self'}
-          href={`${curationType}/view/create`}
-          ariaLabel={`create ${curationType} view`}
+          href={`${activeCurationSegment.segmentKey}/view/create`}
+          ariaLabel={`create ${activeCurationSegment.segmentLabel} view`}
           ariaDescription={''}
           className={cssModule.footerActionButton}
           {...menuNavigationFooterActionButtonProps}

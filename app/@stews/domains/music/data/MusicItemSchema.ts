@@ -1,3 +1,4 @@
+import { arrayOfOneSchema } from '@stews/data/helpers'
 import Zod from 'zod'
 
 const MusicItemSchemaBase = Zod.object({
@@ -5,27 +6,16 @@ const MusicItemSchemaBase = Zod.object({
   musicThumbnailHref: Zod.string(),
   musicTitle: Zod.string(),
   musicYear: Zod.number(),
-  musicArtist: Zod.tuple([Zod.string()]).rest(Zod.string()),
-  musicTags: Zod.tuple([Zod.string()]).rest(Zod.string()),
-  recordingContext: Zod.tuple([
-    Zod.union([
-      Zod.literal('studio'),
-      Zod.literal('live'),
-      Zod.literal('concert'),
-    ]),
-  ]).rest(
+  musicArtist: arrayOfOneSchema(Zod.string()),
+  musicTags: arrayOfOneSchema(Zod.string()),
+  recordingContext: arrayOfOneSchema(
     Zod.union([
       Zod.literal('studio'),
       Zod.literal('live'),
       Zod.literal('concert'),
     ])
   ),
-  externalLinks: Zod.tuple([
-    Zod.object({
-      linkLabel: Zod.string(),
-      linkHref: Zod.string(),
-    }),
-  ]).rest(
+  externalLinks: arrayOfOneSchema(
     Zod.object({
       linkLabel: Zod.string(),
       linkHref: Zod.string(),
