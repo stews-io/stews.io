@@ -85,7 +85,7 @@
   color: $themeButtonTextColor;
   font-weight: 600;
   font-style: italic;
-  font-size: 0.825rem;
+  font-size: calc(11 / 12) * 1rem;
 }
 
 .pageFooterSpacer {
