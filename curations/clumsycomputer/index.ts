@@ -91,7 +91,13 @@ export const curatorConfig: CuratorConfig = {
       segmentKey: 'spots',
       segmentDataset: 'spots',
       segmentLabel: 'spots',
-      segmentViews: [],
+      segmentViews: [
+        {
+          viewId: '6U8S',
+          viewLabel: 'old town',
+          viewFilter: 'spotLocation:old town AND spotLocation:fort collins',
+        },
+      ],
     },
   ],
 }

@@ -175,4 +175,52 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 11,
+    spotName: 'high point bar',
+    spotThumbnailHref:
+      'http://images.squarespace-cdn.com/content/v1/56464a9ee4b0d770f6df5be4/1467930880912-R0GA8XCGU7X3KOF240NO/high-point-logo-csu.jpg?format=1500w',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.highpointbar.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'high point bar fort collins',
+      }),
+    ],
+  },
+  {
+    itemId: 12,
+    spotName: 'surfside 7',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305207362_616345646524011_4639620687507353827_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8NeQpv2dNbsAX83d2qf&_nc_ht=scontent-ord5-1.xx&oh=00_AfDHkKBXNth4ZiySeLjBLJ3JcFpoEMSPJ60y8eVEiEqzoQ&oe=64E66BC5',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['bar', 'music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.surfsideseven.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'surfside 7',
+      }),
+    ],
+  },
+  {
+    itemId: 13,
+    spotName: 'aggie theater',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/315875372_10159987800086072_9160164090776982857_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UlZZm1ZiD3MAX_N655g&_nc_ht=scontent-ord5-2.xx&oh=00_AfAsUxXZWdDynvQetMqetw5dyYRmgFdiJaWLniLQT-hemw&oe=64E70162',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.z2ent.com/aggie-theatre',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'aggie theater',
+      }),
+    ],
+  },
 ]
