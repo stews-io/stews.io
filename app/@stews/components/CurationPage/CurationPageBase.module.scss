@@ -77,14 +77,15 @@
   align-items: baseline;
   background-color: $themeTextBackgroundColor;
   border-radius: $themeBorderRadius;
-  padding-inline: calc(3 / 2) * $themeSpacer;
-  padding-block: $themeSpacer;
+  padding-inline: calc(4 / 3) * $themeSpacer;
+  padding-block: calc(3 / 4) * $themeSpacer;
 }
 
 .footerLinkButton {
   color: $themeButtonTextColor;
   font-weight: 600;
   font-style: italic;
+  font-size: 0.825rem;
 }
 
 .pageFooterSpacer {
