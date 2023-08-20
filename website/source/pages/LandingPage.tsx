@@ -44,7 +44,7 @@ export function LandingPage() {
             </div>
             <div className={cssModule.sectionParagraph} role={'paragraph'}>
               a project empowering individuals and communities in their quest to
-              curate and share their world
+              curate and share
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
@@ -169,18 +169,10 @@ export function LandingPage() {
                 funding
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                this project is the result of manies' generosity :) currently
-                we're using github's{' '}
-                <a
-                  className={cssModule.paragraphLink}
-                  href={'https://github.com/sponsors/clumsycomputer'}
-                  target={'_blank'}
-                >
-                  sponsor
-                </a>
-                {'  '}
-                program, making it possible for you to get value in return for
-                your financial contribution!
+                we're in the initial stages of exploring venture investment, and
+                beginning to apply to a number of accelerator programs! if you
+                are interested in participating in our first round of
+                fundraising, holler at us at business@stews.io!
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
