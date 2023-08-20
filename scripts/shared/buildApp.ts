@@ -1,4 +1,4 @@
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { AdjustedCurationSegment } from '@stews/data/CurationSegment'
 import {
   AdjustedCuratorConfig,
@@ -9,6 +9,7 @@ import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import ChildProcess from 'child_process'
 import FileSystem from 'fs'
+import FileSystemPromise from 'fs/promises'
 import * as Liqe from 'liqe'
 import Path from 'path'
 
@@ -63,7 +64,7 @@ export async function buildApp(api: BuildAppApi) {
               ...someCurationSegment.segmentViews.map((someCurationView) => ({
                 viewId: someCurationView.viewId,
                 viewLabel: someCurationView.viewLabel,
-                viewItemIds: Liqe.filter<CurationItemBase>(
+                viewItemIds: Liqe.filter<CurationItem>(
                   Liqe.parse(someCurationView.viewFilter),
                   segmentDataset.datasetItems
                 ).map((someViewItem) => someViewItem.itemId),
@@ -124,26 +125,29 @@ export async function buildApp(api: BuildAppApi) {
     })
   )
   FileSystem.mkdirSync(curationDatasetsDirectoryPath)
-  curatorConfig.curationSegments.forEach((someCurationSegment) => {
-    const segmentDataset =
-      curatorConfig.curationDatasets[someCurationSegment.segmentDataset] ??
-      throwInvalidPathError('buildApp.segmentDataset_2')
-    FileSystem.writeFileSync(
-      Path.join(
-        curationDatasetsDirectoryPath,
-        `./${someCurationSegment.segmentDataset}.json`
-      ),
-      JSON.stringify(
-        segmentDataset.datasetItems.reduce<Record<string, CurationItemBase>>(
-          (curationItemsMapResult, someCurationItem) => {
-            curationItemsMapResult[someCurationItem.itemId] = someCurationItem
-            return curationItemsMapResult
-          },
-          {}
-        )
+  await Promise.all(
+    curatorConfig.curationSegments.map((someCurationSegment) => {
+      const segmentDataset =
+        curatorConfig.curationDatasets[someCurationSegment.segmentDataset] ??
+        throwInvalidPathError('buildApp.segmentDataset_2')
+      return FileSystemPromise.writeFile(
+        Path.join(
+          curationDatasetsDirectoryPath,
+          `./${someCurationSegment.segmentDataset}.json`
+        ),
+        JSON.stringify(
+          segmentDataset.datasetItems.reduce<Record<string, CurationItem>>(
+            (curationItemsMapResult, someCurationItem) => {
+              curationItemsMapResult[someCurationItem.itemId] = someCurationItem
+              return curationItemsMapResult
+            },
+            {}
+          )
+        ),
+        'utf-8'
       )
-    )
-  })
+    })
+  )
   ChildProcess.execSync(
     `cp ${Path.join(preactAppDirectoryPath, './assets/robots.txt')} ${Path.join(
       preactBuildDirectoryPath,

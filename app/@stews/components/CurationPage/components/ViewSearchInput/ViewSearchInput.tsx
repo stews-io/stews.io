@@ -1,5 +1,5 @@
 import { Button } from '@stews/components/Button'
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ComponentProps } from 'preact'
 import { useMemo, useRef } from 'preact/hooks'
@@ -8,7 +8,7 @@ import cssModule from './ViewSearchInput.module.scss'
 
 export interface ViewSearchInputProps
   extends Pick<
-      CurationPageBaseDataProps<CurationItemBase>,
+      CurationPageBaseDataProps<CurationItem>,
       'activeCurationSegment'
     >,
     Pick<Required<ComponentProps<'input'>>, 'value' | 'onInput'> {

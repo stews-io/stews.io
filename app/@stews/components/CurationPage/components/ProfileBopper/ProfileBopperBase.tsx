@@ -1,5 +1,5 @@
 import { Bopper, BopperProps } from '@stews/components/Bopper'
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { CurationPageBaseDataProps } from '../../CurationPageBase'
 import { AdjustedCurationSegment } from '@stews/data/CurationSegment'
 
@@ -9,7 +9,7 @@ interface ProfileBopperBaseProps
 
 export interface ProfileBopperBaseDataProps
   extends Pick<
-    CurationPageBaseDataProps<CurationItemBase>,
+    CurationPageBaseDataProps<CurationItem>,
     'curatorInfo' | 'curationSegments' | 'activeCurationSegment'
   > {
   selectCurationSegment: (nextCurationSegment: AdjustedCurationSegment) => void

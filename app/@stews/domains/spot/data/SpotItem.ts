@@ -1,7 +1,7 @@
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 
-export interface SpotItem extends CurationItemBase {
+export interface SpotItem extends CurationItem {
   spotName: string
   spotThumbnailHref: string
   spotLocation: ArrayOfAtLeastOne<string>

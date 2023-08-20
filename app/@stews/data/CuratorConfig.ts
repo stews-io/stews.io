@@ -1,7 +1,5 @@
-import { MusicItemSchema } from '@stews/domains/music/data'
-import { SpotItemSchema } from '@stews/domains/spot/data'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
-import Zod, { ZodType } from 'zod'
+import Zod from 'zod'
 import {
   AdjustedCurationDataset,
   CuratorCurationDataset,
@@ -40,34 +38,30 @@ export const CuratorConfigSchema = Zod.object({
     Zod.object({
       datasetKey: Zod.string(),
       datasetType: Zod.string(),
-      // todo improve from Zod.any()
       datasetItems: Zod.array(Zod.any()),
+      // todo: figure out how to verify itemId exists without failing validation
+      // datasetItems: Zod.array(
+      //   Zod.object({
+      //     itemId: Zod.number(),
+      //   }).nonstrict()
+      // ),
     })
   ),
   curationSegments: arrayOfOneSchema(
-    Zod.union([
-      curationSegmentSchema(MusicItemSchema),
-      curationSegmentSchema(SpotItemSchema),
-    ])
+    Zod.object({
+      segmentKey: Zod.string(),
+      segmentLabel: Zod.string(),
+      segmentDataset: Zod.string(),
+      segmentViews: arrayOfOneSchema(
+        Zod.object({
+          viewId: Zod.string(),
+          viewLabel: Zod.string(),
+          viewFilter: Zod.string(),
+        })
+      ),
+    })
   ),
 })
-
-function curationSegmentSchema<SegmentItemSchema extends ZodType>(
-  segmentItemSchema: SegmentItemSchema
-) {
-  return Zod.object({
-    segmentKey: Zod.string(),
-    segmentLabel: Zod.string(),
-    segmentDataset: Zod.string(),
-    segmentViews: arrayOfOneSchema(
-      Zod.object({
-        viewId: Zod.string(),
-        viewLabel: Zod.string(),
-        viewFilter: Zod.string(),
-      })
-    ),
-  })
-}
 
 export interface AdjustedCuratorConfig {
   curatorInfo: CuratorInfo

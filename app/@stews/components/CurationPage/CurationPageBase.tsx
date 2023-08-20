@@ -1,5 +1,5 @@
 import { Page } from '@stews/components/Page'
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import {
   AdjustedCurationSegment,
   AdjustedSegmentView,
@@ -24,24 +24,24 @@ import {
 } from './hooks'
 import { StateUpdater } from 'preact/hooks'
 
-interface CurationPageBaseProps<CurationItem extends CurationItemBase>
-  extends CurationPageBaseDataProps<CurationItem>,
+interface CurationPageBaseProps<SomeCurationItem extends CurationItem>
+  extends CurationPageBaseDataProps<SomeCurationItem>,
     CurationPageBaseConfigProps {}
 
 export interface CurationPageBaseDataProps<
-  CurationItem extends CurationItemBase
+  SomeCurationItem extends CurationItem
 > {
   curatorInfo: CuratorInfo
   curationSegments: ArrayOfAtLeastOne<AdjustedCurationSegment>
-  viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<CurationItem>>
-  ItemDisplay: FunctionComponent<ItemDisplayProps<CurationItem>>
-  getItemSearchSpace: (someCurationItem: CurationItem) => string
+  viewSortConfig: ArrayOfAtLeastOne<ViewSortOptionConfig<SomeCurationItem>>
+  ItemDisplay: FunctionComponent<ItemDisplayProps<SomeCurationItem>>
+  getItemSearchSpace: (someCurationItem: SomeCurationItem) => string
   activeCurationSegment: AdjustedCurationSegment
   setActiveCurationSegment: StateUpdater<AdjustedCurationSegment>
 }
 
-export interface ItemDisplayProps<CurationItem extends CurationItemBase> {
-  someItem: CurationItem
+export interface ItemDisplayProps<SomeCurationItem extends CurationItem> {
+  someItem: SomeCurationItem
 }
 
 export interface CurationPageBaseConfigProps {
@@ -50,12 +50,12 @@ export interface CurationPageBaseConfigProps {
 }
 
 type ViewSelectProps = ViewSelectBaseDataProps &
-  Pick<CurationPageBaseDataProps<CurationItemBase>, 'activeCurationSegment'>
+  Pick<CurationPageBaseDataProps<CurationItem>, 'activeCurationSegment'>
 
 type ProfileBopperProps = ProfileBopperBaseDataProps
 
-export function CurationPageBase<CurationItem extends CurationItemBase>(
-  props: CurationPageBaseProps<CurationItem>
+export function CurationPageBase<SomeCurationItem extends CurationItem>(
+  props: CurationPageBaseProps<SomeCurationItem>
 ) {
   const {
     viewSortConfig,

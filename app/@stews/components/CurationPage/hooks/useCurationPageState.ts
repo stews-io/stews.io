@@ -1,26 +1,25 @@
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { AdjustedSegmentView } from '@stews/data/CurationSegment'
-import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { CurationPageBaseDataProps } from '../CurationPageBase'
 import { UseViewSortOptionsResult, ViewSortOption } from './useViewSortOptions'
 
-export interface CurationPageState<CurationItem extends CurationItemBase> {
+export interface CurationPageState<SomeCurationItem extends CurationItem> {
   curationView: AdjustedSegmentView
-  viewSortOption: ViewSortOption<CurationItem>
+  viewSortOption: ViewSortOption<SomeCurationItem>
   viewSearchQuery: string
   viewPageIndex: number
 }
 
-export interface UseCurationPageStateApi<CurationItem extends CurationItemBase>
+export interface UseCurationPageStateApi<SomeCurationItem extends CurationItem>
   extends Pick<
-      CurationPageBaseDataProps<CurationItem>,
+      CurationPageBaseDataProps<SomeCurationItem>,
       'activeCurationSegment'
     >,
-    Pick<UseViewSortOptionsResult<CurationItem>, 'viewSortOptions'> {}
+    Pick<UseViewSortOptionsResult<SomeCurationItem>, 'viewSortOptions'> {}
 
-export function useCurationPageState<CurationItem extends CurationItemBase>(
-  api: UseCurationPageStateApi<CurationItem>
+export function useCurationPageState<SomeCurationItem extends CurationItem>(
+  api: UseCurationPageStateApi<SomeCurationItem>
 ) {
   const { activeCurationSegment, viewSortOptions } = api
   const initialUrlPageState = useMemo(() => {
@@ -34,7 +33,9 @@ export function useCurationPageState<CurationItem extends CurationItemBase>(
       viewPageIndex: 0,
     }
   }, [])
-  const useCurationPageStateResult = useState<CurationPageState<CurationItem>>({
+  const useCurationPageStateResult = useState<
+    CurationPageState<SomeCurationItem>
+  >({
     curationView:
       activeCurationSegment.segmentViews.find(
         (someCurationView) =>

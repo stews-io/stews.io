@@ -5,16 +5,16 @@ import {
   SelectBaseDataProps,
   SelectMenuBase,
 } from '@stews/components/Select'
-import { CurationItemBase } from '@stews/data/CurationItem'
+import { CurationItem } from '@stews/data/CurationItem'
 import { ComponentProps } from 'preact'
 import { ViewSortOption } from '../../hooks'
 import cssModule from './ViewSortSelect.module.scss'
 
-export interface ViewSortSelectProps<CurationItem extends CurationItemBase>
-  extends SelectBaseDataProps<ViewSortOption<CurationItem>> {}
+export interface ViewSortSelectProps<SomeCurationItem extends CurationItem>
+  extends SelectBaseDataProps<ViewSortOption<SomeCurationItem>> {}
 
-export function ViewSortSelect<CurationItem extends CurationItemBase>(
-  props: ViewSortSelectProps<CurationItem>
+export function ViewSortSelect<SomeCurationItem extends CurationItem>(
+  props: ViewSortSelectProps<SomeCurationItem>
 ) {
   const { optionList, selectedOption, selectOption } = props
   return (
@@ -52,10 +52,10 @@ export function ViewSortSelect<CurationItem extends CurationItemBase>(
   )
 }
 
-interface ViewSortSelectMenuProps<CurationItem extends CurationItemBase>
+interface ViewSortSelectMenuProps<SomeCurationItem extends CurationItem>
   extends ComponentProps<
     SelectBaseConfigProps<
-      ViewSortOption<CurationItem>,
+      ViewSortOption<SomeCurationItem>,
       'sortLabel',
       CustomAnchorButtonProps,
       Record<string, unknown>,
@@ -63,8 +63,8 @@ interface ViewSortSelectMenuProps<CurationItem extends CurationItemBase>
     >['SelectMenu']
   > {}
 
-function ViewSortSelectMenu<CurationItem extends CurationItemBase>(
-  props: ViewSortSelectMenuProps<CurationItem>
+function ViewSortSelectMenu<SomeCurationItem extends CurationItem>(
+  props: ViewSortSelectMenuProps<SomeCurationItem>
 ) {
   return (
     <SelectMenuBase

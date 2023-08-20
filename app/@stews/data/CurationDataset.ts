@@ -1,7 +1,7 @@
-import { CurationItemBase } from './CurationItem'
+import { CurationItem } from './CurationItem'
 
 export interface CuratorCurationDataset extends CurationDatasetBase {
-  datasetItems: Array<CurationItemBase>
+  datasetItems: Array<CurationItem>
 }
 
 export interface AdjustedCurationDataset extends CurationDatasetBase {}

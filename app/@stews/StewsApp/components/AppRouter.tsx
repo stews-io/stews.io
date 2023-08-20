@@ -27,24 +27,19 @@ export function AppRouter(props: AppRouterProps) {
       adjustedCuratorConfig.curationDatasets[
         activeCurationSegment.segmentDataset
       ] ?? throwInvalidPathError('AppRouter.segmentDataset')
+    const ActiveSegmentPage =
+      activeSegmentDataset.datasetType === 'music'
+        ? MusicCurationPage
+        : activeSegmentDataset.datasetType === 'spot'
+        ? SpotCurationPage
+        : throwInvalidPathError('AppRouter.*CurationPage')
     return appResourcesStatus === 'loaded' ? (
-      activeSegmentDataset.datasetType === 'music' ? (
-        <MusicCurationPage
-          curatorInfo={adjustedCuratorConfig.curatorInfo}
-          curationSegments={adjustedCuratorConfig.curationSegments}
-          activeCurationSegment={activeCurationSegment}
-          setActiveCurationSegment={setActiveCurationSegment}
-        />
-      ) : activeSegmentDataset.datasetType === 'spot' ? (
-        <SpotCurationPage
-          curatorInfo={adjustedCuratorConfig.curatorInfo}
-          curationSegments={adjustedCuratorConfig.curationSegments}
-          activeCurationSegment={activeCurationSegment}
-          setActiveCurationSegment={setActiveCurationSegment}
-        />
-      ) : (
-        throwInvalidPathError('AppRouter.*CurationPage')
-      )
+      <ActiveSegmentPage
+        curatorInfo={adjustedCuratorConfig.curatorInfo}
+        curationSegments={adjustedCuratorConfig.curationSegments}
+        activeCurationSegment={activeCurationSegment}
+        setActiveCurationSegment={setActiveCurationSegment}
+      />
     ) : null
   }
   return null
