@@ -5,7 +5,7 @@ import { spotItems } from './spotItems'
 export const curatorConfig: CuratorConfig = {
   curatorInfo: {
     curatorName: 'clumsycomputer',
-    curatorLocation: 'guadalajara, jalisco',
+    curatorLocation: 'colorful colorado',
     curatorStatus: 'just trying to listen and groove',
     curatorLinks: [
       {
@@ -91,13 +91,7 @@ export const curatorConfig: CuratorConfig = {
       segmentKey: 'spots',
       segmentDataset: 'spots',
       segmentLabel: 'spots',
-      segmentViews: [
-        {
-          viewId: 'G3BC',
-          viewLabel: 'eateries',
-          viewFilter: 'spotTags:eatery',
-        },
-      ],
+      segmentViews: [],
     },
   ],
 }

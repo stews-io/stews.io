@@ -1,4 +1,8 @@
 import { SpotItem } from '@stews/domains/spot/data'
+import {
+  getGoogleLinkData,
+  getWebsiteLinkData,
+} from '@stews/domains/spot/helpers'
 
 export const spotItems: Array<SpotItem> = [
   {
@@ -9,15 +13,12 @@ export const spotItems: Array<SpotItem> = [
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
-      {
-        linkLabel: 'website',
-        linkHref: 'https://www.beancycleroasters.com',
-      },
-      {
-        linkLabel: 'google',
-        linkHref:
-          'https://www.google.com/search?q=bean+cycle+roasters&sca_esv=558407982&biw=1337&bih=700&ei=K-rgZK6_FfyvqtsPr5OogAg&gs_ssp=eJzj4tFP1zfMSDMorzI3MTdgtFI1qLAwN7M0SbRITLE0NzG2TLG0MqgwtzRNszRPSTI0SUk1STIw9xJOSk3MU0iuTM5JVSjKTywuSS0qBgD5YBX3&oq=bean+cycle+ro&gs_lp=Egxnd3Mtd2l6LXNlcnAiDWJlYW4gY3ljbGUgcm8qAggAMgsQLhiABBjHARivATIKEAAYFhgeGA8YCjIGEAAYFhgeMggQABiKBRiGAzIaEC4YgAQYxwEYrwEYlwUY3AQY3gQY4ATYAQJIhQ9QhQJYjwZwAXgBkAEAmAH_AaABkAWqAQUwLjEuMrgBA8gBAPgBAcICChAAGEcY1gQYsAPCAgoQABiKBRiwAxhDwgIWEC4YigUYxwEYrwEYyAMYsAMYQ9gBAcICCxAuGK8BGMcBGIAEwgIFEAAYgATCAhoQLhivARjHARiABBiXBRjcBBjeBBjgBNgBAsICCBAAGBYYHhgP4gMEGAAgQYgGAZAGC7oGBAgBGAi6BgYIAhABGBQ&sclient=gws-wiz-serp',
-      },
+      getWebsiteLinkData({
+        websiteHref: 'https://www.beancycleroasters.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'bean cycle roasters',
+      }),
     ],
   },
   {
@@ -28,15 +29,12 @@ export const spotItems: Array<SpotItem> = [
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['bar'],
     spotLinks: [
-      {
-        linkLabel: 'website',
-        linkHref: 'http://www.trailheadtavern.com/',
-      },
-      {
-        linkLabel: 'google',
-        linkHref:
-          'https://www.google.com/search?q=trailhead+tavern+fort+collins&sca_esv=558407982&biw=1337&bih=700&ei=NOrgZP3hDYauqtsPn4KrWA&ved=0ahUKEwj9y63tjumAAxUGl2oFHR_BCgsQ4dUDCBA&uact=5&oq=trailhead+tavern+for&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIhR0cmFpbGhlYWQgdGF2ZXJuIGZvcjILEC4YgAQYxwEYrwEyGhAuGIAEGMcBGK8BGJcFGNwEGN4EGOAE2AEBSPt5UL8MWPtncAF4AZABAJgB6gugAdMpqgEKMC4xMi43LjgtMbgBA8gBAPgBAcICChAAGEcY1gQYsAPCAggQABiKBRiRAsICBxAAGIoFGEPCAhEQLhiABBixAxiDARjHARjRA8ICCxAuGIAEGMcBGNEDwgILEAAYgAQYsQMYgwHCAg0QLhiKBRjHARivARhDwgINEC4YigUYxwEY0QMYQ8ICDRAAGIoFGLEDGIMBGEPCAgUQABiABMICChAAGIoFGLEDGEPCAgUQLhiABMICCxAuGIAEGLEDGIMBwgIIEAAYgAQYsQPCAggQABiABBjJA8ICCBAAGIoFGJIDwgIOEAAYigUYsQMYgwEYkQLCAgsQLhivARjHARiABMICGhAuGK8BGMcBGIAEGJcFGNwEGN4EGOAE2AEBwgIIEAAYigUYhgPiAwQYACBBiAYBkAYIugYGCAEQARgU&sclient=gws-wiz-serp',
-      },
+      getWebsiteLinkData({
+        websiteHref: 'http://www.trailheadtavern.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'trailhead tavern fort collins',
+      }),
     ],
   },
   {
@@ -47,11 +45,9 @@ export const spotItems: Array<SpotItem> = [
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['bar'],
     spotLinks: [
-      {
-        linkLabel: 'google',
-        linkHref:
-          'https://www.google.com/search?gs_ssp=eJzj4tZP1zcsyUm2yDZLNmC0UjGosDA3szRJtEhMMTBNSTa2NLcyqDC3NEk2Mk62NDE2MTNNMvcSK8kvz1MoKM0tUEjLLypRSM7PycnMKwYAGyYWgw&q=town+pump+fort+collins&oq=town+pump+for&aqs=chrome.1.69i57j46i175i199i512l2j0i512l4j0i22i30l2.5471j0j4&sourceid=chrome&ie=UTF-8',
-      },
+      getGoogleLinkData({
+        googleSearchQuery: 'town pump fort collins',
+      }),
     ],
   },
   {
@@ -62,11 +58,121 @@ export const spotItems: Array<SpotItem> = [
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['music venue', 'bar'],
     spotLinks: [
-      {
-        linkLabel: 'google',
-        linkHref:
-          'https://www.google.com/search?q=hodi%27s+half+note&sca_esv=558407982&ei=3-rgZKCbFd6rqtsPqOWyoAY&gs_ssp=eJzj4tLP1TfINkgpM8gwYLRSNaiwMDezNEm0SEy1tEhMM0oxtAIKGSQmp5okJ6ZZWiYlWlgaeAlk5KdkqhcrZCTmpCnk5ZekAgCqeRSV&oq=hodi%27s&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgCIgZob2RpJ3MqAggAMgsQLhiABBjHARivATILEC4YgAQYxwEYrwEyBBAAGB4yBBAAGB4yBhAAGB4YCjIEEAAYHjIEEAAYHjIEEAAYHjIGEAAYHhgKMgQQABgeMhoQLhiABBjHARivARiXBRjcBBjeBBjgBNgBAUi7EVAAWPQIcAB4AZABAJgBuAGgAeoHqgEDMC42uAEDyAEA-AEBwgILEAAYigUYsQMYgwHCAhEQLhiABBixAxiDARjHARjRA8ICCxAuGIAEGMcBGNEDwgIFEAAYgATCAgQQABgDwgIIEC4YigUYkQLCAhQQLhiKBRixAxiDARjHARjRAxiRAsICBxAAGIoFGEPCAhMQLhiKBRhDGIsDGKMDGJEFGKgDwgINEAAYigUYsQMYgwEYQ8ICCxAAGIAEGLEDGIMBwgILEC4YrwEYxwEYgATCAg0QLhiKBRjHARivARhDwgIHEC4YigUYQ8ICCBAAGIAEGLEDwgIIEAAYigUYsQPCAgoQLhiKBRixAxhDwgIaEC4YrwEYxwEYgAQYlwUY3AQY3gQY4ATYAQHCAgcQABiABBgKwgIHEC4YgAQYCsICIBAuGIAEGLEDGIMBGMcBGNEDGJcFGNwEGN4EGOAE2AEBwgICECbiAwQYACBBiAYBugYGCAEQARgU&sclient=gws-wiz-serp',
-      },
+      getGoogleLinkData({
+        googleSearchQuery: "hodi's half note",
+      }),
+    ],
+  },
+  {
+    itemId: 4,
+    spotName: 'silver grill cafe',
+    spotThumbnailHref:
+      'https://www.silvergrill.com/wp-content/uploads/2020/02/silver-grill.png',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['diner'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.silvergrill.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'silver grill cafe',
+      }),
+    ],
+  },
+  {
+    itemId: 5,
+    spotName: 'choice city butcher & deli',
+    spotThumbnailHref:
+      'https://images.builderservices.io/s/cdn/v1.0/i/m?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-dotster-v1-0-9%2F339%2F294339%2FgrzUsDCa%2Fb2a1425a4b734ac0a33745f25931ed36&methods=resize%2C500%2C5000',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['restaurant', 'butcher'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://choicecitybutcher.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'choice city butcher & deli',
+      }),
+    ],
+  },
+  {
+    itemId: 6,
+    spotName: 'brave new wheel',
+    spotThumbnailHref:
+      'https://static.wixstatic.com/media/3f278e_f39df8b849904b3f8a997262083b35c4~mv2.png',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['bicycle shop'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.bravenewwheel.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'brave new wheel',
+      }),
+    ],
+  },
+  {
+    itemId: 7,
+    spotName: 'equinox brewing',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/326823744_711353057243859_607534128356595092_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Ji-L7TkYolUAX9pO9rf&_nc_ht=scontent-ord5-2.xx&oh=00_AfCe95W7y2sLW0X3aN0E_-JjeEcn9Uy5f8SkbhOlBbcbFw&oe=64E598BB',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://equinoxbrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'equinox brewing',
+      }),
+    ],
+  },
+  {
+    itemId: 8,
+    spotName: 'wolverine farm publick house',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/12038051_1566031040288477_3980547755360620334_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=Vf4wiO1dRLUAX8eQWrr&_nc_ht=scontent-ord5-2.xx&oh=00_AfBnpPq3ujcnHtNL7XceENR8Vgop0yiCtI02ze3d8JXomA&oe=6508E56F',
+    spotLocation: ['river district', 'fort collins', 'colorado'],
+    spotTags: ['cafe', 'letterpress', 'event space'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.wolverinefarm.org',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'wolverine farm publick house',
+      }),
+    ],
+  },
+  {
+    itemId: 9,
+    spotName: 'foco cafe',
+    spotThumbnailHref:
+      'https://fortcollinschamber.com/wp-content/uploads/2022/05/fococafe.jpg',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['non-profit', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.fococafe.org',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'foco cafe',
+      }),
+    ],
+  },
+  {
+    itemId: 10,
+    spotName: 'the forge publick house',
+    spotThumbnailHref:
+      'https://images.squarespace-cdn.com/content/v1/573a165786db43d0365d91ca/1565977014340-VIBS2EJFXJAO8VO6JYDR/forge.jpeg?format=2500w',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['tap house', 'bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.theforgepublickhouse.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the forge publick house',
+      }),
     ],
   },
 ]
