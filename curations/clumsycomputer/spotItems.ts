@@ -223,4 +223,20 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 14,
+    spotName: 'pizza casbah',
+    spotThumbnailHref:
+      'https://static.mywebsites360.com/a33b2e6a61fd434190ea0306d9ec5ee3/i/cfdc6d109355467682195440aa81bca1/1/5feFb8zhrk/Layer%201%20%25281%2529.png?dpr=2',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['pizza shop'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.thepizzacasbah.com/',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'pizza casbah',
+      }),
+    ],
+  },
 ]
