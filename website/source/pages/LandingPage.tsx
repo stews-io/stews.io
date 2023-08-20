@@ -166,13 +166,20 @@ export function LandingPage() {
                 role={'heading'}
                 aria-level={'3'}
               >
-                funding
+                investors
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 we're in the initial stages of exploring venture investment, and
                 beginning to apply to a number of accelerator programs! if you
                 are interested in participating in our first round of
-                fundraising, holler at business@stews.io!
+                fundraising, holler at{' '}
+                <a
+                  className={cssModule.paragraphLink}
+                  href={'mailto:business@stews.io'}
+                >
+                  business@stews.io
+                </a>
+                !
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
