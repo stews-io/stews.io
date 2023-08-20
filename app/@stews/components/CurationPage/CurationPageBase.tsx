@@ -23,6 +23,7 @@ import {
   useViewSortOptions,
 } from './hooks'
 import { StateUpdater } from 'preact/hooks'
+import { LinkButton } from '../Button'
 
 interface CurationPageBaseProps<SomeCurationItem extends CurationItem>
   extends CurationPageBaseDataProps<SomeCurationItem>,
@@ -171,6 +172,19 @@ export function CurationPageBase<SomeCurationItem extends CurationItem>(
         {viewPageItemElements}
       </div>
       {viewPageNavigationElement}
+      <div className={cssModule.generalFooterContainer}>
+        <div className={cssModule.generalFooter}>
+          <LinkButton
+            className={cssModule.footerLinkButton}
+            ariaLabel="todo"
+            ariaDescription="todo"
+            href="https://stews.io"
+            target={'_blank'}
+          >
+            stews.io
+          </LinkButton>
+        </div>
+      </div>
       <div className={cssModule.pageFooterSpacer} />
     </Page>
   )

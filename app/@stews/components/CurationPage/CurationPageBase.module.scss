@@ -1,11 +1,11 @@
-@import "@stews/styles/layout";
-@import "@stews/styles/theme";
+@import '@stews/styles/layout';
+@import '@stews/styles/theme';
 
 .pageHeaderContainer {
   @extend .itemContainer;
 }
 
-.pageHeader {  
+.pageHeader {
   @extend .rowContainer;
   flex-grow: 1;
   padding: calc(3 / 2) * $themeSpacer;
@@ -13,7 +13,7 @@
   background-color: $themeBackgroundColor;
 }
 
-// unable to use "position: sticky" for the page header 
+// unable to use "position: sticky" for the page header
 // because their is a jitter/flicker bug when managing
 // viewState.pageIndex change scrolling. so a workaround
 // has been concocted to imitate similar behavior
@@ -21,7 +21,7 @@
   margin-bottom: 57px;
 
   & .pageHeader {
-    position: fixed;    
+    position: fixed;
     top: 0;
     width: var(--page-header-width);
   }
@@ -44,7 +44,7 @@
   @extend .columnContainer;
   padding-inline: calc(3 / 2) * $themeSpacer;
   padding-block-start: calc(1 / 2) * $themeSpacer;
-  padding-block-end: calc(3 / 2) * $themeSpacer;  
+  padding-block-end: calc(3 / 2) * $themeSpacer;
 }
 
 .viewSortSelectContainer {
@@ -64,7 +64,30 @@
   padding-block-end: 0;
 }
 
+.generalFooterContainer {
+  @extend .itemContainer;
+  justify-content: flex-start;
+  padding-inline: calc(3 / 2) * $themeSpacer;
+  padding-block-start: 3 * $themeSpacer;
+}
+
+.generalFooter {
+  @extend .rowContainer;
+  flex-grow: 1;
+  align-items: baseline;
+  background-color: $themeTextBackgroundColor;
+  border-radius: $themeBorderRadius;
+  padding-inline: 2 * $themeSpacer;
+  padding-block: $themeSpacer;
+}
+
+.footerLinkButton {
+  color: $themeButtonTextColor;
+  font-weight: 600;
+  font-style: italic;
+}
+
 .pageFooterSpacer {
   @extend .itemContainer;
-  padding-block-end: 3 * $themeSpacer;
+  padding-block-end: calc(7 / 2) * $themeSpacer;
 }
