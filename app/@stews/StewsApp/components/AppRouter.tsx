@@ -1,10 +1,9 @@
-// import { ConsumerCurationPage } from '@stews/components/CurationPage'
 import { MusicCurationPage } from '@stews/domains/music/components'
+import { SpotCurationPage } from '@stews/domains/spot/components'
+import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
+import { useState } from 'preact/hooks'
 import { StewsAppProps } from '../StewsApp'
 import { UseAppResourcesResult } from '../hooks/useAppResources'
-import { useState } from 'preact/hooks'
-import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
-import { SpotCurationPage } from '@stews/domains/spot/components'
 
 export interface AppRouterProps
   extends Pick<
