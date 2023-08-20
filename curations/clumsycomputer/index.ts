@@ -94,8 +94,8 @@ export const curatorConfig: CuratorConfig = {
       segmentViews: [
         {
           viewId: '6U8S',
-          viewLabel: 'old town',
-          viewFilter: 'spotLocation:old town AND spotLocation:fort collins',
+          viewLabel: 'fort collins',
+          viewFilter: 'spotLocation:fort collins',
         },
       ],
     },
