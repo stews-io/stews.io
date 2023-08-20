@@ -77,7 +77,7 @@
   align-items: baseline;
   background-color: $themeTextBackgroundColor;
   border-radius: $themeBorderRadius;
-  padding-inline: 2 * $themeSpacer;
+  padding-inline: calc(3 / 2) * $themeSpacer;
   padding-block: $themeSpacer;
 }
 
