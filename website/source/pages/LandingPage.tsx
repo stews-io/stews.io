@@ -172,7 +172,7 @@ export function LandingPage() {
                 we're in the initial stages of exploring venture investment, and
                 beginning to apply to a number of accelerator programs! if you
                 are interested in participating in our first round of
-                fundraising, holler at us at business@stews.io!
+                fundraising, holler at business@stews.io!
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
