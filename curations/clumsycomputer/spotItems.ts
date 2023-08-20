@@ -25,7 +25,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 1,
     spotName: 'trailhead tavern',
     spotThumbnailHref:
-      'http://images.squarespace-cdn.com/content/v1/561c0a97e4b0a62da65569e1/1444679412825-DSU10JCXH2NGNK9478PO/moosehead.png?format=1500w',
+      'http://images.squarespace-cdn.com/content/v1/561c0a97e4b0a62da65569e1/1444679412825-DSU10JCXH2NGNK9478PO/moosehead.png?format=300w',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['bar'],
     spotLinks: [
@@ -232,10 +232,58 @@ export const spotItems: Array<SpotItem> = [
     spotTags: ['pizza shop'],
     spotLinks: [
       getWebsiteLinkData({
-        websiteHref: 'https://www.thepizzacasbah.com/',
+        websiteHref: 'https://www.thepizzacasbah.com',
       }),
       getGoogleLinkData({
         googleSearchQuery: 'pizza casbah',
+      }),
+    ],
+  },
+  {
+    itemId: 15,
+    spotName: "panhandler's pizza",
+    spotThumbnailHref:
+      'https://static.spotapps.co/web/panhandlerspizza--com/custom/logo_new.png',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['pizza shop'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://panhandlerspizza.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "panhandler's pizza",
+      }),
+    ],
+  },
+  {
+    itemId: 16,
+    spotName: 'the lyric',
+    spotThumbnailHref:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR68Rns37hGUnaFg4qqlU-9pjGyniUGhFs29WasMSDa1DeAIVudmsmjtS2MhP2PH7oOuoU&usqp=CAU',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['cinema', 'music venue', 'restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.lyriccinema.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the lyric cinema',
+      }),
+    ],
+  },
+  {
+    itemId: 17,
+    spotName: 'cafe mexicali',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/311622688_10160081392926745_2936117687525779294_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=7HZY02EASNQAX9lD467&_nc_ht=scontent-ord5-2.xx&oh=00_AfAKR07IYQbys03jqLk4YNJGWaMvieaB-Wz1ed7FS4lPBg&oe=64E70E34',
+    spotLocation: ['colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.cafemexicali.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'cafe mexicali',
       }),
     ],
   },
