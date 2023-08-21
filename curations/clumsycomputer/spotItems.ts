@@ -1708,17 +1708,110 @@ export const spotItems: Array<SpotItem> = [
   },
   {
     itemId: 108,
-    spotName: "tgi's sushi",
+    spotName: "fambrini's cafe",
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/10398479_60150283846_938568_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=qRa_p77k0dkAX-YTV6G&_nc_ht=scontent-ord5-2.xx&oh=00_AfBlGDDCH7R9qbLHi7MwDQCbGbn1rGx3BUFOrIUY6GbG8Q&oe=650B5AA9',
-    spotLocation: ['campbell', 'california'],
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/291866972_474031958058677_4699376128873811932_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j881SShMUv8AX9h8TLc&_nc_ht=scontent-ord5-2.xx&oh=00_AfD5KjbktAsWOwSZ9gy5sVfQqcH4Ne_tWfKEehjrZLh9EQ&oe=64E8310E',
+    spotLocation: ['palo alto', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
       getWebsiteLinkData({
-        websiteHref: 'https://www.tgisushi.com',
+        websiteHref: 'https://www.fambriniscafe.com',
       }),
       getGoogleLinkData({
-        googleSearchQuery: "tgi's sushi",
+        googleSearchQuery: "fambrini's cafe",
+      }),
+    ],
+  },
+  {
+    itemId: 109,
+    spotName: 'zombie runner coffee',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/340928694_1568994756927553_2451603674097252726_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=v_cYBIHFookAX84ml-z&_nc_ht=scontent-ord5-1.xx&oh=00_AfBUY9-teqU_WIS8JkpSM0pai_F3NqJxjrX9g7lS0GnMHQ&oe=64E85CEE',
+    spotLocation: ['palo alto', 'california'],
+    spotTags: ['coffee', 'shoe store'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.zombierunner.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'zombie runner coffee',
+      }),
+    ],
+  },
+  {
+    itemId: 110,
+    spotName: "zareen's",
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/340928694_1568994756927553_2451603674097252726_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=v_cYBIHFookAX84ml-z&_nc_ht=scontent-ord5-1.xx&oh=00_AfBUY9-teqU_WIS8JkpSM0pai_F3NqJxjrX9g7lS0GnMHQ&oe=64E85CEE',
+    spotLocation: ['palo alto', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.zareensrestaurant.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "zareen's palo alto",
+      }),
+    ],
+  },
+  {
+    itemId: 111,
+    spotName: "izzy's brooklyn bagels",
+    spotThumbnailHref:
+      'https://images.squarespace-cdn.com/content/577dbc32414fb5812b97f65e/1477543032926-JZBW8F22N27EUL3SJPTJ/Logo-Izzys-WhiteShadow.png?format=500w&content-type=image%2Fpng',
+    spotLocation: ['palo alto', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.izzysbrooklynbagels.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "izzy's brooklyn bagels",
+      }),
+    ],
+  },
+  {
+    itemId: 112,
+    spotName: 'backyard brew',
+    spotThumbnailHref:
+      'https://83dffecb572e36498f22.cdn6.editmysite.com/uploads/b/83dffecb572e36498f22402c55e150fd79731fb3c65b943e74aa311e5cc06b3e/5293940E-A3BB-4712-8932-9683B642AF7C_1_102_o_1658888731.jpeg?width=1200&optimize=medium',
+    spotLocation: ['palo alto', 'california'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://backyardbrew.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'backyard brew palo alto',
+      }),
+    ],
+  },
+  {
+    itemId: 113,
+    spotName: 'mediterranean wraps',
+    spotThumbnailHref:
+      'https://774f080d04abeb32c00f.cdn6.editmysite.com/uploads/b/774f080d04abeb32c00f86306e26a1d3be267632b1effee4ff8e291abb545259/2021-10-02_20-03-07_1633230203.jpg?width=400&optimize=medium',
+    spotLocation: ['palo alto', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.mediterraneanwraps.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'mediterranean wraps palo alto',
+      }),
+    ],
+  },
+  {
+    itemId: 114,
+    spotName: "antonio's nut house",
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/89855284_10157131388146958_7505928698105692160_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a26aad&_nc_ohc=VVnHfSXjvhQAX-jBTAe&_nc_ht=scontent-ord5-1.xx&oh=00_AfCx7jW945Xhd1_s_hLdq_buVyohoFMa4UljJ3ktlkQrSA&oe=650B536F',
+    spotLocation: ['palo alto', 'california'],
+    spotTags: ['bar', 'restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: "antonio's nut house",
       }),
     ],
   },
