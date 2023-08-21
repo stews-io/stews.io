@@ -67,18 +67,18 @@
 .generalFooterContainer {
   @extend .itemContainer;
   justify-content: flex-start;
-  padding-inline: calc(3 / 2) * $themeSpacer;
-  padding-block-start: calc(3 / 2) * $themeSpacer;
+  padding-inline: $themeSpacer;
+  padding-block-start: 3 * $themeSpacer;
 }
 
 .generalFooter {
   @extend .rowContainer;
   flex-grow: 1;
   align-items: baseline;
-  background-color: $themeTextBackgroundColor;
+  border-top: solid 0.5px $themeTextBackgroundColor;
   border-radius: $themeBorderRadius;
-  padding-inline: calc(4 / 3) * $themeSpacer;
-  padding-block: calc(3 / 4) * $themeSpacer;
+  padding-inline: 0.5 * $themeSpacer;
+  padding-block-start: 2 * $themeSpacer;
 }
 
 .footerLinkButton {
@@ -90,5 +90,5 @@
 
 .pageFooterSpacer {
   @extend .itemContainer;
-  padding-block-end: 3 * $themeSpacer;
+  padding-block-end: calc(5 / 2) * $themeSpacer;
 }
