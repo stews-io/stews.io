@@ -1453,4 +1453,273 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 92,
+    spotName: 'jester king brewery',
+    spotThumbnailHref:
+      'https://lh3.googleusercontent.com/3aX5DpF_C7HjnECccDYP0Si1V5SAJ2hHrRr825aIkOE6XIa8TOY3P-lBEQ-h6dgOZUqn1s4YdP3d3Bc4V883gQ5rfWvt=s750',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://jesterkingbrewery.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'jester king brewery',
+      }),
+    ],
+  },
+  {
+    itemId: 93,
+    spotName: 'paperboy',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/319912765_683985306524332_6010646876602846839_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=XJTaA_eMLfgAX82IsnW&_nc_ht=scontent-ord5-1.xx&oh=00_AfAICQSBiU6dikGqOdY3L42Me8mYLXLs-LTMSGey_u2COg&oe=64E7F145',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.paperboyaustin.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'paperboy austin',
+      }),
+    ],
+  },
+  {
+    itemId: 94,
+    spotName: 'veracruz all natural',
+    spotThumbnailHref:
+      'https://www.thelinehotel.com/wp-content/uploads/sites/4/2022/03/14154411/veracruz_logo.png',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://veracruzallnatural.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'veracruz all natural',
+      }),
+    ],
+  },
+  {
+    itemId: 95,
+    spotName: 'fleet coffee',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/303123895_395671759345929_4403078007691343969_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nhFc0JX0NsUAX-A0pTy&_nc_ht=scontent-ord5-2.xx&oh=00_AfCO0HrG8SK9LlIic3YYh81ssScIgsHGGRilgdTu8kTYGg&oe=64E916AF',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'http://www.fleetcoffee.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'fleet coffee',
+      }),
+    ],
+  },
+  {
+    itemId: 96,
+    spotName: 'easy tiger',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/341004209_903680774223556_7605440925238997709_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=t2WYXSbhlPEAX_BJowo&_nc_ht=scontent-ord5-2.xx&oh=00_AfCD7tUjn8E5QQL9F8p1G_4WR1jneqL4rTO6rLVg53z8TQ&oe=64E82D4E',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['restaurant', 'bakery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.easytigerusa.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'easy tiger austin',
+      }),
+    ],
+  },
+  {
+    itemId: 97,
+    spotName: 'oscars mexican seafood',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/360087871_745836217551829_1550911034499931258_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=e3XVWoLwEkoAX_Kpow0&_nc_ht=scontent-ord5-2.xx&oh=00_AfCaAB9QSfF2u7bIUtmVB1HD7TbIxoCWX7M0QITZXF2ezQ&oe=64E9A992',
+    spotLocation: ['pacific beach', 'san diego', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://oscarsmexicanseafood.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'oscars pacific beach',
+      }),
+    ],
+  },
+  {
+    itemId: 98,
+    spotName: 'homestyle hawaiian',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/359470002_755731613219032_9180150628324688311_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gXfCGwZQp5YAX8FUoqb&_nc_oc=AQl8BslzdG2HduRZN4Hg3SFpRv8Y57rYAybmYAiFabIAe53DueUJKbW3J2eC4TjIXuM&_nc_ht=scontent-ord5-2.xx&oh=00_AfDjDXwmBdU_es_HqchooDSsCwbcvgIzteay6wT6O3j57w&oe=64E7C4E3',
+    spotLocation: ['pacific beach', 'san diego', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://homestylehawaiian.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'homestyle hawaiian',
+      }),
+    ],
+  },
+  {
+    itemId: 99,
+    spotName: 'coffee cycle roasting',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/89656672_1459053197589472_7241621457296424960_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9267fe&_nc_ohc=uPhuMMnqEQYAX-YSlJd&_nc_ht=scontent-ord5-1.xx&oh=00_AfC8vHhFlRCpq9hU1PuD8BhjN8Ou0nRGEvkfaZtPwOkYcQ&oe=650B392C',
+    spotLocation: ['pacific beach', 'san diego', 'california'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.coffeecycleroasting.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'coffee cycle roasting',
+      }),
+    ],
+  },
+  {
+    itemId: 100,
+    spotName: 'fall brewing company',
+    spotThumbnailHref:
+      'https://www.fallbrewingcompany.com/wp-content/uploads/2018/05/fall_red-dotlogo.png',
+    spotLocation: ['north park', 'san diego', 'california'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.fallbrewingcompany.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'fall brewing company',
+      }),
+    ],
+  },
+  {
+    itemId: 101,
+    spotName: 'bobboi gelato',
+    spotThumbnailHref:
+      'https://i1.wp.com/bobboi.com/wp-content/uploads/2019/03/logo350.png?w=1200&ssl=1',
+    spotLocation: ['la jolla', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://bobboi.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'bobboi natural gelato',
+      }),
+    ],
+  },
+  {
+    itemId: 102,
+    spotName: "caroline's seaside cafe",
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245319255_6382708498469189_8934795304771410162_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NnH2c-UUKnwAX_U_rPD&_nc_ht=scontent-ord5-1.xx&oh=00_AfBuwZ1eUbXHZHgQg-rUNuhIRksKMmHvQDot9WDDvzxOyQ&oe=64E851AD',
+    spotLocation: ['la jolla', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://carolinesseasidecafe.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "caroline's seaside cafe",
+      }),
+    ],
+  },
+  {
+    itemId: 103,
+    spotName: 'viejas arena',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/305482733_508241771303453_4829911627784920483_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yZV4nE7Giy4AX-20mBO&_nc_ht=scontent-ord5-2.xx&oh=00_AfBoSggnLOGV0kCQkb0-trkunAed6DrAEi5jEmrgakUfPQ&oe=64E812E8',
+    spotLocation: ['san diego', 'california'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://as.sdsu.edu/viejas_arena',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'viejas arena',
+      }),
+    ],
+  },
+  {
+    itemId: 104,
+    spotName: 'lodge room',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/302189550_598959918499837_494758898848485817_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=T1iv5CN9E34AX9mB7Ui&_nc_oc=AQnTZ1Ae3TOvXTRj2gyzyn_RtpA-EFtmyloGndvFu0TeZUxyqYXqPVKYG-V0OvS6Xlc&_nc_ht=scontent-ord5-2.xx&oh=00_AfC0EwHbbu9ghqWsE8XuiN0GmGVKKc2T2rQHHVIqhGJolg&oe=64E8DCBD',
+    spotLocation: ['los angeles', 'california'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.lodgeroomhlp.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'lodge room',
+      }),
+    ],
+  },
+  {
+    itemId: 105,
+    spotName: 'matsuri',
+    spotThumbnailHref:
+      'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_100,q_80,fl_lossy,dpr_2.0,c_fit,f_auto,h_100/kptondeebfuu8js0awun',
+    spotLocation: ['pasadena', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'matsuri pasadena',
+      }),
+    ],
+  },
+  {
+    itemId: 106,
+    spotName: 'los angeles state historic park',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/220772696_10158376883040186_7412148122480876537_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=4-wo0EcmhwoAX9nPF55&_nc_ht=scontent-ord5-2.xx&oh=00_AfBltEnoSVWEuwX7FBPos6lE6HISKjtPIwRM5qzxdpYmIA&oe=64E99348',
+    spotLocation: ['los angeles', 'california'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://lastatehistoricpark.org',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'los angeles state historic park',
+      }),
+    ],
+  },
+  {
+    itemId: 107,
+    spotName: 'the semi-tropic',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/245635834_382916200196375_6269120062143316667_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CTEboqHDEu4AX-QnG-j&_nc_ht=scontent-ord5-2.xx&oh=00_AfAOHw04YYLd8nQF6nfcZvbqR1QtO7R8TXQIETTc5xG1Cw&oe=64E824B4',
+    spotLocation: ['echo park', 'los angeles', 'california'],
+    spotTags: ['restaurant', 'bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://thesemitropic.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the semi-tropic',
+      }),
+    ],
+  },
+  {
+    itemId: 108,
+    spotName: "tgi's sushi",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/10398479_60150283846_938568_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=qRa_p77k0dkAX-YTV6G&_nc_ht=scontent-ord5-2.xx&oh=00_AfBlGDDCH7R9qbLHi7MwDQCbGbn1rGx3BUFOrIUY6GbG8Q&oe=650B5AA9',
+    spotLocation: ['campbell', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.tgisushi.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "tgi's sushi",
+      }),
+    ],
+  },
 ]
