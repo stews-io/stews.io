@@ -287,4 +287,196 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 18,
+    spotName: 'zwei brewing',
+    spotThumbnailHref:
+      'https://www.coloradobrewerylist.com/wp-content/uploads/2014/03/zwei.jpg',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.zweibrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'zwei brewing',
+      }),
+    ],
+  },
+  {
+    itemId: 19,
+    spotName: 'stodgy brewing company',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/304771484_765081268197661_4394019071070162870_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3GUF9Q0iHMEAX9xn1XM&_nc_ht=scontent-ord5-1.xx&oh=00_AfAqFapPOx7O2XdpaFb-p5jWTEAlK-eruhvPIQGHqGZeTw&oe=64E92DC4',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.stodgybrewingcompany.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'stodgy brewing company',
+      }),
+    ],
+  },
+  {
+    itemId: 20,
+    spotName: 'horse & dragon brewing company',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326447146_3427664694184702_5487083264382146924_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=i09-Vf8u7uAAX_sNdml&_nc_ht=scontent-ord5-1.xx&oh=00_AfBYdMUXInPW7GZ2e3xiR4e-ph2PoqZ-o2DpyoPmiGgovg&oe=64E7AE28',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.horseanddragonbrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'horse & dragon brewing company',
+      }),
+    ],
+  },
+  {
+    itemId: 21,
+    spotName: 'funkwerks',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/327251903_719087859865314_2885636209532399650_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=H16Idqz1_hUAX-UNE7X&_nc_ht=scontent-ord5-2.xx&oh=00_AfAa2X-7FTHA_W3-pFZPNGj2da4ljetdukGZjFGhgOnoEA&oe=64E7642E',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.funkwerks.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'funkwerks brewery',
+      }),
+    ],
+  },
+  {
+    itemId: 22,
+    spotName: 'purpose brewing and cellars',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/19961610_1913137888958989_2878020470256493585_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=8orRReEbLPEAX9BUXqY&_nc_ht=scontent-ord5-2.xx&oh=00_AfCAgpbbFXZVgwn68DV7yyjKHyTJ3Mga5Tc0GA7ZWB8w1A&oe=650AD4BD',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.purposebrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'purpose brewing and cellars',
+      }),
+    ],
+  },
+  {
+    itemId: 23,
+    spotName: 'odell brewing company',
+    spotThumbnailHref:
+      'https://upload.wikimedia.org/wikipedia/en/3/33/Odell_Brewing_Company_logo.png',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.odellbrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'odell brewing',
+      }),
+    ],
+  },
+  {
+    itemId: 24,
+    spotName: 'the fox den: no waste cafe & roastery',
+    spotThumbnailHref:
+      'https://d2s742iet3d3t1.cloudfront.net/restaurant_service/restaurants/83ed1282-df01-4698-b2b6-86fb124153fb/Restaurant/ce72921b-59ef-4f9b-aede-decbbabf8dbd.png?size=small',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://nowastecoffeeshop.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the fox den: no waste cafe & roastery',
+      }),
+    ],
+  },
+  {
+    itemId: 25,
+    spotName: 'the colorado room',
+    spotThumbnailHref:
+      'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_300,q_100,fl_lossy,dpr_2.0,c_fit,f_auto,h_300/tkjuchy3hvnj1xge8mq0',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://thecoloradoroom.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the colorado room',
+      }),
+    ],
+  },
+  {
+    itemId: 26,
+    spotName: 'little bird bakeshop',
+    spotThumbnailHref:
+      'https://images.squarespace-cdn.com/content/v1/5f453ad417c8f930b05c0f0c/1598372803653-375MSWIWF117ZAOWVOZL/LB-Primary-Full-Color-WEB.png',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['cafe', 'bakery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://thelittlebirdbakeshop.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'little bird bakeshop',
+      }),
+    ],
+  },
+  {
+    itemId: 27,
+    spotName: 'waltzing kangaroo',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/311196677_991711345055401_8722327404145045356_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6Z-hsaVRWGEAX8f-M7K&_nc_ht=scontent-ord5-1.xx&oh=00_AfA3RNF8f2piidOei9efg_xannMhNqqCEapYKojBVnLHRg&oe=64E9183B',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://waltzingkangaroo.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'waltzing kangaroo',
+      }),
+    ],
+  },
+  {
+    itemId: 28,
+    spotName: 'yum yum social',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/186480893_154316366703504_2245738722628080324_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NwPxvDfVjx0AX9sirdb&_nc_ht=scontent-ord5-2.xx&oh=00_AfDH1WuBr7ptQu7c2vTFvyeLR9LRKj7S_70cEh5-zvjhBw&oe=650ADCC6',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://eatmoreyumyum.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'yum yum social',
+      }),
+    ],
+  },
+  {
+    itemId: 29,
+    spotName: 'road 34 bike shop and tavern',
+    spotThumbnailHref:
+      'https://www.road34.com/uploads/5/3/1/3/53136643/published/road-badge-1-lr.jpg?1631655413',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['bar', 'bike shop'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://road34.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'road 34 bike shop and tavern',
+      }),
+    ],
+  },
 ]
