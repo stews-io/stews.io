@@ -1832,22 +1832,6 @@ export const spotItems: Array<SpotItem> = [
     ],
   },
   {
-    itemId: 116,
-    spotName: "nick's crispy tacos",
-    spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/274658451_4838095206237647_7286416343357109125_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=W74Uv4bnEWkAX98OTxC&_nc_ht=scontent-ord5-2.xx&oh=00_AfB6fU8MHDRxhdZYlhpJhgjAWMjsz8wX8kSIa8gUHIFb2g&oe=64E7D263',
-    spotLocation: ['san francisco', 'california'],
-    spotTags: ['restaurant'],
-    spotLinks: [
-      getWebsiteLinkData({
-        websiteHref: 'https://www.nickscrispytacos.com',
-      }),
-      getGoogleLinkData({
-        googleSearchQuery: "nick's crispy tacos",
-      }),
-    ],
-  },
-  {
     itemId: 117,
     spotName: 'trattoria contadina',
     spotThumbnailHref:
@@ -1908,6 +1892,22 @@ export const spotItems: Array<SpotItem> = [
       }),
       getGoogleLinkData({
         googleSearchQuery: 'm.h. bread and butter',
+      }),
+    ],
+  },
+  {
+    itemId: 121,
+    spotName: 'the gorge amphitheater',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/316804464_3329605217262322_4139087066797704423_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VQfJU0NYv5MAX_Jv53N&_nc_ht=scontent-ord5-1.xx&oh=00_AfDE6s7VRAe0r7ZyKfGTK-OKNGbfGtyntGSXP-udsX7psw&oe=64E8EEB1',
+    spotLocation: ['grant county', 'washington'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.georgeamphitheatre.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the gorge amphitheater',
       }),
     ],
   },
