@@ -97,6 +97,16 @@ export const curatorConfig: CuratorConfig = {
           viewLabel: 'fort collins',
           viewFilter: 'spotLocation:fort collins',
         },
+        {
+          viewId: 'PT4M',
+          viewLabel: 'breweries',
+          viewFilter: 'spotTags:brewery',
+        },
+        {
+          viewId: '7Y17',
+          viewLabel: 'music venues',
+          viewFilter: 'spotTags:music venue',
+        },
       ],
     },
   ],
