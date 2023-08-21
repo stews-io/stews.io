@@ -720,4 +720,180 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 45,
+    spotName: 'big city burrito',
+    spotThumbnailHref:
+      'https://img.cdn4dd.com/p/fit=contain,width=200,height=200,format=auto,quality=95/media/restaurant/cover_square/b7a93d3b-5dc4-490b-b0c5-f6584e876548.png',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.bigcityburrito.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'big city burrito',
+      }),
+    ],
+  },
+  {
+    itemId: 46,
+    spotName: 'village smithy',
+    spotThumbnailHref:
+      'https://villagesmithy.com/wp-content/uploads/2016/07/VS_Logo_Carbondale_OL.png',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.villagesmithy.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'village smithy',
+      }),
+    ],
+  },
+  {
+    itemId: 47,
+    spotName: 'silo',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/10703526_585228981582914_3952569593611833500_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=mmUHvCZ4x9cAX9x6IIT&_nc_ht=scontent-ord5-1.xx&oh=00_AfAgdWHeQq1SskFfdPFEc1TiCGuUJphuIUBRObePuDAI4A&oe=650AD1E2',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.silocarbondale.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'silo carbondale',
+      }),
+    ],
+  },
+  {
+    itemId: 48,
+    spotName: 'bonfire coffee',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/310597910_555564296569578_89937143620770694_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1lyWHiD2qiAAX_OsLo6&_nc_ht=scontent-ord5-2.xx&oh=00_AfDEsKuepwB0cP7-8rC86wsHyktdgcY4AVdl-CCuAUZf7w&oe=64E89C7C',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.bonfirecoffee.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'bonfire coffee carbondale',
+      }),
+    ],
+  },
+  {
+    itemId: 49,
+    spotName: 'white house pizza',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/277581712_411128531015059_7393133236994346570_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1SsEIC1M5qEAX8DHXuM&_nc_ht=scontent-ord5-1.xx&oh=00_AfCTTeqDowm9QvMNextC6XK7pSOY1Rl2D6tXgT9zRjuaOg&oe=64E879AB',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.whitehousepizza.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'white house pizza',
+      }),
+    ],
+  },
+  {
+    itemId: 50,
+    spotName: 'allegria',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/275426515_469593611532637_6249378466039998173_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=73ApdzWc3QsAX8sNXpX&_nc_ht=scontent-ord5-1.xx&oh=00_AfDtiZfcoaAjcfR5ikLWcpYtxWqLuVI94N9LXckvzBGBXQ&oe=64E8DAE3',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.allegriacarbondale.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'allegria carbondale',
+      }),
+    ],
+  },
+  {
+    itemId: 51,
+    spotName: 'dos gringos burritos',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t31.18172-8/1597254_710881832275727_2065693438_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hwPXp_G9KTgAX-qYcW0&_nc_ht=scontent-ord5-1.xx&oh=00_AfAq_22xJ9N26yBr1Ol6ynhlX920A07NTn3eM2wl6yfJLQ&oe=650AD0F3',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'http://www.dosgringosburritos.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'dos gringos carbondale',
+      }),
+    ],
+  },
+  {
+    itemId: 52,
+    spotName: 'brass anvil',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/298457594_726896935147631_3897566443918674611_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ruzjClXvrikAX9Kaoeu&_nc_ht=scontent-ord5-1.xx&oh=00_AfBeUZYS2dao2sp11ewy0r1uD2_VBx_CPb25a2U1mn4yiQ&oe=64E91B33',
+    spotLocation: ['carbondale', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.brassanvilcarbondale.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'brass anvil carbondale',
+      }),
+    ],
+  },
+  {
+    itemId: 53,
+    spotName: 'propaganda pie',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/301769842_572429888007501_5534751458112006141_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CcllEeuTDwoAX8qijIL&_nc_ht=scontent-ord5-1.xx&oh=00_AfDPJ_OF6jbXRQyN_j91C-epp5H9NtOS7TbyTMLgwTmT7Q&oe=64E8360E',
+    spotLocation: ['redstone', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.propagandapie.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'propaganda pie redstone',
+      }),
+    ],
+  },
+  {
+    itemId: 54,
+    spotName: 'the white house tavern',
+    spotThumbnailHref:
+      'https://i0.wp.com/resortworkers.com/wp-content/uploads/2017/06/The-White-House-Tavern-1.png?w=680&ssl=1',
+    spotLocation: ['aspen', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.aspenwhitehouse.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the white house tavern aspen',
+      }),
+    ],
+  },
+  {
+    itemId: 55,
+    spotName: 'belly up - aspen',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/334743115_156949907163917_6620175190276611379_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZGsa-vuJwXkAX9Jqj_R&_nc_ht=scontent-ord5-2.xx&oh=00_AfDVEN6CsRaIPzP1GMqZcqL7PHuCOjNq_VP-KJntZXDUAQ&oe=64E93088',
+    spotLocation: ['aspen', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.bellyupaspen.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the belly up aspen',
+      }),
+    ],
+  },
 ]
