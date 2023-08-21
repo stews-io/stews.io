@@ -1056,4 +1056,401 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 66,
+    spotName: 'tortilleria las 4 americas',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/300381749_583774049815299_4255837034539728694_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=AZ1BpkfwZygAX_5N2Wf&_nc_ht=scontent-ord5-1.xx&oh=00_AfDf1rVfzric-5cRV4oibV0IKDZTlF9tvKrlVmnqtFpv1Q&oe=64E81BF7',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.las4americas.com/tortilleria-las-4-americans',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'tortilleria las 4 americas',
+      }),
+    ],
+  },
+  {
+    itemId: 67,
+    spotName: 'the wormhole coffee',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/326411271_1147613982611891_8565851029620117618_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ltdOj9oOLRoAX9hglsc&_nc_ht=scontent-ord5-2.xx&oh=00_AfAf9uA_21b7sL8jRfmQiXoKRPR7agE4vaQAcvpUrXQ_-w&oe=64E97F8F',
+    spotLocation: ['chicago', 'illinos'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.thewormhole.us',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the wormhole coffee',
+      }),
+    ],
+  },
+  {
+    itemId: 68,
+    spotName: "janik's cafe",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/302121550_479364687531567_8227976622177093640_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gtNFn-uePukAX-ilOo8&_nc_oc=AQnzvRMiR1dkd9W8CJ_bq5pXSWTurLM-n9UlXNRgm5e6Zr4mlzBwPQzMWTmoRCVLkt8&_nc_ht=scontent-ord5-2.xx&oh=00_AfBVyVNiMB0cVs7pU4fnzoSe5afbrDS8s83p7wQmJPKi6w&oe=64E94633',
+    spotLocation: ['chicago', 'illinos'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.janikscafe.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "janik's cafe",
+      }),
+    ],
+  },
+  {
+    itemId: 70,
+    spotName: 'damen tavern',
+    spotThumbnailHref:
+      'https://pbs.twimg.com/profile_images/920684258326450176/J_LfJCOM_400x400.jpg',
+    spotLocation: ['chicago', 'illinos'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.damentavern.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'damen tavern',
+      }),
+    ],
+  },
+  {
+    itemId: 71,
+    spotName: 'bikes & coffee',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/309745468_515577953906749_6122970045841673522_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=QWpvlNXOqokAX83sKOB&_nc_ht=scontent-ord5-2.xx&oh=00_AfCL7cHhO0aMkqPHSkIUGUbL14IATpquKiMdloiWvXhlwQ&oe=64E955EC',
+    spotLocation: ['woodbridge', 'detroit', 'michigan'],
+    spotTags: ['coffee', 'bike shop'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'bikes and coffee detroit',
+      }),
+    ],
+  },
+  {
+    itemId: 72,
+    spotName: 'lagerhaus no. 5',
+    spotThumbnailHref:
+      'https://assets.untappd.com/site/brewery_logos_hd/brewery-467763_a986c_hd.jpeg',
+    spotLocation: ['eastern market', 'detroit', 'michigan'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.lagerhausno5.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'lagerhaus no. 5',
+      }),
+    ],
+  },
+  {
+    itemId: 73,
+    spotName: 'gryphon coffee',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/300623923_496330062497529_3925260993910208208_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=YJZ9XtnGJ6wAX_W8KRh&_nc_ht=scontent-ord5-2.xx&oh=00_AfCgp4YKYXocOtAYuIH6bSb2eGHvHBbmeKPrBknJ4e-CMg&oe=64E96BA1',
+    spotLocation: ['philadelphia', 'pennsylvania'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://gryphoncoffee.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'gryphon coffee',
+      }),
+    ],
+  },
+  {
+    itemId: 74,
+    spotName: 'evil genius',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/239992608_4381193648584164_213551063972822468_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qe-Xa38RiE0AX_JiKR_&_nc_ht=scontent-ord5-2.xx&oh=00_AfDGo5vX1T9uNrbmkdeAokffgAC-Anws_a1i41LnHbYV9g&oe=64E86661',
+    spotLocation: ['fishtown', 'philadelphia', 'pennsylvania'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://evilgeniusbeer.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'evil genius beer company',
+      }),
+    ],
+  },
+  {
+    itemId: 75,
+    spotName: 'brooklyn bowl - philadelphia',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-1/332704998_787127639685102_2194598907843524715_n.jpg?stp=dst-jpg_p320x320&_nc_cat=101&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Fzzh9przrN8AX9gHiDI&_nc_ht=scontent-ord5-1.xx&oh=00_AfAIOzyfbZ-PwZ1D5JL12YFaZm3gaB1dohOX09cTtcXMWQ&oe=64E7AC54',
+    spotLocation: ['fishtown', 'philadelphia', 'pennsylvania'],
+    spotTags: ['music venue', 'bowling alley'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.brooklynbowl.com/philadelphia',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'brooklyn bowl philadelphia',
+      }),
+    ],
+  },
+  {
+    itemId: 76,
+    spotName: 'malelani cafe',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/275272547_386080336853640_4278663677703404167_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=tP7unp-AfyUAX85YebI&_nc_ht=scontent-ord5-2.xx&oh=00_AfBD3GLKVDjyVC2GBPHYzvY2xxy5awAtJjYObFqGlKepBg&oe=64E875DD',
+    spotLocation: ['germantown', 'philadelphia', 'pennsylvania'],
+    spotTags: ['cafe', 'restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://malelani.cafe',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'malelani cafe',
+      }),
+    ],
+  },
+  {
+    itemId: 77,
+    spotName: 'love & honey fried chicken',
+    spotThumbnailHref:
+      'https://media.licdn.com/dms/image/C4E0BAQH_-nP24iYLtA/company-logo_200_200/0/1677595896828?e=1700697600&v=beta&t=-507EJ0Y-f8B_VtiNUO0kQz43k_hPiyKLgDYPep6faM',
+    spotLocation: ['philadelphia', 'pennsylvania'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.loveandhoneyfriedchicken.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'love and honey fried chicken',
+      }),
+    ],
+  },
+  {
+    itemId: 78,
+    spotName: 'evil twin brewing',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305313477_468295605311916_3776756620874656940_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xXU6f3iwdM0AX-h0wo_&_nc_ht=scontent-ord5-1.xx&oh=00_AfC_UZCdINkdA7C8thoPS229OadOgq169MI60N3YFWisvw&oe=64E7B32E',
+    spotLocation: ['DUMBO', 'brooklyn', 'new york'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://eviltwin.nyc',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'evil twin brewing',
+      }),
+    ],
+  },
+  {
+    itemId: 79,
+    spotName: "david's brisket house",
+    spotThumbnailHref:
+      'https://davidsbriskethouse.com/wp-content/uploads/2021/03/davids-brisket-house_dark.png',
+    spotLocation: ['brooklyn', 'new york'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://davidsbriskethouse.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "david's brisket house",
+      }),
+    ],
+  },
+  {
+    itemId: 80,
+    spotName: 'captain dan\'s "good time" tavern',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/307034606_762763208381985_5732004313379341843_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lPneoFPcMGwAX-y1ie3&_nc_ht=scontent-ord5-2.xx&oh=00_AfDoZz0SorrHdvGtAcxhQ890N2NnZnrvN-Ql0ptbj3lnig&oe=64E80652',
+    spotLocation: ['brooklyn', 'new york'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://captdansgoodtimetavern.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "captain dan's good time tavern",
+      }),
+    ],
+  },
+  {
+    itemId: 81,
+    spotName: 'emerald city bagels',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/301578276_500699208727291_4941531098427172505_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_C_HoA5oDR8AX_9nDuH&_nc_ht=scontent-ord5-2.xx&oh=00_AfDL4_9lTZmQCzQJ7GJvCXN4ULHHezIdCtaUgLqhb7sqJQ&oe=64E90186',
+    spotLocation: ['atlanta', 'georgia'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.emeraldcitybagels.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'emerald city bagels',
+      }),
+    ],
+  },
+  {
+    itemId: 82,
+    spotName: 'chrome yellow trading co.',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t31.18172-8/10001137_1471604649718879_1829173776_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=2-aO7zi2OcEAX_GYyTh&_nc_ht=scontent-ord5-2.xx&oh=00_AfBAF7j0wcUu1mDCak5GprSVpp3BL72UXJZW1Vkl0CG1Pg&oe=650B325E',
+    spotLocation: ['old fourth ward', 'atlanta', 'georgia'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://chrome-yellow.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'chrome yellow trading co.',
+      }),
+    ],
+  },
+  {
+    itemId: 83,
+    spotName: 'edgewood pizzeria',
+    spotThumbnailHref:
+      'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_300,q_100,fl_lossy,dpr_2.0,c_fit,f_auto,h_300/vxcwxhyfqtkwmnr8kdv6',
+    spotLocation: ['old fourth ward', 'atlanta', 'georgia'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://edgewoodpizzeria.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'edgewood pizzeria',
+      }),
+    ],
+  },
+  {
+    itemId: 84,
+    spotName: 'handlebar atl',
+    spotThumbnailHref:
+      'https://media-cdn.grubhub.com/image/upload/d_search:browse-images:default.jpg/w_300,q_100,fl_lossy,dpr_2.0,c_fit,f_auto,h_300/vnkmhl34mrfaa2h0mphg',
+    spotLocation: ['old fourth ward', 'atlanta', 'georgia'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://handlebar-atl.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'handlebar atl',
+      }),
+    ],
+  },
+  {
+    itemId: 85,
+    spotName: "madame vic's",
+    spotThumbnailHref:
+      'https://madamevics.com/wp-content/uploads/2023/06/343091381_926847698561530_4061765091522117966_n-1024x1024.jpg',
+    spotLocation: ['new orleans', 'louisiana'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://madamevics.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "madame vic's",
+      }),
+    ],
+  },
+  {
+    itemId: 86,
+    spotName: 'st. roch market',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/347813608_982029549492392_5492621720779285687_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Epn-OGy_PNQAX_gePtl&_nc_ht=scontent-ord5-1.xx&oh=00_AfB_6m7hFzdX4vNFDti-ZZSyKuh8RlqYFY72xCWnLNAXoQ&oe=64E8AB6A',
+    spotLocation: ['new orleans', 'louisiana'],
+    spotTags: ['food hall'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.strochmarket.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'st roch market',
+      }),
+    ],
+  },
+  {
+    itemId: 87,
+    spotName: 'mardi gras world',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/348420918_3426378630954494_8551822130066565276_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=QgBgKrsjOgEAX8tkrlW&_nc_ht=scontent-ord5-1.xx&oh=00_AfCXm8tHxd-gRNPUBTBmOH3UuB9kQwRTAIdFRJUvQwj0XQ&oe=64E89EB2',
+    spotLocation: ['new orleans', 'louisiana'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://mardigrasworld.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'mardi gras world',
+      }),
+    ],
+  },
+  {
+    itemId: 88,
+    spotName: 'catalina coffee',
+    spotThumbnailHref:
+      'https://bd95ed58a0d070abe872.cdn6.editmysite.com/uploads/b/5ffa1a60-6d15-11ea-b9a9-796408dbf742/Catalina_Logo%20Gray.pdf?width=400&optimize=medium',
+    spotLocation: ['houston', 'texas'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.catalinacoffeeshop.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'catalina coffee',
+      }),
+    ],
+  },
+  {
+    itemId: 89,
+    spotName: 'red ash italia',
+    spotThumbnailHref:
+      'http://images.squarespace-cdn.com/content/v1/56f0111422482e2ea032f239/1471580094092-HZ53NCVSWSUT88M5DND2/REDASH_logo.png?format=1500w',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.redashgrill.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'red ash italia',
+      }),
+    ],
+  },
+  {
+    itemId: 90,
+    spotName: "frazier's long and low",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/293248109_475242231269450_6185635747958510879_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qsuG1aVEjW8AX8VBavb&_nc_ht=scontent-ord5-2.xx&oh=00_AfBetSvaGrowK2huQX4i6a56Yir2EvBsIr36ZxCioX_ZMQ&oe=64E978AC',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.fraziersbar.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "frazier's long and low",
+      }),
+    ],
+  },
+  {
+    itemId: 91,
+    spotName: 'el tacorrido',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/341171631_530879195924150_5951500644890958626_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3qvJ5NgCewsAX-5d0Ua&_nc_ht=scontent-ord5-2.xx&oh=00_AfBzqMDXM5x5IeNXg_SFYrKrJFrv1cg83c8jcgbQIU8SMQ&oe=64E85B22',
+    spotLocation: ['austin', 'texas'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.eltacorrido.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'el tacorrido',
+      }),
+    ],
+  },
 ]
