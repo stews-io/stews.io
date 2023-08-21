@@ -102,6 +102,11 @@ export const curatorConfig: CuratorConfig = {
           viewLabel: 'breweries',
           viewFilter: 'spotTags:brewery',
         },
+        {
+          viewId: '7Y17',
+          viewLabel: 'music venues',
+          viewFilter: 'spotTags:music venue',
+        },
       ],
     },
   ],
