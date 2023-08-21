@@ -1742,7 +1742,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 110,
     spotName: "zareen's",
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/340928694_1568994756927553_2451603674097252726_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=v_cYBIHFookAX84ml-z&_nc_ht=scontent-ord5-1.xx&oh=00_AfBUY9-teqU_WIS8JkpSM0pai_F3NqJxjrX9g7lS0GnMHQ&oe=64E85CEE',
+      'https://images-platform.99static.com/Z3uYs4zpOwMeMZ-TErdpjVK1T6U=/0x0:1057x1057/500x500/top/smart/99designs-contests-attachments/94/94356/attachment_94356138',
     spotLocation: ['palo alto', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1812,6 +1812,102 @@ export const spotItems: Array<SpotItem> = [
     spotLinks: [
       getGoogleLinkData({
         googleSearchQuery: "antonio's nut house",
+      }),
+    ],
+  },
+  {
+    itemId: 115,
+    spotName: "nick's crispy tacos",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/274658451_4838095206237647_7286416343357109125_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=W74Uv4bnEWkAX98OTxC&_nc_ht=scontent-ord5-2.xx&oh=00_AfB6fU8MHDRxhdZYlhpJhgjAWMjsz8wX8kSIa8gUHIFb2g&oe=64E7D263',
+    spotLocation: ['san francisco', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.nickscrispytacos.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "nick's crispy tacos",
+      }),
+    ],
+  },
+  {
+    itemId: 116,
+    spotName: "nick's crispy tacos",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/274658451_4838095206237647_7286416343357109125_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=W74Uv4bnEWkAX98OTxC&_nc_ht=scontent-ord5-2.xx&oh=00_AfB6fU8MHDRxhdZYlhpJhgjAWMjsz8wX8kSIa8gUHIFb2g&oe=64E7D263',
+    spotLocation: ['san francisco', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.nickscrispytacos.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "nick's crispy tacos",
+      }),
+    ],
+  },
+  {
+    itemId: 117,
+    spotName: 'trattoria contadina',
+    spotThumbnailHref:
+      'https://www.trattoriacontadina.com/uploads/2/4/8/8/24884547/tratt-logo_orig.png',
+    spotLocation: ['san francisco', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.trattoriacontadina.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'trattoria contadina',
+      }),
+    ],
+  },
+  {
+    itemId: 118,
+    spotName: 'kozy kar bar',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/996003_187121348139220_1726659302_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=Mfl7rGZT53UAX99vYHP&_nc_ht=scontent-ord5-1.xx&oh=00_AfBXyuS9qoK_aUyvqSzpxae2tx-rHLEI178c6369wFeGXw&oe=650B4252',
+    spotLocation: ['san francisco', 'california'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'http://www.kozykar.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'kozy kar bar',
+      }),
+    ],
+  },
+  {
+    itemId: 119,
+    spotName: "fenton's creamery",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/19875400_10156323108193362_449711848655417477_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=eJnJpoKBrFgAX-gV2Dl&_nc_ht=scontent-ord5-2.xx&oh=00_AfBRgjDjFLBb3i4svllGAhhiLDvq__LOgVX_-R6CcZyk7Q&oe=650B3F37',
+    spotLocation: ['oakland', 'california'],
+    spotTags: ['ice cream shop'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.fentonscreamery.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "fenton's creamery",
+      }),
+    ],
+  },
+  {
+    itemId: 120,
+    spotName: 'm.h. bread and butter',
+    spotThumbnailHref:
+      'https://pbs.twimg.com/profile_images/2429575878/g2ognrwoy76z7sqft3n5_400x400.jpeg',
+    spotLocation: ['san anselmo', 'california'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.mhbreadandbutter.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'm.h. bread and butter',
       }),
     ],
   },
