@@ -157,7 +157,7 @@ export function LandingPage() {
                 >
                   github
                 </a>{' '}
-                and jump on in!!!
+                and jump on in
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
@@ -169,17 +169,15 @@ export function LandingPage() {
                 investors
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                we're in the initial stages of exploring venture investment, and
-                beginning to apply to a number of accelerator programs! if you
-                are interested in participating in our first round of
-                fundraising, holler at{' '}
+                we're seeking venture investment, and applying to accelerator
+                programs! if you're interested in participating in our first
+                round of fundraising, go holler at{' '}
                 <a
                   className={cssModule.paragraphLink}
                   href={'mailto:business@stews.io'}
                 >
                   business@stews.io
                 </a>
-                !
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
@@ -193,7 +191,7 @@ export function LandingPage() {
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 you can get started today, but rough edges abound. we're working
                 diligently on smoothing things out and providing y'all with the
-                tools you need, for sharing your world, the way it deserves!
+                tools you need, for sharing your world, the way it deserves
               </div>
             </div>
           </div>
