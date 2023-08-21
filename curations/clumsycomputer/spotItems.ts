@@ -479,4 +479,84 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 30,
+    spotName: "lucile's creole cafe",
+    spotThumbnailHref:
+      'https://vrconcierge.com/wp-content/uploads/2021/11/luciles-restaurant-fort-collins-co-logo-1-1.jpg',
+    spotLocation: ['colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.luciles.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "lucile's creole cafe",
+      }),
+    ],
+  },
+  {
+    itemId: 31,
+    spotName: 'music city hot chicken',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t31.18172-8/12513677_1264477590233995_561542058801255627_o.png?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=UvNL2hgTNugAX_nLnRq&_nc_ht=scontent-ord5-2.xx&oh=00_AfCHs17YuwL7VsETsZyI3HeWle3RjO_wvxpLJHKo3PVrFQ&oe=650AC441',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.mchcco.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'music city hot chicken',
+      }),
+    ],
+  },
+  {
+    itemId: 32,
+    spotName: 'bawarchi biryanis - fort collins',
+    spotThumbnailHref:
+      'https://www.pringleapi.com/Documents/eac9e169-c3c7-460b-8e01-863e7a70f9d7/Bawarchi_Biryanis_Logox150.png',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.bawarchifortcollins.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'bawarchi biryanis fort collins',
+      }),
+    ],
+  },
+  {
+    itemId: 33,
+    spotName: 'backyard bird chicken & donuts',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305320902_491625269637778_2838435630559681450_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=RPEmcaa5MGQAX8QKo3P&_nc_ht=scontent-ord5-1.xx&oh=00_AfB5Cx_Zv3A42eRLlCNUIyQRABMvrw2f6B9JLrkp5DiLDQ&oe=64E7AF82',
+    spotLocation: ['timnath', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.backyardbirdco.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'backyard bird chicken & donuts',
+      }),
+    ],
+  },
+  {
+    itemId: 34,
+    spotName: 'timnath beerwerks',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/310295167_516276607174219_806696050503286216_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UpFP1_O7g0IAX_-QhZF&_nc_ht=scontent-ord5-1.xx&oh=00_AfDx3XjtdDwY8mzHLb8y7AchQ8cRG_xDdr4ghrYXE6dvOw&oe=64E89024',
+    spotLocation: ['timnath', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.timnathbeerwerks.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'timnath beerwerks',
+      }),
+    ],
+  },
 ]
