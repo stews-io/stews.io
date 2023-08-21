@@ -559,4 +559,100 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 35,
+    spotName: 'high hops brewery',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326471997_541674691263798_1634348039746274108_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=pU5tz_rpgG0AX97VRht&_nc_ht=scontent-ord5-1.xx&oh=00_AfB_HvIlWD6dH7qB5PavlE8A_epRCHBl0a3aJ4GfpzAbYg&oe=64E7FCCF',
+    spotLocation: ['windsor', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.highhopsbrewery.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'high hops brewery',
+      }),
+    ],
+  },
+  {
+    itemId: 36,
+    spotName: 'mash lab brewing & kitchen',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/302062544_599644051630069_7739087489248454502_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hA1PHNbLYnEAX-paOHG&_nc_ht=scontent-ord5-1.xx&oh=00_AfDD8W5MWeuTQ7GAoSyNIJLrJ-aWh3v2EwqV6brqWsYNjw&oe=64E85C6D',
+    spotLocation: ['windsor', 'colorado'],
+    spotTags: ['brewery', 'restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://mashlabbrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'mash lab brewing',
+      }),
+    ],
+  },
+  {
+    itemId: 37,
+    spotName: 'windsor mill tavern',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/69520295_2128178570621866_9152977995319738368_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=WhBkPyPfXtMAX_IbM_U&_nc_ht=scontent-ord5-1.xx&oh=00_AfBefkoGMl4gRmerm69Nvrq_RC7VwvqfZo1ckcne8rlQ9A&oe=650ADBD3',
+    spotLocation: ['windsor', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://windsormilltavern.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'windsor mill tavern',
+      }),
+    ],
+  },
+  {
+    itemId: 38,
+    spotName: 'grimm brothers brewhouse',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/226340860_10159026945006187_1259887181604280676_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=H98-6iA-CeoAX-EB-ID&_nc_ht=scontent-ord5-2.xx&oh=00_AfBOF8QA7XWOIlRJv8HucwiB0knXDjtnOcg55bmojl3byQ&oe=64E87392',
+    spotLocation: ['loveland', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://grimmbrosbrewhouse.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'grimm brothers brewhouse',
+      }),
+    ],
+  },
+  {
+    itemId: 39,
+    spotName: 'verboten brewing & barrel project',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/15977420_1180224822095975_3859725115814649469_n.png?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=hOFmQJ5BunIAX_xByWe&_nc_ht=scontent-ord5-1.xx&oh=00_AfC5_o-5WR7VpfPk6fuCj_lycT_-aliGdWPJoqVNHjxtmA&oe=650AED97',
+    spotLocation: ['loveland', 'colorado'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://verbotenbrewing.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'verboten brewing & barrel project',
+      }),
+    ],
+  },
+  {
+    itemId: 40,
+    spotName: 'dark heart coffee bar',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/305623044_487927620012205_4427799904039870633_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=jhyOAaS46agAX_YM2zx&_nc_ht=scontent-ord5-2.xx&oh=00_AfCIg6-Nj97juiz-3L4MnoYXvKSOFzjotBLQwKPOfy5Wvw&oe=64E93DF1',
+    spotLocation: ['loveland', 'colorado'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.darkheartcoffeebar.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'dark heart coffee bar',
+      }),
+    ],
+  },
 ]
