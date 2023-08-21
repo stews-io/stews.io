@@ -896,4 +896,164 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 56,
+    spotName: 'the regional',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/309199367_539341058195305_345573431569997567_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=-fsns6eVevYAX8m0cMG&_nc_ht=scontent-ord5-2.xx&oh=00_AfAqlwQY7_i_fRH14RnvE3MhA4zC71HIh3D199-CxMY6zg&oe=64E85139',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.theregionalfood.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the regional fort collins',
+      }),
+    ],
+  },
+  {
+    itemId: 57,
+    spotName: 'dillon amphitheater',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/336186654_707507291112887_8763331932198305322_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NzWAISrRfWcAX-89icF&_nc_ht=scontent-ord5-2.xx&oh=00_AfC2442Am1Z0860KWSvV6QqoAweVvJLT-pOpOIqQJxz-Qg&oe=64E7B130',
+    spotLocation: ['dillon', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.dillonamphitheater.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'dillon amphitheater',
+      }),
+    ],
+  },
+  {
+    itemId: 58,
+    spotName: 'red rocks amphitheater',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/348332969_996396737978757_2106557121780854877_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UWqybHhAZ_UAX9zKjUp&_nc_ht=scontent-ord5-2.xx&oh=00_AfCsoKZ4YYqWL4Hpov13Uhm9-maAb_OulkpZ7DlMGXz6hA&oe=64E7F456',
+    spotLocation: ['morrison', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.redrocksonline.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'red rocks amphitheater',
+      }),
+    ],
+  },
+  {
+    itemId: 59,
+    spotName: 'telluride town park & campground',
+    spotThumbnailHref:
+      'https://ams.allmountainsigns.com/wp-content/uploads/2020/08/logo-telluride.png',
+    spotLocation: ['telluride', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.telluride.com/business/telluride-town-park',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'telluride town park & campground',
+      }),
+    ],
+  },
+  {
+    itemId: 60,
+    spotName: 'sheridan opera house',
+    spotThumbnailHref:
+      'https://imagecdn.mightycause.com/b4a1ed63-73cb-4a3d-8ef6-2ba2b5327c31/-/overlay/1b39c48a-d462-46f7-ba12-abb47e287a2a/80px80p/center/',
+    spotLocation: ['telluride', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://sheridanoperahouse.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'sheridan opera house',
+      }),
+    ],
+  },
+  {
+    itemId: 61,
+    spotName: 'the ogden theater',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/272298054_10158036929410938_6574125618663973359_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=c5to5QGUBw0AX9r0ZF-&_nc_ht=scontent-ord5-2.xx&oh=00_AfA7f1Y05x5z2R5XFoUvs5T8TVYbMdIVpW3FFe6QM3ah7w&oe=64E90F16',
+    spotLocation: ['denver', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.ogdentheatre.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the ogden theater',
+      }),
+    ],
+  },
+  {
+    itemId: 62,
+    spotName: 'fillmore auditorium - denver',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t31.18172-8/51817_165116116842275_3616973_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=EU3KZM6-CAYAX9q2O-8&_nc_ht=scontent-ord5-1.xx&oh=00_AfApleILFMBSNVUPnGk2NyTJGpF2Wy1GhlGOJ6Fpfjx7hQ&oe=650ADC00',
+    spotLocation: ['denver', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'http://www.fillmoreauditorium.org',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'fillmore auditorium denver',
+      }),
+    ],
+  },
+  {
+    itemId: 63,
+    spotName: 'boulder theater',
+    spotThumbnailHref:
+      'https://thevendry.com/cdn-cgi/image/format=auto,width=240/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fuploads.thevendry.co%2F24986%2F1669894977199_df5281e9-cf09-4049-b98c-52ad1ff72a35.jpg',
+    spotLocation: ['boulder', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.z2ent.com/boulder-theater-venue',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'boulder theater',
+      }),
+    ],
+  },
+  {
+    itemId: 64,
+    spotName: "cervantes' masterpiece ballroom",
+    spotThumbnailHref:
+      'https://pbs.twimg.com/profile_images/1529170228466200576/-jhrX-Sw_400x400.jpg',
+    spotLocation: ['denver', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://cervantesmasterpiece.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'cervantes masterpiece ballroom',
+      }),
+    ],
+  },
+  {
+    itemId: 65,
+    spotName: 'gothic theatre',
+    spotThumbnailHref:
+      'https://thevendry.com/cdn-cgi/image/height=400,width=400,fit=contain,metadata=none/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fuploads.thevendry.co%2F24985%2F1666988814627_07f59c25-0657-4004-88f1-20f4b7f7f200.jpg',
+    spotLocation: ['denver', 'colorado'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.gothictheatre.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'gothic theatre',
+      }),
+    ],
+  },
 ]
