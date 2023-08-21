@@ -127,8 +127,8 @@ export function LandingPage() {
                 phase N
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                continue to improve the ergonomics of curating and sharing this
-                world of ours
+                continue improving the ergonomics around curating and sharing
+                this world of ours
               </div>
             </div>
           </div>
