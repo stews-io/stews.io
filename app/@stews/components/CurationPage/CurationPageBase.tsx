@@ -176,8 +176,10 @@ export function CurationPageBase<SomeCurationItem extends CurationItem>(
         <div className={cssModule.generalFooter}>
           <LinkButton
             className={cssModule.footerLinkButton}
-            ariaLabel="todo"
-            ariaDescription="todo"
+            ariaLabel={'go to the stews.io project landing page'}
+            ariaDescription={
+              'a button that opens a new tab and navigates to stews.io'
+            }
             href="https://stews.io"
             target={'_blank'}
           >
