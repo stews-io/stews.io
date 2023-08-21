@@ -83,7 +83,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 5,
     spotName: 'choice city butcher & deli',
     spotThumbnailHref:
-      'https://images.builderservices.io/s/cdn/v1.0/i/m?url=https%3A%2F%2Fstorage.googleapis.com%2Fproduction-dotster-v1-0-9%2F339%2F294339%2FgrzUsDCa%2Fb2a1425a4b734ac0a33745f25931ed36&methods=resize%2C500%2C5000',
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/302321491_495283662603060_3798504435445018740_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=-K1Hi9Za3kwAX-v6Vgh&_nc_ht=scontent-ord5-1.xx&oh=00_AfAhpUE8Bm8AZolp4HFfA_6GO8OFYvjYK2I1uCpWNhFQ7Q&oe=64E8EB8C',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['restaurant', 'butcher'],
     spotLinks: [
@@ -467,7 +467,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 29,
     spotName: 'road 34 bike shop and tavern',
     spotThumbnailHref:
-      'https://www.road34.com/uploads/5/3/1/3/53136643/published/road-badge-1-lr.jpg?1631655413',
+      'http://www.road34.com/uploads/5/3/1/3/53136643/published/road-badge-1-lr.jpg?1631655413',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['bar', 'bike shop'],
     spotLinks: [
@@ -652,6 +652,71 @@ export const spotItems: Array<SpotItem> = [
       }),
       getGoogleLinkData({
         googleSearchQuery: 'dark heart coffee bar',
+      }),
+    ],
+  },
+  {
+    itemId: 41,
+    spotName: 'the welsh rabbit bistro',
+    spotThumbnailHref:
+      'https://images.squarespace-cdn.com/content/v1/58adcc2a1b10e34e35111e96/f3602fd5-40ff-4446-a22a-cf8cb04a7ec6/Shop%2B%282%29.jpg',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.thewelshrabbit.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the welsh rabbit bistro',
+      }),
+    ],
+  },
+  {
+    itemId: 42,
+    spotName: 'the still whiskey steaks',
+    spotThumbnailHref:
+      'https://static.spotapps.co/website_images/ab_websites/71713_website/logo.png',
+    spotLocation: ['old town', 'fort collins', 'colorado'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref:
+          'https://thestillwhiskeysteaks.com/fort-collins-old-town-the-still-whiskey-steaks-food-menu',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the still whiskey steaks',
+      }),
+    ],
+  },
+  {
+    itemId: 43,
+    spotName: "avogadro's number",
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/326321202_473229528350225_5573854040675408754_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=L586ZN0e60oAX8k4trF&_nc_ht=scontent-ord5-2.xx&oh=00_AfB-eXe7FJvJwSClfy1gD-gcnZbpshcP1wIzPYlk3YQTfA&oe=64E7C1FF',
+    spotLocation: ['fort collins', 'colorado'],
+    spotTags: ['restaurant', 'music venue'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.avogadros.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: "avogadro's number fort collins",
+      }),
+    ],
+  },
+  {
+    itemId: 44,
+    spotName: 'the mishawaka',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/309595143_144214351665979_7990827627426424696_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SCtHVJMdtGcAX_BI-oJ&_nc_ht=scontent-ord5-1.xx&oh=00_AfCAzpJZ2_-9b5hqGdr4vboIjwOxI7HMd28JX75sTRxehw&oe=64E8E2B2',
+    spotLocation: ['bellvue', 'colorado'],
+    spotTags: ['music venue', 'restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.themishawaka.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'the mishawaka amphitheatre',
       }),
     ],
   },
