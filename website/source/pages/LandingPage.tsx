@@ -169,8 +169,8 @@ export function LandingPage() {
                 investors
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                we're seeking venture investment and applying to accelerators!
-                holler at{' '}
+                we're exploring investment oppurtunities and applying to
+                accelerators! holler at{' '}
                 <a
                   className={cssModule.paragraphLink}
                   href={'mailto:business@stews.io'}
