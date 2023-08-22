@@ -2086,4 +2086,201 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 136,
+    spotName: 'gorditas, tacos y quesadillas "alondra"',
+    spotThumbnailHref:
+      'https://lh3.googleusercontent.com/p/AF1QipPSbghGxSidwxQCcMGyJhgw-DKPhdroZ6V4VErN=s1360-w1360-h1020',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'gorditas, tacos y quesadillas "alondra" guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 137,
+    spotName: 'los huacales',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/353603782_1265684604295774_6716345033082023289_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Dz9jc9DSkyAAX89fdDi&_nc_ht=scontent-ord5-2.xx&oh=00_AfBEowvV-yrMmqP4RPJNrVaJWxxdjy9v4z0KIECm1-n0QQ&oe=64E9F7ED',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'los huacales guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 138,
+    spotName: 'la victoriana',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326258738_3247095465603177_7369810921131898395_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=-Se2RlVROGEAX_ifvnh&_nc_ht=scontent-ord5-1.xx&oh=00_AfAajMkuBctxTOhHHciaf2toIVloe26INqMw00oX5rWZRg&oe=64E82888',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'la victoriana guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 139,
+    spotName: 'la cocina de laura',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/277345222_1562658957443927_1576020267456216401_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=AGC9TAJXpWoAX84ryM5&_nc_ht=scontent-ord5-2.xx&oh=00_AfCPUbJQO8l17Z99yn68h06aC7dpe7JTg7HvH9poFRwGsg&oe=64E85FBD',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'la cocina de laura guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 140,
+    spotName: 'macanela',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/319841377_475990324669753_3880665541908130210_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=kIY_sFEg0m8AX-h8BOc&_nc_ht=scontent-ord5-2.xx&oh=00_AfC8UeW6WfPUigpRVDewHpqxfKpp2sBvEYXnMm_2uzDGFg&oe=64E91866',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'macanela guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 141,
+    spotName: 'gorditas "las güeras"',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/244512107_424397452445570_4849559415581378365_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=9HRPvk5cp9oAX8baP5Z&_nc_oc=AQlu-Jf74eAMGIA899uAY9h12TQrzoQ1E3ut3A7a3g7sjopieJyd-EVqC4fG3TP-Nqs&_nc_ht=scontent-ord5-1.xx&oh=00_AfB3LIYDyBeUTEofNsK9uoxFbNM5ks5C11WmAZQZNzZVXw&oe=64E8E456',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'gorditas "las güeras" guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 142,
+    spotName: 'oajillo',
+    spotThumbnailHref: 'https://oajillo.com/img/logo.png',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://oajillo.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'oajillo guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 143,
+    spotName: 'nota negra bar',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/277768203_293382776286351_698722711527443530_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=clu5j2pHjd8AX85hNOP&_nc_ht=scontent-ord5-1.xx&oh=00_AfBMATKNQhDwJEMxxKkS-j1xZy04VVJq48HbwkfWu6ArYg&oe=64E84B04',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'nota negra bar guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 144,
+    spotName: 'pulques “el guiso”',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245257808_103181415485818_8848531332236040363_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j81-URaq6BgAX_ZvwkA&_nc_ht=scontent-ord5-1.xx&oh=00_AfA78dos7r1KOpbUMx8RXKQf5SCp8eDqG2lbs1dhFjJ1Aw&oe=64E8665E',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'pulques “el guiso” guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 145,
+    spotName: 'pulques “el guiso”',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245257808_103181415485818_8848531332236040363_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j81-URaq6BgAX_ZvwkA&_nc_ht=scontent-ord5-1.xx&oh=00_AfA78dos7r1KOpbUMx8RXKQf5SCp8eDqG2lbs1dhFjJ1Aw&oe=64E8665E',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'pulques “el guiso” guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 146,
+    spotName: 'cielo verde',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/309290648_486259560184543_6429598456928317731_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=T3tYqeRYPB4AX8gIOko&_nc_ht=scontent-ord5-1.xx&oh=00_AfCutxVhy8GrBK9a7ANqczFSiS16yZotTL2QjQZDCK1MDA&oe=64E9A964',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'cielo verde guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 147,
+    spotName: 'vivo café',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/309114830_509548707844964_6457704985508631416_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UPoTjHQ3MdgAX8B8UBw&_nc_ht=scontent-ord5-1.xx&oh=00_AfDFA6PP7bnJuz3y3wO_SfAsIagvhdrYZdWvYDpbdbLO9Q&oe=64E99B17',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['cafe'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'vivo café guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 148,
+    spotName: 'plaza allende',
+    spotThumbnailHref:
+      'https://thumbs.dreamstime.com/b/estátua-guanajuato-méxico-de-don-quixote-5172094.jpg',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['music venue'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'plaza allende guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 149,
+    spotName: 'pacifico surf antojería del mar',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/301572632_451620616982258_1961009861761780980_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Aa2g1osTx5QAX-4b2ry&_nc_ht=scontent-ord5-2.xx&oh=00_AfBtFH5SNRauckZ_rOvsrrCM52yaE0Y_yXaHxHuhR74fZQ&oe=64E826EA',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'pacifico surf antojería del mar guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 150,
+    spotName: 'street garden',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/237227038_362579018675191_9211648226716227800_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=L_CvURnRrvoAX_rnpR9&_nc_ht=scontent-ord5-1.xx&oh=00_AfCt-p2vBS74ii1a3t09kaqnzq3N3ljLAOZR19H81AEW0A&oe=64E8FF56',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'street garden guanajuato',
+      }),
+    ],
+  },
 ]
