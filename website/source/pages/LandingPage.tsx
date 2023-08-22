@@ -64,8 +64,7 @@ export function LandingPage() {
                 phase 0
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                a collection of curations demonstrating the potential of a more
-                human web
+                demonstrate a more human web via a collection of curations
               </div>
               <div className={cssModule.curationSectionContainer}>
                 <div className={cssModule.curationList}>
@@ -169,7 +168,7 @@ export function LandingPage() {
                 investors
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                we're exploring investment oppurtunities and applying to
+                we're exploring investment opportunities and applying to
                 accelerators! holler at{' '}
                 <a
                   className={cssModule.paragraphLink}
