@@ -19,6 +19,7 @@
   border-radius: calc(1 / 2) * $themeSpacer;
   background-color: $themeTextBackgroundColor;
   box-shadow: 0 0 0 1px $themeTextBackgroundColor;
+  object-fit: cover;
 }
 
 .itemLinks {

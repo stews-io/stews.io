@@ -98,6 +98,11 @@ export const curatorConfig: CuratorConfig = {
           viewFilter: 'spotLocation:fort collins',
         },
         {
+          viewId: 'UUCS',
+          viewLabel: 'mexico',
+          viewFilter: 'spotLocation:mexico',
+        },
+        {
           viewId: 'PT4M',
           viewLabel: 'breweries',
           viewFilter: 'spotTags:brewery',
