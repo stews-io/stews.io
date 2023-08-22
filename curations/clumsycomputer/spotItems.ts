@@ -2326,19 +2326,6 @@ export const spotItems: Array<SpotItem> = [
     ],
   },
   {
-    itemId: 155,
-    spotName: 'la ronda',
-    spotThumbnailHref:
-      'https://lh3.googleusercontent.com/p/AF1QipN2FiCITm8pKANrjWkWHQHDDalM8JGAZQBgWZde=s1360-w1360-h1020',
-    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
-    spotTags: ['restaurant'],
-    spotLinks: [
-      getGoogleLinkData({
-        googleSearchQuery: 'la ronda guanajuato',
-      }),
-    ],
-  },
-  {
     itemId: 156,
     spotName: 'tacos los alexis',
     spotThumbnailHref:
@@ -2374,6 +2361,46 @@ export const spotItems: Array<SpotItem> = [
     spotLinks: [
       getGoogleLinkData({
         googleSearchQuery: 'el habanerito mexico city',
+      }),
+    ],
+  },
+  {
+    itemId: 159,
+    spotName: 'falafel',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/14191930_1148227195252440_3425980032674704807_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=W5-3ROWpVR8AX-OEfvp&_nc_ht=scontent-ord5-1.xx&oh=00_AfC8Vocc8zVEvlso2tMugBlDRCyFU--ekk_ZaiTN017fTA&oe=650C203A',
+    spotLocation: ['san cristobal del las casas', 'chiapas', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery:
+          'falafel 100% vegetariano san cristobal del las casas',
+      }),
+    ],
+  },
+  {
+    itemId: 160,
+    spotName: 'pachamama',
+    spotThumbnailHref:
+      'https://scontent-den4-1.xx.fbcdn.net/v/t1.6435-9/98061302_593758651236893_7036248499297452032_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Na67AJOEiCUAX-iK8CN&_nc_ht=scontent-den4-1.xx&oh=00_AfDe1Y3DKiXIkHrWrVdbxGLCBssDZdPBStEVPEfLBzJWWQ&oe=650C3160',
+    spotLocation: ['san cristobal del las casas', 'chiapas', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'pachamama san cristobal del las casas',
+      }),
+    ],
+  },
+  {
+    itemId: 161,
+    spotName: 'la viña de bacco',
+    spotThumbnailHref:
+      'https://upload.wikimedia.org/wikipedia/commons/4/4b/La_Viña_de_Bacco.jpg?20150626103511',
+    spotLocation: ['san cristobal del las casas', 'chiapas', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'la viña de bacco san cristobal del las casas',
       }),
     ],
   },
