@@ -1928,7 +1928,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 123,
     spotName: 'las argentinas, empanadas a la leña',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/170291022_2547515102220422_4055653189846156829_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=16aR32aQKRkAX9LPLNJ&_nc_ht=scontent-ord5-2.xx&oh=00_AfBqjO1PIHgR0__uZITDnmWaItH3ERZETzscLrc4NwqiRg&oe=650B8BF7',
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/274466113_2807908992835014_6262281974650446909_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=MbSjJi1qafkAX8_KqZv&_nc_ht=scontent-ord5-2.xx&oh=00_AfDoZzmyqiSHymo6Hy147DQjqZ4ablLBqwneNusWhRaVvQ&oe=64E984C3',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['cafe'],
     spotLinks: [
@@ -1954,10 +1954,13 @@ export const spotItems: Array<SpotItem> = [
     itemId: 125,
     spotName: 'lúdico comedor y café botánico',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245103357_267630262031661_4649714065670720359_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iByN8XUnyZIAX-y6pRr&_nc_ht=scontent-ord5-1.xx&oh=00_AfB32U-PMsESVng-p2rf4oDo5J8HsAxpFb7JkbxRct_haw&oe=64E81C9C',
+      'https://lh3.googleusercontent.com/p/AF1QipMM3_Jq2zbOXzy3_C232JivsljZFRQg7A-GlMgA=w960-h960-n-o-v1',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['cafe'],
     spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://ludico-cafe-botanico.business.site',
+      }),
       getGoogleLinkData({
         googleSearchQuery: 'lúdico comedor y café botánico',
       }),
@@ -2206,19 +2209,6 @@ export const spotItems: Array<SpotItem> = [
     ],
   },
   {
-    itemId: 145,
-    spotName: 'pulques “el guiso”',
-    spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245257808_103181415485818_8848531332236040363_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j81-URaq6BgAX_ZvwkA&_nc_ht=scontent-ord5-1.xx&oh=00_AfA78dos7r1KOpbUMx8RXKQf5SCp8eDqG2lbs1dhFjJ1Aw&oe=64E8665E',
-    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
-    spotTags: ['bar'],
-    spotLinks: [
-      getGoogleLinkData({
-        googleSearchQuery: 'pulques “el guiso” guanajuato',
-      }),
-    ],
-  },
-  {
     itemId: 146,
     spotName: 'cielo verde',
     spotThumbnailHref:
@@ -2280,6 +2270,71 @@ export const spotItems: Array<SpotItem> = [
     spotLinks: [
       getGoogleLinkData({
         googleSearchQuery: 'street garden guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 151,
+    spotName: 'habibti falafel',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t31.18172-8/11243464_1612822358964341_5396482860879375652_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=de6eea&_nc_ohc=jAXBxMlnUo0AX9wKHRg&_nc_ht=scontent-ord5-2.xx&oh=00_AfDJK5eScbuJtjIc3au4EF_DUW-jQs8Ok7Mypvum4TmC6g&oe=650B7EAB',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'habibti falafel guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 152,
+    spotName: 'los campos cantina y restaurante',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/334522145_240635754976290_8990999189871070888_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rkibDLZeP1QAX-4sa_5&_nc_ht=scontent-ord5-1.xx&oh=00_AfCAh5Vgo6PYA45KDQWF0DbBSy8bVBaVQ6DiqLDBdiIO2w&oe=64E8632A',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'los campos cantina y restaurante guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 153,
+    spotName: 'birria club',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/315118910_196332159596211_355466544097121335_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=WPUjK99jQvcAX-x5MAB&_nc_ht=scontent-ord5-1.xx&oh=00_AfDYKQuLwcAk0x0QyLTa1O_Lcl6ahNYeV1xu5YhDEorjWg&oe=64E8A3D7',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'birria club guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 154,
+    spotName: 'la ronda',
+    spotThumbnailHref:
+      'https://lh3.googleusercontent.com/p/AF1QipN2FiCITm8pKANrjWkWHQHDDalM8JGAZQBgWZde=s1360-w1360-h1020',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant', 'bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'la ronda guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 155,
+    spotName: 'la ronda',
+    spotThumbnailHref:
+      'https://lh3.googleusercontent.com/p/AF1QipN2FiCITm8pKANrjWkWHQHDDalM8JGAZQBgWZde=s1360-w1360-h1020',
+    spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
+    spotTags: ['restaurant', 'bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'la ronda guanajuato',
       }),
     ],
   },
