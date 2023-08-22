@@ -1798,4 +1798,25 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 85,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref:
+      'https://upload.wikimedia.org/wikipedia/commons/5/54/%27Tub_Thumpin%27.jpg',
+    musicYear: 2012,
+    musicTitle: 'Pretty Lights vs The End of the World 2012',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['studio'],
+    musicTags: ['unreleased', 'mashup'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/qUtVWKveS7w',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/luccarpenter/pretty-lights-vs-the-end-of-the-world-2012',
+      }),
+    ],
+  },
 ]

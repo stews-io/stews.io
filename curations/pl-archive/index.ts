@@ -32,8 +32,9 @@ export const curatorConfig: CuratorConfig = {
   curationSegments: [
     {
       segmentDataset: 'music',
-      segmentKey: 'music',
-      segmentLabel: 'music',
+      segmentKey: 'pretty',
+      segmentLabel: 'pretty lights',
+      segmentFilter: 'musicArtist:pretty lights',
       segmentViews: [
         {
           viewId: '67ZF',
@@ -59,6 +60,19 @@ export const curatorConfig: CuratorConfig = {
           viewId: '9TSA',
           viewLabel: 'oh gee',
           viewFilter: 'musicTags:o.g.',
+        },
+      ],
+    },
+    {
+      segmentDataset: 'music',
+      segmentKey: 'menert',
+      segmentLabel: 'michal menert',
+      segmentFilter: 'musicArtist:michal menert',
+      segmentViews: [
+        {
+          viewId: 'P41V',
+          viewLabel: 'discography',
+          viewFilter: 'musicTags:discography',
         },
       ],
     },

@@ -52,6 +52,7 @@ export const CuratorConfigSchema = Zod.object({
       segmentKey: Zod.string(),
       segmentLabel: Zod.string(),
       segmentDataset: Zod.string(),
+      segmentFilter: Zod.union([Zod.string(), Zod.null()]),
       segmentViews: arrayOfOneSchema(
         Zod.object({
           viewId: Zod.string(),

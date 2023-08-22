@@ -1,7 +1,9 @@
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 
 export interface CuratorCurationSegment
-  extends CurationSegmentBase<Array<CuratorSegmentView>> {}
+  extends CurationSegmentBase<Array<CuratorSegmentView>> {
+  segmentFilter: string | null
+}
 
 export interface AdjustedCurationSegment
   extends CurationSegmentBase<ArrayOfAtLeastOne<AdjustedSegmentView>> {}

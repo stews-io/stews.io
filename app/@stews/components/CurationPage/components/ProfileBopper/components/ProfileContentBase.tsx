@@ -100,7 +100,7 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
                   : throwInvalidPathError('CuratorProfile.CloseButton.onClick')
               }}
             >
-              {someCurationSegment.segmentLabel}
+              {someCurationSegment.segmentKey}
             </Button>
           </div>
         ))}

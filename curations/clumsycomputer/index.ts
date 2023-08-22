@@ -39,6 +39,7 @@ export const curatorConfig: CuratorConfig = {
       segmentKey: 'music',
       segmentDataset: 'music',
       segmentLabel: 'music',
+      segmentFilter: null,
       segmentViews: [
         {
           viewId: 'XUZ8',
@@ -91,6 +92,7 @@ export const curatorConfig: CuratorConfig = {
       segmentKey: 'spots',
       segmentDataset: 'spots',
       segmentLabel: 'spots',
+      segmentFilter: null,
       segmentViews: [
         {
           viewId: '6U8S',

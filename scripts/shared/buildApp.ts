@@ -49,6 +49,13 @@ export async function buildApp(api: BuildAppApi) {
             curatorConfig.curationDatasets[
               someCurationSegment.segmentDataset
             ] ?? throwInvalidPathError('buildApp.segmentDataset')
+          const filteredSegmentDataset =
+            typeof someCurationSegment.segmentFilter === 'string'
+              ? Liqe.filter<CurationItem>(
+                  Liqe.parse(someCurationSegment.segmentFilter),
+                  segmentDataset.datasetItems
+                )
+              : segmentDataset.datasetItems
           return {
             segmentKey: someCurationSegment.segmentKey,
             segmentLabel: someCurationSegment.segmentLabel,
@@ -57,7 +64,7 @@ export async function buildApp(api: BuildAppApi) {
               {
                 viewId: 'AAAA',
                 viewLabel: 'all',
-                viewItemIds: segmentDataset.datasetItems.map(
+                viewItemIds: filteredSegmentDataset.map(
                   (someCurationItem) => someCurationItem.itemId
                 ),
               },
@@ -66,7 +73,7 @@ export async function buildApp(api: BuildAppApi) {
                 viewLabel: someCurationView.viewLabel,
                 viewItemIds: Liqe.filter<CurationItem>(
                   Liqe.parse(someCurationView.viewFilter),
-                  segmentDataset.datasetItems
+                  filteredSegmentDataset
                 ).map((someViewItem) => someViewItem.itemId),
               })),
             ],

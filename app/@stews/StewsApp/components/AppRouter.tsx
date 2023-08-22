@@ -35,6 +35,7 @@ export function AppRouter(props: AppRouterProps) {
         : throwInvalidPathError('AppRouter.*CurationPage')
     return appResourcesStatus === 'loaded' ? (
       <ActiveSegmentPage
+        key={activeCurationSegment}
         curatorInfo={adjustedCuratorConfig.curatorInfo}
         curationSegments={adjustedCuratorConfig.curationSegments}
         activeCurationSegment={activeCurationSegment}
