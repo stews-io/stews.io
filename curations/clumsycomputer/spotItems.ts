@@ -2318,7 +2318,7 @@ export const spotItems: Array<SpotItem> = [
     spotThumbnailHref:
       'https://lh3.googleusercontent.com/p/AF1QipN2FiCITm8pKANrjWkWHQHDDalM8JGAZQBgWZde=s1360-w1360-h1020',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
-    spotTags: ['restaurant', 'bar'],
+    spotTags: ['restaurant'],
     spotLinks: [
       getGoogleLinkData({
         googleSearchQuery: 'la ronda guanajuato',
@@ -2331,10 +2331,49 @@ export const spotItems: Array<SpotItem> = [
     spotThumbnailHref:
       'https://lh3.googleusercontent.com/p/AF1QipN2FiCITm8pKANrjWkWHQHDDalM8JGAZQBgWZde=s1360-w1360-h1020',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
-    spotTags: ['restaurant', 'bar'],
+    spotTags: ['restaurant'],
     spotLinks: [
       getGoogleLinkData({
         googleSearchQuery: 'la ronda guanajuato',
+      }),
+    ],
+  },
+  {
+    itemId: 156,
+    spotName: 'tacos los alexis',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326571158_1179685162936467_8622327195331488154_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=vS4dq5NiGaUAX_aDAyk&_nc_ht=scontent-ord5-1.xx&oh=00_AfAUXHCBoU6d5_-3u671fNKyttFuaiDULYXkwjXfPt2few&oe=64E8B78E',
+    spotLocation: ['roma norte', 'mexico city', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'tacos los alexis mexico city',
+      }),
+    ],
+  },
+  {
+    itemId: 157,
+    spotName: 'cariñito tacos',
+    spotThumbnailHref:
+      'https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2023/01/taquerias-bonitas-cdmx-carinito.jpeg?resize=600%2C682&ssl=1',
+    spotLocation: ['roma norte', 'mexico city', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'cariñito tacos mexico city',
+      }),
+    ],
+  },
+  {
+    itemId: 158,
+    spotName: 'el habanerito',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/277563365_507866437424248_2325997188825374099_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fTdkWT-_tWcAX9cnvYT&_nc_ht=scontent-ord5-1.xx&oh=00_AfCyduhatZWRK66NiO_1flkDRA7FXCjrchXfTCE6_zA88w&oe=64E97958',
+    spotLocation: ['roma norte', 'mexico city', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'el habanerito mexico city',
       }),
     ],
   },
