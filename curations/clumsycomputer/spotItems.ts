@@ -1911,4 +1911,179 @@ export const spotItems: Array<SpotItem> = [
       }),
     ],
   },
+  {
+    itemId: 122,
+    spotName: 'bienvenido pariente',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/170291022_2547515102220422_4055653189846156829_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=16aR32aQKRkAX9LPLNJ&_nc_ht=scontent-ord5-2.xx&oh=00_AfBqjO1PIHgR0__uZITDnmWaItH3ERZETzscLrc4NwqiRg&oe=650B8BF7',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['restaurant', 'bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'bienvenido pariente',
+      }),
+    ],
+  },
+  {
+    itemId: 123,
+    spotName: 'las argentinas, empanadas a la leña',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/170291022_2547515102220422_4055653189846156829_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=16aR32aQKRkAX9LPLNJ&_nc_ht=scontent-ord5-2.xx&oh=00_AfBqjO1PIHgR0__uZITDnmWaItH3ERZETzscLrc4NwqiRg&oe=650B8BF7',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['cafe'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'las argentinas, empanadas a la leña',
+      }),
+    ],
+  },
+  {
+    itemId: 124,
+    spotName: 'el habanero negro',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245103357_267630262031661_4649714065670720359_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iByN8XUnyZIAX-y6pRr&_nc_ht=scontent-ord5-1.xx&oh=00_AfB32U-PMsESVng-p2rf4oDo5J8HsAxpFb7JkbxRct_haw&oe=64E81C9C',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['restaurant', 'bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'el habanero negro guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 125,
+    spotName: 'lúdico comedor y café botánico',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245103357_267630262031661_4649714065670720359_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iByN8XUnyZIAX-y6pRr&_nc_ht=scontent-ord5-1.xx&oh=00_AfB32U-PMsESVng-p2rf4oDo5J8HsAxpFb7JkbxRct_haw&oe=64E81C9C',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['cafe'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'lúdico comedor y café botánico',
+      }),
+    ],
+  },
+  {
+    itemId: 126,
+    spotName: 'café fábula',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/300761214_496157875849088_5222476912365529980_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NpzRea2HfAwAX-t4mjQ&_nc_ht=scontent-ord5-2.xx&oh=00_AfAUB3eMPuKXD6WOK3PQ2n5C31NyBN-RenWmv0O6YT0wUA&oe=64E91560',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['coffee', 'cafe'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'café fábula guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 127,
+    spotName: 'el frutero',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/99254939_3631764723519138_1557597098512220160_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=52THyS-7fqYAX997GqC&_nc_ht=scontent-ord5-1.xx&oh=00_AfAoV1ZqYFE5gdwBXZgQSRjDKGX439x7JE9dNRz4Hn6kLQ&oe=650B8528',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['cafe'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'el frutero guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 128,
+    spotName: 'vietnam bar',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/304065959_1252519352246174_4441552392170498668_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qYca37UVpUIAX923ZDT&_nc_ht=scontent-ord5-2.xx&oh=00_AfCNkDWwnPxvTsr9kW2Umd2Qhq7nX8GBJHKPt0bf-_ehww&oe=64E9E54C',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'vietnam bar guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 129,
+    spotName: 'asadas dany',
+    spotThumbnailHref:
+      'https://s3-media0.fl.yelpcdn.com/bphoto/fiTp3PIOtXOy8kLzsOfi3A/348s.jpg',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'asadas dany guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 130,
+    spotName: 'cerveza loba',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/14237627_912095528890517_2278651443708935037_n.png?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=27kIYXpCMpwAX_XyXiy&_nc_ht=scontent-ord5-1.xx&oh=00_AfC192tSUeCZP_5PjQsXbCeeXaMcHy0Nz5nux3IwVesnTA&oe=650B74CC',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['brewery'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.cervezaloba.com',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'cerveza loba guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 132,
+    spotName: 'la chukirruki pulqueria',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305635789_488589743274590_4291875177146050979_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=merWq_77Kt4AX8ii-85&_nc_ht=scontent-ord5-1.xx&oh=00_AfAMzu_Q_peTvVaYkW0QQNekDLhexvj9PRxrshVvlBkeCA&oe=64E96BE0',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['bar'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'la chukirruki pulqueria guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 133,
+    spotName: 'hot dogs el chino',
+    spotThumbnailHref:
+      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/302144088_514420967352890_2565123706867036574_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=H2iKn49YaeMAX925jkv&_nc_ht=scontent-ord5-1.xx&oh=00_AfC__-2NkyFWpxqvYeT5wycUzND5-bgQfQ7lAhQYEfklvg&oe=64E82E68',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'hot dogs el chino guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 134,
+    spotName: 'tortas ahogadas el rika',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/302297864_495061102627066_2669423498075947459_n.png?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LckzIt3d-ggAX-duZFK&_nc_ht=scontent-ord5-2.xx&oh=00_AfCAw0eTC7RyBJn-zvlwIVZaRyYu2aB1Q_5tIujKFjKs-Q&oe=64E999B2',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getWebsiteLinkData({
+        websiteHref: 'https://www.tortasahogadaselrika.com.mx',
+      }),
+      getGoogleLinkData({
+        googleSearchQuery: 'tortas ahogadas el rika guadalajara',
+      }),
+    ],
+  },
+  {
+    itemId: 135,
+    spotName: 'las ahogadas del negro',
+    spotThumbnailHref:
+      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/255912821_749268949340433_9221654422437465886_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ksxqK3Ny8N4AX8gg0Ve&_nc_ht=scontent-ord5-2.xx&oh=00_AfClZViW-RAQ9W7nlCUZ3fxKxZvDQsfE1tskodlLbxtnhA&oe=64E933AA',
+    spotLocation: ['guadalajara', 'jalisco', 'mexico'],
+    spotTags: ['restaurant'],
+    spotLinks: [
+      getGoogleLinkData({
+        googleSearchQuery: 'las ahogadas del negro guadalajara',
+      }),
+    ],
+  },
 ]
