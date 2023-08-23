@@ -42,7 +42,7 @@ export function useCurationSegmentState<SomeCurationItem extends CurationItem>(
       (someCurationSegment) =>
         someCurationSegment.segmentId === initialUrlPageState.curationSegmentId
     ) ?? clientCuratorConfig.curationSegments[0]
-  const useCurationSegmentStateResult = useState<
+  const [curationSegmentState, setCurationSegmentState] = useState<
     CurationSegmentState<CurationItem>
   >({
     curationSegment: activeCurationSegment,
@@ -59,7 +59,6 @@ export function useCurationSegmentState<SomeCurationItem extends CurationItem>(
     viewSearchQuery: initialUrlPageState.viewSearchQuery,
     viewPageIndex: initialUrlPageState.viewPageIndex,
   })
-  const [curationSegmentState] = useCurationSegmentStateResult
   useEffect(() => {
     const nextUrlSearchParams = new URLSearchParams()
     nextUrlSearchParams.set(
@@ -77,5 +76,8 @@ export function useCurationSegmentState<SomeCurationItem extends CurationItem>(
       }?${nextUrlSearchParams.toString()}`
     )
   }, [curationSegmentState])
-  return useCurationSegmentStateResult
+  return {
+    curationSegmentState,
+    setCurationSegmentState,
+  }
 }

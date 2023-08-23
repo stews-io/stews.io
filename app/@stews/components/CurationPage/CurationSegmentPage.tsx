@@ -1,9 +1,10 @@
-import { CurationSegmentState } from '@stews/StewsApp/hooks/useCurationSegmentState'
+import { useClientCuratorConfig } from '@stews/StewsApp/hooks/useClientCuratorConfig'
+import { useCurationSegmentState } from '@stews/StewsApp/hooks/useCurationSegmentState'
+import { useSegmentDatasetState } from '@stews/StewsApp/hooks/useSegmentDatasetState'
 import { Page } from '@stews/components/Page'
 import { CurationItem } from '@stews/data/CurationItem'
-import { ClientCuratorConfig } from '@stews/data/CuratorConfig'
-import { StateUpdater } from 'preact/hooks'
 import { LinkButton } from '../Button'
+import cssModule from './CurationSegmentPage.module.scss'
 import {
   ConsumerProfileBopper,
   ConsumerViewSelect,
@@ -11,24 +12,33 @@ import {
   ViewSortSelect,
 } from './components'
 import { useStickyPageHeaderWorkaround, useViewPage } from './hooks'
-import cssModule from './CurationSegmentPage.module.scss'
 
-export interface CurationSegmentPageProps {
-  clientCuratorConfig: ClientCuratorConfig
-  curationSegmentState: CurationSegmentState<CurationItem>
-  setCurationSegmentState: StateUpdater<CurationSegmentState<CurationItem>>
-}
+export interface CurationSegmentPageProps
+  extends Pick<
+      ReturnType<typeof useClientCuratorConfig>,
+      'clientCuratorConfig'
+    >,
+    Pick<
+      ReturnType<typeof useCurationSegmentState>,
+      'curationSegmentState' | 'setCurationSegmentState'
+    >,
+    Pick<ReturnType<typeof useSegmentDatasetState>, 'segmentDatasetState'> {}
 
 export interface ItemDisplayProps<SomeCurationItem extends CurationItem> {
   someItem: SomeCurationItem
 }
 
 export function CurationSegmentPage(props: CurationSegmentPageProps) {
-  const { clientCuratorConfig, curationSegmentState, setCurationSegmentState } =
-    props
+  const {
+    clientCuratorConfig,
+    segmentDatasetState,
+    curationSegmentState,
+    setCurationSegmentState,
+  } = props
   const { viewPageItemElements, viewPageNavigationElement } = useViewPage({
+    segmentDatasetState,
+    curationSegmentState,
     pageItemSize: 6,
-    curationSegmentState: curationSegmentState,
     setPageIndexToPrevious: (currentAdjustedPageIndex) => {
       setCurationSegmentState((currentCurationPageState) => ({
         ...currentCurationPageState,

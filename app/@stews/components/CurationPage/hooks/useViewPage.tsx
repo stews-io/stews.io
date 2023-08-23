@@ -1,14 +1,16 @@
 import { CurationItem } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
-import { useAsyncData } from '@stews/hooks/useAsyncData'
-import { useEffect, useLayoutEffect, useMemo, useRef } from 'preact/hooks'
+import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
 import { CurationSegmentPageProps } from '../CurationSegmentPage'
 import { ViewPageMessageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
 
 export interface UseViewPageApi
-  extends Pick<CurationSegmentPageProps, 'curationSegmentState'> {
+  extends Pick<
+    CurationSegmentPageProps,
+    'segmentDatasetState' | 'curationSegmentState'
+  > {
   pageItemSize: number
   setPageIndexToPrevious: PageIndexSetter
   setPageIndexToNext: PageIndexSetter
@@ -18,56 +20,27 @@ type PageIndexSetter = (currentAdjustedPageIndex: number) => void
 
 export function useViewPage(api: UseViewPageApi) {
   const {
+    segmentDatasetState,
     curationSegmentState,
     pageItemSize,
     setPageIndexToPrevious,
     setPageIndexToNext,
   } = api
-
-  const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
-    useAsyncData({
-      initialAsyncDataState: {
-        stateType: 'loading',
-      },
-      fetchAsyncData: (): Promise<{
-        segmentDatasetId: string
-        segmentDatasetItems: Record<string, CurationItem>
-      }> =>
-        fetch(
-          `/assets/curations/${curationSegmentState.curationSegment.segmentDatasetId}.json`
-        )
-          .then((serverResponse) => serverResponse.json())
-          .then((someSegmentDatasetItems) => ({
-            segmentDatasetId:
-              curationSegmentState.curationSegment.segmentDatasetId,
-            segmentDatasetItems: someSegmentDatasetItems,
-          })),
-    })
-  useEffect(() => {
-    triggerFetchCurationItemsMap()
-  }, [curationSegmentState.curationSegment.segmentDatasetId])
   const pageTopElementRef = useRef<HTMLDivElement>(null)
   const viewPageResult = useMemo(() => {
-    if (
-      (fetchCurationItemsMapState.stateType === 'success' &&
-        fetchCurationItemsMapState.data.segmentDatasetId !==
-          curationSegmentState.curationSegment.segmentDatasetId) ||
-      fetchCurationItemsMapState.stateType === 'loading'
-    ) {
+    if (segmentDatasetState.fetchStatus === 'loading') {
       return {
         viewPageItemElements: <ViewPageMessageItem message={'loading...'} />,
         viewPageNavigationElement: null,
       }
-    } else if (fetchCurationItemsMapState.stateType === 'success') {
+    } else if (segmentDatasetState.fetchStatus === 'success') {
       const { segmentView, viewSearchQuery, segmentSortOption, viewPageIndex } =
         curationSegmentState
       const searchedAndSortedViewItems = segmentView.viewItemIds
         .reduce<Array<CurationItem>>((result, someViewItemId) => {
           const someViewItem =
-            fetchCurationItemsMapState.data.segmentDatasetItems[
-              someViewItemId
-            ] ??
-            throwInvalidPathError('useViewPage.fetchCurationItemsMapState.data')
+            segmentDatasetState.segmentDatasetItems[someViewItemId] ??
+            throwInvalidPathError('useViewPage.someViewItem')
           if (
             curationSegmentState.curationSegment
               .getSegmentItemSearchSpace(someViewItem)
@@ -111,12 +84,10 @@ export function useViewPage(api: UseViewPageApi) {
           />
         ),
       }
-    } else if (fetchCurationItemsMapState.stateType === 'error') {
+    } else if (segmentDatasetState.fetchStatus === 'error') {
       return {
         viewPageItemElements: (
-          <ViewPageMessageItem
-            message={fetchCurationItemsMapState.errorMessage}
-          />
+          <ViewPageMessageItem message={segmentDatasetState.errorMessage} />
         ),
         viewPageNavigationElement: null,
       }
@@ -124,11 +95,11 @@ export function useViewPage(api: UseViewPageApi) {
       throwInvalidPathError('useViewPage.useMemo')
     }
   }, [
+    segmentDatasetState,
     curationSegmentState,
     pageItemSize,
     setPageIndexToPrevious,
     setPageIndexToNext,
-    fetchCurationItemsMapState,
   ])
   useLayoutEffect(() => {
     const pageContentContainerElement = document.getElementById(

@@ -3,6 +3,7 @@ import { StewsAppProps } from '../StewsApp'
 import { UseAppResourcesResult } from '../hooks/useAppResources'
 import { useClientCuratorConfig } from '../hooks/useClientCuratorConfig'
 import { useCurationSegmentState } from '../hooks/useCurationSegmentState'
+import { useSegmentDatasetState } from '../hooks/useSegmentDatasetState'
 
 export interface AppRouterProps
   extends Pick<
@@ -13,21 +14,26 @@ export interface AppRouterProps
 
 export function AppRouter(props: AppRouterProps) {
   const { appResourcesStatus, adjustedCuratorConfig } = props
-  if (typeof window !== 'undefined') {
+  if (typeof window !== 'undefined' && appResourcesStatus === 'loaded') {
     const { clientCuratorConfig } = useClientCuratorConfig({
       adjustedCuratorConfig,
     })
-    const [curationSegmentState, setCurationSegmentState] =
+    const { curationSegmentState, setCurationSegmentState } =
       useCurationSegmentState({
         clientCuratorConfig,
       })
-    return appResourcesStatus === 'loaded' ? (
+    const { segmentDatasetState } = useSegmentDatasetState({
+      curationSegmentState,
+    })
+    return (
       <CurationSegmentPage
         clientCuratorConfig={clientCuratorConfig}
         curationSegmentState={curationSegmentState}
         setCurationSegmentState={setCurationSegmentState}
+        segmentDatasetState={segmentDatasetState}
       />
-    ) : null
+    )
+  } else {
+    return null
   }
-  return null
 }
