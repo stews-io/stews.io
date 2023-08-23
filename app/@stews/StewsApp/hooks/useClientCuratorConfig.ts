@@ -72,6 +72,7 @@ export function useClientCuratorConfig(api: UseClientCuratorConfigApi) {
               : throwInvalidPathError(
                   'useClientCuratorConfig.segmentDatasetTypeConfig'
                 )
+
           return {
             segmentId: someAdjustedCurationSegment.segmentId,
             segmentLabel: someAdjustedCurationSegment.segmentLabel,

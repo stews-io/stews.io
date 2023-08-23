@@ -23,22 +23,37 @@ export function useViewPage(api: UseViewPageApi) {
     setPageIndexToPrevious,
     setPageIndexToNext,
   } = api
+
   const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
     useAsyncData({
       initialAsyncDataState: {
         stateType: 'loading',
       },
-      fetchAsyncData: (): Promise<Record<string, CurationItem>> =>
+      fetchAsyncData: (): Promise<{
+        segmentDatasetId: string
+        segmentDatasetItems: Record<string, CurationItem>
+      }> =>
         fetch(
           `/assets/curations/${curationSegmentState.curationSegment.segmentDatasetId}.json`
-        ).then((serverResponse) => serverResponse.json()),
+        )
+          .then((serverResponse) => serverResponse.json())
+          .then((someSegmentDatasetItems) => ({
+            segmentDatasetId:
+              curationSegmentState.curationSegment.segmentDatasetId,
+            segmentDatasetItems: someSegmentDatasetItems,
+          })),
     })
   useEffect(() => {
     triggerFetchCurationItemsMap()
   }, [curationSegmentState.curationSegment.segmentDatasetId])
   const pageTopElementRef = useRef<HTMLDivElement>(null)
   const viewPageResult = useMemo(() => {
-    if (fetchCurationItemsMapState.stateType === 'loading') {
+    if (
+      (fetchCurationItemsMapState.stateType === 'success' &&
+        fetchCurationItemsMapState.data.segmentDatasetId !==
+          curationSegmentState.curationSegment.segmentDatasetId) ||
+      fetchCurationItemsMapState.stateType === 'loading'
+    ) {
       return {
         viewPageItemElements: <ViewPageMessageItem message={'loading...'} />,
         viewPageNavigationElement: null,
@@ -49,7 +64,9 @@ export function useViewPage(api: UseViewPageApi) {
       const searchedAndSortedViewItems = segmentView.viewItemIds
         .reduce<Array<CurationItem>>((result, someViewItemId) => {
           const someViewItem =
-            fetchCurationItemsMapState.data[someViewItemId] ??
+            fetchCurationItemsMapState.data.segmentDatasetItems[
+              someViewItemId
+            ] ??
             throwInvalidPathError('useViewPage.fetchCurationItemsMapState.data')
           if (
             curationSegmentState.curationSegment

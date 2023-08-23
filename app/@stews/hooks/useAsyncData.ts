@@ -43,7 +43,7 @@ export function useAsyncData<
         stateType: 'loading',
       })
     }
-  }, [])
+  }, [fetchAsyncData])
   return [asyncDataState, triggerFetchAsyncData]
 }
 
