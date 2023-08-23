@@ -13,21 +13,16 @@ export interface ConsumerProfileBopperProps
   extends ProfileBopperBaseDataProps {}
 
 export function ConsumerProfileBopper(props: ConsumerProfileBopperProps) {
-  const {
-    curatorInfo,
-    curationSegments,
-    activeCurationSegment,
-    selectCurationSegment,
-  } = props
+  const { clientCuratorConfig, curationSegmentState, selectCurationSegment } =
+    props
   return (
     <ProfileBopperBase
-      anchorAriaLabel={`show ${curatorInfo.curatorName}'s profile`}
-      anchorAriaDescription={`a button that displays a popover with ${curatorInfo.curatorName}'s profile info`}
+      anchorAriaLabel={`show ${clientCuratorConfig.curatorInfo.curatorName}'s profile`}
+      anchorAriaDescription={`a button that displays a popover with ${clientCuratorConfig.curatorInfo.curatorName}'s profile info`}
       SomeAnchorButton={ConsumerProfileButton}
       PopoverContent={ProfileContentBase}
-      curatorInfo={curatorInfo}
-      curationSegments={curationSegments}
-      activeCurationSegment={activeCurationSegment}
+      clientCuratorConfig={clientCuratorConfig}
+      curationSegmentState={curationSegmentState}
       selectCurationSegment={selectCurationSegment}
     />
   )

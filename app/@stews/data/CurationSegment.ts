@@ -1,4 +1,7 @@
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
+import { CurationItem } from './CurationItem'
+import { FunctionComponent } from 'preact'
+import { ItemDisplayProps } from '@stews/components/CurationPage'
 
 export interface CuratorCurationSegment
   extends CurationSegmentBase<Array<CuratorSegmentView>> {
@@ -8,10 +11,23 @@ export interface CuratorCurationSegment
 export interface AdjustedCurationSegment
   extends CurationSegmentBase<ArrayOfAtLeastOne<AdjustedSegmentView>> {}
 
+export interface ClientCurationSegment<SomeCurationItem extends CurationItem>
+  extends CurationSegmentBase<ArrayOfAtLeastOne<AdjustedSegmentView>> {
+  segmentSortOptions: ArrayOfAtLeastOne<SegmentSortOption<SomeCurationItem>>
+  SegmentItemDisplay: FunctionComponent<ItemDisplayProps<SomeCurationItem>>
+  getSegmentItemSearchSpace: (someCurationItem: SomeCurationItem) => string
+}
+
+export interface SegmentSortOption<SomeCurationItem extends CurationItem> {
+  sortId: string
+  sortLabel: string
+  getSortOrder: NonNullable<Parameters<Array<SomeCurationItem>['sort']>[0]>
+}
+
 interface CurationSegmentBase<SegmentViews> {
-  segmentKey: string
+  segmentId: string
   segmentLabel: string
-  segmentDataset: string
+  segmentDatasetId: string
   segmentViews: SegmentViews
 }
 

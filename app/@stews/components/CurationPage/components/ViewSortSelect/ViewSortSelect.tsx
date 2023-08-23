@@ -7,11 +7,11 @@ import {
 } from '@stews/components/Select'
 import { CurationItem } from '@stews/data/CurationItem'
 import { ComponentProps } from 'preact'
-import { ViewSortOption } from '../../hooks'
 import cssModule from './ViewSortSelect.module.scss'
+import { SegmentSortOption } from '@stews/data/CurationSegment'
 
 export interface ViewSortSelectProps<SomeCurationItem extends CurationItem>
-  extends SelectBaseDataProps<ViewSortOption<SomeCurationItem>> {}
+  extends SelectBaseDataProps<SegmentSortOption<SomeCurationItem>> {}
 
 export function ViewSortSelect<SomeCurationItem extends CurationItem>(
   props: ViewSortSelectProps<SomeCurationItem>
@@ -55,7 +55,7 @@ export function ViewSortSelect<SomeCurationItem extends CurationItem>(
 interface ViewSortSelectMenuProps<SomeCurationItem extends CurationItem>
   extends ComponentProps<
     SelectBaseConfigProps<
-      ViewSortOption<SomeCurationItem>,
+      SegmentSortOption<SomeCurationItem>,
       'sortLabel',
       CustomAnchorButtonProps,
       Record<string, unknown>,

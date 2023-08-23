@@ -1,7 +1,6 @@
 import { SelectMenuBase } from '@stews/components/Select'
-import { CurationItem } from '@stews/data/CurationItem'
 import { ComponentProps } from 'preact'
-import { CurationPageBaseDataProps } from '../../CurationPageBase'
+import { CurationSegmentPageProps } from '../../CurationSegmentPage'
 import {
   ViewSelectBase,
   ViewSelectBaseConfigProps,
@@ -10,15 +9,15 @@ import {
 
 export interface ConsumerViewSelectProps
   extends ViewSelectBaseDataProps,
-    Pick<CurationPageBaseDataProps<CurationItem>, 'activeCurationSegment'> {}
+    Pick<CurationSegmentPageProps, 'curationSegmentState'> {}
 
 export function ConsumerViewSelect(props: ConsumerViewSelectProps) {
-  const { activeCurationSegment, ...viewSelectBaseProps } = props
+  const { curationSegmentState, ...viewSelectBaseProps } = props
   return (
     <ViewSelectBase
       popoverAriaRole={'listbox'}
-      anchorAriaLabel={`select ${activeCurationSegment.segmentLabel} view`}
-      anchorAriaDescription={`${activeCurationSegment.segmentLabel} view`}
+      anchorAriaLabel={`select ${curationSegmentState.curationSegment.segmentLabel} view`}
+      anchorAriaDescription={`${curationSegmentState.curationSegment} view`}
       SelectMenu={ConsumerSelectMenu}
       customOptionActionItemProps={{}}
       customMenuFooterProps={{}}

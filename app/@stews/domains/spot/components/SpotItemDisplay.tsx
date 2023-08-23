@@ -1,4 +1,4 @@
-import { ItemDisplayProps } from '@stews/components/CurationPage/CurationPageBase'
+import { ItemDisplayProps } from '@stews/components/CurationPage/CurationSegmentPage'
 import { DefaultItemDisplay } from '@stews/components/DefaultItemDisplay/DefaultItemDisplay'
 import { SpotItem } from '../data'
 

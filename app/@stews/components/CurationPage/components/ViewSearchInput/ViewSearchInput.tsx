@@ -1,22 +1,18 @@
 import { Button } from '@stews/components/Button'
-import { CurationItem } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ComponentProps } from 'preact'
 import { useMemo, useRef } from 'preact/hooks'
-import { CurationPageBaseDataProps } from '../../CurationPageBase'
+import { CurationSegmentPageProps } from '../../CurationSegmentPage'
 import cssModule from './ViewSearchInput.module.scss'
 
 export interface ViewSearchInputProps
-  extends Pick<
-      CurationPageBaseDataProps<CurationItem>,
-      'activeCurationSegment'
-    >,
-    Pick<Required<ComponentProps<'input'>>, 'value' | 'onInput'> {
+  extends Pick<CurationSegmentPageProps, 'curationSegmentState'>,
+    Pick<Required<ComponentProps<'input'>>, 'onInput'> {
   resetValue: () => void
 }
 
 export function ViewSearchInput(props: ViewSearchInputProps) {
-  const { value, onInput, activeCurationSegment, resetValue } = props
+  const { curationSegmentState, onInput, resetValue } = props
   const searchInputRef = useRef<HTMLInputElement>(null)
   const scrollInputIntoFocus = useMemo(
     () => () => {
@@ -45,9 +41,9 @@ export function ViewSearchInput(props: ViewSearchInputProps) {
         autocapitalize={'off'}
         spellcheck={false}
         className={cssModule.searchInput}
-        placeholder={`search ${activeCurationSegment.segmentLabel}`}
+        placeholder={`search ${curationSegmentState.curationSegment.segmentLabel}`}
         ref={searchInputRef}
-        value={value}
+        value={curationSegmentState.viewSearchQuery}
         onInput={onInput}
         onFocus={scrollInputIntoFocus}
       />

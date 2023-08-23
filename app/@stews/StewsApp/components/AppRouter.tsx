@@ -1,9 +1,8 @@
-import { MusicCurationPage } from '@stews/domains/music/components'
-import { SpotCurationPage } from '@stews/domains/spot/components'
-import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
-import { useState } from 'preact/hooks'
+import { CurationSegmentPage } from '@stews/components/CurationPage'
 import { StewsAppProps } from '../StewsApp'
 import { UseAppResourcesResult } from '../hooks/useAppResources'
+import { useClientCuratorConfig } from '../hooks/useClientCuratorConfig'
+import { useCurationSegmentState } from '../hooks/useCurationSegmentState'
 
 export interface AppRouterProps
   extends Pick<
@@ -15,31 +14,18 @@ export interface AppRouterProps
 export function AppRouter(props: AppRouterProps) {
   const { appResourcesStatus, adjustedCuratorConfig } = props
   if (typeof window !== 'undefined') {
-    const [activeCurationSegment, setActiveCurationSegment] = useState(
-      adjustedCuratorConfig.curationSegments.find((someCurationSegment) => {
-        return (
-          someCurationSegment.segmentKey ===
-          window.location.pathname.split('/')[1]
-        )
-      }) ?? adjustedCuratorConfig.curationSegments[0]
-    )
-    const activeSegmentDataset =
-      adjustedCuratorConfig.curationDatasets[
-        activeCurationSegment.segmentDataset
-      ] ?? throwInvalidPathError('AppRouter.segmentDataset')
-    const ActiveSegmentPage =
-      activeSegmentDataset.datasetType === 'music'
-        ? MusicCurationPage
-        : activeSegmentDataset.datasetType === 'spot'
-        ? SpotCurationPage
-        : throwInvalidPathError('AppRouter.*CurationPage')
+    const { clientCuratorConfig } = useClientCuratorConfig({
+      adjustedCuratorConfig,
+    })
+    const [curationSegmentState, setCurationSegmentState] =
+      useCurationSegmentState({
+        clientCuratorConfig,
+      })
     return appResourcesStatus === 'loaded' ? (
-      <ActiveSegmentPage
-        key={activeCurationSegment}
-        curatorInfo={adjustedCuratorConfig.curatorInfo}
-        curationSegments={adjustedCuratorConfig.curationSegments}
-        activeCurationSegment={activeCurationSegment}
-        setActiveCurationSegment={setActiveCurationSegment}
+      <CurationSegmentPage
+        clientCuratorConfig={clientCuratorConfig}
+        curationSegmentState={curationSegmentState}
+        setCurationSegmentState={setCurationSegmentState}
       />
     ) : null
   }

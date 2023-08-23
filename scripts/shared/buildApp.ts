@@ -47,7 +47,7 @@ export async function buildApp(api: BuildAppApi) {
         (someCurationSegment) => {
           const segmentDataset =
             curatorConfig.curationDatasets[
-              someCurationSegment.segmentDataset
+              someCurationSegment.segmentDatasetId
             ] ?? throwInvalidPathError('buildApp.segmentDataset')
           const filteredSegmentDataset =
             typeof someCurationSegment.segmentFilter === 'string'
@@ -57,9 +57,9 @@ export async function buildApp(api: BuildAppApi) {
                 )
               : segmentDataset.datasetItems
           return {
-            segmentKey: someCurationSegment.segmentKey,
+            segmentId: someCurationSegment.segmentId,
             segmentLabel: someCurationSegment.segmentLabel,
-            segmentDataset: someCurationSegment.segmentDataset,
+            segmentDatasetId: someCurationSegment.segmentDatasetId,
             segmentViews: [
               {
                 viewId: 'AAAA',
@@ -135,12 +135,12 @@ export async function buildApp(api: BuildAppApi) {
   await Promise.all(
     curatorConfig.curationSegments.map((someCurationSegment) => {
       const segmentDataset =
-        curatorConfig.curationDatasets[someCurationSegment.segmentDataset] ??
+        curatorConfig.curationDatasets[someCurationSegment.segmentDatasetId] ??
         throwInvalidPathError('buildApp.segmentDataset_2')
       return FileSystemPromise.writeFile(
         Path.join(
           curationDatasetsDirectoryPath,
-          `./${someCurationSegment.segmentDataset}.json`
+          `./${someCurationSegment.segmentDatasetId}.json`
         ),
         JSON.stringify(
           segmentDataset.datasetItems.reduce<Record<string, CurationItem>>(

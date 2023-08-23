@@ -24,15 +24,32 @@ export const curatorConfig: CuratorConfig = {
   },
   curationDatasets: {
     music: {
-      datasetKey: 'music',
-      datasetType: 'music',
       datasetItems: musicItems,
+      datasetId: 'music',
+      datasetType: 'music',
+      datasetSortConfig: [
+        {
+          fieldKey: 'musicTitle',
+          fieldType: 'string',
+          sortLabelBase: 'title',
+        },
+        {
+          fieldKey: 'musicArtist',
+          fieldType: 'orderedStringSet',
+          sortLabelBase: 'artist',
+        },
+        {
+          fieldKey: 'musicYear',
+          fieldType: 'number',
+          sortLabelBase: 'year',
+        },
+      ],
     },
   },
   curationSegments: [
     {
-      segmentDataset: 'music',
-      segmentKey: 'pretty',
+      segmentDatasetId: 'music',
+      segmentId: 'pretty',
       segmentLabel: 'pretty lights',
       segmentFilter: 'musicArtist:pretty lights',
       segmentViews: [
@@ -64,8 +81,8 @@ export const curatorConfig: CuratorConfig = {
       ],
     },
     {
-      segmentDataset: 'music',
-      segmentKey: 'menert',
+      segmentDatasetId: 'music',
+      segmentId: 'menert',
       segmentLabel: 'michal menert',
       segmentFilter: 'musicArtist:michal menert',
       segmentViews: [

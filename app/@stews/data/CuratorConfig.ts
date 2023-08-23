@@ -6,14 +6,16 @@ import {
 } from './CurationDataset'
 import {
   AdjustedCurationSegment,
+  ClientCurationSegment,
   CuratorCurationSegment,
 } from './CurationSegment'
 import { CuratorInfo } from './CuratorInfo'
 import { arrayOfOneSchema } from './helpers'
+import { CurationItem } from './CurationItem'
 
 export interface CuratorConfig {
   curatorInfo: CuratorInfo
-  curationDatasets: Record<string, CuratorCurationDataset>
+  curationDatasets: Record<string, CuratorCurationDataset<any>>
   curationSegments: ArrayOfAtLeastOne<CuratorCurationSegment>
 }
 
@@ -36,7 +38,7 @@ export const CuratorConfigSchema = Zod.object({
   }),
   curationDatasets: Zod.record(
     Zod.object({
-      datasetKey: Zod.string(),
+      datasetId: Zod.string(),
       datasetType: Zod.string(),
       datasetItems: Zod.array(Zod.any()),
       // todo: figure out how to verify itemId exists without failing validation
@@ -45,13 +47,25 @@ export const CuratorConfigSchema = Zod.object({
       //     itemId: Zod.number(),
       //   }).nonstrict()
       // ),
+      datasetSortConfig: arrayOfOneSchema(
+        Zod.object({
+          // todo: validate fieldKey is keyof curation item
+          fieldKey: Zod.string(),
+          fieldType: Zod.union([
+            Zod.literal('string'),
+            Zod.literal('number'),
+            Zod.literal('orderedStringSet'),
+          ]),
+          sortLabelBase: Zod.string(),
+        })
+      ),
     })
   ),
   curationSegments: arrayOfOneSchema(
     Zod.object({
-      segmentKey: Zod.string(),
+      segmentId: Zod.string(),
       segmentLabel: Zod.string(),
-      segmentDataset: Zod.string(),
+      segmentDatasetId: Zod.string(),
       segmentFilter: Zod.union([Zod.string(), Zod.null()]),
       segmentViews: arrayOfOneSchema(
         Zod.object({
@@ -66,6 +80,11 @@ export const CuratorConfigSchema = Zod.object({
 
 export interface AdjustedCuratorConfig {
   curatorInfo: CuratorInfo
-  curationDatasets: Record<string, AdjustedCurationDataset>
+  curationDatasets: Record<string, AdjustedCurationDataset<any>>
   curationSegments: ArrayOfAtLeastOne<AdjustedCurationSegment>
+}
+
+export interface ClientCuratorConfig {
+  curatorInfo: CuratorInfo
+  curationSegments: ArrayOfAtLeastOne<ClientCurationSegment<CurationItem>>
 }

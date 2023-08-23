@@ -1,81 +1,122 @@
 import { CurationItem } from '@stews/data/CurationItem'
+import {
+  AdjustedCurationSegment,
+  ClientCurationSegment,
+  SegmentSortOption,
+} from '@stews/data/CurationSegment'
+import { ClientCuratorConfig } from '@stews/data/CuratorConfig'
+import { MusicItemDisplay } from '@stews/domains/music/components'
+import { MusicItem } from '@stews/domains/music/data'
+import { SpotItemDisplay } from '@stews/domains/spot/components'
+import { SpotItem } from '@stews/domains/spot/data'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
 import { useMemo } from 'preact/hooks'
-import { CurationPageBaseDataProps } from '../CurationPageBase'
+import { AppRouterProps } from '../components/AppRouter'
+import {
+  AdjustedCurationDataset,
+  SegmentSortOptionConfig,
+} from '@stews/data/CurationDataset'
 
-export type ViewSortOptionConfig<SomeCurationItem extends CurationItem> = {
-  [SomeItemKey in keyof SomeCurationItem]: SomeItemKey extends string &
-    keyof SomeCurationItem
-    ? SomeCurationItem[SomeItemKey] extends string
-      ? {
-          fieldKey: SomeItemKey
-          fieldType: 'string'
-          sortLabelBase: string
-        }
-      : SomeCurationItem[SomeItemKey] extends ArrayOfAtLeastOne<string>
-      ? {
-          fieldKey: SomeItemKey
-          fieldType: 'orderedStringSet'
-          sortLabelBase: string
-        }
-      : SomeCurationItem[SomeItemKey] extends number
-      ? {
-          fieldKey: SomeItemKey
-          fieldType: 'number'
-          sortLabelBase: string
-        }
-      : never
-    : never
-}[keyof SomeCurationItem]
+export interface UseClientCuratorConfigApi
+  extends Pick<AppRouterProps, 'adjustedCuratorConfig'> {}
 
-export interface ViewSortOption<SomeCurationItem extends CurationItem> {
-  sortId: string
-  sortLabel: string
-  getSortOrder: NonNullable<Parameters<Array<SomeCurationItem>['sort']>[0]>
-}
-
-export interface UseViewSortOptionsApi<SomeCurationItem extends CurationItem>
-  extends Pick<CurationPageBaseDataProps<SomeCurationItem>, 'viewSortConfig'> {}
-
-export interface UseViewSortOptionsResult<
-  SomeCurationItem extends CurationItem
-> {
-  viewSortOptions: ArrayOfAtLeastOne<ViewSortOption<SomeCurationItem>>
-}
-
-export function useViewSortOptions<SomeCurationItem extends CurationItem>(
-  api: UseViewSortOptionsApi<SomeCurationItem>
-): UseViewSortOptionsResult<SomeCurationItem> {
-  const { viewSortConfig } = api
-  return useMemo(
+export function useClientCuratorConfig(api: UseClientCuratorConfigApi) {
+  const { adjustedCuratorConfig } = api
+  return useMemo<{
+    clientCuratorConfig: ClientCuratorConfig
+  }>(
     () => ({
-      viewSortOptions: viewSortConfig.reduce(
-        (viewSortOptionsResult, someSortOptionConfig) => {
-          if (someSortOptionConfig.fieldType === 'string') {
-            pushStringSortOptions({
-              viewSortOptionsResult,
-              someSortOptionConfig,
-            })
-          } else if (someSortOptionConfig.fieldType === 'orderedStringSet') {
-            pushOrderedStringSetSortOptions({
-              viewSortOptionsResult,
-              someSortOptionConfig,
-            })
-          } else if (someSortOptionConfig.fieldType === 'number') {
-            pushNumberSortOptions({
-              viewSortOptionsResult,
-              someSortOptionConfig,
-            })
-          } else {
-            throwInvalidPathError('useViewSortOrderOptions')
+      clientCuratorConfig: {
+        curatorInfo: adjustedCuratorConfig.curatorInfo,
+        curationSegments: adjustedCuratorConfig.curationSegments.map<
+          ClientCurationSegment<any>
+        >((someAdjustedCurationSegment): ClientCurationSegment<any> => {
+          const segmentDataset =
+            adjustedCuratorConfig.curationDatasets[
+              someAdjustedCurationSegment.segmentDatasetId
+            ] ?? throwInvalidPathError('useClientCuratorConfig.segmentDataset')
+          const segmentDatasetTypeConfig =
+            segmentDataset.datasetType === 'music'
+              ? {
+                  SegmentItemDisplay: MusicItemDisplay,
+                  getSegmentItemSearchSpace: (someMusicItem: MusicItem) =>
+                    `${
+                      someMusicItem.musicTitle
+                    },${someMusicItem.musicArtist.join(
+                      ','
+                    )},${someMusicItem.musicTags.join(',')},${
+                      someMusicItem.musicYear
+                    },${`${someMusicItem.recordingContext.join('/')} ${
+                      someMusicItem.sourceType === 'collection'
+                        ? someMusicItem.collectionType
+                        : someMusicItem.sourceType
+                    }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`,
+                  segmentSortOptions: getSegmentSortOptions({
+                    someAdjustedSegmentDataset: segmentDataset,
+                  }),
+                }
+              : segmentDataset.datasetType === 'spot'
+              ? {
+                  SegmentItemDisplay: SpotItemDisplay,
+                  getSegmentItemSearchSpace: (someSpotItem: SpotItem) =>
+                    `${someSpotItem.spotName},${
+                      someSpotItem.spotLocation
+                    },${someSpotItem.spotTags.join(',')}`,
+                  segmentSortOptions: getSegmentSortOptions({
+                    someAdjustedSegmentDataset: segmentDataset,
+                  }) as unknown as ArrayOfAtLeastOne<
+                    SegmentSortOption<CurationItem>
+                  >,
+                }
+              : throwInvalidPathError(
+                  'useClientCuratorConfig.segmentDatasetTypeConfig'
+                )
+          return {
+            segmentId: someAdjustedCurationSegment.segmentId,
+            segmentLabel: someAdjustedCurationSegment.segmentLabel,
+            segmentDatasetId: someAdjustedCurationSegment.segmentDatasetId,
+            segmentViews: someAdjustedCurationSegment.segmentViews,
+            ...segmentDatasetTypeConfig,
           }
-          return viewSortOptionsResult
-        },
-        [] as unknown as ArrayOfAtLeastOne<ViewSortOption<SomeCurationItem>>
-      ),
+        }) as ArrayOfAtLeastOne<ClientCurationSegment<CurationItem>>,
+      },
     }),
-    [viewSortConfig]
+    []
+  )
+}
+
+interface GetSegmentSortOptionsApi<SomeCurationItem extends CurationItem> {
+  someAdjustedSegmentDataset: AdjustedCurationDataset<SomeCurationItem>
+}
+
+function getSegmentSortOptions<SomeCurationItem extends CurationItem>(
+  api: GetSegmentSortOptionsApi<SomeCurationItem>
+): ArrayOfAtLeastOne<SegmentSortOption<SomeCurationItem>> {
+  const { someAdjustedSegmentDataset } = api
+  return someAdjustedSegmentDataset.datasetSortConfig.reduce(
+    (viewSortOptionsResult, someSortOptionConfig) => {
+      if (someSortOptionConfig.fieldType === 'string') {
+        pushStringSortOptions({
+          viewSortOptionsResult,
+          someSortOptionConfig,
+        })
+      } else if (someSortOptionConfig.fieldType === 'orderedStringSet') {
+        pushOrderedStringSetSortOptions({
+          viewSortOptionsResult,
+          someSortOptionConfig,
+        })
+      } else if (someSortOptionConfig.fieldType === 'number') {
+        pushNumberSortOptions({
+          viewSortOptionsResult,
+          someSortOptionConfig,
+        })
+      } else {
+        throwInvalidPathError('useViewSortOrderOptions')
+      }
+      return viewSortOptionsResult
+    },
+    [] as unknown as ArrayOfAtLeastOne<SegmentSortOption<SomeCurationItem>>
   )
 }
 
@@ -182,17 +223,15 @@ interface PushSortOptionsApi<SomeCurationItem extends CurationItem>
     PushSortOptionsConfigApi<SomeCurationItem> {}
 
 interface PushSortOptionsDataApi<SomeCurationItem extends CurationItem> {
-  viewSortOptionsResult: ReturnType<
-    typeof useViewSortOptions<SomeCurationItem>
-  >['viewSortOptions']
-  someSortOptionConfig: UseViewSortOptionsApi<SomeCurationItem>['viewSortConfig'][number]
+  viewSortOptionsResult: ArrayOfAtLeastOne<SegmentSortOption<SomeCurationItem>>
+  someSortOptionConfig: SegmentSortOptionConfig<SomeCurationItem>
 }
 
 interface PushSortOptionsConfigApi<SomeCurationItem extends CurationItem> {
   ascendingSortLabelExtension: string
   descendingSortLabelExtension: string
-  getAscendingSortOrder: ViewSortOption<SomeCurationItem>['getSortOrder']
-  getDescendingSortOrder: ViewSortOption<SomeCurationItem>['getSortOrder']
+  getAscendingSortOrder: SegmentSortOption<SomeCurationItem>['getSortOrder']
+  getDescendingSortOrder: SegmentSortOption<SomeCurationItem>['getSortOrder']
 }
 
 function pushSortOptions<SomeCurationItem extends CurationItem>(
