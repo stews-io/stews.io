@@ -69,11 +69,6 @@ export const curatorConfig: CuratorConfig = {
           viewFilter: 'recordingContext:concert AND sourceType:mix',
         },
         {
-          viewId: 'UXA3',
-          viewLabel: 'flips',
-          viewFilter: 'musicTags:flips',
-        },
-        {
           viewId: '9TSA',
           viewLabel: 'oh gee',
           viewFilter: 'musicTags:o.g.',
@@ -90,6 +85,19 @@ export const curatorConfig: CuratorConfig = {
           viewId: 'P41V',
           viewLabel: 'discography',
           viewFilter: 'musicTags:discography',
+        },
+      ],
+    },
+    {
+      segmentDatasetId: 'music',
+      segmentId: 'related',
+      segmentLabel: 'related',
+      segmentFilter: 'musicArtist:break science',
+      segmentViews: [
+        {
+          viewId: 'JQZ1',
+          viewLabel: 'break science',
+          viewFilter: 'musicArtist:break science',
         },
       ],
     },

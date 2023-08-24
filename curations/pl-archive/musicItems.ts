@@ -2245,4 +2245,161 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 105,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a0780691966_16.jpg',
+    musicYear: 2021,
+    musicTitle: 'Diffused Light',
+    musicArtist: ['Wooden Flowers', 'Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/e94rvibp6G8?list=PLeaAVf9FuLyVJIIJu1a0jtaYHN2u5CW5M&si=CCsijdMYzUX6JuVN',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5jYLVXR5V3S0zvUeo7goPl?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/diffused-light/1593019887',
+      }),
+    ],
+  },
+  {
+    itemId: 106,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/613zV6g8UTL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'Further Than Our Eyes Can See',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/qDR1qtsLVTg?list=OLAK5uy_kusO6hBuDX1u_V_mQQNrP35MrFCWrtCho&si=_6uJjB-lzzfouJyM',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/50g0lzP2QYIVfVq3iSmAzC?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/further-than-our-eyes-can-see-ep/1402892120',
+      }),
+    ],
+  },
+  {
+    itemId: 107,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51-vkNa5TWL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2012,
+    musicTitle: 'Monolith Code',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/-mCVnQWMjZo?list=PLF3CEC6589FF5DF44&si=KyBkmBTGF-gozxWe',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/50g0lzP2QYIVfVq3iSmAzC?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/monolith-code-ep/1402888461',
+      }),
+    ],
+  },
+  {
+    itemId: 108,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61oYTgInutL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2013,
+    musicTitle: 'Seven Bridges',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/Xv5JHk-Uho0?list=OLAK5uy_l-3JA6cu2PutGkkW2pyo94FuHr1NViV5Y&si=F7XJJnY995oKenxV',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4p8bsXV9k5qarnHBK2azlN?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/seven-bridges/1402909336',
+      }),
+    ],
+  },
+  {
+    itemId: 109,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61yYx37+d9L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Grid of Souls',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/T9YIZFYrOkw?list=OLAK5uy_kHDpb31gWUMZAJa6_7mT1HeM45TKswJPs&si=3anSuAOC074zmY9T',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2tAfPDTMtyeE1LqpZD3MRS?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/grid-of-souls/1342067042',
+      }),
+    ],
+  },
+  {
+    itemId: 110,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/516NhwDqENL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2023,
+    musicTitle: 'Mecha Flora',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/uvF480eb5Y8?list=PLX6K4NIjMX1V0Tpb3GasgGVMBYdFfNjzl&si=4r0OPPWNICQFL-jC',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2BQkZumGI5iMwfdXqBhLXg?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/mecha-flora-ep/1660492965',
+      }),
+    ],
+  },
 ]
