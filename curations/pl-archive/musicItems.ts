@@ -1978,4 +1978,290 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 92,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41khUIfrVoL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2014,
+    musicTitle: 'Elements',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/DPmu6b83LCc?list=PLeaAVf9FuLyWSWv0dglMRA18sPFjOZbIB&si=OwMG0tN98vGLNGWP',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0HGZQgAGNrkLF88CqoMSTS?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/uz/album/elements-ep/955200967',
+      }),
+    ],
+  },
+  {
+    itemId: 93,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41xBSyav5LL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2014,
+    musicTitle: 'Victory',
+    musicArtist: ['Michal Menert', 'Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3dqscq7oyCG0RoyBDZ9JNl?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/victory-single/1492500170',
+      }),
+    ],
+  },
+  {
+    itemId: 94,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Sjz4IEAkL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Fearless',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/4hzMMTaaXB8?list=PLeaAVf9FuLyVfy7iPdYdSmLpmbsHRKybv&si=-f8AkA8q_Jr-MfZ0',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/7EiH4hFNsCREVmjIULaIic?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/fearless-ep/1509521215',
+      }),
+    ],
+  },
+  {
+    itemId: 95,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Sjz4IEAkL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Fearless',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/4hzMMTaaXB8?list=PLeaAVf9FuLyVfy7iPdYdSmLpmbsHRKybv&si=-f8AkA8q_Jr-MfZ0',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/7EiH4hFNsCREVmjIULaIic?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/fearless-ep/1509521215',
+      }),
+    ],
+  },
+  {
+    itemId: 96,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a3942226336_16.jpg',
+    musicYear: 2015,
+    musicTitle: 'Slow Coast',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      {
+        linkLabel: 'bandcamp',
+        linkHref: 'https://michalmenert.bandcamp.com/album/slow-coast-ep',
+      },
+    ],
+  },
+  {
+    itemId: 97,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a3942226336_16.jpg',
+    musicYear: 2015,
+    musicTitle: 'Slow Coast',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      {
+        linkLabel: 'bandcamp',
+        linkHref: 'https://michalmenert.bandcamp.com/album/slow-coast-ep',
+      },
+    ],
+  },
+  {
+    itemId: 98,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51LEhCk4h5L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Slow Coast II',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/C8OwMo7-ayk?list=OLAK5uy_ns_WUYBnCu7FJ9RaeZCpNfVEj_wInh9To&si=RyzjaemSPDNCG1Wy',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2Gs70M9kVv0kMVpSNdIT7G?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/slow-coast-ii-ep/1402910716',
+      }),
+    ],
+  },
+  {
+    itemId: 99,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Pn1pqWAqL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Slow Coast III',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/7b0Th5837A4?list=OLAK5uy_lcrmM4pcScOLH-_gNJCSSh5SUcMZQYGJQ&si=50tOiWM7T2dfug43',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7nL01w7pQZkIyP3W18y3Bh?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/slow-coast-iii/1453735338',
+      }),
+    ],
+  },
+  {
+    itemId: 100,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41cocZRtMiL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Body Hi',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/2GeBJL0uIfA?list=OLAK5uy_n7CgoGHFMkwqDHVAoatbuyG8Ub9Ck2P2A&si=IATu3GPqtjKB2KQh',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3hBK05GF4f0mu3Qni5QKcW?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/body-hi-ep/1612160811',
+      }),
+    ],
+  },
+  {
+    itemId: 101,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/511oIPWy0LL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Sorry',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/iT1kBfJRGGM?si=rCdETznQkf-NwXLi',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/09q15lTeH0bFpsodosoZdT?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/sorry/1510569868?i=1510571120',
+      }),
+    ],
+  },
+  {
+    itemId: 102,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a2669821566_16.jpg',
+    musicYear: 2012,
+    musicTitle: 'Twilight Frequency',
+    musicArtist: ['Michal Menert', 'Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      {
+        linkLabel: 'bandcamp',
+        linkHref:
+          'https://twilightfrequency.bandcamp.com/album/twilight-frequency',
+      },
+    ],
+  },
+  {
+    itemId: 103,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51pDuWTIcfL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Slow Burn',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/Xh_49BmnVRc?list=OLAK5uy_lEMCxZDNHer419eLDzZy-wKrtsMY0u2LE&si=zjlKhinSnRKpjlcj',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5CRexExmGFz37MuUCh0PNb?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/slow-burn-ep/1645870539',
+      }),
+    ],
+  },
 ]
