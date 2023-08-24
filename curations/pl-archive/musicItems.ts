@@ -2402,4 +2402,335 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 111,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a3137555505_16.jpg',
+    musicYear: 2012,
+    musicTitle: 'Electric Feel (Remix)',
+    musicArtist: ['Break Science', 'MGMT'],
+    recordingContext: ['studio'],
+    musicTags: ['remix'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/w8K_SOLVPSQ?si=HoMQwkbsUND6PL7R',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/electric-feel-break-science-remix',
+      }),
+      {
+        linkLabel: 'bandcamp',
+        linkHref:
+          'https://breakscience.bandcamp.com/track/electric-feel-mgmt-remix',
+      },
+    ],
+  },
+  {
+    itemId: 112,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a2275910188_16.jpg',
+    musicYear: 2011,
+    musicTitle: 'Moment 4 Life (Remix)',
+    musicArtist: ['Break Science', 'Nicki Minaj'],
+    recordingContext: ['studio'],
+    musicTags: ['remix'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/Q9fGQeNnLtM?si=KxvJ0hIE3VYR8NyQ',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/moment-4-life-break-science',
+      }),
+      {
+        linkLabel: 'bandcamp',
+        linkHref:
+          'https://breakscience.bandcamp.com/track/moment-4-life-nicki-minaj-remix',
+      },
+    ],
+  },
+  {
+    itemId: 113,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a3277117740_16.jpg',
+    musicYear: 2012,
+    musicTitle: 'Talk That Talk (Remix)',
+    musicArtist: ['Break Science', 'Rihanna', 'Jay-Z'],
+    recordingContext: ['studio'],
+    musicTags: ['remix'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/Z30FSdOAVuQ?si=rVLrJijdZ7Ntzj9P',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/talk-that-talk-rihanna-feat',
+      }),
+      {
+        linkLabel: 'bandcamp',
+        linkHref:
+          'https://breakscience.bandcamp.com/track/talk-that-talk-rihanna-ft-jay-z-remix',
+      },
+    ],
+  },
+  {
+    itemId: 114,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref: 'https://f4.bcbits.com/img/a0336923726_16.jpg',
+    musicYear: 2011,
+    musicTitle: 'Boogie Down',
+    musicArtist: ['Break Science', 'Gramatik'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/n95Mv_URyu8?si=KTnp4dNS_38k5YQm',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/break-science-gramatik-boogie',
+      }),
+      {
+        linkLabel: 'bandcamp',
+        linkHref: 'https://breakscience.bandcamp.com/track/boogie-down',
+      },
+    ],
+  },
+  {
+    itemId: 115,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000094133768-u6mvu7-t500x500.jpg',
+    musicYear: 2014,
+    musicTitle: 'Vibe Walk',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['mashup'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/LJhfusKIfQM?si=h00KwPJ5xww6BK5t',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/kendrick-lamar-vs-tycho-vibe-walk-break-science-remix',
+      }),
+    ],
+  },
+  {
+    itemId: 116,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000141310448-pvf52f-t500x500.jpg',
+    musicYear: 2015,
+    musicTitle: 'Fu-Gee-La (Remix)',
+    musicArtist: ['Break Science', 'The Fugees'],
+    recordingContext: ['studio'],
+    musicTags: ['remix'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/fu-gee-la-break-science-remix',
+      }),
+    ],
+  },
+  {
+    itemId: 117,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000148658272-du4agc-t500x500.jpg',
+    musicYear: 2015,
+    musicTitle: 'Mexico (Remix)',
+    musicArtist: ['Break Science', 'Sonya Kitchell'],
+    recordingContext: ['studio'],
+    musicTags: ['remix'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/sonya-kitchell-mexico-break-science-remix-1',
+      }),
+    ],
+  },
+  {
+    itemId: 118,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/avatars-FCse6g8ZumcEBXsj-juyccA-t500x500.jpg',
+    musicYear: 2016,
+    musicTitle: 'Sirius XM',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio', 'live'],
+    musicTags: ['live band', 'interview'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/break-science-band-at-the-sirius-xm-jam-on-studios',
+      }),
+      {
+        linkLabel: 'archive',
+        linkHref: 'https://archive.org/details/breakscience2016-01-27',
+      },
+    ],
+  },
+  {
+    itemId: 119,
+    musicType: 'source',
+    sourceType: 'track',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000198319599-t30vh0-t500x500.jpg',
+    musicYear: 2016,
+    musicTitle: 'Reno (Live at Brooklyn Bowl)',
+    musicArtist: ['Break Science'],
+    recordingContext: ['concert'],
+    musicTags: ['live band'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/break-science/reno-live-at-brooklyn-bowl',
+      }),
+      {
+        linkLabel: 'archive',
+        linkHref:
+          'https://archive.org/details/breakscience2016-01-29.cmc621.sbd.matrix.flac24/breakscience2016-01-29.cmc621.sbd.matrix-t17.flac',
+      },
+    ],
+  },
+  {
+    itemId: 120,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51UdIdAi0yL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2017,
+    musicTitle: 'Dream Sequence',
+    musicArtist: ['Break Science', 'Dreamers Delight'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/8Xzu3qB_Yvw?si=2w4t-kPMYj4_y3EX',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/5RQ7PrbagaKJcsp6NvRThB?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/dream-sequence-feat-break-science-single/1614965502',
+      }),
+    ],
+  },
+  {
+    itemId: 121,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61WVtkzUhiL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Coded Theory',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/kN78Es1TX5g?si=kRi695HpRzSKSjPs',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/78a3Ebppfju8sO2RZVRkHt?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/coded-theory-single/1458833693',
+      }),
+    ],
+  },
+  {
+    itemId: 122,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61kUQ5kV62L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Oshun',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/dNZBFuXhtC4?si=1SB0sm1Tftv5PBfk',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/0wSjSo8TaCdnWuBCTSkb4x?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/oshun-single/1479257025',
+      }),
+    ],
+  },
+  {
+    itemId: 123,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61-o79abb6L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Take You There',
+    musicArtist: ['Break Science'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/KVa_TSsbfSA?si=RP9cY9T3j0JywUYH',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/0sl1HpU6VY6TDsBUmM1u7Z?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/take-you-there-single/1506855334',
+      }),
+    ],
+  },
+  {
+    itemId: 124,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-CyTxzykPxSQHTbmd-469H6A-t500x500.jpg',
+    musicYear: 2020,
+    musicTitle: 'Mettawave',
+    musicArtist: ['Break Science', 'Manic Focus'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/0JkUg-0TWmg?si=70XrpQ1NRwQdTDfn',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/5TAQNXHZncVROjbZB9UlEU?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/mettawave-single/1540199378',
+      }),
+    ],
+  },
 ]
