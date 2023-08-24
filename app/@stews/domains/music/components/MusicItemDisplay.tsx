@@ -1,6 +1,6 @@
-import { ItemDisplayProps } from '@stews/components/CurationPage/CurationSegmentPage'
 import { DefaultItemDisplay } from '@stews/components/DefaultItemDisplay/DefaultItemDisplay'
 import { MusicItem } from '../data'
+import { ItemDisplayProps } from '@stews/data/CurationItem'
 
 export interface MusicItemProps extends ItemDisplayProps<MusicItem> {}
 

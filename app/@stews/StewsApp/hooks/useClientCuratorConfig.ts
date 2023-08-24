@@ -1,4 +1,4 @@
-import { CurationItem } from '@stews/data/CurationItem'
+import { CurationItem, ItemDisplayProps } from '@stews/data/CurationItem'
 import {
   AdjustedCurationSegment,
   ClientCurationSegment,
@@ -17,6 +17,7 @@ import {
   AdjustedCurationDataset,
   SegmentSortOptionConfig,
 } from '@stews/data/CurationDataset'
+import { JSXInternal } from 'preact/src/jsx'
 
 export interface UseClientCuratorConfigApi
   extends Pick<AppRouterProps, 'adjustedCuratorConfig'> {}
@@ -30,57 +31,67 @@ export function useClientCuratorConfig(api: UseClientCuratorConfigApi) {
       clientCuratorConfig: {
         curatorInfo: adjustedCuratorConfig.curatorInfo,
         curationSegments: adjustedCuratorConfig.curationSegments.map<
-          ClientCurationSegment<any>
-        >((someAdjustedCurationSegment): ClientCurationSegment<any> => {
-          const segmentDataset =
-            adjustedCuratorConfig.curationDatasets[
-              someAdjustedCurationSegment.segmentDatasetId
-            ] ?? throwInvalidPathError('useClientCuratorConfig.segmentDataset')
-          const segmentDatasetTypeConfig =
-            segmentDataset.datasetType === 'music'
-              ? {
-                  SegmentItemDisplay: MusicItemDisplay,
-                  getSegmentItemSearchSpace: (someMusicItem: MusicItem) =>
-                    `${
-                      someMusicItem.musicTitle
-                    },${someMusicItem.musicArtist.join(
-                      ','
-                    )},${someMusicItem.musicTags.join(',')},${
-                      someMusicItem.musicYear
-                    },${`${someMusicItem.recordingContext.join('/')} ${
-                      someMusicItem.sourceType === 'collection'
-                        ? someMusicItem.collectionType
-                        : someMusicItem.sourceType
-                    }${someMusicItem.musicType === 'clip' ? ' clip' : ''}`}`,
-                  segmentSortOptions: getSegmentSortOptions({
-                    someAdjustedSegmentDataset: segmentDataset,
-                  }),
-                }
-              : segmentDataset.datasetType === 'spot'
-              ? {
-                  SegmentItemDisplay: SpotItemDisplay,
-                  getSegmentItemSearchSpace: (someSpotItem: SpotItem) =>
-                    `${someSpotItem.spotName},${
-                      someSpotItem.spotLocation
-                    },${someSpotItem.spotTags.join(',')}`,
-                  segmentSortOptions: getSegmentSortOptions({
-                    someAdjustedSegmentDataset: segmentDataset,
-                  }) as unknown as ArrayOfAtLeastOne<
-                    SegmentSortOption<CurationItem>
-                  >,
-                }
-              : throwInvalidPathError(
-                  'useClientCuratorConfig.segmentDatasetTypeConfig'
-                )
-
-          return {
-            segmentId: someAdjustedCurationSegment.segmentId,
-            segmentLabel: someAdjustedCurationSegment.segmentLabel,
-            segmentDatasetId: someAdjustedCurationSegment.segmentDatasetId,
-            segmentViews: someAdjustedCurationSegment.segmentViews,
-            ...segmentDatasetTypeConfig,
+          ClientCurationSegment<CurationItem>
+        >(
+          (
+            someAdjustedCurationSegment
+          ): ClientCurationSegment<CurationItem> => {
+            const segmentDataset =
+              adjustedCuratorConfig.curationDatasets[
+                someAdjustedCurationSegment.segmentDatasetId
+              ] ??
+              throwInvalidPathError('useClientCuratorConfig.segmentDataset')
+            const segmentDatasetTypeConfig =
+              segmentDataset.datasetType === 'music'
+                ? {
+                    SegmentItemDisplay: MusicItemDisplay as (
+                      someItem: ItemDisplayProps<CurationItem>
+                    ) => JSXInternal.Element,
+                    getSegmentItemSearchSpace: ((someMusicItem: MusicItem) =>
+                      `${
+                        someMusicItem.musicTitle
+                      },${someMusicItem.musicArtist.join(
+                        ','
+                      )},${someMusicItem.musicTags.join(',')},${
+                        someMusicItem.musicYear
+                      },${`${someMusicItem.recordingContext.join('/')} ${
+                        someMusicItem.sourceType === 'collection'
+                          ? someMusicItem.collectionType
+                          : someMusicItem.sourceType
+                      }${
+                        someMusicItem.musicType === 'clip' ? ' clip' : ''
+                      }`}`) as unknown as (someItem: CurationItem) => string,
+                    segmentSortOptions: getSegmentSortOptions({
+                      someAdjustedSegmentDataset: segmentDataset,
+                    }),
+                  }
+                : segmentDataset.datasetType === 'spot'
+                ? {
+                    SegmentItemDisplay: SpotItemDisplay as (
+                      someItem: ItemDisplayProps<CurationItem>
+                    ) => JSXInternal.Element,
+                    getSegmentItemSearchSpace: ((someSpotItem: SpotItem) =>
+                      `${someSpotItem.spotName},${
+                        someSpotItem.spotLocation
+                      },${someSpotItem.spotTags.join(',')}`) as unknown as (
+                      someItem: CurationItem
+                    ) => string,
+                    segmentSortOptions: getSegmentSortOptions({
+                      someAdjustedSegmentDataset: segmentDataset,
+                    }),
+                  }
+                : throwInvalidPathError(
+                    'useClientCuratorConfig.segmentDatasetTypeConfig'
+                  )
+            return {
+              segmentId: someAdjustedCurationSegment.segmentId,
+              segmentLabel: someAdjustedCurationSegment.segmentLabel,
+              segmentDatasetId: someAdjustedCurationSegment.segmentDatasetId,
+              segmentViews: someAdjustedCurationSegment.segmentViews,
+              ...segmentDatasetTypeConfig,
+            }
           }
-        }) as ArrayOfAtLeastOne<ClientCurationSegment<CurationItem>>,
+        ) as ArrayOfAtLeastOne<ClientCurationSegment<CurationItem>>,
       },
     }),
     []

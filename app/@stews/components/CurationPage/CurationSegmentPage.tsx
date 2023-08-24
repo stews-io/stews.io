@@ -2,7 +2,6 @@ import { useClientCuratorConfig } from '@stews/StewsApp/hooks/useClientCuratorCo
 import { useCurationSegmentState } from '@stews/StewsApp/hooks/useCurationSegmentState'
 import { useSegmentDatasetState } from '@stews/StewsApp/hooks/useSegmentDatasetState'
 import { Page } from '@stews/components/Page'
-import { CurationItem } from '@stews/data/CurationItem'
 import { LinkButton } from '../Button'
 import cssModule from './CurationSegmentPage.module.scss'
 import {
@@ -23,10 +22,6 @@ export interface CurationSegmentPageProps
       'curationSegmentState' | 'setCurationSegmentState'
     >,
     Pick<ReturnType<typeof useSegmentDatasetState>, 'segmentDatasetState'> {}
-
-export interface ItemDisplayProps<SomeCurationItem extends CurationItem> {
-  someItem: SomeCurationItem
-}
 
 export function CurationSegmentPage(props: CurationSegmentPageProps) {
   const {

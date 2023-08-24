@@ -1,7 +1,6 @@
 import { ArrayOfAtLeastOne } from '@stews/helpers/types'
-import { CurationItem } from './CurationItem'
+import { CurationItem, ItemDisplayProps } from './CurationItem'
 import { FunctionComponent } from 'preact'
-import { ItemDisplayProps } from '@stews/components/CurationPage'
 
 export interface CuratorCurationSegment
   extends CurationSegmentBase<Array<CuratorSegmentView>> {

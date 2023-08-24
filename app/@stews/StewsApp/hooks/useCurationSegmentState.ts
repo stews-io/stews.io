@@ -7,23 +7,21 @@ import {
 import { useEffect, useMemo, useState } from 'preact/hooks'
 import { useClientCuratorConfig } from './useClientCuratorConfig'
 
-export interface CurationSegmentState<SomeCurationItem extends CurationItem> {
-  curationSegment: ClientCurationSegment<SomeCurationItem>
+export interface CurationSegmentState {
+  curationSegment: ClientCurationSegment<CurationItem>
   segmentView: AdjustedSegmentView
-  segmentSortOption: SegmentSortOption<SomeCurationItem>
+  segmentSortOption: SegmentSortOption<CurationItem>
   viewSearchQuery: string
   viewPageIndex: number
 }
 
-export interface UseCurationSegmentState<SomeCurationItem extends CurationItem>
+export interface UseCurationSegmentState
   extends Pick<
     ReturnType<typeof useClientCuratorConfig>,
     'clientCuratorConfig'
   > {}
 
-export function useCurationSegmentState<SomeCurationItem extends CurationItem>(
-  api: UseCurationSegmentState<SomeCurationItem>
-) {
+export function useCurationSegmentState(api: UseCurationSegmentState) {
   const { clientCuratorConfig } = api
   const initialUrlPageState = useMemo(() => {
     const [_, urlCurationSegmentId, urlSegmentViewId] =
@@ -42,23 +40,22 @@ export function useCurationSegmentState<SomeCurationItem extends CurationItem>(
       (someCurationSegment) =>
         someCurationSegment.segmentId === initialUrlPageState.curationSegmentId
     ) ?? clientCuratorConfig.curationSegments[0]
-  const [curationSegmentState, setCurationSegmentState] = useState<
-    CurationSegmentState<CurationItem>
-  >({
-    curationSegment: activeCurationSegment,
-    segmentView:
-      activeCurationSegment.segmentViews.find(
-        (someCurationView) =>
-          someCurationView.viewId === initialUrlPageState.segmentViewId
-      ) ?? activeCurationSegment.segmentViews[0],
-    segmentSortOption:
-      activeCurationSegment.segmentSortOptions.find(
-        (someViewSortOption) =>
-          someViewSortOption.sortId === initialUrlPageState.segmentSortId
-      ) ?? activeCurationSegment.segmentSortOptions[0],
-    viewSearchQuery: initialUrlPageState.viewSearchQuery,
-    viewPageIndex: initialUrlPageState.viewPageIndex,
-  })
+  const [curationSegmentState, setCurationSegmentState] =
+    useState<CurationSegmentState>({
+      curationSegment: activeCurationSegment,
+      segmentView:
+        activeCurationSegment.segmentViews.find(
+          (someCurationView) =>
+            someCurationView.viewId === initialUrlPageState.segmentViewId
+        ) ?? activeCurationSegment.segmentViews[0],
+      segmentSortOption:
+        activeCurationSegment.segmentSortOptions.find(
+          (someViewSortOption) =>
+            someViewSortOption.sortId === initialUrlPageState.segmentSortId
+        ) ?? activeCurationSegment.segmentSortOptions[0],
+      viewSearchQuery: initialUrlPageState.viewSearchQuery,
+      viewPageIndex: initialUrlPageState.viewPageIndex,
+    })
   useEffect(() => {
     const nextUrlSearchParams = new URLSearchParams()
     nextUrlSearchParams.set(
