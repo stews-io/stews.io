@@ -1819,4 +1819,84 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 86,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61w++SaZzhL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2010,
+    musicTitle: 'Dreaming of a Bigger Life',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/73GQ6PV8Diw?list=OLAK5uy_lW7rHDJqQhSMuNQPfl8j_FBd4ri7FunG8&si=_WXc_J35sC5vvBK5',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7rGfXsQO2ji5pg3FmPEQbX?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/dreaming-of-a-bigger-life/382272298',
+      }),
+    ],
+  },
+  {
+    itemId: 87,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Nc7RIH1JL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2012,
+    musicTitle: "Even If It Isn't Right",
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/qXeOwKQ7mCk?list=OLAK5uy_mH-IhOeeJOXkDhlSKaR2PQSmZ7lKl79l8&si=sjVpoSlqCf_e0Olv',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5hvWMXFoeAxCK3RcBdgt7N?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/even-if-it-isnt-right/521981386',
+      }),
+    ],
+  },
+  {
+    itemId: 88,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61qHS-pRbWL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2015,
+    musicTitle: 'Space Jazz',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/7dzBMWFdrhE?list=OLAK5uy_n4diRNxqKSjaKG7rJ1WofjJ689KaUR4jg&si=hU-R3oXGsl2vZBO9',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7iGzK8x76ATOfNCsnpucPI?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/space-jazz/982326566',
+      }),
+    ],
+  },
 ]
