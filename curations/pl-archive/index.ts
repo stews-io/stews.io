@@ -51,7 +51,7 @@ export const curatorConfig: CuratorConfig = {
       segmentDatasetId: 'music',
       segmentId: 'pretty',
       segmentLabel: 'pretty lights',
-      segmentFilter: 'musicArtist:pretty lights',
+      segmentFilter: 'musicArtist:"Pretty Lights"',
       segmentViews: [
         {
           viewId: '67ZF',
@@ -79,7 +79,7 @@ export const curatorConfig: CuratorConfig = {
       segmentDatasetId: 'music',
       segmentId: 'menert',
       segmentLabel: 'michal menert',
-      segmentFilter: 'musicArtist:michal menert',
+      segmentFilter: 'musicArtist:"Michal Menert"',
       segmentViews: [
         {
           viewId: 'P41V',
@@ -91,13 +91,14 @@ export const curatorConfig: CuratorConfig = {
     {
       segmentDatasetId: 'music',
       segmentId: 'related',
-      segmentLabel: 'related',
-      segmentFilter: 'musicArtist:break science',
+      segmentLabel: 'related artist',
+      segmentFilter:
+        'musicArtist:"Break Science" OR musicArtist:"Paul Basic" OR musicArtist:"Eliot Lipp" OR musicArtist:"Paper Diamond"',
       segmentViews: [
         {
           viewId: 'JQZ1',
           viewLabel: 'break science',
-          viewFilter: 'musicArtist:break science',
+          viewFilter: 'musicArtist:"Break Science"',
         },
       ],
     },

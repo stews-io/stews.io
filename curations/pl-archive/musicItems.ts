@@ -2713,7 +2713,7 @@ export const musicItems: Array<MusicItem> = [
     sourceType: 'collection',
     collectionType: 'single',
     musicThumbnailHref:
-      'https://i1.sndcdn.com/artworks-CyTxzykPxSQHTbmd-469H6A-t500x500.jpg',
+      'https://m.media-amazon.com/images/I/51m6v4SPFlL._UX500_FMwebp_QL85_.jpg',
     musicYear: 2020,
     musicTitle: 'Mettawave',
     musicArtist: ['Break Science', 'Manic Focus'],
@@ -2730,6 +2730,270 @@ export const musicItems: Array<MusicItem> = [
       getAppleLinkData({
         appleHref:
           'https://music.apple.com/us/album/mettawave-single/1540199378',
+      }),
+    ],
+  },
+  {
+    itemId: 125,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51vFU+QQFCL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'Levitate',
+    musicArtist: ['Paper Diamond'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/f107G_AwU9U?list=OLAK5uy_n84eOjGnGMVCSTz4PSel_sO8pO0U05cAM&si=8vAI7CqS-6FnLdTw',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6Uzxfq05xF5jQYPvMcjhSF?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/levitate/976212718',
+      }),
+    ],
+  },
+  {
+    itemId: 126,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51nyGI0ixjL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'The Mirror',
+    musicArtist: ['Paul Basic'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/Dix_C8DUDSc?list=OLAK5uy_lTt3q1rWPTd7RXLUdIidv2mtkWVsAFmVM&si=_rvzBoir96BUkgdn',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6bWxob5MNKzzrXkoOY5ddH?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/gb/album/the-mirror/466901533',
+      }),
+    ],
+  },
+  {
+    itemId: 127,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51u7E5EAMsL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2013,
+    musicTitle: 'Transient Horizons',
+    musicArtist: ['Paul Basic'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/BY3Fwmlg5ZI?list=PL2uWggAFuEsVMznz8htmj07y-BSSAzEhF&si=RN4kTEmLwg3We0QV',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3VJJO5JgTnSNDaUGkcwbpW?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/transient-horizons/766945930',
+      }),
+    ],
+  },
+  {
+    itemId: 128,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41uEcN8ZkdL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2017,
+    musicTitle: 'Skywave',
+    musicArtist: ['Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/m9uZmegygzA?list=OLAK5uy_lD3bXqwMRn-d9UlQVydOBxzD42SBtJIak&si=c33We7FdiP63jN4y',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4JJSKO7wyM13rDCqiSw4Un?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/skywave/1494375793',
+      }),
+    ],
+  },
+  {
+    itemId: 129,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/612eezueHrL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2012,
+    musicTitle: 'Shark Wolf Rabbit Snake',
+    musicArtist: ['Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/BY3Fwmlg5ZI?list=PL2uWggAFuEsVMznz8htmj07y-BSSAzEhF&si=f5APkOtn-M9yMqIz',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5A7rqZVUTMf4uYUHQaxLkn?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/shark-wolf-rabbit-snake/1553491366',
+      }),
+    ],
+  },
+  {
+    itemId: 130,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61bqDA5-VML._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'Beatz & Pieces Vol. 1',
+    musicArtist: ['Gramatik'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/6DCChe9hnlM?list=OLAK5uy_nWIzBLBiO36qHEXFKPT7R3p2WwkPRt4VI&si=u7dD7_3eG4JtToAt',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2jufxlYnmvY235bVECkCCq?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/beatz-pieces-vol-1/903552156',
+      }),
+    ],
+  },
+  {
+    itemId: 131,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51HXKhhYp9L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2008,
+    musicTitle: 'Street Bangerz Vol. 1',
+    musicArtist: ['Gramatik'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/CEtAkb3IFZE?list=OLAK5uy_lFRFxlMv3J407KIyT8sNa618Gan97VIZk&si=HLL2MKNhPGNtpT31',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1p1w828sU7QewePqhfZKwh?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/sb-1/797311480',
+      }),
+    ],
+  },
+  {
+    itemId: 132,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51nfDpWzIxL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2009,
+    musicTitle: 'Street Bangerz Vol. 2',
+    musicArtist: ['Gramatik'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/dlVpM_eiwec?list=OLAK5uy_mX8cWLGUPzdNdIE0lKZdoQaCXKR2GgPyI&si=VrNf9lsnrua4t2e9',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4NyU7oAsBsOvTAH2vnYPem?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/sb-2/806697096',
+      }),
+    ],
+  },
+  {
+    itemId: 133,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51A2dPe+XrL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2010,
+    musicTitle: 'Street Bangerz Vol. 3',
+    musicArtist: ['Gramatik'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/yjXKLstzAgE?list=OLAK5uy_nUWnzorGhDZ4FYq9MOxAxDRFvkC33TxnE&si=EITAnDC1t4xrw-4Y',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6zRPOKKIiUEQPGYnLoavVj?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/sb-3/806756155',
+      }),
+    ],
+  },
+  {
+    itemId: 134,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'ep',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61A2MYHIdHL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2009,
+    musicTitle: 'Water 4 The Soul',
+    musicArtist: ['Gramatik'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/3S6u8FHkIeE?list=OLAK5uy_mRl7Fkins6Y3F1l6WXlYvcgjvF0FmUlPw&si=Y4ruFZv6JPklnr7W',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/09ffEBtiinB8HP4FDJ2apt?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/water-4-the-soul/806754280',
       }),
     ],
   },
