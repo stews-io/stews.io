@@ -2053,51 +2053,7 @@ export const musicItems: Array<MusicItem> = [
     ],
   },
   {
-    itemId: 95,
-    musicType: 'source',
-    sourceType: 'collection',
-    collectionType: 'ep',
-    musicThumbnailHref:
-      'https://m.media-amazon.com/images/I/51Sjz4IEAkL._UX500_FMwebp_QL85_.jpg',
-    musicYear: 2020,
-    musicTitle: 'Fearless',
-    musicArtist: ['Michal Menert'],
-    recordingContext: ['studio'],
-    musicTags: ['discography'],
-    externalLinks: [
-      getYoutubeLinkData({
-        youtubeHref:
-          'https://youtu.be/4hzMMTaaXB8?list=PLeaAVf9FuLyVfy7iPdYdSmLpmbsHRKybv&si=-f8AkA8q_Jr-MfZ0',
-      }),
-      getSpotifyLinkData({
-        spotifyHref:
-          'https://open.spotify.com/track/7EiH4hFNsCREVmjIULaIic?autoplay=true',
-      }),
-      getAppleLinkData({
-        appleHref: 'https://music.apple.com/us/album/fearless-ep/1509521215',
-      }),
-    ],
-  },
-  {
     itemId: 96,
-    musicType: 'source',
-    sourceType: 'collection',
-    collectionType: 'ep',
-    musicThumbnailHref: 'https://f4.bcbits.com/img/a3942226336_16.jpg',
-    musicYear: 2015,
-    musicTitle: 'Slow Coast',
-    musicArtist: ['Michal Menert'],
-    recordingContext: ['studio'],
-    musicTags: ['discography'],
-    externalLinks: [
-      {
-        linkLabel: 'bandcamp',
-        linkHref: 'https://michalmenert.bandcamp.com/album/slow-coast-ep',
-      },
-    ],
-  },
-  {
-    itemId: 97,
     musicType: 'source',
     sourceType: 'collection',
     collectionType: 'ep',
