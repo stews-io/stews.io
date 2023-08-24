@@ -1899,4 +1899,83 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 89,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61cH95uoKhL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2015,
+    musicTitle: '1',
+    musicArtist: ['Michal Menert', 'The Pretty Fantastics'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/zjYh84Ick2M?list=OLAK5uy_lFW5EZFjOlVS8abHAfu9DFg8KWSV8mjm4&si=BxNmuCqWeoXtdSRP',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7LSHJT6JDmqx00cnie6Elu?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/1/1045643640',
+      }),
+    ],
+  },
+  {
+    itemId: 90,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51g6Z+dfIuL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'From the Sea',
+    musicArtist: ['Michal Menert', 'The Pretty Fantastics'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/FPpuGuwnJn8?list=OLAK5uy_nVJUItjMLH96TDFdyn6Sg8VV2GxLzYfps&si=kpz9-cMAwe1-TZdA',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4AxuJt95BRZYNBvPrNLw7M?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/from-the-sea/1438895439',
+      }),
+    ],
+  },
+  {
+    itemId: 91,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61-4Yycl9aL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Permanent Vacation',
+    musicArtist: ['Michal Menert', 'The Pretty Fantastics'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/YP1ZWcgSXvo?list=OLAK5uy_mnEwVlJYfCCTyMLiXP4PNQanE5KYZvqkQ&si=0A3-L_HtoaUSSMTg',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1DXbt2oHXspH3x30z5YTxp?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/permanent-vacation/1516661702',
+      }),
+    ],
+  },
 ]
