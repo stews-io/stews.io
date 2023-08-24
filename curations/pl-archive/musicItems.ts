@@ -2264,4 +2264,29 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 104,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/515xSOpUQxL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Adrift',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/2O9P519aqIo?si=juYo308K_X20aA81',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6ymBexntxmbQvBhjeQnlJr?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/adrift-single/1488112737',
+      }),
+    ],
+  },
 ]
