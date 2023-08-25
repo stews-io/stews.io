@@ -3229,4 +3229,810 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 144,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51E1clTyceL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Encounters',
+    musicArtist: ['Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/3SIZd1pmobo?list=OLAK5uy_nok21cP2VCgePLL5U7xfKZat5UAnO33L8&si=zmbuxUQTXn34y9Uo',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3ZyIj9g1SROtF0qbdKoLCX?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/encounters/1647398049',
+      }),
+    ],
+  },
+  {
+    itemId: 145,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61YoPwSRsmL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'In The Nude',
+    musicArtist: ['Eliot Lipp', 'Blockhead'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/huMWcMrBT2k?list=OLAK5uy_lgNzsbyWI8QsuRI9l3jjnYSZpZnNDRhko&si=N81ehVB0lMvzUk6s',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3phCtZpvocWeaq4WuqfTjQ?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/in-the-nude/1620647361',
+      }),
+    ],
+  },
+  {
+    itemId: 146,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61YxtZc1SqL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2008,
+    musicTitle: 'The Outside',
+    musicArtist: ['Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/SONsiDvTQAk?list=PL2uWggAFuEsWkQkicw59sQnvkeoanpuFA&si=e7DQgYYj2j0lUmmy',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1GP03idSUOHLbtliq7h587?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/the-outside/475557751',
+      }),
+    ],
+  },
+  {
+    itemId: 147,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41+3lpRgZdL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2007,
+    musicTitle: 'City Synthesis',
+    musicArtist: ['Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/rukJhSrHxGM?list=OLAK5uy_lVTBkdG6Mz9h0K_M7-_RUZ1kzHoBfF_a8&si=pNcu3-G2K5rhujMA',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4tVYweopk8uGeq3Yw6qZkM?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/city-synthesis/256479011',
+      }),
+    ],
+  },
+  {
+    itemId: 148,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51VFvhdZi+L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Choice Kuts',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/nhrqKSb_QQw?list=OLAK5uy_kNFb97swaqYdWRHiH94hwwCHzNjPCRmKA&si=kRU0yBPJOEDhGyjz',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3o3IODSZ3FzKtkrTNlu9y5?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/choice-kuts/1416330843',
+      }),
+    ],
+  },
+  {
+    itemId: 149,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61xntwnBGTL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2009,
+    musicTitle: 'Peace Love Weed 3D',
+    musicArtist: ['Eliot Lipp'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/avfSTCWtY04?list=PL2uWggAFuEsUd0QPwoy4zigdrKHEb9fUJ&si=ay8_fj5wz4rbl59H',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6nycUJupVxrPVmsfyF7WgE?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/peace-love-weed-3d/1493413718',
+      }),
+    ],
+  },
+  {
+    itemId: 150,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51cNgPLXEoL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: "Nerd's Eye View",
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/ya3z0fAcJXI?si=EntttAxyEMU2UXyu',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/0QYHyKJrrEsAt5JBB2COI9?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/nerds-eye-view-single/1439377290',
+      }),
+    ],
+  },
+  {
+    itemId: 151,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/6163xZaWrML._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Soul Feelers',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/4mvhwj5yfOQ?si=ZxwVcERJSRZHagPS',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4DXtOYqsdWhdlKRQAQrjP2?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/soul-feelers-single/1441834415',
+      }),
+    ],
+  },
+  {
+    itemId: 152,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61Bv5jjJXEL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Funk Face',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/97zJDVJwL8Y?si=2LPEu5SvEQOjGGRZ',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2kr3AjoLlXaiRft4sf5tUi?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/funk-face-single/1442297468',
+      }),
+    ],
+  },
+  {
+    itemId: 153,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51n5wSgClzL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'The Dank Panther',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/-POuSyxwPZo?si=FOnYbKF2W0GecMK4',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6Rd0B2SZGq57EQ2kIrQiwU?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/the-dank-panther-single/1443937015',
+      }),
+    ],
+  },
+  {
+    itemId: 154,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/71UgmgvUNqL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Bumper Sticker',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/nX3oVXjRIqQ?si=4rBlJUUllMkT23zJ',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3JO8SbPUtKRhzgJggWfABO?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/bumper-sticker-single/1445204905',
+      }),
+    ],
+  },
+  {
+    itemId: 155,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61CqVjy+0+L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'I Luv You 25x',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/atWp6E-jRGk?si=H4gwLWIGigr9o0_C',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0Jor1p9orxleo490F0I9fG?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/i-luv-you-25x-single/1450736356',
+      }),
+    ],
+  },
+  {
+    itemId: 156,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51M4NUlk8IL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Maybe',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/CyV05SpTDsQ?si=SvYEiQA28SriCg2e',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4ggLyRdVbmB8CP8brrdcCg?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/ca/album/maybe-single/1459303855',
+      }),
+    ],
+  },
+  {
+    itemId: 157,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/513YEUWHQfL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'SPARKLEMUFFIN',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/lo9cqTm_NH4?si=PVRb8DIhBA2dHWWW',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6JFxTB0Pah14x84p4e47Zr?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/sparklemuffin-single/1463367888',
+      }),
+    ],
+  },
+  {
+    itemId: 158,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51ZqfWxTLHL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Pangolin (Remix)',
+    musicArtist: ['Chris Karns', 'Sunsquabi'],
+    recordingContext: ['studio'],
+    musicTags: ['remix'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/9upF8IE87Bk?si=Svzo3YHZieWMGVef',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7akHZmEOQYXDzWNVRXkF3R?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/pangolin-chris-karns-remix-single/1476017533',
+      }),
+    ],
+  },
+  {
+    itemId: 159,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51u+dbOySzL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Perrier for Your Derrière',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/H5n3l0A88aI?si=PMIdES3tH2qgwQF7',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0JU9OgucLoGCYFwipxZb3S?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/perrier-for-your-derri%C3%A8re-single/1478518075',
+      }),
+    ],
+  },
+  {
+    itemId: 160,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51vxAFjKl1L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: "Hi, I'm Doing Fine",
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/G6j39A_5xeg?si=yBBYk1IPycciDSjf',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/27NPkAqNkbIZDnCmwrnjbA?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/hi-im-doing-fine-single/1495747211',
+      }),
+    ],
+  },
+  {
+    itemId: 161,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51vQqKFR+yL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Welcome to the Kush Club',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/rd8JWsstWpo?si=IP8AaYKM6G_fKTng',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6yqCyOFdfWoQvUK101LENg?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/in/album/welcome-to-the-kush-club-single/1501763986',
+      }),
+    ],
+  },
+  {
+    itemId: 162,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61wy77NXPVL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Open Your Earlids',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/e_8eF1AYHgk?si=DYZBUyJUYcHBlw8z',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0IKoHPoyKXj66bpUD2SEgc?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/open-your-earlids-single/1502602393',
+      }),
+    ],
+  },
+  {
+    itemId: 163,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61oQquTUXHL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Vibrational Rotation',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/7EV6OA4mDiA?si=ARz5LPkJyUnjFAny',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/6A3fdF6XmMbybxQJrjQIfE?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/vibrational-rotation-single/1623292967',
+      }),
+    ],
+  },
+  {
+    itemId: 164,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61BAmqdJIKL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Love Life, Live Life',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/i5uTlU73kg0?si=X62EjtAX4E_Q09k6',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4mCu3H4FoO3UZMQ6nhjjqF?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/love-life-live-life-single/1624895062',
+      }),
+    ],
+  },
+  {
+    itemId: 165,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51AbbHpwOPL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'My Love For You',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/O1rBlBFHkuo?si=XI5xfmNnVp3vzQxK',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/2Fj7rJn2DNngiKuL5Vdui9?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/my-love-for-you-single/1624933436',
+      }),
+    ],
+  },
+  {
+    itemId: 166,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61BF7Jl+YpL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'It Goes On and On',
+    musicArtist: ['Chris Karns', 'Borahm Lee'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/ddzTI6ddHVE?si=ChC9Z3b5O80QkpGO',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/3USbMRQMiXEJHR5DXk4v2U?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/it-goes-on-and-on-single/1625939802',
+      }),
+    ],
+  },
+  {
+    itemId: 167,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51VjkOcxrML._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Take Me Away',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/6UV4CGuXl4w?si=iW35EVUEVfgSQ6l8',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/4DVK7sxjcLedkPrcUtVPnL?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/take-me-away-single/1628358711',
+      }),
+    ],
+  },
+  {
+    itemId: 168,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51U8gVatYOL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Searching For Truth',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/ysVzWqNRbos?si=wzERaYIEbP9H6VlK',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7uK8M514DCOG0LahFouBrH?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/searching-for-truth-single/1630803548',
+      }),
+    ],
+  },
+  {
+    itemId: 169,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61YMl1KW+CL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Together',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/YDxbKESB5VE?si=KjJMUD0ug29IEazs',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/2z2WUJjYzvYxi5K5WzSq0t?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/together-single/1631365413',
+      }),
+    ],
+  },
+  {
+    itemId: 170,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41KqATOj5EL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Sent To Higher Heights',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/HrNxygvB_jM?si=WASap0LmIbgVa0iG',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0qqfCjFwfSnORxRG4MztDH?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/sent-to-higher-heights-single/1631842140',
+      }),
+    ],
+  },
+  {
+    itemId: 171,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51mQxIto5nL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Make This World Better',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/5cq5-JdzLkE?si=xck81ChwylUx7BEw',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/42i2bV9tfPFpSBRok7nDGo?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/make-this-world-better-single/1632053011',
+      }),
+    ],
+  },
+  {
+    itemId: 172,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/611PJ1Pr3AL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Wokelore',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/RvsqPolAjTk?si=q9Vs064DX5pG3Oit',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3g5eQrCqGzxI1U49nI7MQi?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/wokelore-single/1634266714',
+      }),
+    ],
+  },
+  {
+    itemId: 173,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61Nzd6mI19L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2023,
+    musicTitle: 'Laid Back',
+    musicArtist: ['Chris Karns'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/iInRs3EteF0?si=h2bcbuFOYWTCSou_',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1PxRCwZ9aQozojJslhA5IF?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/laid-back-feat-eric-benny-bloom-single/1681589123',
+      }),
+    ],
+  },
+  {
+    itemId: 174,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61gxmxFh6TL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2023,
+    musicTitle: 'I Need A Beach In My Life, ASAP',
+    musicArtist: ['Chris Karns', 'Seb Zillner'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/mf5qMvHLE7U?si=cFkUOyaNo8QyNbeM',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/6GOZkJHyChtH4fuYWmt5AZ?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/i-need-a-beach-in-my-life-asap-feat-seb-zillner-single/1684504520',
+      }),
+    ],
+  },
 ]

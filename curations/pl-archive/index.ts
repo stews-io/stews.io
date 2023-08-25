@@ -93,12 +93,17 @@ export const curatorConfig: CuratorConfig = {
       segmentId: 'related',
       segmentLabel: 'related artist',
       segmentFilter:
-        'musicArtist:"Break Science" OR musicArtist:"Paul Basic" OR musicArtist:"Eliot Lipp" OR musicArtist:"Paper Diamond" OR musicArtist:"Motifv" OR musicArtist:"Gramatik" OR musicArtist:"SuperVision"',
+        'musicArtist:"Break Science" OR musicArtist:"Paul Basic" OR musicArtist:"Eliot Lipp" OR musicArtist:"Paper Diamond" OR musicArtist:"Motifv" OR musicArtist:"Gramatik" OR musicArtist:"SuperVision" OR musicArtist:"Borahm Lee OR musicArtist:"Chris Karns"',
       segmentViews: [
         {
           viewId: 'JQZ1',
           viewLabel: 'break science',
           viewFilter: 'musicArtist:"Break Science" OR musicArtist:"Borahm Lee"',
+        },
+        {
+          viewId: '5HE5',
+          viewLabel: 'karns',
+          viewFilter: 'musicArtist:"Chris Karns"',
         },
         {
           viewId: '88G4',
