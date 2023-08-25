@@ -189,7 +189,15 @@ export function LandingPage() {
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 we're working diligently on providing y'all with the tools you
-                need, for sharing your world, the way it deserves!
+                need, for sharing your world, the way it deserves! drop us a
+                line at{' '}
+                <a
+                  className={cssModule.paragraphLink}
+                  href={'mailto:curations@stews.io'}
+                >
+                  curations@stews.io
+                </a>{' '}
+                to begin your transmission!
               </div>
             </div>
           </div>
