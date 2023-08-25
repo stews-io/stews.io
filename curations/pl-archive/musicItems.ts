@@ -4229,7 +4229,7 @@ export const musicItems: Array<MusicItem> = [
     musicType: 'source',
     sourceType: 'mix',
     musicThumbnailHref:
-      'https://i1.sndcdn.com/artworks-EQHqCZ3Nlr8ti9ZL-r9Jyow-t500x500.jpg',
+      'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
     musicYear: 2023,
     musicTitle: 'Atlanta - 08/24/23',
     musicArtist: ['Pretty Lights'],
