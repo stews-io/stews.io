@@ -54,6 +54,11 @@ export const curatorConfig: CuratorConfig = {
       segmentFilter: 'musicArtist:"Pretty Lights"',
       segmentViews: [
         {
+          viewId: '62FF',
+          viewLabel: 'soundship',
+          viewFilter: 'musicTags:"soundship spacesystem"',
+        },
+        {
           viewId: '67ZF',
           viewLabel: 'discography',
           viewFilter: 'musicTags:discography',
