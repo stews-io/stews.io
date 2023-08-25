@@ -2997,4 +2997,210 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 135,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51LuNnkVreL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'The  Path',
+    musicArtist: ['Motifv'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/dMGP32y4pHI?list=PLhwlP8Zj_bg3DPR7yUIh4_RGVYIhkkcGF&si=-G3m5Icsg2LUZtqV',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1LD9EEIsQvUEV4Vqe2bSy7?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/the-path/1455791759',
+      }),
+    ],
+  },
+  {
+    itemId: 136,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51IasxEjbsS._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2021,
+    musicTitle: 'Dilated Mind',
+    musicArtist: ['Motifv'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/mq3xde84Gto?list=OLAK5uy_ntaFdPoNdrpVIEdNxil59eFX1AB75fYTI&si=u-Dz4mhjwdHbqVMF',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6wHSuNf35VoDcBAZbFIUWh?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/dilated-mind/1569682391',
+      }),
+    ],
+  },
+  {
+    itemId: 137,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51r0r8UfjcL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2023,
+    musicTitle: 'Hold On',
+    musicArtist: ['Motifv', 'Late Night Radio'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/Yoc12hpjI4Y?si=Rh1e78fwXRB7Ibxw',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/6TUzH5O2cjvZhOPBQuJNyT?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/hold-on-single/1664672603',
+      }),
+    ],
+  },
+  {
+    itemId: 138,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51m+szUslJL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2023,
+    musicTitle: 'Hold On',
+    musicArtist: ['Motifv'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/t0gH3Bu_cs4?si=CW-1BmAPVOPd0klR',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/4da7BYmmVA12d4JyXdpcJ9?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/hold-on-single/1664672603',
+      }),
+    ],
+  },
+  {
+    itemId: 139,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Vrw9zmLvL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'Telescopic',
+    musicArtist: ['SuperVision'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/879DsGDET2s?list=OLAK5uy_n5tAG6nW8Zv60CSvudWq81Ym7OyRI5AEI&si=dFYJpGaRxq6uSd77',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1FLa8UyI19VikqlgmGjHtf?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/telescopic/467650758',
+      }),
+    ],
+  },
+  {
+    itemId: 140,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Vrw9zmLvL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2013,
+    musicTitle: 'Telescopic',
+    musicArtist: ['SuperVision'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/A01i9OxjtkE?list=OLAK5uy_mcuUI6SC545JAll_NUDmcNHpqUgdAuR2E&si=A5R6XKhDrZJFQocw',
+      }),
+      getSpotifyLinkData({
+        spotifyHref: 'https://music.amazon.com/albums/B00D384H7S?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/super-like-vision/655749351?i=655749682',
+      }),
+    ],
+  },
+  {
+    itemId: 141,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61owoN0DTGL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Reset',
+    musicArtist: ['SuperVision', 'Chris Karns', 'Josh Rubin'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/pv5o2eSzn_g?si=kFx9UGiArk8CrcSQ',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/track/2W9Urwy917YA01JqxWp02j?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/reset-feat-josh-rubin-chris-karns-single/1474514700',
+      }),
+    ],
+  },
+  {
+    itemId: 142,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51TheYIK+OL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Light Up the Night',
+    musicArtist: ['SuperVision', 'Josh Rubin'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/PRQYDaFEFYg?si=G3kN8dUSXYGb8Ha3',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/345jPHJ1IKeFGdfYA9luA7?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/light-up-the-night-feat-josh-rubin-single/1470169355',
+      }),
+    ],
+  },
 ]
