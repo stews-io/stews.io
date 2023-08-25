@@ -3131,9 +3131,9 @@ export const musicItems: Array<MusicItem> = [
     sourceType: 'collection',
     collectionType: 'album',
     musicThumbnailHref:
-      'https://m.media-amazon.com/images/I/51Vrw9zmLvL._UX500_FMwebp_QL85_.jpg',
+      'https://m.media-amazon.com/images/I/51BnogldxpL._UX500_FMwebp_QL85_.jpg',
     musicYear: 2013,
-    musicTitle: 'Telescopic',
+    musicTitle: 'Telekinetic',
     musicArtist: ['SuperVision'],
     recordingContext: ['studio'],
     musicTags: ['discography'],
@@ -3200,6 +3200,32 @@ export const musicItems: Array<MusicItem> = [
       }),
       getAppleLinkData({
         appleHref: 'https://music.apple.com/us/album/echoic-memory/1671325484',
+      }),
+    ],
+  },
+  {
+    itemId: 143,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51TheYIK+OL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Light Up the Night',
+    musicArtist: ['SuperVision', 'Josh Rubin'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/PRQYDaFEFYg?si=G3kN8dUSXYGb8Ha3',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/345jPHJ1IKeFGdfYA9luA7?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/light-up-the-night-feat-josh-rubin-single/1470169355',
       }),
     ],
   },

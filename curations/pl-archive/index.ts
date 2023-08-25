@@ -98,7 +98,7 @@ export const curatorConfig: CuratorConfig = {
         {
           viewId: 'JQZ1',
           viewLabel: 'break science',
-          viewFilter: 'musicArtist:"Break Science"',
+          viewFilter: 'musicArtist:"Break Science" OR musicArtist:"Borahm Lee"',
         },
         {
           viewId: '88G4',
