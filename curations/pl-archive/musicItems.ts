@@ -3181,25 +3181,25 @@ export const musicItems: Array<MusicItem> = [
     itemId: 142,
     musicType: 'source',
     sourceType: 'collection',
-    collectionType: 'single',
+    collectionType: 'album',
     musicThumbnailHref:
-      'https://m.media-amazon.com/images/I/51TheYIK+OL._UX500_FMwebp_QL85_.jpg',
-    musicYear: 2019,
-    musicTitle: 'Light Up the Night',
-    musicArtist: ['SuperVision', 'Josh Rubin'],
+      'https://m.media-amazon.com/images/I/51fAMRbzkoL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2023,
+    musicTitle: 'Echoic Memory',
+    musicArtist: ['Borahm Lee'],
     recordingContext: ['studio'],
     musicTags: ['discography'],
     externalLinks: [
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/PRQYDaFEFYg?si=G3kN8dUSXYGb8Ha3',
+        youtubeHref:
+          'https://youtu.be/NtI6k53r2bs?list=OLAK5uy_lixW0jk5lWDtDI6OXv0i5KRiyeFNsgMLA&si=Z1BfmURWBxR3f-pC',
       }),
       getSpotifyLinkData({
         spotifyHref:
-          'https://open.spotify.com/album/345jPHJ1IKeFGdfYA9luA7?autoplay=true',
+          'https://open.spotify.com/album/64W95Nk6fXAYRVeTMGQvtH?autoplay=true',
       }),
       getAppleLinkData({
-        appleHref:
-          'https://music.apple.com/us/album/light-up-the-night-feat-josh-rubin-single/1470169355',
+        appleHref: 'https://music.apple.com/us/album/echoic-memory/1671325484',
       }),
     ],
   },
