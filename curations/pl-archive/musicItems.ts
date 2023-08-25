@@ -4035,4 +4035,30 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 175,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'single',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61Cfzl+vm5L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Visible Sound',
+    musicArtist: ['Chris Karns', 'Dominic Lalli'],
+    recordingContext: ['studio'],
+    musicTags: ['discography'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/ALr3F-S6vx4?si=4s6SMOWiOsze5FVe',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/3udh3G56nmzlbDrObTF5CZ?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/ca/album/visible-sound-single/1531507884',
+      }),
+    ],
+  },
 ]
