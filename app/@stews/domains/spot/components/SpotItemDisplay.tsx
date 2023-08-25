@@ -1,6 +1,6 @@
-import { ItemDisplayProps } from '@stews/components/CurationPage/CurationPageBase'
 import { DefaultItemDisplay } from '@stews/components/DefaultItemDisplay/DefaultItemDisplay'
 import { SpotItem } from '../data'
+import { ItemDisplayProps } from '@stews/data/CurationItem'
 
 export interface SpotItemProps extends ItemDisplayProps<SpotItem> {}
 

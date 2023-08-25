@@ -24,20 +24,50 @@ export const curatorConfig: CuratorConfig = {
   },
   curationDatasets: {
     music: {
-      datasetKey: 'music',
-      datasetType: 'music',
       datasetItems: musicItems,
+      datasetId: 'music',
+      datasetType: 'music',
+      datasetSortConfig: [
+        {
+          fieldKey: 'musicTitle',
+          fieldType: 'string',
+          sortLabelBase: 'title',
+        },
+        {
+          fieldKey: 'musicArtist',
+          fieldType: 'orderedStringSet',
+          sortLabelBase: 'artist',
+        },
+        {
+          fieldKey: 'musicYear',
+          fieldType: 'number',
+          sortLabelBase: 'year',
+        },
+      ],
     },
     spots: {
-      datasetKey: 'spots',
-      datasetType: 'spot',
       datasetItems: spotItems,
+      datasetId: 'spots',
+      datasetType: 'spot',
+      datasetSortConfig: [
+        {
+          fieldKey: 'spotName',
+          fieldType: 'string',
+          sortLabelBase: 'name',
+        },
+        {
+          fieldKey: 'spotLocation',
+          fieldType: 'orderedStringSet',
+          sortLabelBase: 'location',
+        },
+      ],
     },
   },
   curationSegments: [
     {
-      segmentKey: 'music',
-      segmentDataset: 'music',
+      segmentFilter: null,
+      segmentId: 'music',
+      segmentDatasetId: 'music',
       segmentLabel: 'music',
       segmentViews: [
         {
@@ -88,8 +118,9 @@ export const curatorConfig: CuratorConfig = {
       ],
     },
     {
-      segmentKey: 'spots',
-      segmentDataset: 'spots',
+      segmentFilter: null,
+      segmentId: 'spots',
+      segmentDatasetId: 'spots',
       segmentLabel: 'spots',
       segmentViews: [
         {

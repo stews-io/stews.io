@@ -1,19 +1,16 @@
 import { CurationItem } from '@stews/data/CurationItem'
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
-import { useEffect, useLayoutEffect, useMemo, useRef } from 'preact/hooks'
+import { useLayoutEffect, useMemo, useRef } from 'preact/hooks'
 import { Fragment } from 'preact/jsx-runtime'
+import { CurationSegmentPageProps } from '../CurationSegmentPage'
 import { ViewPageMessageItem } from '../components'
 import { ViewPageNavigation } from '../components/ViewPageNavigation/ViewPageNavigation'
-import { CurationPageBaseDataProps } from '../CurationPageBase'
-import { CurationPageState } from './useCurationPageState'
-import { useAsyncData } from '@stews/hooks/useAsyncData'
 
-export interface UseViewPageApi<SomeCurationItem extends CurationItem>
+export interface UseViewPageApi
   extends Pick<
-    CurationPageBaseDataProps<SomeCurationItem>,
-    'ItemDisplay' | 'getItemSearchSpace' | 'activeCurationSegment'
+    CurationSegmentPageProps,
+    'segmentDatasetState' | 'curationSegmentState'
   > {
-  curationPageState: CurationPageState<SomeCurationItem>
   pageItemSize: number
   setPageIndexToPrevious: PageIndexSetter
   setPageIndexToNext: PageIndexSetter
@@ -21,48 +18,32 @@ export interface UseViewPageApi<SomeCurationItem extends CurationItem>
 
 type PageIndexSetter = (currentAdjustedPageIndex: number) => void
 
-export function useViewPage<SomeCurationItem extends CurationItem>(
-  api: UseViewPageApi<SomeCurationItem>
-) {
+export function useViewPage(api: UseViewPageApi) {
   const {
-    activeCurationSegment,
-    curationPageState,
-    getItemSearchSpace,
+    segmentDatasetState,
+    curationSegmentState,
     pageItemSize,
-    ItemDisplay,
     setPageIndexToPrevious,
     setPageIndexToNext,
   } = api
-  const [fetchCurationItemsMapState, triggerFetchCurationItemsMap] =
-    useAsyncData({
-      initialAsyncDataState: {
-        stateType: 'loading',
-      },
-      fetchAsyncData: (): Promise<Record<string, SomeCurationItem>> =>
-        fetch(
-          `/assets/curations/${activeCurationSegment.segmentDataset}.json`
-        ).then((serverResponse) => serverResponse.json()),
-    })
-  useEffect(() => {
-    triggerFetchCurationItemsMap()
-  }, [activeCurationSegment.segmentDataset])
   const pageTopElementRef = useRef<HTMLDivElement>(null)
   const viewPageResult = useMemo(() => {
-    if (fetchCurationItemsMapState.stateType === 'loading') {
+    if (segmentDatasetState.fetchStatus === 'loading') {
       return {
         viewPageItemElements: <ViewPageMessageItem message={'loading...'} />,
         viewPageNavigationElement: null,
       }
-    } else if (fetchCurationItemsMapState.stateType === 'success') {
-      const { curationView, viewSearchQuery, viewSortOption, viewPageIndex } =
-        curationPageState
-      const searchedAndSortedViewItems = curationView.viewItemIds
-        .reduce<Array<SomeCurationItem>>((result, someViewItemId) => {
+    } else if (segmentDatasetState.fetchStatus === 'success') {
+      const { segmentView, viewSearchQuery, segmentSortOption, viewPageIndex } =
+        curationSegmentState
+      const searchedAndSortedViewItems = segmentView.viewItemIds
+        .reduce<Array<CurationItem>>((result, someViewItemId) => {
           const someViewItem =
-            fetchCurationItemsMapState.data[someViewItemId] ??
-            throwInvalidPathError('useViewPage.fetchCurationItemsMapState.data')
+            segmentDatasetState.segmentDatasetItems[someViewItemId] ??
+            throwInvalidPathError('useViewPage.someViewItem')
           if (
-            getItemSearchSpace(someViewItem)
+            curationSegmentState.curationSegment
+              .getSegmentItemSearchSpace(someViewItem)
               .toLowerCase()
               .includes(viewSearchQuery.toLowerCase())
           ) {
@@ -70,7 +51,7 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
           }
           return result
         }, [])
-        .sort(viewSortOption.getSortOrder)
+        .sort(segmentSortOption.getSortOrder)
       const viewPageCount =
         Math.ceil(searchedAndSortedViewItems.length / pageItemSize) || 1
       const pageIndexStart = pageItemSize * viewPageIndex
@@ -84,7 +65,10 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
             <div ref={pageTopElementRef} />
             {viewPageItems.length > 0 ? (
               viewPageItems.map((someItem) => (
-                <ItemDisplay key={someItem.itemId} someItem={someItem} />
+                <curationSegmentState.curationSegment.SegmentItemDisplay
+                  key={someItem.itemId}
+                  someItem={someItem}
+                />
               ))
             ) : (
               <ViewPageMessageItem message={'no items match'} />
@@ -100,12 +84,10 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
           />
         ),
       }
-    } else if (fetchCurationItemsMapState.stateType === 'error') {
+    } else if (segmentDatasetState.fetchStatus === 'error') {
       return {
         viewPageItemElements: (
-          <ViewPageMessageItem
-            message={fetchCurationItemsMapState.errorMessage}
-          />
+          <ViewPageMessageItem message={segmentDatasetState.errorMessage} />
         ),
         viewPageNavigationElement: null,
       }
@@ -113,13 +95,11 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
       throwInvalidPathError('useViewPage.useMemo')
     }
   }, [
-    curationPageState,
-    getItemSearchSpace,
+    segmentDatasetState,
+    curationSegmentState,
     pageItemSize,
-    ItemDisplay,
     setPageIndexToPrevious,
     setPageIndexToNext,
-    fetchCurationItemsMapState,
   ])
   useLayoutEffect(() => {
     const pageContentContainerElement = document.getElementById(
@@ -129,7 +109,7 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
     if (document.activeElement instanceof HTMLInputElement) {
       // noop
     } else if (
-      curationPageState.viewPageIndex === 0 &&
+      curationSegmentState.viewPageIndex === 0 &&
       pageContentContainerElement instanceof HTMLDivElement
     ) {
       pageContentContainerElement.setAttribute('tabIndex', '-1')
@@ -142,7 +122,7 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
         top: 0,
       })
     } else if (
-      curationPageState.viewPageIndex > 0 &&
+      curationSegmentState.viewPageIndex > 0 &&
       pageTopElement instanceof HTMLDivElement
     ) {
       pageTopElement.setAttribute('tabIndex', '-1')
@@ -160,6 +140,6 @@ export function useViewPage<SomeCurationItem extends CurationItem>(
         'useViewPage.useEffect[curationPageState.curationView, curationPageState.viewPageIndex]'
       )
     }
-  }, [curationPageState.curationView, curationPageState.viewPageIndex])
+  }, [curationSegmentState.segmentView, curationSegmentState.viewPageIndex])
   return viewPageResult
 }

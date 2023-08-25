@@ -1,7 +1,7 @@
 import { Bopper, BopperProps } from '@stews/components/Bopper'
 import { CurationItem } from '@stews/data/CurationItem'
-import { CurationPageBaseDataProps } from '../../CurationPageBase'
-import { AdjustedCurationSegment } from '@stews/data/CurationSegment'
+import { ClientCurationSegment } from '@stews/data/CurationSegment'
+import { CurationSegmentPageProps } from '../../CurationSegmentPage'
 
 interface ProfileBopperBaseProps
   extends ProfileBopperBaseDataProps,
@@ -9,10 +9,12 @@ interface ProfileBopperBaseProps
 
 export interface ProfileBopperBaseDataProps
   extends Pick<
-    CurationPageBaseDataProps<CurationItem>,
-    'curatorInfo' | 'curationSegments' | 'activeCurationSegment'
+    CurationSegmentPageProps,
+    'clientCuratorConfig' | 'curationSegmentState'
   > {
-  selectCurationSegment: (nextCurationSegment: AdjustedCurationSegment) => void
+  selectCurationSegment: (
+    nextCurationSegment: ClientCurationSegment<CurationItem>
+  ) => void
 }
 
 interface ProfileBopperBaseConfigProps
@@ -30,10 +32,9 @@ export function ProfileBopperBase(props: ProfileBopperBaseProps) {
     anchorAriaDescription,
     SomeAnchorButton,
     PopoverContent,
-    curatorInfo,
-    curationSegments,
+    clientCuratorConfig,
+    curationSegmentState,
     selectCurationSegment,
-    activeCurationSegment,
   } = props
   return (
     <Bopper
@@ -45,10 +46,9 @@ export function ProfileBopperBase(props: ProfileBopperBaseProps) {
       customSomeAnchorButtonProps={null}
       getPopoverLayoutTop={({ anchorElement }) => anchorElement.offsetTop - 2}
       customPopoverContentProps={{
-        curatorInfo,
-        curationSegments,
+        clientCuratorConfig,
+        curationSegmentState,
         selectCurationSegment,
-        activeCurationSegment,
       }}
     />
   )

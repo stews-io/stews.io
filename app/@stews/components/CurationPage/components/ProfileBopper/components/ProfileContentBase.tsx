@@ -9,18 +9,14 @@ export interface ProfileContentBaseProps
   extends CorePopoverContentProps,
     Pick<
       ProfileBopperBaseDataProps,
-      | 'curatorInfo'
-      | 'curationSegments'
-      | 'selectCurationSegment'
-      | 'activeCurationSegment'
+      'clientCuratorConfig' | 'curationSegmentState' | 'selectCurationSegment'
     > {}
 
 export function ProfileContentBase(props: ProfileContentBaseProps) {
   const {
-    curatorInfo,
-    curationSegments,
+    clientCuratorConfig,
     selectCurationSegment,
-    activeCurationSegment,
+    curationSegmentState,
     anchorElementRef,
     initialFocusElementRef,
     popoverNavigationItemBlurHandler,
@@ -28,7 +24,9 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
   return (
     <div className={cssModule.profileContainer}>
       <div className={cssModule.profileHeader}>
-        <div className={cssModule.curatorName}>{curatorInfo.curatorName}</div>
+        <div className={cssModule.curatorName}>
+          {clientCuratorConfig.curatorInfo.curatorName}
+        </div>
         <div className={cssModule.closeButtonContainer}>
           <Button
             ariaLabel={'close popover'}
@@ -67,13 +65,15 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
         </div>
       </div>
       <div className={cssModule.curatorLocation}>
-        {curatorInfo.curatorLocation}
+        {clientCuratorConfig.curatorInfo.curatorLocation}
       </div>
-      <div className={cssModule.curatorStatus}>{curatorInfo.curatorStatus}</div>
+      <div className={cssModule.curatorStatus}>
+        {clientCuratorConfig.curatorInfo.curatorStatus}
+      </div>
       <div className={cssModule.segmentLinks}>
-        {curationSegments.map((someCurationSegment) => (
+        {clientCuratorConfig.curationSegments.map((someCurationSegment) => (
           <div
-            key={someCurationSegment.segmentKey}
+            key={someCurationSegment.segmentId}
             className={cssModule.segmentLinkContainer}
           >
             <Button
@@ -81,8 +81,8 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
               ariaDescription={`a button that navigates to the ${someCurationSegment.segmentLabel} segment`}
               className={getCssClass(cssModule.segmentLinkButton, [
                 cssModule.activeSegment,
-                someCurationSegment.segmentKey ===
-                  activeCurationSegment.segmentKey,
+                someCurationSegment.segmentId ===
+                  curationSegmentState.curationSegment.segmentId,
               ])}
               onBlur={popoverNavigationItemBlurHandler}
               onSelect={() => {
@@ -100,26 +100,28 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
                   : throwInvalidPathError('CuratorProfile.CloseButton.onClick')
               }}
             >
-              {someCurationSegment.segmentLabel}
+              {someCurationSegment.segmentId}
             </Button>
           </div>
         ))}
       </div>
       <div className={cssModule.curatorLinks}>
-        {curatorInfo.curatorLinks.map((someCuratorLink, linkIndex) => (
-          <div key={linkIndex} className={cssModule.curatorLinkContainer}>
-            <LinkButton
-              target={'_blank'}
-              ariaLabel={`go to ${curatorInfo.curatorName}'s ${someCuratorLink.linkType}`}
-              ariaDescription={`a button that opens a new tab and navigates to ${curatorInfo.curatorName}'s ${someCuratorLink.linkType}`}
-              className={cssModule.curatorLinkButton}
-              onBlur={popoverNavigationItemBlurHandler}
-              href={someCuratorLink.linkHref}
-            >
-              <CuratorLinkIcon linkType={someCuratorLink.linkType} />
-            </LinkButton>
-          </div>
-        ))}
+        {clientCuratorConfig.curatorInfo.curatorLinks.map(
+          (someCuratorLink, linkIndex) => (
+            <div key={linkIndex} className={cssModule.curatorLinkContainer}>
+              <LinkButton
+                target={'_blank'}
+                ariaLabel={`go to ${clientCuratorConfig.curatorInfo.curatorName}'s ${someCuratorLink.linkType}`}
+                ariaDescription={`a button that opens a new tab and navigates to ${clientCuratorConfig.curatorInfo.curatorName}'s ${someCuratorLink.linkType}`}
+                className={cssModule.curatorLinkButton}
+                onBlur={popoverNavigationItemBlurHandler}
+                href={someCuratorLink.linkHref}
+              >
+                <CuratorLinkIcon linkType={someCuratorLink.linkType} />
+              </LinkButton>
+            </div>
+          )
+        )}
       </div>
     </div>
   )
@@ -127,7 +129,7 @@ export function ProfileContentBase(props: ProfileContentBaseProps) {
 
 interface CuratorLinkIconProps
   extends Pick<
-    ProfileContentBaseProps['curatorInfo']['curatorLinks'][number],
+    ProfileContentBaseProps['clientCuratorConfig']['curatorInfo']['curatorLinks'][number],
     'linkType'
   > {}
 

@@ -1,6 +1,6 @@
 import { throwInvalidPathError } from '@stews/helpers/throwInvalidPathError'
 import { useLayoutEffect, useRef } from 'preact/hooks'
-import cssModule from '../CurationPageBase.module.scss'
+import cssModule from '../CurationSegmentPage.module.scss'
 
 export function useStickyPageHeaderWorkaround() {
   const pageHeaderContainerRef = useRef<HTMLDivElement>(null)

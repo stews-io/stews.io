@@ -24,16 +24,34 @@ export const curatorConfig: CuratorConfig = {
   },
   curationDatasets: {
     music: {
-      datasetKey: 'music',
-      datasetType: 'music',
       datasetItems: musicItems,
+      datasetId: 'music',
+      datasetType: 'music',
+      datasetSortConfig: [
+        {
+          fieldKey: 'musicTitle',
+          fieldType: 'string',
+          sortLabelBase: 'title',
+        },
+        {
+          fieldKey: 'musicArtist',
+          fieldType: 'orderedStringSet',
+          sortLabelBase: 'artist',
+        },
+        {
+          fieldKey: 'musicYear',
+          fieldType: 'number',
+          sortLabelBase: 'year',
+        },
+      ],
     },
   },
   curationSegments: [
     {
-      segmentDataset: 'music',
-      segmentKey: 'music',
-      segmentLabel: 'music',
+      segmentDatasetId: 'music',
+      segmentId: 'pretty',
+      segmentLabel: 'pretty lights',
+      segmentFilter: 'musicArtist:"Pretty Lights"',
       segmentViews: [
         {
           viewId: '67ZF',
@@ -51,14 +69,61 @@ export const curatorConfig: CuratorConfig = {
           viewFilter: 'recordingContext:concert AND sourceType:mix',
         },
         {
-          viewId: 'UXA3',
-          viewLabel: 'flips',
-          viewFilter: 'musicTags:flips',
-        },
-        {
           viewId: '9TSA',
           viewLabel: 'oh gee',
           viewFilter: 'musicTags:o.g.',
+        },
+      ],
+    },
+    {
+      segmentDatasetId: 'music',
+      segmentId: 'menert',
+      segmentLabel: 'michal menert',
+      segmentFilter: 'musicArtist:"Michal Menert"',
+      segmentViews: [
+        {
+          viewId: 'P41V',
+          viewLabel: 'discography',
+          viewFilter: 'musicTags:discography',
+        },
+      ],
+    },
+    {
+      segmentDatasetId: 'music',
+      segmentId: 'related',
+      segmentLabel: 'related artist',
+      segmentFilter:
+        'musicArtist:"Break Science" OR musicArtist:"Paul Basic" OR musicArtist:"Eliot Lipp" OR musicArtist:"Paper Diamond" OR musicArtist:"Motifv" OR musicArtist:"Gramatik" OR musicArtist:"SuperVision" OR musicArtist:"Borahm Lee" OR musicArtist:"Chris Karns"',
+      segmentViews: [
+        {
+          viewId: 'JQZ1',
+          viewLabel: 'break science',
+          viewFilter: 'musicArtist:"Break Science" OR musicArtist:"Borahm Lee"',
+        },
+        {
+          viewId: '5HE5',
+          viewLabel: 'karns',
+          viewFilter: 'musicArtist:"Chris Karns"',
+        },
+        {
+          viewId: '88G4',
+          viewLabel: 'motifv',
+          viewFilter: 'musicArtist:"Motifv"',
+        },
+        {
+          viewId: '0L54',
+          viewLabel: 'paul basic',
+          viewFilter: 'musicArtist:"Paul Basic"',
+        },
+        {
+          viewId: 'BVZ9',
+          viewLabel: 'eliot lipp',
+          viewFilter: 'musicArtist:"Eliot Lipp"',
+        },
+        {
+          viewId: 'OQX7',
+          viewLabel: 'supervision',
+          viewFilter: 'musicArtist:"SuperVision"',
         },
       ],
     },
