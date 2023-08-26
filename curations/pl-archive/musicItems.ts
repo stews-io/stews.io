@@ -4071,11 +4071,7 @@ export const musicItems: Array<MusicItem> = [
     musicTitle: 'Denver - 08/04/23',
     musicArtist: ['Pretty Lights'],
     recordingContext: ['concert'],
-    musicTags: [
-      'soundship spacesystem',
-      'pl live in dub',
-      'the fantastic pretty lights',
-    ],
+    musicTags: ['soundship spacesystem'],
     externalLinks: [
       {
         linkLabel: 'twitch',
