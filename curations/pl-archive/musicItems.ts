@@ -4240,6 +4240,27 @@ export const musicItems: Array<MusicItem> = [
         soundcloudHref:
           'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
       }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/yIhKDpB1NFo?si=dTPOzkwt9j7nbS4K',
+      }),
+    ],
+  },
+  {
+    itemId: 183,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Atlanta - 08/25/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1908596696',
+      },
     ],
   },
 ]
