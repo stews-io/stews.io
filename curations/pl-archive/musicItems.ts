@@ -4061,4 +4061,206 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 176,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-S1Vce6KFfubbP63V-9W3JPQ-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Denver - 08/04/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1890446916',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/mission-night-1',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/yePzyEKuyjE?si=iD0gCQQIrQ29kxfe',
+      }),
+    ],
+  },
+  {
+    itemId: 177,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-S1Vce6KFfubbP63V-9W3JPQ-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Denver - 08/05/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1891321151',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-05-live-mission-ballroom',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/gqP1QsKB5RA?si=HVb7ZcRBT6SosOs6',
+      }),
+    ],
+  },
+  {
+    itemId: 178,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-S1Vce6KFfubbP63V-9W3JPQ-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Denver - 08/06/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1892188730',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-06-live-mission-ballroom',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/CqiAydHR4QQ?si=EJDEAadVtakkVjRF',
+      }),
+    ],
+  },
+  {
+    itemId: 179,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-EQHqCZ3Nlr8ti9ZL-r9Jyow-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Dillon - 08/10/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch (1)',
+        linkHref: 'https://www.twitch.tv/videos/1895530701',
+      },
+      {
+        linkLabel: 'twitch (2)',
+        linkHref: 'https://www.twitch.tv/videos/1895629728',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-10-live-dillon-amphitheater-1',
+      }),
+      {
+        linkLabel: 'youtube (1)',
+        linkHref: 'https://youtu.be/fSajuCFjJpA?si=P_X6mrGc6wsrtip5',
+      },
+      {
+        linkLabel: 'youtube (2)',
+        linkHref: 'https://youtu.be/FBB860JvN4k?si=D87zkyZdOhqNCR6i',
+      },
+    ],
+  },
+  {
+    itemId: 180,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-EQHqCZ3Nlr8ti9ZL-r9Jyow-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Dillon - 08/11/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1896412978',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-11-live-dillon-amphitheater-1',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/LeUldFcbBjM?si=iVHpJabHc0wuv0VG',
+      }),
+    ],
+  },
+  {
+    itemId: 181,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-EQHqCZ3Nlr8ti9ZL-r9Jyow-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Dillon - 08/12/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1897290919',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-12-live-dillon-amphitheater',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/TiivjwjWWhg?si=4yWiPiv5s8WGLA_0',
+      }),
+    ],
+  },
+  {
+    itemId: 182,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Atlanta - 08/24/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1907712237',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/yIhKDpB1NFo?si=dTPOzkwt9j7nbS4K',
+      }),
+    ],
+  },
+  {
+    itemId: 183,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Atlanta - 08/25/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1908596696',
+      },
+    ],
+  },
 ]

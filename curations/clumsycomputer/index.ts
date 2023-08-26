@@ -7,6 +7,7 @@ export const curatorConfig: CuratorConfig = {
     curatorName: 'clumsycomputer',
     curatorLocation: 'colorful colorado',
     curatorStatus: 'just trying to listen and groove',
+    curatorEmail: 'clumsycomputer@stews.io',
     curatorLinks: [
       {
         linkType: 'website',
@@ -19,6 +20,10 @@ export const curatorConfig: CuratorConfig = {
       {
         linkType: 'twitter',
         linkHref: 'https://twitter.com/c1umsyc0mputer',
+      },
+      {
+        linkType: 'email',
+        linkHref: 'mailto:clumsycomputer@stews.io',
       },
     ],
   },

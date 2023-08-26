@@ -9,7 +9,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 0,
     spotName: 'bean cycle roasters',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/292186524_463260845800985_5075220980112804423_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6R08qr_fXQwAX9Sv7hY&_nc_ht=scontent-ord5-2.xx&oh=00_AfAf_cgN40st2uWNXLOt6vbW-l63OPVKRmk_bTnONaT8vA&oe=64E606ED',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/beancycle.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -41,7 +41,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 2,
     spotName: 'town pump',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/358632350_749260110539108_8839275904061938728_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_ohc=hoPuPTBo4oUAX8WnIBo&_nc_ht=scontent-ord5-2.xx&oh=00_AfBpmlauKvN8v2CPvNFjyWSI--NPh-fCGckeomA7b-f8TQ&oe=64E50453',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/townpump.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['bar'],
     spotLinks: [
@@ -54,7 +54,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 3,
     spotName: "hodi's half note",
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/327284290_874234860292708_2829908986263781346_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fkFZdLmhHRkAX-Eeh6z&_nc_ht=scontent-ord5-1.xx&oh=00_AfBInAXFsN5sHsoKfZel0oX6Q-R0_AJOgt1ZSm-cwW3NHg&oe=64E55530',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/hodis.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['music venue', 'bar'],
     spotLinks: [
@@ -83,7 +83,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 5,
     spotName: 'choice city butcher & deli',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/302321491_495283662603060_3798504435445018740_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=-K1Hi9Za3kwAX-v6Vgh&_nc_ht=scontent-ord5-1.xx&oh=00_AfAhpUE8Bm8AZolp4HFfA_6GO8OFYvjYK2I1uCpWNhFQ7Q&oe=64E8EB8C',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/choicecity.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['restaurant', 'butcher'],
     spotLinks: [
@@ -115,7 +115,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 7,
     spotName: 'equinox brewing',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/326823744_711353057243859_607534128356595092_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Ji-L7TkYolUAX9pO9rf&_nc_ht=scontent-ord5-2.xx&oh=00_AfCe95W7y2sLW0X3aN0E_-JjeEcn9Uy5f8SkbhOlBbcbFw&oe=64E598BB',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/equinoxbrewing.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -131,7 +131,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 8,
     spotName: 'wolverine farm publick house',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/12038051_1566031040288477_3980547755360620334_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=Vf4wiO1dRLUAX8eQWrr&_nc_ht=scontent-ord5-2.xx&oh=00_AfBnpPq3ujcnHtNL7XceENR8Vgop0yiCtI02ze3d8JXomA&oe=6508E56F',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/wolverine.jpeg',
     spotLocation: ['river district', 'fort collins', 'colorado'],
     spotTags: ['cafe', 'letterpress', 'event space'],
     spotLinks: [
@@ -195,7 +195,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 12,
     spotName: 'surfside 7',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305207362_616345646524011_4639620687507353827_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8NeQpv2dNbsAX83d2qf&_nc_ht=scontent-ord5-1.xx&oh=00_AfDHkKBXNth4ZiySeLjBLJ3JcFpoEMSPJ60y8eVEiEqzoQ&oe=64E66BC5',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/surfside.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['bar', 'music venue'],
     spotLinks: [
@@ -211,7 +211,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 13,
     spotName: 'aggie theater',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/315875372_10159987800086072_9160164090776982857_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UlZZm1ZiD3MAX_N655g&_nc_ht=scontent-ord5-2.xx&oh=00_AfAsUxXZWdDynvQetMqetw5dyYRmgFdiJaWLniLQT-hemw&oe=64E70162',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/aggie.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -275,7 +275,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 17,
     spotName: 'cafe mexicali',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/311622688_10160081392926745_2936117687525779294_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=7HZY02EASNQAX9lD467&_nc_ht=scontent-ord5-2.xx&oh=00_AfAKR07IYQbys03jqLk4YNJGWaMvieaB-Wz1ed7FS4lPBg&oe=64E70E34',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/cafemexicali.jpeg',
     spotLocation: ['colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -307,7 +307,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 19,
     spotName: 'stodgy brewing company',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/304771484_765081268197661_4394019071070162870_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3GUF9Q0iHMEAX9xn1XM&_nc_ht=scontent-ord5-1.xx&oh=00_AfAqFapPOx7O2XdpaFb-p5jWTEAlK-eruhvPIQGHqGZeTw&oe=64E92DC4',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/stodgy.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -323,7 +323,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 20,
     spotName: 'horse & dragon brewing company',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326447146_3427664694184702_5487083264382146924_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=i09-Vf8u7uAAX_sNdml&_nc_ht=scontent-ord5-1.xx&oh=00_AfBYdMUXInPW7GZ2e3xiR4e-ph2PoqZ-o2DpyoPmiGgovg&oe=64E7AE28',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/horsedragon.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -339,7 +339,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 21,
     spotName: 'funkwerks',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/327251903_719087859865314_2885636209532399650_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=H16Idqz1_hUAX-UNE7X&_nc_ht=scontent-ord5-2.xx&oh=00_AfAa2X-7FTHA_W3-pFZPNGj2da4ljetdukGZjFGhgOnoEA&oe=64E7642E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/funkwerks.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -355,7 +355,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 22,
     spotName: 'purpose brewing and cellars',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/19961610_1913137888958989_2878020470256493585_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=8orRReEbLPEAX9BUXqY&_nc_ht=scontent-ord5-2.xx&oh=00_AfCAgpbbFXZVgwn68DV7yyjKHyTJ3Mga5Tc0GA7ZWB8w1A&oe=650AD4BD',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/purpose.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -435,7 +435,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 27,
     spotName: 'waltzing kangaroo',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/311196677_991711345055401_8722327404145045356_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=6Z-hsaVRWGEAX8f-M7K&_nc_ht=scontent-ord5-1.xx&oh=00_AfA3RNF8f2piidOei9efg_xannMhNqqCEapYKojBVnLHRg&oe=64E9183B',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/waltzingkangaroo.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -451,7 +451,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 28,
     spotName: 'yum yum social',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/186480893_154316366703504_2245738722628080324_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NwPxvDfVjx0AX9sirdb&_nc_ht=scontent-ord5-2.xx&oh=00_AfDH1WuBr7ptQu7c2vTFvyeLR9LRKj7S_70cEh5-zvjhBw&oe=650ADCC6',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/yumyum.png',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -467,7 +467,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 29,
     spotName: 'road 34 bike shop and tavern',
     spotThumbnailHref:
-      'http://www.road34.com/uploads/5/3/1/3/53136643/published/road-badge-1-lr.jpg?1631655413',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/road34.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['bar', 'bike shop'],
     spotLinks: [
@@ -499,7 +499,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 31,
     spotName: 'music city hot chicken',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t31.18172-8/12513677_1264477590233995_561542058801255627_o.png?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=UvNL2hgTNugAX_nLnRq&_nc_ht=scontent-ord5-2.xx&oh=00_AfCHs17YuwL7VsETsZyI3HeWle3RjO_wvxpLJHKo3PVrFQ&oe=650AC441',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/musiccity.png',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -531,7 +531,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 33,
     spotName: 'backyard bird chicken & donuts',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305320902_491625269637778_2838435630559681450_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=RPEmcaa5MGQAX8QKo3P&_nc_ht=scontent-ord5-1.xx&oh=00_AfB5Cx_Zv3A42eRLlCNUIyQRABMvrw2f6B9JLrkp5DiLDQ&oe=64E7AF82',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/backyardbird.jpeg',
     spotLocation: ['timnath', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -547,7 +547,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 34,
     spotName: 'timnath beerwerks',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/310295167_516276607174219_806696050503286216_n.png?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UpFP1_O7g0IAX_-QhZF&_nc_ht=scontent-ord5-1.xx&oh=00_AfDx3XjtdDwY8mzHLb8y7AchQ8cRG_xDdr4ghrYXE6dvOw&oe=64E89024',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/timnathbeerwerks.png',
     spotLocation: ['timnath', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -563,7 +563,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 35,
     spotName: 'high hops brewery',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326471997_541674691263798_1634348039746274108_n.png?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=pU5tz_rpgG0AX97VRht&_nc_ht=scontent-ord5-1.xx&oh=00_AfB_HvIlWD6dH7qB5PavlE8A_epRCHBl0a3aJ4GfpzAbYg&oe=64E7FCCF',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/highhops.png',
     spotLocation: ['windsor', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -579,7 +579,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 36,
     spotName: 'mash lab brewing & kitchen',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/302062544_599644051630069_7739087489248454502_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hA1PHNbLYnEAX-paOHG&_nc_ht=scontent-ord5-1.xx&oh=00_AfDD8W5MWeuTQ7GAoSyNIJLrJ-aWh3v2EwqV6brqWsYNjw&oe=64E85C6D',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/mashlab.jpeg',
     spotLocation: ['windsor', 'colorado'],
     spotTags: ['brewery', 'restaurant'],
     spotLinks: [
@@ -595,7 +595,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 37,
     spotName: 'windsor mill tavern',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/69520295_2128178570621866_9152977995319738368_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=WhBkPyPfXtMAX_IbM_U&_nc_ht=scontent-ord5-1.xx&oh=00_AfBefkoGMl4gRmerm69Nvrq_RC7VwvqfZo1ckcne8rlQ9A&oe=650ADBD3',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/windsormill.png',
     spotLocation: ['windsor', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -611,7 +611,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 38,
     spotName: 'grimm brothers brewhouse',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/226340860_10159026945006187_1259887181604280676_n.png?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=H98-6iA-CeoAX-EB-ID&_nc_ht=scontent-ord5-2.xx&oh=00_AfBOF8QA7XWOIlRJv8HucwiB0knXDjtnOcg55bmojl3byQ&oe=64E87392',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/grimmbrothers.png',
     spotLocation: ['loveland', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -627,7 +627,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 39,
     spotName: 'verboten brewing & barrel project',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/15977420_1180224822095975_3859725115814649469_n.png?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=hOFmQJ5BunIAX_xByWe&_nc_ht=scontent-ord5-1.xx&oh=00_AfC5_o-5WR7VpfPk6fuCj_lycT_-aliGdWPJoqVNHjxtmA&oe=650AED97',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/verboten.png',
     spotLocation: ['loveland', 'colorado'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -643,7 +643,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 40,
     spotName: 'dark heart coffee bar',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/305623044_487927620012205_4427799904039870633_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=jhyOAaS46agAX_YM2zx&_nc_ht=scontent-ord5-2.xx&oh=00_AfCIg6-Nj97juiz-3L4MnoYXvKSOFzjotBLQwKPOfy5Wvw&oe=64E93DF1',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/darkheart.png',
     spotLocation: ['loveland', 'colorado'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -692,7 +692,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 43,
     spotName: "avogadro's number",
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/326321202_473229528350225_5573854040675408754_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=L586ZN0e60oAX8k4trF&_nc_ht=scontent-ord5-2.xx&oh=00_AfB-eXe7FJvJwSClfy1gD-gcnZbpshcP1wIzPYlk3YQTfA&oe=64E7C1FF',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/avogadros.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['restaurant', 'music venue'],
     spotLinks: [
@@ -708,7 +708,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 44,
     spotName: 'the mishawaka',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/309595143_144214351665979_7990827627426424696_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SCtHVJMdtGcAX_BI-oJ&_nc_ht=scontent-ord5-1.xx&oh=00_AfCAzpJZ2_-9b5hqGdr4vboIjwOxI7HMd28JX75sTRxehw&oe=64E8E2B2',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/themishawaka.jpeg',
     spotLocation: ['bellvue', 'colorado'],
     spotTags: ['music venue', 'restaurant'],
     spotLinks: [
@@ -756,7 +756,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 47,
     spotName: 'silo',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/10703526_585228981582914_3952569593611833500_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=mmUHvCZ4x9cAX9x6IIT&_nc_ht=scontent-ord5-1.xx&oh=00_AfAgdWHeQq1SskFfdPFEc1TiCGuUJphuIUBRObePuDAI4A&oe=650AD1E2',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/silo.jpeg',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -772,7 +772,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 48,
     spotName: 'bonfire coffee',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/310597910_555564296569578_89937143620770694_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1lyWHiD2qiAAX_OsLo6&_nc_ht=scontent-ord5-2.xx&oh=00_AfDEsKuepwB0cP7-8rC86wsHyktdgcY4AVdl-CCuAUZf7w&oe=64E89C7C',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/bonfire.png',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -788,7 +788,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 49,
     spotName: 'white house pizza',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/277581712_411128531015059_7393133236994346570_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=1SsEIC1M5qEAX8DHXuM&_nc_ht=scontent-ord5-1.xx&oh=00_AfCTTeqDowm9QvMNextC6XK7pSOY1Rl2D6tXgT9zRjuaOg&oe=64E879AB',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/whitehousepizza.png',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -804,7 +804,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 50,
     spotName: 'allegria',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/275426515_469593611532637_6249378466039998173_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=73ApdzWc3QsAX8sNXpX&_nc_ht=scontent-ord5-1.xx&oh=00_AfDtiZfcoaAjcfR5ikLWcpYtxWqLuVI94N9LXckvzBGBXQ&oe=64E8DAE3',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/allegria.jpeg',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -820,7 +820,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 51,
     spotName: 'dos gringos burritos',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t31.18172-8/1597254_710881832275727_2065693438_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hwPXp_G9KTgAX-qYcW0&_nc_ht=scontent-ord5-1.xx&oh=00_AfAq_22xJ9N26yBr1Ol6ynhlX920A07NTn3eM2wl6yfJLQ&oe=650AD0F3',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/dos.jpeg',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['cafe'],
     spotLinks: [
@@ -836,7 +836,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 52,
     spotName: 'brass anvil',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/298457594_726896935147631_3897566443918674611_n.png?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ruzjClXvrikAX9Kaoeu&_nc_ht=scontent-ord5-1.xx&oh=00_AfBeUZYS2dao2sp11ewy0r1uD2_VBx_CPb25a2U1mn4yiQ&oe=64E91B33',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/brassanvil.png',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -852,7 +852,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 53,
     spotName: 'propaganda pie',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/301769842_572429888007501_5534751458112006141_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CcllEeuTDwoAX8qijIL&_nc_ht=scontent-ord5-1.xx&oh=00_AfDPJ_OF6jbXRQyN_j91C-epp5H9NtOS7TbyTMLgwTmT7Q&oe=64E8360E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/propagandapie.jpeg',
     spotLocation: ['redstone', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -884,7 +884,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 55,
     spotName: 'belly up - aspen',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/334743115_156949907163917_6620175190276611379_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZGsa-vuJwXkAX9Jqj_R&_nc_ht=scontent-ord5-2.xx&oh=00_AfDVEN6CsRaIPzP1GMqZcqL7PHuCOjNq_VP-KJntZXDUAQ&oe=64E93088',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/bellyup.jpeg',
     spotLocation: ['aspen', 'colorado'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -900,7 +900,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 56,
     spotName: 'the regional',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/309199367_539341058195305_345573431569997567_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=-fsns6eVevYAX8m0cMG&_nc_ht=scontent-ord5-2.xx&oh=00_AfAqlwQY7_i_fRH14RnvE3MhA4zC71HIh3D199-CxMY6zg&oe=64E85139',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/theregional.jpeg',
     spotLocation: ['old town', 'fort collins', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -916,7 +916,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 57,
     spotName: 'dillon amphitheater',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/336186654_707507291112887_8763331932198305322_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NzWAISrRfWcAX-89icF&_nc_ht=scontent-ord5-2.xx&oh=00_AfC2442Am1Z0860KWSvV6QqoAweVvJLT-pOpOIqQJxz-Qg&oe=64E7B130',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/dillon.jpeg',
     spotLocation: ['dillon', 'colorado'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -932,7 +932,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 58,
     spotName: 'red rocks amphitheater',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/348332969_996396737978757_2106557121780854877_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UWqybHhAZ_UAX9zKjUp&_nc_ht=scontent-ord5-2.xx&oh=00_AfCsoKZ4YYqWL4Hpov13Uhm9-maAb_OulkpZ7DlMGXz6hA&oe=64E7F456',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/redrocks.png',
     spotLocation: ['morrison', 'colorado'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -980,7 +980,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 61,
     spotName: 'the ogden theater',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/272298054_10158036929410938_6574125618663973359_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=c5to5QGUBw0AX9r0ZF-&_nc_ht=scontent-ord5-2.xx&oh=00_AfA7f1Y05x5z2R5XFoUvs5T8TVYbMdIVpW3FFe6QM3ah7w&oe=64E90F16',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/theogden.jpeg',
     spotLocation: ['denver', 'colorado'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -996,7 +996,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 62,
     spotName: 'fillmore auditorium - denver',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t31.18172-8/51817_165116116842275_3616973_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=EU3KZM6-CAYAX9q2O-8&_nc_ht=scontent-ord5-1.xx&oh=00_AfApleILFMBSNVUPnGk2NyTJGpF2Wy1GhlGOJ6Fpfjx7hQ&oe=650ADC00',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/fillmoredenver.jpeg',
     spotLocation: ['denver', 'colorado'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -1060,7 +1060,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 66,
     spotName: 'tortilleria las 4 americas',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/300381749_583774049815299_4255837034539728694_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=AZ1BpkfwZygAX_5N2Wf&_nc_ht=scontent-ord5-1.xx&oh=00_AfDf1rVfzric-5cRV4oibV0IKDZTlF9tvKrlVmnqtFpv1Q&oe=64E81BF7',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/las4americas.jpeg',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1076,7 +1076,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 67,
     spotName: 'the wormhole coffee',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/326411271_1147613982611891_8565851029620117618_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ltdOj9oOLRoAX9hglsc&_nc_ht=scontent-ord5-2.xx&oh=00_AfAf9uA_21b7sL8jRfmQiXoKRPR7agE4vaQAcvpUrXQ_-w&oe=64E97F8F',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/wormhole.jpeg',
     spotLocation: ['chicago', 'illinos'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1085,22 +1085,6 @@ export const spotItems: Array<SpotItem> = [
       }),
       getGoogleLinkData({
         googleSearchQuery: 'the wormhole coffee',
-      }),
-    ],
-  },
-  {
-    itemId: 68,
-    spotName: "janik's cafe",
-    spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/302121550_479364687531567_8227976622177093640_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gtNFn-uePukAX-ilOo8&_nc_oc=AQnzvRMiR1dkd9W8CJ_bq5pXSWTurLM-n9UlXNRgm5e6Zr4mlzBwPQzMWTmoRCVLkt8&_nc_ht=scontent-ord5-2.xx&oh=00_AfBVyVNiMB0cVs7pU4fnzoSe5afbrDS8s83p7wQmJPKi6w&oe=64E94633',
-    spotLocation: ['chicago', 'illinos'],
-    spotTags: ['restaurant'],
-    spotLinks: [
-      getWebsiteLinkData({
-        websiteHref: 'https://www.janikscafe.com',
-      }),
-      getGoogleLinkData({
-        googleSearchQuery: "janik's cafe",
       }),
     ],
   },
@@ -1124,7 +1108,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 71,
     spotName: 'bikes & coffee',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/309745468_515577953906749_6122970045841673522_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=QWpvlNXOqokAX83sKOB&_nc_ht=scontent-ord5-2.xx&oh=00_AfCL7cHhO0aMkqPHSkIUGUbL14IATpquKiMdloiWvXhlwQ&oe=64E955EC',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/bikescoffee.jpeg',
     spotLocation: ['woodbridge', 'detroit', 'michigan'],
     spotTags: ['coffee', 'bike shop'],
     spotLinks: [
@@ -1153,7 +1137,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 73,
     spotName: 'gryphon coffee',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/300623923_496330062497529_3925260993910208208_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=YJZ9XtnGJ6wAX_W8KRh&_nc_ht=scontent-ord5-2.xx&oh=00_AfCgp4YKYXocOtAYuIH6bSb2eGHvHBbmeKPrBknJ4e-CMg&oe=64E96BA1',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/gryphon.png',
     spotLocation: ['philadelphia', 'pennsylvania'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1169,7 +1153,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 74,
     spotName: 'evil genius',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/239992608_4381193648584164_213551063972822468_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qe-Xa38RiE0AX_JiKR_&_nc_ht=scontent-ord5-2.xx&oh=00_AfDGo5vX1T9uNrbmkdeAokffgAC-Anws_a1i41LnHbYV9g&oe=64E86661',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/evilgenius.png',
     spotLocation: ['fishtown', 'philadelphia', 'pennsylvania'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -1185,7 +1169,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 75,
     spotName: 'brooklyn bowl - philadelphia',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-1/332704998_787127639685102_2194598907843524715_n.jpg?stp=dst-jpg_p320x320&_nc_cat=101&ccb=1-7&_nc_sid=c6021c&_nc_ohc=Fzzh9przrN8AX9gHiDI&_nc_ht=scontent-ord5-1.xx&oh=00_AfAIOzyfbZ-PwZ1D5JL12YFaZm3gaB1dohOX09cTtcXMWQ&oe=64E7AC54',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/brooklynbowlphil.jpeg',
     spotLocation: ['fishtown', 'philadelphia', 'pennsylvania'],
     spotTags: ['music venue', 'bowling alley'],
     spotLinks: [
@@ -1201,7 +1185,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 76,
     spotName: 'malelani cafe',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/275272547_386080336853640_4278663677703404167_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=tP7unp-AfyUAX85YebI&_nc_ht=scontent-ord5-2.xx&oh=00_AfBD3GLKVDjyVC2GBPHYzvY2xxy5awAtJjYObFqGlKepBg&oe=64E875DD',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/malelani.jpeg',
     spotLocation: ['germantown', 'philadelphia', 'pennsylvania'],
     spotTags: ['cafe', 'restaurant'],
     spotLinks: [
@@ -1233,7 +1217,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 78,
     spotName: 'evil twin brewing',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305313477_468295605311916_3776756620874656940_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=xXU6f3iwdM0AX-h0wo_&_nc_ht=scontent-ord5-1.xx&oh=00_AfC_UZCdINkdA7C8thoPS229OadOgq169MI60N3YFWisvw&oe=64E7B32E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/eviltwin.jpeg',
     spotLocation: ['DUMBO', 'brooklyn', 'new york'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -1249,7 +1233,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 79,
     spotName: "david's brisket house",
     spotThumbnailHref:
-      'https://davidsbriskethouse.com/wp-content/uploads/2021/03/davids-brisket-house_dark.png',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/davids.jpeg',
     spotLocation: ['brooklyn', 'new york'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1265,7 +1249,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 80,
     spotName: 'captain dan\'s "good time" tavern',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/307034606_762763208381985_5732004313379341843_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lPneoFPcMGwAX-y1ie3&_nc_ht=scontent-ord5-2.xx&oh=00_AfDoZz0SorrHdvGtAcxhQ890N2NnZnrvN-Ql0ptbj3lnig&oe=64E80652',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/captaindans.jpeg',
     spotLocation: ['brooklyn', 'new york'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1281,7 +1265,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 81,
     spotName: 'emerald city bagels',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/301578276_500699208727291_4941531098427172505_n.png?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=_C_HoA5oDR8AX_9nDuH&_nc_ht=scontent-ord5-2.xx&oh=00_AfDL4_9lTZmQCzQJ7GJvCXN4ULHHezIdCtaUgLqhb7sqJQ&oe=64E90186',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/emeraldcity.png',
     spotLocation: ['atlanta', 'georgia'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1297,7 +1281,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 82,
     spotName: 'chrome yellow trading co.',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t31.18172-8/10001137_1471604649718879_1829173776_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=2-aO7zi2OcEAX_GYyTh&_nc_ht=scontent-ord5-2.xx&oh=00_AfBAF7j0wcUu1mDCak5GprSVpp3BL72UXJZW1Vkl0CG1Pg&oe=650B325E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/chromeyellow.jpeg',
     spotLocation: ['old fourth ward', 'atlanta', 'georgia'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1345,7 +1329,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 85,
     spotName: "madame vic's",
     spotThumbnailHref:
-      'https://madamevics.com/wp-content/uploads/2023/06/343091381_926847698561530_4061765091522117966_n-1024x1024.jpg',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/madamevics.jpeg',
     spotLocation: ['new orleans', 'louisiana'],
     spotTags: ['bar'],
     spotLinks: [
@@ -1361,7 +1345,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 86,
     spotName: 'st. roch market',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/347813608_982029549492392_5492621720779285687_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Epn-OGy_PNQAX_gePtl&_nc_ht=scontent-ord5-1.xx&oh=00_AfB_6m7hFzdX4vNFDti-ZZSyKuh8RlqYFY72xCWnLNAXoQ&oe=64E8AB6A',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/stroch.png',
     spotLocation: ['new orleans', 'louisiana'],
     spotTags: ['food hall'],
     spotLinks: [
@@ -1377,7 +1361,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 87,
     spotName: 'mardi gras world',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/348420918_3426378630954494_8551822130066565276_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=QgBgKrsjOgEAX8tkrlW&_nc_ht=scontent-ord5-1.xx&oh=00_AfCXm8tHxd-gRNPUBTBmOH3UuB9kQwRTAIdFRJUvQwj0XQ&oe=64E89EB2',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/mardigrasworld.jpeg',
     spotLocation: ['new orleans', 'louisiana'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -1393,7 +1377,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 88,
     spotName: 'catalina coffee',
     spotThumbnailHref:
-      'https://bd95ed58a0d070abe872.cdn6.editmysite.com/uploads/b/5ffa1a60-6d15-11ea-b9a9-796408dbf742/Catalina_Logo%20Gray.pdf?width=400&optimize=medium',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/catalinacoffee.png',
     spotLocation: ['houston', 'texas'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1425,7 +1409,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 90,
     spotName: "frazier's long and low",
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/293248109_475242231269450_6185635747958510879_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qsuG1aVEjW8AX8VBavb&_nc_ht=scontent-ord5-2.xx&oh=00_AfBetSvaGrowK2huQX4i6a56Yir2EvBsIr36ZxCioX_ZMQ&oe=64E978AC',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/fraziers.jpeg',
     spotLocation: ['austin', 'texas'],
     spotTags: ['bar'],
     spotLinks: [
@@ -1441,7 +1425,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 91,
     spotName: 'el tacorrido',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/341171631_530879195924150_5951500644890958626_n.png?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3qvJ5NgCewsAX-5d0Ua&_nc_ht=scontent-ord5-2.xx&oh=00_AfBzqMDXM5x5IeNXg_SFYrKrJFrv1cg83c8jcgbQIU8SMQ&oe=64E85B22',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/eltacorrido.png',
     spotLocation: ['austin', 'texas'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1473,7 +1457,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 93,
     spotName: 'paperboy',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/319912765_683985306524332_6010646876602846839_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=XJTaA_eMLfgAX82IsnW&_nc_ht=scontent-ord5-1.xx&oh=00_AfAICQSBiU6dikGqOdY3L42Me8mYLXLs-LTMSGey_u2COg&oe=64E7F145',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/paperboy.jpeg',
     spotLocation: ['austin', 'texas'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1505,7 +1489,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 95,
     spotName: 'fleet coffee',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/303123895_395671759345929_4403078007691343969_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nhFc0JX0NsUAX-A0pTy&_nc_ht=scontent-ord5-2.xx&oh=00_AfCO0HrG8SK9LlIic3YYh81ssScIgsHGGRilgdTu8kTYGg&oe=64E916AF',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/fleetcoffee.jpeg',
     spotLocation: ['austin', 'texas'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1521,7 +1505,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 96,
     spotName: 'easy tiger',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/341004209_903680774223556_7605440925238997709_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=t2WYXSbhlPEAX_BJowo&_nc_ht=scontent-ord5-2.xx&oh=00_AfCD7tUjn8E5QQL9F8p1G_4WR1jneqL4rTO6rLVg53z8TQ&oe=64E82D4E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/easytiger.jpeg',
     spotLocation: ['austin', 'texas'],
     spotTags: ['restaurant', 'bakery'],
     spotLinks: [
@@ -1537,7 +1521,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 97,
     spotName: 'oscars mexican seafood',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/360087871_745836217551829_1550911034499931258_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=e3XVWoLwEkoAX_Kpow0&_nc_ht=scontent-ord5-2.xx&oh=00_AfCaAB9QSfF2u7bIUtmVB1HD7TbIxoCWX7M0QITZXF2ezQ&oe=64E9A992',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/oscarspb.jpeg',
     spotLocation: ['pacific beach', 'san diego', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1553,7 +1537,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 98,
     spotName: 'homestyle hawaiian',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/359470002_755731613219032_9180150628324688311_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=gXfCGwZQp5YAX8FUoqb&_nc_oc=AQl8BslzdG2HduRZN4Hg3SFpRv8Y57rYAybmYAiFabIAe53DueUJKbW3J2eC4TjIXuM&_nc_ht=scontent-ord5-2.xx&oh=00_AfDjDXwmBdU_es_HqchooDSsCwbcvgIzteay6wT6O3j57w&oe=64E7C4E3',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/homestylehawaiian.jpeg',
     spotLocation: ['pacific beach', 'san diego', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1569,7 +1553,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 99,
     spotName: 'coffee cycle roasting',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/89656672_1459053197589472_7241621457296424960_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9267fe&_nc_ohc=uPhuMMnqEQYAX-YSlJd&_nc_ht=scontent-ord5-1.xx&oh=00_AfC8vHhFlRCpq9hU1PuD8BhjN8Ou0nRGEvkfaZtPwOkYcQ&oe=650B392C',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/coffeecyclepb.jpeg',
     spotLocation: ['pacific beach', 'san diego', 'california'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1617,7 +1601,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 102,
     spotName: "caroline's seaside cafe",
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245319255_6382708498469189_8934795304771410162_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NnH2c-UUKnwAX_U_rPD&_nc_ht=scontent-ord5-1.xx&oh=00_AfBuwZ1eUbXHZHgQg-rUNuhIRksKMmHvQDot9WDDvzxOyQ&oe=64E851AD',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/carolinesseaside.jpeg',
     spotLocation: ['la jolla', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1633,7 +1617,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 103,
     spotName: 'viejas arena',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/305482733_508241771303453_4829911627784920483_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yZV4nE7Giy4AX-20mBO&_nc_ht=scontent-ord5-2.xx&oh=00_AfBoSggnLOGV0kCQkb0-trkunAed6DrAEi5jEmrgakUfPQ&oe=64E812E8',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/viejasarena.jpeg',
     spotLocation: ['san diego', 'california'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -1649,7 +1633,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 104,
     spotName: 'lodge room',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/302189550_598959918499837_494758898848485817_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=T1iv5CN9E34AX9mB7Ui&_nc_oc=AQnTZ1Ae3TOvXTRj2gyzyn_RtpA-EFtmyloGndvFu0TeZUxyqYXqPVKYG-V0OvS6Xlc&_nc_ht=scontent-ord5-2.xx&oh=00_AfC0EwHbbu9ghqWsE8XuiN0GmGVKKc2T2rQHHVIqhGJolg&oe=64E8DCBD',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/lodgeroom.jpeg',
     spotLocation: ['los angeles', 'california'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -1678,7 +1662,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 106,
     spotName: 'los angeles state historic park',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/220772696_10158376883040186_7412148122480876537_n.png?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=4-wo0EcmhwoAX9nPF55&_nc_ht=scontent-ord5-2.xx&oh=00_AfBltEnoSVWEuwX7FBPos6lE6HISKjtPIwRM5qzxdpYmIA&oe=64E99348',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/lahistoric.png',
     spotLocation: ['los angeles', 'california'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -1694,7 +1678,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 107,
     spotName: 'the semi-tropic',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/245635834_382916200196375_6269120062143316667_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CTEboqHDEu4AX-QnG-j&_nc_ht=scontent-ord5-2.xx&oh=00_AfAOHw04YYLd8nQF6nfcZvbqR1QtO7R8TXQIETTc5xG1Cw&oe=64E824B4',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/thesemitropic.jpeg',
     spotLocation: ['echo park', 'los angeles', 'california'],
     spotTags: ['restaurant', 'bar'],
     spotLinks: [
@@ -1710,7 +1694,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 108,
     spotName: "fambrini's cafe",
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/291866972_474031958058677_4699376128873811932_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j881SShMUv8AX9h8TLc&_nc_ht=scontent-ord5-2.xx&oh=00_AfD5KjbktAsWOwSZ9gy5sVfQqcH4Ne_tWfKEehjrZLh9EQ&oe=64E8310E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/fambriniscafe.jpeg',
     spotLocation: ['palo alto', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1726,7 +1710,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 109,
     spotName: 'zombie runner coffee',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/340928694_1568994756927553_2451603674097252726_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=v_cYBIHFookAX84ml-z&_nc_ht=scontent-ord5-1.xx&oh=00_AfBUY9-teqU_WIS8JkpSM0pai_F3NqJxjrX9g7lS0GnMHQ&oe=64E85CEE',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/zombierunner.jpeg',
     spotLocation: ['palo alto', 'california'],
     spotTags: ['coffee', 'shoe store'],
     spotLinks: [
@@ -1806,7 +1790,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 114,
     spotName: "antonio's nut house",
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/89855284_10157131388146958_7505928698105692160_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a26aad&_nc_ohc=VVnHfSXjvhQAX-jBTAe&_nc_ht=scontent-ord5-1.xx&oh=00_AfCx7jW945Xhd1_s_hLdq_buVyohoFMa4UljJ3ktlkQrSA&oe=650B536F',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/nuthouse.jpeg',
     spotLocation: ['palo alto', 'california'],
     spotTags: ['bar', 'restaurant'],
     spotLinks: [
@@ -1819,7 +1803,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 115,
     spotName: "nick's crispy tacos",
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/274658451_4838095206237647_7286416343357109125_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=174925&_nc_ohc=W74Uv4bnEWkAX98OTxC&_nc_ht=scontent-ord5-2.xx&oh=00_AfB6fU8MHDRxhdZYlhpJhgjAWMjsz8wX8kSIa8gUHIFb2g&oe=64E7D263',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/nickscrispy.jpeg',
     spotLocation: ['san francisco', 'california'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1851,7 +1835,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 118,
     spotName: 'kozy kar bar',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/996003_187121348139220_1726659302_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=Mfl7rGZT53UAX99vYHP&_nc_ht=scontent-ord5-1.xx&oh=00_AfBXyuS9qoK_aUyvqSzpxae2tx-rHLEI178c6369wFeGXw&oe=650B4252',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/kozykar.jpeg',
     spotLocation: ['san francisco', 'california'],
     spotTags: ['bar'],
     spotLinks: [
@@ -1867,7 +1851,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 119,
     spotName: "fenton's creamery",
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.18169-9/19875400_10156323108193362_449711848655417477_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=174925&_nc_ohc=eJnJpoKBrFgAX-gV2Dl&_nc_ht=scontent-ord5-2.xx&oh=00_AfBRgjDjFLBb3i4svllGAhhiLDvq__LOgVX_-R6CcZyk7Q&oe=650B3F37',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/fentons.jpeg',
     spotLocation: ['oakland', 'california'],
     spotTags: ['ice cream shop'],
     spotLinks: [
@@ -1899,7 +1883,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 121,
     spotName: 'the gorge amphitheater',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/316804464_3329605217262322_4139087066797704423_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=VQfJU0NYv5MAX_Jv53N&_nc_ht=scontent-ord5-1.xx&oh=00_AfDE6s7VRAe0r7ZyKfGTK-OKNGbfGtyntGSXP-udsX7psw&oe=64E8EEB1',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/thegorge.jpeg',
     spotLocation: ['grant county', 'washington'],
     spotTags: ['music venue'],
     spotLinks: [
@@ -1915,7 +1899,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 122,
     spotName: 'bienvenido pariente',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t1.6435-9/170291022_2547515102220422_4055653189846156829_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a26aad&_nc_ohc=16aR32aQKRkAX9LPLNJ&_nc_ht=scontent-ord5-2.xx&oh=00_AfBqjO1PIHgR0__uZITDnmWaItH3ERZETzscLrc4NwqiRg&oe=650B8BF7',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/pariente.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['restaurant', 'bar'],
     spotLinks: [
@@ -1928,7 +1912,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 123,
     spotName: 'las argentinas, empanadas a la leña',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/274466113_2807908992835014_6262281974650446909_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=MbSjJi1qafkAX8_KqZv&_nc_ht=scontent-ord5-2.xx&oh=00_AfDoZzmyqiSHymo6Hy147DQjqZ4ablLBqwneNusWhRaVvQ&oe=64E984C3',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/lasargentinas.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['cafe'],
     spotLinks: [
@@ -1941,7 +1925,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 124,
     spotName: 'el habanero negro',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245103357_267630262031661_4649714065670720359_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=iByN8XUnyZIAX-y6pRr&_nc_ht=scontent-ord5-1.xx&oh=00_AfB32U-PMsESVng-p2rf4oDo5J8HsAxpFb7JkbxRct_haw&oe=64E81C9C',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elhabanero.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['restaurant', 'bar'],
     spotLinks: [
@@ -1970,7 +1954,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 126,
     spotName: 'café fábula',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/300761214_496157875849088_5222476912365529980_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=NpzRea2HfAwAX-t4mjQ&_nc_ht=scontent-ord5-2.xx&oh=00_AfAUB3eMPuKXD6WOK3PQ2n5C31NyBN-RenWmv0O6YT0wUA&oe=64E91560',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/cafefabula.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['coffee', 'cafe'],
     spotLinks: [
@@ -1983,7 +1967,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 127,
     spotName: 'el frutero',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.6435-9/99254939_3631764723519138_1557597098512220160_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=52THyS-7fqYAX997GqC&_nc_ht=scontent-ord5-1.xx&oh=00_AfAoV1ZqYFE5gdwBXZgQSRjDKGX439x7JE9dNRz4Hn6kLQ&oe=650B8528',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elfrutero.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['cafe'],
     spotLinks: [
@@ -1996,7 +1980,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 128,
     spotName: 'vietnam bar',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/304065959_1252519352246174_4441552392170498668_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=qYca37UVpUIAX923ZDT&_nc_ht=scontent-ord5-2.xx&oh=00_AfCNkDWwnPxvTsr9kW2Umd2Qhq7nX8GBJHKPt0bf-_ehww&oe=64E9E54C',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/vietnam.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['bar'],
     spotLinks: [
@@ -2022,7 +2006,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 130,
     spotName: 'cerveza loba',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/14237627_912095528890517_2278651443708935037_n.png?_nc_cat=109&ccb=1-7&_nc_sid=174925&_nc_ohc=27kIYXpCMpwAX_XyXiy&_nc_ht=scontent-ord5-1.xx&oh=00_AfC192tSUeCZP_5PjQsXbCeeXaMcHy0Nz5nux3IwVesnTA&oe=650B74CC',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/loba.png',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['brewery'],
     spotLinks: [
@@ -2038,7 +2022,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 132,
     spotName: 'la chukirruki pulqueria',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/305635789_488589743274590_4291875177146050979_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=merWq_77Kt4AX8ii-85&_nc_ht=scontent-ord5-1.xx&oh=00_AfAMzu_Q_peTvVaYkW0QQNekDLhexvj9PRxrshVvlBkeCA&oe=64E96BE0',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/chukirruki.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['bar'],
     spotLinks: [
@@ -2051,7 +2035,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 133,
     spotName: 'hot dogs el chino',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/302144088_514420967352890_2565123706867036574_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=H2iKn49YaeMAX925jkv&_nc_ht=scontent-ord5-1.xx&oh=00_AfC__-2NkyFWpxqvYeT5wycUzND5-bgQfQ7lAhQYEfklvg&oe=64E82E68',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elchino.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2064,7 +2048,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 134,
     spotName: 'tortas ahogadas el rika',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/302297864_495061102627066_2669423498075947459_n.png?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=LckzIt3d-ggAX-duZFK&_nc_ht=scontent-ord5-2.xx&oh=00_AfCAw0eTC7RyBJn-zvlwIVZaRyYu2aB1Q_5tIujKFjKs-Q&oe=64E999B2',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elrika.png',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2080,7 +2064,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 135,
     spotName: 'las ahogadas del negro',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/255912821_749268949340433_9221654422437465886_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ksxqK3Ny8N4AX8gg0Ve&_nc_ht=scontent-ord5-2.xx&oh=00_AfClZViW-RAQ9W7nlCUZ3fxKxZvDQsfE1tskodlLbxtnhA&oe=64E933AA',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/ahogadasdelnegro.jpeg',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2106,7 +2090,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 137,
     spotName: 'los huacales',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/353603782_1265684604295774_6716345033082023289_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Dz9jc9DSkyAAX89fdDi&_nc_ht=scontent-ord5-2.xx&oh=00_AfBEowvV-yrMmqP4RPJNrVaJWxxdjy9v4z0KIECm1-n0QQ&oe=64E9F7ED',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/loshuacales.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2119,7 +2103,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 138,
     spotName: 'la victoriana',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326258738_3247095465603177_7369810921131898395_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=-Se2RlVROGEAX_ifvnh&_nc_ht=scontent-ord5-1.xx&oh=00_AfAajMkuBctxTOhHHciaf2toIVloe26INqMw00oX5rWZRg&oe=64E82888',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/lavictoriana.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2132,7 +2116,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 139,
     spotName: 'la cocina de laura',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/277345222_1562658957443927_1576020267456216401_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=AGC9TAJXpWoAX84ryM5&_nc_ht=scontent-ord5-2.xx&oh=00_AfCPUbJQO8l17Z99yn68h06aC7dpe7JTg7HvH9poFRwGsg&oe=64E85FBD',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/lacocinadelaura.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2145,7 +2129,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 140,
     spotName: 'macanela',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/319841377_475990324669753_3880665541908130210_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=kIY_sFEg0m8AX-h8BOc&_nc_ht=scontent-ord5-2.xx&oh=00_AfC8UeW6WfPUigpRVDewHpqxfKpp2sBvEYXnMm_2uzDGFg&oe=64E91866',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/macanela.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2158,7 +2142,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 141,
     spotName: 'gorditas "las güeras"',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/244512107_424397452445570_4849559415581378365_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=9HRPvk5cp9oAX8baP5Z&_nc_oc=AQlu-Jf74eAMGIA899uAY9h12TQrzoQ1E3ut3A7a3g7sjopieJyd-EVqC4fG3TP-Nqs&_nc_ht=scontent-ord5-1.xx&oh=00_AfB3LIYDyBeUTEofNsK9uoxFbNM5ks5C11WmAZQZNzZVXw&oe=64E8E456',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/lasgueras.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2186,7 +2170,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 143,
     spotName: 'nota negra bar',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/277768203_293382776286351_698722711527443530_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=clu5j2pHjd8AX85hNOP&_nc_ht=scontent-ord5-1.xx&oh=00_AfBMATKNQhDwJEMxxKkS-j1xZy04VVJq48HbwkfWu6ArYg&oe=64E84B04',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/notanegra.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['bar'],
     spotLinks: [
@@ -2199,7 +2183,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 144,
     spotName: 'pulques “el guiso”',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/245257808_103181415485818_8848531332236040363_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=j81-URaq6BgAX_ZvwkA&_nc_ht=scontent-ord5-1.xx&oh=00_AfA78dos7r1KOpbUMx8RXKQf5SCp8eDqG2lbs1dhFjJ1Aw&oe=64E8665E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elguiso.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['bar'],
     spotLinks: [
@@ -2212,7 +2196,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 146,
     spotName: 'cielo verde',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/309290648_486259560184543_6429598456928317731_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=T3tYqeRYPB4AX8gIOko&_nc_ht=scontent-ord5-1.xx&oh=00_AfCutxVhy8GrBK9a7ANqczFSiS16yZotTL2QjQZDCK1MDA&oe=64E9A964',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/cieloverde.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2225,7 +2209,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 147,
     spotName: 'vivo café',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/309114830_509548707844964_6457704985508631416_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=UPoTjHQ3MdgAX8B8UBw&_nc_ht=scontent-ord5-1.xx&oh=00_AfDFA6PP7bnJuz3y3wO_SfAsIagvhdrYZdWvYDpbdbLO9Q&oe=64E99B17',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/vivocafe.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['cafe'],
     spotLinks: [
@@ -2249,9 +2233,9 @@ export const spotItems: Array<SpotItem> = [
   },
   {
     itemId: 149,
-    spotName: 'pacifico surf antojería del mar',
+    spotName: 'pacifico surf',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t39.30808-6/301572632_451620616982258_1961009861761780980_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Aa2g1osTx5QAX-4b2ry&_nc_ht=scontent-ord5-2.xx&oh=00_AfBtFH5SNRauckZ_rOvsrrCM52yaE0Y_yXaHxHuhR74fZQ&oe=64E826EA',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/pacificosurf.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2264,7 +2248,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 150,
     spotName: 'street garden',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/237227038_362579018675191_9211648226716227800_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=174925&_nc_ohc=L_CvURnRrvoAX_rnpR9&_nc_ht=scontent-ord5-1.xx&oh=00_AfCt-p2vBS74ii1a3t09kaqnzq3N3ljLAOZR19H81AEW0A&oe=64E8FF56',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/streetgarden.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2277,7 +2261,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 151,
     spotName: 'habibti falafel',
     spotThumbnailHref:
-      'https://scontent-ord5-2.xx.fbcdn.net/v/t31.18172-8/11243464_1612822358964341_5396482860879375652_o.jpg?_nc_cat=110&ccb=1-7&_nc_sid=de6eea&_nc_ohc=jAXBxMlnUo0AX9wKHRg&_nc_ht=scontent-ord5-2.xx&oh=00_AfDJK5eScbuJtjIc3au4EF_DUW-jQs8Ok7Mypvum4TmC6g&oe=650B7EAB',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/habibti.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2290,7 +2274,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 152,
     spotName: 'los campos cantina y restaurante',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/334522145_240635754976290_8990999189871070888_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rkibDLZeP1QAX-4sa_5&_nc_ht=scontent-ord5-1.xx&oh=00_AfCAh5Vgo6PYA45KDQWF0DbBSy8bVBaVQ6DiqLDBdiIO2w&oe=64E8632A',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/loscampos.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2303,7 +2287,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 153,
     spotName: 'birria club',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/315118910_196332159596211_355466544097121335_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=WPUjK99jQvcAX-x5MAB&_nc_ht=scontent-ord5-1.xx&oh=00_AfDYKQuLwcAk0x0QyLTa1O_Lcl6ahNYeV1xu5YhDEorjWg&oe=64E8A3D7',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/birriaclub.jpeg',
     spotLocation: ['guanajuato', 'guanajuato', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2329,7 +2313,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 156,
     spotName: 'tacos los alexis',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/326571158_1179685162936467_8622327195331488154_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=vS4dq5NiGaUAX_aDAyk&_nc_ht=scontent-ord5-1.xx&oh=00_AfAUXHCBoU6d5_-3u671fNKyttFuaiDULYXkwjXfPt2few&oe=64E8B78E',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/tacoslosalexis.jpeg',
     spotLocation: ['roma norte', 'mexico city', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2355,7 +2339,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 158,
     spotName: 'el habanerito',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t39.30808-6/277563365_507866437424248_2325997188825374099_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fTdkWT-_tWcAX9cnvYT&_nc_ht=scontent-ord5-1.xx&oh=00_AfCyduhatZWRK66NiO_1flkDRA7FXCjrchXfTCE6_zA88w&oe=64E97958',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/habanerito.jpeg',
     spotLocation: ['roma norte', 'mexico city', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2368,7 +2352,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 159,
     spotName: 'falafel',
     spotThumbnailHref:
-      'https://scontent-ord5-1.xx.fbcdn.net/v/t1.18169-9/14191930_1148227195252440_3425980032674704807_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_ohc=W5-3ROWpVR8AX-OEfvp&_nc_ht=scontent-ord5-1.xx&oh=00_AfC8Vocc8zVEvlso2tMugBlDRCyFU--ekk_ZaiTN017fTA&oe=650C203A',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/falafelcientos.jpeg',
     spotLocation: ['san cristobal del las casas', 'chiapas', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -2382,7 +2366,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 160,
     spotName: 'pachamama',
     spotThumbnailHref:
-      'https://scontent-den4-1.xx.fbcdn.net/v/t1.6435-9/98061302_593758651236893_7036248499297452032_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Na67AJOEiCUAX-iK8CN&_nc_ht=scontent-den4-1.xx&oh=00_AfDe1Y3DKiXIkHrWrVdbxGLCBssDZdPBStEVPEfLBzJWWQ&oe=650C3160',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/pachamama.jpeg',
     spotLocation: ['san cristobal del las casas', 'chiapas', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [

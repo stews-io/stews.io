@@ -7,6 +7,7 @@ export const curatorConfig: CuratorConfig = {
     curatorName: 'pl-archive',
     curatorLocation: 'worldwide official',
     curatorStatus: 'the time has come for bad things to end...',
+    curatorEmail: 'pl-archive@stews.io',
     curatorLinks: [
       {
         linkType: 'website',
@@ -19,6 +20,10 @@ export const curatorConfig: CuratorConfig = {
       {
         linkType: 'instagram',
         linkHref: 'https://www.instagram.com/prettylights/',
+      },
+      {
+        linkType: 'email',
+        linkHref: 'mailto:pl-archive@stews.io',
       },
     ],
   },
@@ -53,6 +58,11 @@ export const curatorConfig: CuratorConfig = {
       segmentLabel: 'pretty lights',
       segmentFilter: 'musicArtist:"Pretty Lights"',
       segmentViews: [
+        {
+          viewId: '62FF',
+          viewLabel: 'soundship',
+          viewFilter: 'musicTags:"soundship spacesystem"',
+        },
         {
           viewId: '67ZF',
           viewLabel: 'discography',

@@ -81,6 +81,10 @@
   padding-block-start: 2 * $themeSpacer;
 }
 
+.footerLinkButtonContainer {
+  padding-inline-end: 3 * $themeSpacer;
+}
+
 .footerLinkButton {
   color: $themeButtonTextColor;
   font-weight: 600;

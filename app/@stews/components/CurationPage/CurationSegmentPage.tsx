@@ -139,17 +139,34 @@ export function CurationSegmentPage(props: CurationSegmentPageProps) {
       {viewPageNavigationElement}
       <div className={cssModule.generalFooterContainer}>
         <div className={cssModule.generalFooter}>
-          <LinkButton
-            className={cssModule.footerLinkButton}
-            ariaLabel={'go to the stews.io project landing page'}
-            ariaDescription={
-              'a button that opens a new tab and navigates to stews.io'
-            }
-            href="https://stews.io"
-            target={'_blank'}
-          >
-            stews.io
-          </LinkButton>
+          {[
+            {
+              linkLabel: 'stews.io',
+              linkHref: 'https://stews.io',
+              ariaLabel: 'go to the stews.io project landing page',
+              ariaDescription:
+                'a button that opens a new tab and navigates to stews.io',
+            },
+            {
+              linkLabel: 'message',
+              linkHref: `mailto:${clientCuratorConfig.curatorInfo}`,
+              ariaLabel: `email ${clientCuratorConfig.curatorInfo.curatorName}`,
+              ariaDescription:
+                'a button that opens a new tab and navigates to stews.io',
+            },
+          ].map((someGeneralLink) => (
+            <div className={cssModule.footerLinkButtonContainer}>
+              <LinkButton
+                className={cssModule.footerLinkButton}
+                ariaLabel={someGeneralLink.ariaLabel}
+                ariaDescription={someGeneralLink.ariaDescription}
+                href={someGeneralLink.linkHref}
+                target={'_blank'}
+              >
+                {someGeneralLink.linkLabel}
+              </LinkButton>
+            </div>
+          ))}
         </div>
       </div>
       <div className={cssModule.pageFooterSpacer} />
