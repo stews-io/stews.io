@@ -499,7 +499,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 31,
     spotName: 'music city hot chicken',
     spotThumbnailHref:
-      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/musiccity.jpeg',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/musiccity.png',
     spotLocation: ['fort collins', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -756,7 +756,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 47,
     spotName: 'silo',
     spotThumbnailHref:
-      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/bonfire.jpeg',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/silo.jpeg',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -820,7 +820,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 51,
     spotName: 'dos gringos burritos',
     spotThumbnailHref:
-      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/brassanvil.jpeg',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/dos.jpeg',
     spotLocation: ['carbondale', 'colorado'],
     spotTags: ['cafe'],
     spotLinks: [
@@ -1233,7 +1233,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 79,
     spotName: "david's brisket house",
     spotThumbnailHref:
-      'https://davidsbriskethouse.com/wp-content/uploads/2021/03/davids-brisket-house_dark.png',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/davids.jpeg',
     spotLocation: ['brooklyn', 'new york'],
     spotTags: ['restaurant'],
     spotLinks: [
@@ -1790,7 +1790,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 114,
     spotName: "antonio's nut house",
     spotThumbnailHref:
-      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/nuthouse.png',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/nuthouse.jpeg',
     spotLocation: ['palo alto', 'california'],
     spotTags: ['bar', 'restaurant'],
     spotLinks: [
