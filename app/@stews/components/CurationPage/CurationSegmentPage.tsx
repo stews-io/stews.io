@@ -149,7 +149,7 @@ export function CurationSegmentPage(props: CurationSegmentPageProps) {
             },
             {
               linkLabel: 'message',
-              linkHref: `mailto:${clientCuratorConfig.curatorInfo}`,
+              linkHref: `mailto:${clientCuratorConfig.curatorInfo.curatorEmail}`,
               ariaLabel: `email ${clientCuratorConfig.curatorInfo.curatorName}`,
               ariaDescription:
                 'a button that opens a new tab and navigates to stews.io',
