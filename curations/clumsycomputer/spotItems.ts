@@ -2048,7 +2048,7 @@ export const spotItems: Array<SpotItem> = [
     itemId: 134,
     spotName: 'tortas ahogadas el rika',
     spotThumbnailHref:
-      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elchino.png',
+      'https://raw.githubusercontent.com/clumsycomputer/clumsy-thumbs/main/elrika.png',
     spotLocation: ['guadalajara', 'jalisco', 'mexico'],
     spotTags: ['restaurant'],
     spotLinks: [
