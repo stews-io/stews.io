@@ -7,6 +7,7 @@ export const curatorConfig: CuratorConfig = {
     curatorName: 'pl-archive',
     curatorLocation: 'worldwide official',
     curatorStatus: 'the time has come for bad things to end...',
+    curatorEmail: 'pl-archive@stews.io',
     curatorLinks: [
       {
         linkType: 'website',

@@ -7,6 +7,7 @@ export const curatorConfig: CuratorConfig = {
     curatorName: 'clumsycomputer',
     curatorLocation: 'colorful colorado',
     curatorStatus: 'just trying to listen and groove',
+    curatorEmail: 'clumsycomputer@stews.io',
     curatorLinks: [
       {
         linkType: 'website',

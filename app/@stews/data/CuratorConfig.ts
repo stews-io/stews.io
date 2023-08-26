@@ -24,6 +24,7 @@ export const CuratorConfigSchema = Zod.object({
     curatorName: Zod.string(),
     curatorLocation: Zod.string(),
     curatorStatus: Zod.string(),
+    curatorEmail: Zod.string(),
     curatorLinks: Zod.array(
       Zod.object({
         linkType: Zod.union([

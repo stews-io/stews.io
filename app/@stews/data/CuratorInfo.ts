@@ -2,6 +2,7 @@ export interface CuratorInfo {
   curatorName: string
   curatorLocation: string
   curatorStatus: string
+  curatorEmail: string
   curatorLinks: Array<CuratorLink>
 }
 
