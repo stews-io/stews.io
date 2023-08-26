@@ -32,6 +32,7 @@ export const CuratorConfigSchema = Zod.object({
           Zod.literal('github'),
           Zod.literal('twitter'),
           Zod.literal('instagram'),
+          Zod.literal('email'),
         ]),
         linkHref: Zod.string(),
       })

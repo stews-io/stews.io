@@ -21,6 +21,10 @@ export const curatorConfig: CuratorConfig = {
         linkType: 'twitter',
         linkHref: 'https://twitter.com/c1umsyc0mputer',
       },
+      {
+        linkType: 'email',
+        linkHref: 'mailto:clumsycomputer@stews.io',
+      },
     ],
   },
   curationDatasets: {

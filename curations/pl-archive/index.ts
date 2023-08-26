@@ -21,6 +21,10 @@ export const curatorConfig: CuratorConfig = {
         linkType: 'instagram',
         linkHref: 'https://www.instagram.com/prettylights/',
       },
+      {
+        linkType: 'email',
+        linkHref: 'mailto:pl-archive@stews.io',
+      },
     ],
   },
   curationDatasets: {
