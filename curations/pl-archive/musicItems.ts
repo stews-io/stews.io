@@ -4261,6 +4261,10 @@ export const musicItems: Array<MusicItem> = [
         linkLabel: 'twitch',
         linkHref: 'https://www.twitch.tv/videos/1908596696',
       },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-25-live-the-eastern',
+      }),
     ],
   },
 ]
