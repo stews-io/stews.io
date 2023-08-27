@@ -4160,14 +4160,9 @@ export const musicItems: Array<MusicItem> = [
         soundcloudHref:
           'https://soundcloud.com/prettylightslive/sets/2023-08-10-live-dillon-amphitheater-1',
       }),
-      {
-        linkLabel: 'youtube (1)',
-        linkHref: 'https://youtu.be/fSajuCFjJpA?si=P_X6mrGc6wsrtip5',
-      },
-      {
-        linkLabel: 'youtube (2)',
-        linkHref: 'https://youtu.be/FBB860JvN4k?si=D87zkyZdOhqNCR6i',
-      },
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/_KguQAGaLkA?si=gNZF9iA4mhKlRY_t',
+      }),
     ],
   },
   {
@@ -4191,7 +4186,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-11-live-dillon-amphitheater-1',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/LeUldFcbBjM?si=iVHpJabHc0wuv0VG',
+        youtubeHref: 'https://youtu.be/ZZ1StCfXPfQ?si=4Em0_uU-8PxSK-Fc',
       }),
     ],
   },
@@ -4216,7 +4211,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-12-live-dillon-amphitheater',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/TiivjwjWWhg?si=4yWiPiv5s8WGLA_0',
+        youtubeHref: 'https://youtu.be/--3uUkVyW6w?si=BEsuXrfWaFY9JTvg',
       }),
     ],
   },
@@ -4241,7 +4236,7 @@ export const musicItems: Array<MusicItem> = [
           'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/yIhKDpB1NFo?si=dTPOzkwt9j7nbS4K',
+        youtubeHref: 'https://youtu.be/vauSbW3i3dM?si=ebppsBMEfoHaYGay',
       }),
     ],
   },
@@ -4264,6 +4259,34 @@ export const musicItems: Array<MusicItem> = [
       getSoundcloudLinkData({
         soundcloudHref:
           'https://soundcloud.com/prettylightslive/sets/2023-08-25-live-the-eastern',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/xbovkPc2p-I?si=BYTHYrrUCdexcwRC',
+      }),
+    ],
+  },
+  {
+    itemId: 184,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Atlanta - 08/26/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['soundship spacesystem'],
+    externalLinks: [
+      {
+        linkLabel: 'twitch',
+        linkHref: 'https://www.twitch.tv/videos/1909504484',
+      },
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-26-live-the-eastern',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/ncrJdZsnL7c?si=SE8sjT_FTMGPK3YJ',
       }),
     ],
   },
