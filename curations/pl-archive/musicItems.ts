@@ -4082,7 +4082,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/mission-night-1',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/yePzyEKuyjE?si=iD0gCQQIrQ29kxfe',
+        youtubeHref: 'https://youtu.be/yePzyEKuyjE?si=MpM_Jgl82FLGbMjr',
       }),
     ],
   },
@@ -4107,7 +4107,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-05-live-mission-ballroom',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/gqP1QsKB5RA?si=HVb7ZcRBT6SosOs6',
+        youtubeHref: 'https://youtu.be/gqP1QsKB5RA?si=MeiGkb4J-9C4FuZE',
       }),
     ],
   },
@@ -4132,7 +4132,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-06-live-mission-ballroom',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/CqiAydHR4QQ?si=EJDEAadVtakkVjRF',
+        youtubeHref: 'https://youtu.be/CqiAydHR4QQ?si=8cHxzjTMB8F_Qh3E',
       }),
     ],
   },
@@ -4186,7 +4186,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-11-live-dillon-amphitheater-1',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/ZZ1StCfXPfQ?si=4Em0_uU-8PxSK-Fc',
+        youtubeHref: 'https://youtu.be/LeUldFcbBjM?si=_vutdzbf78egU4RJ',
       }),
     ],
   },
@@ -4211,7 +4211,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-12-live-dillon-amphitheater',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/--3uUkVyW6w?si=BEsuXrfWaFY9JTvg',
+        youtubeHref: 'https://youtu.be/TiivjwjWWhg?si=TOM--EKxpXLuJ8KQ',
       }),
     ],
   },
@@ -4236,7 +4236,7 @@ export const musicItems: Array<MusicItem> = [
           'https://i1.sndcdn.com/artworks-3nqvEe9AJVVj2ySN-zQg33w-t500x500.jpg',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/vauSbW3i3dM?si=ebppsBMEfoHaYGay',
+        youtubeHref: 'https://youtu.be/yIhKDpB1NFo?si=b3nBEY0VnJ5YvuY4',
       }),
     ],
   },
@@ -4261,7 +4261,7 @@ export const musicItems: Array<MusicItem> = [
           'https://soundcloud.com/prettylightslive/sets/2023-08-25-live-the-eastern',
       }),
       getYoutubeLinkData({
-        youtubeHref: 'https://youtu.be/xbovkPc2p-I?si=BYTHYrrUCdexcwRC',
+        youtubeHref: 'https://youtu.be/mOqNVz0lexc?si=XoCoplTbIx9otAFR',
       }),
     ],
   },
