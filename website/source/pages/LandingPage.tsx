@@ -44,7 +44,7 @@ export function LandingPage() {
             </div>
             <div className={cssModule.sectionParagraph} role={'paragraph'}>
               a project empowering individuals and communities in their quest to
-              curate and share
+              curate
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
