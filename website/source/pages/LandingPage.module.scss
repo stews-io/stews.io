@@ -18,7 +18,15 @@
   align-items: center;
 }
 
+.headerLeadingColumn {
+  @extend .columnContainer;
+}
+
 .pageTitleGraphic {
+}
+
+.pageTitleContainer {
+  @extend .columnContainer;
 }
 
 .hiddenPageTitleContainer {
@@ -28,6 +36,20 @@
 
 .pageTitle {
   min-height: 1rem;
+}
+
+.pageSloganContainer {
+  @extend .itemContainer;
+  padding-block-start: $themeSpacer;
+}
+
+.pageSlogan {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: all;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 1.5px;
 }
 
 .pageMainContainer {
@@ -83,6 +105,7 @@
   cursor: pointer;
   color: $themeButtonTextColor;
   text-decoration: none;
+  padding-block-end: calc(1 / 2) * $themeSpacer;
 }
 
 .paragraphLink {
@@ -116,7 +139,13 @@
 .curationLink {
   @extend .externalLink;
   @extend .textEllipsis;
-  font-weight: 600;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: none;
+  text-decoration-color: lime;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 1.5px;
 }
 
 .curationItemDescription {

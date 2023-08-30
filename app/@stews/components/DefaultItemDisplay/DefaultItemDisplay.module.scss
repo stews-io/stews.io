@@ -38,6 +38,10 @@
   text-decoration: underline;
   color: $themeButtonTextColor;
   padding-inline: calc(1 / 4) * $themeSpacer;
+  text-decoration: underline;
+  text-decoration-skip-ink: all;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 1.5px;
 }
 
 .itemInfoContainer {
