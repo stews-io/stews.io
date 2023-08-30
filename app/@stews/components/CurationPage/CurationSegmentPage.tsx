@@ -143,7 +143,7 @@ export function CurationSegmentPage(props: CurationSegmentPageProps) {
             {
               linkLabel: 'stews.io',
               linkHref: 'https://stews.io',
-              ariaLabel: 'go to the stews.io project landing page',
+              ariaLabel: 'go to the stews.io landing page',
               ariaDescription:
                 'a button that opens a new tab and navigates to stews.io',
             },

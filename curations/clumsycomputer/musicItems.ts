@@ -315,7 +315,7 @@ export const musicItems: Array<MusicItem> = [
     sourceType: 'collection',
     collectionType: 'album',
     musicThumbnailHref:
-      'https://cdn.albumoftheyear.org/album/55039-in-rainbows-from-the-basement.jpg',
+      'https://m.media-amazon.com/images/S/dmp-catalog-images-prod/images/c20675e8-37ec-4c33-94d6-b4bbc360cb79/20e17519-84df-40c9-8ad6-26b4ac45a7e8-1651999199._SX384_SY384_BL0_QL100__UX500_FMwebp_QL85_.jpg',
     musicYear: 2008,
     musicTitle: 'In Rainbows From the Basement',
     musicArtist: ['Radiohead', 'Nigel Godrich'],

@@ -3082,7 +3082,7 @@ export const musicItems: Array<MusicItem> = [
     musicThumbnailHref:
       'https://m.media-amazon.com/images/I/51m+szUslJL._UX500_FMwebp_QL85_.jpg',
     musicYear: 2023,
-    musicTitle: 'Hold On',
+    musicTitle: 'Where is Love',
     musicArtist: ['Motifv'],
     recordingContext: ['studio'],
     musicTags: ['discography'],
@@ -3095,7 +3095,8 @@ export const musicItems: Array<MusicItem> = [
           'https://open.spotify.com/track/4da7BYmmVA12d4JyXdpcJ9?autoplay=true',
       }),
       getAppleLinkData({
-        appleHref: 'https://music.apple.com/us/album/hold-on-single/1664672603',
+        appleHref:
+          'https://music.apple.com/us/album/where-is-love-single/1685268292',
       }),
     ],
   },
