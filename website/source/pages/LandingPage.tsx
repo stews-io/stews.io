@@ -36,7 +36,11 @@ export function LandingPage() {
               </svg>
             </div>
             <div className={cssModule.pageSloganContainer}>
-              <div className={cssModule.pageSlogan}>
+              <div
+                className={cssModule.pageSlogan}
+                role={'note'}
+                aria-label={'stews.io slogan'}
+              >
                 rehumanizing the web, one curation at a time
               </div>
             </div>
@@ -156,7 +160,7 @@ export function LandingPage() {
                 developers
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                y'all know what it is, head on over to{' '}
+                y'all know what it is; head over to{' '}
                 <a
                   className={cssModule.paragraphLink}
                   href={'https://github.com/clumsycomputer/stews.io'}
@@ -164,7 +168,7 @@ export function LandingPage() {
                 >
                   github
                 </a>{' '}
-                and jump on in!!!
+                and jump in!!!
               </div>
             </div>
             <div className={cssModule.subSectionContainer}>
@@ -196,9 +200,8 @@ export function LandingPage() {
                 curators
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                we're working diligently on providing y'all with the tools you
-                need, for sharing your world, the way it deserves! drop us a
-                line at{' '}
+                we're working diligently to provide y'all with the tools you
+                need to share your world the way it deserves! drop us a line at{' '}
                 <a
                   className={cssModule.paragraphLink}
                   href={'mailto:curations@stews.io'}
