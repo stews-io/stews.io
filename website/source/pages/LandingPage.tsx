@@ -114,6 +114,23 @@ export function LandingPage() {
                       an extensive catalog of the Pretty Lights musical project
                     </div>
                   </div>
+                  <div className={cssModule.curationItem}>
+                    <div className={cssModule.curationItemTitle}>
+                      <a
+                        className={cssModule.curationLink}
+                        href={'https://bakedgoods.stews.io'}
+                        target={'_blank'}
+                      >
+                        bakedgoods
+                      </a>
+                    </div>
+                    <div
+                      className={cssModule.curationItemDescription}
+                      role={'paragraph'}
+                    >
+                      choice selections from modern electronic music
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

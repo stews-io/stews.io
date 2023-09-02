@@ -63,12 +63,12 @@
 
 .curatorLinks {
   @extend .rowContainer;
-  padding-block-start: calc(11 / 8) * $themeSpacer;
 }
 
 .curatorLinkContainer {
   @extend .itemContainer;
   padding-inline-end: calc(3 / 2) * $themeSpacer;
+  padding-block-start: $themeSpacer;
 }
 
 .curatorLinkButton {

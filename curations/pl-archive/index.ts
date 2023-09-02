@@ -1,5 +1,4 @@
 import { CuratorConfig } from '@stews/data/CuratorConfig'
-
 import { musicItems } from './musicItems'
 
 export const curatorConfig: CuratorConfig = {
