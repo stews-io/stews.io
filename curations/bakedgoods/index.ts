@@ -47,8 +47,13 @@ export const curatorConfig: CuratorConfig = {
         },
         {
           viewId: '04KN',
-          viewLabel: 'in the mix',
+          viewLabel: 'studio mixes',
           viewFilter: 'sourceType:mix AND recordingContext:studio',
+        },
+        {
+          viewId: 'PTCQ',
+          viewLabel: 'live sets',
+          viewFilter: 'sourceType:mix AND recordingContext:concert',
         },
       ],
     },

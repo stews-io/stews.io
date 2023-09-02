@@ -1367,4 +1367,182 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 52,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-aBHCQ8MZXU0MonVP-QrQqhA-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Sundream (DJ Set) - 03/12/22',
+    musicArtist: ['RÜFÜS DU SOL'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/rufusdusol/rufus-du-sol-dj-set-from-sundream-tulum-closing-weekend-03052022',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/Mt-GdS0xv_Y?si=Y3DlqhdpC8bBpFZj',
+      }),
+    ],
+  },
+  {
+    itemId: 53,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-AU3PWuRynLS6QvpH-uY5aGw-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Live At Wakaan',
+    musicArtist: ['Barclay Crenshaw'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/barclay-crenshaw-33544993/barclay-crenshaw-wakaan-2024',
+      }),
+    ],
+  },
+  {
+    itemId: 54,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-zfPHF9rSwTzIbCHY-NAEQVw-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Mayan Warrior - Burning Man',
+    musicArtist: ['Monolink'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/mayanwarriorofficial/monolink-live-mayan-warrior-burning-man-2022',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/AQURf3JqnJY?si=lPV-q7ejmvn4xzxU',
+      }),
+    ],
+  },
+  {
+    itemId: 55,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-55rNDdyUShJKVQKg-imWv7A-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Hatshepsut Temple - Cercle',
+    musicArtist: ['Adriatique'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/tracksweekendmusic/adriatique-at-hatshepsut-temple-in-luxor-egypt-for-cercle',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/w4LRUBFy3pc?si=dffALEqRHb44gtDJ',
+      }),
+    ],
+  },
+  {
+    itemId: 56,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-EQHqCZ3Nlr8ti9ZL-r9Jyow-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Dillon Amphitheater - 08/11/23',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/prettylightslive/sets/2023-08-11-live-dillon-amphitheater-1',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/LeUldFcbBjM?si=sHx9NRzaPyNUdzTa',
+      }),
+    ],
+  },
+  {
+    itemId: 57,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000131552663-85fy71-t500x500.jpg',
+    musicYear: 2015,
+    musicTitle: 'White Ocean - Burning Man',
+    musicArtist: ['Hernan Cattaneo'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/whiteoceanofficial/hernan-cattaneo-white-ocean-burning-man-2015-sunrise-set',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/Ckr-C72PckE?si=enBnq-86tOUPZi3X',
+      }),
+    ],
+  },
+  {
+    itemId: 58,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000131070117-raku6t-t500x500.jpg',
+    musicYear: 2015,
+    musicTitle: 'Robot Heart - Burning Man',
+    musicArtist: ['Rampue'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/robot-heart/rampue-live-at-robot-heart-burning-man-2015',
+      }),
+    ],
+  },
+  {
+    itemId: 59,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000590950976-3elbs5-t500x500.jpg',
+    musicYear: 2019,
+    musicTitle: 'Inversion - Burning Man',
+    musicArtist: ['Tycho'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/tycho/inversion-burning-man-sunrise-set-2019',
+      }),
+    ],
+  },
+  {
+    itemId: 60,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://thumbnailer.mixcloud.com/unsafe/390x390/extaudio/a/b/8/c/fb3a-48ba-4cc2-a6be-7ef55f1a4cd7.jpg',
+    musicYear: 2015,
+    musicTitle: 'Pretty Lights Tribute - Electric Forest',
+    musicArtist: ['Vibe Street'],
+    recordingContext: ['concert'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      {
+        linkLabel: 'mixcloud',
+        linkHref:
+          'https://www.mixcloud.com/VibeStreet/vibe-street-pretty-lights-tribute-set-electric-forest-2015/',
+      },
+    ],
+  },
 ]
