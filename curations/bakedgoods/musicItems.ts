@@ -588,4 +588,145 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 20,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Vrw9zmLvL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'Telescopic',
+    musicArtist: ['SuperVision'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/879DsGDET2s?list=OLAK5uy_n5tAG6nW8Zv60CSvudWq81Ym7OyRI5AEI&si=m4jGGNSdDoPIdSr1',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1FLa8UyI19VikqlgmGjHtf?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/telescopic/467650758',
+      }),
+    ],
+  },
+  {
+    itemId: 21,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41w6+WAJDdL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Disconnected',
+    musicArtist: ['Jan Blomqvist'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/janblomqvist/sets/disconnected-17',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/hrQLPy9q3UM?list=OLAK5uy_kulFyYpwAV7WYz0-PSFJTkjameiTEaL1M&si=FPSJII3lT_Igu00P',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4CN2IioUNoLoInMTVRYNTw?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/disconnected/1436314742',
+      }),
+    ],
+  },
+  {
+    itemId: 22,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/517myMAgBuL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Laps',
+    musicArtist: ['Cassian'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/cassian88/sets/laps-248837761',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/EYGxrWnI-8k?list=OLAK5uy_kn2L8gRupyTv9gwHS1uBpx4H7UfFiJLqU&si=uOrFuA7ffhm_M91A',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5QWoAS89O3VclOrdfGR4If?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/in/album/laps/1700492139',
+      }),
+    ],
+  },
+  {
+    itemId: 23,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/612rWwXRvkL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2013,
+    musicTitle: 'Psychic',
+    musicArtist: ['DARKSIDE'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/daftside-2/sets/psychic-6',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/d8NaWT0WvEE?list=OLAK5uy_ltdJgbl5uszkvgxozzfNDmqxh0Th1X5uI&si=s-IRVTMxrJ53Fcsd',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1rnogXkMBXDVzDPFSq4dDe?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/psychic/1589169582',
+      }),
+    ],
+  },
+  {
+    itemId: 24,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51iyTUN2iTL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2011,
+    musicTitle: 'Group Therapy',
+    musicArtist: ['Above & Beyond'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/eNvIIJWEOqg?list=OLAK5uy_mKH0tOTZLto8r_fCTuyylnioRyeQ6idh4&si=A3XMZgQLJnsBNsFz',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1u4j72Z4fVMoMDRPfFEE3o?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/group-therapy-bonus-track-version/435967416',
+      }),
+    ],
+  },
 ]
