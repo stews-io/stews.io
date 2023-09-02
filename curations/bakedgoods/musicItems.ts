@@ -1049,4 +1049,322 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 36,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-1ctqtKi77y5L7zru-swV92g-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Spring 2023 Mixtape',
+    musicArtist: ['Lane 8'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/thisneverhappenedlabel/lane-8-spring-2023-mixtape?in=thisneverhappenedlabel/sets/mixes',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/cFy4Mz9yAes?si=x-BVBuETEdMkNYYV',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/lane-8-spring-2023-mixtape-dj-mix/1674666916',
+      }),
+    ],
+  },
+  {
+    itemId: 37,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-RXIzpSI8SaLMSRUQ-WfnzlA-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Anjunadeep Edition 453',
+    musicArtist: ['Natascha Polké'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/anjunadeep/the-anjunadeep-edition-453',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://www.youtube.com/live/_i3RbSgWMbE?si=egYk_RxC1fZiyDr6',
+      }),
+    ],
+  },
+  {
+    itemId: 38,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-I3VDRxn2rLiLg7gX-9chejw-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Anjunadeep Edition 453',
+    musicArtist: ['Nox Vahn'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/anjunadeep/the-anjunadeep-edition-414',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://www.youtube.com/live/Ul1hNFGvK4w?si=1P9SJHOB5Yiw4Die',
+      }),
+    ],
+  },
+  {
+    itemId: 39,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-rZfVGCYmOhmCm1gb-1zE1KQ-t500x500.jpg',
+    musicYear: 2021,
+    musicTitle: 'Retrograde Mixtape V',
+    musicArtist: ['paraleven'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/paraleven/retrograde-mixtape-v?in=paraleven/sets/mixes',
+      }),
+    ],
+  },
+  {
+    itemId: 40,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000192760625-7374lz-t500x500.jpg',
+    musicYear: 2016,
+    musicTitle: 'Afterlife Voyage 001',
+    musicArtist: ['Tale Of Us'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/taleofus/afterlife-voyage-001?in=afterlifeofc/sets/afterlife-voyage',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/q8EZhJfLwgk?si=-0mUXtYBslQ-sznL',
+      }),
+    ],
+  },
+  {
+    itemId: 41,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-grSrTAk9tS1WjiVD-WySplw-t500x500.jpg',
+    musicYear: 2023,
+    musicTitle: 'Rose Ave Radio Ep 21',
+    musicArtist: ['Adult Art Club'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/roseavenuerecords/rose-ave-radio-ep-21-adult-art-clubdj-set',
+      }),
+    ],
+  },
+  {
+    itemId: 42,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-se514UENnKg5Aweg-Igz43A-t500x500.jpg',
+    musicYear: 2021,
+    musicTitle: 'BBC Essential Mix - 06/25/21',
+    musicArtist: ['Enrico Sangiuliano'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/enricosangiuliano/enrico-sangiuliano-bbc-radio-1-essential-mix-june-5th-2021',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/6_avgA02K4U?si=mk4yNUUiY2aGxmAR',
+      }),
+    ],
+  },
+  {
+    itemId: 43,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000118987822-aeflx6-t500x500.jpg',
+    musicYear: 2015,
+    musicTitle: 'NO.SLEEP - Mix.09',
+    musicArtist: ['ODESZA'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/odesza/nosleep-mix-09?in=odesza/sets/no-sleep&si=aa49be7b8c1549e690164984539f3c8f&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/ZFec7NjwoWw?si=xO2JAPXYe5tTUPvB',
+      }),
+    ],
+  },
+  {
+    itemId: 44,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-ou0yfWR54SjIfzya-QNngkQ-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'LOST MIRACLE Radio 047',
+    musicArtist: ['Sébastien Léger'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/sebastienleger/lost-miracle-radio-047',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/0ZJUocqG4Yg?si=ry94Zf9DqEMwyMS8',
+      }),
+    ],
+  },
+  {
+    itemId: 45,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-vbHBJoRHVoYTEyUW-W6oT4A-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Ad Astra Mix',
+    musicArtist: ['Coccolino Deep'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/coccolino-deep/coccolino-deep-ad-astra',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/YF_kgdpkO1w?si=RaO7UHQkEccK7_46',
+      }),
+    ],
+  },
+  {
+    itemId: 46,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-KiIgK83jRejoScRX-hi3qKQ-t500x500.jpg',
+    musicYear: 2021,
+    musicTitle: 'Nectar of the Deep',
+    musicArtist: ['Local Honey'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/djlocalhoney/nectar-of-the-deep',
+      }),
+    ],
+  },
+  {
+    itemId: 47,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-FO0dYTzz3wxKXoGT-u1umqw-t500x500.jpg',
+    musicYear: 2021,
+    musicTitle: 'EMOTIONAL #90',
+    musicArtist: ['EMOTIONAL'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/emotionalmusic/emotional-90',
+      }),
+    ],
+  },
+  {
+    itemId: 48,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-000443794662-fdi55x-t500x500.jpg',
+    musicYear: 2018,
+    musicTitle: 'The Dig - Winter 2018-2019 Chillout Mix',
+    musicArtist: ['Artifakts'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/artifakts/the-dig-18-19',
+      }),
+    ],
+  },
+  {
+    itemId: 49,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-6eV3WULJnIzpOojV-tarh0A-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Jon Gurd Mixtape - January 2022',
+    musicArtist: ['Jon Gurd'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/jon-gurd/jon-gurd-mixtape-january-2022',
+      }),
+    ],
+  },
+  {
+    itemId: 50,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-Xf6fGjL8FeyZ1j16-vSTVqQ-t500x500.jpg',
+    musicYear: 2022,
+    musicTitle: 'Heart Opener Vol. 12 | PHOENIX RISES',
+    musicArtist: ['CRSTO'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/crsto/heart-opener-vol-12-phoenix-rises',
+      }),
+    ],
+  },
+  {
+    itemId: 51,
+    musicType: 'source',
+    sourceType: 'mix',
+    musicThumbnailHref:
+      'https://i1.sndcdn.com/artworks-TZXNx7W5sfRSibab-VSSdfQ-t500x500.jpg',
+    musicYear: 2020,
+    musicTitle: 'Home Sweet Home (the mixtape)',
+    musicArtist: ['Polo & Pan'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/polo-pan/home-sweet-home-mix',
+      }),
+      getYoutubeLinkData({
+        youtubeHref: 'https://youtu.be/uxnUeZ8QQYg?si=G_ALl4X9nsUaaWXf',
+      }),
+    ],
+  },
 ]

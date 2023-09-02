@@ -45,6 +45,11 @@ export const curatorConfig: CuratorConfig = {
           viewLabel: 'albums',
           viewFilter: 'collectionType:album OR collectionType:ep',
         },
+        {
+          viewId: '04KN',
+          viewLabel: 'in the mix',
+          viewFilter: 'sourceType:mix and recordingContext:studio',
+        },
       ],
     },
   ],
