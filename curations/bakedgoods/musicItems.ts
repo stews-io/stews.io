@@ -729,4 +729,147 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 25,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51K52iB+3HL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'Through the Walls',
+    musicArtist: ['WhoMadeWho'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/90Lm8ZRHLzw?list=OLAK5uy_mgKjBCQPoefI88m2vUhejcTMtOrDcnV5c&si=DbO0ThEj8hjUdalt',
+      }),
+      getSpotifyLinkData({
+        spotifyHref: 'https://open.spotify.com/album/58NWdqyxvKIUlzHEXqfeiv',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/through-the-walls/1299809377',
+      }),
+    ],
+  },
+  {
+    itemId: 26,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61Kz-w+3qJL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2006,
+    musicTitle: 'Taking Up Your Precious Time',
+    musicArtist: ['Pretty Lights'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/EAhMAn9O2tA?list=PL070472FFBF08BDD5&si=Gkpmmn1aaoVzsq7q',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5E5U9ckjlBvJ3qkNAAqESY?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/taking-up-your-precious-time/294600592',
+      }),
+    ],
+  },
+  {
+    itemId: 27,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51NSa23js8L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2017,
+    musicTitle: 'Onism',
+    musicArtist: ['Photay'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/photay/sets/on-hold-1',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/FGB15JIQoMs?list=OLAK5uy_kE_S-iQRruqu8N2N546cypzfWmZCb5ckk&si=DkzQNizvEpu8w9Lu',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/6lw2Nl3pITEMMuhVFMWKj0?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/onism/1254524399',
+      }),
+    ],
+  },
+  {
+    itemId: 28,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/21uwfU5MUZL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2015,
+    musicTitle: 'Days Gone By',
+    musicArtist: ['Bob Moses'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/the-bob-moses/sets/days-gone-by-3',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/OPK67ZvJfuw?list=OLAK5uy_kgyujLM8gTHJzUI2QLqapwutLlx2agOcM&si=QINCw0dr0KTSgOfU',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0u3Rl4KquP15smujFrgGz4?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/days-gone-by-never-enough-edition/1140193778',
+      }),
+    ],
+  },
+  {
+    itemId: 29,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/4165vyxrd0L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2014,
+    musicTitle: 'Jungle',
+    musicArtist: ['Jungle'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/the-bob-moses/sets/days-gone-by-3',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/AoyxL6fpSeM?list=OLAK5uy_l63n9GLY3_cdd5e_Q90ntUTi-6HlI4iFc&si=HKzrGUPVF-wAbkfn',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5dYCfDcz1KB5E9i2kgWXXr?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/jungle/872853887',
+      }),
+    ],
+  },
 ]
