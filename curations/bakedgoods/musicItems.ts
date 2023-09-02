@@ -872,4 +872,181 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 30,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/413k3ktbZpL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2008,
+    musicTitle: 'Random Album Title',
+    musicArtist: ['deadmau5'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/deadmau5/sets/random-album-title-2',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/p2UIBLAMyBc?list=OLAK5uy_njGt-pVkypxo_8ikmtn8bCFPyBGcwU_Qg&si=AgTW2yefXkYV7fyt',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4mcOY3wX8ZISk590p80GCl?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/random-album-title/1695954713',
+      }),
+    ],
+  },
+  {
+    itemId: 31,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/611LlS1AcyL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Light, Dust',
+    musicArtist: ['Kerala West'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/keraladust/sets/light-west-1',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/GyqgBkL1IZE?list=PL9fLKewO0NK4o62GQaAyFNbqCm43DSatV&si=LfrJGLsDx7JUwL6T',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2942biAKKQFqcATNWMzsFT?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/ca/album/light-west/1637202272',
+      }),
+    ],
+  },
+  {
+    itemId: 32,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41XNFmG0bML._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2015,
+    musicTitle: 'In Colour',
+    musicArtist: ['Jamie xx'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/jamie-xx-official/sets/in-colour-6',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/fyZ8aCHuN-8?list=OLAK5uy_kpSsO-tz6WVsp9QQJBd-oHiZSUL-I1Fn8&si=pMxdtLlmsvkGqPNW',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2ObJQuucr37qoW0XuWWZVL?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/in-colour/1525506447',
+      }),
+    ],
+  },
+  {
+    itemId: 33,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Ql9VM3qeL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2007,
+    musicTitle: 'Untrue',
+    musicArtist: ['Burial'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/8k_f2QK77ew?list=PL333NRV9w0mXU72yJa3pX7_-QY5nW5i4H&si=LBQM6QvkDMAIIFQF',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/1C30LhZB9I48LdpVCRRYvq?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/untrue/893175779',
+      }),
+    ],
+  },
+  {
+    itemId: 34,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51bKB4RJuiL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'Fragments',
+    musicArtist: ['Bonobo'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/bonobo/sets/fragments-684225281',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/mlFMIxy1p34?list=OLAK5uy_l01lp9GD95yFBKhB6kVU0RckwwbF_nC0A&si=-wvFlVnbG1TSyByr',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4KjbNbnTnJ97kZgQkOHr6v?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/fragments/1584968878',
+      }),
+    ],
+  },
+  {
+    itemId: 35,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/61w++SaZzhL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2010,
+    musicTitle: 'Dreaming of a Bigger Life',
+    musicArtist: ['Michal Menert'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/michalmenert/sets/dreaming-of-a-bigger-life',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/73GQ6PV8Diw?list=OLAK5uy_lW7rHDJqQhSMuNQPfl8j_FBd4ri7FunG8&si=hoPKUj3dNsowLmCr',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/7rGfXsQO2ji5pg3FmPEQbX?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/dreaming-of-a-bigger-life/382272298',
+      }),
+    ],
+  },
 ]
