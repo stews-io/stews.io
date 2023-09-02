@@ -48,7 +48,7 @@ export const curatorConfig: CuratorConfig = {
         {
           viewId: '04KN',
           viewLabel: 'in the mix',
-          viewFilter: 'sourceType:mix and recordingContext:studio',
+          viewFilter: 'sourceType:mix AND recordingContext:studio',
         },
       ],
     },
