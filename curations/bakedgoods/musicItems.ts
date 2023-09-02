@@ -445,4 +445,147 @@ export const musicItems: Array<MusicItem> = [
       }),
     ],
   },
+  {
+    itemId: 15,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41nbnwjmBGL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2020,
+    musicTitle: 'Picture: Innellea',
+    musicArtist: ['Innellea'],
+    recordingContext: ['studio'],
+    musicTags: ['house'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/EGf3fLaNYNE?list=OLAK5uy_mN_ZmbrbOR3MkHQfSKDK3kRUPscgCMpY4&si=owUhigq6HjiZvGhe',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2gxcmUtAmQEE8CmAdoQycx?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/picture-innellea/1680176872',
+      }),
+    ],
+  },
+  {
+    itemId: 16,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51J3ge3AtLL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2007,
+    musicTitle: 'Dandelion Gum',
+    musicArtist: ['Black Moth Super Rainbow'],
+    recordingContext: ['studio'],
+    musicTags: ['psychedelic', 'rock'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/AzgfGGuQBCk?list=OLAK5uy_mi0OOVMC2H3RGrd-HACw1lG7GTj0wEXpQ&si=2ouoHOxdc9wtdgZS',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2Y6tp2sNS5GPr4kIXyIMnU?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/dandelion-gum/1558012599',
+      }),
+    ],
+  },
+  {
+    itemId: 17,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51W9xjaRXxL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2008,
+    musicTitle: 'Late Night Cinema',
+    musicArtist: ['Blue Sky Black Death'],
+    recordingContext: ['studio'],
+    musicTags: ['downtempo', 'hip-hop'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/blueskyblackdeathofficial/sets/late-night-cinema',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/dS3UPs8eMmY?list=OLAK5uy_lmjY4ssCzvTHZLAa8i_andq0YaRqwRbic&si=JCN1K_TXVm7rsTxV',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5OLGAAYCiEnt0Xa22rTSg7?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/late-night-cinema/276904097',
+      }),
+    ],
+  },
+  {
+    itemId: 18,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/41SyXt9HrDL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2018,
+    musicTitle: 'SOLACE',
+    musicArtist: ['RÜFÜS DU SOL'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/rufusdusol/sets/solace',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/1hwgDgaHoPo?list=OLAK5uy_noJtm1NjTdQL2e6y0umMC7wfr5hTubJS0&si=46kK5cjKcu6YbgGg',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/5Jazpq8mEgSgQs06mdwkQd?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/solace/1434579572',
+      }),
+    ],
+  },
+  {
+    itemId: 19,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51EWNIvl3fL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2010,
+    musicTitle: 'Drink the Sea',
+    musicArtist: ['The Glitch Mob'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/theglitchmob/sets/drink-the-sea',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/cefY0sXQo0U?list=OLAK5uy_noncWAPC1UmvfucH2GXX4s4es550y_14E&si=zyVmtRxoNZ-8vW1R',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/4c5fhgLoAaFzwjNTxC57jK?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/drink-the-sea/367738582',
+      }),
+    ],
+  },
 ]
