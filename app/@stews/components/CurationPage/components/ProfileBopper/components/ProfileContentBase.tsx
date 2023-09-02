@@ -177,8 +177,8 @@ function CuratorLinkIcon(props: CuratorLinkIconProps) {
     )
   } else if (linkType === 'email') {
     return (
-      <svg className={cssModule.curatorLinkIcon} viewBox={'-3 -3 30 30'}>
-        <circle fill={'black'} cx={12} cy={12} r={15} />
+      <svg className={cssModule.curatorLinkIcon} viewBox={'-4 -4 32 32'}>
+        <circle fill={'black'} cx={12} cy={12} r={16} />
         <path
           fill={'white'}
           d={
