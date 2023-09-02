@@ -5,7 +5,7 @@ export const curatorConfig: CuratorConfig = {
   curatorInfo: {
     curatorName: 'bakedgoods',
     curatorLocation: 'sandy eggo',
-    curatorStatus: 'choice picks of modern electronic music',
+    curatorStatus: 'choice selections from modern electronic music',
     curatorEmail: 'curations@stews.io',
     curatorLinks: [],
   },
