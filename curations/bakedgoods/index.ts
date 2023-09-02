@@ -5,7 +5,7 @@ export const curatorConfig: CuratorConfig = {
   curatorInfo: {
     curatorName: 'bakedgoods',
     curatorLocation: 'sandy eggo',
-    curatorStatus: 'a weekend warrior craving carbs',
+    curatorStatus: 'weekend warrior craving carbs',
     curatorEmail: 'curations@stews.io',
     curatorLinks: [],
   },

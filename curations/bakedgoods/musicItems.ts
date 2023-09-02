@@ -288,7 +288,7 @@ export const musicItems: Array<MusicItem> = [
       }),
       getYoutubeLinkData({
         youtubeHref:
-          'https://youtu.be/oyX3EWdtbmA?list=OLAK5uy_nzhKUS--ZCqL3glx8sDnHBtqhiSAsPAi8&si=skXaZGZoZU9ZtBlp',
+          'https://youtu.be/CEIBdiNW5gI?list=OLAK5uy_kiRtxDKp8a2KlgDla3CjXD5CrOmH3i6kk&si=9cez66SINFPO0Zp7',
       }),
       getSpotifyLinkData({
         spotifyHref:
@@ -296,6 +296,152 @@ export const musicItems: Array<MusicItem> = [
       }),
       getAppleLinkData({
         appleHref: 'https://music.apple.com/us/album/isles/1531704818',
+      }),
+    ],
+  },
+  {
+    itemId: 10,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51oIUsOS14L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2014,
+    musicTitle: 'Brush',
+    musicArtist: ['Manatee Commune'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/manateecommune/sets/brush-933331172',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/33l2A8UO9xbgoBt58PD1kZ?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/brush/882455894',
+      }),
+    ],
+  },
+  {
+    itemId: 11,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/31rMeDgdhZL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2012,
+    musicTitle: "Summer's Gone",
+    musicArtist: ['ODESZA'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/odesza/sets/summers-gone',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/93I_iZViT1k?list=OLAK5uy_lGbrhgnYVwzLywKP767u3lNOpZ-Eeq1co&si=fMNj9oE-PkU8rTLL',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0ebTxbNe07spVPn7uxKOb1?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/summers-gone/1140187592',
+      }),
+    ],
+  },
+  {
+    itemId: 12,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51E62789PXL._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2022,
+    musicTitle: 'All That Fiberglass',
+    musicArtist: ['Blindsmyth'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/alexconnaisseurrecordings/sets/blindsmyth-all-that-fiberglass',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/B3EwwgUDPuo?list=OLAK5uy_mkjCHPRPSjBWORzbqvBC9EFztiPaI2SW4&si=7z_r23p2uuKALEBz',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0HeoSD72gYVQcxTEvxu4lp?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/all-that-fiberglass/1588916016',
+      }),
+    ],
+  },
+  {
+    itemId: 13,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/51Aw0Fll99S._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2015,
+    musicTitle: 'Something in Context',
+    musicArtist: ['Neo Geo'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getSoundcloudLinkData({
+        soundcloudHref: 'https://soundcloud.com/neogeo/sets/somethingincontext',
+      }),
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/u_GrZnp4Bw4?list=OLAK5uy_mwut7LKPWKoe7-GICp755q2qxs5JkwnvI&si=s03fer9y2vUCI78q',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/0157P4y6mOWcQSmnaSwCMd?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref:
+          'https://music.apple.com/us/album/something-in-context-2021-remaster/1565902347',
+      }),
+    ],
+  },
+  {
+    itemId: 14,
+    musicType: 'source',
+    sourceType: 'collection',
+    collectionType: 'album',
+    musicThumbnailHref:
+      'https://m.media-amazon.com/images/I/31CdK0f5z3L._UX500_FMwebp_QL85_.jpg',
+    musicYear: 2019,
+    musicTitle: 'Wild',
+    musicArtist: ['Tourist'],
+    recordingContext: ['studio'],
+    musicTags: ['electronic'],
+    externalLinks: [
+      getYoutubeLinkData({
+        youtubeHref:
+          'https://youtu.be/G3DmWlfDPdc?list=OLAK5uy_nSScZA--InqtGHm7U66T25G5hhmBudzxE&si=xBdAg_rz5-pjs3D6',
+      }),
+      getSoundcloudLinkData({
+        soundcloudHref:
+          'https://soundcloud.com/touristmusic/sets/wild-821713835',
+      }),
+      getSpotifyLinkData({
+        spotifyHref:
+          'https://open.spotify.com/album/2oegpcBiGzsD1JBXKZ9nWD?autoplay=true',
+      }),
+      getAppleLinkData({
+        appleHref: 'https://music.apple.com/us/album/wild/1480919558',
       }),
     ],
   },
