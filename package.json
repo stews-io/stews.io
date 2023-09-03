@@ -6,7 +6,7 @@
   "scripts": {
     "developApp": "ts-node ./scripts/startDevelopment.ts",
     "buildApp": "ts-node ./scripts/buildCuratorApp.ts",
-    "serveApp": "sirv pretttylights_build --port 8080 --cors --single",
+    "serveApp": "sirv pl-archive_build --port 8080 --cors --single",
     "developWebsite": "NODE_OPTIONS=--openssl-legacy-provider preact watch --cwd ./website --src ./source",
     "buildWebsite": "NODE_OPTIONS=--openssl-legacy-provider preact build --verbose --cwd ./website --src ./source --sw false --esm false  && cp ./website/source/assets/robots.txt ./website/build/robots.txt",
     "serveWebsite": "sirv ./website/build --port 8080 --cors --single"
