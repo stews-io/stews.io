@@ -95,17 +95,12 @@
   font-style: italic;
 }
 
-.pageFooter {
-  padding-block-start: 4 * $themeSpacer;
-}
-
 .externalLink {
   @extend .textContainer;
   display: inline-block;
   cursor: pointer;
   color: $themeButtonTextColor;
   text-decoration: none;
-  padding-block-end: calc(1 / 2) * $themeSpacer;
 }
 
 .paragraphLink {
@@ -139,6 +134,7 @@
 .curationLink {
   @extend .externalLink;
   @extend .textEllipsis;
+  padding-block-end: calc(1 / 2) * $themeSpacer;
   font-weight: 700;
   text-decoration: underline;
   text-decoration-style: wavy;
@@ -156,4 +152,15 @@
   font-weight: 300;
   font-size: 0.9rem;
   font-style: italic;
+}
+
+.pageFooter {
+  @extend .itemContainer;
+  padding-block-start: $themeSpacer;
+  padding-block-end: 4 * $themeSpacer;
+}
+
+.stewsLogoGraphic {
+  max-width: 256px;
+  width: 100%;
 }

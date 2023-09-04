@@ -54,6 +54,7 @@
 
 .curatorStatus {
   padding-block-start: calc(3 / 4) * $themeSpacer;
+  padding-block-end: calc(1 / 4) * $themeSpacer;
   padding-inline-end: 6 * $themeSpacer;
   font-size: 14px;
   font-weight: 700;
@@ -68,7 +69,7 @@
 .curatorLinkContainer {
   @extend .itemContainer;
   padding-inline-end: calc(3 / 2) * $themeSpacer;
-  padding-block-start: $themeSpacer;
+  padding-block-start: calc(3 / 2) * $themeSpacer;
 }
 
 .curatorLinkButton {
@@ -88,7 +89,7 @@
 .segmentLinkContainer {
   @extend .itemContainer;
   padding-inline-end: 2 * $themeSpacer;
-  padding-block: $themeSpacer;
+  padding-block: calc(1 / 2) * $themeSpacer;
 }
 
 .segmentLinkButton {

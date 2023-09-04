@@ -1,21 +1,22 @@
-@import "@stews/styles/layout";
-@import "@stews/styles/theme";
+@import '@stews/styles/layout';
+@import '@stews/styles/theme';
 
-.splashLogoContainer {
-  @extend .itemContainer;
+.splashContentContainer {
+  @extend .columnContainer;
   height: 100vh;
-  padding-inline: calc(9 / 2) * $themeSpacer;
+  justify-content: center;
+  align-items: center;
 }
 
-.splashLogo {
-  margin-top: -64px;
-  width: 100%;
+.splashTitleGraphic {
+  margin-top: calc(1 / 5) * -100%;
+  width: calc(2 / 3) * 100%;
 }
 
-.splashTextPath {
+.titleTextPath {
   stroke: black;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1mm;
+  stroke-width: 0.3rem;
   fill: none;
 }
