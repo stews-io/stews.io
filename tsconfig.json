@@ -16,18 +16,8 @@
     "module": "ES2020",
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "baseUrl": ".",
-    "paths": {
-      "@stews/*": ["./app/@stews/*"]
-    }
+    "jsxImportSource": "preact"
   },
   "exclude": ["node_modules"],
-  "include": ["./app", "./curations", "./scripts", "./website"],
-  "ts-node": {
-    "require": ["tsconfig-paths/register"],
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  }
+  "include": ["./source", "declaration.d.ts"]
 }

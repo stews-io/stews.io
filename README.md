@@ -1,3 +1,3 @@
 # [stews.io](https://stews.io)
 
-a platform empowering individuals and communities through curation
+a movement empowering individuals and communities through curation

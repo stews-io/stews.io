@@ -11,7 +11,7 @@ export function LandingPage() {
                 <div
                   className={cssModule.pageTitle}
                   role={'heading'}
-                  aria-level={'1'}
+                  aria-level={1}
                 >
                   stews.io
                 </div>
@@ -51,29 +51,29 @@ export function LandingPage() {
             <div
               className={cssModule.sectionTitle}
               role={'heading'}
-              aria-level={'2'}
+              aria-level={2}
             >
               what?
             </div>
             <div className={cssModule.sectionParagraph} role={'paragraph'}>
-              a platform empowering individuals and communities through curation
+              a movement empowering individuals and communities through curation
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
             <div
               className={cssModule.sectionTitle}
               role={'heading'}
-              aria-level={'2'}
+              aria-level={2}
             >
-              where?
+              vectors?
             </div>
             <div className={cssModule.subSectionContainer}>
               <div
                 className={cssModule.subSectionTitle}
                 role={'heading'}
-                aria-level={'3'}
+                aria-level={3}
               >
-                phase 0
+                assemble
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 demonstrate a more human web via a collection of curations
@@ -138,21 +138,9 @@ export function LandingPage() {
               <div
                 className={cssModule.subSectionTitle}
                 role={'heading'}
-                aria-level={'3'}
+                aria-level={3}
               >
-                phase 1
-              </div>
-              <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                provide a simple cli for creating and managing curations
-              </div>
-            </div>
-            <div className={cssModule.subSectionContainer}>
-              <div
-                className={cssModule.subSectionTitle}
-                role={'heading'}
-                aria-level={'3'}
-              >
-                phase N
+                equip
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 continue improving the ergonomics around curating and sharing
@@ -164,7 +152,7 @@ export function LandingPage() {
             <div
               className={cssModule.sectionTitle}
               role={'heading'}
-              aria-level={'2'}
+              aria-level={2}
             >
               wanna assist?
             </div>
@@ -172,7 +160,7 @@ export function LandingPage() {
               <div
                 className={cssModule.subSectionTitle}
                 role={'heading'}
-                aria-level={'3'}
+                aria-level={3}
               >
                 developers
               </div>
@@ -180,7 +168,7 @@ export function LandingPage() {
                 y'all know what it is; head over to{' '}
                 <a
                   className={cssModule.paragraphLink}
-                  href={'https://github.com/clumsycomputer/stews.io'}
+                  href={'https://github.com/stews-io'}
                   target={'_blank'}
                 >
                   github
@@ -192,27 +180,7 @@ export function LandingPage() {
               <div
                 className={cssModule.subSectionTitle}
                 role={'heading'}
-                aria-level={'3'}
-              >
-                investors
-              </div>
-              <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                we're exploring investment opportunities and applying to
-                accelerators! holler at{' '}
-                <a
-                  className={cssModule.paragraphLink}
-                  href={'mailto:business@stews.io'}
-                >
-                  business@stews.io
-                </a>{' '}
-                to participate!
-              </div>
-            </div>
-            <div className={cssModule.subSectionContainer}>
-              <div
-                className={cssModule.subSectionTitle}
-                role={'heading'}
-                aria-level={'3'}
+                aria-level={3}
               >
                 curators
               </div>
