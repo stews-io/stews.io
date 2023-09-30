@@ -1,5 +1,2 @@
 node_modules
-/**/*build
-/temp_*
-/*.log
-/size-plugin.json
+build

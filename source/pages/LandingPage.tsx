@@ -11,7 +11,7 @@ export function LandingPage() {
                 <div
                   className={cssModule.pageTitle}
                   role={'heading'}
-                  aria-level={'1'}
+                  aria-level={1}
                 >
                   stews.io
                 </div>
@@ -51,32 +51,32 @@ export function LandingPage() {
             <div
               className={cssModule.sectionTitle}
               role={'heading'}
-              aria-level={'2'}
+              aria-level={2}
             >
               what?
             </div>
             <div className={cssModule.sectionParagraph} role={'paragraph'}>
-              a platform empowering individuals and communities through curation
+              a movement empowering individuals and communities through curation
             </div>
           </div>
           <div className={cssModule.sectionContainer}>
             <div
               className={cssModule.sectionTitle}
               role={'heading'}
-              aria-level={'2'}
+              aria-level={2}
             >
-              where?
+              vectors?
             </div>
             <div className={cssModule.subSectionContainer}>
               <div
                 className={cssModule.subSectionTitle}
                 role={'heading'}
-                aria-level={'3'}
+                aria-level={3}
               >
-                phase 0
+                assemble
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                demonstrate a more human web via a collection of curations
+                to condense is to propagate; let's come together and expand!
               </div>
               <div className={cssModule.curationSectionContainer}>
                 <div className={cssModule.curationList}>
@@ -138,94 +138,34 @@ export function LandingPage() {
               <div
                 className={cssModule.subSectionTitle}
                 role={'heading'}
-                aria-level={'3'}
+                aria-level={3}
               >
-                phase 1
-              </div>
-              <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                provide a simple cli for creating and managing curations
-              </div>
-            </div>
-            <div className={cssModule.subSectionContainer}>
-              <div
-                className={cssModule.subSectionTitle}
-                role={'heading'}
-                aria-level={'3'}
-              >
-                phase N
-              </div>
-              <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                continue improving the ergonomics around curating and sharing
-                this world of ours
-              </div>
-            </div>
-          </div>
-          <div className={cssModule.sectionContainer}>
-            <div
-              className={cssModule.sectionTitle}
-              role={'heading'}
-              aria-level={'2'}
-            >
-              wanna assist?
-            </div>
-            <div className={cssModule.subSectionContainer}>
-              <div
-                className={cssModule.subSectionTitle}
-                role={'heading'}
-                aria-level={'3'}
-              >
-                developers
-              </div>
-              <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                y'all know what it is; head over to{' '}
-                <a
-                  className={cssModule.paragraphLink}
-                  href={'https://github.com/clumsycomputer/stews.io'}
-                  target={'_blank'}
-                >
-                  github
-                </a>{' '}
-                and jump in!!!
-              </div>
-            </div>
-            <div className={cssModule.subSectionContainer}>
-              <div
-                className={cssModule.subSectionTitle}
-                role={'heading'}
-                aria-level={'3'}
-              >
-                investors
-              </div>
-              <div className={cssModule.sectionParagraph} role={'paragraph'}>
-                we're exploring investment opportunities and applying to
-                accelerators! holler at{' '}
-                <a
-                  className={cssModule.paragraphLink}
-                  href={'mailto:business@stews.io'}
-                >
-                  business@stews.io
-                </a>{' '}
-                to participate!
-              </div>
-            </div>
-            <div className={cssModule.subSectionContainer}>
-              <div
-                className={cssModule.subSectionTitle}
-                role={'heading'}
-                aria-level={'3'}
-              >
-                curators
+                equip
               </div>
               <div className={cssModule.sectionParagraph} role={'paragraph'}>
                 we're working diligently to provide y'all with the tools you
-                need to share your world the way it deserves! drop us a line at{' '}
-                <a
-                  className={cssModule.paragraphLink}
-                  href={'mailto:curations@stews.io'}
-                >
-                  curations@stews.io
-                </a>{' '}
-                to begin your transmission!
+                need to share your world the way it deserves!
+              </div>
+              <div className={cssModule.curationSectionContainer}>
+                <div className={cssModule.curationList}>
+                  <div className={cssModule.curationItem}>
+                    <div className={cssModule.curationItemTitle}>
+                      <a
+                        className={cssModule.curationLink}
+                        href={'https://github.com/stews-io/toolkit'}
+                        target={'_blank'}
+                      >
+                        toolkit
+                      </a>
+                    </div>
+                    <div
+                      className={cssModule.curationItemDescription}
+                      role={'paragraph'}
+                    >
+                      deno-based tooling for publishing curations
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
