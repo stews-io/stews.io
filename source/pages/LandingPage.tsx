@@ -162,7 +162,7 @@ export function LandingPage() {
                       className={cssModule.curationItemDescription}
                       role={'paragraph'}
                     >
-                      deno-based tooling for publishing curations
+                      tooling to create quality curations
                     </div>
                   </div>
                 </div>
