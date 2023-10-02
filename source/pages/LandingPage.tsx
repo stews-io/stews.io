@@ -84,7 +84,7 @@ export function LandingPage() {
                     <div className={cssModule.curationItemTitle}>
                       <a
                         className={cssModule.curationLink}
-                        href={'https://clumsycomputer.stews.io'}
+                        href={'https://www.clumsycomputer.stews.io'}
                         target={'_blank'}
                       >
                         clumsycomputer
@@ -101,7 +101,7 @@ export function LandingPage() {
                     <div className={cssModule.curationItemTitle}>
                       <a
                         className={cssModule.curationLink}
-                        href={'https://prettylights.stews.io'}
+                        href={'https://www.prettylights.stews.io'}
                         target={'_blank'}
                       >
                         pl-archive
@@ -118,7 +118,7 @@ export function LandingPage() {
                     <div className={cssModule.curationItemTitle}>
                       <a
                         className={cssModule.curationLink}
-                        href={'https://bakedgoods.stews.io'}
+                        href={'https://www.bakedgoods.stews.io'}
                         target={'_blank'}
                       >
                         bakedgoods
