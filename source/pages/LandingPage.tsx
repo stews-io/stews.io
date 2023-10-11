@@ -94,7 +94,8 @@ export function LandingPage() {
                       className={cssModule.curationItemDescription}
                       role={'paragraph'}
                     >
-                      a curation of great music and awesome spots
+                      an assortment of great music, awesome spots, and sweet
+                      sweet links
                     </div>
                   </div>
                   <div className={cssModule.curationItem}>
@@ -152,7 +153,7 @@ export function LandingPage() {
                     <div className={cssModule.curationItemTitle}>
                       <a
                         className={cssModule.curationLink}
-                        href={'https://github.com/stews-io/toolkit'}
+                        href={'https://github.com/stews-io/toolkit#readme'}
                         target={'_blank'}
                       >
                         toolkit
@@ -162,7 +163,7 @@ export function LandingPage() {
                       className={cssModule.curationItemDescription}
                       role={'paragraph'}
                     >
-                      tooling to create quality curations
+                      tools for publishing quality curations to the web
                     </div>
                   </div>
                 </div>
