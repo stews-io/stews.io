@@ -163,7 +163,7 @@ export function LandingPage() {
                       className={cssModule.curationItemDescription}
                       role={'paragraph'}
                     >
-                      tools for publishing quality curations to the web
+                      power tools for publishing quality curations to the web
                     </div>
                   </div>
                 </div>
